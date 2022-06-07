@@ -15,14 +15,56 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ObjectMetadata.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectMetadata {
+public final class ObjectMetadata {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "createdBy",
+        "createdByName",
+        "updatedBy",
+        "updatedByName",
+        "timeCreated",
+        "timeUpdated",
+        "aggregatorKey",
+        "aggregator",
+        "identifierPath",
+        "infoFields",
+        "registryVersion",
+        "labels",
+        "isFavorite"
+    })
+    public ObjectMetadata(
+            String createdBy,
+            String createdByName,
+            String updatedBy,
+            String updatedByName,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String aggregatorKey,
+            AggregatorSummary aggregator,
+            String identifierPath,
+            java.util.Map<String, String> infoFields,
+            Integer registryVersion,
+            java.util.List<String> labels,
+            Boolean isFavorite) {
+        super();
+        this.createdBy = createdBy;
+        this.createdByName = createdByName;
+        this.updatedBy = updatedBy;
+        this.updatedByName = updatedByName;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.aggregatorKey = aggregatorKey;
+        this.aggregator = aggregator;
+        this.identifierPath = identifierPath;
+        this.infoFields = infoFields;
+        this.registryVersion = registryVersion;
+        this.labels = labels;
+        this.isFavorite = isFavorite;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
@@ -193,81 +235,222 @@ public class ObjectMetadata {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The user that created the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    String createdBy;
+    private final String createdBy;
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
 
     /**
      * The user that created the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByName")
-    String createdByName;
+    private final String createdByName;
+
+    public String getCreatedByName() {
+        return createdByName;
+    }
 
     /**
      * The user that updated the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
-    String updatedBy;
+    private final String updatedBy;
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
 
     /**
      * The user that updated the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByName")
-    String updatedByName;
+    private final String updatedByName;
+
+    public String getUpdatedByName() {
+        return updatedByName;
+    }
 
     /**
      * The date and time that the object was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time that the object was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The owning object key for this object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
-    String aggregatorKey;
+    private final String aggregatorKey;
+
+    public String getAggregatorKey() {
+        return aggregatorKey;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("aggregator")
-    AggregatorSummary aggregator;
+    private final AggregatorSummary aggregator;
+
+    public AggregatorSummary getAggregator() {
+        return aggregator;
+    }
 
     /**
      * The full path to identify this object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
-    String identifierPath;
+    private final String identifierPath;
+
+    public String getIdentifierPath() {
+        return identifierPath;
+    }
 
     /**
      * Information property fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infoFields")
-    java.util.Map<String, String> infoFields;
+    private final java.util.Map<String, String> infoFields;
+
+    public java.util.Map<String, String> getInfoFields() {
+        return infoFields;
+    }
 
     /**
      * The registry version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
-    Integer registryVersion;
+    private final Integer registryVersion;
+
+    public Integer getRegistryVersion() {
+        return registryVersion;
+    }
 
     /**
      * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
-    java.util.List<String> labels;
+    private final java.util.List<String> labels;
+
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
 
     /**
      * Specifies whether this object is a favorite or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
-    Boolean isFavorite;
+    private final Boolean isFavorite;
+
+    public Boolean getIsFavorite() {
+        return isFavorite;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectMetadata(");
+        sb.append("createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", createdByName=").append(String.valueOf(this.createdByName));
+        sb.append(", updatedBy=").append(String.valueOf(this.updatedBy));
+        sb.append(", updatedByName=").append(String.valueOf(this.updatedByName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", aggregatorKey=").append(String.valueOf(this.aggregatorKey));
+        sb.append(", aggregator=").append(String.valueOf(this.aggregator));
+        sb.append(", identifierPath=").append(String.valueOf(this.identifierPath));
+        sb.append(", infoFields=").append(String.valueOf(this.infoFields));
+        sb.append(", registryVersion=").append(String.valueOf(this.registryVersion));
+        sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append(", isFavorite=").append(String.valueOf(this.isFavorite));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectMetadata)) {
+            return false;
+        }
+
+        ObjectMetadata other = (ObjectMetadata) o;
+        return java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.createdByName, other.createdByName)
+                && java.util.Objects.equals(this.updatedBy, other.updatedBy)
+                && java.util.Objects.equals(this.updatedByName, other.updatedByName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.aggregatorKey, other.aggregatorKey)
+                && java.util.Objects.equals(this.aggregator, other.aggregator)
+                && java.util.Objects.equals(this.identifierPath, other.identifierPath)
+                && java.util.Objects.equals(this.infoFields, other.infoFields)
+                && java.util.Objects.equals(this.registryVersion, other.registryVersion)
+                && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.isFavorite, other.isFavorite)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createdByName == null ? 43 : this.createdByName.hashCode());
+        result = (result * PRIME) + (this.updatedBy == null ? 43 : this.updatedBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updatedByName == null ? 43 : this.updatedByName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aggregatorKey == null ? 43 : this.aggregatorKey.hashCode());
+        result = (result * PRIME) + (this.aggregator == null ? 43 : this.aggregator.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identifierPath == null ? 43 : this.identifierPath.hashCode());
+        result = (result * PRIME) + (this.infoFields == null ? 43 : this.infoFields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registryVersion == null ? 43 : this.registryVersion.hashCode());
+        result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result = (result * PRIME) + (this.isFavorite == null ? 43 : this.isFavorite.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

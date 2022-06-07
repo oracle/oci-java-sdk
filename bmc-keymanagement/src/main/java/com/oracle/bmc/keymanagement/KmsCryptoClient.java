@@ -9,9 +9,9 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.extern.slf4j.Slf4j
 public class KmsCryptoClient implements KmsCrypto {
     /**
      * Service instance for KmsCrypto.
@@ -25,9 +25,14 @@ public class KmsCryptoClient implements KmsCrypto {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
-    private final com.oracle.bmc.http.internal.RestClient client;
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(KmsCryptoAsyncClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    private final com.oracle.bmc.http.internal.RestClient client;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;

@@ -15,14 +15,19 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CommitInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CommitInfo {
+public final class CommitInfo {
+    @Deprecated
+    @java.beans.ConstructorProperties({"repositoryUrl", "repositoryBranch", "commitHash"})
+    public CommitInfo(String repositoryUrl, String repositoryBranch, String commitHash) {
+        super();
+        this.repositoryUrl = repositoryUrl;
+        this.repositoryBranch = repositoryBranch;
+        this.commitHash = commitHash;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
@@ -79,24 +84,89 @@ public class CommitInfo {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Repository URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
-    String repositoryUrl;
+    private final String repositoryUrl;
+
+    public String getRepositoryUrl() {
+        return repositoryUrl;
+    }
 
     /**
      * Name of the repository branch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryBranch")
-    String repositoryBranch;
+    private final String repositoryBranch;
+
+    public String getRepositoryBranch() {
+        return repositoryBranch;
+    }
 
     /**
      * Commit hash pertinent to the repository URL and the specified branch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitHash")
-    String commitHash;
+    private final String commitHash;
+
+    public String getCommitHash() {
+        return commitHash;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CommitInfo(");
+        sb.append("repositoryUrl=").append(String.valueOf(this.repositoryUrl));
+        sb.append(", repositoryBranch=").append(String.valueOf(this.repositoryBranch));
+        sb.append(", commitHash=").append(String.valueOf(this.commitHash));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CommitInfo)) {
+            return false;
+        }
+
+        CommitInfo other = (CommitInfo) o;
+        return java.util.Objects.equals(this.repositoryUrl, other.repositoryUrl)
+                && java.util.Objects.equals(this.repositoryBranch, other.repositoryBranch)
+                && java.util.Objects.equals(this.commitHash, other.commitHash)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.repositoryUrl == null ? 43 : this.repositoryUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryBranch == null ? 43 : this.repositoryBranch.hashCode());
+        result = (result * PRIME) + (this.commitHash == null ? 43 : this.commitHash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

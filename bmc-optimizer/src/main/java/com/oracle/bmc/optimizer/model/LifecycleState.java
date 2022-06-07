@@ -8,7 +8,6 @@ package com.oracle.bmc.optimizer.model;
  * Possible lifecycle states.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.extern.slf4j.Slf4j
 public enum LifecycleState {
     Active("ACTIVE"),
     Failed("FAILED"),
@@ -25,6 +24,9 @@ public enum LifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, LifecycleState> map;

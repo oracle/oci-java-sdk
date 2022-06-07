@@ -15,16 +15,43 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsMetaSourceType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsMetaSourceType {
+public final class LogAnalyticsMetaSourceType {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "builtInParserName",
+        "description",
+        "displayName",
+        "entityDisplayName",
+        "entityName",
+        "name",
+        "maximumExcludePattern",
+        "maximumIncludePattern"
+    })
+    public LogAnalyticsMetaSourceType(
+            String builtInParserName,
+            String description,
+            String displayName,
+            String entityDisplayName,
+            String entityName,
+            String name,
+            Long maximumExcludePattern,
+            Long maximumIncludePattern) {
+        super();
+        this.builtInParserName = builtInParserName;
+        this.description = description;
+        this.displayName = displayName;
+        this.entityDisplayName = entityDisplayName;
+        this.entityName = entityName;
+        this.name = name;
+        this.maximumExcludePattern = maximumExcludePattern;
+        this.maximumIncludePattern = maximumIncludePattern;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("builtInParserName")
         private String builtInParserName;
@@ -140,54 +167,162 @@ public class LogAnalyticsMetaSourceType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The built in parser name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("builtInParserName")
-    String builtInParserName;
+    private final String builtInParserName;
+
+    public String getBuiltInParserName() {
+        return builtInParserName;
+    }
 
     /**
      * The source type description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The source type display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The entity display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityDisplayName")
-    String entityDisplayName;
+    private final String entityDisplayName;
+
+    public String getEntityDisplayName() {
+        return entityDisplayName;
+    }
 
     /**
      * The entity internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
-    String entityName;
+    private final String entityName;
+
+    public String getEntityName() {
+        return entityName;
+    }
 
     /**
      * The source type name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The maximum exclude pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumExcludePattern")
-    Long maximumExcludePattern;
+    private final Long maximumExcludePattern;
+
+    public Long getMaximumExcludePattern() {
+        return maximumExcludePattern;
+    }
 
     /**
      * The maximum include pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumIncludePattern")
-    Long maximumIncludePattern;
+    private final Long maximumIncludePattern;
+
+    public Long getMaximumIncludePattern() {
+        return maximumIncludePattern;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsMetaSourceType(");
+        sb.append("builtInParserName=").append(String.valueOf(this.builtInParserName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", entityDisplayName=").append(String.valueOf(this.entityDisplayName));
+        sb.append(", entityName=").append(String.valueOf(this.entityName));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", maximumExcludePattern=").append(String.valueOf(this.maximumExcludePattern));
+        sb.append(", maximumIncludePattern=").append(String.valueOf(this.maximumIncludePattern));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsMetaSourceType)) {
+            return false;
+        }
+
+        LogAnalyticsMetaSourceType other = (LogAnalyticsMetaSourceType) o;
+        return java.util.Objects.equals(this.builtInParserName, other.builtInParserName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.entityDisplayName, other.entityDisplayName)
+                && java.util.Objects.equals(this.entityName, other.entityName)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.maximumExcludePattern, other.maximumExcludePattern)
+                && java.util.Objects.equals(this.maximumIncludePattern, other.maximumIncludePattern)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.builtInParserName == null ? 43 : this.builtInParserName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityDisplayName == null ? 43 : this.entityDisplayName.hashCode());
+        result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maximumExcludePattern == null
+                                ? 43
+                                : this.maximumExcludePattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maximumIncludePattern == null
+                                ? 43
+                                : this.maximumIncludePattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

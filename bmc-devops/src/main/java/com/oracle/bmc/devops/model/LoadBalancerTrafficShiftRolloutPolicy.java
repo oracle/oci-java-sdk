@@ -15,16 +15,22 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LoadBalancerTrafficShiftRolloutPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LoadBalancerTrafficShiftRolloutPolicy {
+public final class LoadBalancerTrafficShiftRolloutPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"batchCount", "batchDelayInSeconds", "rampLimitPercent"})
+    public LoadBalancerTrafficShiftRolloutPolicy(
+            Integer batchCount, Integer batchDelayInSeconds, Float rampLimitPercent) {
+        super();
+        this.batchCount = batchCount;
+        this.batchDelayInSeconds = batchDelayInSeconds;
+        this.rampLimitPercent = rampLimitPercent;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("batchCount")
         private Integer batchCount;
@@ -83,24 +89,91 @@ public class LoadBalancerTrafficShiftRolloutPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Specifies number of batches for this stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchCount")
-    Integer batchCount;
+    private final Integer batchCount;
+
+    public Integer getBatchCount() {
+        return batchCount;
+    }
 
     /**
      * Specifies delay in seconds between batches. The default delay is 1 minute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchDelayInSeconds")
-    Integer batchDelayInSeconds;
+    private final Integer batchDelayInSeconds;
+
+    public Integer getBatchDelayInSeconds() {
+        return batchDelayInSeconds;
+    }
 
     /**
      * Indicates the criteria to stop.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rampLimitPercent")
-    Float rampLimitPercent;
+    private final Float rampLimitPercent;
+
+    public Float getRampLimitPercent() {
+        return rampLimitPercent;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LoadBalancerTrafficShiftRolloutPolicy(");
+        sb.append("batchCount=").append(String.valueOf(this.batchCount));
+        sb.append(", batchDelayInSeconds=").append(String.valueOf(this.batchDelayInSeconds));
+        sb.append(", rampLimitPercent=").append(String.valueOf(this.rampLimitPercent));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LoadBalancerTrafficShiftRolloutPolicy)) {
+            return false;
+        }
+
+        LoadBalancerTrafficShiftRolloutPolicy other = (LoadBalancerTrafficShiftRolloutPolicy) o;
+        return java.util.Objects.equals(this.batchCount, other.batchCount)
+                && java.util.Objects.equals(this.batchDelayInSeconds, other.batchDelayInSeconds)
+                && java.util.Objects.equals(this.rampLimitPercent, other.rampLimitPercent)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.batchCount == null ? 43 : this.batchCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.batchDelayInSeconds == null
+                                ? 43
+                                : this.batchDelayInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rampLimitPercent == null ? 43 : this.rampLimitPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

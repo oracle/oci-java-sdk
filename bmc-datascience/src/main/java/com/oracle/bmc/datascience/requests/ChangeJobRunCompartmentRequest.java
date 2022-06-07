@@ -9,14 +9,6 @@ import com.oracle.bmc.datascience.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeJobRunCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeJobRunCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeJobRunCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datascience.model.ChangeJobRunCompartmentDetails> {
@@ -26,12 +18,19 @@ public class ChangeJobRunCompartmentRequest
      */
     private String jobRunId;
 
+    public String getJobRunId() {
+        return jobRunId;
+    }
     /**
      * Details for changing the compartment of a job.
      */
     private com.oracle.bmc.datascience.model.ChangeJobRunCompartmentDetails
             changeJobRunCompartmentDetails;
 
+    public com.oracle.bmc.datascience.model.ChangeJobRunCompartmentDetails
+            getChangeJobRunCompartmentDetails() {
+        return changeJobRunCompartmentDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -42,11 +41,18 @@ public class ChangeJobRunCompartmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +71,59 @@ public class ChangeJobRunCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String jobRunId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+         * @return this builder instance
+         */
+        public Builder jobRunId(String jobRunId) {
+            this.jobRunId = jobRunId;
+            return this;
+        }
+
+        private com.oracle.bmc.datascience.model.ChangeJobRunCompartmentDetails
+                changeJobRunCompartmentDetails = null;
+
+        /**
+         * Details for changing the compartment of a job.
+         * @return this builder instance
+         */
+        public Builder changeJobRunCompartmentDetails(
+                com.oracle.bmc.datascience.model.ChangeJobRunCompartmentDetails
+                        changeJobRunCompartmentDetails) {
+            this.changeJobRunCompartmentDetails = changeJobRunCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +189,85 @@ public class ChangeJobRunCompartmentRequest
             changeJobRunCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeJobRunCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeJobRunCompartmentRequest
+         */
+        public ChangeJobRunCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeJobRunCompartmentRequest request = new ChangeJobRunCompartmentRequest();
+            request.jobRunId = jobRunId;
+            request.changeJobRunCompartmentDetails = changeJobRunCompartmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ChangeJobRunCompartmentRequest(jobRunId, changeJobRunCompartmentDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .jobRunId(jobRunId)
+                .changeJobRunCompartmentDetails(changeJobRunCompartmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",jobRunId=").append(String.valueOf(this.jobRunId));
+        sb.append(",changeJobRunCompartmentDetails=")
+                .append(String.valueOf(this.changeJobRunCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeJobRunCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeJobRunCompartmentRequest other = (ChangeJobRunCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.jobRunId, other.jobRunId)
+                && java.util.Objects.equals(
+                        this.changeJobRunCompartmentDetails, other.changeJobRunCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.jobRunId == null ? 43 : this.jobRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeJobRunCompartmentDetails == null
+                                ? 43
+                                : this.changeJobRunCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

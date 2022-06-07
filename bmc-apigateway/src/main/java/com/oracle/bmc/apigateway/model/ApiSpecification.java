@@ -15,14 +15,22 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApiSpecification.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApiSpecification {
+public final class ApiSpecification {
+    @Deprecated
+    @java.beans.ConstructorProperties({"requestPolicies", "loggingPolicies", "routes"})
+    public ApiSpecification(
+            ApiSpecificationRequestPolicies requestPolicies,
+            ApiSpecificationLoggingPolicies loggingPolicies,
+            java.util.List<ApiSpecificationRoute> routes) {
+        super();
+        this.requestPolicies = requestPolicies;
+        this.loggingPolicies = loggingPolicies;
+        this.routes = routes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("requestPolicies")
         private ApiSpecificationRequestPolicies requestPolicies;
@@ -80,18 +88,83 @@ public class ApiSpecification {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("requestPolicies")
-    ApiSpecificationRequestPolicies requestPolicies;
+    private final ApiSpecificationRequestPolicies requestPolicies;
+
+    public ApiSpecificationRequestPolicies getRequestPolicies() {
+        return requestPolicies;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("loggingPolicies")
-    ApiSpecificationLoggingPolicies loggingPolicies;
+    private final ApiSpecificationLoggingPolicies loggingPolicies;
+
+    public ApiSpecificationLoggingPolicies getLoggingPolicies() {
+        return loggingPolicies;
+    }
 
     /**
      * A list of routes that this API exposes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routes")
-    java.util.List<ApiSpecificationRoute> routes;
+    private final java.util.List<ApiSpecificationRoute> routes;
+
+    public java.util.List<ApiSpecificationRoute> getRoutes() {
+        return routes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApiSpecification(");
+        sb.append("requestPolicies=").append(String.valueOf(this.requestPolicies));
+        sb.append(", loggingPolicies=").append(String.valueOf(this.loggingPolicies));
+        sb.append(", routes=").append(String.valueOf(this.routes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApiSpecification)) {
+            return false;
+        }
+
+        ApiSpecification other = (ApiSpecification) o;
+        return java.util.Objects.equals(this.requestPolicies, other.requestPolicies)
+                && java.util.Objects.equals(this.loggingPolicies, other.loggingPolicies)
+                && java.util.Objects.equals(this.routes, other.routes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.requestPolicies == null ? 43 : this.requestPolicies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loggingPolicies == null ? 43 : this.loggingPolicies.hashCode());
+        result = (result * PRIME) + (this.routes == null ? 43 : this.routes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

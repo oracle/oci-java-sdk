@@ -15,16 +15,46 @@ package com.oracle.bmc.computeinstanceagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceAgentCommand.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceAgentCommand {
+public final class InstanceAgentCommand {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "timeCreated",
+        "timeUpdated",
+        "isCanceled",
+        "executionTimeOutInSeconds",
+        "target",
+        "content"
+    })
+    public InstanceAgentCommand(
+            String id,
+            String compartmentId,
+            String displayName,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            Boolean isCanceled,
+            Integer executionTimeOutInSeconds,
+            InstanceAgentCommandTarget target,
+            InstanceAgentCommandContent content) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.isCanceled = isCanceled;
+        this.executionTimeOutInSeconds = executionTimeOutInSeconds;
+        this.target = target;
+        this.content = content;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -151,23 +181,39 @@ public class InstanceAgentCommand {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time the command was created, in the format defined by
@@ -175,7 +221,11 @@ public class InstanceAgentCommand {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the command was last updated, in the format defined by
@@ -183,13 +233,21 @@ public class InstanceAgentCommand {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCanceled")
-    Boolean isCanceled;
+    private final Boolean isCanceled;
+
+    public Boolean getIsCanceled() {
+        return isCanceled;
+    }
 
     /**
      * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
@@ -197,20 +255,103 @@ public class InstanceAgentCommand {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionTimeOutInSeconds")
-    Integer executionTimeOutInSeconds;
+    private final Integer executionTimeOutInSeconds;
+
+    public Integer getExecutionTimeOutInSeconds() {
+        return executionTimeOutInSeconds;
+    }
 
     /**
      * The target instance that the command runs on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    InstanceAgentCommandTarget target;
+    private final InstanceAgentCommandTarget target;
+
+    public InstanceAgentCommandTarget getTarget() {
+        return target;
+    }
 
     /**
      * The contents of the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    InstanceAgentCommandContent content;
+    private final InstanceAgentCommandContent content;
+
+    public InstanceAgentCommandContent getContent() {
+        return content;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceAgentCommand(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", isCanceled=").append(String.valueOf(this.isCanceled));
+        sb.append(", executionTimeOutInSeconds=")
+                .append(String.valueOf(this.executionTimeOutInSeconds));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", content=").append(String.valueOf(this.content));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceAgentCommand)) {
+            return false;
+        }
+
+        InstanceAgentCommand other = (InstanceAgentCommand) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.isCanceled, other.isCanceled)
+                && java.util.Objects.equals(
+                        this.executionTimeOutInSeconds, other.executionTimeOutInSeconds)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.content, other.content)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.isCanceled == null ? 43 : this.isCanceled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionTimeOutInSeconds == null
+                                ? 43
+                                : this.executionTimeOutInSeconds.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

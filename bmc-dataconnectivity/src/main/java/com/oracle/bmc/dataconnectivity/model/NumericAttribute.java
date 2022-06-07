@@ -15,20 +15,15 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NumericAttribute.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NumericAttribute extends AttributeProfileResult {
+public final class NumericAttribute extends AttributeProfileResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -221,6 +216,10 @@ public class NumericAttribute extends AttributeProfileResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public NumericAttribute(
             String name,
@@ -257,29 +256,122 @@ public class NumericAttribute extends AttributeProfileResult {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("mean")
-    ProfileStat mean;
+    private final ProfileStat mean;
+
+    public ProfileStat getMean() {
+        return mean;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("median")
-    ProfileStat median;
+    private final ProfileStat median;
+
+    public ProfileStat getMedian() {
+        return median;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("standardDeviation")
-    ProfileStat standardDeviation;
+    private final ProfileStat standardDeviation;
+
+    public ProfileStat getStandardDeviation() {
+        return standardDeviation;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("variance")
-    ProfileStat variance;
+    private final ProfileStat variance;
+
+    public ProfileStat getVariance() {
+        return variance;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("outlier")
-    Outlier outlier;
+    private final Outlier outlier;
+
+    public Outlier getOutlier() {
+        return outlier;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("histogram")
-    Histogram histogram;
+    private final Histogram histogram;
+
+    public Histogram getHistogram() {
+        return histogram;
+    }
 
     /**
      * Pattern frequencies for the column as described already in profile config.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternFrequencies")
-    java.util.List<ObjectFreqStat> patternFrequencies;
+    private final java.util.List<ObjectFreqStat> patternFrequencies;
+
+    public java.util.List<ObjectFreqStat> getPatternFrequencies() {
+        return patternFrequencies;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NumericAttribute(");
+        sb.append("super=").append(super.toString());
+        sb.append(", mean=").append(String.valueOf(this.mean));
+        sb.append(", median=").append(String.valueOf(this.median));
+        sb.append(", standardDeviation=").append(String.valueOf(this.standardDeviation));
+        sb.append(", variance=").append(String.valueOf(this.variance));
+        sb.append(", outlier=").append(String.valueOf(this.outlier));
+        sb.append(", histogram=").append(String.valueOf(this.histogram));
+        sb.append(", patternFrequencies=").append(String.valueOf(this.patternFrequencies));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NumericAttribute)) {
+            return false;
+        }
+
+        NumericAttribute other = (NumericAttribute) o;
+        return java.util.Objects.equals(this.mean, other.mean)
+                && java.util.Objects.equals(this.median, other.median)
+                && java.util.Objects.equals(this.standardDeviation, other.standardDeviation)
+                && java.util.Objects.equals(this.variance, other.variance)
+                && java.util.Objects.equals(this.outlier, other.outlier)
+                && java.util.Objects.equals(this.histogram, other.histogram)
+                && java.util.Objects.equals(this.patternFrequencies, other.patternFrequencies)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.mean == null ? 43 : this.mean.hashCode());
+        result = (result * PRIME) + (this.median == null ? 43 : this.median.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standardDeviation == null ? 43 : this.standardDeviation.hashCode());
+        result = (result * PRIME) + (this.variance == null ? 43 : this.variance.hashCode());
+        result = (result * PRIME) + (this.outlier == null ? 43 : this.outlier.hashCode());
+        result = (result * PRIME) + (this.histogram == null ? 43 : this.histogram.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patternFrequencies == null
+                                ? 43
+                                : this.patternFrequencies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

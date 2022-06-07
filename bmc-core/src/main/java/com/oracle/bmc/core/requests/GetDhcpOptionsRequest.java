@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDhcpOptionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,12 +16,27 @@ public class GetDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String dhcpId;
 
+    public String getDhcpId() {
+        return dhcpId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDhcpOptionsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String dhcpId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
+         * @return this builder instance
+         */
+        public Builder dhcpId(String dhcpId) {
+            this.dhcpId = dhcpId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -81,5 +88,62 @@ public class GetDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetDhcpOptionsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetDhcpOptionsRequest
+         */
+        public GetDhcpOptionsRequest buildWithoutInvocationCallback() {
+            GetDhcpOptionsRequest request = new GetDhcpOptionsRequest();
+            request.dhcpId = dhcpId;
+            return request;
+            // new GetDhcpOptionsRequest(dhcpId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().dhcpId(dhcpId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",dhcpId=").append(String.valueOf(this.dhcpId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDhcpOptionsRequest)) {
+            return false;
+        }
+
+        GetDhcpOptionsRequest other = (GetDhcpOptionsRequest) o;
+        return super.equals(o) && java.util.Objects.equals(this.dhcpId, other.dhcpId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dhcpId == null ? 43 : this.dhcpId.hashCode());
+        return result;
     }
 }

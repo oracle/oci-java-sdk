@@ -8,7 +8,6 @@ package com.oracle.bmc.aivision.model;
  * The language of the document, abbreviated according to ISO 639-2.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.extern.slf4j.Slf4j
 public enum DocumentLanguage {
     Eng("ENG"),
     Ces("CES"),
@@ -41,6 +40,9 @@ public enum DocumentLanguage {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DocumentLanguage.class);
 
     private final String value;
     private static java.util.Map<String, DocumentLanguage> map;

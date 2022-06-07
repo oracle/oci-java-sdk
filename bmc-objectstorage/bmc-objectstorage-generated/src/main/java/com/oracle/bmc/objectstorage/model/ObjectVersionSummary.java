@@ -18,16 +18,49 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectVersionSummary {
+public final class ObjectVersionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "size",
+        "md5",
+        "timeCreated",
+        "timeModified",
+        "etag",
+        "storageTier",
+        "archivalState",
+        "versionId",
+        "isDeleteMarker"
+    })
+    public ObjectVersionSummary(
+            String name,
+            Long size,
+            String md5,
+            java.util.Date timeCreated,
+            java.util.Date timeModified,
+            String etag,
+            StorageTier storageTier,
+            ArchivalState archivalState,
+            String versionId,
+            Boolean isDeleteMarker) {
+        super();
+        this.name = name;
+        this.size = size;
+        this.md5 = md5;
+        this.timeCreated = timeCreated;
+        this.timeModified = timeModified;
+        this.etag = etag;
+        this.storageTier = storageTier;
+        this.archivalState = archivalState;
+        this.versionId = versionId;
+        this.isDeleteMarker = isDeleteMarker;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -165,68 +198,182 @@ public class ObjectVersionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the object. Avoid entering confidential information.
      * Example: test/object1.log
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Size of the object in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
-    Long size;
+    private final Long size;
+
+    public Long getSize() {
+        return size;
+    }
 
     /**
      * Base64-encoded MD5 hash of the object data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("md5")
-    String md5;
+    private final String md5;
+
+    public String getMd5() {
+        return md5;
+    }
 
     /**
      * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
-    java.util.Date timeModified;
+    private final java.util.Date timeModified;
+
+    public java.util.Date getTimeModified() {
+        return timeModified;
+    }
 
     /**
      * The current entity tag (ETag) for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
-    String etag;
+    private final String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * The storage tier that the object is stored in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
-    StorageTier storageTier;
+    private final StorageTier storageTier;
+
+    public StorageTier getStorageTier() {
+        return storageTier;
+    }
 
     /**
      * Archival state of an object. This field is set only for objects in Archive tier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archivalState")
-    ArchivalState archivalState;
+    private final ArchivalState archivalState;
+
+    public ArchivalState getArchivalState() {
+        return archivalState;
+    }
 
     /**
      * VersionId of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionId")
-    String versionId;
+    private final String versionId;
+
+    public String getVersionId() {
+        return versionId;
+    }
 
     /**
      * This flag will indicate if the version is deleted or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleteMarker")
-    Boolean isDeleteMarker;
+    private final Boolean isDeleteMarker;
+
+    public Boolean getIsDeleteMarker() {
+        return isDeleteMarker;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectVersionSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", size=").append(String.valueOf(this.size));
+        sb.append(", md5=").append(String.valueOf(this.md5));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeModified=").append(String.valueOf(this.timeModified));
+        sb.append(", etag=").append(String.valueOf(this.etag));
+        sb.append(", storageTier=").append(String.valueOf(this.storageTier));
+        sb.append(", archivalState=").append(String.valueOf(this.archivalState));
+        sb.append(", versionId=").append(String.valueOf(this.versionId));
+        sb.append(", isDeleteMarker=").append(String.valueOf(this.isDeleteMarker));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectVersionSummary)) {
+            return false;
+        }
+
+        ObjectVersionSummary other = (ObjectVersionSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(this.md5, other.md5)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeModified, other.timeModified)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.storageTier, other.storageTier)
+                && java.util.Objects.equals(this.archivalState, other.archivalState)
+                && java.util.Objects.equals(this.versionId, other.versionId)
+                && java.util.Objects.equals(this.isDeleteMarker, other.isDeleteMarker)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result = (result * PRIME) + (this.md5 == null ? 43 : this.md5.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeModified == null ? 43 : this.timeModified.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.storageTier == null ? 43 : this.storageTier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.archivalState == null ? 43 : this.archivalState.hashCode());
+        result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDeleteMarker == null ? 43 : this.isDeleteMarker.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

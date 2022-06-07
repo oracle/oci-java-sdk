@@ -15,16 +15,21 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ClientCredentialsResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClientCredentialsResponse {
+public final class ClientCredentialsResponse {
+    @Deprecated
+    @java.beans.ConstructorProperties({"accessToken", "tokenType", "expiresIn"})
+    public ClientCredentialsResponse(String accessToken, String tokenType, String expiresIn) {
+        super();
+        this.accessToken = accessToken;
+        this.tokenType = tokenType;
+        this.expiresIn = expiresIn;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("access_token")
         private String accessToken;
@@ -82,24 +87,85 @@ public class ClientCredentialsResponse {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The access token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("access_token")
-    String accessToken;
+    private final String accessToken;
+
+    public String getAccessToken() {
+        return accessToken;
+    }
 
     /**
      * The token type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("token_type")
-    String tokenType;
+    private final String tokenType;
+
+    public String getTokenType() {
+        return tokenType;
+    }
 
     /**
      * The amount of time until the token expires.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expires_in")
-    String expiresIn;
+    private final String expiresIn;
+
+    public String getExpiresIn() {
+        return expiresIn;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClientCredentialsResponse(");
+        sb.append("accessToken=").append(String.valueOf(this.accessToken));
+        sb.append(", tokenType=").append(String.valueOf(this.tokenType));
+        sb.append(", expiresIn=").append(String.valueOf(this.expiresIn));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClientCredentialsResponse)) {
+            return false;
+        }
+
+        ClientCredentialsResponse other = (ClientCredentialsResponse) o;
+        return java.util.Objects.equals(this.accessToken, other.accessToken)
+                && java.util.Objects.equals(this.tokenType, other.tokenType)
+                && java.util.Objects.equals(this.expiresIn, other.expiresIn)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.accessToken == null ? 43 : this.accessToken.hashCode());
+        result = (result * PRIME) + (this.tokenType == null ? 43 : this.tokenType.hashCode());
+        result = (result * PRIME) + (this.expiresIn == null ? 43 : this.expiresIn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

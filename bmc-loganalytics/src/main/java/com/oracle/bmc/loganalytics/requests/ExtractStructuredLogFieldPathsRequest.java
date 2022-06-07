@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExtractStructuredLogFieldPathsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ExtractStructuredLogFieldPathsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ExtractStructuredLogFieldPathsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.LogAnalyticsParser> {
@@ -27,11 +19,17 @@ public class ExtractStructuredLogFieldPathsRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * parser definition
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsParser loganParserDetails;
 
+    public com.oracle.bmc.loganalytics.model.LogAnalyticsParser getLoganParserDetails() {
+        return loganParserDetails;
+    }
     /**
      * The parser type - possible values are XML, JSON or DELIMITED.
      */
@@ -73,6 +71,10 @@ public class ExtractStructuredLogFieldPathsRequest
             throw new IllegalArgumentException("Invalid ParserType: " + key);
         }
     };
+
+    public ParserType getParserType() {
+        return parserType;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -83,10 +85,17 @@ public class ExtractStructuredLogFieldPathsRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -110,6 +119,68 @@ public class ExtractStructuredLogFieldPathsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.LogAnalyticsParser loganParserDetails = null;
+
+        /**
+         * parser definition
+         * @return this builder instance
+         */
+        public Builder loganParserDetails(
+                com.oracle.bmc.loganalytics.model.LogAnalyticsParser loganParserDetails) {
+            this.loganParserDetails = loganParserDetails;
+            return this;
+        }
+
+        private ParserType parserType = null;
+
+        /**
+         * The parser type - possible values are XML, JSON or DELIMITED.
+         * @return this builder instance
+         */
+        public Builder parserType(ParserType parserType) {
+            this.parserType = parserType;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -176,5 +247,93 @@ public class ExtractStructuredLogFieldPathsRequest
             loganParserDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ExtractStructuredLogFieldPathsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ExtractStructuredLogFieldPathsRequest
+         */
+        public ExtractStructuredLogFieldPathsRequest buildWithoutInvocationCallback() {
+            ExtractStructuredLogFieldPathsRequest request =
+                    new ExtractStructuredLogFieldPathsRequest();
+            request.namespaceName = namespaceName;
+            request.loganParserDetails = loganParserDetails;
+            request.parserType = parserType;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ExtractStructuredLogFieldPathsRequest(namespaceName, loganParserDetails, parserType, opcRetryToken, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .loganParserDetails(loganParserDetails)
+                .parserType(parserType)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",loganParserDetails=").append(String.valueOf(this.loganParserDetails));
+        sb.append(",parserType=").append(String.valueOf(this.parserType));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExtractStructuredLogFieldPathsRequest)) {
+            return false;
+        }
+
+        ExtractStructuredLogFieldPathsRequest other = (ExtractStructuredLogFieldPathsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.loganParserDetails, other.loganParserDetails)
+                && java.util.Objects.equals(this.parserType, other.parserType)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loganParserDetails == null
+                                ? 43
+                                : this.loganParserDetails.hashCode());
+        result = (result * PRIME) + (this.parserType == null ? 43 : this.parserType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

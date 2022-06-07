@@ -15,14 +15,47 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Publisher.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Publisher {
+public final class Publisher {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "description",
+        "yearFounded",
+        "websiteUrl",
+        "contactEmail",
+        "contactPhone",
+        "hqAddress",
+        "logo",
+        "links"
+    })
+    public Publisher(
+            String id,
+            String name,
+            String description,
+            Long yearFounded,
+            String websiteUrl,
+            String contactEmail,
+            String contactPhone,
+            String hqAddress,
+            UploadData logo,
+            java.util.List<Link> links) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.yearFounded = yearFounded;
+        this.websiteUrl = websiteUrl;
+        this.contactEmail = contactEmail;
+        this.contactPhone = contactPhone;
+        this.hqAddress = hqAddress;
+        this.logo = logo;
+        this.links = links;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -160,63 +193,173 @@ public class Publisher {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier for the publisher.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the publisher.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A description of the publisher.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The year the publisher's company or organization was founded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("yearFounded")
-    Long yearFounded;
+    private final Long yearFounded;
+
+    public Long getYearFounded() {
+        return yearFounded;
+    }
 
     /**
      * The publisher's website.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("websiteUrl")
-    String websiteUrl;
+    private final String websiteUrl;
+
+    public String getWebsiteUrl() {
+        return websiteUrl;
+    }
 
     /**
      * The email address of the publisher.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
-    String contactEmail;
+    private final String contactEmail;
+
+    public String getContactEmail() {
+        return contactEmail;
+    }
 
     /**
      * The phone number of the publisher.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
-    String contactPhone;
+    private final String contactPhone;
+
+    public String getContactPhone() {
+        return contactPhone;
+    }
 
     /**
      * The address of the publisher's headquarters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hqAddress")
-    String hqAddress;
+    private final String hqAddress;
+
+    public String getHqAddress() {
+        return hqAddress;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("logo")
-    UploadData logo;
+    private final UploadData logo;
+
+    public UploadData getLogo() {
+        return logo;
+    }
 
     /**
      * Reference links.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("links")
-    java.util.List<Link> links;
+    private final java.util.List<Link> links;
+
+    public java.util.List<Link> getLinks() {
+        return links;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Publisher(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", yearFounded=").append(String.valueOf(this.yearFounded));
+        sb.append(", websiteUrl=").append(String.valueOf(this.websiteUrl));
+        sb.append(", contactEmail=").append(String.valueOf(this.contactEmail));
+        sb.append(", contactPhone=").append(String.valueOf(this.contactPhone));
+        sb.append(", hqAddress=").append(String.valueOf(this.hqAddress));
+        sb.append(", logo=").append(String.valueOf(this.logo));
+        sb.append(", links=").append(String.valueOf(this.links));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Publisher)) {
+            return false;
+        }
+
+        Publisher other = (Publisher) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.yearFounded, other.yearFounded)
+                && java.util.Objects.equals(this.websiteUrl, other.websiteUrl)
+                && java.util.Objects.equals(this.contactEmail, other.contactEmail)
+                && java.util.Objects.equals(this.contactPhone, other.contactPhone)
+                && java.util.Objects.equals(this.hqAddress, other.hqAddress)
+                && java.util.Objects.equals(this.logo, other.logo)
+                && java.util.Objects.equals(this.links, other.links)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.yearFounded == null ? 43 : this.yearFounded.hashCode());
+        result = (result * PRIME) + (this.websiteUrl == null ? 43 : this.websiteUrl.hashCode());
+        result = (result * PRIME) + (this.contactEmail == null ? 43 : this.contactEmail.hashCode());
+        result = (result * PRIME) + (this.contactPhone == null ? 43 : this.contactPhone.hashCode());
+        result = (result * PRIME) + (this.hqAddress == null ? 43 : this.hqAddress.hashCode());
+        result = (result * PRIME) + (this.logo == null ? 43 : this.logo.hashCode());
+        result = (result * PRIME) + (this.links == null ? 43 : this.links.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

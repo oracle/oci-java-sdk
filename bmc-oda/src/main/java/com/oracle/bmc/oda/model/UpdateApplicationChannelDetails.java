@@ -15,22 +15,17 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateApplicationChannelDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateApplicationChannelDetails extends UpdateChannelDetails {
+public final class UpdateApplicationChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -127,6 +122,10 @@ public class UpdateApplicationChannelDetails extends UpdateChannelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateApplicationChannelDetails(
             String description,
@@ -144,14 +143,70 @@ public class UpdateApplicationChannelDetails extends UpdateChannelDetails {
      * The URL to send response and error messages to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
-    String outboundUrl;
+    private final String outboundUrl;
+
+    public String getOutboundUrl() {
+        return outboundUrl;
+    }
 
     /**
      * True if the user id in the AIC message should be treated as an authenticated user id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAuthenticatedUserId")
-    Boolean isAuthenticatedUserId;
+    private final Boolean isAuthenticatedUserId;
+
+    public Boolean getIsAuthenticatedUserId() {
+        return isAuthenticatedUserId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateApplicationChannelDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
+        sb.append(", isAuthenticatedUserId=").append(String.valueOf(this.isAuthenticatedUserId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateApplicationChannelDetails)) {
+            return false;
+        }
+
+        UpdateApplicationChannelDetails other = (UpdateApplicationChannelDetails) o;
+        return java.util.Objects.equals(this.outboundUrl, other.outboundUrl)
+                && java.util.Objects.equals(this.isAuthenticatedUserId, other.isAuthenticatedUserId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.outboundUrl == null ? 43 : this.outboundUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAuthenticatedUserId == null
+                                ? 43
+                                : this.isAuthenticatedUserId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

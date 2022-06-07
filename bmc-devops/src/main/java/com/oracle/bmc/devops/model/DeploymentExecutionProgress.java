@@ -15,16 +15,28 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeploymentExecutionProgress.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeploymentExecutionProgress {
+public final class DeploymentExecutionProgress {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeStarted",
+        "timeFinished",
+        "deployStageExecutionProgress"
+    })
+    public DeploymentExecutionProgress(
+            java.util.Date timeStarted,
+            java.util.Date timeFinished,
+            java.util.Map<String, DeployStageExecutionProgress> deployStageExecutionProgress) {
+        super();
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
+        this.deployStageExecutionProgress = deployStageExecutionProgress;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
@@ -84,24 +96,91 @@ public class DeploymentExecutionProgress {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
 
     /**
      * Map of stage OCIDs to deploy stage execution progress model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageExecutionProgress")
-    java.util.Map<String, DeployStageExecutionProgress> deployStageExecutionProgress;
+    private final java.util.Map<String, DeployStageExecutionProgress> deployStageExecutionProgress;
+
+    public java.util.Map<String, DeployStageExecutionProgress> getDeployStageExecutionProgress() {
+        return deployStageExecutionProgress;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeploymentExecutionProgress(");
+        sb.append("timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", deployStageExecutionProgress=")
+                .append(String.valueOf(this.deployStageExecutionProgress));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeploymentExecutionProgress)) {
+            return false;
+        }
+
+        DeploymentExecutionProgress other = (DeploymentExecutionProgress) o;
+        return java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(
+                        this.deployStageExecutionProgress, other.deployStageExecutionProgress)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployStageExecutionProgress == null
+                                ? 43
+                                : this.deployStageExecutionProgress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

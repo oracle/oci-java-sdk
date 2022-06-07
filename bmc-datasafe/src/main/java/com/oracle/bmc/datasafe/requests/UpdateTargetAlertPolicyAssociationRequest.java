@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateTargetAlertPolicyAssociationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTargetAlertPolicyAssociationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateTargetAlertPolicyAssociationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateTargetAlertPolicyAssociationDetails> {
@@ -26,12 +18,19 @@ public class UpdateTargetAlertPolicyAssociationRequest
      */
     private String targetAlertPolicyAssociationId;
 
+    public String getTargetAlertPolicyAssociationId() {
+        return targetAlertPolicyAssociationId;
+    }
     /**
      * The details used to update the target-alert policy association.
      */
     private com.oracle.bmc.datasafe.model.UpdateTargetAlertPolicyAssociationDetails
             updateTargetAlertPolicyAssociationDetails;
 
+    public com.oracle.bmc.datasafe.model.UpdateTargetAlertPolicyAssociationDetails
+            getUpdateTargetAlertPolicyAssociationDetails() {
+        return updateTargetAlertPolicyAssociationDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the if-match parameter to the value of the
@@ -42,10 +41,17 @@ public class UpdateTargetAlertPolicyAssociationRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +70,59 @@ public class UpdateTargetAlertPolicyAssociationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String targetAlertPolicyAssociationId = null;
+
+        /**
+         * The OCID of the target-alert policy association.
+         * @return this builder instance
+         */
+        public Builder targetAlertPolicyAssociationId(String targetAlertPolicyAssociationId) {
+            this.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.UpdateTargetAlertPolicyAssociationDetails
+                updateTargetAlertPolicyAssociationDetails = null;
+
+        /**
+         * The details used to update the target-alert policy association.
+         * @return this builder instance
+         */
+        public Builder updateTargetAlertPolicyAssociationDetails(
+                com.oracle.bmc.datasafe.model.UpdateTargetAlertPolicyAssociationDetails
+                        updateTargetAlertPolicyAssociationDetails) {
+            this.updateTargetAlertPolicyAssociationDetails =
+                    updateTargetAlertPolicyAssociationDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -131,5 +190,96 @@ public class UpdateTargetAlertPolicyAssociationRequest
             updateTargetAlertPolicyAssociationDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateTargetAlertPolicyAssociationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateTargetAlertPolicyAssociationRequest
+         */
+        public UpdateTargetAlertPolicyAssociationRequest buildWithoutInvocationCallback() {
+            UpdateTargetAlertPolicyAssociationRequest request =
+                    new UpdateTargetAlertPolicyAssociationRequest();
+            request.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
+            request.updateTargetAlertPolicyAssociationDetails =
+                    updateTargetAlertPolicyAssociationDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateTargetAlertPolicyAssociationRequest(targetAlertPolicyAssociationId, updateTargetAlertPolicyAssociationDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .targetAlertPolicyAssociationId(targetAlertPolicyAssociationId)
+                .updateTargetAlertPolicyAssociationDetails(
+                        updateTargetAlertPolicyAssociationDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",targetAlertPolicyAssociationId=")
+                .append(String.valueOf(this.targetAlertPolicyAssociationId));
+        sb.append(",updateTargetAlertPolicyAssociationDetails=")
+                .append(String.valueOf(this.updateTargetAlertPolicyAssociationDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTargetAlertPolicyAssociationRequest)) {
+            return false;
+        }
+
+        UpdateTargetAlertPolicyAssociationRequest other =
+                (UpdateTargetAlertPolicyAssociationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.targetAlertPolicyAssociationId, other.targetAlertPolicyAssociationId)
+                && java.util.Objects.equals(
+                        this.updateTargetAlertPolicyAssociationDetails,
+                        other.updateTargetAlertPolicyAssociationDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.targetAlertPolicyAssociationId == null
+                                ? 43
+                                : this.targetAlertPolicyAssociationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateTargetAlertPolicyAssociationDetails == null
+                                ? 43
+                                : this.updateTargetAlertPolicyAssociationDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

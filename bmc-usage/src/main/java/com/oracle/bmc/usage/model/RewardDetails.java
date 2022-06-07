@@ -15,14 +15,35 @@ package com.oracle.bmc.usage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RewardDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RewardDetails {
+public final class RewardDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tenancyId",
+        "subscriptionId",
+        "currency",
+        "rewardsRate",
+        "totalRewardsAvailable",
+        "redemptionCode"
+    })
+    public RewardDetails(
+            String tenancyId,
+            String subscriptionId,
+            String currency,
+            Double rewardsRate,
+            Float totalRewardsAvailable,
+            String redemptionCode) {
+        super();
+        this.tenancyId = tenancyId;
+        this.subscriptionId = subscriptionId;
+        this.currency = currency;
+        this.rewardsRate = rewardsRate;
+        this.totalRewardsAvailable = totalRewardsAvailable;
+        this.redemptionCode = redemptionCode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
@@ -116,42 +137,132 @@ public class RewardDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the target tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    String tenancyId;
+    private final String tenancyId;
+
+    public String getTenancyId() {
+        return tenancyId;
+    }
 
     /**
      * The entitlement ID from MQS, which is the same as the subcription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
-    String subscriptionId;
+    private final String subscriptionId;
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
 
     /**
      * The currency unit for the reward amount.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
-    String currency;
+    private final String currency;
+
+    public String getCurrency() {
+        return currency;
+    }
 
     /**
      * The current Rewards percentage in decimal format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rewardsRate")
-    Double rewardsRate;
+    private final Double rewardsRate;
+
+    public Double getRewardsRate() {
+        return rewardsRate;
+    }
 
     /**
      * The total number of available rewards for a given subscription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalRewardsAvailable")
-    Float totalRewardsAvailable;
+    private final Float totalRewardsAvailable;
+
+    public Float getTotalRewardsAvailable() {
+        return totalRewardsAvailable;
+    }
 
     /**
      * The redemption code used in the billing center during the reward redemption process
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
-    String redemptionCode;
+    private final String redemptionCode;
+
+    public String getRedemptionCode() {
+        return redemptionCode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RewardDetails(");
+        sb.append("tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", currency=").append(String.valueOf(this.currency));
+        sb.append(", rewardsRate=").append(String.valueOf(this.rewardsRate));
+        sb.append(", totalRewardsAvailable=").append(String.valueOf(this.totalRewardsAvailable));
+        sb.append(", redemptionCode=").append(String.valueOf(this.redemptionCode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RewardDetails)) {
+            return false;
+        }
+
+        RewardDetails other = (RewardDetails) o;
+        return java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.currency, other.currency)
+                && java.util.Objects.equals(this.rewardsRate, other.rewardsRate)
+                && java.util.Objects.equals(this.totalRewardsAvailable, other.totalRewardsAvailable)
+                && java.util.Objects.equals(this.redemptionCode, other.redemptionCode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result = (result * PRIME) + (this.currency == null ? 43 : this.currency.hashCode());
+        result = (result * PRIME) + (this.rewardsRate == null ? 43 : this.rewardsRate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalRewardsAvailable == null
+                                ? 43
+                                : this.totalRewardsAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.redemptionCode == null ? 43 : this.redemptionCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

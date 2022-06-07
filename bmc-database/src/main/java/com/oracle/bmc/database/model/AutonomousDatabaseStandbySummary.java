@@ -16,16 +16,31 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousDatabaseStandbySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousDatabaseStandbySummary {
+public final class AutonomousDatabaseStandbySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "lagTimeInSeconds",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeDataGuardRoleChanged"
+    })
+    public AutonomousDatabaseStandbySummary(
+            Integer lagTimeInSeconds,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeDataGuardRoleChanged) {
+        super();
+        this.lagTimeInSeconds = lagTimeInSeconds;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("lagTimeInSeconds")
         private Integer lagTimeInSeconds;
@@ -97,15 +112,23 @@ public class AutonomousDatabaseStandbySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lagTimeInSeconds")
-    Integer lagTimeInSeconds;
+    private final Integer lagTimeInSeconds;
+
+    public Integer getLagTimeInSeconds() {
+        return lagTimeInSeconds;
+    }
+
     /**
      * The current state of the Autonomous Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -134,6 +157,9 @@ public class AutonomousDatabaseStandbySummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -171,20 +197,92 @@ public class AutonomousDatabaseStandbySummary {
      * The current state of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
-    java.util.Date timeDataGuardRoleChanged;
+    private final java.util.Date timeDataGuardRoleChanged;
+
+    public java.util.Date getTimeDataGuardRoleChanged() {
+        return timeDataGuardRoleChanged;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousDatabaseStandbySummary(");
+        sb.append("lagTimeInSeconds=").append(String.valueOf(this.lagTimeInSeconds));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeDataGuardRoleChanged=")
+                .append(String.valueOf(this.timeDataGuardRoleChanged));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousDatabaseStandbySummary)) {
+            return false;
+        }
+
+        AutonomousDatabaseStandbySummary other = (AutonomousDatabaseStandbySummary) o;
+        return java.util.Objects.equals(this.lagTimeInSeconds, other.lagTimeInSeconds)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.timeDataGuardRoleChanged, other.timeDataGuardRoleChanged)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.lagTimeInSeconds == null ? 43 : this.lagTimeInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataGuardRoleChanged == null
+                                ? 43
+                                : this.timeDataGuardRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

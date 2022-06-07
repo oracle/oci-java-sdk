@@ -15,16 +15,24 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PeComanagedDatabaseConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PeComanagedDatabaseConnectionDetails {
+public final class PeComanagedDatabaseConnectionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"hosts", "protocol", "serviceName"})
+    public PeComanagedDatabaseConnectionDetails(
+            java.util.List<PeComanagedDatabaseHostDetails> hosts,
+            Protocol protocol,
+            String serviceName) {
+        super();
+        this.hosts = hosts;
+        this.protocol = protocol;
+        this.serviceName = serviceName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<PeComanagedDatabaseHostDetails> hosts;
@@ -80,15 +88,23 @@ public class PeComanagedDatabaseConnectionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of hosts and port for private endpoint accessed database resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
-    java.util.List<PeComanagedDatabaseHostDetails> hosts;
+    private final java.util.List<PeComanagedDatabaseHostDetails> hosts;
+
+    public java.util.List<PeComanagedDatabaseHostDetails> getHosts() {
+        return hosts;
+    }
+
     /**
      * Protocol used for connection requests for private endpoint accssed database resource.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Protocol {
         Tcp("TCP"),
         Tcps("TCPS"),
@@ -98,6 +114,9 @@ public class PeComanagedDatabaseConnectionDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Protocol.class);
 
         private final String value;
         private static java.util.Map<String, Protocol> map;
@@ -135,14 +154,67 @@ public class PeComanagedDatabaseConnectionDetails {
      * Protocol used for connection requests for private endpoint accssed database resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    Protocol protocol;
+    private final Protocol protocol;
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
 
     /**
      * Database service name used for connection requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PeComanagedDatabaseConnectionDetails(");
+        sb.append("hosts=").append(String.valueOf(this.hosts));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PeComanagedDatabaseConnectionDetails)) {
+            return false;
+        }
+
+        PeComanagedDatabaseConnectionDetails other = (PeComanagedDatabaseConnectionDetails) o;
+        return java.util.Objects.equals(this.hosts, other.hosts)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hosts == null ? 43 : this.hosts.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

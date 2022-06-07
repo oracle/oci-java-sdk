@@ -15,16 +15,43 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GenerateReportDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GenerateReportDetails {
+public final class GenerateReportDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "targetIds",
+        "description",
+        "compartmentId",
+        "mimeType",
+        "timeLessThan",
+        "timeGreaterThan",
+        "rowLimit"
+    })
+    public GenerateReportDetails(
+            String displayName,
+            java.util.List<String> targetIds,
+            String description,
+            String compartmentId,
+            MimeType mimeType,
+            java.util.Date timeLessThan,
+            java.util.Date timeGreaterThan,
+            Integer rowLimit) {
+        super();
+        this.displayName = displayName;
+        this.targetIds = targetIds;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.mimeType = mimeType;
+        this.timeLessThan = timeLessThan;
+        this.timeGreaterThan = timeGreaterThan;
+        this.rowLimit = rowLimit;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -140,23 +167,39 @@ public class GenerateReportDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the report to be generated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Array of database target OCIDs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
-    java.util.List<String> targetIds;
+    private final java.util.List<String> targetIds;
+
+    public java.util.List<String> getTargetIds() {
+        return targetIds;
+    }
 
     /**
      * The description of the report to be generated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
@@ -164,7 +207,12 @@ public class GenerateReportDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * Specifies the format of report to be excel or pdf
      **/
@@ -204,26 +252,106 @@ public class GenerateReportDetails {
      * Specifies the format of report to be excel or pdf
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
-    MimeType mimeType;
+    private final MimeType mimeType;
+
+    public MimeType getMimeType() {
+        return mimeType;
+    }
 
     /**
      * Specifies the time before which the data needs to be reported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLessThan")
-    java.util.Date timeLessThan;
+    private final java.util.Date timeLessThan;
+
+    public java.util.Date getTimeLessThan() {
+        return timeLessThan;
+    }
 
     /**
      * Specifies the time after which the data needs to be reported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeGreaterThan")
-    java.util.Date timeGreaterThan;
+    private final java.util.Date timeGreaterThan;
+
+    public java.util.Date getTimeGreaterThan() {
+        return timeGreaterThan;
+    }
 
     /**
      * Specifies the limit on number of rows in report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
-    Integer rowLimit;
+    private final Integer rowLimit;
+
+    public Integer getRowLimit() {
+        return rowLimit;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GenerateReportDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", targetIds=").append(String.valueOf(this.targetIds));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", mimeType=").append(String.valueOf(this.mimeType));
+        sb.append(", timeLessThan=").append(String.valueOf(this.timeLessThan));
+        sb.append(", timeGreaterThan=").append(String.valueOf(this.timeGreaterThan));
+        sb.append(", rowLimit=").append(String.valueOf(this.rowLimit));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateReportDetails)) {
+            return false;
+        }
+
+        GenerateReportDetails other = (GenerateReportDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.targetIds, other.targetIds)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.mimeType, other.mimeType)
+                && java.util.Objects.equals(this.timeLessThan, other.timeLessThan)
+                && java.util.Objects.equals(this.timeGreaterThan, other.timeGreaterThan)
+                && java.util.Objects.equals(this.rowLimit, other.rowLimit)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
+        result = (result * PRIME) + (this.timeLessThan == null ? 43 : this.timeLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeGreaterThan == null ? 43 : this.timeGreaterThan.hashCode());
+        result = (result * PRIME) + (this.rowLimit == null ? 43 : this.rowLimit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.networkloadbalancer.responses;
 import com.oracle.bmc.networkloadbalancer.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListNetworkLoadBalancersProtocolsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -21,6 +17,10 @@ public class ListNetworkLoadBalancersProtocolsResponse
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact
      * Oracle about a particular request, then provide the request identifier.
@@ -28,11 +28,20 @@ public class ListNetworkLoadBalancersProtocolsResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned NetworkLoadBalancersProtocolCollection instance.
      */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
             networkLoadBalancersProtocolCollection;
+
+    public com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
+            getNetworkLoadBalancersProtocolCollection() {
+        return networkLoadBalancersProtocolCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -60,6 +69,30 @@ public class ListNetworkLoadBalancersProtocolsResponse
             return this;
         }
 
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
+                networkLoadBalancersProtocolCollection;
+
+        public Builder networkLoadBalancersProtocolCollection(
+                com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
+                        networkLoadBalancersProtocolCollection) {
+            this.networkLoadBalancersProtocolCollection = networkLoadBalancersProtocolCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -80,5 +113,55 @@ public class ListNetworkLoadBalancersProtocolsResponse
                     opcRequestId,
                     networkLoadBalancersProtocolCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",networkLoadBalancersProtocolCollection=")
+                .append(String.valueOf(networkLoadBalancersProtocolCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListNetworkLoadBalancersProtocolsResponse)) {
+            return false;
+        }
+
+        ListNetworkLoadBalancersProtocolsResponse other =
+                (ListNetworkLoadBalancersProtocolsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.networkLoadBalancersProtocolCollection,
+                        other.networkLoadBalancersProtocolCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkLoadBalancersProtocolCollection == null
+                                ? 43
+                                : this.networkLoadBalancersProtocolCollection.hashCode());
+        return result;
     }
 }

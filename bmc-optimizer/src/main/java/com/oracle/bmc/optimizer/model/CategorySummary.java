@@ -16,14 +16,50 @@ package com.oracle.bmc.optimizer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CategorySummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CategorySummary {
+public final class CategorySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "name",
+        "description",
+        "recommendationCounts",
+        "resourceCounts",
+        "lifecycleState",
+        "estimatedCostSaving",
+        "timeCreated",
+        "timeUpdated",
+        "extendedMetadata"
+    })
+    public CategorySummary(
+            String id,
+            String compartmentId,
+            String name,
+            String description,
+            java.util.List<RecommendationCount> recommendationCounts,
+            java.util.List<ResourceCount> resourceCounts,
+            LifecycleState lifecycleState,
+            Double estimatedCostSaving,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.Map<String, String> extendedMetadata) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.description = description;
+        this.recommendationCounts = recommendationCounts;
+        this.resourceCounts = resourceCounts;
+        this.lifecycleState = lifecycleState;
+        this.estimatedCostSaving = estimatedCostSaving;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.extendedMetadata = extendedMetadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -173,65 +209,109 @@ public class CategorySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique OCID of the category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name assigned to the category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Text describing the category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * An array of {@code RecommendationCount} objects grouped by the level of importance assigned to each recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationCounts")
-    java.util.List<RecommendationCount> recommendationCounts;
+    private final java.util.List<RecommendationCount> recommendationCounts;
+
+    public java.util.List<RecommendationCount> getRecommendationCounts() {
+        return recommendationCounts;
+    }
 
     /**
      * An array of {@code ResourceCount} objects grouped by the status of each recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCounts")
-    java.util.List<ResourceCount> resourceCounts;
+    private final java.util.List<ResourceCount> resourceCounts;
+
+    public java.util.List<ResourceCount> getResourceCounts() {
+        return resourceCounts;
+    }
 
     /**
      * The category's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The estimated cost savings, in dollars, for the category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedCostSaving")
-    Double estimatedCostSaving;
+    private final Double estimatedCostSaving;
+
+    public Double getEstimatedCostSaving() {
+        return estimatedCostSaving;
+    }
 
     /**
      * The date and time the category details were created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the category details were last updated, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Additional metadata key/value pairs for the category summary.
@@ -242,8 +322,97 @@ public class CategorySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
-    java.util.Map<String, String> extendedMetadata;
+    private final java.util.Map<String, String> extendedMetadata;
+
+    public java.util.Map<String, String> getExtendedMetadata() {
+        return extendedMetadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CategorySummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", recommendationCounts=").append(String.valueOf(this.recommendationCounts));
+        sb.append(", resourceCounts=").append(String.valueOf(this.resourceCounts));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", estimatedCostSaving=").append(String.valueOf(this.estimatedCostSaving));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CategorySummary)) {
+            return false;
+        }
+
+        CategorySummary other = (CategorySummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.recommendationCounts, other.recommendationCounts)
+                && java.util.Objects.equals(this.resourceCounts, other.resourceCounts)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.estimatedCostSaving, other.estimatedCostSaving)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendationCounts == null
+                                ? 43
+                                : this.recommendationCounts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCounts == null ? 43 : this.resourceCounts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.estimatedCostSaving == null
+                                ? 43
+                                : this.estimatedCostSaving.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

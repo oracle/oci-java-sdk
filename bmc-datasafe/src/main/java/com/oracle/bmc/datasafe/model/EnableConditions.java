@@ -15,14 +15,29 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EnableConditions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EnableConditions {
+public final class EnableConditions {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "entitySelection",
+        "entityType",
+        "operationStatus",
+        "entityNames"
+    })
+    public EnableConditions(
+            EntitySelection entitySelection,
+            EntityType entityType,
+            OperationStatus operationStatus,
+            java.util.List<String> entityNames) {
+        super();
+        this.entitySelection = entitySelection;
+        this.entityType = entityType;
+        this.operationStatus = operationStatus;
+        this.entityNames = entityNames;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("entitySelection")
         private EntitySelection entitySelection;
@@ -90,10 +105,13 @@ public class EnableConditions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The entity include or exclude selection.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EntitySelection {
         Include("INCLUDE"),
         Exclude("EXCLUDE"),
@@ -103,6 +121,9 @@ public class EnableConditions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EntitySelection.class);
 
         private final String value;
         private static java.util.Map<String, EntitySelection> map;
@@ -140,11 +161,15 @@ public class EnableConditions {
      * The entity include or exclude selection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entitySelection")
-    EntitySelection entitySelection;
+    private final EntitySelection entitySelection;
+
+    public EntitySelection getEntitySelection() {
+        return entitySelection;
+    }
+
     /**
      * The entity type that the policy must be enabled for.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EntityType {
         User("USER"),
         Role("ROLE"),
@@ -155,6 +180,9 @@ public class EnableConditions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EntityType.class);
 
         private final String value;
         private static java.util.Map<String, EntityType> map;
@@ -192,11 +220,15 @@ public class EnableConditions {
      * The entity type that the policy must be enabled for.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    EntityType entityType;
+    private final EntityType entityType;
+
+    public EntityType getEntityType() {
+        return entityType;
+    }
+
     /**
      * The operation status that the policy must be enabled for.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OperationStatus {
         Success("SUCCESS"),
         Failure("FAILURE"),
@@ -207,6 +239,9 @@ public class EnableConditions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OperationStatus.class);
 
         private final String value;
         private static java.util.Map<String, OperationStatus> map;
@@ -244,14 +279,74 @@ public class EnableConditions {
      * The operation status that the policy must be enabled for.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
-    OperationStatus operationStatus;
+    private final OperationStatus operationStatus;
+
+    public OperationStatus getOperationStatus() {
+        return operationStatus;
+    }
 
     /**
      * List of users or roles that the policy must be enabled for.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityNames")
-    java.util.List<String> entityNames;
+    private final java.util.List<String> entityNames;
+
+    public java.util.List<String> getEntityNames() {
+        return entityNames;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EnableConditions(");
+        sb.append("entitySelection=").append(String.valueOf(this.entitySelection));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", operationStatus=").append(String.valueOf(this.operationStatus));
+        sb.append(", entityNames=").append(String.valueOf(this.entityNames));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EnableConditions)) {
+            return false;
+        }
+
+        EnableConditions other = (EnableConditions) o;
+        return java.util.Objects.equals(this.entitySelection, other.entitySelection)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.operationStatus, other.operationStatus)
+                && java.util.Objects.equals(this.entityNames, other.entityNames)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.entitySelection == null ? 43 : this.entitySelection.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationStatus == null ? 43 : this.operationStatus.hashCode());
+        result = (result * PRIME) + (this.entityNames == null ? 43 : this.entityNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,46 @@ package com.oracle.bmc.limits.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LimitDefinitionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LimitDefinitionSummary {
+public final class LimitDefinitionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "serviceName",
+        "description",
+        "scopeType",
+        "areQuotasSupported",
+        "isResourceAvailabilitySupported",
+        "isDeprecated",
+        "isEligibleForLimitIncrease",
+        "isDynamic"
+    })
+    public LimitDefinitionSummary(
+            String name,
+            String serviceName,
+            String description,
+            ScopeType scopeType,
+            Boolean areQuotasSupported,
+            Boolean isResourceAvailabilitySupported,
+            Boolean isDeprecated,
+            Boolean isEligibleForLimitIncrease,
+            Boolean isDynamic) {
+        super();
+        this.name = name;
+        this.serviceName = serviceName;
+        this.description = description;
+        this.scopeType = scopeType;
+        this.areQuotasSupported = areQuotasSupported;
+        this.isResourceAvailabilitySupported = isResourceAvailabilitySupported;
+        this.isDeprecated = isDeprecated;
+        this.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
+        this.isDynamic = isDynamic;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -151,29 +181,45 @@ public class LimitDefinitionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The service name of the limit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * The limit description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
     /**
      * Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ScopeType {
         Global("GLOBAL"),
         Region("REGION"),
@@ -184,6 +230,9 @@ public class LimitDefinitionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ScopeType.class);
 
         private final String value;
         private static java.util.Map<String, ScopeType> map;
@@ -222,14 +271,22 @@ public class LimitDefinitionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopeType")
-    ScopeType scopeType;
+    private final ScopeType scopeType;
+
+    public ScopeType getScopeType() {
+        return scopeType;
+    }
 
     /**
      * If true, quota policies can be created on top of this resource limit.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areQuotasSupported")
-    Boolean areQuotasSupported;
+    private final Boolean areQuotasSupported;
+
+    public Boolean getAreQuotasSupported() {
+        return areQuotasSupported;
+    }
 
     /**
      * Reflects whether or not the GetResourceAvailability API is supported for this limit.
@@ -237,29 +294,124 @@ public class LimitDefinitionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResourceAvailabilitySupported")
-    Boolean isResourceAvailabilitySupported;
+    private final Boolean isResourceAvailabilitySupported;
+
+    public Boolean getIsResourceAvailabilitySupported() {
+        return isResourceAvailabilitySupported;
+    }
 
     /**
      * Indicates if the limit has been deprecated.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
-    Boolean isDeprecated;
+    private final Boolean isDeprecated;
+
+    public Boolean getIsDeprecated() {
+        return isDeprecated;
+    }
 
     /**
      * Indicates if the customer can request a limit increase for this resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForLimitIncrease")
-    Boolean isEligibleForLimitIncrease;
+    private final Boolean isEligibleForLimitIncrease;
+
+    public Boolean getIsEligibleForLimitIncrease() {
+        return isEligibleForLimitIncrease;
+    }
 
     /**
      * The limit for this resource has a dynamic value that is based on consumption across all OCI services.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDynamic")
-    Boolean isDynamic;
+    private final Boolean isDynamic;
+
+    public Boolean getIsDynamic() {
+        return isDynamic;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LimitDefinitionSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", scopeType=").append(String.valueOf(this.scopeType));
+        sb.append(", areQuotasSupported=").append(String.valueOf(this.areQuotasSupported));
+        sb.append(", isResourceAvailabilitySupported=")
+                .append(String.valueOf(this.isResourceAvailabilitySupported));
+        sb.append(", isDeprecated=").append(String.valueOf(this.isDeprecated));
+        sb.append(", isEligibleForLimitIncrease=")
+                .append(String.valueOf(this.isEligibleForLimitIncrease));
+        sb.append(", isDynamic=").append(String.valueOf(this.isDynamic));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LimitDefinitionSummary)) {
+            return false;
+        }
+
+        LimitDefinitionSummary other = (LimitDefinitionSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.scopeType, other.scopeType)
+                && java.util.Objects.equals(this.areQuotasSupported, other.areQuotasSupported)
+                && java.util.Objects.equals(
+                        this.isResourceAvailabilitySupported, other.isResourceAvailabilitySupported)
+                && java.util.Objects.equals(this.isDeprecated, other.isDeprecated)
+                && java.util.Objects.equals(
+                        this.isEligibleForLimitIncrease, other.isEligibleForLimitIncrease)
+                && java.util.Objects.equals(this.isDynamic, other.isDynamic)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.scopeType == null ? 43 : this.scopeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areQuotasSupported == null
+                                ? 43
+                                : this.areQuotasSupported.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isResourceAvailabilitySupported == null
+                                ? 43
+                                : this.isResourceAvailabilitySupported.hashCode());
+        result = (result * PRIME) + (this.isDeprecated == null ? 43 : this.isDeprecated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEligibleForLimitIncrease == null
+                                ? 43
+                                : this.isEligibleForLimitIncrease.hashCode());
+        result = (result * PRIME) + (this.isDynamic == null ? 43 : this.isDynamic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

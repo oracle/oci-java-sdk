@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitPublicPrefixesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVirtualCircuitPublicPrefixesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListVirtualCircuitPublicPrefixesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class ListVirtualCircuitPublicPrefixesRequest
      */
     private String virtualCircuitId;
 
+    public String getVirtualCircuitId() {
+        return virtualCircuitId;
+    }
     /**
      * A filter to only return resources that match the given verification
      * state.
@@ -35,12 +30,46 @@ public class ListVirtualCircuitPublicPrefixesRequest
     private com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.VerificationState
             verificationState;
 
+    public com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.VerificationState
+            getVerificationState() {
+        return verificationState;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListVirtualCircuitPublicPrefixesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String virtualCircuitId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+         * @return this builder instance
+         */
+        public Builder virtualCircuitId(String virtualCircuitId) {
+            this.virtualCircuitId = virtualCircuitId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.VerificationState
+                verificationState = null;
+
+        /**
+         * A filter to only return resources that match the given verification
+         * state.
+         * <p>
+         * The state value is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder verificationState(
+                com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.VerificationState
+                        verificationState) {
+            this.verificationState = verificationState;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -93,5 +122,74 @@ public class ListVirtualCircuitPublicPrefixesRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListVirtualCircuitPublicPrefixesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListVirtualCircuitPublicPrefixesRequest
+         */
+        public ListVirtualCircuitPublicPrefixesRequest buildWithoutInvocationCallback() {
+            ListVirtualCircuitPublicPrefixesRequest request =
+                    new ListVirtualCircuitPublicPrefixesRequest();
+            request.virtualCircuitId = virtualCircuitId;
+            request.verificationState = verificationState;
+            return request;
+            // new ListVirtualCircuitPublicPrefixesRequest(virtualCircuitId, verificationState);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .virtualCircuitId(virtualCircuitId)
+                .verificationState(verificationState);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",virtualCircuitId=").append(String.valueOf(this.virtualCircuitId));
+        sb.append(",verificationState=").append(String.valueOf(this.verificationState));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListVirtualCircuitPublicPrefixesRequest)) {
+            return false;
+        }
+
+        ListVirtualCircuitPublicPrefixesRequest other = (ListVirtualCircuitPublicPrefixesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.virtualCircuitId, other.virtualCircuitId)
+                && java.util.Objects.equals(this.verificationState, other.verificationState);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.virtualCircuitId == null ? 43 : this.virtualCircuitId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.verificationState == null ? 43 : this.verificationState.hashCode());
+        return result;
     }
 }

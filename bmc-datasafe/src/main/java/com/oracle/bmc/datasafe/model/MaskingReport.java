@@ -17,14 +17,53 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MaskingReport.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MaskingReport {
+public final class MaskingReport {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "maskingWorkRequestId",
+        "maskingPolicyId",
+        "targetId",
+        "totalMaskedSensitiveTypes",
+        "totalMaskedSchemas",
+        "totalMaskedObjects",
+        "totalMaskedColumns",
+        "totalMaskedValues",
+        "timeMaskingStarted",
+        "timeMaskingFinished"
+    })
+    public MaskingReport(
+            String id,
+            String compartmentId,
+            String maskingWorkRequestId,
+            String maskingPolicyId,
+            String targetId,
+            Long totalMaskedSensitiveTypes,
+            Long totalMaskedSchemas,
+            Long totalMaskedObjects,
+            Long totalMaskedColumns,
+            Long totalMaskedValues,
+            java.util.Date timeMaskingStarted,
+            java.util.Date timeMaskingFinished) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.maskingWorkRequestId = maskingWorkRequestId;
+        this.maskingPolicyId = maskingPolicyId;
+        this.targetId = targetId;
+        this.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
+        this.totalMaskedSchemas = totalMaskedSchemas;
+        this.totalMaskedObjects = totalMaskedObjects;
+        this.totalMaskedColumns = totalMaskedColumns;
+        this.totalMaskedValues = totalMaskedValues;
+        this.timeMaskingStarted = timeMaskingStarted;
+        this.timeMaskingFinished = timeMaskingFinished;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -184,78 +223,238 @@ public class MaskingReport {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the masking report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment that contains the masking report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the masking work request that resulted in this masking report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingWorkRequestId")
-    String maskingWorkRequestId;
+    private final String maskingWorkRequestId;
+
+    public String getMaskingWorkRequestId() {
+        return maskingWorkRequestId;
+    }
 
     /**
      * The OCID of the masking policy used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingPolicyId")
-    String maskingPolicyId;
+    private final String maskingPolicyId;
+
+    public String getMaskingPolicyId() {
+        return maskingPolicyId;
+    }
 
     /**
      * The OCID of the target database masked.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The total number of unique sensitive types associated with the masked columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSensitiveTypes")
-    Long totalMaskedSensitiveTypes;
+    private final Long totalMaskedSensitiveTypes;
+
+    public Long getTotalMaskedSensitiveTypes() {
+        return totalMaskedSensitiveTypes;
+    }
 
     /**
      * The total number of unique schemas that contain the masked columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSchemas")
-    Long totalMaskedSchemas;
+    private final Long totalMaskedSchemas;
+
+    public Long getTotalMaskedSchemas() {
+        return totalMaskedSchemas;
+    }
 
     /**
      * The total number of unique objects (tables and editioning views) that contain the masked columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedObjects")
-    Long totalMaskedObjects;
+    private final Long totalMaskedObjects;
+
+    public Long getTotalMaskedObjects() {
+        return totalMaskedObjects;
+    }
 
     /**
      * The total number of masked columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedColumns")
-    Long totalMaskedColumns;
+    private final Long totalMaskedColumns;
+
+    public Long getTotalMaskedColumns() {
+        return totalMaskedColumns;
+    }
 
     /**
      * The total number of masked values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedValues")
-    Long totalMaskedValues;
+    private final Long totalMaskedValues;
+
+    public Long getTotalMaskedValues() {
+        return totalMaskedValues;
+    }
 
     /**
      * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStarted")
-    java.util.Date timeMaskingStarted;
+    private final java.util.Date timeMaskingStarted;
+
+    public java.util.Date getTimeMaskingStarted() {
+        return timeMaskingStarted;
+    }
 
     /**
      * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinished")
-    java.util.Date timeMaskingFinished;
+    private final java.util.Date timeMaskingFinished;
+
+    public java.util.Date getTimeMaskingFinished() {
+        return timeMaskingFinished;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MaskingReport(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", maskingWorkRequestId=").append(String.valueOf(this.maskingWorkRequestId));
+        sb.append(", maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", totalMaskedSensitiveTypes=")
+                .append(String.valueOf(this.totalMaskedSensitiveTypes));
+        sb.append(", totalMaskedSchemas=").append(String.valueOf(this.totalMaskedSchemas));
+        sb.append(", totalMaskedObjects=").append(String.valueOf(this.totalMaskedObjects));
+        sb.append(", totalMaskedColumns=").append(String.valueOf(this.totalMaskedColumns));
+        sb.append(", totalMaskedValues=").append(String.valueOf(this.totalMaskedValues));
+        sb.append(", timeMaskingStarted=").append(String.valueOf(this.timeMaskingStarted));
+        sb.append(", timeMaskingFinished=").append(String.valueOf(this.timeMaskingFinished));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MaskingReport)) {
+            return false;
+        }
+
+        MaskingReport other = (MaskingReport) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.maskingWorkRequestId, other.maskingWorkRequestId)
+                && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(
+                        this.totalMaskedSensitiveTypes, other.totalMaskedSensitiveTypes)
+                && java.util.Objects.equals(this.totalMaskedSchemas, other.totalMaskedSchemas)
+                && java.util.Objects.equals(this.totalMaskedObjects, other.totalMaskedObjects)
+                && java.util.Objects.equals(this.totalMaskedColumns, other.totalMaskedColumns)
+                && java.util.Objects.equals(this.totalMaskedValues, other.totalMaskedValues)
+                && java.util.Objects.equals(this.timeMaskingStarted, other.timeMaskingStarted)
+                && java.util.Objects.equals(this.timeMaskingFinished, other.timeMaskingFinished)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingWorkRequestId == null
+                                ? 43
+                                : this.maskingWorkRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingPolicyId == null ? 43 : this.maskingPolicyId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMaskedSensitiveTypes == null
+                                ? 43
+                                : this.totalMaskedSensitiveTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMaskedSchemas == null
+                                ? 43
+                                : this.totalMaskedSchemas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMaskedObjects == null
+                                ? 43
+                                : this.totalMaskedObjects.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMaskedColumns == null
+                                ? 43
+                                : this.totalMaskedColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMaskedValues == null ? 43 : this.totalMaskedValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaskingStarted == null
+                                ? 43
+                                : this.timeMaskingStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaskingFinished == null
+                                ? 43
+                                : this.timeMaskingFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

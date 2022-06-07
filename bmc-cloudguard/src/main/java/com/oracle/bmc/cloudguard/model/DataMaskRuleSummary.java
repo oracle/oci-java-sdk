@@ -15,16 +15,64 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DataMaskRuleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataMaskRuleSummary {
+public final class DataMaskRuleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "description",
+        "iamGroupId",
+        "targetSelected",
+        "dataMaskCategories",
+        "timeCreated",
+        "timeUpdated",
+        "dataMaskRuleStatus",
+        "lifecycleState",
+        "lifecyleDetails",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public DataMaskRuleSummary(
+            String id,
+            String displayName,
+            String compartmentId,
+            String description,
+            String iamGroupId,
+            TargetSelected targetSelected,
+            java.util.List<DataMaskCategory> dataMaskCategories,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            DataMaskRuleStatus dataMaskRuleStatus,
+            LifecycleState lifecycleState,
+            String lifecyleDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.description = description;
+        this.iamGroupId = iamGroupId;
+        this.targetSelected = targetSelected;
+        this.dataMaskCategories = dataMaskCategories;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.dataMaskRuleStatus = dataMaskRuleStatus;
+        this.lifecycleState = lifecycleState;
+        this.lifecyleDetails = lifecyleDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -218,74 +266,126 @@ public class DataMaskRuleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier that is immutable on creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Data Mask Rule Name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Compartment Identifier where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The data mask rule description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * IAM Group id associated with the data mask rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
-    String iamGroupId;
+    private final String iamGroupId;
+
+    public String getIamGroupId() {
+        return iamGroupId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("targetSelected")
-    TargetSelected targetSelected;
+    private final TargetSelected targetSelected;
+
+    public TargetSelected getTargetSelected() {
+        return targetSelected;
+    }
 
     /**
      * Data Mask Categories
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
-    java.util.List<DataMaskCategory> dataMaskCategories;
+    private final java.util.List<DataMaskCategory> dataMaskCategories;
+
+    public java.util.List<DataMaskCategory> getDataMaskCategories() {
+        return dataMaskCategories;
+    }
 
     /**
      * The date and time the target was created. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the target was updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The status of the dataMaskRule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
-    DataMaskRuleStatus dataMaskRuleStatus;
+    private final DataMaskRuleStatus dataMaskRuleStatus;
+
+    public DataMaskRuleStatus getDataMaskRuleStatus() {
+        return dataMaskRuleStatus;
+    }
 
     /**
      * The current state of the DataMaskRule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
-    String lifecyleDetails;
+    private final String lifecyleDetails;
+
+    public String getLifecyleDetails() {
+        return lifecyleDetails;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -295,7 +395,11 @@ public class DataMaskRuleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -303,7 +407,11 @@ public class DataMaskRuleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
@@ -314,8 +422,109 @@ public class DataMaskRuleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataMaskRuleSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", iamGroupId=").append(String.valueOf(this.iamGroupId));
+        sb.append(", targetSelected=").append(String.valueOf(this.targetSelected));
+        sb.append(", dataMaskCategories=").append(String.valueOf(this.dataMaskCategories));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", dataMaskRuleStatus=").append(String.valueOf(this.dataMaskRuleStatus));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecyleDetails=").append(String.valueOf(this.lifecyleDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataMaskRuleSummary)) {
+            return false;
+        }
+
+        DataMaskRuleSummary other = (DataMaskRuleSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.iamGroupId, other.iamGroupId)
+                && java.util.Objects.equals(this.targetSelected, other.targetSelected)
+                && java.util.Objects.equals(this.dataMaskCategories, other.dataMaskCategories)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.dataMaskRuleStatus, other.dataMaskRuleStatus)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecyleDetails, other.lifecyleDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.iamGroupId == null ? 43 : this.iamGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetSelected == null ? 43 : this.targetSelected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataMaskCategories == null
+                                ? 43
+                                : this.dataMaskCategories.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataMaskRuleStatus == null
+                                ? 43
+                                : this.dataMaskRuleStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecyleDetails == null ? 43 : this.lifecyleDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UpdateSenderInvitationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSenderInvitationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateSenderInvitationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails> {
@@ -26,12 +18,19 @@ public class UpdateSenderInvitationRequest
      */
     private String senderInvitationId;
 
+    public String getSenderInvitationId() {
+        return senderInvitationId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails
             updateSenderInvitationDetails;
 
+    public com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails
+            getUpdateSenderInvitationDetails() {
+        return updateSenderInvitationDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -42,10 +41,17 @@ public class UpdateSenderInvitationRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +70,58 @@ public class UpdateSenderInvitationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String senderInvitationId = null;
+
+        /**
+         * OCID of the sender invitation to update.
+         * @return this builder instance
+         */
+        public Builder senderInvitationId(String senderInvitationId) {
+            this.senderInvitationId = senderInvitationId;
+            return this;
+        }
+
+        private com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails
+                updateSenderInvitationDetails = null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateSenderInvitationDetails(
+                com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails
+                        updateSenderInvitationDetails) {
+            this.updateSenderInvitationDetails = updateSenderInvitationDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +188,89 @@ public class UpdateSenderInvitationRequest
             updateSenderInvitationDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateSenderInvitationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateSenderInvitationRequest
+         */
+        public UpdateSenderInvitationRequest buildWithoutInvocationCallback() {
+            UpdateSenderInvitationRequest request = new UpdateSenderInvitationRequest();
+            request.senderInvitationId = senderInvitationId;
+            request.updateSenderInvitationDetails = updateSenderInvitationDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateSenderInvitationRequest(senderInvitationId, updateSenderInvitationDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .senderInvitationId(senderInvitationId)
+                .updateSenderInvitationDetails(updateSenderInvitationDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",senderInvitationId=").append(String.valueOf(this.senderInvitationId));
+        sb.append(",updateSenderInvitationDetails=")
+                .append(String.valueOf(this.updateSenderInvitationDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSenderInvitationRequest)) {
+            return false;
+        }
+
+        UpdateSenderInvitationRequest other = (UpdateSenderInvitationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.senderInvitationId, other.senderInvitationId)
+                && java.util.Objects.equals(
+                        this.updateSenderInvitationDetails, other.updateSenderInvitationDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.senderInvitationId == null
+                                ? 43
+                                : this.senderInvitationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateSenderInvitationDetails == null
+                                ? 43
+                                : this.updateSenderInvitationDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

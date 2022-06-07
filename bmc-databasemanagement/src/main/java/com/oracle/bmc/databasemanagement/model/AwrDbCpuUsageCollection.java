@@ -15,22 +15,17 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AwrDbCpuUsageCollection.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "awrResultType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AwrDbCpuUsageCollection extends AwrQueryResult {
+public final class AwrDbCpuUsageCollection extends AwrQueryResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -146,6 +141,10 @@ public class AwrDbCpuUsageCollection extends AwrQueryResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public AwrDbCpuUsageCollection(
             String name,
@@ -167,26 +166,92 @@ public class AwrDbCpuUsageCollection extends AwrQueryResult {
      * The number of available CPU cores, which include subcores of multicore and single-core CPUs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numCpuCores")
-    Integer numCpuCores;
+    private final Integer numCpuCores;
+
+    public Integer getNumCpuCores() {
+        return numCpuCores;
+    }
 
     /**
      * The number of CPUs available for the database to use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
-    Integer cpuCount;
+    private final Integer cpuCount;
+
+    public Integer getCpuCount() {
+        return cpuCount;
+    }
 
     /**
      * The number of available CPUs or processors.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numCpus")
-    Double numCpus;
+    private final Double numCpus;
+
+    public Double getNumCpus() {
+        return numCpus;
+    }
 
     /**
      * A list of AWR CPU usage summary data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<AwrDbCpuUsageSummary> items;
+    private final java.util.List<AwrDbCpuUsageSummary> items;
+
+    public java.util.List<AwrDbCpuUsageSummary> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AwrDbCpuUsageCollection(");
+        sb.append("super=").append(super.toString());
+        sb.append(", numCpuCores=").append(String.valueOf(this.numCpuCores));
+        sb.append(", cpuCount=").append(String.valueOf(this.cpuCount));
+        sb.append(", numCpus=").append(String.valueOf(this.numCpus));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AwrDbCpuUsageCollection)) {
+            return false;
+        }
+
+        AwrDbCpuUsageCollection other = (AwrDbCpuUsageCollection) o;
+        return java.util.Objects.equals(this.numCpuCores, other.numCpuCores)
+                && java.util.Objects.equals(this.cpuCount, other.cpuCount)
+                && java.util.Objects.equals(this.numCpus, other.numCpus)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.numCpuCores == null ? 43 : this.numCpuCores.hashCode());
+        result = (result * PRIME) + (this.cpuCount == null ? 43 : this.cpuCount.hashCode());
+        result = (result * PRIME) + (this.numCpus == null ? 43 : this.numCpus.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,12 +15,6 @@ package com.oracle.bmc.announcementsservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,6 +33,15 @@ package com.oracle.bmc.announcementsservice.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BaseCreateAnnouncementsPreferencesDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isUnsubscribed", "compartmentId", "preferenceType"})
+    protected BaseCreateAnnouncementsPreferencesDetails(
+            Boolean isUnsubscribed, String compartmentId, PreferenceType preferenceType) {
+        super();
+        this.isUnsubscribed = isUnsubscribed;
+        this.compartmentId = compartmentId;
+        this.preferenceType = preferenceType;
+    }
 
     /**
      * A Boolean value to indicate whether the specified compartment chooses to not to receive informational announcements by email.
@@ -46,7 +49,11 @@ public class BaseCreateAnnouncementsPreferencesDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsubscribed")
-    Boolean isUnsubscribed;
+    private final Boolean isUnsubscribed;
+
+    public Boolean getIsUnsubscribed() {
+        return isUnsubscribed;
+    }
 
     /**
      * The OCID of the compartment for which you want to manage announcement email preferences. (Specify the tenancy by providing the
@@ -54,7 +61,12 @@ public class BaseCreateAnnouncementsPreferencesDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * The string representing the user's preference, whether to opt in to only required announcements, to opt in to all announcements, including informational announcements, or to opt out of all announcements.
      **/
@@ -95,5 +107,52 @@ public class BaseCreateAnnouncementsPreferencesDetails {
      * The string representing the user's preference, whether to opt in to only required announcements, to opt in to all announcements, including informational announcements, or to opt out of all announcements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferenceType")
-    PreferenceType preferenceType;
+    private final PreferenceType preferenceType;
+
+    public PreferenceType getPreferenceType() {
+        return preferenceType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BaseCreateAnnouncementsPreferencesDetails(");
+        sb.append("isUnsubscribed=").append(String.valueOf(this.isUnsubscribed));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", preferenceType=").append(String.valueOf(this.preferenceType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BaseCreateAnnouncementsPreferencesDetails)) {
+            return false;
+        }
+
+        BaseCreateAnnouncementsPreferencesDetails other =
+                (BaseCreateAnnouncementsPreferencesDetails) o;
+        return java.util.Objects.equals(this.isUnsubscribed, other.isUnsubscribed)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.preferenceType, other.preferenceType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isUnsubscribed == null ? 43 : this.isUnsubscribed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preferenceType == null ? 43 : this.preferenceType.hashCode());
+        return result;
+    }
 }

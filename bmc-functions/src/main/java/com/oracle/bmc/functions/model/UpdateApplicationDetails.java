@@ -16,16 +16,40 @@ package com.oracle.bmc.functions.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateApplicationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateApplicationDetails {
+public final class UpdateApplicationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "config",
+        "networkSecurityGroupIds",
+        "syslogUrl",
+        "traceConfig",
+        "freeformTags",
+        "definedTags",
+        "imagePolicyConfig"
+    })
+    public UpdateApplicationDetails(
+            java.util.Map<String, String> config,
+            java.util.List<String> networkSecurityGroupIds,
+            String syslogUrl,
+            ApplicationTraceConfig traceConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            ImagePolicyConfig imagePolicyConfig) {
+        super();
+        this.config = config;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
+        this.syslogUrl = syslogUrl;
+        this.traceConfig = traceConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.imagePolicyConfig = imagePolicyConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private java.util.Map<String, String> config;
@@ -131,6 +155,10 @@ public class UpdateApplicationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Application configuration. These values are passed on to the function as environment variables, functions may override application configuration.
      * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
@@ -141,14 +169,22 @@ public class UpdateApplicationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
-    java.util.Map<String, String> config;
+    private final java.util.Map<String, String> config;
+
+    public java.util.Map<String, String> getConfig() {
+        return config;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
-    java.util.List<String> networkSecurityGroupIds;
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
 
     /**
      * A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
@@ -159,10 +195,18 @@ public class UpdateApplicationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
-    String syslogUrl;
+    private final String syslogUrl;
+
+    public String getSyslogUrl() {
+        return syslogUrl;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
-    ApplicationTraceConfig traceConfig;
+    private final ApplicationTraceConfig traceConfig;
+
+    public ApplicationTraceConfig getTraceConfig() {
+        return traceConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -172,7 +216,11 @@ public class UpdateApplicationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -181,11 +229,84 @@ public class UpdateApplicationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
-    ImagePolicyConfig imagePolicyConfig;
+    private final ImagePolicyConfig imagePolicyConfig;
+
+    public ImagePolicyConfig getImagePolicyConfig() {
+        return imagePolicyConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateApplicationDetails(");
+        sb.append("config=").append(String.valueOf(this.config));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
+        sb.append(", syslogUrl=").append(String.valueOf(this.syslogUrl));
+        sb.append(", traceConfig=").append(String.valueOf(this.traceConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateApplicationDetails)) {
+            return false;
+        }
+
+        UpdateApplicationDetails other = (UpdateApplicationDetails) o;
+        return java.util.Objects.equals(this.config, other.config)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
+                && java.util.Objects.equals(this.syslogUrl, other.syslogUrl)
+                && java.util.Objects.equals(this.traceConfig, other.traceConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.config == null ? 43 : this.config.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
+        result = (result * PRIME) + (this.syslogUrl == null ? 43 : this.syslogUrl.hashCode());
+        result = (result * PRIME) + (this.traceConfig == null ? 43 : this.traceConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.imagePolicyConfig == null ? 43 : this.imagePolicyConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

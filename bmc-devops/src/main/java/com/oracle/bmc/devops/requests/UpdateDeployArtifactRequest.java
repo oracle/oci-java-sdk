@@ -9,14 +9,6 @@ import com.oracle.bmc.devops.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDeployArtifactRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateDeployArtifactRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.devops.model.UpdateDeployArtifactDetails> {
@@ -26,20 +18,34 @@ public class UpdateDeployArtifactRequest
      */
     private String deployArtifactId;
 
+    public String getDeployArtifactId() {
+        return deployArtifactId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.devops.model.UpdateDeployArtifactDetails updateDeployArtifactDetails;
 
+    public com.oracle.bmc.devops.model.UpdateDeployArtifactDetails
+            getUpdateDeployArtifactDetails() {
+        return updateDeployArtifactDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -58,6 +64,53 @@ public class UpdateDeployArtifactRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String deployArtifactId = null;
+
+        /**
+         * Unique artifact identifier.
+         * @return this builder instance
+         */
+        public Builder deployArtifactId(String deployArtifactId) {
+            this.deployArtifactId = deployArtifactId;
+            return this;
+        }
+
+        private com.oracle.bmc.devops.model.UpdateDeployArtifactDetails
+                updateDeployArtifactDetails = null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateDeployArtifactDetails(
+                com.oracle.bmc.devops.model.UpdateDeployArtifactDetails
+                        updateDeployArtifactDetails) {
+            this.updateDeployArtifactDetails = updateDeployArtifactDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -123,5 +176,87 @@ public class UpdateDeployArtifactRequest
             updateDeployArtifactDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateDeployArtifactRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateDeployArtifactRequest
+         */
+        public UpdateDeployArtifactRequest buildWithoutInvocationCallback() {
+            UpdateDeployArtifactRequest request = new UpdateDeployArtifactRequest();
+            request.deployArtifactId = deployArtifactId;
+            request.updateDeployArtifactDetails = updateDeployArtifactDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateDeployArtifactRequest(deployArtifactId, updateDeployArtifactDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .deployArtifactId(deployArtifactId)
+                .updateDeployArtifactDetails(updateDeployArtifactDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",deployArtifactId=").append(String.valueOf(this.deployArtifactId));
+        sb.append(",updateDeployArtifactDetails=")
+                .append(String.valueOf(this.updateDeployArtifactDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDeployArtifactRequest)) {
+            return false;
+        }
+
+        UpdateDeployArtifactRequest other = (UpdateDeployArtifactRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.deployArtifactId, other.deployArtifactId)
+                && java.util.Objects.equals(
+                        this.updateDeployArtifactDetails, other.updateDeployArtifactDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.deployArtifactId == null ? 43 : this.deployArtifactId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDeployArtifactDetails == null
+                                ? 43
+                                : this.updateDeployArtifactDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

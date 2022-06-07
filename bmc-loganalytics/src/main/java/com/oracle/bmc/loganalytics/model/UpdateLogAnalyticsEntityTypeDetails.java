@@ -15,16 +15,21 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateLogAnalyticsEntityTypeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateLogAnalyticsEntityTypeDetails {
+public final class UpdateLogAnalyticsEntityTypeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"category", "properties"})
+    public UpdateLogAnalyticsEntityTypeDetails(
+            String category, java.util.List<EntityTypeProperty> properties) {
+        super();
+        this.category = category;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
@@ -70,19 +75,73 @@ public class UpdateLogAnalyticsEntityTypeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Log analytics entity type category. Category will be used for grouping and filtering.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    String category;
+    private final String category;
+
+    public String getCategory() {
+        return category;
+    }
 
     /**
      * A single log analytics entity type property definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.List<EntityTypeProperty> properties;
+    private final java.util.List<EntityTypeProperty> properties;
+
+    public java.util.List<EntityTypeProperty> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateLogAnalyticsEntityTypeDetails(");
+        sb.append("category=").append(String.valueOf(this.category));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLogAnalyticsEntityTypeDetails)) {
+            return false;
+        }
+
+        UpdateLogAnalyticsEntityTypeDetails other = (UpdateLogAnalyticsEntityTypeDetails) o;
+        return java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

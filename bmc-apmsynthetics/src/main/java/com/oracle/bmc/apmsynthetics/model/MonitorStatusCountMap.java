@@ -17,16 +17,23 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonitorStatusCountMap.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonitorStatusCountMap {
+public final class MonitorStatusCountMap {
+    @Deprecated
+    @java.beans.ConstructorProperties({"total", "enabled", "disabled", "invalid"})
+    public MonitorStatusCountMap(
+            Integer total, Integer enabled, Integer disabled, Integer invalid) {
+        super();
+        this.total = total;
+        this.enabled = enabled;
+        this.disabled = disabled;
+        this.invalid = invalid;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("total")
         private Integer total;
@@ -94,30 +101,98 @@ public class MonitorStatusCountMap {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Total number of monitors using the script.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("total")
-    Integer total;
+    private final Integer total;
+
+    public Integer getTotal() {
+        return total;
+    }
 
     /**
      * Number of enabled monitors using the script.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabled")
-    Integer enabled;
+    private final Integer enabled;
+
+    public Integer getEnabled() {
+        return enabled;
+    }
 
     /**
      * Number of disabled monitors using the script.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("disabled")
-    Integer disabled;
+    private final Integer disabled;
+
+    public Integer getDisabled() {
+        return disabled;
+    }
 
     /**
      * Number of invalid monitors using the script.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("invalid")
-    Integer invalid;
+    private final Integer invalid;
+
+    public Integer getInvalid() {
+        return invalid;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitorStatusCountMap(");
+        sb.append("total=").append(String.valueOf(this.total));
+        sb.append(", enabled=").append(String.valueOf(this.enabled));
+        sb.append(", disabled=").append(String.valueOf(this.disabled));
+        sb.append(", invalid=").append(String.valueOf(this.invalid));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitorStatusCountMap)) {
+            return false;
+        }
+
+        MonitorStatusCountMap other = (MonitorStatusCountMap) o;
+        return java.util.Objects.equals(this.total, other.total)
+                && java.util.Objects.equals(this.enabled, other.enabled)
+                && java.util.Objects.equals(this.disabled, other.disabled)
+                && java.util.Objects.equals(this.invalid, other.invalid)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.total == null ? 43 : this.total.hashCode());
+        result = (result * PRIME) + (this.enabled == null ? 43 : this.enabled.hashCode());
+        result = (result * PRIME) + (this.disabled == null ? 43 : this.disabled.hashCode());
+        result = (result * PRIME) + (this.invalid == null ? 43 : this.invalid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,35 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestError.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestError {
+public final class WorkRequestError {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "workRequestId",
+        "code",
+        "message",
+        "isRetryable",
+        "timestamp"
+    })
+    public WorkRequestError(
+            String id,
+            String workRequestId,
+            String code,
+            String message,
+            Boolean isRetryable,
+            java.util.Date timestamp) {
+        super();
+        this.id = id;
+        this.workRequestId = workRequestId;
+        this.code = code;
+        this.message = message;
+        this.isRetryable = isRetryable;
+        this.timestamp = timestamp;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -110,17 +131,29 @@ public class WorkRequestError {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The identifier of the work request error.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
-    String workRequestId;
+    private final String workRequestId;
+
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
 
     /**
      * A machine-usable code for the error that occurred. Error codes are listed on
@@ -128,27 +161,99 @@ public class WorkRequestError {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
-    String code;
+    private final String code;
+
+    public String getCode() {
+        return code;
+    }
 
     /**
      * A human-readable description of the issue that occurred.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * Determines if the work request error can be reproduced and tried again.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetryable")
-    Boolean isRetryable;
+    private final Boolean isRetryable;
+
+    public Boolean getIsRetryable() {
+        return isRetryable;
+    }
 
     /**
      * The date and time the error occurred as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestError(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
+        sb.append(", code=").append(String.valueOf(this.code));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", isRetryable=").append(String.valueOf(this.isRetryable));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestError)) {
+            return false;
+        }
+
+        WorkRequestError other = (WorkRequestError) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
+                && java.util.Objects.equals(this.code, other.code)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.isRetryable, other.isRetryable)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
+        result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.isRetryable == null ? 43 : this.isRetryable.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

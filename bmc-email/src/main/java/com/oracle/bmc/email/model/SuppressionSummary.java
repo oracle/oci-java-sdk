@@ -15,16 +15,34 @@ package com.oracle.bmc.email.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SuppressionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SuppressionSummary {
+public final class SuppressionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "emailAddress",
+        "id",
+        "reason",
+        "timeCreated"
+    })
+    public SuppressionSummary(
+            String compartmentId,
+            String emailAddress,
+            String id,
+            Reason reason,
+            java.util.Date timeCreated) {
+        super();
+        this.compartmentId = compartmentId;
+        this.emailAddress = emailAddress;
+        this.id = id;
+        this.reason = reason;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -102,27 +120,43 @@ public class SuppressionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID for the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The email address of the suppression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
-    String emailAddress;
+    private final String emailAddress;
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
     /**
      * The unique OCID of the suppression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The reason that the email address was suppressed.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Reason {
         Unknown("UNKNOWN"),
         Hardbounce("HARDBOUNCE"),
@@ -136,6 +170,8 @@ public class SuppressionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Reason.class);
 
         private final String value;
         private static java.util.Map<String, Reason> map;
@@ -173,7 +209,11 @@ public class SuppressionSummary {
      * The reason that the email address was suppressed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
-    Reason reason;
+    private final Reason reason;
+
+    public Reason getReason() {
+        return reason;
+    }
 
     /**
      * The date and time a recipient's email address was added to the
@@ -182,8 +222,65 @@ public class SuppressionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SuppressionSummary(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", reason=").append(String.valueOf(this.reason));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SuppressionSummary)) {
+            return false;
+        }
+
+        SuppressionSummary other = (SuppressionSummary) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.emailAddress, other.emailAddress)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.reason, other.reason)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.reason == null ? 43 : this.reason.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

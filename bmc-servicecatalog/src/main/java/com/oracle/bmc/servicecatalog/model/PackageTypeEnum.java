@@ -8,7 +8,6 @@ package com.oracle.bmc.servicecatalog.model;
  * Type of a package.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
-@lombok.extern.slf4j.Slf4j
 public enum PackageTypeEnum {
     Stack("STACK"),
 
@@ -17,6 +16,9 @@ public enum PackageTypeEnum {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PackageTypeEnum.class);
 
     private final String value;
     private static java.util.Map<String, PackageTypeEnum> map;

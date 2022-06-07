@@ -15,12 +15,6 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -40,24 +34,85 @@ package com.oracle.bmc.core.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Topology {
+    @Deprecated
+    @java.beans.ConstructorProperties({"entities", "relationships", "timeCreated"})
+    protected Topology(
+            java.util.List<Object> entities,
+            java.util.List<TopologyEntityRelationship> relationships,
+            java.util.Date timeCreated) {
+        super();
+        this.entities = entities;
+        this.relationships = relationships;
+        this.timeCreated = timeCreated;
+    }
 
     /**
      * Lists entities comprising the virtual network topology.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
-    java.util.List<Object> entities;
+    private final java.util.List<Object> entities;
+
+    public java.util.List<Object> getEntities() {
+        return entities;
+    }
 
     /**
      * Lists relationships between entities in the virtual network topology.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relationships")
-    java.util.List<TopologyEntityRelationship> relationships;
+    private final java.util.List<TopologyEntityRelationship> relationships;
+
+    public java.util.List<TopologyEntityRelationship> getRelationships() {
+        return relationships;
+    }
 
     /**
      * Records when the virtual network topology was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format for date and time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Topology(");
+        sb.append("entities=").append(String.valueOf(this.entities));
+        sb.append(", relationships=").append(String.valueOf(this.relationships));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Topology)) {
+            return false;
+        }
+
+        Topology other = (Topology) o;
+        return java.util.Objects.equals(this.entities, other.entities)
+                && java.util.Objects.equals(this.relationships, other.relationships)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.entities == null ? 43 : this.entities.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relationships == null ? 43 : this.relationships.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        return result;
+    }
 
     /**
      * Type of the topology object.

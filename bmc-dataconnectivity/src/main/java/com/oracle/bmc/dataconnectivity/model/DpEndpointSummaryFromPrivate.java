@@ -15,22 +15,17 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DpEndpointSummaryFromPrivate.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
+public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -234,6 +229,10 @@ public class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DpEndpointSummaryFromPrivate(
             String key,
@@ -275,37 +274,62 @@ public class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
      * The endpoint ID provided by control plane.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dcmsEndpointId")
-    String dcmsEndpointId;
+    private final String dcmsEndpointId;
+
+    public String getDcmsEndpointId() {
+        return dcmsEndpointId;
+    }
 
     /**
      * The ocid of private endpoint resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peId")
-    String peId;
+    private final String peId;
+
+    public String getPeId() {
+        return peId;
+    }
 
     /**
      * The compartmentId of private endpoint resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The IP address of dns proxy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyIp")
-    String dnsProxyIp;
+    private final String dnsProxyIp;
+
+    public String getDnsProxyIp() {
+        return dnsProxyIp;
+    }
 
     /**
      * The ocid of private endpoint resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
-    String privateEndpointIp;
+    private final String privateEndpointIp;
+
+    public String getPrivateEndpointIp() {
+        return privateEndpointIp;
+    }
 
     /**
      * Array of dns zones to be use during private endpoint resolution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
-    java.util.List<String> dnsZones;
+    private final java.util.List<String> dnsZones;
+
+    public java.util.List<String> getDnsZones() {
+        return dnsZones;
+    }
+
     /**
      * Specifies the private endpoint state.
      **/
@@ -345,8 +369,77 @@ public class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
      * Specifies the private endpoint state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    State state;
+    private final State state;
+
+    public State getState() {
+        return state;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DpEndpointSummaryFromPrivate(");
+        sb.append("super=").append(super.toString());
+        sb.append(", dcmsEndpointId=").append(String.valueOf(this.dcmsEndpointId));
+        sb.append(", peId=").append(String.valueOf(this.peId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", dnsProxyIp=").append(String.valueOf(this.dnsProxyIp));
+        sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
+        sb.append(", dnsZones=").append(String.valueOf(this.dnsZones));
+        sb.append(", state=").append(String.valueOf(this.state));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DpEndpointSummaryFromPrivate)) {
+            return false;
+        }
+
+        DpEndpointSummaryFromPrivate other = (DpEndpointSummaryFromPrivate) o;
+        return java.util.Objects.equals(this.dcmsEndpointId, other.dcmsEndpointId)
+                && java.util.Objects.equals(this.peId, other.peId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.dnsProxyIp, other.dnsProxyIp)
+                && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
+                && java.util.Objects.equals(this.dnsZones, other.dnsZones)
+                && java.util.Objects.equals(this.state, other.state)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.dcmsEndpointId == null ? 43 : this.dcmsEndpointId.hashCode());
+        result = (result * PRIME) + (this.peId == null ? 43 : this.peId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.dnsProxyIp == null ? 43 : this.dnsProxyIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
+        result = (result * PRIME) + (this.dnsZones == null ? 43 : this.dnsZones.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

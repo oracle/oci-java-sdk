@@ -15,14 +15,59 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Publication.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Publication {
+public final class Publication {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "lifecycleState",
+        "compartmentId",
+        "id",
+        "name",
+        "shortDescription",
+        "longDescription",
+        "supportContacts",
+        "icon",
+        "packageType",
+        "listingType",
+        "supportedOperatingSystems",
+        "timeCreated",
+        "definedTags",
+        "freeformTags"
+    })
+    public Publication(
+            LifecycleState lifecycleState,
+            String compartmentId,
+            String id,
+            String name,
+            String shortDescription,
+            String longDescription,
+            java.util.List<SupportContact> supportContacts,
+            UploadData icon,
+            PackageTypeEnum packageType,
+            ListingType listingType,
+            java.util.List<OperatingSystem> supportedOperatingSystems,
+            java.util.Date timeCreated,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags) {
+        super();
+        this.lifecycleState = lifecycleState;
+        this.compartmentId = compartmentId;
+        this.id = id;
+        this.name = name;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
+        this.supportContacts = supportContacts;
+        this.icon = icon;
+        this.packageType = packageType;
+        this.listingType = listingType;
+        this.supportedOperatingSystems = supportedOperatingSystems;
+        this.timeCreated = timeCreated;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -206,10 +251,13 @@ public class Publication {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The lifecycle state of the publication.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -222,6 +270,9 @@ public class Publication {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -259,64 +310,108 @@ public class Publication {
      * The lifecycle state of the publication.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The unique identifier for the publication in Marketplace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the publication, which is also used in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A short description of the publication to use in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
-    String shortDescription;
+    private final String shortDescription;
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
 
     /**
      * A long description of the publication to use in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
-    String longDescription;
+    private final String longDescription;
+
+    public String getLongDescription() {
+        return longDescription;
+    }
 
     /**
      * Contact information for getting support from the publisher for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
-    java.util.List<SupportContact> supportContacts;
+    private final java.util.List<SupportContact> supportContacts;
+
+    public java.util.List<SupportContact> getSupportContacts() {
+        return supportContacts;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("icon")
-    UploadData icon;
+    private final UploadData icon;
+
+    public UploadData getIcon() {
+        return icon;
+    }
 
     /**
      * The listing's package type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
-    PackageTypeEnum packageType;
+    private final PackageTypeEnum packageType;
+
+    public PackageTypeEnum getPackageType() {
+        return packageType;
+    }
 
     /**
      * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
-    ListingType listingType;
+    private final ListingType listingType;
+
+    public ListingType getListingType() {
+        return listingType;
+    }
 
     /**
      * The list of operating systems supprted by the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOperatingSystems")
-    java.util.List<OperatingSystem> supportedOperatingSystems;
+    private final java.util.List<OperatingSystem> supportedOperatingSystems;
+
+    public java.util.List<OperatingSystem> getSupportedOperatingSystems() {
+        return supportedOperatingSystems;
+    }
 
     /**
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -326,7 +421,11 @@ public class Publication {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
@@ -335,7 +434,11 @@ public class Publication {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
@@ -344,8 +447,106 @@ public class Publication {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Publication(");
+        sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", shortDescription=").append(String.valueOf(this.shortDescription));
+        sb.append(", longDescription=").append(String.valueOf(this.longDescription));
+        sb.append(", supportContacts=").append(String.valueOf(this.supportContacts));
+        sb.append(", icon=").append(String.valueOf(this.icon));
+        sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", listingType=").append(String.valueOf(this.listingType));
+        sb.append(", supportedOperatingSystems=")
+                .append(String.valueOf(this.supportedOperatingSystems));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Publication)) {
+            return false;
+        }
+
+        Publication other = (Publication) o;
+        return java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.shortDescription, other.shortDescription)
+                && java.util.Objects.equals(this.longDescription, other.longDescription)
+                && java.util.Objects.equals(this.supportContacts, other.supportContacts)
+                && java.util.Objects.equals(this.icon, other.icon)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.listingType, other.listingType)
+                && java.util.Objects.equals(
+                        this.supportedOperatingSystems, other.supportedOperatingSystems)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shortDescription == null ? 43 : this.shortDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.longDescription == null ? 43 : this.longDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportContacts == null ? 43 : this.supportContacts.hashCode());
+        result = (result * PRIME) + (this.icon == null ? 43 : this.icon.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.listingType == null ? 43 : this.listingType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedOperatingSystems == null
+                                ? 43
+                                : this.supportedOperatingSystems.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

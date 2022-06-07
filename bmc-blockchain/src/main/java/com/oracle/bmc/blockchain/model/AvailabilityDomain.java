@@ -15,16 +15,19 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AvailabilityDomain.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AvailabilityDomain {
+public final class AvailabilityDomain {
+    @Deprecated
+    @java.beans.ConstructorProperties({"ads"})
+    public AvailabilityDomain(Ads ads) {
+        super();
+        this.ads = ads;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ads")
         private Ads ads;
@@ -58,6 +61,10 @@ public class AvailabilityDomain {
      */
     public static Builder builder() {
         return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
     }
 
     /**
@@ -100,8 +107,51 @@ public class AvailabilityDomain {
      * Availability Domain Identifiers
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ads")
-    Ads ads;
+    private final Ads ads;
+
+    public Ads getAds() {
+        return ads;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AvailabilityDomain(");
+        sb.append("ads=").append(String.valueOf(this.ads));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AvailabilityDomain)) {
+            return false;
+        }
+
+        AvailabilityDomain other = (AvailabilityDomain) o;
+        return java.util.Objects.equals(this.ads, other.ads)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ads == null ? 43 : this.ads.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

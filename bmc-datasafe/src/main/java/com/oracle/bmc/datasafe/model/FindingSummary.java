@@ -15,14 +15,44 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FindingSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FindingSummary {
+public final class FindingSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "severity",
+        "assessmentId",
+        "targetId",
+        "key",
+        "title",
+        "remarks",
+        "details",
+        "summary",
+        "references"
+    })
+    public FindingSummary(
+            Severity severity,
+            String assessmentId,
+            String targetId,
+            String key,
+            String title,
+            String remarks,
+            Object details,
+            String summary,
+            References references) {
+        super();
+        this.severity = severity;
+        this.assessmentId = assessmentId;
+        this.targetId = targetId;
+        this.key = key;
+        this.title = title;
+        this.remarks = remarks;
+        this.details = details;
+        this.summary = summary;
+        this.references = references;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
@@ -149,10 +179,13 @@ public class FindingSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The severity of the finding.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Severity {
         High("HIGH"),
         Medium("MEDIUM"),
@@ -166,6 +199,9 @@ public class FindingSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Severity.class);
 
         private final String value;
         private static java.util.Map<String, Severity> map;
@@ -203,56 +239,155 @@ public class FindingSummary {
      * The severity of the finding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
 
     /**
      * The OCID of the assessment that generated this finding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
-    String assessmentId;
+    private final String assessmentId;
+
+    public String getAssessmentId() {
+        return assessmentId;
+    }
 
     /**
      * The OCID of the target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The short title for the finding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
-    String title;
+    private final String title;
+
+    public String getTitle() {
+        return title;
+    }
 
     /**
      * The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remarks")
-    String remarks;
+    private final String remarks;
+
+    public String getRemarks() {
+        return remarks;
+    }
 
     /**
      * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
-    Object details;
+    private final Object details;
+
+    public Object getDetails() {
+        return details;
+    }
 
     /**
      * The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
-    String summary;
+    private final String summary;
+
+    public String getSummary() {
+        return summary;
+    }
 
     /**
      * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("references")
-    References references;
+    private final References references;
+
+    public References getReferences() {
+        return references;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FindingSummary(");
+        sb.append("severity=").append(String.valueOf(this.severity));
+        sb.append(", assessmentId=").append(String.valueOf(this.assessmentId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", title=").append(String.valueOf(this.title));
+        sb.append(", remarks=").append(String.valueOf(this.remarks));
+        sb.append(", details=").append(String.valueOf(this.details));
+        sb.append(", summary=").append(String.valueOf(this.summary));
+        sb.append(", references=").append(String.valueOf(this.references));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FindingSummary)) {
+            return false;
+        }
+
+        FindingSummary other = (FindingSummary) o;
+        return java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.assessmentId, other.assessmentId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.title, other.title)
+                && java.util.Objects.equals(this.remarks, other.remarks)
+                && java.util.Objects.equals(this.details, other.details)
+                && java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.references, other.references)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.assessmentId == null ? 43 : this.assessmentId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
+        result = (result * PRIME) + (this.remarks == null ? 43 : this.remarks.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
+        result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

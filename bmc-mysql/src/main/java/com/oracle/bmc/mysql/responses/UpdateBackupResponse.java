@@ -7,10 +7,6 @@ package com.oracle.bmc.mysql.responses;
 import com.oracle.bmc.mysql.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,6 +15,10 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,
      * the getter for the object itself will return null.  Callers should check this
@@ -26,6 +26,10 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
      * response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
+
+    public boolean isNotModified() {
+        return isNotModified;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "isNotModified"})
     private UpdateBackupResponse(
@@ -40,6 +44,20 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private boolean isNotModified;
+
+        public Builder isNotModified(boolean isNotModified) {
+            this.isNotModified = isNotModified;
             return this;
         }
 
@@ -58,5 +76,44 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
         public UpdateBackupResponse build() {
             return new UpdateBackupResponse(__httpStatusCode__, opcRequestId, isNotModified);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",isNotModified=").append(isNotModified);
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBackupResponse)) {
+            return false;
+        }
+
+        UpdateBackupResponse other = (UpdateBackupResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && this.isNotModified == other.isNotModified;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.isNotModified ? 79 : 97);
+        return result;
     }
 }

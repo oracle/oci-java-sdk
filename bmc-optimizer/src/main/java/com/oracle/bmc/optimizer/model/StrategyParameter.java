@@ -16,16 +16,37 @@ package com.oracle.bmc.optimizer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StrategyParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StrategyParameter {
+public final class StrategyParameter {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "type",
+        "description",
+        "isRequired",
+        "defaultValue",
+        "possibleValues"
+    })
+    public StrategyParameter(
+            String name,
+            StrategyParameterType type,
+            String description,
+            Boolean isRequired,
+            Object defaultValue,
+            java.util.List<Object> possibleValues) {
+        super();
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.isRequired = isRequired;
+        this.defaultValue = defaultValue;
+        this.possibleValues = possibleValues;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -114,42 +135,126 @@ public class StrategyParameter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the strategy parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The type of strategy parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    StrategyParameterType type;
+    private final StrategyParameterType type;
+
+    public StrategyParameterType getType() {
+        return type;
+    }
 
     /**
      * Text describing the strategy parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Whether this parameter is required.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
-    Boolean isRequired;
+    private final Boolean isRequired;
+
+    public Boolean getIsRequired() {
+        return isRequired;
+    }
 
     /**
      * A default value used for the strategy parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
-    Object defaultValue;
+    private final Object defaultValue;
+
+    public Object getDefaultValue() {
+        return defaultValue;
+    }
 
     /**
      * The list of possible values used for these strategy parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
-    java.util.List<Object> possibleValues;
+    private final java.util.List<Object> possibleValues;
+
+    public java.util.List<Object> getPossibleValues() {
+        return possibleValues;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StrategyParameter(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isRequired=").append(String.valueOf(this.isRequired));
+        sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
+        sb.append(", possibleValues=").append(String.valueOf(this.possibleValues));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StrategyParameter)) {
+            return false;
+        }
+
+        StrategyParameter other = (StrategyParameter) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isRequired, other.isRequired)
+                && java.util.Objects.equals(this.defaultValue, other.defaultValue)
+                && java.util.Objects.equals(this.possibleValues, other.possibleValues)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
+        result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.possibleValues == null ? 43 : this.possibleValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

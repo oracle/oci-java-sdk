@@ -15,16 +15,40 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FleetMetricDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FleetMetricDefinition {
+public final class FleetMetricDefinition {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "metricName",
+        "baselineValue",
+        "targetValue",
+        "unit",
+        "timestamp",
+        "percentageChange",
+        "dimensions"
+    })
+    public FleetMetricDefinition(
+            String metricName,
+            Double baselineValue,
+            Double targetValue,
+            String unit,
+            java.util.Date timestamp,
+            Double percentageChange,
+            java.util.List<MetricDimensionDefinition> dimensions) {
+        super();
+        this.metricName = metricName;
+        this.baselineValue = baselineValue;
+        this.targetValue = targetValue;
+        this.unit = unit;
+        this.timestamp = timestamp;
+        this.percentageChange = percentageChange;
+        this.dimensions = dimensions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
@@ -129,48 +153,141 @@ public class FleetMetricDefinition {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
-    String metricName;
+    private final String metricName;
+
+    public String getMetricName() {
+        return metricName;
+    }
 
     /**
      * The baseline value of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineValue")
-    Double baselineValue;
+    private final Double baselineValue;
+
+    public Double getBaselineValue() {
+        return baselineValue;
+    }
 
     /**
      * The target value of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetValue")
-    Double targetValue;
+    private final Double targetValue;
+
+    public Double getTargetValue() {
+        return targetValue;
+    }
 
     /**
      * The unit of the value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    String unit;
+    private final String unit;
+
+    public String getUnit() {
+        return unit;
+    }
 
     /**
      * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * The percentage change in the metric aggregated value compared to the baseline value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentageChange")
-    Double percentageChange;
+    private final Double percentageChange;
+
+    public Double getPercentageChange() {
+        return percentageChange;
+    }
 
     /**
      * The dimensions of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    java.util.List<MetricDimensionDefinition> dimensions;
+    private final java.util.List<MetricDimensionDefinition> dimensions;
+
+    public java.util.List<MetricDimensionDefinition> getDimensions() {
+        return dimensions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FleetMetricDefinition(");
+        sb.append("metricName=").append(String.valueOf(this.metricName));
+        sb.append(", baselineValue=").append(String.valueOf(this.baselineValue));
+        sb.append(", targetValue=").append(String.valueOf(this.targetValue));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", percentageChange=").append(String.valueOf(this.percentageChange));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FleetMetricDefinition)) {
+            return false;
+        }
+
+        FleetMetricDefinition other = (FleetMetricDefinition) o;
+        return java.util.Objects.equals(this.metricName, other.metricName)
+                && java.util.Objects.equals(this.baselineValue, other.baselineValue)
+                && java.util.Objects.equals(this.targetValue, other.targetValue)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.percentageChange, other.percentageChange)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baselineValue == null ? 43 : this.baselineValue.hashCode());
+        result = (result * PRIME) + (this.targetValue == null ? 43 : this.targetValue.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentageChange == null ? 43 : this.percentageChange.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

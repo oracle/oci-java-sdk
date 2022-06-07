@@ -15,16 +15,21 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UploadCredentialsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UploadCredentialsDetails {
+public final class UploadCredentialsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"connectionDetail", "credentialPayload"})
+    public UploadCredentialsDetails(
+            UpdateConnectionDetails connectionDetail, byte[] credentialPayload) {
+        super();
+        this.connectionDetail = connectionDetail;
+        this.credentialPayload = credentialPayload;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("connectionDetail")
         private UpdateConnectionDetails connectionDetail;
@@ -72,15 +77,73 @@ public class UploadCredentialsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("connectionDetail")
-    UpdateConnectionDetails connectionDetail;
+    private final UpdateConnectionDetails connectionDetail;
+
+    public UpdateConnectionDetails getConnectionDetail() {
+        return connectionDetail;
+    }
 
     /**
      * Information used in updating connection credentials.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialPayload")
-    byte[] credentialPayload;
+    private final byte[] credentialPayload;
+
+    public byte[] getCredentialPayload() {
+        return credentialPayload;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UploadCredentialsDetails(");
+        sb.append("connectionDetail=").append(String.valueOf(this.connectionDetail));
+        sb.append(", credentialPayload=").append(String.valueOf(this.credentialPayload));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UploadCredentialsDetails)) {
+            return false;
+        }
+
+        UploadCredentialsDetails other = (UploadCredentialsDetails) o;
+        return java.util.Objects.equals(this.connectionDetail, other.connectionDetail)
+                && java.util.Objects.equals(this.credentialPayload, other.credentialPayload)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.connectionDetail == null ? 43 : this.connectionDetail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialPayload == null ? 43 : this.credentialPayload.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

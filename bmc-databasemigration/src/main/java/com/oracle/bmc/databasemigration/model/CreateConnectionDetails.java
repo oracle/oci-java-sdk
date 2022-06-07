@@ -16,16 +16,64 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateConnectionDetails {
+public final class CreateConnectionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "databaseType",
+        "manualDatabaseSubType",
+        "databaseId",
+        "connectDescriptor",
+        "certificateTdn",
+        "tlsWallet",
+        "tlsKeystore",
+        "sshDetails",
+        "adminCredentials",
+        "privateEndpoint",
+        "vaultDetails",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateConnectionDetails(
+            String compartmentId,
+            String displayName,
+            DatabaseConnectionTypes databaseType,
+            DatabaseManualConnectionSubTypes manualDatabaseSubType,
+            String databaseId,
+            CreateConnectDescriptor connectDescriptor,
+            String certificateTdn,
+            String tlsWallet,
+            String tlsKeystore,
+            CreateSshDetails sshDetails,
+            CreateAdminCredentials adminCredentials,
+            CreatePrivateEndpoint privateEndpoint,
+            CreateVaultDetails vaultDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.databaseType = databaseType;
+        this.manualDatabaseSubType = manualDatabaseSubType;
+        this.databaseId = databaseId;
+        this.connectDescriptor = connectDescriptor;
+        this.certificateTdn = certificateTdn;
+        this.tlsWallet = tlsWallet;
+        this.tlsKeystore = tlsKeystore;
+        this.sshDetails = sshDetails;
+        this.adminCredentials = adminCredentials;
+        this.privateEndpoint = privateEndpoint;
+        this.vaultDetails = vaultDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -220,43 +268,71 @@ public class CreateConnectionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID of the compartment
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Database Connection display name identifier.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Database connection type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    DatabaseConnectionTypes databaseType;
+    private final DatabaseConnectionTypes databaseType;
+
+    public DatabaseConnectionTypes getDatabaseType() {
+        return databaseType;
+    }
 
     /**
      * Database manual connection subtype. This value can only be specified for manual connections.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
-    DatabaseManualConnectionSubTypes manualDatabaseSubType;
+    private final DatabaseManualConnectionSubTypes manualDatabaseSubType;
+
+    public DatabaseManualConnectionSubTypes getManualDatabaseSubType() {
+        return manualDatabaseSubType;
+    }
 
     /**
      * The OCID of the cloud database. Required if the database connection type is Autonomous.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
+    private final String databaseId;
+
+    public String getDatabaseId() {
+        return databaseId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectDescriptor")
-    CreateConnectDescriptor connectDescriptor;
+    private final CreateConnectDescriptor connectDescriptor;
+
+    public CreateConnectDescriptor getConnectDescriptor() {
+        return connectDescriptor;
+    }
 
     /**
      * This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified.
@@ -264,33 +340,61 @@ public class CreateConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateTdn")
-    String certificateTdn;
+    private final String certificateTdn;
+
+    public String getCertificateTdn() {
+        return certificateTdn;
+    }
 
     /**
      * cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsWallet")
-    String tlsWallet;
+    private final String tlsWallet;
+
+    public String getTlsWallet() {
+        return tlsWallet;
+    }
 
     /**
      * keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsKeystore")
-    String tlsKeystore;
+    private final String tlsKeystore;
+
+    public String getTlsKeystore() {
+        return tlsKeystore;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sshDetails")
-    CreateSshDetails sshDetails;
+    private final CreateSshDetails sshDetails;
+
+    public CreateSshDetails getSshDetails() {
+        return sshDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("adminCredentials")
-    CreateAdminCredentials adminCredentials;
+    private final CreateAdminCredentials adminCredentials;
+
+    public CreateAdminCredentials getAdminCredentials() {
+        return adminCredentials;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
-    CreatePrivateEndpoint privateEndpoint;
+    private final CreatePrivateEndpoint privateEndpoint;
+
+    public CreatePrivateEndpoint getPrivateEndpoint() {
+        return privateEndpoint;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("vaultDetails")
-    CreateVaultDetails vaultDetails;
+    private final CreateVaultDetails vaultDetails;
+
+    public CreateVaultDetails getVaultDetails() {
+        return vaultDetails;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -298,7 +402,11 @@ public class CreateConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -306,8 +414,107 @@ public class CreateConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateConnectionDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", manualDatabaseSubType=").append(String.valueOf(this.manualDatabaseSubType));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", connectDescriptor=").append(String.valueOf(this.connectDescriptor));
+        sb.append(", certificateTdn=").append(String.valueOf(this.certificateTdn));
+        sb.append(", tlsWallet=").append(String.valueOf(this.tlsWallet));
+        sb.append(", tlsKeystore=").append(String.valueOf(this.tlsKeystore));
+        sb.append(", sshDetails=").append(String.valueOf(this.sshDetails));
+        sb.append(", adminCredentials=").append(String.valueOf(this.adminCredentials));
+        sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
+        sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateConnectionDetails)) {
+            return false;
+        }
+
+        CreateConnectionDetails other = (CreateConnectionDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.manualDatabaseSubType, other.manualDatabaseSubType)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.connectDescriptor, other.connectDescriptor)
+                && java.util.Objects.equals(this.certificateTdn, other.certificateTdn)
+                && java.util.Objects.equals(this.tlsWallet, other.tlsWallet)
+                && java.util.Objects.equals(this.tlsKeystore, other.tlsKeystore)
+                && java.util.Objects.equals(this.sshDetails, other.sshDetails)
+                && java.util.Objects.equals(this.adminCredentials, other.adminCredentials)
+                && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
+                && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.manualDatabaseSubType == null
+                                ? 43
+                                : this.manualDatabaseSubType.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectDescriptor == null ? 43 : this.connectDescriptor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateTdn == null ? 43 : this.certificateTdn.hashCode());
+        result = (result * PRIME) + (this.tlsWallet == null ? 43 : this.tlsWallet.hashCode());
+        result = (result * PRIME) + (this.tlsKeystore == null ? 43 : this.tlsKeystore.hashCode());
+        result = (result * PRIME) + (this.sshDetails == null ? 43 : this.sshDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminCredentials == null ? 43 : this.adminCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpoint == null ? 43 : this.privateEndpoint.hashCode());
+        result = (result * PRIME) + (this.vaultDetails == null ? 43 : this.vaultDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

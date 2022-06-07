@@ -15,16 +15,43 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateJobDefinitionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateJobDefinitionDetails {
+public final class UpdateJobDefinitionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "isIncremental",
+        "dataAssetKey",
+        "description",
+        "connectionKey",
+        "isSampleDataExtracted",
+        "sampleDataSizeInMBs",
+        "properties"
+    })
+    public UpdateJobDefinitionDetails(
+            String displayName,
+            Boolean isIncremental,
+            String dataAssetKey,
+            String description,
+            String connectionKey,
+            Boolean isSampleDataExtracted,
+            Integer sampleDataSizeInMBs,
+            java.util.Map<String, java.util.Map<String, String>> properties) {
+        super();
+        this.displayName = displayName;
+        this.isIncremental = isIncremental;
+        this.dataAssetKey = dataAssetKey;
+        this.description = description;
+        this.connectionKey = connectionKey;
+        this.isSampleDataExtracted = isSampleDataExtracted;
+        this.sampleDataSizeInMBs = sampleDataSizeInMBs;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -140,49 +167,81 @@ public class UpdateJobDefinitionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Specifies if the job definition is incremental or full.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncremental")
-    Boolean isIncremental;
+    private final Boolean isIncremental;
+
+    public Boolean getIsIncremental() {
+        return isIncremental;
+    }
 
     /**
      * The key of the data asset for which the job is defined.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
-    String dataAssetKey;
+    private final String dataAssetKey;
+
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
 
     /**
      * Detailed description of the job definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The key of the connection resource to be used for harvest, sampling, profiling jobs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
-    String connectionKey;
+    private final String connectionKey;
+
+    public String getConnectionKey() {
+        return connectionKey;
+    }
 
     /**
      * Specify if sample data to be extracted as part of this harvest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataExtracted")
-    Boolean isSampleDataExtracted;
+    private final Boolean isSampleDataExtracted;
+
+    public Boolean getIsSampleDataExtracted() {
+        return isSampleDataExtracted;
+    }
 
     /**
      * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleDataSizeInMBs")
-    Integer sampleDataSizeInMBs;
+    private final Integer sampleDataSizeInMBs;
+
+    public Integer getSampleDataSizeInMBs() {
+        return sampleDataSizeInMBs;
+    }
 
     /**
      * A map of maps that contains the properties which are specific to the job type. Each job type
@@ -193,8 +252,84 @@ public class UpdateJobDefinitionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, java.util.Map<String, String>> properties;
+    private final java.util.Map<String, java.util.Map<String, String>> properties;
+
+    public java.util.Map<String, java.util.Map<String, String>> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateJobDefinitionDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isIncremental=").append(String.valueOf(this.isIncremental));
+        sb.append(", dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", connectionKey=").append(String.valueOf(this.connectionKey));
+        sb.append(", isSampleDataExtracted=").append(String.valueOf(this.isSampleDataExtracted));
+        sb.append(", sampleDataSizeInMBs=").append(String.valueOf(this.sampleDataSizeInMBs));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateJobDefinitionDetails)) {
+            return false;
+        }
+
+        UpdateJobDefinitionDetails other = (UpdateJobDefinitionDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isIncremental, other.isIncremental)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.connectionKey, other.connectionKey)
+                && java.util.Objects.equals(this.isSampleDataExtracted, other.isSampleDataExtracted)
+                && java.util.Objects.equals(this.sampleDataSizeInMBs, other.sampleDataSizeInMBs)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncremental == null ? 43 : this.isIncremental.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionKey == null ? 43 : this.connectionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSampleDataExtracted == null
+                                ? 43
+                                : this.isSampleDataExtracted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sampleDataSizeInMBs == null
+                                ? 43
+                                : this.sampleDataSizeInMBs.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.adm.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListApplicationDependencyVulnerabilitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListApplicationDependencyVulnerabilitiesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListApplicationDependencyVulnerabilitiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,38 +17,59 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private String vulnerabilityAuditId;
 
+    public String getVulnerabilityAuditId() {
+        return vulnerabilityAuditId;
+    }
     /**
      * A filter to return only Vulnerability Audits that match the specified id.
      */
     private String vulnerabilityId;
 
+    public String getVulnerabilityId() {
+        return vulnerabilityId;
+    }
     /**
      * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
      *
      */
     private Float cvssV3GreaterThanOrEqual;
 
+    public Float getCvssV3GreaterThanOrEqual() {
+        return cvssV3GreaterThanOrEqual;
+    }
     /**
      * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
      *
      */
     private Float cvssV2GreaterThanOrEqual;
 
+    public Float getCvssV2GreaterThanOrEqual() {
+        return cvssV2GreaterThanOrEqual;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'ASC' or 'DESC'.
      */
     private com.oracle.bmc.adm.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.adm.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
@@ -103,15 +116,26 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
      */
     private String gav;
 
+    public String getGav() {
+        return gav;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -119,6 +143,121 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String vulnerabilityAuditId = null;
+
+        /**
+         * Unique Vulnerability Audit identifier path parameter.
+         * @return this builder instance
+         */
+        public Builder vulnerabilityAuditId(String vulnerabilityAuditId) {
+            this.vulnerabilityAuditId = vulnerabilityAuditId;
+            return this;
+        }
+
+        private String vulnerabilityId = null;
+
+        /**
+         * A filter to return only Vulnerability Audits that match the specified id.
+         * @return this builder instance
+         */
+        public Builder vulnerabilityId(String vulnerabilityId) {
+            this.vulnerabilityId = vulnerabilityId;
+            return this;
+        }
+
+        private Float cvssV3GreaterThanOrEqual = null;
+
+        /**
+         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
+         *
+         * @return this builder instance
+         */
+        public Builder cvssV3GreaterThanOrEqual(Float cvssV3GreaterThanOrEqual) {
+            this.cvssV3GreaterThanOrEqual = cvssV3GreaterThanOrEqual;
+            return this;
+        }
+
+        private Float cvssV2GreaterThanOrEqual = null;
+
+        /**
+         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
+         *
+         * @return this builder instance
+         */
+        public Builder cvssV2GreaterThanOrEqual(Float cvssV2GreaterThanOrEqual) {
+            this.cvssV2GreaterThanOrEqual = cvssV2GreaterThanOrEqual;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.adm.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.adm.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for gav is ascending where ascending corresponds to alphanumerical order.
+         * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String gav = null;
+
+        /**
+         * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+         * @return this builder instance
+         */
+        public Builder gav(String gav) {
+            this.gav = gav;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -180,5 +319,129 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListApplicationDependencyVulnerabilitiesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListApplicationDependencyVulnerabilitiesRequest
+         */
+        public ListApplicationDependencyVulnerabilitiesRequest buildWithoutInvocationCallback() {
+            ListApplicationDependencyVulnerabilitiesRequest request =
+                    new ListApplicationDependencyVulnerabilitiesRequest();
+            request.vulnerabilityAuditId = vulnerabilityAuditId;
+            request.vulnerabilityId = vulnerabilityId;
+            request.cvssV3GreaterThanOrEqual = cvssV3GreaterThanOrEqual;
+            request.cvssV2GreaterThanOrEqual = cvssV2GreaterThanOrEqual;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.gav = gav;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListApplicationDependencyVulnerabilitiesRequest(vulnerabilityAuditId, vulnerabilityId, cvssV3GreaterThanOrEqual, cvssV2GreaterThanOrEqual, limit, page, sortOrder, sortBy, gav, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .vulnerabilityAuditId(vulnerabilityAuditId)
+                .vulnerabilityId(vulnerabilityId)
+                .cvssV3GreaterThanOrEqual(cvssV3GreaterThanOrEqual)
+                .cvssV2GreaterThanOrEqual(cvssV2GreaterThanOrEqual)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .gav(gav)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",vulnerabilityAuditId=").append(String.valueOf(this.vulnerabilityAuditId));
+        sb.append(",vulnerabilityId=").append(String.valueOf(this.vulnerabilityId));
+        sb.append(",cvssV3GreaterThanOrEqual=")
+                .append(String.valueOf(this.cvssV3GreaterThanOrEqual));
+        sb.append(",cvssV2GreaterThanOrEqual=")
+                .append(String.valueOf(this.cvssV2GreaterThanOrEqual));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",gav=").append(String.valueOf(this.gav));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListApplicationDependencyVulnerabilitiesRequest)) {
+            return false;
+        }
+
+        ListApplicationDependencyVulnerabilitiesRequest other =
+                (ListApplicationDependencyVulnerabilitiesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.vulnerabilityAuditId, other.vulnerabilityAuditId)
+                && java.util.Objects.equals(this.vulnerabilityId, other.vulnerabilityId)
+                && java.util.Objects.equals(
+                        this.cvssV3GreaterThanOrEqual, other.cvssV3GreaterThanOrEqual)
+                && java.util.Objects.equals(
+                        this.cvssV2GreaterThanOrEqual, other.cvssV2GreaterThanOrEqual)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.gav, other.gav)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.vulnerabilityAuditId == null
+                                ? 43
+                                : this.vulnerabilityAuditId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vulnerabilityId == null ? 43 : this.vulnerabilityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cvssV3GreaterThanOrEqual == null
+                                ? 43
+                                : this.cvssV3GreaterThanOrEqual.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cvssV2GreaterThanOrEqual == null
+                                ? 43
+                                : this.cvssV2GreaterThanOrEqual.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.gav == null ? 43 : this.gav.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

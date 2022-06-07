@@ -15,16 +15,37 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InteractionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InteractionSummary {
+public final class InteractionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "userId",
+        "userName",
+        "message",
+        "userType",
+        "timeOfConversation"
+    })
+    public InteractionSummary(
+            String id,
+            String userId,
+            String userName,
+            String message,
+            String userType,
+            java.util.Date timeOfConversation) {
+        super();
+        this.id = id;
+        this.userId = userId;
+        this.userName = userName;
+        this.message = message;
+        this.userType = userType;
+        this.timeOfConversation = timeOfConversation;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -113,43 +134,129 @@ public class InteractionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The uniqueId of the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * customer or operator id who is part of this conversation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * customer or operator Name who is part of this conversation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * contains the information exchanged between operator and customer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * Whether the userConversation is an operator or customer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userType")
-    String userType;
+    private final String userType;
+
+    public String getUserType() {
+        return userType;
+    }
 
     /**
      * Time when the conversation happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfConversation")
-    java.util.Date timeOfConversation;
+    private final java.util.Date timeOfConversation;
+
+    public java.util.Date getTimeOfConversation() {
+        return timeOfConversation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InteractionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", userType=").append(String.valueOf(this.userType));
+        sb.append(", timeOfConversation=").append(String.valueOf(this.timeOfConversation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InteractionSummary)) {
+            return false;
+        }
+
+        InteractionSummary other = (InteractionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.userType, other.userType)
+                && java.util.Objects.equals(this.timeOfConversation, other.timeOfConversation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.userType == null ? 43 : this.userType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfConversation == null
+                                ? 43
+                                : this.timeOfConversation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

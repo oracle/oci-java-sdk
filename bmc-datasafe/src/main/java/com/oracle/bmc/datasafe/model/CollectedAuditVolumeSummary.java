@@ -15,16 +15,31 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CollectedAuditVolumeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CollectedAuditVolumeSummary {
+public final class CollectedAuditVolumeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "auditProfileId",
+        "monthInConsideration",
+        "onlineVolume",
+        "archivedVolume"
+    })
+    public CollectedAuditVolumeSummary(
+            String auditProfileId,
+            java.util.Date monthInConsideration,
+            Long onlineVolume,
+            Long archivedVolume) {
+        super();
+        this.auditProfileId = auditProfileId;
+        this.monthInConsideration = monthInConsideration;
+        this.onlineVolume = onlineVolume;
+        this.archivedVolume = archivedVolume;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
         private String auditProfileId;
@@ -93,11 +108,19 @@ public class CollectedAuditVolumeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the audit profile resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
-    String auditProfileId;
+    private final String auditProfileId;
+
+    public String getAuditProfileId() {
+        return auditProfileId;
+    }
 
     /**
      * Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed.
@@ -106,20 +129,88 @@ public class CollectedAuditVolumeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("monthInConsideration")
-    java.util.Date monthInConsideration;
+    private final java.util.Date monthInConsideration;
+
+    public java.util.Date getMonthInConsideration() {
+        return monthInConsideration;
+    }
 
     /**
      * The audit data volume collected by Data Safe and is available online in repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onlineVolume")
-    Long onlineVolume;
+    private final Long onlineVolume;
+
+    public Long getOnlineVolume() {
+        return onlineVolume;
+    }
 
     /**
      * The audit data volume collected by Data Safe and is available in archive storage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archivedVolume")
-    Long archivedVolume;
+    private final Long archivedVolume;
+
+    public Long getArchivedVolume() {
+        return archivedVolume;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CollectedAuditVolumeSummary(");
+        sb.append("auditProfileId=").append(String.valueOf(this.auditProfileId));
+        sb.append(", monthInConsideration=").append(String.valueOf(this.monthInConsideration));
+        sb.append(", onlineVolume=").append(String.valueOf(this.onlineVolume));
+        sb.append(", archivedVolume=").append(String.valueOf(this.archivedVolume));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CollectedAuditVolumeSummary)) {
+            return false;
+        }
+
+        CollectedAuditVolumeSummary other = (CollectedAuditVolumeSummary) o;
+        return java.util.Objects.equals(this.auditProfileId, other.auditProfileId)
+                && java.util.Objects.equals(this.monthInConsideration, other.monthInConsideration)
+                && java.util.Objects.equals(this.onlineVolume, other.onlineVolume)
+                && java.util.Objects.equals(this.archivedVolume, other.archivedVolume)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.auditProfileId == null ? 43 : this.auditProfileId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.monthInConsideration == null
+                                ? 43
+                                : this.monthInConsideration.hashCode());
+        result = (result * PRIME) + (this.onlineVolume == null ? 43 : this.onlineVolume.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.archivedVolume == null ? 43 : this.archivedVolume.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

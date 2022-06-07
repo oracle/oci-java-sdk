@@ -8,7 +8,6 @@ package com.oracle.bmc.managementagent.model;
  * Possible operation status.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.extern.slf4j.Slf4j
 public enum OperationStatus {
     Created("CREATED"),
     Accepted("ACCEPTED"),
@@ -23,6 +22,9 @@ public enum OperationStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OperationStatus.class);
 
     private final String value;
     private static java.util.Map<String, OperationStatus> map;

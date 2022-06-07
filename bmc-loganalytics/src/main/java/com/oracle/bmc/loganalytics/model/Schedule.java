@@ -15,12 +15,6 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -36,11 +30,17 @@ package com.oracle.bmc.loganalytics.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Schedule {
+    @Deprecated
+    @java.beans.ConstructorProperties({"misfirePolicy", "timeOfFirstExecution"})
+    protected Schedule(MisfirePolicy misfirePolicy, java.util.Date timeOfFirstExecution) {
+        super();
+        this.misfirePolicy = misfirePolicy;
+        this.timeOfFirstExecution = timeOfFirstExecution;
+    }
 
     /**
      * Schedule misfire retry policy.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MisfirePolicy {
         RetryOnce("RETRY_ONCE"),
         RetryIndefinitely("RETRY_INDEFINITELY"),
@@ -51,6 +51,9 @@ public class Schedule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MisfirePolicy.class);
 
         private final String value;
         private static java.util.Map<String, MisfirePolicy> map;
@@ -88,7 +91,11 @@ public class Schedule {
      * Schedule misfire retry policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("misfirePolicy")
-    MisfirePolicy misfirePolicy;
+    private final MisfirePolicy misfirePolicy;
+
+    public MisfirePolicy getMisfirePolicy() {
+        return misfirePolicy;
+    }
 
     /**
      * The date and time the scheduled task should execute first time after create or update;
@@ -96,12 +103,54 @@ public class Schedule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfFirstExecution")
-    java.util.Date timeOfFirstExecution;
+    private final java.util.Date timeOfFirstExecution;
+
+    public java.util.Date getTimeOfFirstExecution() {
+        return timeOfFirstExecution;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Schedule(");
+        sb.append("misfirePolicy=").append(String.valueOf(this.misfirePolicy));
+        sb.append(", timeOfFirstExecution=").append(String.valueOf(this.timeOfFirstExecution));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Schedule)) {
+            return false;
+        }
+
+        Schedule other = (Schedule) o;
+        return java.util.Objects.equals(this.misfirePolicy, other.misfirePolicy)
+                && java.util.Objects.equals(this.timeOfFirstExecution, other.timeOfFirstExecution);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.misfirePolicy == null ? 43 : this.misfirePolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfFirstExecution == null
+                                ? 43
+                                : this.timeOfFirstExecution.hashCode());
+        return result;
+    }
 
     /**
      * Schedule type discriminator.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         FixedFrequency("FIXED_FREQUENCY"),
         Cron("CRON"),
@@ -111,6 +160,8 @@ public class Schedule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;

@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateComputeImageCapabilitySchemaRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateComputeImageCapabilitySchemaRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails> {
@@ -26,12 +18,19 @@ public class UpdateComputeImageCapabilitySchemaRequest
      */
     private String computeImageCapabilitySchemaId;
 
+    public String getComputeImageCapabilitySchemaId() {
+        return computeImageCapabilitySchemaId;
+    }
     /**
      * Updates the freeFormTags, definedTags, and display name of the image capability schema
      */
     private com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails
             updateComputeImageCapabilitySchemaDetails;
 
+    public com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails
+            getUpdateComputeImageCapabilitySchemaDetails() {
+        return updateComputeImageCapabilitySchemaDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -39,6 +38,10 @@ public class UpdateComputeImageCapabilitySchemaRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -57,6 +60,46 @@ public class UpdateComputeImageCapabilitySchemaRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String computeImageCapabilitySchemaId = null;
+
+        /**
+         * The id of the compute image capability schema or the image ocid
+         * @return this builder instance
+         */
+        public Builder computeImageCapabilitySchemaId(String computeImageCapabilitySchemaId) {
+            this.computeImageCapabilitySchemaId = computeImageCapabilitySchemaId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails
+                updateComputeImageCapabilitySchemaDetails = null;
+
+        /**
+         * Updates the freeFormTags, definedTags, and display name of the image capability schema
+         * @return this builder instance
+         */
+        public Builder updateComputeImageCapabilitySchemaDetails(
+                com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails
+                        updateComputeImageCapabilitySchemaDetails) {
+            this.updateComputeImageCapabilitySchemaDetails =
+                    updateComputeImageCapabilitySchemaDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -123,5 +166,91 @@ public class UpdateComputeImageCapabilitySchemaRequest
             updateComputeImageCapabilitySchemaDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateComputeImageCapabilitySchemaRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateComputeImageCapabilitySchemaRequest
+         */
+        public UpdateComputeImageCapabilitySchemaRequest buildWithoutInvocationCallback() {
+            UpdateComputeImageCapabilitySchemaRequest request =
+                    new UpdateComputeImageCapabilitySchemaRequest();
+            request.computeImageCapabilitySchemaId = computeImageCapabilitySchemaId;
+            request.updateComputeImageCapabilitySchemaDetails =
+                    updateComputeImageCapabilitySchemaDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateComputeImageCapabilitySchemaRequest(computeImageCapabilitySchemaId, updateComputeImageCapabilitySchemaDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .computeImageCapabilitySchemaId(computeImageCapabilitySchemaId)
+                .updateComputeImageCapabilitySchemaDetails(
+                        updateComputeImageCapabilitySchemaDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",computeImageCapabilitySchemaId=")
+                .append(String.valueOf(this.computeImageCapabilitySchemaId));
+        sb.append(",updateComputeImageCapabilitySchemaDetails=")
+                .append(String.valueOf(this.updateComputeImageCapabilitySchemaDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateComputeImageCapabilitySchemaRequest)) {
+            return false;
+        }
+
+        UpdateComputeImageCapabilitySchemaRequest other =
+                (UpdateComputeImageCapabilitySchemaRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.computeImageCapabilitySchemaId, other.computeImageCapabilitySchemaId)
+                && java.util.Objects.equals(
+                        this.updateComputeImageCapabilitySchemaDetails,
+                        other.updateComputeImageCapabilitySchemaDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.computeImageCapabilitySchemaId == null
+                                ? 43
+                                : this.computeImageCapabilitySchemaId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateComputeImageCapabilitySchemaDetails == null
+                                ? 43
+                                : this.updateComputeImageCapabilitySchemaDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

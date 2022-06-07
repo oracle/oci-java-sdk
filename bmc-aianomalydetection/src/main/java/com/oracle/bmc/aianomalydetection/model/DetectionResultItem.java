@@ -15,16 +15,26 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DetectionResultItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DetectionResultItem {
+public final class DetectionResultItem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timestamp", "rowIndex", "score", "anomalies"})
+    public DetectionResultItem(
+            java.util.Date timestamp,
+            Integer rowIndex,
+            Double score,
+            java.util.List<Anomaly> anomalies) {
+        super();
+        this.timestamp = timestamp;
+        this.rowIndex = rowIndex;
+        this.score = score;
+        this.anomalies = anomalies;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
@@ -92,30 +102,98 @@ public class DetectionResultItem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The time stamp associated with a list of anomaly points, format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * The index number to indicate where anomaly points are located among all rows when there are no timestamps provided.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowIndex")
-    Integer rowIndex;
+    private final Integer rowIndex;
+
+    public Integer getRowIndex() {
+        return rowIndex;
+    }
 
     /**
      * A significant score across multiple signals at timestamp/row level
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
-    Double score;
+    private final Double score;
+
+    public Double getScore() {
+        return score;
+    }
 
     /**
      * An array of anomalies associated with a given timestamp/row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("anomalies")
-    java.util.List<Anomaly> anomalies;
+    private final java.util.List<Anomaly> anomalies;
+
+    public java.util.List<Anomaly> getAnomalies() {
+        return anomalies;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DetectionResultItem(");
+        sb.append("timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", rowIndex=").append(String.valueOf(this.rowIndex));
+        sb.append(", score=").append(String.valueOf(this.score));
+        sb.append(", anomalies=").append(String.valueOf(this.anomalies));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetectionResultItem)) {
+            return false;
+        }
+
+        DetectionResultItem other = (DetectionResultItem) o;
+        return java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.rowIndex, other.rowIndex)
+                && java.util.Objects.equals(this.score, other.score)
+                && java.util.Objects.equals(this.anomalies, other.anomalies)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.rowIndex == null ? 43 : this.rowIndex.hashCode());
+        result = (result * PRIME) + (this.score == null ? 43 : this.score.hashCode());
+        result = (result * PRIME) + (this.anomalies == null ? 43 : this.anomalies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

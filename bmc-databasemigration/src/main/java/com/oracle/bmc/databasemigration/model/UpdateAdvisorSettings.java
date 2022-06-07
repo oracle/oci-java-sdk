@@ -16,16 +16,20 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateAdvisorSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateAdvisorSettings {
+public final class UpdateAdvisorSettings {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isSkipAdvisor", "isIgnoreErrors"})
+    public UpdateAdvisorSettings(Boolean isSkipAdvisor, Boolean isIgnoreErrors) {
+        super();
+        this.isSkipAdvisor = isSkipAdvisor;
+        this.isIgnoreErrors = isIgnoreErrors;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isSkipAdvisor")
         private Boolean isSkipAdvisor;
@@ -72,20 +76,78 @@ public class UpdateAdvisorSettings {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * True to skip the Pre-Migration Advisor execution. Default is false.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipAdvisor")
-    Boolean isSkipAdvisor;
+    private final Boolean isSkipAdvisor;
+
+    public Boolean getIsSkipAdvisor() {
+        return isSkipAdvisor;
+    }
 
     /**
      * True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreErrors")
-    Boolean isIgnoreErrors;
+    private final Boolean isIgnoreErrors;
+
+    public Boolean getIsIgnoreErrors() {
+        return isIgnoreErrors;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateAdvisorSettings(");
+        sb.append("isSkipAdvisor=").append(String.valueOf(this.isSkipAdvisor));
+        sb.append(", isIgnoreErrors=").append(String.valueOf(this.isIgnoreErrors));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAdvisorSettings)) {
+            return false;
+        }
+
+        UpdateAdvisorSettings other = (UpdateAdvisorSettings) o;
+        return java.util.Objects.equals(this.isSkipAdvisor, other.isSkipAdvisor)
+                && java.util.Objects.equals(this.isIgnoreErrors, other.isIgnoreErrors)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isSkipAdvisor == null ? 43 : this.isSkipAdvisor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIgnoreErrors == null ? 43 : this.isIgnoreErrors.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

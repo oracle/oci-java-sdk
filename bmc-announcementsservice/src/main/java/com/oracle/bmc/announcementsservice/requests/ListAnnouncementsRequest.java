@@ -9,14 +9,6 @@ import com.oracle.bmc.announcementsservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/ListAnnouncementsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAnnouncementsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,21 +17,33 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The maximum number of items to return in a paginated "List" call.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The type of announcement.
      */
     private String announcementType;
 
+    public String getAnnouncementType() {
+        return announcementType;
+    }
     /**
      * The announcement's current lifecycle state.
      */
@@ -80,11 +84,18 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * Whether the announcement is displayed as a console banner.
      */
     private Boolean isBanner;
 
+    public Boolean getIsBanner() {
+        return isBanner;
+    }
     /**
      * The criteria to sort by. You can specify only one sort order.
      *
@@ -131,6 +142,10 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use. (Sorting by {@code announcementType} orders the announcements list according to importance.)
      *
@@ -173,26 +188,42 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The boundary for the earliest {@code timeOneValue} date on announcements that you want to see.
      */
     private java.util.Date timeOneEarliestTime;
 
+    public java.util.Date getTimeOneEarliestTime() {
+        return timeOneEarliestTime;
+    }
     /**
      * The boundary for the latest {@code timeOneValue} date on announcements that you want to see.
      */
     private java.util.Date timeOneLatestTime;
 
+    public java.util.Date getTimeOneLatestTime() {
+        return timeOneLatestTime;
+    }
     /**
      * A filter to return only announcements that match a specific environment name.
      */
     private String environmentName;
 
+    public String getEnvironmentName() {
+        return environmentName;
+    }
     /**
      * A filter to return only announcements affecting a specific service.
      */
     private String service;
 
+    public String getService() {
+        return service;
+    }
     /**
      * A filter to return only announcements affecting a specific platform.
      */
@@ -233,11 +264,18 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             throw new IllegalArgumentException("Invalid PlatformType: " + key);
         }
     };
+
+    public PlatformType getPlatformType() {
+        return platformType;
+    }
     /**
      * Exclude The type of announcement.
      */
     private java.util.List<String> excludeAnnouncementTypes;
 
+    public java.util.List<String> getExcludeAnnouncementTypes() {
+        return excludeAnnouncementTypes;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the complete request ID.
@@ -245,12 +283,162 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAnnouncementsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the compartment.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String announcementType = null;
+
+        /**
+         * The type of announcement.
+         * @return this builder instance
+         */
+        public Builder announcementType(String announcementType) {
+            this.announcementType = announcementType;
+            return this;
+        }
+
+        private LifecycleState lifecycleState = null;
+
+        /**
+         * The announcement's current lifecycle state.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private Boolean isBanner = null;
+
+        /**
+         * Whether the announcement is displayed as a console banner.
+         * @return this builder instance
+         */
+        public Builder isBanner(Boolean isBanner) {
+            this.isBanner = isBanner;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The criteria to sort by. You can specify only one sort order.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use. (Sorting by {@code announcementType} orders the announcements list according to importance.)
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private java.util.Date timeOneEarliestTime = null;
+
+        /**
+         * The boundary for the earliest {@code timeOneValue} date on announcements that you want to see.
+         * @return this builder instance
+         */
+        public Builder timeOneEarliestTime(java.util.Date timeOneEarliestTime) {
+            this.timeOneEarliestTime = timeOneEarliestTime;
+            return this;
+        }
+
+        private java.util.Date timeOneLatestTime = null;
+
+        /**
+         * The boundary for the latest {@code timeOneValue} date on announcements that you want to see.
+         * @return this builder instance
+         */
+        public Builder timeOneLatestTime(java.util.Date timeOneLatestTime) {
+            this.timeOneLatestTime = timeOneLatestTime;
+            return this;
+        }
+
+        private String environmentName = null;
+
+        /**
+         * A filter to return only announcements that match a specific environment name.
+         * @return this builder instance
+         */
+        public Builder environmentName(String environmentName) {
+            this.environmentName = environmentName;
+            return this;
+        }
+
+        private String service = null;
+
+        /**
+         * A filter to return only announcements affecting a specific service.
+         * @return this builder instance
+         */
+        public Builder service(String service) {
+            this.service = service;
+            return this;
+        }
+
+        private PlatformType platformType = null;
+
+        /**
+         * A filter to return only announcements affecting a specific platform.
+         * @return this builder instance
+         */
+        public Builder platformType(PlatformType platformType) {
+            this.platformType = platformType;
+            return this;
+        }
 
         private java.util.List<String> excludeAnnouncementTypes = null;
 
@@ -269,6 +457,19 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder excludeAnnouncementTypes(String singularValue) {
             return this.excludeAnnouncementTypes(java.util.Arrays.asList(singularValue));
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -335,5 +536,154 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAnnouncementsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAnnouncementsRequest
+         */
+        public ListAnnouncementsRequest buildWithoutInvocationCallback() {
+            ListAnnouncementsRequest request = new ListAnnouncementsRequest();
+            request.compartmentId = compartmentId;
+            request.limit = limit;
+            request.page = page;
+            request.announcementType = announcementType;
+            request.lifecycleState = lifecycleState;
+            request.isBanner = isBanner;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.timeOneEarliestTime = timeOneEarliestTime;
+            request.timeOneLatestTime = timeOneLatestTime;
+            request.environmentName = environmentName;
+            request.service = service;
+            request.platformType = platformType;
+            request.excludeAnnouncementTypes = excludeAnnouncementTypes;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListAnnouncementsRequest(compartmentId, limit, page, announcementType, lifecycleState, isBanner, sortBy, sortOrder, timeOneEarliestTime, timeOneLatestTime, environmentName, service, platformType, excludeAnnouncementTypes, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .limit(limit)
+                .page(page)
+                .announcementType(announcementType)
+                .lifecycleState(lifecycleState)
+                .isBanner(isBanner)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .timeOneEarliestTime(timeOneEarliestTime)
+                .timeOneLatestTime(timeOneLatestTime)
+                .environmentName(environmentName)
+                .service(service)
+                .platformType(platformType)
+                .excludeAnnouncementTypes(excludeAnnouncementTypes)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",announcementType=").append(String.valueOf(this.announcementType));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",isBanner=").append(String.valueOf(this.isBanner));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",timeOneEarliestTime=").append(String.valueOf(this.timeOneEarliestTime));
+        sb.append(",timeOneLatestTime=").append(String.valueOf(this.timeOneLatestTime));
+        sb.append(",environmentName=").append(String.valueOf(this.environmentName));
+        sb.append(",service=").append(String.valueOf(this.service));
+        sb.append(",platformType=").append(String.valueOf(this.platformType));
+        sb.append(",excludeAnnouncementTypes=")
+                .append(String.valueOf(this.excludeAnnouncementTypes));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAnnouncementsRequest)) {
+            return false;
+        }
+
+        ListAnnouncementsRequest other = (ListAnnouncementsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.announcementType, other.announcementType)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isBanner, other.isBanner)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.timeOneEarliestTime, other.timeOneEarliestTime)
+                && java.util.Objects.equals(this.timeOneLatestTime, other.timeOneLatestTime)
+                && java.util.Objects.equals(this.environmentName, other.environmentName)
+                && java.util.Objects.equals(this.service, other.service)
+                && java.util.Objects.equals(this.platformType, other.platformType)
+                && java.util.Objects.equals(
+                        this.excludeAnnouncementTypes, other.excludeAnnouncementTypes)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.announcementType == null ? 43 : this.announcementType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.isBanner == null ? 43 : this.isBanner.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOneEarliestTime == null
+                                ? 43
+                                : this.timeOneEarliestTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOneLatestTime == null ? 43 : this.timeOneLatestTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentName == null ? 43 : this.environmentName.hashCode());
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.excludeAnnouncementTypes == null
+                                ? 43
+                                : this.excludeAnnouncementTypes.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

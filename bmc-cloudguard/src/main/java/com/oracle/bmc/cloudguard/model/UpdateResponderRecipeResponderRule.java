@@ -15,16 +15,21 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateResponderRecipeResponderRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateResponderRecipeResponderRule {
+public final class UpdateResponderRecipeResponderRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({"responderRuleId", "details"})
+    public UpdateResponderRecipeResponderRule(
+            String responderRuleId, UpdateResponderRuleDetails details) {
+        super();
+        this.responderRuleId = responderRuleId;
+        this.details = details;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
         private String responderRuleId;
@@ -70,15 +75,71 @@ public class UpdateResponderRecipeResponderRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * ResponderRecipeRule Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
-    String responderRuleId;
+    private final String responderRuleId;
+
+    public String getResponderRuleId() {
+        return responderRuleId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("details")
-    UpdateResponderRuleDetails details;
+    private final UpdateResponderRuleDetails details;
+
+    public UpdateResponderRuleDetails getDetails() {
+        return details;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateResponderRecipeResponderRule(");
+        sb.append("responderRuleId=").append(String.valueOf(this.responderRuleId));
+        sb.append(", details=").append(String.valueOf(this.details));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateResponderRecipeResponderRule)) {
+            return false;
+        }
+
+        UpdateResponderRecipeResponderRule other = (UpdateResponderRecipeResponderRule) o;
+        return java.util.Objects.equals(this.responderRuleId, other.responderRuleId)
+                && java.util.Objects.equals(this.details, other.details)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.responderRuleId == null ? 43 : this.responderRuleId.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

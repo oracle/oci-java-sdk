@@ -26,9 +26,12 @@ import com.oracle.bmc.ons.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.RequiredArgsConstructor
 public class NotificationDataPlanePaginators {
     private final NotificationDataPlane client;
+
+    public NotificationDataPlanePaginators(NotificationDataPlane client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listSubscriptions operation. This iterable

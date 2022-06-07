@@ -16,16 +16,43 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = VtapCaptureFilterRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VtapCaptureFilterRuleDetails {
+public final class VtapCaptureFilterRuleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "trafficDirection",
+        "ruleAction",
+        "sourceCidr",
+        "destinationCidr",
+        "protocol",
+        "icmpOptions",
+        "tcpOptions",
+        "udpOptions"
+    })
+    public VtapCaptureFilterRuleDetails(
+            TrafficDirection trafficDirection,
+            RuleAction ruleAction,
+            String sourceCidr,
+            String destinationCidr,
+            String protocol,
+            IcmpOptions icmpOptions,
+            TcpOptions tcpOptions,
+            UdpOptions udpOptions) {
+        super();
+        this.trafficDirection = trafficDirection;
+        this.ruleAction = ruleAction;
+        this.sourceCidr = sourceCidr;
+        this.destinationCidr = destinationCidr;
+        this.protocol = protocol;
+        this.icmpOptions = icmpOptions;
+        this.tcpOptions = tcpOptions;
+        this.udpOptions = udpOptions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("trafficDirection")
         private TrafficDirection trafficDirection;
@@ -141,11 +168,14 @@ public class VtapCaptureFilterRuleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The traffic direction the VTAP is configured to mirror.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TrafficDirection {
         Ingress("INGRESS"),
         Egress("EGRESS"),
@@ -155,6 +185,9 @@ public class VtapCaptureFilterRuleDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TrafficDirection.class);
 
         private final String value;
         private static java.util.Map<String, TrafficDirection> map;
@@ -193,12 +226,16 @@ public class VtapCaptureFilterRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trafficDirection")
-    TrafficDirection trafficDirection;
+    private final TrafficDirection trafficDirection;
+
+    public TrafficDirection getTrafficDirection() {
+        return trafficDirection;
+    }
+
     /**
      * Include or exclude packets meeting this definition from mirrored traffic.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RuleAction {
         Include("INCLUDE"),
         Exclude("EXCLUDE"),
@@ -208,6 +245,9 @@ public class VtapCaptureFilterRuleDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RuleAction.class);
 
         private final String value;
         private static java.util.Map<String, RuleAction> map;
@@ -246,21 +286,33 @@ public class VtapCaptureFilterRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
-    RuleAction ruleAction;
+    private final RuleAction ruleAction;
+
+    public RuleAction getRuleAction() {
+        return ruleAction;
+    }
 
     /**
      * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceCidr")
-    String sourceCidr;
+    private final String sourceCidr;
+
+    public String getSourceCidr() {
+        return sourceCidr;
+    }
 
     /**
      * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCidr")
-    String destinationCidr;
+    private final String destinationCidr;
+
+    public String getDestinationCidr() {
+        return destinationCidr;
+    }
 
     /**
      * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter.
@@ -271,17 +323,97 @@ public class VtapCaptureFilterRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
+    private final String protocol;
+
+    public String getProtocol() {
+        return protocol;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
-    IcmpOptions icmpOptions;
+    private final IcmpOptions icmpOptions;
+
+    public IcmpOptions getIcmpOptions() {
+        return icmpOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("tcpOptions")
-    TcpOptions tcpOptions;
+    private final TcpOptions tcpOptions;
+
+    public TcpOptions getTcpOptions() {
+        return tcpOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("udpOptions")
-    UdpOptions udpOptions;
+    private final UdpOptions udpOptions;
+
+    public UdpOptions getUdpOptions() {
+        return udpOptions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VtapCaptureFilterRuleDetails(");
+        sb.append("trafficDirection=").append(String.valueOf(this.trafficDirection));
+        sb.append(", ruleAction=").append(String.valueOf(this.ruleAction));
+        sb.append(", sourceCidr=").append(String.valueOf(this.sourceCidr));
+        sb.append(", destinationCidr=").append(String.valueOf(this.destinationCidr));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", icmpOptions=").append(String.valueOf(this.icmpOptions));
+        sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
+        sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VtapCaptureFilterRuleDetails)) {
+            return false;
+        }
+
+        VtapCaptureFilterRuleDetails other = (VtapCaptureFilterRuleDetails) o;
+        return java.util.Objects.equals(this.trafficDirection, other.trafficDirection)
+                && java.util.Objects.equals(this.ruleAction, other.ruleAction)
+                && java.util.Objects.equals(this.sourceCidr, other.sourceCidr)
+                && java.util.Objects.equals(this.destinationCidr, other.destinationCidr)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.icmpOptions, other.icmpOptions)
+                && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
+                && java.util.Objects.equals(this.udpOptions, other.udpOptions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.trafficDirection == null ? 43 : this.trafficDirection.hashCode());
+        result = (result * PRIME) + (this.ruleAction == null ? 43 : this.ruleAction.hashCode());
+        result = (result * PRIME) + (this.sourceCidr == null ? 43 : this.sourceCidr.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationCidr == null ? 43 : this.destinationCidr.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.icmpOptions == null ? 43 : this.icmpOptions.hashCode());
+        result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
+        result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

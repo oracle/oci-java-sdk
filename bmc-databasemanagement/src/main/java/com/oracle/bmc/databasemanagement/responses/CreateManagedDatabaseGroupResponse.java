@@ -7,15 +7,15 @@ package com.oracle.bmc.databasemanagement.responses;
 import com.oracle.bmc.databasemanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A link to the newly created Managed Database Group.
      */
     private String location;
+
+    public String getLocation() {
+        return location;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -24,16 +24,28 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The returned ManagedDatabaseGroup instance.
      */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
+
+    public com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup getManagedDatabaseGroup() {
+        return managedDatabaseGroup;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -63,6 +75,35 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        private String location;
+
+        public Builder location(String location) {
+            this.location = location;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
+
+        public Builder managedDatabaseGroup(
+                com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup) {
+            this.managedDatabaseGroup = managedDatabaseGroup;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -81,5 +122,54 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
             return new CreateManagedDatabaseGroupResponse(
                     __httpStatusCode__, location, opcRequestId, etag, managedDatabaseGroup);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",location=").append(String.valueOf(location));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",managedDatabaseGroup=").append(String.valueOf(managedDatabaseGroup));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateManagedDatabaseGroupResponse)) {
+            return false;
+        }
+
+        CreateManagedDatabaseGroupResponse other = (CreateManagedDatabaseGroupResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.managedDatabaseGroup, other.managedDatabaseGroup);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseGroup == null
+                                ? 43
+                                : this.managedDatabaseGroup.hashCode());
+        return result;
     }
 }

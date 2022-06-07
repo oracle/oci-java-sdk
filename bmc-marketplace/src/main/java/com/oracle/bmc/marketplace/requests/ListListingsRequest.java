@@ -9,14 +9,6 @@ import com.oracle.bmc.marketplace.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListListingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListListingsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,27 +16,42 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> name;
 
+    public java.util.List<String> getName() {
+        return name;
+    }
     /**
      * The unique identifier for the listing.
      */
     private String listingId;
 
+    public String getListingId() {
+        return listingId;
+    }
     /**
      * The image identifier of the listing.
      */
     private String imageId;
 
+    public String getImageId() {
+        return imageId;
+    }
     /**
      * Limit results to just this publisher.
      */
     private String publisherId;
 
+    public String getPublisherId() {
+        return publisherId;
+    }
     /**
      * A filter to return only packages that match the given package type exactly.
      *
      */
     private String packageType;
 
+    public String getPackageType() {
+        return packageType;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
      * please provide the request ID.
@@ -52,17 +59,26 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
      * {@code TIMERELEASED} displays results in descending order by default.
@@ -108,6 +124,10 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either {@code ASC} or {@code DESC}.
      */
@@ -148,6 +168,10 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with
      * one or more matching categories.
@@ -155,6 +179,9 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> category;
 
+    public java.util.List<String> getCategory() {
+        return category;
+    }
     /**
      * Name of the pricing type. If multiple pricing types are provided, then any listing with
      * one or more matching pricing models will be returned.
@@ -162,26 +189,42 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<com.oracle.bmc.marketplace.model.PricingTypeEnum> pricing;
 
+    public java.util.List<com.oracle.bmc.marketplace.model.PricingTypeEnum> getPricing() {
+        return pricing;
+    }
     /**
      * Indicates whether to show only featured listings. If this is set to {@code false} or is omitted, then all listings will be returned.
      *
      */
     private Boolean isFeatured;
 
+    public Boolean getIsFeatured() {
+        return isFeatured;
+    }
     /**
      * The type of the listing.
      */
     private java.util.List<com.oracle.bmc.marketplace.model.ListingType> listingTypes;
 
+    public java.util.List<com.oracle.bmc.marketplace.model.ListingType> getListingTypes() {
+        return listingTypes;
+    }
     /**
      * The operating system of the listing.
      */
     private java.util.List<String> operatingSystems;
 
+    public java.util.List<String> getOperatingSystems() {
+        return operatingSystems;
+    }
     /**
      * The unique identifier for the compartment.
      */
     private String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -207,6 +250,112 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder name(String singularValue) {
             return this.name(java.util.Arrays.asList(singularValue));
+        }
+
+        private String listingId = null;
+
+        /**
+         * The unique identifier for the listing.
+         * @return this builder instance
+         */
+        public Builder listingId(String listingId) {
+            this.listingId = listingId;
+            return this;
+        }
+
+        private String imageId = null;
+
+        /**
+         * The image identifier of the listing.
+         * @return this builder instance
+         */
+        public Builder imageId(String imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        private String publisherId = null;
+
+        /**
+         * Limit results to just this publisher.
+         * @return this builder instance
+         */
+        public Builder publisherId(String publisherId) {
+            this.publisherId = publisherId;
+            return this;
+        }
+
+        private String packageType = null;
+
+        /**
+         * A filter to return only packages that match the given package type exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder packageType(String packageType) {
+            this.packageType = packageType;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to use to sort listed results. You can only specify one field to sort by.
+         * {@code TIMERELEASED} displays results in descending order by default.
+         * You can change your preference by specifying a different sort order.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either {@code ASC} or {@code DESC}.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
         }
 
         private java.util.List<String> category = null;
@@ -256,6 +405,18 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this.pricing(java.util.Arrays.asList(singularValue));
         }
 
+        private Boolean isFeatured = null;
+
+        /**
+         * Indicates whether to show only featured listings. If this is set to {@code false} or is omitted, then all listings will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder isFeatured(Boolean isFeatured) {
+            this.isFeatured = isFeatured;
+            return this;
+        }
+
         private java.util.List<com.oracle.bmc.marketplace.model.ListingType> listingTypes = null;
 
         /**
@@ -293,6 +454,17 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder operatingSystems(String singularValue) {
             return this.operatingSystems(java.util.Arrays.asList(singularValue));
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The unique identifier for the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
         }
 
         /**
@@ -360,5 +532,143 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListListingsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListListingsRequest
+         */
+        public ListListingsRequest buildWithoutInvocationCallback() {
+            ListListingsRequest request = new ListListingsRequest();
+            request.name = name;
+            request.listingId = listingId;
+            request.imageId = imageId;
+            request.publisherId = publisherId;
+            request.packageType = packageType;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.category = category;
+            request.pricing = pricing;
+            request.isFeatured = isFeatured;
+            request.listingTypes = listingTypes;
+            request.operatingSystems = operatingSystems;
+            request.compartmentId = compartmentId;
+            return request;
+            // new ListListingsRequest(name, listingId, imageId, publisherId, packageType, opcRequestId, limit, page, sortBy, sortOrder, category, pricing, isFeatured, listingTypes, operatingSystems, compartmentId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .name(name)
+                .listingId(listingId)
+                .imageId(imageId)
+                .publisherId(publisherId)
+                .packageType(packageType)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .category(category)
+                .pricing(pricing)
+                .isFeatured(isFeatured)
+                .listingTypes(listingTypes)
+                .operatingSystems(operatingSystems)
+                .compartmentId(compartmentId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",listingId=").append(String.valueOf(this.listingId));
+        sb.append(",imageId=").append(String.valueOf(this.imageId));
+        sb.append(",publisherId=").append(String.valueOf(this.publisherId));
+        sb.append(",packageType=").append(String.valueOf(this.packageType));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",category=").append(String.valueOf(this.category));
+        sb.append(",pricing=").append(String.valueOf(this.pricing));
+        sb.append(",isFeatured=").append(String.valueOf(this.isFeatured));
+        sb.append(",listingTypes=").append(String.valueOf(this.listingTypes));
+        sb.append(",operatingSystems=").append(String.valueOf(this.operatingSystems));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListListingsRequest)) {
+            return false;
+        }
+
+        ListListingsRequest other = (ListListingsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.publisherId, other.publisherId)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.pricing, other.pricing)
+                && java.util.Objects.equals(this.isFeatured, other.isFeatured)
+                && java.util.Objects.equals(this.listingTypes, other.listingTypes)
+                && java.util.Objects.equals(this.operatingSystems, other.operatingSystems)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.publisherId == null ? 43 : this.publisherId.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.pricing == null ? 43 : this.pricing.hashCode());
+        result = (result * PRIME) + (this.isFeatured == null ? 43 : this.isFeatured.hashCode());
+        result = (result * PRIME) + (this.listingTypes == null ? 43 : this.listingTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystems == null ? 43 : this.operatingSystems.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        return result;
     }
 }

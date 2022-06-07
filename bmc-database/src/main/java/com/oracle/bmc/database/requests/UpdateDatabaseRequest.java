@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDatabaseExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDatabaseRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdateDatabaseDetails> {
@@ -26,11 +18,17 @@ public class UpdateDatabaseRequest
      */
     private String databaseId;
 
+    public String getDatabaseId() {
+        return databaseId;
+    }
     /**
      * Request to perform database update.
      */
     private com.oracle.bmc.database.model.UpdateDatabaseDetails updateDatabaseDetails;
 
+    public com.oracle.bmc.database.model.UpdateDatabaseDetails getUpdateDatabaseDetails() {
+        return updateDatabaseDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -38,6 +36,10 @@ public class UpdateDatabaseRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -55,6 +57,43 @@ public class UpdateDatabaseRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String databaseId = null;
+
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder databaseId(String databaseId) {
+            this.databaseId = databaseId;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.UpdateDatabaseDetails updateDatabaseDetails = null;
+
+        /**
+         * Request to perform database update.
+         * @return this builder instance
+         */
+        public Builder updateDatabaseDetails(
+                com.oracle.bmc.database.model.UpdateDatabaseDetails updateDatabaseDetails) {
+            this.updateDatabaseDetails = updateDatabaseDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -119,5 +158,78 @@ public class UpdateDatabaseRequest
             updateDatabaseDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateDatabaseRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateDatabaseRequest
+         */
+        public UpdateDatabaseRequest buildWithoutInvocationCallback() {
+            UpdateDatabaseRequest request = new UpdateDatabaseRequest();
+            request.databaseId = databaseId;
+            request.updateDatabaseDetails = updateDatabaseDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateDatabaseRequest(databaseId, updateDatabaseDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .databaseId(databaseId)
+                .updateDatabaseDetails(updateDatabaseDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(",updateDatabaseDetails=").append(String.valueOf(this.updateDatabaseDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDatabaseRequest)) {
+            return false;
+        }
+
+        UpdateDatabaseRequest other = (UpdateDatabaseRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.updateDatabaseDetails, other.updateDatabaseDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDatabaseDetails == null
+                                ? 43
+                                : this.updateDatabaseDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

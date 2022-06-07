@@ -24,14 +24,167 @@ package com.oracle.bmc.ocvp.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Sddc.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Sddc {
+public final class Sddc {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "computeAvailabilityDomain",
+        "displayName",
+        "instanceDisplayNamePrefix",
+        "vmwareSoftwareVersion",
+        "compartmentId",
+        "esxiHostsCount",
+        "initialSku",
+        "vcenterFqdn",
+        "nsxManagerFqdn",
+        "vcenterPrivateIpId",
+        "nsxManagerPrivateIpId",
+        "vcenterInitialPassword",
+        "nsxManagerInitialPassword",
+        "vcenterUsername",
+        "nsxManagerUsername",
+        "sshAuthorizedKeys",
+        "workloadNetworkCidr",
+        "nsxOverlaySegmentName",
+        "nsxEdgeUplinkIpId",
+        "provisioningSubnetId",
+        "vsphereVlanId",
+        "vmotionVlanId",
+        "vsanVlanId",
+        "nsxVTepVlanId",
+        "nsxEdgeVTepVlanId",
+        "nsxEdgeUplink1VlanId",
+        "nsxEdgeUplink2VlanId",
+        "replicationVlanId",
+        "provisioningVlanId",
+        "hcxPrivateIpId",
+        "hcxFqdn",
+        "hcxInitialPassword",
+        "hcxVlanId",
+        "isHcxEnabled",
+        "hcxOnPremKey",
+        "isHcxEnterpriseEnabled",
+        "isHcxPendingDowngrade",
+        "hcxOnPremLicenses",
+        "timeHcxBillingCycleEnd",
+        "timeHcxLicenseStatusUpdated",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "initialHostShapeName",
+        "initialHostOcpuCount",
+        "isShieldedInstanceEnabled",
+        "capacityReservationId",
+        "freeformTags",
+        "definedTags"
+    })
+    public Sddc(
+            String id,
+            String computeAvailabilityDomain,
+            String displayName,
+            String instanceDisplayNamePrefix,
+            String vmwareSoftwareVersion,
+            String compartmentId,
+            Integer esxiHostsCount,
+            Sku initialSku,
+            String vcenterFqdn,
+            String nsxManagerFqdn,
+            String vcenterPrivateIpId,
+            String nsxManagerPrivateIpId,
+            String vcenterInitialPassword,
+            String nsxManagerInitialPassword,
+            String vcenterUsername,
+            String nsxManagerUsername,
+            String sshAuthorizedKeys,
+            String workloadNetworkCidr,
+            String nsxOverlaySegmentName,
+            String nsxEdgeUplinkIpId,
+            String provisioningSubnetId,
+            String vsphereVlanId,
+            String vmotionVlanId,
+            String vsanVlanId,
+            String nsxVTepVlanId,
+            String nsxEdgeVTepVlanId,
+            String nsxEdgeUplink1VlanId,
+            String nsxEdgeUplink2VlanId,
+            String replicationVlanId,
+            String provisioningVlanId,
+            String hcxPrivateIpId,
+            String hcxFqdn,
+            String hcxInitialPassword,
+            String hcxVlanId,
+            Boolean isHcxEnabled,
+            String hcxOnPremKey,
+            Boolean isHcxEnterpriseEnabled,
+            Boolean isHcxPendingDowngrade,
+            java.util.List<HcxLicenseSummary> hcxOnPremLicenses,
+            java.util.Date timeHcxBillingCycleEnd,
+            java.util.Date timeHcxLicenseStatusUpdated,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleStates lifecycleState,
+            String initialHostShapeName,
+            Float initialHostOcpuCount,
+            Boolean isShieldedInstanceEnabled,
+            String capacityReservationId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.computeAvailabilityDomain = computeAvailabilityDomain;
+        this.displayName = displayName;
+        this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
+        this.vmwareSoftwareVersion = vmwareSoftwareVersion;
+        this.compartmentId = compartmentId;
+        this.esxiHostsCount = esxiHostsCount;
+        this.initialSku = initialSku;
+        this.vcenterFqdn = vcenterFqdn;
+        this.nsxManagerFqdn = nsxManagerFqdn;
+        this.vcenterPrivateIpId = vcenterPrivateIpId;
+        this.nsxManagerPrivateIpId = nsxManagerPrivateIpId;
+        this.vcenterInitialPassword = vcenterInitialPassword;
+        this.nsxManagerInitialPassword = nsxManagerInitialPassword;
+        this.vcenterUsername = vcenterUsername;
+        this.nsxManagerUsername = nsxManagerUsername;
+        this.sshAuthorizedKeys = sshAuthorizedKeys;
+        this.workloadNetworkCidr = workloadNetworkCidr;
+        this.nsxOverlaySegmentName = nsxOverlaySegmentName;
+        this.nsxEdgeUplinkIpId = nsxEdgeUplinkIpId;
+        this.provisioningSubnetId = provisioningSubnetId;
+        this.vsphereVlanId = vsphereVlanId;
+        this.vmotionVlanId = vmotionVlanId;
+        this.vsanVlanId = vsanVlanId;
+        this.nsxVTepVlanId = nsxVTepVlanId;
+        this.nsxEdgeVTepVlanId = nsxEdgeVTepVlanId;
+        this.nsxEdgeUplink1VlanId = nsxEdgeUplink1VlanId;
+        this.nsxEdgeUplink2VlanId = nsxEdgeUplink2VlanId;
+        this.replicationVlanId = replicationVlanId;
+        this.provisioningVlanId = provisioningVlanId;
+        this.hcxPrivateIpId = hcxPrivateIpId;
+        this.hcxFqdn = hcxFqdn;
+        this.hcxInitialPassword = hcxInitialPassword;
+        this.hcxVlanId = hcxVlanId;
+        this.isHcxEnabled = isHcxEnabled;
+        this.hcxOnPremKey = hcxOnPremKey;
+        this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
+        this.isHcxPendingDowngrade = isHcxPendingDowngrade;
+        this.hcxOnPremLicenses = hcxOnPremLicenses;
+        this.timeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
+        this.timeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.initialHostShapeName = initialHostShapeName;
+        this.initialHostOcpuCount = initialHostOcpuCount;
+        this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
+        this.capacityReservationId = capacityReservationId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -610,12 +763,20 @@ public class Sddc {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is {@code multi-AD}.
@@ -624,7 +785,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
-    String computeAvailabilityDomain;
+    private final String computeAvailabilityDomain;
+
+    public String getComputeAvailabilityDomain() {
+        return computeAvailabilityDomain;
+    }
 
     /**
      * A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits,
@@ -633,7 +798,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the SDDC.
@@ -644,7 +813,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNamePrefix")
-    String instanceDisplayNamePrefix;
+    private final String instanceDisplayNamePrefix;
+
+    public String getInstanceDisplayNamePrefix() {
+        return instanceDisplayNamePrefix;
+    }
 
     /**
      * In general, this is a specific version of bundled VMware software supported by
@@ -664,7 +837,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
-    String vmwareSoftwareVersion;
+    private final String vmwareSoftwareVersion;
+
+    public String getVmwareSoftwareVersion() {
+        return vmwareSoftwareVersion;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
@@ -672,13 +849,21 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The number of ESXi hosts in the SDDC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
-    Integer esxiHostsCount;
+    private final Integer esxiHostsCount;
+
+    public Integer getEsxiHostsCount() {
+        return esxiHostsCount;
+    }
 
     /**
      * The billing option selected during SDDC creation.
@@ -686,7 +871,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialSku")
-    Sku initialSku;
+    private final Sku initialSku;
+
+    public Sku getInitialSku() {
+        return initialSku;
+    }
 
     /**
      * The FQDN for vCenter.
@@ -695,7 +884,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterFqdn")
-    String vcenterFqdn;
+    private final String vcenterFqdn;
+
+    public String getVcenterFqdn() {
+        return vcenterFqdn;
+    }
 
     /**
      * The FQDN for NSX Manager.
@@ -704,7 +897,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxManagerFqdn")
-    String nsxManagerFqdn;
+    private final String nsxManagerFqdn;
+
+    public String getNsxManagerFqdn() {
+        return nsxManagerFqdn;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PrivateIp} object that is
@@ -713,7 +910,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterPrivateIpId")
-    String vcenterPrivateIpId;
+    private final String vcenterPrivateIpId;
+
+    public String getVcenterPrivateIpId() {
+        return vcenterPrivateIpId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PrivateIp} object that is
@@ -722,7 +923,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxManagerPrivateIpId")
-    String nsxManagerPrivateIpId;
+    private final String nsxManagerPrivateIpId;
+
+    public String getNsxManagerPrivateIpId() {
+        return nsxManagerPrivateIpId;
+    }
 
     /**
      * The SDDC includes an administrator username and initial password for vCenter. Make sure
@@ -730,7 +935,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterInitialPassword")
-    String vcenterInitialPassword;
+    private final String vcenterInitialPassword;
+
+    public String getVcenterInitialPassword() {
+        return vcenterInitialPassword;
+    }
 
     /**
      * The SDDC includes an administrator username and initial password for NSX Manager. Make sure
@@ -738,7 +947,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxManagerInitialPassword")
-    String nsxManagerInitialPassword;
+    private final String nsxManagerInitialPassword;
+
+    public String getNsxManagerInitialPassword() {
+        return nsxManagerInitialPassword;
+    }
 
     /**
      * The SDDC includes an administrator username and initial password for vCenter. You can
@@ -746,7 +959,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterUsername")
-    String vcenterUsername;
+    private final String vcenterUsername;
+
+    public String getVcenterUsername() {
+        return vcenterUsername;
+    }
 
     /**
      * The SDDC includes an administrator username and initial password for NSX Manager. You
@@ -754,7 +971,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxManagerUsername")
-    String nsxManagerUsername;
+    private final String nsxManagerUsername;
+
+    public String getNsxManagerUsername() {
+        return nsxManagerUsername;
+    }
 
     /**
      * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
@@ -773,7 +994,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
-    String sshAuthorizedKeys;
+    private final String sshAuthorizedKeys;
+
+    public String getSshAuthorizedKeys() {
+        return sshAuthorizedKeys;
+    }
 
     /**
      * The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application
@@ -781,7 +1006,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadNetworkCidr")
-    String workloadNetworkCidr;
+    private final String workloadNetworkCidr;
+
+    public String getWorkloadNetworkCidr() {
+        return workloadNetworkCidr;
+    }
 
     /**
      * The VMware NSX overlay workload segment to host your application. Connect to workload
@@ -789,7 +1018,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxOverlaySegmentName")
-    String nsxOverlaySegmentName;
+    private final String nsxOverlaySegmentName;
+
+    public String getNsxOverlaySegmentName() {
+        return nsxOverlaySegmentName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PrivateIp} object that is
@@ -799,7 +1032,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplinkIpId")
-    String nsxEdgeUplinkIpId;
+    private final String nsxEdgeUplinkIpId;
+
+    public String getNsxEdgeUplinkIpId() {
+        return nsxEdgeUplinkIpId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the management subnet used
@@ -807,7 +1044,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningSubnetId")
-    String provisioningSubnetId;
+    private final String provisioningSubnetId;
+
+    public String getProvisioningSubnetId() {
+        return provisioningSubnetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -826,7 +1067,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vsphereVlanId")
-    String vsphereVlanId;
+    private final String vsphereVlanId;
+
+    public String getVsphereVlanId() {
+        return vsphereVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -845,7 +1090,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmotionVlanId")
-    String vmotionVlanId;
+    private final String vmotionVlanId;
+
+    public String getVmotionVlanId() {
+        return vmotionVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -864,7 +1113,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vsanVlanId")
-    String vsanVlanId;
+    private final String vsanVlanId;
+
+    public String getVsanVlanId() {
+        return vsanVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -883,7 +1136,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxVTepVlanId")
-    String nsxVTepVlanId;
+    private final String nsxVTepVlanId;
+
+    public String getNsxVTepVlanId() {
+        return nsxVTepVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -902,7 +1159,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeVTepVlanId")
-    String nsxEdgeVTepVlanId;
+    private final String nsxEdgeVTepVlanId;
+
+    public String getNsxEdgeVTepVlanId() {
+        return nsxEdgeVTepVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -921,7 +1182,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink1VlanId")
-    String nsxEdgeUplink1VlanId;
+    private final String nsxEdgeUplink1VlanId;
+
+    public String getNsxEdgeUplink1VlanId() {
+        return nsxEdgeUplink1VlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -940,7 +1205,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
-    String nsxEdgeUplink2VlanId;
+    private final String nsxEdgeUplink2VlanId;
+
+    public String getNsxEdgeUplink2VlanId() {
+        return nsxEdgeUplink2VlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -948,7 +1217,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
-    String replicationVlanId;
+    private final String replicationVlanId;
+
+    public String getReplicationVlanId() {
+        return replicationVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -956,7 +1229,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
-    String provisioningVlanId;
+    private final String provisioningVlanId;
+
+    public String getProvisioningVlanId() {
+        return provisioningVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PrivateIp} object that is
@@ -965,7 +1242,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxPrivateIpId")
-    String hcxPrivateIpId;
+    private final String hcxPrivateIpId;
+
+    public String getHcxPrivateIpId() {
+        return hcxPrivateIpId;
+    }
 
     /**
      * The FQDN for HCX Manager.
@@ -974,7 +1255,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxFqdn")
-    String hcxFqdn;
+    private final String hcxFqdn;
+
+    public String getHcxFqdn() {
+        return hcxFqdn;
+    }
 
     /**
      * The SDDC includes an administrator username and initial password for HCX Manager. Make sure
@@ -982,7 +1267,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxInitialPassword")
-    String hcxInitialPassword;
+    private final String hcxInitialPassword;
+
+    public String getHcxInitialPassword() {
+        return hcxInitialPassword;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -1001,13 +1290,21 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
-    String hcxVlanId;
+    private final String hcxVlanId;
+
+    public String getHcxVlanId() {
+        return hcxVlanId;
+    }
 
     /**
      * Indicates whether HCX is enabled for this SDDC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
-    Boolean isHcxEnabled;
+    private final Boolean isHcxEnabled;
+
+    public Boolean getIsHcxEnabled() {
+        return isHcxEnabled;
+    }
 
     /**
      * The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution.
@@ -1016,26 +1313,42 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxOnPremKey")
-    String hcxOnPremKey;
+    private final String hcxOnPremKey;
+
+    public String getHcxOnPremKey() {
+        return hcxOnPremKey;
+    }
 
     /**
      * Indicates whether HCX Enterprise is enabled for this SDDC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnterpriseEnabled")
-    Boolean isHcxEnterpriseEnabled;
+    private final Boolean isHcxEnterpriseEnabled;
+
+    public Boolean getIsHcxEnterpriseEnabled() {
+        return isHcxEnterpriseEnabled;
+    }
 
     /**
      * Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHcxPendingDowngrade")
-    Boolean isHcxPendingDowngrade;
+    private final Boolean isHcxPendingDowngrade;
+
+    public Boolean getIsHcxPendingDowngrade() {
+        return isHcxPendingDowngrade;
+    }
 
     /**
      * The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxOnPremLicenses")
-    java.util.List<HcxLicenseSummary> hcxOnPremLicenses;
+    private final java.util.List<HcxLicenseSummary> hcxOnPremLicenses;
+
+    public java.util.List<HcxLicenseSummary> getHcxOnPremLicenses() {
+        return hcxOnPremLicenses;
+    }
 
     /**
      * The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -1044,7 +1357,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeHcxBillingCycleEnd")
-    java.util.Date timeHcxBillingCycleEnd;
+    private final java.util.Date timeHcxBillingCycleEnd;
+
+    public java.util.Date getTimeHcxBillingCycleEnd() {
+        return timeHcxBillingCycleEnd;
+    }
 
     /**
      * The date and time the SDDC's HCX on-premise license status was updated, in the format defined by
@@ -1054,7 +1371,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeHcxLicenseStatusUpdated")
-    java.util.Date timeHcxLicenseStatusUpdated;
+    private final java.util.Date timeHcxLicenseStatusUpdated;
+
+    public java.util.Date getTimeHcxLicenseStatusUpdated() {
+        return timeHcxLicenseStatusUpdated;
+    }
 
     /**
      * The date and time the SDDC was created, in the format defined by
@@ -1064,7 +1385,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the SDDC was updated, in the format defined by
@@ -1072,13 +1397,21 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the SDDC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The initial compute shape of the SDDC's ESXi hosts.
@@ -1086,28 +1419,44 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
-    String initialHostShapeName;
+    private final String initialHostShapeName;
+
+    public String getInitialHostShapeName() {
+        return initialHostShapeName;
+    }
 
     /**
      * The initial OCPU count of the SDDC's ESXi hosts.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
-    Float initialHostOcpuCount;
+    private final Float initialHostOcpuCount;
+
+    public Float getInitialHostOcpuCount() {
+        return initialHostOcpuCount;
+    }
 
     /**
      * Indicates whether shielded instance is enabled at the SDDC level.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
-    Boolean isShieldedInstanceEnabled;
+    private final Boolean isShieldedInstanceEnabled;
+
+    public Boolean getIsShieldedInstanceEnabled() {
+        return isShieldedInstanceEnabled;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
-    String capacityReservationId;
+    private final String capacityReservationId;
+
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -1117,7 +1466,11 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -1127,8 +1480,331 @@ public class Sddc {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Sddc(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", computeAvailabilityDomain=")
+                .append(String.valueOf(this.computeAvailabilityDomain));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", instanceDisplayNamePrefix=")
+                .append(String.valueOf(this.instanceDisplayNamePrefix));
+        sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", esxiHostsCount=").append(String.valueOf(this.esxiHostsCount));
+        sb.append(", initialSku=").append(String.valueOf(this.initialSku));
+        sb.append(", vcenterFqdn=").append(String.valueOf(this.vcenterFqdn));
+        sb.append(", nsxManagerFqdn=").append(String.valueOf(this.nsxManagerFqdn));
+        sb.append(", vcenterPrivateIpId=").append(String.valueOf(this.vcenterPrivateIpId));
+        sb.append(", nsxManagerPrivateIpId=").append(String.valueOf(this.nsxManagerPrivateIpId));
+        sb.append(", vcenterInitialPassword=").append(String.valueOf(this.vcenterInitialPassword));
+        sb.append(", nsxManagerInitialPassword=")
+                .append(String.valueOf(this.nsxManagerInitialPassword));
+        sb.append(", vcenterUsername=").append(String.valueOf(this.vcenterUsername));
+        sb.append(", nsxManagerUsername=").append(String.valueOf(this.nsxManagerUsername));
+        sb.append(", sshAuthorizedKeys=").append(String.valueOf(this.sshAuthorizedKeys));
+        sb.append(", workloadNetworkCidr=").append(String.valueOf(this.workloadNetworkCidr));
+        sb.append(", nsxOverlaySegmentName=").append(String.valueOf(this.nsxOverlaySegmentName));
+        sb.append(", nsxEdgeUplinkIpId=").append(String.valueOf(this.nsxEdgeUplinkIpId));
+        sb.append(", provisioningSubnetId=").append(String.valueOf(this.provisioningSubnetId));
+        sb.append(", vsphereVlanId=").append(String.valueOf(this.vsphereVlanId));
+        sb.append(", vmotionVlanId=").append(String.valueOf(this.vmotionVlanId));
+        sb.append(", vsanVlanId=").append(String.valueOf(this.vsanVlanId));
+        sb.append(", nsxVTepVlanId=").append(String.valueOf(this.nsxVTepVlanId));
+        sb.append(", nsxEdgeVTepVlanId=").append(String.valueOf(this.nsxEdgeVTepVlanId));
+        sb.append(", nsxEdgeUplink1VlanId=").append(String.valueOf(this.nsxEdgeUplink1VlanId));
+        sb.append(", nsxEdgeUplink2VlanId=").append(String.valueOf(this.nsxEdgeUplink2VlanId));
+        sb.append(", replicationVlanId=").append(String.valueOf(this.replicationVlanId));
+        sb.append(", provisioningVlanId=").append(String.valueOf(this.provisioningVlanId));
+        sb.append(", hcxPrivateIpId=").append(String.valueOf(this.hcxPrivateIpId));
+        sb.append(", hcxFqdn=").append(String.valueOf(this.hcxFqdn));
+        sb.append(", hcxInitialPassword=").append(String.valueOf(this.hcxInitialPassword));
+        sb.append(", hcxVlanId=").append(String.valueOf(this.hcxVlanId));
+        sb.append(", isHcxEnabled=").append(String.valueOf(this.isHcxEnabled));
+        sb.append(", hcxOnPremKey=").append(String.valueOf(this.hcxOnPremKey));
+        sb.append(", isHcxEnterpriseEnabled=").append(String.valueOf(this.isHcxEnterpriseEnabled));
+        sb.append(", isHcxPendingDowngrade=").append(String.valueOf(this.isHcxPendingDowngrade));
+        sb.append(", hcxOnPremLicenses=").append(String.valueOf(this.hcxOnPremLicenses));
+        sb.append(", timeHcxBillingCycleEnd=").append(String.valueOf(this.timeHcxBillingCycleEnd));
+        sb.append(", timeHcxLicenseStatusUpdated=")
+                .append(String.valueOf(this.timeHcxLicenseStatusUpdated));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", initialHostShapeName=").append(String.valueOf(this.initialHostShapeName));
+        sb.append(", initialHostOcpuCount=").append(String.valueOf(this.initialHostOcpuCount));
+        sb.append(", isShieldedInstanceEnabled=")
+                .append(String.valueOf(this.isShieldedInstanceEnabled));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Sddc)) {
+            return false;
+        }
+
+        Sddc other = (Sddc) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.computeAvailabilityDomain, other.computeAvailabilityDomain)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.instanceDisplayNamePrefix, other.instanceDisplayNamePrefix)
+                && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.esxiHostsCount, other.esxiHostsCount)
+                && java.util.Objects.equals(this.initialSku, other.initialSku)
+                && java.util.Objects.equals(this.vcenterFqdn, other.vcenterFqdn)
+                && java.util.Objects.equals(this.nsxManagerFqdn, other.nsxManagerFqdn)
+                && java.util.Objects.equals(this.vcenterPrivateIpId, other.vcenterPrivateIpId)
+                && java.util.Objects.equals(this.nsxManagerPrivateIpId, other.nsxManagerPrivateIpId)
+                && java.util.Objects.equals(
+                        this.vcenterInitialPassword, other.vcenterInitialPassword)
+                && java.util.Objects.equals(
+                        this.nsxManagerInitialPassword, other.nsxManagerInitialPassword)
+                && java.util.Objects.equals(this.vcenterUsername, other.vcenterUsername)
+                && java.util.Objects.equals(this.nsxManagerUsername, other.nsxManagerUsername)
+                && java.util.Objects.equals(this.sshAuthorizedKeys, other.sshAuthorizedKeys)
+                && java.util.Objects.equals(this.workloadNetworkCidr, other.workloadNetworkCidr)
+                && java.util.Objects.equals(this.nsxOverlaySegmentName, other.nsxOverlaySegmentName)
+                && java.util.Objects.equals(this.nsxEdgeUplinkIpId, other.nsxEdgeUplinkIpId)
+                && java.util.Objects.equals(this.provisioningSubnetId, other.provisioningSubnetId)
+                && java.util.Objects.equals(this.vsphereVlanId, other.vsphereVlanId)
+                && java.util.Objects.equals(this.vmotionVlanId, other.vmotionVlanId)
+                && java.util.Objects.equals(this.vsanVlanId, other.vsanVlanId)
+                && java.util.Objects.equals(this.nsxVTepVlanId, other.nsxVTepVlanId)
+                && java.util.Objects.equals(this.nsxEdgeVTepVlanId, other.nsxEdgeVTepVlanId)
+                && java.util.Objects.equals(this.nsxEdgeUplink1VlanId, other.nsxEdgeUplink1VlanId)
+                && java.util.Objects.equals(this.nsxEdgeUplink2VlanId, other.nsxEdgeUplink2VlanId)
+                && java.util.Objects.equals(this.replicationVlanId, other.replicationVlanId)
+                && java.util.Objects.equals(this.provisioningVlanId, other.provisioningVlanId)
+                && java.util.Objects.equals(this.hcxPrivateIpId, other.hcxPrivateIpId)
+                && java.util.Objects.equals(this.hcxFqdn, other.hcxFqdn)
+                && java.util.Objects.equals(this.hcxInitialPassword, other.hcxInitialPassword)
+                && java.util.Objects.equals(this.hcxVlanId, other.hcxVlanId)
+                && java.util.Objects.equals(this.isHcxEnabled, other.isHcxEnabled)
+                && java.util.Objects.equals(this.hcxOnPremKey, other.hcxOnPremKey)
+                && java.util.Objects.equals(
+                        this.isHcxEnterpriseEnabled, other.isHcxEnterpriseEnabled)
+                && java.util.Objects.equals(this.isHcxPendingDowngrade, other.isHcxPendingDowngrade)
+                && java.util.Objects.equals(this.hcxOnPremLicenses, other.hcxOnPremLicenses)
+                && java.util.Objects.equals(
+                        this.timeHcxBillingCycleEnd, other.timeHcxBillingCycleEnd)
+                && java.util.Objects.equals(
+                        this.timeHcxLicenseStatusUpdated, other.timeHcxLicenseStatusUpdated)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.initialHostShapeName, other.initialHostShapeName)
+                && java.util.Objects.equals(this.initialHostOcpuCount, other.initialHostOcpuCount)
+                && java.util.Objects.equals(
+                        this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeAvailabilityDomain == null
+                                ? 43
+                                : this.computeAvailabilityDomain.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceDisplayNamePrefix == null
+                                ? 43
+                                : this.instanceDisplayNamePrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmwareSoftwareVersion == null
+                                ? 43
+                                : this.vmwareSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.esxiHostsCount == null ? 43 : this.esxiHostsCount.hashCode());
+        result = (result * PRIME) + (this.initialSku == null ? 43 : this.initialSku.hashCode());
+        result = (result * PRIME) + (this.vcenterFqdn == null ? 43 : this.vcenterFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxManagerFqdn == null ? 43 : this.nsxManagerFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vcenterPrivateIpId == null
+                                ? 43
+                                : this.vcenterPrivateIpId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxManagerPrivateIpId == null
+                                ? 43
+                                : this.nsxManagerPrivateIpId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vcenterInitialPassword == null
+                                ? 43
+                                : this.vcenterInitialPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxManagerInitialPassword == null
+                                ? 43
+                                : this.nsxManagerInitialPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vcenterUsername == null ? 43 : this.vcenterUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxManagerUsername == null
+                                ? 43
+                                : this.nsxManagerUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sshAuthorizedKeys == null ? 43 : this.sshAuthorizedKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workloadNetworkCidr == null
+                                ? 43
+                                : this.workloadNetworkCidr.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxOverlaySegmentName == null
+                                ? 43
+                                : this.nsxOverlaySegmentName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxEdgeUplinkIpId == null ? 43 : this.nsxEdgeUplinkIpId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisioningSubnetId == null
+                                ? 43
+                                : this.provisioningSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vsphereVlanId == null ? 43 : this.vsphereVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmotionVlanId == null ? 43 : this.vmotionVlanId.hashCode());
+        result = (result * PRIME) + (this.vsanVlanId == null ? 43 : this.vsanVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxVTepVlanId == null ? 43 : this.nsxVTepVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxEdgeVTepVlanId == null ? 43 : this.nsxEdgeVTepVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxEdgeUplink1VlanId == null
+                                ? 43
+                                : this.nsxEdgeUplink1VlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxEdgeUplink2VlanId == null
+                                ? 43
+                                : this.nsxEdgeUplink2VlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationVlanId == null ? 43 : this.replicationVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisioningVlanId == null
+                                ? 43
+                                : this.provisioningVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hcxPrivateIpId == null ? 43 : this.hcxPrivateIpId.hashCode());
+        result = (result * PRIME) + (this.hcxFqdn == null ? 43 : this.hcxFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hcxInitialPassword == null
+                                ? 43
+                                : this.hcxInitialPassword.hashCode());
+        result = (result * PRIME) + (this.hcxVlanId == null ? 43 : this.hcxVlanId.hashCode());
+        result = (result * PRIME) + (this.isHcxEnabled == null ? 43 : this.isHcxEnabled.hashCode());
+        result = (result * PRIME) + (this.hcxOnPremKey == null ? 43 : this.hcxOnPremKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHcxEnterpriseEnabled == null
+                                ? 43
+                                : this.isHcxEnterpriseEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHcxPendingDowngrade == null
+                                ? 43
+                                : this.isHcxPendingDowngrade.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hcxOnPremLicenses == null ? 43 : this.hcxOnPremLicenses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeHcxBillingCycleEnd == null
+                                ? 43
+                                : this.timeHcxBillingCycleEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeHcxLicenseStatusUpdated == null
+                                ? 43
+                                : this.timeHcxLicenseStatusUpdated.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialHostShapeName == null
+                                ? 43
+                                : this.initialHostShapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialHostOcpuCount == null
+                                ? 43
+                                : this.initialHostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isShieldedInstanceEnabled == null
+                                ? 43
+                                : this.isShieldedInstanceEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

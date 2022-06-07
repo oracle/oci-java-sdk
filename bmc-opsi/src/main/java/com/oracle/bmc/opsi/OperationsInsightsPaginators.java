@@ -26,9 +26,12 @@ import com.oracle.bmc.opsi.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.RequiredArgsConstructor
 public class OperationsInsightsPaginators {
     private final OperationsInsights client;
+
+    public OperationsInsightsPaginators(OperationsInsights client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listAwrHubs operation. This iterable
@@ -1809,6 +1812,119 @@ public class OperationsInsightsPaginators {
                             apply(ListOperationsInsightsWarehousesResponse response) {
                         return response.getOperationsInsightsWarehouseSummaryCollection()
                                 .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listOpsiDataObjects operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOpsiDataObjectsResponse> listOpsiDataObjectsResponseIterator(
+            final ListOpsiDataObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOpsiDataObjectsRequest.Builder, ListOpsiDataObjectsRequest,
+                ListOpsiDataObjectsResponse>(
+                new com.google.common.base.Supplier<ListOpsiDataObjectsRequest.Builder>() {
+                    @Override
+                    public ListOpsiDataObjectsRequest.Builder get() {
+                        return ListOpsiDataObjectsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListOpsiDataObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListOpsiDataObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOpsiDataObjectsRequest.Builder>,
+                        ListOpsiDataObjectsRequest>() {
+                    @Override
+                    public ListOpsiDataObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOpsiDataObjectsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOpsiDataObjectsRequest, ListOpsiDataObjectsResponse>() {
+                    @Override
+                    public ListOpsiDataObjectsResponse apply(ListOpsiDataObjectsRequest request) {
+                        return client.listOpsiDataObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.OpsiDataObjectSummary} objects
+     * contained in responses from the listOpsiDataObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.OpsiDataObjectSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.OpsiDataObjectSummary>
+            listOpsiDataObjectsRecordIterator(final ListOpsiDataObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOpsiDataObjectsRequest.Builder, ListOpsiDataObjectsRequest,
+                ListOpsiDataObjectsResponse, com.oracle.bmc.opsi.model.OpsiDataObjectSummary>(
+                new com.google.common.base.Supplier<ListOpsiDataObjectsRequest.Builder>() {
+                    @Override
+                    public ListOpsiDataObjectsRequest.Builder get() {
+                        return ListOpsiDataObjectsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListOpsiDataObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListOpsiDataObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOpsiDataObjectsRequest.Builder>,
+                        ListOpsiDataObjectsRequest>() {
+                    @Override
+                    public ListOpsiDataObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOpsiDataObjectsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOpsiDataObjectsRequest, ListOpsiDataObjectsResponse>() {
+                    @Override
+                    public ListOpsiDataObjectsResponse apply(ListOpsiDataObjectsRequest request) {
+                        return client.listOpsiDataObjects(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOpsiDataObjectsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.OpsiDataObjectSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.OpsiDataObjectSummary> apply(
+                            ListOpsiDataObjectsResponse response) {
+                        return response.getOpsiDataObjectsCollection().getItems();
                     }
                 });
     }

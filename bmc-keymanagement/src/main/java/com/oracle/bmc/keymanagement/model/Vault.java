@@ -15,14 +15,62 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vault.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Vault {
+public final class Vault {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "cryptoEndpoint",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "lifecycleState",
+        "managementEndpoint",
+        "timeCreated",
+        "timeOfDeletion",
+        "vaultType",
+        "restoredFromVaultId",
+        "wrappingkeyId",
+        "replicaDetails",
+        "isPrimary"
+    })
+    public Vault(
+            String compartmentId,
+            String cryptoEndpoint,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            LifecycleState lifecycleState,
+            String managementEndpoint,
+            java.util.Date timeCreated,
+            java.util.Date timeOfDeletion,
+            VaultType vaultType,
+            String restoredFromVaultId,
+            String wrappingkeyId,
+            VaultReplicaDetails replicaDetails,
+            Boolean isPrimary) {
+        super();
+        this.compartmentId = compartmentId;
+        this.cryptoEndpoint = cryptoEndpoint;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.managementEndpoint = managementEndpoint;
+        this.timeCreated = timeCreated;
+        this.timeOfDeletion = timeOfDeletion;
+        this.vaultType = vaultType;
+        this.restoredFromVaultId = restoredFromVaultId;
+        this.wrappingkeyId = wrappingkeyId;
+        this.replicaDetails = replicaDetails;
+        this.isPrimary = isPrimary;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -216,11 +264,19 @@ public class Vault {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment that contains this vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include
@@ -229,7 +285,11 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
-    String cryptoEndpoint;
+    private final String cryptoEndpoint;
+
+    public String getCryptoEndpoint() {
+        return cryptoEndpoint;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -238,7 +298,11 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name for the vault. It does not have to be unique, and it is changeable.
@@ -246,7 +310,11 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -255,20 +323,28 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The OCID of the vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The vault's current lifecycle state.
      * <p>
      * Example: {@code DELETED}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -286,6 +362,9 @@ public class Vault {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -326,14 +405,22 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementEndpoint")
-    String managementEndpoint;
+    private final String managementEndpoint;
+
+    public String getManagementEndpoint() {
+        return managementEndpoint;
+    }
 
     /**
      * The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -342,7 +429,11 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * An optional property to indicate when to delete the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -350,13 +441,17 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
+
     /**
      * The type of vault. Each type of vault stores the key with different
      * degrees of isolation and has different options and pricing.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum VaultType {
         VirtualPrivate("VIRTUAL_PRIVATE"),
         Default("DEFAULT"),
@@ -366,6 +461,9 @@ public class Vault {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(VaultType.class);
 
         private final String value;
         private static java.util.Map<String, VaultType> map;
@@ -405,7 +503,11 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultType")
-    VaultType vaultType;
+    private final VaultType vaultType;
+
+    public VaultType getVaultType() {
+        return vaultType;
+    }
 
     /**
      * The OCID of the vault from which this vault was restored, if it was restored from a backup file.
@@ -414,20 +516,137 @@ public class Vault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restoredFromVaultId")
-    String restoredFromVaultId;
+    private final String restoredFromVaultId;
+
+    public String getRestoredFromVaultId() {
+        return restoredFromVaultId;
+    }
 
     /**
      * The OCID of the vault's wrapping key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wrappingkeyId")
-    String wrappingkeyId;
+    private final String wrappingkeyId;
+
+    public String getWrappingkeyId() {
+        return wrappingkeyId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
-    VaultReplicaDetails replicaDetails;
+    private final VaultReplicaDetails replicaDetails;
+
+    public VaultReplicaDetails getReplicaDetails() {
+        return replicaDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
-    Boolean isPrimary;
+    private final Boolean isPrimary;
+
+    public Boolean getIsPrimary() {
+        return isPrimary;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Vault(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", cryptoEndpoint=").append(String.valueOf(this.cryptoEndpoint));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", managementEndpoint=").append(String.valueOf(this.managementEndpoint));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", vaultType=").append(String.valueOf(this.vaultType));
+        sb.append(", restoredFromVaultId=").append(String.valueOf(this.restoredFromVaultId));
+        sb.append(", wrappingkeyId=").append(String.valueOf(this.wrappingkeyId));
+        sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
+        sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Vault)) {
+            return false;
+        }
+
+        Vault other = (Vault) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.cryptoEndpoint, other.cryptoEndpoint)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.managementEndpoint, other.managementEndpoint)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.vaultType, other.vaultType)
+                && java.util.Objects.equals(this.restoredFromVaultId, other.restoredFromVaultId)
+                && java.util.Objects.equals(this.wrappingkeyId, other.wrappingkeyId)
+                && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
+                && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cryptoEndpoint == null ? 43 : this.cryptoEndpoint.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementEndpoint == null
+                                ? 43
+                                : this.managementEndpoint.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result = (result * PRIME) + (this.vaultType == null ? 43 : this.vaultType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restoredFromVaultId == null
+                                ? 43
+                                : this.restoredFromVaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.wrappingkeyId == null ? 43 : this.wrappingkeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
+        result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

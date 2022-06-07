@@ -18,14 +18,32 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbVersionSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbVersionSummary {
+public final class DbVersionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "version",
+        "isLatestForMajorVersion",
+        "supportsPdb",
+        "isPreviewDbVersion",
+        "isUpgradeSupported"
+    })
+    public DbVersionSummary(
+            String version,
+            Boolean isLatestForMajorVersion,
+            Boolean supportsPdb,
+            Boolean isPreviewDbVersion,
+            Boolean isUpgradeSupported) {
+        super();
+        this.version = version;
+        this.isLatestForMajorVersion = isLatestForMajorVersion;
+        this.supportsPdb = supportsPdb;
+        this.isPreviewDbVersion = isPreviewDbVersion;
+        this.isUpgradeSupported = isUpgradeSupported;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
@@ -108,36 +126,125 @@ public class DbVersionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A valid Oracle Database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * True if this version of the Oracle Database software is the latest version for a release.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestForMajorVersion")
-    Boolean isLatestForMajorVersion;
+    private final Boolean isLatestForMajorVersion;
+
+    public Boolean getIsLatestForMajorVersion() {
+        return isLatestForMajorVersion;
+    }
 
     /**
      * True if this version of the Oracle Database software supports pluggable databases.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportsPdb")
-    Boolean supportsPdb;
+    private final Boolean supportsPdb;
+
+    public Boolean getSupportsPdb() {
+        return supportsPdb;
+    }
 
     /**
      * True if this version of the Oracle Database software is the preview version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewDbVersion")
-    Boolean isPreviewDbVersion;
+    private final Boolean isPreviewDbVersion;
+
+    public Boolean getIsPreviewDbVersion() {
+        return isPreviewDbVersion;
+    }
 
     /**
      * True if this version of the Oracle Database software is supported for Upgrade.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUpgradeSupported")
-    Boolean isUpgradeSupported;
+    private final Boolean isUpgradeSupported;
+
+    public Boolean getIsUpgradeSupported() {
+        return isUpgradeSupported;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbVersionSummary(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", isLatestForMajorVersion=")
+                .append(String.valueOf(this.isLatestForMajorVersion));
+        sb.append(", supportsPdb=").append(String.valueOf(this.supportsPdb));
+        sb.append(", isPreviewDbVersion=").append(String.valueOf(this.isPreviewDbVersion));
+        sb.append(", isUpgradeSupported=").append(String.valueOf(this.isUpgradeSupported));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbVersionSummary)) {
+            return false;
+        }
+
+        DbVersionSummary other = (DbVersionSummary) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(
+                        this.isLatestForMajorVersion, other.isLatestForMajorVersion)
+                && java.util.Objects.equals(this.supportsPdb, other.supportsPdb)
+                && java.util.Objects.equals(this.isPreviewDbVersion, other.isPreviewDbVersion)
+                && java.util.Objects.equals(this.isUpgradeSupported, other.isUpgradeSupported)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLatestForMajorVersion == null
+                                ? 43
+                                : this.isLatestForMajorVersion.hashCode());
+        result = (result * PRIME) + (this.supportsPdb == null ? 43 : this.supportsPdb.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPreviewDbVersion == null
+                                ? 43
+                                : this.isPreviewDbVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUpgradeSupported == null
+                                ? 43
+                                : this.isUpgradeSupported.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

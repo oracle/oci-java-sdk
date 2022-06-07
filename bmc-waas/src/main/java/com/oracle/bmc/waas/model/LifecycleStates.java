@@ -8,7 +8,6 @@ package com.oracle.bmc.waas.model;
  * The current status of the specified WAAS policy.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.extern.slf4j.Slf4j
 public enum LifecycleStates {
     Creating("CREATING"),
     Active("ACTIVE"),
@@ -22,6 +21,9 @@ public enum LifecycleStates {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LifecycleStates.class);
 
     private final String value;
     private static java.util.Map<String, LifecycleStates> map;

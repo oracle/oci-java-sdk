@@ -7,16 +7,16 @@ package com.oracle.bmc.cloudguard.responses;
 import com.oracle.bmc.cloudguard.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDetectorRecipeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,10 +25,18 @@ public class GetDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned DetectorRecipe instance.
      */
     private com.oracle.bmc.cloudguard.model.DetectorRecipe detectorRecipe;
+
+    public com.oracle.bmc.cloudguard.model.DetectorRecipe getDetectorRecipe() {
+        return detectorRecipe;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -55,6 +63,28 @@ public class GetDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.cloudguard.model.DetectorRecipe detectorRecipe;
+
+        public Builder detectorRecipe(
+                com.oracle.bmc.cloudguard.model.DetectorRecipe detectorRecipe) {
+            this.detectorRecipe = detectorRecipe;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -72,5 +102,49 @@ public class GetDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRespo
             return new GetDetectorRecipeResponse(
                     __httpStatusCode__, etag, opcRequestId, detectorRecipe);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",detectorRecipe=").append(String.valueOf(detectorRecipe));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDetectorRecipeResponse)) {
+            return false;
+        }
+
+        GetDetectorRecipeResponse other = (GetDetectorRecipeResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.detectorRecipe, other.detectorRecipe);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRecipe == null ? 43 : this.detectorRecipe.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,37 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDatabaseFromBackupDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDatabaseFromBackupDetails {
+public final class CreateDatabaseFromBackupDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "backupId",
+        "backupTDEPassword",
+        "adminPassword",
+        "dbUniqueName",
+        "dbName",
+        "sidPrefix"
+    })
+    public CreateDatabaseFromBackupDetails(
+            String backupId,
+            String backupTDEPassword,
+            String adminPassword,
+            String dbUniqueName,
+            String dbName,
+            String sidPrefix) {
+        super();
+        this.backupId = backupId;
+        this.backupTDEPassword = backupTDEPassword;
+        this.adminPassword = adminPassword;
+        this.dbUniqueName = dbUniqueName;
+        this.dbName = dbName;
+        this.sidPrefix = sidPrefix;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
@@ -118,43 +139,129 @@ public class CreateDatabaseFromBackupDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
-    String backupId;
+    private final String backupId;
+
+    public String getBackupId() {
+        return backupId;
+    }
 
     /**
      * The password to open the TDE wallet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupTDEPassword")
-    String backupTDEPassword;
+    private final String backupTDEPassword;
+
+    public String getBackupTDEPassword() {
+        return backupTDEPassword;
+    }
 
     /**
      * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    String adminPassword;
+    private final String adminPassword;
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
 
     /**
      * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    private final String dbUniqueName;
+
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
 
     /**
      * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     /**
      * Specifies a prefix for the {@code Oracle SID} of the database to be created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
-    String sidPrefix;
+    private final String sidPrefix;
+
+    public String getSidPrefix() {
+        return sidPrefix;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDatabaseFromBackupDetails(");
+        sb.append("backupId=").append(String.valueOf(this.backupId));
+        sb.append(", backupTDEPassword=").append(String.valueOf(this.backupTDEPassword));
+        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDatabaseFromBackupDetails)) {
+            return false;
+        }
+
+        CreateDatabaseFromBackupDetails other = (CreateDatabaseFromBackupDetails) o;
+        return java.util.Objects.equals(this.backupId, other.backupId)
+                && java.util.Objects.equals(this.backupTDEPassword, other.backupTDEPassword)
+                && java.util.Objects.equals(this.adminPassword, other.adminPassword)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.backupId == null ? 43 : this.backupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupTDEPassword == null ? 43 : this.backupTDEPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

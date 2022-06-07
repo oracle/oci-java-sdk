@@ -15,22 +15,17 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateTwilioChannelDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateTwilioChannelDetails extends CreateChannelDetails {
+public final class CreateTwilioChannelDetails extends CreateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -182,6 +177,10 @@ public class CreateTwilioChannelDetails extends CreateChannelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateTwilioChannelDetails(
             String name,
@@ -208,38 +207,122 @@ public class CreateTwilioChannelDetails extends CreateChannelDetails {
      * The Account SID for the Twilio number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountSID")
-    String accountSID;
+    private final String accountSID;
+
+    public String getAccountSID() {
+        return accountSID;
+    }
 
     /**
      * The Twilio phone number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
-    String phoneNumber;
+    private final String phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
     /**
      * The Auth Token for the Twilio number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-    String authToken;
+    private final String authToken;
+
+    public String getAuthToken() {
+        return authToken;
+    }
 
     /**
      * Whether MMS is enabled for this channel or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMmsEnabled")
-    Boolean isMmsEnabled;
+    private final Boolean isMmsEnabled;
+
+    public Boolean getIsMmsEnabled() {
+        return isMmsEnabled;
+    }
 
     /**
      * The original connectors URL (used for backward compatibility).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalConnectorsUrl")
-    String originalConnectorsUrl;
+    private final String originalConnectorsUrl;
+
+    public String getOriginalConnectorsUrl() {
+        return originalConnectorsUrl;
+    }
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
-    String botId;
+    private final String botId;
+
+    public String getBotId() {
+        return botId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateTwilioChannelDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", accountSID=").append(String.valueOf(this.accountSID));
+        sb.append(", phoneNumber=").append(String.valueOf(this.phoneNumber));
+        sb.append(", authToken=").append(String.valueOf(this.authToken));
+        sb.append(", isMmsEnabled=").append(String.valueOf(this.isMmsEnabled));
+        sb.append(", originalConnectorsUrl=").append(String.valueOf(this.originalConnectorsUrl));
+        sb.append(", botId=").append(String.valueOf(this.botId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTwilioChannelDetails)) {
+            return false;
+        }
+
+        CreateTwilioChannelDetails other = (CreateTwilioChannelDetails) o;
+        return java.util.Objects.equals(this.accountSID, other.accountSID)
+                && java.util.Objects.equals(this.phoneNumber, other.phoneNumber)
+                && java.util.Objects.equals(this.authToken, other.authToken)
+                && java.util.Objects.equals(this.isMmsEnabled, other.isMmsEnabled)
+                && java.util.Objects.equals(this.originalConnectorsUrl, other.originalConnectorsUrl)
+                && java.util.Objects.equals(this.botId, other.botId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.accountSID == null ? 43 : this.accountSID.hashCode());
+        result = (result * PRIME) + (this.phoneNumber == null ? 43 : this.phoneNumber.hashCode());
+        result = (result * PRIME) + (this.authToken == null ? 43 : this.authToken.hashCode());
+        result = (result * PRIME) + (this.isMmsEnabled == null ? 43 : this.isMmsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalConnectorsUrl == null
+                                ? 43
+                                : this.originalConnectorsUrl.hashCode());
+        result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

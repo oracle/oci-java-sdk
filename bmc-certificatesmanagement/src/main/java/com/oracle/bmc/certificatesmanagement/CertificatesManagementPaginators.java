@@ -26,9 +26,12 @@ import com.oracle.bmc.certificatesmanagement.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.RequiredArgsConstructor
 public class CertificatesManagementPaginators {
     private final CertificatesManagement client;
+
+    public CertificatesManagementPaginators(CertificatesManagement client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listAssociations operation. This iterable

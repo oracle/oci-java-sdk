@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/VerifyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use VerifyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,6 +17,9 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * Unique scheduledTask id returned from task create.
      * If invalid will lead to a 404 not found.
@@ -32,6 +27,9 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String scheduledTaskId;
 
+    public String getScheduledTaskId() {
+        return scheduledTaskId;
+    }
     /**
      * Optional parameter to specify whether to include acceleration results.
      * Default value is false;
@@ -39,11 +37,17 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private Boolean shouldIncludeResults;
 
+    public Boolean getShouldIncludeResults() {
+        return shouldIncludeResults;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -54,11 +58,80 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<VerifyRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String scheduledTaskId = null;
+
+        /**
+         * Unique scheduledTask id returned from task create.
+         * If invalid will lead to a 404 not found.
+         *
+         * @return this builder instance
+         */
+        public Builder scheduledTaskId(String scheduledTaskId) {
+            this.scheduledTaskId = scheduledTaskId;
+            return this;
+        }
+
+        private Boolean shouldIncludeResults = null;
+
+        /**
+         * Optional parameter to specify whether to include acceleration results.
+         * Default value is false;
+         *
+         * @return this builder instance
+         */
+        public Builder shouldIncludeResults(Boolean shouldIncludeResults) {
+            this.shouldIncludeResults = shouldIncludeResults;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -114,5 +187,94 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of VerifyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of VerifyRequest
+         */
+        public VerifyRequest buildWithoutInvocationCallback() {
+            VerifyRequest request = new VerifyRequest();
+            request.namespaceName = namespaceName;
+            request.scheduledTaskId = scheduledTaskId;
+            request.shouldIncludeResults = shouldIncludeResults;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new VerifyRequest(namespaceName, scheduledTaskId, shouldIncludeResults, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .scheduledTaskId(scheduledTaskId)
+                .shouldIncludeResults(shouldIncludeResults)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",scheduledTaskId=").append(String.valueOf(this.scheduledTaskId));
+        sb.append(",shouldIncludeResults=").append(String.valueOf(this.shouldIncludeResults));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VerifyRequest)) {
+            return false;
+        }
+
+        VerifyRequest other = (VerifyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.scheduledTaskId, other.scheduledTaskId)
+                && java.util.Objects.equals(this.shouldIncludeResults, other.shouldIncludeResults)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledTaskId == null ? 43 : this.scheduledTaskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldIncludeResults == null
+                                ? 43
+                                : this.shouldIncludeResults.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

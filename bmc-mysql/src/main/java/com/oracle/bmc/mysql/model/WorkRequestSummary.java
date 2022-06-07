@@ -16,16 +16,43 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestSummary {
+public final class WorkRequestSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "operationType",
+        "status",
+        "compartmentId",
+        "percentComplete",
+        "timeAccepted",
+        "timeStarted",
+        "timeFinished"
+    })
+    public WorkRequestSummary(
+            String id,
+            WorkRequestOperationType operationType,
+            WorkRequestOperationStatus status,
+            String compartmentId,
+            Float percentComplete,
+            java.util.Date timeAccepted,
+            java.util.Date timeStarted,
+            java.util.Date timeFinished) {
+        super();
+        this.id = id;
+        this.operationType = operationType;
+        this.status = status;
+        this.compartmentId = compartmentId;
+        this.percentComplete = percentComplete;
+        this.timeAccepted = timeAccepted;
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -141,23 +168,39 @@ public class WorkRequestSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The id of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * the original operation ID requested
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
-    WorkRequestOperationType operationType;
+    private final WorkRequestOperationType operationType;
+
+    public WorkRequestOperationType getOperationType() {
+        return operationType;
+    }
 
     /**
      * Current status of the work request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    WorkRequestOperationStatus status;
+    private final WorkRequestOperationStatus status;
+
+    public WorkRequestOperationStatus getStatus() {
+        return status;
+    }
 
     /**
      * The ocid of the compartment that contains the work request. Work
@@ -169,13 +212,21 @@ public class WorkRequestSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Percentage of the request completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
-    Float percentComplete;
+    private final Float percentComplete;
+
+    public Float getPercentComplete() {
+        return percentComplete;
+    }
 
     /**
      * The date and time the request was created, as described in
@@ -183,7 +234,11 @@ public class WorkRequestSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
-    java.util.Date timeAccepted;
+    private final java.util.Date timeAccepted;
+
+    public java.util.Date getTimeAccepted() {
+        return timeAccepted;
+    }
 
     /**
      * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
@@ -191,15 +246,89 @@ public class WorkRequestSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time the object was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", operationType=").append(String.valueOf(this.operationType));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
+        sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestSummary)) {
+            return false;
+        }
+
+        WorkRequestSummary other = (WorkRequestSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.percentComplete, other.percentComplete)
+                && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
+        result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

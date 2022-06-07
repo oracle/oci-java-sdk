@@ -15,22 +15,17 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResolverForwardRuleDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "action"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResolverForwardRuleDetails extends ResolverRuleDetails {
+public final class ResolverForwardRuleDetails extends ResolverRuleDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("clientAddressConditions")
         private java.util.List<String> clientAddressConditions;
@@ -102,6 +97,10 @@ public class ResolverForwardRuleDetails extends ResolverRuleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ResolverForwardRuleDetails(
             java.util.List<String> clientAddressConditions,
@@ -118,7 +117,11 @@ public class ResolverForwardRuleDetails extends ResolverRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationAddresses")
-    java.util.List<String> destinationAddresses;
+    private final java.util.List<String> destinationAddresses;
+
+    public java.util.List<String> getDestinationAddresses() {
+        return destinationAddresses;
+    }
 
     /**
      * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
@@ -126,8 +129,64 @@ public class ResolverForwardRuleDetails extends ResolverRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceEndpointName")
-    String sourceEndpointName;
+    private final String sourceEndpointName;
+
+    public String getSourceEndpointName() {
+        return sourceEndpointName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResolverForwardRuleDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", destinationAddresses=").append(String.valueOf(this.destinationAddresses));
+        sb.append(", sourceEndpointName=").append(String.valueOf(this.sourceEndpointName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResolverForwardRuleDetails)) {
+            return false;
+        }
+
+        ResolverForwardRuleDetails other = (ResolverForwardRuleDetails) o;
+        return java.util.Objects.equals(this.destinationAddresses, other.destinationAddresses)
+                && java.util.Objects.equals(this.sourceEndpointName, other.sourceEndpointName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.destinationAddresses == null
+                                ? 43
+                                : this.destinationAddresses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceEndpointName == null
+                                ? 43
+                                : this.sourceEndpointName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

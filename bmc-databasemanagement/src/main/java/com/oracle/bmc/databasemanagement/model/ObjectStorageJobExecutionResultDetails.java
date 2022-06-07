@@ -17,22 +17,17 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectStorageJobExecutionResultDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectStorageJobExecutionResultDetails extends JobExecutionResultDetails {
+public final class ObjectStorageJobExecutionResultDetails extends JobExecutionResultDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
@@ -101,6 +96,10 @@ public class ObjectStorageJobExecutionResultDetails extends JobExecutionResultDe
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ObjectStorageJobExecutionResultDetails(
             String namespaceName, String bucketName, String objectName, Integer rowCount) {
@@ -115,26 +114,94 @@ public class ObjectStorageJobExecutionResultDetails extends JobExecutionResultDe
      * The Object Storage namespace used for job execution result storage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
-    String namespaceName;
+    private final String namespaceName;
+
+    public String getNamespaceName() {
+        return namespaceName;
+    }
 
     /**
      * The name of the bucket used for job execution result storage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     /**
      * The name of the object containing the job execution result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * The number of rows returned in the result for the Query SqlType.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
-    Integer rowCount;
+    private final Integer rowCount;
+
+    public Integer getRowCount() {
+        return rowCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectStorageJobExecutionResultDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(", bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", rowCount=").append(String.valueOf(this.rowCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectStorageJobExecutionResultDetails)) {
+            return false;
+        }
+
+        ObjectStorageJobExecutionResultDetails other = (ObjectStorageJobExecutionResultDetails) o;
+        return java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.rowCount, other.rowCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.rowCount == null ? 43 : this.rowCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

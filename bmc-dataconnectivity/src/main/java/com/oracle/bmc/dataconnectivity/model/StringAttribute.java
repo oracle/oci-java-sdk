@@ -15,20 +15,15 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StringAttribute.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StringAttribute extends AttributeProfileResult {
+public final class StringAttribute extends AttributeProfileResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -199,6 +194,10 @@ public class StringAttribute extends AttributeProfileResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public StringAttribute(
             String name,
@@ -231,26 +230,105 @@ public class StringAttribute extends AttributeProfileResult {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("minLength")
-    ProfileStat minLength;
+    private final ProfileStat minLength;
+
+    public ProfileStat getMinLength() {
+        return minLength;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maxLength")
-    ProfileStat maxLength;
+    private final ProfileStat maxLength;
+
+    public ProfileStat getMaxLength() {
+        return maxLength;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("meanLength")
-    ProfileStat meanLength;
+    private final ProfileStat meanLength;
+
+    public ProfileStat getMeanLength() {
+        return meanLength;
+    }
 
     /**
      * Pattern frequencies for the column as described already in profile config.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternFrequencies")
-    java.util.List<ObjectFreqStat> patternFrequencies;
+    private final java.util.List<ObjectFreqStat> patternFrequencies;
+
+    public java.util.List<ObjectFreqStat> getPatternFrequencies() {
+        return patternFrequencies;
+    }
 
     /**
      * Inferred DataType for the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inferredDataTypes")
-    java.util.List<DataTypeStat> inferredDataTypes;
+    private final java.util.List<DataTypeStat> inferredDataTypes;
+
+    public java.util.List<DataTypeStat> getInferredDataTypes() {
+        return inferredDataTypes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StringAttribute(");
+        sb.append("super=").append(super.toString());
+        sb.append(", minLength=").append(String.valueOf(this.minLength));
+        sb.append(", maxLength=").append(String.valueOf(this.maxLength));
+        sb.append(", meanLength=").append(String.valueOf(this.meanLength));
+        sb.append(", patternFrequencies=").append(String.valueOf(this.patternFrequencies));
+        sb.append(", inferredDataTypes=").append(String.valueOf(this.inferredDataTypes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StringAttribute)) {
+            return false;
+        }
+
+        StringAttribute other = (StringAttribute) o;
+        return java.util.Objects.equals(this.minLength, other.minLength)
+                && java.util.Objects.equals(this.maxLength, other.maxLength)
+                && java.util.Objects.equals(this.meanLength, other.meanLength)
+                && java.util.Objects.equals(this.patternFrequencies, other.patternFrequencies)
+                && java.util.Objects.equals(this.inferredDataTypes, other.inferredDataTypes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.minLength == null ? 43 : this.minLength.hashCode());
+        result = (result * PRIME) + (this.maxLength == null ? 43 : this.maxLength.hashCode());
+        result = (result * PRIME) + (this.meanLength == null ? 43 : this.meanLength.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patternFrequencies == null
+                                ? 43
+                                : this.patternFrequencies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inferredDataTypes == null ? 43 : this.inferredDataTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

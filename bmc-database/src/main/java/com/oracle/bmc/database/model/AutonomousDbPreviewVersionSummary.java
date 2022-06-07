@@ -16,16 +16,34 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousDbPreviewVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousDbPreviewVersionSummary {
+public final class AutonomousDbPreviewVersionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "version",
+        "timePreviewBegin",
+        "timePreviewEnd",
+        "dbWorkload",
+        "details"
+    })
+    public AutonomousDbPreviewVersionSummary(
+            String version,
+            java.util.Date timePreviewBegin,
+            java.util.Date timePreviewEnd,
+            DbWorkload dbWorkload,
+            String details) {
+        super();
+        this.version = version;
+        this.timePreviewBegin = timePreviewBegin;
+        this.timePreviewEnd = timePreviewEnd;
+        this.dbWorkload = dbWorkload;
+        this.details = details;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
@@ -104,23 +122,40 @@ public class AutonomousDbPreviewVersionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A valid Autonomous Database preview version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The date and time when the preview version availability begins.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePreviewBegin")
-    java.util.Date timePreviewBegin;
+    private final java.util.Date timePreviewBegin;
+
+    public java.util.Date getTimePreviewBegin() {
+        return timePreviewBegin;
+    }
 
     /**
      * The date and time when the preview version availability ends.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePreviewEnd")
-    java.util.Date timePreviewEnd;
+    private final java.util.Date timePreviewEnd;
+
+    public java.util.Date getTimePreviewEnd() {
+        return timePreviewEnd;
+    }
+
     /**
      * The Autonomous Database workload type. The following values are valid:
      * <p>
@@ -130,7 +165,6 @@ public class AutonomousDbPreviewVersionSummary {
      * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DbWorkload {
         Oltp("OLTP"),
         Dw("DW"),
@@ -142,6 +176,9 @@ public class AutonomousDbPreviewVersionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DbWorkload.class);
 
         private final String value;
         private static java.util.Map<String, DbWorkload> map;
@@ -185,14 +222,77 @@ public class AutonomousDbPreviewVersionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
-    DbWorkload dbWorkload;
+    private final DbWorkload dbWorkload;
+
+    public DbWorkload getDbWorkload() {
+        return dbWorkload;
+    }
 
     /**
      * A URL that points to a detailed description of the preview version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
-    String details;
+    private final String details;
+
+    public String getDetails() {
+        return details;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousDbPreviewVersionSummary(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", timePreviewBegin=").append(String.valueOf(this.timePreviewBegin));
+        sb.append(", timePreviewEnd=").append(String.valueOf(this.timePreviewEnd));
+        sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
+        sb.append(", details=").append(String.valueOf(this.details));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousDbPreviewVersionSummary)) {
+            return false;
+        }
+
+        AutonomousDbPreviewVersionSummary other = (AutonomousDbPreviewVersionSummary) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.timePreviewBegin, other.timePreviewBegin)
+                && java.util.Objects.equals(this.timePreviewEnd, other.timePreviewEnd)
+                && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
+                && java.util.Objects.equals(this.details, other.details)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePreviewBegin == null ? 43 : this.timePreviewBegin.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePreviewEnd == null ? 43 : this.timePreviewEnd.hashCode());
+        result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

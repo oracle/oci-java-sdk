@@ -15,16 +15,26 @@ package com.oracle.bmc.loggingsearch.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SearchLogsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SearchLogsDetails {
+public final class SearchLogsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeStart", "timeEnd", "searchQuery", "isReturnFieldInfo"})
+    public SearchLogsDetails(
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            String searchQuery,
+            Boolean isReturnFieldInfo) {
+        super();
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.searchQuery = searchQuery;
+        this.isReturnFieldInfo = isReturnFieldInfo;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
@@ -92,19 +102,31 @@ public class SearchLogsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Start filter log's date and time, in the format defined by RFC3339.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * End filter log's date and time, in the format defined by RFC3339.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * Query corresponding to the search operation. This query is parsed and validated before execution and
@@ -113,15 +135,73 @@ public class SearchLogsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchQuery")
-    String searchQuery;
+    private final String searchQuery;
+
+    public String getSearchQuery() {
+        return searchQuery;
+    }
 
     /**
      * Whether to return field schema information for the log stream specified in searchQuery.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReturnFieldInfo")
-    Boolean isReturnFieldInfo;
+    private final Boolean isReturnFieldInfo;
+
+    public Boolean getIsReturnFieldInfo() {
+        return isReturnFieldInfo;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchLogsDetails(");
+        sb.append("timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", searchQuery=").append(String.valueOf(this.searchQuery));
+        sb.append(", isReturnFieldInfo=").append(String.valueOf(this.isReturnFieldInfo));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchLogsDetails)) {
+            return false;
+        }
+
+        SearchLogsDetails other = (SearchLogsDetails) o;
+        return java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.searchQuery, other.searchQuery)
+                && java.util.Objects.equals(this.isReturnFieldInfo, other.isReturnFieldInfo)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.searchQuery == null ? 43 : this.searchQuery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReturnFieldInfo == null ? 43 : this.isReturnFieldInfo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

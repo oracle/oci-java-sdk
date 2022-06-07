@@ -19,14 +19,71 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditTrail.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuditTrail {
+public final class AuditTrail {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "auditProfileId",
+        "targetId",
+        "displayName",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "status",
+        "lifecycleDetails",
+        "trailLocation",
+        "description",
+        "isAutoPurgeEnabled",
+        "auditCollectionStartTime",
+        "workRequestId",
+        "compartmentId",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public AuditTrail(
+            String id,
+            String auditProfileId,
+            String targetId,
+            String displayName,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            AuditTrailLifecycleState lifecycleState,
+            AuditTrailStatus status,
+            String lifecycleDetails,
+            String trailLocation,
+            String description,
+            Boolean isAutoPurgeEnabled,
+            java.util.Date auditCollectionStartTime,
+            String workRequestId,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.id = id;
+        this.auditProfileId = auditProfileId;
+        this.targetId = targetId;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.status = status;
+        this.lifecycleDetails = lifecycleDetails;
+        this.trailLocation = trailLocation;
+        this.description = description;
+        this.isAutoPurgeEnabled = isAutoPurgeEnabled;
+        this.auditCollectionStartTime = auditCollectionStartTime;
+        this.workRequestId = workRequestId;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -253,59 +310,99 @@ public class AuditTrail {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the audit trail.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the  parent audit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
-    String auditProfileId;
+    private final String auditProfileId;
+
+    public String getAuditProfileId() {
+        return auditProfileId;
+    }
 
     /**
      * The OCID of the Data Safe target for which the audit trail is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The display name of the audit trail.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time the audit trail was created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the audit trail.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    AuditTrailLifecycleState lifecycleState;
+    private final AuditTrailLifecycleState lifecycleState;
+
+    public AuditTrailLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The current sub-state of the audit trail.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    AuditTrailStatus status;
+    private final AuditTrailStatus status;
+
+    public AuditTrailStatus getStatus() {
+        return status;
+    }
 
     /**
      * Details about the current state of the audit trail in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * An audit trail location represents the source of audit records that provides documentary
@@ -313,13 +410,21 @@ public class AuditTrail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trailLocation")
-    String trailLocation;
+    private final String trailLocation;
+
+    public String getTrailLocation() {
+        return trailLocation;
+    }
 
     /**
      * The description of the audit trail.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Indicates if auto purge is enabled on the target database, which helps delete audit data in the
@@ -327,19 +432,31 @@ public class AuditTrail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoPurgeEnabled")
-    Boolean isAutoPurgeEnabled;
+    private final Boolean isAutoPurgeEnabled;
+
+    public Boolean getIsAutoPurgeEnabled() {
+        return isAutoPurgeEnabled;
+    }
 
     /**
      * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditCollectionStartTime")
-    java.util.Date auditCollectionStartTime;
+    private final java.util.Date auditCollectionStartTime;
+
+    public java.util.Date getAuditCollectionStartTime() {
+        return auditCollectionStartTime;
+    }
 
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
-    String workRequestId;
+    private final String workRequestId;
+
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
 
     /**
      * The OCID of the compartment that contains the audit trail and its same as the compartment
@@ -347,7 +464,11 @@ public class AuditTrail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -356,7 +477,11 @@ public class AuditTrail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -365,7 +490,11 @@ public class AuditTrail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
@@ -373,8 +502,124 @@ public class AuditTrail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuditTrail(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", auditProfileId=").append(String.valueOf(this.auditProfileId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", trailLocation=").append(String.valueOf(this.trailLocation));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isAutoPurgeEnabled=").append(String.valueOf(this.isAutoPurgeEnabled));
+        sb.append(", auditCollectionStartTime=")
+                .append(String.valueOf(this.auditCollectionStartTime));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuditTrail)) {
+            return false;
+        }
+
+        AuditTrail other = (AuditTrail) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.auditProfileId, other.auditProfileId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.trailLocation, other.trailLocation)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isAutoPurgeEnabled, other.isAutoPurgeEnabled)
+                && java.util.Objects.equals(
+                        this.auditCollectionStartTime, other.auditCollectionStartTime)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditProfileId == null ? 43 : this.auditProfileId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trailLocation == null ? 43 : this.trailLocation.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoPurgeEnabled == null
+                                ? 43
+                                : this.isAutoPurgeEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditCollectionStartTime == null
+                                ? 43
+                                : this.auditCollectionStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,18 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WrappedImportKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WrappedImportKey {
+public final class WrappedImportKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({"keyMaterial", "wrappingAlgorithm"})
+    public WrappedImportKey(String keyMaterial, WrappingAlgorithm wrappingAlgorithm) {
+        super();
+        this.keyMaterial = keyMaterial;
+        this.wrappingAlgorithm = wrappingAlgorithm;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("keyMaterial")
         private String keyMaterial;
@@ -68,11 +72,20 @@ public class WrappedImportKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key material to import, wrapped by the vault's RSA public wrapping key and base64-encoded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMaterial")
-    String keyMaterial;
+    private final String keyMaterial;
+
+    public String getKeyMaterial() {
+        return keyMaterial;
+    }
+
     /**
      * The wrapping mechanism to use during key import.
      * {@code RSA_OAEP_AES_SHA256} invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped
@@ -122,8 +135,56 @@ public class WrappedImportKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wrappingAlgorithm")
-    WrappingAlgorithm wrappingAlgorithm;
+    private final WrappingAlgorithm wrappingAlgorithm;
+
+    public WrappingAlgorithm getWrappingAlgorithm() {
+        return wrappingAlgorithm;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WrappedImportKey(");
+        sb.append("keyMaterial=").append(String.valueOf(this.keyMaterial));
+        sb.append(", wrappingAlgorithm=").append(String.valueOf(this.wrappingAlgorithm));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WrappedImportKey)) {
+            return false;
+        }
+
+        WrappedImportKey other = (WrappedImportKey) o;
+        return java.util.Objects.equals(this.keyMaterial, other.keyMaterial)
+                && java.util.Objects.equals(this.wrappingAlgorithm, other.wrappingAlgorithm)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.keyMaterial == null ? 43 : this.keyMaterial.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.wrappingAlgorithm == null ? 43 : this.wrappingAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

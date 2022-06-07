@@ -15,16 +15,61 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateJobExecutionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateJobExecutionDetails {
+public final class CreateJobExecutionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "subType",
+        "jobType",
+        "parentKey",
+        "timeStarted",
+        "timeEnded",
+        "lifecycleState",
+        "errorCode",
+        "errorMessage",
+        "scheduleInstanceKey",
+        "processKey",
+        "externalUrl",
+        "eventKey",
+        "dataEntityKey",
+        "properties"
+    })
+    public CreateJobExecutionDetails(
+            String subType,
+            JobType jobType,
+            String parentKey,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded,
+            JobExecutionState lifecycleState,
+            String errorCode,
+            String errorMessage,
+            String scheduleInstanceKey,
+            String processKey,
+            String externalUrl,
+            String eventKey,
+            String dataEntityKey,
+            java.util.Map<String, java.util.Map<String, String>> properties) {
+        super();
+        this.subType = subType;
+        this.jobType = jobType;
+        this.parentKey = parentKey;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+        this.lifecycleState = lifecycleState;
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
+        this.scheduleInstanceKey = scheduleInstanceKey;
+        this.processKey = processKey;
+        this.externalUrl = externalUrl;
+        this.eventKey = eventKey;
+        this.dataEntityKey = dataEntityKey;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("subType")
         private String subType;
@@ -206,29 +251,49 @@ public class CreateJobExecutionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Sub-type of this job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
-    String subType;
+    private final String subType;
+
+    public String getSubType() {
+        return subType;
+    }
 
     /**
      * Type of the job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobType")
-    JobType jobType;
+    private final JobType jobType;
+
+    public JobType getJobType() {
+        return jobType;
+    }
 
     /**
      * The unique key of the parent execution or null if this job execution has no parent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
-    String parentKey;
+    private final String parentKey;
+
+    public String getParentKey() {
+        return parentKey;
+    }
 
     /**
      * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * Time that the job execution ended or null if it hasn't yet completed.
@@ -236,59 +301,95 @@ public class CreateJobExecutionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
 
     /**
      * Status of the job execution, such as running, paused, or completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    JobExecutionState lifecycleState;
+    private final JobExecutionState lifecycleState;
+
+    public JobExecutionState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Error code returned from the job execution or null if job is still running or didn't return an error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
-    String errorCode;
+    private final String errorCode;
+
+    public String getErrorCode() {
+        return errorCode;
+    }
 
     /**
      * Error message returned from the job execution or null if job is still running or didn't return an error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * The unique key of the triggering external scheduler resource or null if this job execution is not externally triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleInstanceKey")
-    String scheduleInstanceKey;
+    private final String scheduleInstanceKey;
+
+    public String getScheduleInstanceKey() {
+        return scheduleInstanceKey;
+    }
 
     /**
      * Process identifier related to the job execution if the job is an external job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("processKey")
-    String processKey;
+    private final String processKey;
+
+    public String getProcessKey() {
+        return processKey;
+    }
 
     /**
      * If the job is an external process, then a URL of the job for accessing this resource and its status.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalUrl")
-    String externalUrl;
+    private final String externalUrl;
+
+    public String getExternalUrl() {
+        return externalUrl;
+    }
 
     /**
      * An identifier used for log message correlation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventKey")
-    String eventKey;
+    private final String eventKey;
+
+    public String getEventKey() {
+        return eventKey;
+    }
 
     /**
      * The key of the associated data entity resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataEntityKey")
-    String dataEntityKey;
+    private final String dataEntityKey;
+
+    public String getDataEntityKey() {
+        return dataEntityKey;
+    }
 
     /**
      * A map of maps that contains the execution context properties which are specific to a job execution. Each job
@@ -299,8 +400,98 @@ public class CreateJobExecutionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, java.util.Map<String, String>> properties;
+    private final java.util.Map<String, java.util.Map<String, String>> properties;
+
+    public java.util.Map<String, java.util.Map<String, String>> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateJobExecutionDetails(");
+        sb.append("subType=").append(String.valueOf(this.subType));
+        sb.append(", jobType=").append(String.valueOf(this.jobType));
+        sb.append(", parentKey=").append(String.valueOf(this.parentKey));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", errorCode=").append(String.valueOf(this.errorCode));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", scheduleInstanceKey=").append(String.valueOf(this.scheduleInstanceKey));
+        sb.append(", processKey=").append(String.valueOf(this.processKey));
+        sb.append(", externalUrl=").append(String.valueOf(this.externalUrl));
+        sb.append(", eventKey=").append(String.valueOf(this.eventKey));
+        sb.append(", dataEntityKey=").append(String.valueOf(this.dataEntityKey));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateJobExecutionDetails)) {
+            return false;
+        }
+
+        CreateJobExecutionDetails other = (CreateJobExecutionDetails) o;
+        return java.util.Objects.equals(this.subType, other.subType)
+                && java.util.Objects.equals(this.jobType, other.jobType)
+                && java.util.Objects.equals(this.parentKey, other.parentKey)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.errorCode, other.errorCode)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.scheduleInstanceKey, other.scheduleInstanceKey)
+                && java.util.Objects.equals(this.processKey, other.processKey)
+                && java.util.Objects.equals(this.externalUrl, other.externalUrl)
+                && java.util.Objects.equals(this.eventKey, other.eventKey)
+                && java.util.Objects.equals(this.dataEntityKey, other.dataEntityKey)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.subType == null ? 43 : this.subType.hashCode());
+        result = (result * PRIME) + (this.jobType == null ? 43 : this.jobType.hashCode());
+        result = (result * PRIME) + (this.parentKey == null ? 43 : this.parentKey.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.errorCode == null ? 43 : this.errorCode.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduleInstanceKey == null
+                                ? 43
+                                : this.scheduleInstanceKey.hashCode());
+        result = (result * PRIME) + (this.processKey == null ? 43 : this.processKey.hashCode());
+        result = (result * PRIME) + (this.externalUrl == null ? 43 : this.externalUrl.hashCode());
+        result = (result * PRIME) + (this.eventKey == null ? 43 : this.eventKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataEntityKey == null ? 43 : this.dataEntityKey.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

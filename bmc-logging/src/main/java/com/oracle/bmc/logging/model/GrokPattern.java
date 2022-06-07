@@ -15,14 +15,32 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GrokPattern.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GrokPattern {
+public final class GrokPattern {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "pattern",
+        "name",
+        "fieldTimeKey",
+        "fieldTimeFormat",
+        "fieldTimeZone"
+    })
+    public GrokPattern(
+            String pattern,
+            String name,
+            String fieldTimeKey,
+            String fieldTimeFormat,
+            String fieldTimeZone) {
+        super();
+        this.pattern = pattern;
+        this.name = name;
+        this.fieldTimeKey = fieldTimeKey;
+        this.fieldTimeFormat = fieldTimeFormat;
+        this.fieldTimeZone = fieldTimeZone;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
@@ -100,36 +118,115 @@ public class GrokPattern {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The grok pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
-    String pattern;
+    private final String pattern;
+
+    public String getPattern() {
+        return pattern;
+    }
 
     /**
      * The name key to tag this grok pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Specify the time field for the event time. If the event doesn't have this field, the current time is used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
-    String fieldTimeKey;
+    private final String fieldTimeKey;
+
+    public String getFieldTimeKey() {
+        return fieldTimeKey;
+    }
 
     /**
      * Process value using the specified format. This is available only when time_type is a string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeFormat")
-    String fieldTimeFormat;
+    private final String fieldTimeFormat;
+
+    public String getFieldTimeFormat() {
+        return fieldTimeFormat;
+    }
 
     /**
      * Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeZone")
-    String fieldTimeZone;
+    private final String fieldTimeZone;
+
+    public String getFieldTimeZone() {
+        return fieldTimeZone;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GrokPattern(");
+        sb.append("pattern=").append(String.valueOf(this.pattern));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", fieldTimeKey=").append(String.valueOf(this.fieldTimeKey));
+        sb.append(", fieldTimeFormat=").append(String.valueOf(this.fieldTimeFormat));
+        sb.append(", fieldTimeZone=").append(String.valueOf(this.fieldTimeZone));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GrokPattern)) {
+            return false;
+        }
+
+        GrokPattern other = (GrokPattern) o;
+        return java.util.Objects.equals(this.pattern, other.pattern)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.fieldTimeKey, other.fieldTimeKey)
+                && java.util.Objects.equals(this.fieldTimeFormat, other.fieldTimeFormat)
+                && java.util.Objects.equals(this.fieldTimeZone, other.fieldTimeZone)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.fieldTimeKey == null ? 43 : this.fieldTimeKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fieldTimeFormat == null ? 43 : this.fieldTimeFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fieldTimeZone == null ? 43 : this.fieldTimeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

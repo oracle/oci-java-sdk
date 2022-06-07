@@ -16,16 +16,52 @@ package com.oracle.bmc.ons.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SubscriptionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SubscriptionSummary {
+public final class SubscriptionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "topicId",
+        "protocol",
+        "endpoint",
+        "lifecycleState",
+        "compartmentId",
+        "createdTime",
+        "deliveryPolicy",
+        "etag",
+        "freeformTags",
+        "definedTags"
+    })
+    public SubscriptionSummary(
+            String id,
+            String topicId,
+            String protocol,
+            String endpoint,
+            LifecycleState lifecycleState,
+            String compartmentId,
+            Long createdTime,
+            DeliveryPolicy deliveryPolicy,
+            String etag,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.topicId = topicId;
+        this.protocol = protocol;
+        this.endpoint = endpoint;
+        this.lifecycleState = lifecycleState;
+        this.compartmentId = compartmentId;
+        this.createdTime = createdTime;
+        this.deliveryPolicy = deliveryPolicy;
+        this.etag = etag;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -175,19 +211,31 @@ public class SubscriptionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
-    String topicId;
+    private final String topicId;
+
+    public String getTopicId() {
+        return topicId;
+    }
 
     /**
      * The protocol used for the subscription.
@@ -206,7 +254,11 @@ public class SubscriptionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
+    private final String protocol;
+
+    public String getProtocol() {
+        return protocol;
+    }
 
     /**
      * A locator that corresponds to the subscription protocol.
@@ -214,12 +266,16 @@ public class SubscriptionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
-    String endpoint;
+    private final String endpoint;
+
+    public String getEndpoint() {
+        return endpoint;
+    }
+
     /**
      * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Pending("PENDING"),
         Active("ACTIVE"),
@@ -230,6 +286,9 @@ public class SubscriptionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -268,30 +327,50 @@ public class SubscriptionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The time when this suscription was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdTime")
-    Long createdTime;
+    private final Long createdTime;
+
+    public Long getCreatedTime() {
+        return createdTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deliveryPolicy")
-    DeliveryPolicy deliveryPolicy;
+    private final DeliveryPolicy deliveryPolicy;
+
+    public DeliveryPolicy getDeliveryPolicy() {
+        return deliveryPolicy;
+    }
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
-    String etag;
+    private final String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -300,7 +379,11 @@ public class SubscriptionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -309,8 +392,87 @@ public class SubscriptionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SubscriptionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", topicId=").append(String.valueOf(this.topicId));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", createdTime=").append(String.valueOf(this.createdTime));
+        sb.append(", deliveryPolicy=").append(String.valueOf(this.deliveryPolicy));
+        sb.append(", etag=").append(String.valueOf(this.etag));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SubscriptionSummary)) {
+            return false;
+        }
+
+        SubscriptionSummary other = (SubscriptionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.topicId, other.topicId)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.createdTime, other.createdTime)
+                && java.util.Objects.equals(this.deliveryPolicy, other.deliveryPolicy)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.topicId == null ? 43 : this.topicId.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.createdTime == null ? 43 : this.createdTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deliveryPolicy == null ? 43 : this.deliveryPolicy.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

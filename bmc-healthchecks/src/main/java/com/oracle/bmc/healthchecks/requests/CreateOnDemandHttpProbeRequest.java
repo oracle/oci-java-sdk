@@ -9,14 +9,6 @@ import com.oracle.bmc.healthchecks.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateOnDemandHttpProbeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateOnDemandHttpProbeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateOnDemandHttpProbeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails> {
@@ -27,12 +19,20 @@ public class CreateOnDemandHttpProbeRequest
     private com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails
             createOnDemandHttpProbeDetails;
 
+    public com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails
+            getCreateOnDemandHttpProbeDetails() {
+        return createOnDemandHttpProbeDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -51,6 +51,33 @@ public class CreateOnDemandHttpProbeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails
+                createOnDemandHttpProbeDetails = null;
+
+        /**
+         * The configuration of the HTTP probe.
+         * @return this builder instance
+         */
+        public Builder createOnDemandHttpProbeDetails(
+                com.oracle.bmc.healthchecks.model.CreateOnDemandHttpProbeDetails
+                        createOnDemandHttpProbeDetails) {
+            this.createOnDemandHttpProbeDetails = createOnDemandHttpProbeDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -115,5 +142,75 @@ public class CreateOnDemandHttpProbeRequest
             createOnDemandHttpProbeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateOnDemandHttpProbeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateOnDemandHttpProbeRequest
+         */
+        public CreateOnDemandHttpProbeRequest buildWithoutInvocationCallback() {
+            CreateOnDemandHttpProbeRequest request = new CreateOnDemandHttpProbeRequest();
+            request.createOnDemandHttpProbeDetails = createOnDemandHttpProbeDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new CreateOnDemandHttpProbeRequest(createOnDemandHttpProbeDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createOnDemandHttpProbeDetails(createOnDemandHttpProbeDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createOnDemandHttpProbeDetails=")
+                .append(String.valueOf(this.createOnDemandHttpProbeDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOnDemandHttpProbeRequest)) {
+            return false;
+        }
+
+        CreateOnDemandHttpProbeRequest other = (CreateOnDemandHttpProbeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createOnDemandHttpProbeDetails, other.createOnDemandHttpProbeDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createOnDemandHttpProbeDetails == null
+                                ? 43
+                                : this.createOnDemandHttpProbeDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

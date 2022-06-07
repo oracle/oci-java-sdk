@@ -15,16 +15,20 @@ package com.oracle.bmc.databasetools.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseToolsRelatedResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseToolsRelatedResource {
+public final class DatabaseToolsRelatedResource {
+    @Deprecated
+    @java.beans.ConstructorProperties({"entityType", "identifier"})
+    public DatabaseToolsRelatedResource(RelatedResourceEntityType entityType, String identifier) {
+        super();
+        this.entityType = entityType;
+        this.identifier = identifier;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private RelatedResourceEntityType entityType;
@@ -70,18 +74,72 @@ public class DatabaseToolsRelatedResource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The resource entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    RelatedResourceEntityType entityType;
+    private final RelatedResourceEntityType entityType;
+
+    public RelatedResourceEntityType getEntityType() {
+        return entityType;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseToolsRelatedResource(");
+        sb.append("entityType=").append(String.valueOf(this.entityType));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseToolsRelatedResource)) {
+            return false;
+        }
+
+        DatabaseToolsRelatedResource other = (DatabaseToolsRelatedResource) o;
+        return java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

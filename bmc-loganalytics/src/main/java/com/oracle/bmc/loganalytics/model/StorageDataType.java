@@ -9,7 +9,6 @@ package com.oracle.bmc.loganalytics.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.extern.slf4j.Slf4j
 public enum StorageDataType {
     Log("LOG"),
     Lookup("LOOKUP"),
@@ -19,6 +18,9 @@ public enum StorageDataType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(StorageDataType.class);
 
     private final String value;
     private static java.util.Map<String, StorageDataType> map;

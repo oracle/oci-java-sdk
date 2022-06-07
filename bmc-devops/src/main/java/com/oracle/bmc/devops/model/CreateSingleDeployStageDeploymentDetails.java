@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSingleDeployStageDeploymentDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deploymentType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSingleDeployStageDeploymentDetails extends CreateDeploymentDetails {
+public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploymentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("deployPipelineId")
         private String deployPipelineId;
@@ -138,6 +133,10 @@ public class CreateSingleDeployStageDeploymentDetails extends CreateDeploymentDe
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateSingleDeployStageDeploymentDetails(
             String deployPipelineId,
@@ -157,14 +156,86 @@ public class CreateSingleDeployStageDeploymentDetails extends CreateDeploymentDe
      * Specifies the OCID of the stage to be redeployed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
-    String deployStageId;
+    private final String deployStageId;
+
+    public String getDeployStageId() {
+        return deployStageId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentArguments")
-    DeploymentArgumentCollection deploymentArguments;
+    private final DeploymentArgumentCollection deploymentArguments;
+
+    public DeploymentArgumentCollection getDeploymentArguments() {
+        return deploymentArguments;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactOverrideArguments")
-    DeployArtifactOverrideArgumentCollection deployArtifactOverrideArguments;
+    private final DeployArtifactOverrideArgumentCollection deployArtifactOverrideArguments;
+
+    public DeployArtifactOverrideArgumentCollection getDeployArtifactOverrideArguments() {
+        return deployArtifactOverrideArguments;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSingleDeployStageDeploymentDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", deployStageId=").append(String.valueOf(this.deployStageId));
+        sb.append(", deploymentArguments=").append(String.valueOf(this.deploymentArguments));
+        sb.append(", deployArtifactOverrideArguments=")
+                .append(String.valueOf(this.deployArtifactOverrideArguments));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSingleDeployStageDeploymentDetails)) {
+            return false;
+        }
+
+        CreateSingleDeployStageDeploymentDetails other =
+                (CreateSingleDeployStageDeploymentDetails) o;
+        return java.util.Objects.equals(this.deployStageId, other.deployStageId)
+                && java.util.Objects.equals(this.deploymentArguments, other.deploymentArguments)
+                && java.util.Objects.equals(
+                        this.deployArtifactOverrideArguments, other.deployArtifactOverrideArguments)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.deployStageId == null ? 43 : this.deployStageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentArguments == null
+                                ? 43
+                                : this.deploymentArguments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployArtifactOverrideArguments == null
+                                ? 43
+                                : this.deployArtifactOverrideArguments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

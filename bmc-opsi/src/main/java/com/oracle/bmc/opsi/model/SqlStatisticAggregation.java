@@ -15,16 +15,31 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlStatisticAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlStatisticAggregation {
+public final class SqlStatisticAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sqlIdentifier",
+        "databaseDetails",
+        "category",
+        "statistics"
+    })
+    public SqlStatisticAggregation(
+            String sqlIdentifier,
+            DatabaseDetails databaseDetails,
+            java.util.List<String> category,
+            SqlStatistics statistics) {
+        super();
+        this.sqlIdentifier = sqlIdentifier;
+        this.databaseDetails = databaseDetails;
+        this.category = category;
+        this.statistics = statistics;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
@@ -93,26 +108,98 @@ public class SqlStatisticAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique SQL_ID for a SQL Statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
-    String sqlIdentifier;
+    private final String sqlIdentifier;
+
+    public String getSqlIdentifier() {
+        return sqlIdentifier;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDetails")
-    DatabaseDetails databaseDetails;
+    private final DatabaseDetails databaseDetails;
+
+    public DatabaseDetails getDatabaseDetails() {
+        return databaseDetails;
+    }
 
     /**
      * SQL belongs to one or more categories based on the insights.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    java.util.List<String> category;
+    private final java.util.List<String> category;
+
+    public java.util.List<String> getCategory() {
+        return category;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
-    SqlStatistics statistics;
+    private final SqlStatistics statistics;
+
+    public SqlStatistics getStatistics() {
+        return statistics;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlStatisticAggregation(");
+        sb.append("sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
+        sb.append(", databaseDetails=").append(String.valueOf(this.databaseDetails));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", statistics=").append(String.valueOf(this.statistics));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlStatisticAggregation)) {
+            return false;
+        }
+
+        SqlStatisticAggregation other = (SqlStatisticAggregation) o;
+        return java.util.Objects.equals(this.sqlIdentifier, other.sqlIdentifier)
+                && java.util.Objects.equals(this.databaseDetails, other.databaseDetails)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.statistics, other.statistics)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sqlIdentifier == null ? 43 : this.sqlIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseDetails == null ? 43 : this.databaseDetails.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.statistics == null ? 43 : this.statistics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

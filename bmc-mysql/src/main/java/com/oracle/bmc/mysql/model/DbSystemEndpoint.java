@@ -16,14 +16,38 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemEndpoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystemEndpoint {
+public final class DbSystemEndpoint {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "hostname",
+        "ipAddress",
+        "port",
+        "portX",
+        "modes",
+        "status",
+        "statusDetails"
+    })
+    public DbSystemEndpoint(
+            String hostname,
+            String ipAddress,
+            Integer port,
+            Integer portX,
+            java.util.List<Modes> modes,
+            Status status,
+            String statusDetails) {
+        super();
+        this.hostname = hostname;
+        this.ipAddress = ipAddress;
+        this.port = port;
+        this.portX = portX;
+        this.modes = modes;
+        this.status = status;
+        this.statusDetails = statusDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
@@ -122,32 +146,52 @@ public class DbSystemEndpoint {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The network address of the DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * The IP address the DB System is configured to listen on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * The port the MySQL instance listens on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The network port where to connect to use this endpoint using the X protocol.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portX")
-    Integer portX;
+    private final Integer portX;
+
+    public Integer getPortX() {
+        return portX;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Modes {
         Read("READ"),
         Write("WRITE"),
@@ -157,6 +201,8 @@ public class DbSystemEndpoint {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Modes.class);
 
         private final String value;
         private static java.util.Map<String, Modes> map;
@@ -194,13 +240,17 @@ public class DbSystemEndpoint {
      * The access modes from the client that this endpoint supports.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modes")
-    java.util.List<Modes> modes;
+    private final java.util.List<Modes> modes;
+
+    public java.util.List<Modes> getModes() {
+        return modes;
+    }
+
     /**
      * The state of the endpoints, as far as it can seen from the DB System.
      * There may be some inconsistency with the actual state of the MySQL service.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -211,6 +261,8 @@ public class DbSystemEndpoint {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -250,14 +302,81 @@ public class DbSystemEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * Additional information about the current endpoint status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
-    String statusDetails;
+    private final String statusDetails;
+
+    public String getStatusDetails() {
+        return statusDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystemEndpoint(");
+        sb.append("hostname=").append(String.valueOf(this.hostname));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", portX=").append(String.valueOf(this.portX));
+        sb.append(", modes=").append(String.valueOf(this.modes));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", statusDetails=").append(String.valueOf(this.statusDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystemEndpoint)) {
+            return false;
+        }
+
+        DbSystemEndpoint other = (DbSystemEndpoint) o;
+        return java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.portX, other.portX)
+                && java.util.Objects.equals(this.modes, other.modes)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.statusDetails, other.statusDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());
+        result = (result * PRIME) + (this.modes == null ? 43 : this.modes.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusDetails == null ? 43 : this.statusDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

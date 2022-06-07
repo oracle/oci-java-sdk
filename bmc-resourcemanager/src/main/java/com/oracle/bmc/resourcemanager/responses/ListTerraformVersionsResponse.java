@@ -7,10 +7,6 @@ package com.oracle.bmc.resourcemanager.responses;
 import com.oracle.bmc.resourcemanager.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListTerraformVersionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -19,11 +15,20 @@ public class ListTerraformVersionsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned TerraformVersionCollection instance.
      */
     private com.oracle.bmc.resourcemanager.model.TerraformVersionCollection
             terraformVersionCollection;
+
+    public com.oracle.bmc.resourcemanager.model.TerraformVersionCollection
+            getTerraformVersionCollection() {
+        return terraformVersionCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -48,6 +53,23 @@ public class ListTerraformVersionsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.resourcemanager.model.TerraformVersionCollection
+                terraformVersionCollection;
+
+        public Builder terraformVersionCollection(
+                com.oracle.bmc.resourcemanager.model.TerraformVersionCollection
+                        terraformVersionCollection) {
+            this.terraformVersionCollection = terraformVersionCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -64,5 +86,50 @@ public class ListTerraformVersionsResponse extends com.oracle.bmc.responses.BmcR
             return new ListTerraformVersionsResponse(
                     __httpStatusCode__, opcRequestId, terraformVersionCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",terraformVersionCollection=")
+                .append(String.valueOf(terraformVersionCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListTerraformVersionsResponse)) {
+            return false;
+        }
+
+        ListTerraformVersionsResponse other = (ListTerraformVersionsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.terraformVersionCollection, other.terraformVersionCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.terraformVersionCollection == null
+                                ? 43
+                                : this.terraformVersionCollection.hashCode());
+        return result;
     }
 }

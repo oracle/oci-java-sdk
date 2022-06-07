@@ -18,16 +18,52 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateBucketDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateBucketDetails {
+public final class UpdateBucketDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "namespace",
+        "compartmentId",
+        "name",
+        "metadata",
+        "publicAccessType",
+        "objectEventsEnabled",
+        "freeformTags",
+        "definedTags",
+        "kmsKeyId",
+        "versioning",
+        "autoTiering"
+    })
+    public UpdateBucketDetails(
+            String namespace,
+            String compartmentId,
+            String name,
+            java.util.Map<String, String> metadata,
+            PublicAccessType publicAccessType,
+            Boolean objectEventsEnabled,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String kmsKeyId,
+            Versioning versioning,
+            Bucket.AutoTiering autoTiering) {
+        super();
+        this.namespace = namespace;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.metadata = metadata;
+        this.publicAccessType = publicAccessType;
+        this.objectEventsEnabled = objectEventsEnabled;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.kmsKeyId = kmsKeyId;
+        this.versioning = versioning;
+        this.autoTiering = autoTiering;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
@@ -177,17 +213,29 @@ public class UpdateBucketDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The Object Storage namespace in which the bucket lives.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * The compartmentId for the compartment to move the bucket to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -196,13 +244,22 @@ public class UpdateBucketDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    java.util.Map<String, String> metadata;
+    private final java.util.Map<String, String> metadata;
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
+
     /**
      * The type of public access enabled on this bucket. A bucket is set to {@code NoPublicAccess} by default, which only allows an
      * authenticated caller to access the bucket and its contents. When {@code ObjectRead} is enabled on the bucket, public access
@@ -251,7 +308,11 @@ public class UpdateBucketDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
-    PublicAccessType publicAccessType;
+    private final PublicAccessType publicAccessType;
+
+    public PublicAccessType getPublicAccessType() {
+        return publicAccessType;
+    }
 
     /**
      * Whether or not events are emitted for object state changes in this bucket. By default, {@code objectEventsEnabled} is
@@ -260,7 +321,11 @@ public class UpdateBucketDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
-    Boolean objectEventsEnabled;
+    private final Boolean objectEventsEnabled;
+
+    public Boolean getObjectEventsEnabled() {
+        return objectEventsEnabled;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -269,7 +334,11 @@ public class UpdateBucketDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -278,7 +347,11 @@ public class UpdateBucketDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate
@@ -288,7 +361,12 @@ public class UpdateBucketDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     /**
      * The versioning status on the bucket. If in state {@code Enabled}, multiple versions of the same object can be kept in the bucket.
      * When the object is overwritten or deleted, previous versions will still be available. When versioning is {@code Suspended}, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
@@ -334,7 +412,11 @@ public class UpdateBucketDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versioning")
-    Versioning versioning;
+    private final Versioning versioning;
+
+    public Versioning getVersioning() {
+        return versioning;
+    }
 
     /**
      * The auto tiering status on the bucket. If in state {@code InfrequentAccess}, objects are transitioned
@@ -343,8 +425,89 @@ public class UpdateBucketDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
-    Bucket.AutoTiering autoTiering;
+    private final Bucket.AutoTiering autoTiering;
+
+    public Bucket.AutoTiering getAutoTiering() {
+        return autoTiering;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateBucketDetails(");
+        sb.append("namespace=").append(String.valueOf(this.namespace));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", publicAccessType=").append(String.valueOf(this.publicAccessType));
+        sb.append(", objectEventsEnabled=").append(String.valueOf(this.objectEventsEnabled));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", versioning=").append(String.valueOf(this.versioning));
+        sb.append(", autoTiering=").append(String.valueOf(this.autoTiering));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBucketDetails)) {
+            return false;
+        }
+
+        UpdateBucketDetails other = (UpdateBucketDetails) o;
+        return java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.publicAccessType, other.publicAccessType)
+                && java.util.Objects.equals(this.objectEventsEnabled, other.objectEventsEnabled)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.versioning, other.versioning)
+                && java.util.Objects.equals(this.autoTiering, other.autoTiering)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicAccessType == null ? 43 : this.publicAccessType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectEventsEnabled == null
+                                ? 43
+                                : this.objectEventsEnabled.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.versioning == null ? 43 : this.versioning.hashCode());
+        result = (result * PRIME) + (this.autoTiering == null ? 43 : this.autoTiering.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

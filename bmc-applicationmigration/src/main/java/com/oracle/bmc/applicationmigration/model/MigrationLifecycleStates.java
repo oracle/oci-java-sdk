@@ -8,7 +8,6 @@ package com.oracle.bmc.applicationmigration.model;
  * Resource lifecycle state
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.extern.slf4j.Slf4j
 public enum MigrationLifecycleStates {
     Creating("CREATING"),
     Active("ACTIVE"),
@@ -23,6 +22,9 @@ public enum MigrationLifecycleStates {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MigrationLifecycleStates.class);
 
     private final String value;
     private static java.util.Map<String, MigrationLifecycleStates> map;

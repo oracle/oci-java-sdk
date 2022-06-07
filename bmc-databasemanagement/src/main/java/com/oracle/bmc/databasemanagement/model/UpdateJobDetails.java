@@ -15,12 +15,6 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,22 +29,99 @@ package com.oracle.bmc.databasemanagement.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "timeout",
+        "resultLocation",
+        "scheduleDetails"
+    })
+    protected UpdateJobDetails(
+            String description,
+            String timeout,
+            JobExecutionResultLocation resultLocation,
+            JobScheduleDetails scheduleDetails) {
+        super();
+        this.description = description;
+        this.timeout = timeout;
+        this.resultLocation = resultLocation;
+        this.scheduleDetails = scheduleDetails;
+    }
 
     /**
      * The description of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The job timeout duration, which is expressed like "1h 10m 15s".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
-    String timeout;
+    private final String timeout;
+
+    public String getTimeout() {
+        return timeout;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("resultLocation")
-    JobExecutionResultLocation resultLocation;
+    private final JobExecutionResultLocation resultLocation;
+
+    public JobExecutionResultLocation getResultLocation() {
+        return resultLocation;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
-    JobScheduleDetails scheduleDetails;
+    private final JobScheduleDetails scheduleDetails;
+
+    public JobScheduleDetails getScheduleDetails() {
+        return scheduleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateJobDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", timeout=").append(String.valueOf(this.timeout));
+        sb.append(", resultLocation=").append(String.valueOf(this.resultLocation));
+        sb.append(", scheduleDetails=").append(String.valueOf(this.scheduleDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateJobDetails)) {
+            return false;
+        }
+
+        UpdateJobDetails other = (UpdateJobDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeout, other.timeout)
+                && java.util.Objects.equals(this.resultLocation, other.resultLocation)
+                && java.util.Objects.equals(this.scheduleDetails, other.scheduleDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeout == null ? 43 : this.timeout.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resultLocation == null ? 43 : this.resultLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduleDetails == null ? 43 : this.scheduleDetails.hashCode());
+        return result;
+    }
 }

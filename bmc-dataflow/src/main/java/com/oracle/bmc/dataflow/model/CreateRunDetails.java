@@ -48,14 +48,77 @@ package com.oracle.bmc.dataflow.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateRunDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateRunDetails {
+public final class CreateRunDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "applicationId",
+        "archiveUri",
+        "arguments",
+        "compartmentId",
+        "configuration",
+        "definedTags",
+        "displayName",
+        "driverShape",
+        "driverShapeConfig",
+        "execute",
+        "executorShape",
+        "executorShapeConfig",
+        "freeformTags",
+        "logsBucketUri",
+        "metastoreId",
+        "numExecutors",
+        "parameters",
+        "sparkVersion",
+        "type",
+        "warehouseBucketUri"
+    })
+    public CreateRunDetails(
+            String applicationId,
+            String archiveUri,
+            java.util.List<String> arguments,
+            String compartmentId,
+            java.util.Map<String, String> configuration,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            String driverShape,
+            ShapeConfig driverShapeConfig,
+            String execute,
+            String executorShape,
+            ShapeConfig executorShapeConfig,
+            java.util.Map<String, String> freeformTags,
+            String logsBucketUri,
+            String metastoreId,
+            Integer numExecutors,
+            java.util.List<ApplicationParameter> parameters,
+            String sparkVersion,
+            ApplicationType type,
+            String warehouseBucketUri) {
+        super();
+        this.applicationId = applicationId;
+        this.archiveUri = archiveUri;
+        this.arguments = arguments;
+        this.compartmentId = compartmentId;
+        this.configuration = configuration;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.driverShape = driverShape;
+        this.driverShapeConfig = driverShapeConfig;
+        this.execute = execute;
+        this.executorShape = executorShape;
+        this.executorShapeConfig = executorShapeConfig;
+        this.freeformTags = freeformTags;
+        this.logsBucketUri = logsBucketUri;
+        this.metastoreId = metastoreId;
+        this.numExecutors = numExecutors;
+        this.parameters = parameters;
+        this.sparkVersion = sparkVersion;
+        this.type = type;
+        this.warehouseBucketUri = warehouseBucketUri;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
@@ -304,12 +367,20 @@ public class CreateRunDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
-    String applicationId;
+    private final String applicationId;
+
+    public String getApplicationId() {
+        return applicationId;
+    }
 
     /**
      * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
@@ -317,7 +388,11 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
-    String archiveUri;
+    private final String archiveUri;
+
+    public String getArchiveUri() {
+        return archiveUri;
+    }
 
     /**
      * The arguments passed to the running application as command line arguments.  An argument is
@@ -331,14 +406,22 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
-    java.util.List<String> arguments;
+    private final java.util.List<String> arguments;
+
+    public java.util.List<String> getArguments() {
+        return arguments;
+    }
 
     /**
      * The OCID of a compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The Spark configuration passed to the running process.
@@ -349,7 +432,11 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
-    java.util.Map<String, String> configuration;
+    private final java.util.Map<String, String> configuration;
+
+    public java.util.Map<String, String> getConfiguration() {
+        return configuration;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -357,24 +444,40 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The VM shape for the driver. Sets the driver cores and memory.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
-    String driverShape;
+    private final String driverShape;
+
+    public String getDriverShape() {
+        return driverShape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("driverShapeConfig")
-    ShapeConfig driverShapeConfig;
+    private final ShapeConfig driverShapeConfig;
+
+    public ShapeConfig getDriverShapeConfig() {
+        return driverShapeConfig;
+    }
 
     /**
      * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
@@ -385,17 +488,29 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("execute")
-    String execute;
+    private final String execute;
+
+    public String getExecute() {
+        return execute;
+    }
 
     /**
      * The VM shape for the executors. Sets the executor cores and memory.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
-    String executorShape;
+    private final String executorShape;
+
+    public String getExecutorShape() {
+        return executorShape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("executorShapeConfig")
-    ShapeConfig executorShapeConfig;
+    private final ShapeConfig executorShapeConfig;
+
+    public ShapeConfig getExecutorShapeConfig() {
+        return executorShapeConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -404,7 +519,11 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
@@ -412,21 +531,33 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
-    String logsBucketUri;
+    private final String logsBucketUri;
+
+    public String getLogsBucketUri() {
+        return logsBucketUri;
+    }
 
     /**
      * The OCID of OCI Hive Metastore.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
-    String metastoreId;
+    private final String metastoreId;
+
+    public String getMetastoreId() {
+        return metastoreId;
+    }
 
     /**
      * The number of executor VMs requested.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
-    Integer numExecutors;
+    private final Integer numExecutors;
+
+    public Integer getNumExecutors() {
+        return numExecutors;
+    }
 
     /**
      * An array of name/value pairs used to fill placeholders found in properties like
@@ -436,21 +567,33 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.List<ApplicationParameter> parameters;
+    private final java.util.List<ApplicationParameter> parameters;
+
+    public java.util.List<ApplicationParameter> getParameters() {
+        return parameters;
+    }
 
     /**
      * The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
-    String sparkVersion;
+    private final String sparkVersion;
+
+    public String getSparkVersion() {
+        return sparkVersion;
+    }
 
     /**
      * The Spark application processing type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    ApplicationType type;
+    private final ApplicationType type;
+
+    public ApplicationType getType() {
+        return type;
+    }
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
@@ -459,8 +602,128 @@ public class CreateRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
-    String warehouseBucketUri;
+    private final String warehouseBucketUri;
+
+    public String getWarehouseBucketUri() {
+        return warehouseBucketUri;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateRunDetails(");
+        sb.append("applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(", archiveUri=").append(String.valueOf(this.archiveUri));
+        sb.append(", arguments=").append(String.valueOf(this.arguments));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", configuration=").append(String.valueOf(this.configuration));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", driverShape=").append(String.valueOf(this.driverShape));
+        sb.append(", driverShapeConfig=").append(String.valueOf(this.driverShapeConfig));
+        sb.append(", execute=").append(String.valueOf(this.execute));
+        sb.append(", executorShape=").append(String.valueOf(this.executorShape));
+        sb.append(", executorShapeConfig=").append(String.valueOf(this.executorShapeConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", logsBucketUri=").append(String.valueOf(this.logsBucketUri));
+        sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
+        sb.append(", numExecutors=").append(String.valueOf(this.numExecutors));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", sparkVersion=").append(String.valueOf(this.sparkVersion));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", warehouseBucketUri=").append(String.valueOf(this.warehouseBucketUri));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateRunDetails)) {
+            return false;
+        }
+
+        CreateRunDetails other = (CreateRunDetails) o;
+        return java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(this.archiveUri, other.archiveUri)
+                && java.util.Objects.equals(this.arguments, other.arguments)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.configuration, other.configuration)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.driverShape, other.driverShape)
+                && java.util.Objects.equals(this.driverShapeConfig, other.driverShapeConfig)
+                && java.util.Objects.equals(this.execute, other.execute)
+                && java.util.Objects.equals(this.executorShape, other.executorShape)
+                && java.util.Objects.equals(this.executorShapeConfig, other.executorShapeConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.logsBucketUri, other.logsBucketUri)
+                && java.util.Objects.equals(this.metastoreId, other.metastoreId)
+                && java.util.Objects.equals(this.numExecutors, other.numExecutors)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.sparkVersion, other.sparkVersion)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.warehouseBucketUri, other.warehouseBucketUri)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result = (result * PRIME) + (this.archiveUri == null ? 43 : this.archiveUri.hashCode());
+        result = (result * PRIME) + (this.arguments == null ? 43 : this.arguments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configuration == null ? 43 : this.configuration.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.driverShape == null ? 43 : this.driverShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.driverShapeConfig == null ? 43 : this.driverShapeConfig.hashCode());
+        result = (result * PRIME) + (this.execute == null ? 43 : this.execute.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executorShape == null ? 43 : this.executorShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executorShapeConfig == null
+                                ? 43
+                                : this.executorShapeConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logsBucketUri == null ? 43 : this.logsBucketUri.hashCode());
+        result = (result * PRIME) + (this.metastoreId == null ? 43 : this.metastoreId.hashCode());
+        result = (result * PRIME) + (this.numExecutors == null ? 43 : this.numExecutors.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.sparkVersion == null ? 43 : this.sparkVersion.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.warehouseBucketUri == null
+                                ? 43
+                                : this.warehouseBucketUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

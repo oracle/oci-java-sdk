@@ -9,14 +9,6 @@ import com.oracle.bmc.dns.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateZoneExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateZoneRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateZoneRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.CreateZoneBaseDetails> {
 
@@ -25,6 +17,9 @@ public class CreateZoneRequest
      */
     private com.oracle.bmc.dns.model.CreateZoneBaseDetails createZoneDetails;
 
+    public com.oracle.bmc.dns.model.CreateZoneBaseDetails getCreateZoneDetails() {
+        return createZoneDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need
      * to contact Oracle about a particular request, please provide
@@ -33,6 +28,9 @@ public class CreateZoneRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The OCID of the compartment the zone belongs to.
      * <p>
@@ -41,16 +39,26 @@ public class CreateZoneRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      *
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    public com.oracle.bmc.dns.model.Scope getScope() {
+        return scope;
+    }
     /**
      * The OCID of the view the resource is associated with.
      */
     private String viewId;
+
+    public String getViewId() {
+        return viewId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -68,6 +76,69 @@ public class CreateZoneRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.dns.model.CreateZoneBaseDetails createZoneDetails = null;
+
+        /**
+         * Details for creating a new zone.
+         * @return this builder instance
+         */
+        public Builder createZoneDetails(
+                com.oracle.bmc.dns.model.CreateZoneBaseDetails createZoneDetails) {
+            this.createZoneDetails = createZoneDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the compartment the zone belongs to.
+         * <p>
+         * This parameter is deprecated and should be omitted.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.dns.model.Scope scope = null;
+
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         * @return this builder instance
+         */
+        public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
+            this.scope = scope;
+            return this;
+        }
+
+        private String viewId = null;
+
+        /**
+         * The OCID of the view the resource is associated with.
+         * @return this builder instance
+         */
+        public Builder viewId(String viewId) {
+            this.viewId = viewId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -134,5 +205,88 @@ public class CreateZoneRequest
             createZoneDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateZoneRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateZoneRequest
+         */
+        public CreateZoneRequest buildWithoutInvocationCallback() {
+            CreateZoneRequest request = new CreateZoneRequest();
+            request.createZoneDetails = createZoneDetails;
+            request.opcRequestId = opcRequestId;
+            request.compartmentId = compartmentId;
+            request.scope = scope;
+            request.viewId = viewId;
+            return request;
+            // new CreateZoneRequest(createZoneDetails, opcRequestId, compartmentId, scope, viewId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createZoneDetails(createZoneDetails)
+                .opcRequestId(opcRequestId)
+                .compartmentId(compartmentId)
+                .scope(scope)
+                .viewId(viewId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createZoneDetails=").append(String.valueOf(this.createZoneDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",scope=").append(String.valueOf(this.scope));
+        sb.append(",viewId=").append(String.valueOf(this.viewId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateZoneRequest)) {
+            return false;
+        }
+
+        CreateZoneRequest other = (CreateZoneRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.createZoneDetails, other.createZoneDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.viewId, other.viewId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createZoneDetails == null ? 43 : this.createZoneDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result = (result * PRIME) + (this.viewId == null ? 43 : this.viewId.hashCode());
+        return result;
     }
 }

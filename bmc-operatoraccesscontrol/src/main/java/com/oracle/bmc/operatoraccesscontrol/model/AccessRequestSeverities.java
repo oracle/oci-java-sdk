@@ -8,7 +8,6 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * Levels of priorities associated with an access request
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.extern.slf4j.Slf4j
 public enum AccessRequestSeverities {
     S1("S1"),
     S2("S2"),
@@ -20,6 +19,9 @@ public enum AccessRequestSeverities {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AccessRequestSeverities.class);
 
     private final String value;
     private static java.util.Map<String, AccessRequestSeverities> map;

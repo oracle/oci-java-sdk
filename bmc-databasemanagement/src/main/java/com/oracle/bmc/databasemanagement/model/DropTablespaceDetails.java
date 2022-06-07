@@ -15,16 +15,31 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DropTablespaceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DropTablespaceDetails {
+public final class DropTablespaceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "credentialDetails",
+        "isIncludingContents",
+        "isDroppingDataFiles",
+        "isCascadeConstraints"
+    })
+    public DropTablespaceDetails(
+            TablespaceAdminCredentialDetails credentialDetails,
+            Boolean isIncludingContents,
+            Boolean isDroppingDataFiles,
+            Boolean isCascadeConstraints) {
+        super();
+        this.credentialDetails = credentialDetails;
+        this.isIncludingContents = isIncludingContents;
+        this.isDroppingDataFiles = isDroppingDataFiles;
+        this.isCascadeConstraints = isCascadeConstraints;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private TablespaceAdminCredentialDetails credentialDetails;
@@ -96,30 +111,112 @@ public class DropTablespaceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
-    TablespaceAdminCredentialDetails credentialDetails;
+    private final TablespaceAdminCredentialDetails credentialDetails;
+
+    public TablespaceAdminCredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
 
     /**
      * Specifies whether all the contents of the tablespace being dropped should be dropped.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludingContents")
-    Boolean isIncludingContents;
+    private final Boolean isIncludingContents;
+
+    public Boolean getIsIncludingContents() {
+        return isIncludingContents;
+    }
 
     /**
      * Specifies whether all the associated data files of the tablespace being dropped should be dropped.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDroppingDataFiles")
-    Boolean isDroppingDataFiles;
+    private final Boolean isDroppingDataFiles;
+
+    public Boolean getIsDroppingDataFiles() {
+        return isDroppingDataFiles;
+    }
 
     /**
      * Specifies whether all the constraints on the tablespace being dropped should be dropped.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCascadeConstraints")
-    Boolean isCascadeConstraints;
+    private final Boolean isCascadeConstraints;
+
+    public Boolean getIsCascadeConstraints() {
+        return isCascadeConstraints;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DropTablespaceDetails(");
+        sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", isIncludingContents=").append(String.valueOf(this.isIncludingContents));
+        sb.append(", isDroppingDataFiles=").append(String.valueOf(this.isDroppingDataFiles));
+        sb.append(", isCascadeConstraints=").append(String.valueOf(this.isCascadeConstraints));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DropTablespaceDetails)) {
+            return false;
+        }
+
+        DropTablespaceDetails other = (DropTablespaceDetails) o;
+        return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.isIncludingContents, other.isIncludingContents)
+                && java.util.Objects.equals(this.isDroppingDataFiles, other.isDroppingDataFiles)
+                && java.util.Objects.equals(this.isCascadeConstraints, other.isCascadeConstraints)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncludingContents == null
+                                ? 43
+                                : this.isIncludingContents.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDroppingDataFiles == null
+                                ? 43
+                                : this.isDroppingDataFiles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCascadeConstraints == null
+                                ? 43
+                                : this.isCascadeConstraints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

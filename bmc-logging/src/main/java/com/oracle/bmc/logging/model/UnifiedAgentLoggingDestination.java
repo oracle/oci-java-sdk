@@ -15,16 +15,19 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UnifiedAgentLoggingDestination.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UnifiedAgentLoggingDestination {
+public final class UnifiedAgentLoggingDestination {
+    @Deprecated
+    @java.beans.ConstructorProperties({"logObjectId"})
+    public UnifiedAgentLoggingDestination(String logObjectId) {
+        super();
+        this.logObjectId = logObjectId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("logObjectId")
         private String logObjectId;
@@ -61,12 +64,59 @@ public class UnifiedAgentLoggingDestination {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logObjectId")
-    String logObjectId;
+    private final String logObjectId;
+
+    public String getLogObjectId() {
+        return logObjectId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UnifiedAgentLoggingDestination(");
+        sb.append("logObjectId=").append(String.valueOf(this.logObjectId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UnifiedAgentLoggingDestination)) {
+            return false;
+        }
+
+        UnifiedAgentLoggingDestination other = (UnifiedAgentLoggingDestination) o;
+        return java.util.Objects.equals(this.logObjectId, other.logObjectId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.logObjectId == null ? 43 : this.logObjectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

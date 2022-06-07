@@ -15,16 +15,43 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AnalyzeImageResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AnalyzeImageResult {
+public final class AnalyzeImageResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "imageObjects",
+        "labels",
+        "ontologyClasses",
+        "imageText",
+        "imageClassificationModelVersion",
+        "objectDetectionModelVersion",
+        "textDetectionModelVersion",
+        "errors"
+    })
+    public AnalyzeImageResult(
+            java.util.List<ImageObject> imageObjects,
+            java.util.List<Label> labels,
+            java.util.List<OntologyClass> ontologyClasses,
+            ImageText imageText,
+            String imageClassificationModelVersion,
+            String objectDetectionModelVersion,
+            String textDetectionModelVersion,
+            java.util.List<ProcessingError> errors) {
+        super();
+        this.imageObjects = imageObjects;
+        this.labels = labels;
+        this.ontologyClasses = ontologyClasses;
+        this.imageText = imageText;
+        this.imageClassificationModelVersion = imageClassificationModelVersion;
+        this.objectDetectionModelVersion = objectDetectionModelVersion;
+        this.textDetectionModelVersion = textDetectionModelVersion;
+        this.errors = errors;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("imageObjects")
         private java.util.List<ImageObject> imageObjects;
@@ -140,51 +167,167 @@ public class AnalyzeImageResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The detected objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageObjects")
-    java.util.List<ImageObject> imageObjects;
+    private final java.util.List<ImageObject> imageObjects;
+
+    public java.util.List<ImageObject> getImageObjects() {
+        return imageObjects;
+    }
 
     /**
      * The image classification labels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
-    java.util.List<Label> labels;
+    private final java.util.List<Label> labels;
+
+    public java.util.List<Label> getLabels() {
+        return labels;
+    }
 
     /**
      * The ontologyClasses of image labels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ontologyClasses")
-    java.util.List<OntologyClass> ontologyClasses;
+    private final java.util.List<OntologyClass> ontologyClasses;
+
+    public java.util.List<OntologyClass> getOntologyClasses() {
+        return ontologyClasses;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("imageText")
-    ImageText imageText;
+    private final ImageText imageText;
+
+    public ImageText getImageText() {
+        return imageText;
+    }
 
     /**
      * The image classification model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageClassificationModelVersion")
-    String imageClassificationModelVersion;
+    private final String imageClassificationModelVersion;
+
+    public String getImageClassificationModelVersion() {
+        return imageClassificationModelVersion;
+    }
 
     /**
      * The object detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectDetectionModelVersion")
-    String objectDetectionModelVersion;
+    private final String objectDetectionModelVersion;
+
+    public String getObjectDetectionModelVersion() {
+        return objectDetectionModelVersion;
+    }
 
     /**
      * The text detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
-    String textDetectionModelVersion;
+    private final String textDetectionModelVersion;
+
+    public String getTextDetectionModelVersion() {
+        return textDetectionModelVersion;
+    }
 
     /**
      * The errors encountered during image analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
-    java.util.List<ProcessingError> errors;
+    private final java.util.List<ProcessingError> errors;
+
+    public java.util.List<ProcessingError> getErrors() {
+        return errors;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AnalyzeImageResult(");
+        sb.append("imageObjects=").append(String.valueOf(this.imageObjects));
+        sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append(", ontologyClasses=").append(String.valueOf(this.ontologyClasses));
+        sb.append(", imageText=").append(String.valueOf(this.imageText));
+        sb.append(", imageClassificationModelVersion=")
+                .append(String.valueOf(this.imageClassificationModelVersion));
+        sb.append(", objectDetectionModelVersion=")
+                .append(String.valueOf(this.objectDetectionModelVersion));
+        sb.append(", textDetectionModelVersion=")
+                .append(String.valueOf(this.textDetectionModelVersion));
+        sb.append(", errors=").append(String.valueOf(this.errors));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnalyzeImageResult)) {
+            return false;
+        }
+
+        AnalyzeImageResult other = (AnalyzeImageResult) o;
+        return java.util.Objects.equals(this.imageObjects, other.imageObjects)
+                && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.ontologyClasses, other.ontologyClasses)
+                && java.util.Objects.equals(this.imageText, other.imageText)
+                && java.util.Objects.equals(
+                        this.imageClassificationModelVersion, other.imageClassificationModelVersion)
+                && java.util.Objects.equals(
+                        this.objectDetectionModelVersion, other.objectDetectionModelVersion)
+                && java.util.Objects.equals(
+                        this.textDetectionModelVersion, other.textDetectionModelVersion)
+                && java.util.Objects.equals(this.errors, other.errors)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.imageObjects == null ? 43 : this.imageObjects.hashCode());
+        result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ontologyClasses == null ? 43 : this.ontologyClasses.hashCode());
+        result = (result * PRIME) + (this.imageText == null ? 43 : this.imageText.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.imageClassificationModelVersion == null
+                                ? 43
+                                : this.imageClassificationModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectDetectionModelVersion == null
+                                ? 43
+                                : this.objectDetectionModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.textDetectionModelVersion == null
+                                ? 43
+                                : this.textDetectionModelVersion.hashCode());
+        result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,34 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateMaskingColumnDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateMaskingColumnDetails {
+public final class UpdateMaskingColumnDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "objectType",
+        "maskingColumnGroup",
+        "sensitiveTypeId",
+        "isMaskingEnabled",
+        "maskingFormats"
+    })
+    public UpdateMaskingColumnDetails(
+            ObjectType objectType,
+            String maskingColumnGroup,
+            String sensitiveTypeId,
+            Boolean isMaskingEnabled,
+            java.util.List<MaskingFormat> maskingFormats) {
+        super();
+        this.objectType = objectType;
+        this.maskingColumnGroup = maskingColumnGroup;
+        this.sensitiveTypeId = sensitiveTypeId;
+        this.isMaskingEnabled = isMaskingEnabled;
+        this.maskingFormats = maskingFormats;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private ObjectType objectType;
@@ -107,11 +125,19 @@ public class UpdateMaskingColumnDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of the object that contains the database column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    ObjectType objectType;
+    private final ObjectType objectType;
+
+    public ObjectType getObjectType() {
+        return objectType;
+    }
 
     /**
      * The group of the masking column. It's a masking group identifier and can be any
@@ -122,13 +148,21 @@ public class UpdateMaskingColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingColumnGroup")
-    String maskingColumnGroup;
+    private final String maskingColumnGroup;
+
+    public String getMaskingColumnGroup() {
+        return maskingColumnGroup;
+    }
 
     /**
      * The OCID of the sensitive type to be associated with the masking column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
-    String sensitiveTypeId;
+    private final String sensitiveTypeId;
+
+    public String getSensitiveTypeId() {
+        return sensitiveTypeId;
+    }
 
     /**
      * Indicates if data masking is enabled for the masking column. Set it to false
@@ -136,7 +170,11 @@ public class UpdateMaskingColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMaskingEnabled")
-    Boolean isMaskingEnabled;
+    private final Boolean isMaskingEnabled;
+
+    public Boolean getIsMaskingEnabled() {
+        return isMaskingEnabled;
+    }
 
     /**
      * The masking formats to be assigned to the masking column. You can specify a
@@ -151,8 +189,73 @@ public class UpdateMaskingColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
-    java.util.List<MaskingFormat> maskingFormats;
+    private final java.util.List<MaskingFormat> maskingFormats;
+
+    public java.util.List<MaskingFormat> getMaskingFormats() {
+        return maskingFormats;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateMaskingColumnDetails(");
+        sb.append("objectType=").append(String.valueOf(this.objectType));
+        sb.append(", maskingColumnGroup=").append(String.valueOf(this.maskingColumnGroup));
+        sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
+        sb.append(", isMaskingEnabled=").append(String.valueOf(this.isMaskingEnabled));
+        sb.append(", maskingFormats=").append(String.valueOf(this.maskingFormats));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateMaskingColumnDetails)) {
+            return false;
+        }
+
+        UpdateMaskingColumnDetails other = (UpdateMaskingColumnDetails) o;
+        return java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.maskingColumnGroup, other.maskingColumnGroup)
+                && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
+                && java.util.Objects.equals(this.isMaskingEnabled, other.isMaskingEnabled)
+                && java.util.Objects.equals(this.maskingFormats, other.maskingFormats)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingColumnGroup == null
+                                ? 43
+                                : this.maskingColumnGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaskingEnabled == null ? 43 : this.isMaskingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingFormats == null ? 43 : this.maskingFormats.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

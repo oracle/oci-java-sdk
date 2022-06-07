@@ -7,10 +7,6 @@ package com.oracle.bmc.streaming.responses;
 import com.oracle.bmc.streaming.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class PutMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -19,10 +15,18 @@ public class PutMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned PutMessagesResult instance.
      */
     private com.oracle.bmc.streaming.model.PutMessagesResult putMessagesResult;
+
+    public com.oracle.bmc.streaming.model.PutMessagesResult getPutMessagesResult() {
+        return putMessagesResult;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "putMessagesResult"})
     private PutMessagesResponse(
@@ -42,6 +46,21 @@ public class PutMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.streaming.model.PutMessagesResult putMessagesResult;
+
+        public Builder putMessagesResult(
+                com.oracle.bmc.streaming.model.PutMessagesResult putMessagesResult) {
+            this.putMessagesResult = putMessagesResult;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +76,46 @@ public class PutMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
         public PutMessagesResponse build() {
             return new PutMessagesResponse(__httpStatusCode__, opcRequestId, putMessagesResult);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",putMessagesResult=").append(String.valueOf(putMessagesResult));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PutMessagesResponse)) {
+            return false;
+        }
+
+        PutMessagesResponse other = (PutMessagesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.putMessagesResult, other.putMessagesResult);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.putMessagesResult == null ? 43 : this.putMessagesResult.hashCode());
+        return result;
     }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.osmanagement.model;
  * The purpose of an update.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.extern.slf4j.Slf4j
 public enum PackageUpdateTypes {
     Security("SECURITY"),
     Bugfix("BUGFIX"),
@@ -22,6 +21,9 @@ public enum PackageUpdateTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PackageUpdateTypes.class);
 
     private final String value;
     private static java.util.Map<String, PackageUpdateTypes> map;

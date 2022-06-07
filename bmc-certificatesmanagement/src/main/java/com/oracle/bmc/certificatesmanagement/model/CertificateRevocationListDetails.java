@@ -15,16 +15,22 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CertificateRevocationListDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CertificateRevocationListDetails {
+public final class CertificateRevocationListDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"objectStorageConfig", "customFormattedUrls"})
+    public CertificateRevocationListDetails(
+            ObjectStorageBucketConfigDetails objectStorageConfig,
+            java.util.List<String> customFormattedUrls) {
+        super();
+        this.objectStorageConfig = objectStorageConfig;
+        this.customFormattedUrls = customFormattedUrls;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageConfig")
         private ObjectStorageBucketConfigDetails objectStorageConfig;
@@ -72,16 +78,78 @@ public class CertificateRevocationListDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageConfig")
-    ObjectStorageBucketConfigDetails objectStorageConfig;
+    private final ObjectStorageBucketConfigDetails objectStorageConfig;
+
+    public ObjectStorageBucketConfigDetails getObjectStorageConfig() {
+        return objectStorageConfig;
+    }
 
     /**
      * Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customFormattedUrls")
-    java.util.List<String> customFormattedUrls;
+    private final java.util.List<String> customFormattedUrls;
+
+    public java.util.List<String> getCustomFormattedUrls() {
+        return customFormattedUrls;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateRevocationListDetails(");
+        sb.append("objectStorageConfig=").append(String.valueOf(this.objectStorageConfig));
+        sb.append(", customFormattedUrls=").append(String.valueOf(this.customFormattedUrls));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateRevocationListDetails)) {
+            return false;
+        }
+
+        CertificateRevocationListDetails other = (CertificateRevocationListDetails) o;
+        return java.util.Objects.equals(this.objectStorageConfig, other.objectStorageConfig)
+                && java.util.Objects.equals(this.customFormattedUrls, other.customFormattedUrls)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.objectStorageConfig == null
+                                ? 43
+                                : this.objectStorageConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customFormattedUrls == null
+                                ? 43
+                                : this.customFormattedUrls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

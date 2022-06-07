@@ -19,16 +19,40 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ListMetricsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ListMetricsDetails {
+public final class ListMetricsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "namespace",
+        "resourceGroup",
+        "dimensionFilters",
+        "groupBy",
+        "sortBy",
+        "sortOrder"
+    })
+    public ListMetricsDetails(
+            String name,
+            String namespace,
+            String resourceGroup,
+            java.util.Map<String, String> dimensionFilters,
+            java.util.List<String> groupBy,
+            SortBy sortBy,
+            SortOrder sortOrder) {
+        super();
+        this.name = name;
+        this.namespace = namespace;
+        this.resourceGroup = resourceGroup;
+        this.dimensionFilters = dimensionFilters;
+        this.groupBy = groupBy;
+        this.sortBy = sortBy;
+        this.sortOrder = sortOrder;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -133,6 +157,10 @@ public class ListMetricsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The metric name to use when searching for metric definitions.
      * <p>
@@ -140,7 +168,11 @@ public class ListMetricsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The source service or application to use when searching for metric definitions.
@@ -149,7 +181,11 @@ public class ListMetricsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
@@ -159,7 +195,11 @@ public class ListMetricsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
-    String resourceGroup;
+    private final String resourceGroup;
+
+    public String getResourceGroup() {
+        return resourceGroup;
+    }
 
     /**
      * Qualifiers that you want to use when searching for metric definitions.
@@ -169,7 +209,11 @@ public class ListMetricsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionFilters")
-    java.util.Map<String, String> dimensionFilters;
+    private final java.util.Map<String, String> dimensionFilters;
+
+    public java.util.Map<String, String> getDimensionFilters() {
+        return dimensionFilters;
+    }
 
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available
@@ -180,7 +224,12 @@ public class ListMetricsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
-    java.util.List<String> groupBy;
+    private final java.util.List<String> groupBy;
+
+    public java.util.List<String> getGroupBy() {
+        return groupBy;
+    }
+
     /**
      * The field to use when sorting returned metric definitions. Only one sorting level is provided.
      * <p>
@@ -227,7 +276,12 @@ public class ListMetricsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
-    SortBy sortBy;
+    private final SortBy sortBy;
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+
     /**
      * The sort order to use when sorting returned metric definitions. Ascending (ASC) or
      * descending (DESC).
@@ -275,8 +329,73 @@ public class ListMetricsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
-    SortOrder sortOrder;
+    private final SortOrder sortOrder;
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ListMetricsDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", dimensionFilters=").append(String.valueOf(this.dimensionFilters));
+        sb.append(", groupBy=").append(String.valueOf(this.groupBy));
+        sb.append(", sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(", sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListMetricsDetails)) {
+            return false;
+        }
+
+        ListMetricsDetails other = (ListMetricsDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.dimensionFilters, other.dimensionFilters)
+                && java.util.Objects.equals(this.groupBy, other.groupBy)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dimensionFilters == null ? 43 : this.dimensionFilters.hashCode());
+        result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

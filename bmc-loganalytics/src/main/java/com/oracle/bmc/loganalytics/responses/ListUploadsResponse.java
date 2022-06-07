@@ -7,16 +7,16 @@ package com.oracle.bmc.loganalytics.responses;
 import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -26,15 +26,27 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * Total count.
      */
     private Long opcTotalItems;
 
+    public Long getOpcTotalItems() {
+        return opcTotalItems;
+    }
+
     /**
      * The returned UploadCollection instance.
      */
     private com.oracle.bmc.loganalytics.model.UploadCollection uploadCollection;
+
+    public com.oracle.bmc.loganalytics.model.UploadCollection getUploadCollection() {
+        return uploadCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -64,6 +76,35 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private Long opcTotalItems;
+
+        public Builder opcTotalItems(Long opcTotalItems) {
+            this.opcTotalItems = opcTotalItems;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.UploadCollection uploadCollection;
+
+        public Builder uploadCollection(
+                com.oracle.bmc.loganalytics.model.UploadCollection uploadCollection) {
+            this.uploadCollection = uploadCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -82,5 +123,54 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
             return new ListUploadsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, opcTotalItems, uploadCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcTotalItems=").append(String.valueOf(opcTotalItems));
+        sb.append(",uploadCollection=").append(String.valueOf(uploadCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListUploadsResponse)) {
+            return false;
+        }
+
+        ListUploadsResponse other = (ListUploadsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcTotalItems, other.opcTotalItems)
+                && java.util.Objects.equals(this.uploadCollection, other.uploadCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcTotalItems == null ? 43 : this.opcTotalItems.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uploadCollection == null ? 43 : this.uploadCollection.hashCode());
+        return result;
     }
 }

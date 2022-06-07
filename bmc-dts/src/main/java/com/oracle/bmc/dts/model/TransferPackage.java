@@ -15,14 +15,44 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TransferPackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TransferPackage {
+public final class TransferPackage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "label",
+        "lifecycleState",
+        "transferJobId",
+        "creationTime",
+        "originalPackageDeliveryTrackingNumber",
+        "returnPackageDeliveryTrackingNumber",
+        "packageDeliveryVendor",
+        "transferSiteShippingAddress",
+        "attachedTransferDeviceLabels"
+    })
+    public TransferPackage(
+            String label,
+            LifecycleState lifecycleState,
+            String transferJobId,
+            java.util.Date creationTime,
+            String originalPackageDeliveryTrackingNumber,
+            String returnPackageDeliveryTrackingNumber,
+            String packageDeliveryVendor,
+            String transferSiteShippingAddress,
+            java.util.List<String> attachedTransferDeviceLabels) {
+        super();
+        this.label = label;
+        this.lifecycleState = lifecycleState;
+        this.transferJobId = transferJobId;
+        this.creationTime = creationTime;
+        this.originalPackageDeliveryTrackingNumber = originalPackageDeliveryTrackingNumber;
+        this.returnPackageDeliveryTrackingNumber = returnPackageDeliveryTrackingNumber;
+        this.packageDeliveryVendor = packageDeliveryVendor;
+        this.transferSiteShippingAddress = transferSiteShippingAddress;
+        this.attachedTransferDeviceLabels = attachedTransferDeviceLabels;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
@@ -154,11 +184,19 @@ public class TransferPackage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("label")
-    String label;
+    private final String label;
+
+    public String getLabel() {
+        return label;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Preparing("PREPARING"),
         Shipping("SHIPPING"),
@@ -175,6 +213,9 @@ public class TransferPackage {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -210,32 +251,161 @@ public class TransferPackage {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("transferJobId")
-    String transferJobId;
+    private final String transferJobId;
+
+    public String getTransferJobId() {
+        return transferJobId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
-    java.util.Date creationTime;
+    private final java.util.Date creationTime;
+
+    public java.util.Date getCreationTime() {
+        return creationTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("originalPackageDeliveryTrackingNumber")
-    String originalPackageDeliveryTrackingNumber;
+    private final String originalPackageDeliveryTrackingNumber;
+
+    public String getOriginalPackageDeliveryTrackingNumber() {
+        return originalPackageDeliveryTrackingNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("returnPackageDeliveryTrackingNumber")
-    String returnPackageDeliveryTrackingNumber;
+    private final String returnPackageDeliveryTrackingNumber;
+
+    public String getReturnPackageDeliveryTrackingNumber() {
+        return returnPackageDeliveryTrackingNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("packageDeliveryVendor")
-    String packageDeliveryVendor;
+    private final String packageDeliveryVendor;
+
+    public String getPackageDeliveryVendor() {
+        return packageDeliveryVendor;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("transferSiteShippingAddress")
-    String transferSiteShippingAddress;
+    private final String transferSiteShippingAddress;
+
+    public String getTransferSiteShippingAddress() {
+        return transferSiteShippingAddress;
+    }
 
     /**
      * Transfer Devices attached to this Transfer Package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachedTransferDeviceLabels")
-    java.util.List<String> attachedTransferDeviceLabels;
+    private final java.util.List<String> attachedTransferDeviceLabels;
+
+    public java.util.List<String> getAttachedTransferDeviceLabels() {
+        return attachedTransferDeviceLabels;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TransferPackage(");
+        sb.append("label=").append(String.valueOf(this.label));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", transferJobId=").append(String.valueOf(this.transferJobId));
+        sb.append(", creationTime=").append(String.valueOf(this.creationTime));
+        sb.append(", originalPackageDeliveryTrackingNumber=")
+                .append(String.valueOf(this.originalPackageDeliveryTrackingNumber));
+        sb.append(", returnPackageDeliveryTrackingNumber=")
+                .append(String.valueOf(this.returnPackageDeliveryTrackingNumber));
+        sb.append(", packageDeliveryVendor=").append(String.valueOf(this.packageDeliveryVendor));
+        sb.append(", transferSiteShippingAddress=")
+                .append(String.valueOf(this.transferSiteShippingAddress));
+        sb.append(", attachedTransferDeviceLabels=")
+                .append(String.valueOf(this.attachedTransferDeviceLabels));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TransferPackage)) {
+            return false;
+        }
+
+        TransferPackage other = (TransferPackage) o;
+        return java.util.Objects.equals(this.label, other.label)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.transferJobId, other.transferJobId)
+                && java.util.Objects.equals(this.creationTime, other.creationTime)
+                && java.util.Objects.equals(
+                        this.originalPackageDeliveryTrackingNumber,
+                        other.originalPackageDeliveryTrackingNumber)
+                && java.util.Objects.equals(
+                        this.returnPackageDeliveryTrackingNumber,
+                        other.returnPackageDeliveryTrackingNumber)
+                && java.util.Objects.equals(this.packageDeliveryVendor, other.packageDeliveryVendor)
+                && java.util.Objects.equals(
+                        this.transferSiteShippingAddress, other.transferSiteShippingAddress)
+                && java.util.Objects.equals(
+                        this.attachedTransferDeviceLabels, other.attachedTransferDeviceLabels)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.label == null ? 43 : this.label.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transferJobId == null ? 43 : this.transferJobId.hashCode());
+        result = (result * PRIME) + (this.creationTime == null ? 43 : this.creationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalPackageDeliveryTrackingNumber == null
+                                ? 43
+                                : this.originalPackageDeliveryTrackingNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.returnPackageDeliveryTrackingNumber == null
+                                ? 43
+                                : this.returnPackageDeliveryTrackingNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageDeliveryVendor == null
+                                ? 43
+                                : this.packageDeliveryVendor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transferSiteShippingAddress == null
+                                ? 43
+                                : this.transferSiteShippingAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachedTransferDeviceLabels == null
+                                ? 43
+                                : this.attachedTransferDeviceLabels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

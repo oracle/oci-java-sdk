@@ -15,16 +15,20 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BitbucketCloudFilterAttributes.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BitbucketCloudFilterAttributes {
+public final class BitbucketCloudFilterAttributes {
+    @Deprecated
+    @java.beans.ConstructorProperties({"headRef", "baseRef"})
+    public BitbucketCloudFilterAttributes(String headRef, String baseRef) {
+        super();
+        this.headRef = headRef;
+        this.baseRef = baseRef;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("headRef")
         private String headRef;
@@ -70,18 +74,72 @@ public class BitbucketCloudFilterAttributes {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Branch for push event; source branch for pull requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headRef")
-    String headRef;
+    private final String headRef;
+
+    public String getHeadRef() {
+        return headRef;
+    }
 
     /**
      * The target branch for pull requests; not applicable for push requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseRef")
-    String baseRef;
+    private final String baseRef;
+
+    public String getBaseRef() {
+        return baseRef;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BitbucketCloudFilterAttributes(");
+        sb.append("headRef=").append(String.valueOf(this.headRef));
+        sb.append(", baseRef=").append(String.valueOf(this.baseRef));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BitbucketCloudFilterAttributes)) {
+            return false;
+        }
+
+        BitbucketCloudFilterAttributes other = (BitbucketCloudFilterAttributes) o;
+        return java.util.Objects.equals(this.headRef, other.headRef)
+                && java.util.Objects.equals(this.baseRef, other.baseRef)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.headRef == null ? 43 : this.headRef.hashCode());
+        result = (result * PRIME) + (this.baseRef == null ? 43 : this.baseRef.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

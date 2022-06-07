@@ -15,14 +15,19 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KeyShape.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class KeyShape {
+public final class KeyShape {
+    @Deprecated
+    @java.beans.ConstructorProperties({"algorithm", "length", "curveId"})
+    public KeyShape(Algorithm algorithm, Integer length, CurveId curveId) {
+        super();
+        this.algorithm = algorithm;
+        this.length = length;
+        this.curveId = curveId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
@@ -77,10 +82,13 @@ public class KeyShape {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The algorithm used by a key's key versions to encrypt or decrypt.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Algorithm {
         Aes("AES"),
         Rsa("RSA"),
@@ -91,6 +99,9 @@ public class KeyShape {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Algorithm.class);
 
         private final String value;
         private static java.util.Map<String, Algorithm> map;
@@ -128,7 +139,11 @@ public class KeyShape {
      * The algorithm used by a key's key versions to encrypt or decrypt.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
-    Algorithm algorithm;
+    private final Algorithm algorithm;
+
+    public Algorithm getAlgorithm() {
+        return algorithm;
+    }
 
     /**
      * The length of the key in bytes, expressed as an integer. Supported values include the following:
@@ -138,11 +153,15 @@ public class KeyShape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
-    Integer length;
+    private final Integer length;
+
+    public Integer getLength() {
+        return length;
+    }
+
     /**
      * Supported curve IDs for ECDSA keys.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CurveId {
         NistP256("NIST_P256"),
         NistP384("NIST_P384"),
@@ -153,6 +172,9 @@ public class KeyShape {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CurveId.class);
 
         private final String value;
         private static java.util.Map<String, CurveId> map;
@@ -190,8 +212,57 @@ public class KeyShape {
      * Supported curve IDs for ECDSA keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("curveId")
-    CurveId curveId;
+    private final CurveId curveId;
+
+    public CurveId getCurveId() {
+        return curveId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("KeyShape(");
+        sb.append("algorithm=").append(String.valueOf(this.algorithm));
+        sb.append(", length=").append(String.valueOf(this.length));
+        sb.append(", curveId=").append(String.valueOf(this.curveId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof KeyShape)) {
+            return false;
+        }
+
+        KeyShape other = (KeyShape) o;
+        return java.util.Objects.equals(this.algorithm, other.algorithm)
+                && java.util.Objects.equals(this.length, other.length)
+                && java.util.Objects.equals(this.curveId, other.curveId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.algorithm == null ? 43 : this.algorithm.hashCode());
+        result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
+        result = (result * PRIME) + (this.curveId == null ? 43 : this.curveId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

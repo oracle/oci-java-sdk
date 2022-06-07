@@ -7,16 +7,16 @@ package com.oracle.bmc.datalabelingservicedataplane.responses;
 import com.oracle.bmc.datalabelingservicedataplane.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateAnnotationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,10 +25,18 @@ public class UpdateAnnotationResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned Annotation instance.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.Annotation annotation;
+
+    public com.oracle.bmc.datalabelingservicedataplane.model.Annotation getAnnotation() {
+        return annotation;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "annotation"})
     private UpdateAnnotationResponse(
@@ -50,6 +58,28 @@ public class UpdateAnnotationResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.datalabelingservicedataplane.model.Annotation annotation;
+
+        public Builder annotation(
+                com.oracle.bmc.datalabelingservicedataplane.model.Annotation annotation) {
+            this.annotation = annotation;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -66,5 +96,47 @@ public class UpdateAnnotationResponse extends com.oracle.bmc.responses.BmcRespon
         public UpdateAnnotationResponse build() {
             return new UpdateAnnotationResponse(__httpStatusCode__, etag, opcRequestId, annotation);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",annotation=").append(String.valueOf(annotation));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAnnotationResponse)) {
+            return false;
+        }
+
+        UpdateAnnotationResponse other = (UpdateAnnotationResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.annotation, other.annotation);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.annotation == null ? 43 : this.annotation.hashCode());
+        return result;
     }
 }

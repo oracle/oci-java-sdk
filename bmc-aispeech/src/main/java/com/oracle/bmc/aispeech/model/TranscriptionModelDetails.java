@@ -15,16 +15,20 @@ package com.oracle.bmc.aispeech.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TranscriptionModelDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TranscriptionModelDetails {
+public final class TranscriptionModelDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"domain", "languageCode"})
+    public TranscriptionModelDetails(Domain domain, LanguageCode languageCode) {
+        super();
+        this.domain = domain;
+        this.languageCode = languageCode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private Domain domain;
@@ -70,10 +74,13 @@ public class TranscriptionModelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Domain for input files.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Domain {
         Generic("GENERIC"),
 
@@ -82,6 +89,8 @@ public class TranscriptionModelDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Domain.class);
 
         private final String value;
         private static java.util.Map<String, Domain> map;
@@ -119,11 +128,15 @@ public class TranscriptionModelDetails {
      * Domain for input files.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    Domain domain;
+    private final Domain domain;
+
+    public Domain getDomain() {
+        return domain;
+    }
+
     /**
      * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LanguageCode {
         EnUs("en-US"),
         EsEs("es-ES"),
@@ -134,6 +147,9 @@ public class TranscriptionModelDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LanguageCode.class);
 
         private final String value;
         private static java.util.Map<String, LanguageCode> map;
@@ -171,8 +187,54 @@ public class TranscriptionModelDetails {
      * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
-    LanguageCode languageCode;
+    private final LanguageCode languageCode;
+
+    public LanguageCode getLanguageCode() {
+        return languageCode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TranscriptionModelDetails(");
+        sb.append("domain=").append(String.valueOf(this.domain));
+        sb.append(", languageCode=").append(String.valueOf(this.languageCode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TranscriptionModelDetails)) {
+            return false;
+        }
+
+        TranscriptionModelDetails other = (TranscriptionModelDetails) o;
+        return java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(this.languageCode, other.languageCode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

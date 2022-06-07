@@ -20,16 +20,31 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FlexComponentSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FlexComponentSummary {
+public final class FlexComponentSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "minimumCoreCount",
+        "availableCoreCount",
+        "availableDbStorageInGBs"
+    })
+    public FlexComponentSummary(
+            String name,
+            Integer minimumCoreCount,
+            Integer availableCoreCount,
+            Integer availableDbStorageInGBs) {
+        super();
+        this.name = name;
+        this.minimumCoreCount = minimumCoreCount;
+        this.availableCoreCount = availableCoreCount;
+        this.availableDbStorageInGBs = availableDbStorageInGBs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -98,30 +113,110 @@ public class FlexComponentSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the Flex Component used for the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
-    Integer minimumCoreCount;
+    private final Integer minimumCoreCount;
+
+    public Integer getMinimumCoreCount() {
+        return minimumCoreCount;
+    }
 
     /**
      * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
-    Integer availableCoreCount;
+    private final Integer availableCoreCount;
+
+    public Integer getAvailableCoreCount() {
+        return availableCoreCount;
+    }
 
     /**
      * The maximum  storage that can be enabled on the Storage Server for this Flex Component.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDbStorageInGBs")
-    Integer availableDbStorageInGBs;
+    private final Integer availableDbStorageInGBs;
+
+    public Integer getAvailableDbStorageInGBs() {
+        return availableDbStorageInGBs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FlexComponentSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", minimumCoreCount=").append(String.valueOf(this.minimumCoreCount));
+        sb.append(", availableCoreCount=").append(String.valueOf(this.availableCoreCount));
+        sb.append(", availableDbStorageInGBs=")
+                .append(String.valueOf(this.availableDbStorageInGBs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FlexComponentSummary)) {
+            return false;
+        }
+
+        FlexComponentSummary other = (FlexComponentSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.minimumCoreCount, other.minimumCoreCount)
+                && java.util.Objects.equals(this.availableCoreCount, other.availableCoreCount)
+                && java.util.Objects.equals(
+                        this.availableDbStorageInGBs, other.availableDbStorageInGBs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumCoreCount == null ? 43 : this.minimumCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableCoreCount == null
+                                ? 43
+                                : this.availableCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableDbStorageInGBs == null
+                                ? 43
+                                : this.availableDbStorageInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

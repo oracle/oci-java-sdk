@@ -9,14 +9,6 @@ import com.oracle.bmc.objectstorage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetBucketExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetBucketRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The name of the bucket. Avoid entering confidential information.
      * Example: {@code my-new-bucket1}
@@ -31,6 +26,9 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String bucketName;
 
+    public String getBucketName() {
+        return bucketName;
+    }
     /**
      * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
      * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
@@ -39,6 +37,9 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
      * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
@@ -47,11 +48,17 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifNoneMatch;
 
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcClientRequestId;
 
+    public String getOpcClientRequestId() {
+        return opcClientRequestId;
+    }
     /**
      * Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
      * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects), 'approximateSize'
@@ -102,12 +109,79 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    public java.util.List<Fields> getFields() {
+        return fields;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetBucketRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Object Storage namespace used for the request.
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String bucketName = null;
+
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         * @return this builder instance
+         */
+        public Builder bucketName(String bucketName) {
+            this.bucketName = bucketName;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String ifNoneMatch = null;
+
+        /**
+         * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+         * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+         * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
+         *
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
+
+        private String opcClientRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcClientRequestId(String opcClientRequestId) {
+            this.opcClientRequestId = opcClientRequestId;
+            return this;
+        }
 
         private java.util.List<Fields> fields = null;
 
@@ -191,5 +265,95 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetBucketRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetBucketRequest
+         */
+        public GetBucketRequest buildWithoutInvocationCallback() {
+            GetBucketRequest request = new GetBucketRequest();
+            request.namespaceName = namespaceName;
+            request.bucketName = bucketName;
+            request.ifMatch = ifMatch;
+            request.ifNoneMatch = ifNoneMatch;
+            request.opcClientRequestId = opcClientRequestId;
+            request.fields = fields;
+            return request;
+            // new GetBucketRequest(namespaceName, bucketName, ifMatch, ifNoneMatch, opcClientRequestId, fields);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .bucketName(bucketName)
+                .ifMatch(ifMatch)
+                .ifNoneMatch(ifNoneMatch)
+                .opcClientRequestId(opcClientRequestId)
+                .fields(fields);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
+        sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
+        sb.append(",fields=").append(String.valueOf(this.fields));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetBucketRequest)) {
+            return false;
+        }
+
+        GetBucketRequest other = (GetBucketRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
+                && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId)
+                && java.util.Objects.equals(this.fields, other.fields);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcClientRequestId == null
+                                ? 43
+                                : this.opcClientRequestId.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        return result;
     }
 }

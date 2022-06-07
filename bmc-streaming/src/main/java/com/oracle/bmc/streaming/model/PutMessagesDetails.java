@@ -15,16 +15,19 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PutMessagesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PutMessagesDetails {
+public final class PutMessagesDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"messages"})
+    public PutMessagesDetails(java.util.List<PutMessagesDetailsEntry> messages) {
+        super();
+        this.messages = messages;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("messages")
         private java.util.List<PutMessagesDetailsEntry> messages;
@@ -60,12 +63,59 @@ public class PutMessagesDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The array of messages to put into a stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messages")
-    java.util.List<PutMessagesDetailsEntry> messages;
+    private final java.util.List<PutMessagesDetailsEntry> messages;
+
+    public java.util.List<PutMessagesDetailsEntry> getMessages() {
+        return messages;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PutMessagesDetails(");
+        sb.append("messages=").append(String.valueOf(this.messages));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PutMessagesDetails)) {
+            return false;
+        }
+
+        PutMessagesDetails other = (PutMessagesDetails) o;
+        return java.util.Objects.equals(this.messages, other.messages)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.messages == null ? 43 : this.messages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

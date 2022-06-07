@@ -15,14 +15,47 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WafMeterDatum.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WafMeterDatum {
+public final class WafMeterDatum {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeObserved",
+        "timeRangeInSeconds",
+        "tenancyId",
+        "compartmentId",
+        "waasPolicyId",
+        "isOciOrigin",
+        "isBotEnabled",
+        "requestCount",
+        "trafficInBytes",
+        "tagSlug"
+    })
+    public WafMeterDatum(
+            java.util.Date timeObserved,
+            Integer timeRangeInSeconds,
+            String tenancyId,
+            String compartmentId,
+            String waasPolicyId,
+            Boolean isOciOrigin,
+            Boolean isBotEnabled,
+            Integer requestCount,
+            Integer trafficInBytes,
+            byte[] tagSlug) {
+        super();
+        this.timeObserved = timeObserved;
+        this.timeRangeInSeconds = timeRangeInSeconds;
+        this.tenancyId = tenancyId;
+        this.compartmentId = compartmentId;
+        this.waasPolicyId = waasPolicyId;
+        this.isOciOrigin = isOciOrigin;
+        this.isBotEnabled = isBotEnabled;
+        this.requestCount = requestCount;
+        this.trafficInBytes = trafficInBytes;
+        this.tagSlug = tagSlug;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
         private java.util.Date timeObserved;
@@ -160,66 +193,184 @@ public class WafMeterDatum {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The date and time the traffic was observed, rounded down to the start of a range, and expressed in RFC 3339 timestamp format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
-    java.util.Date timeObserved;
+    private final java.util.Date timeObserved;
+
+    public java.util.Date getTimeObserved() {
+        return timeObserved;
+    }
 
     /**
      * The number of seconds this data covers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRangeInSeconds")
-    Integer timeRangeInSeconds;
+    private final Integer timeRangeInSeconds;
+
+    public Integer getTimeRangeInSeconds() {
+        return timeRangeInSeconds;
+    }
 
     /**
      * The tenancy OCID of the data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    String tenancyId;
+    private final String tenancyId;
+
+    public String getTenancyId() {
+        return tenancyId;
+    }
 
     /**
      * The compartment OCID of the data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The policy OCID of the data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("waasPolicyId")
-    String waasPolicyId;
+    private final String waasPolicyId;
+
+    public String getWaasPolicyId() {
+        return waasPolicyId;
+    }
 
     /**
      * True if origin (endpoint) is an OCI resource. False if external.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOciOrigin")
-    Boolean isOciOrigin;
+    private final Boolean isOciOrigin;
+
+    public Boolean getIsOciOrigin() {
+        return isOciOrigin;
+    }
 
     /**
      * True if bot manager is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBotEnabled")
-    Boolean isBotEnabled;
+    private final Boolean isBotEnabled;
+
+    public Boolean getIsBotEnabled() {
+        return isBotEnabled;
+    }
 
     /**
      * The number of incoming requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestCount")
-    Integer requestCount;
+    private final Integer requestCount;
+
+    public Integer getRequestCount() {
+        return requestCount;
+    }
 
     /**
      * Traffic in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trafficInBytes")
-    Integer trafficInBytes;
+    private final Integer trafficInBytes;
+
+    public Integer getTrafficInBytes() {
+        return trafficInBytes;
+    }
 
     /**
      * The tag slug for the specified {@code waasPolicyId}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagSlug")
-    byte[] tagSlug;
+    private final byte[] tagSlug;
+
+    public byte[] getTagSlug() {
+        return tagSlug;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WafMeterDatum(");
+        sb.append("timeObserved=").append(String.valueOf(this.timeObserved));
+        sb.append(", timeRangeInSeconds=").append(String.valueOf(this.timeRangeInSeconds));
+        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", waasPolicyId=").append(String.valueOf(this.waasPolicyId));
+        sb.append(", isOciOrigin=").append(String.valueOf(this.isOciOrigin));
+        sb.append(", isBotEnabled=").append(String.valueOf(this.isBotEnabled));
+        sb.append(", requestCount=").append(String.valueOf(this.requestCount));
+        sb.append(", trafficInBytes=").append(String.valueOf(this.trafficInBytes));
+        sb.append(", tagSlug=").append(String.valueOf(this.tagSlug));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WafMeterDatum)) {
+            return false;
+        }
+
+        WafMeterDatum other = (WafMeterDatum) o;
+        return java.util.Objects.equals(this.timeObserved, other.timeObserved)
+                && java.util.Objects.equals(this.timeRangeInSeconds, other.timeRangeInSeconds)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.waasPolicyId, other.waasPolicyId)
+                && java.util.Objects.equals(this.isOciOrigin, other.isOciOrigin)
+                && java.util.Objects.equals(this.isBotEnabled, other.isBotEnabled)
+                && java.util.Objects.equals(this.requestCount, other.requestCount)
+                && java.util.Objects.equals(this.trafficInBytes, other.trafficInBytes)
+                && java.util.Objects.equals(this.tagSlug, other.tagSlug)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeObserved == null ? 43 : this.timeObserved.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRangeInSeconds == null
+                                ? 43
+                                : this.timeRangeInSeconds.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.waasPolicyId == null ? 43 : this.waasPolicyId.hashCode());
+        result = (result * PRIME) + (this.isOciOrigin == null ? 43 : this.isOciOrigin.hashCode());
+        result = (result * PRIME) + (this.isBotEnabled == null ? 43 : this.isBotEnabled.hashCode());
+        result = (result * PRIME) + (this.requestCount == null ? 43 : this.requestCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trafficInBytes == null ? 43 : this.trafficInBytes.hashCode());
+        result = (result * PRIME) + (this.tagSlug == null ? 43 : this.tagSlug.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

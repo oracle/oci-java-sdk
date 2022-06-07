@@ -15,14 +15,35 @@ package com.oracle.bmc.applicationmigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImportManifest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ImportManifest {
+public final class ImportManifest {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "version",
+        "exportType",
+        "exportDetails",
+        "timestamp",
+        "md5",
+        "signature"
+    })
+    public ImportManifest(
+            String version,
+            String exportType,
+            Object exportDetails,
+            java.util.Date timestamp,
+            String md5,
+            String signature) {
+        super();
+        this.version = version;
+        this.exportType = exportType;
+        this.exportDetails = exportDetails;
+        this.timestamp = timestamp;
+        this.md5 = md5;
+        this.signature = signature;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
@@ -111,42 +132,126 @@ public class ImportManifest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * the version of the export tool that was used to generate the manifest
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * the type of application that the export tool was executed against to generate this manifest
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportType")
-    String exportType;
+    private final String exportType;
+
+    public String getExportType() {
+        return exportType;
+    }
 
     /**
      * application specific details as parsed from various sources of the application that was exported
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportDetails")
-    Object exportDetails;
+    private final Object exportDetails;
+
+    public Object getExportDetails() {
+        return exportDetails;
+    }
 
     /**
      * when this manifest was generated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * the MD5 hash of the export artifact archive that was produced by the export tool and should be used with this manifest
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("md5")
-    String md5;
+    private final String md5;
+
+    public String getMd5() {
+        return md5;
+    }
 
     /**
      * a sha1 hash of all the fields of this manifest (excluding the signature)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
-    String signature;
+    private final String signature;
+
+    public String getSignature() {
+        return signature;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImportManifest(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", exportType=").append(String.valueOf(this.exportType));
+        sb.append(", exportDetails=").append(String.valueOf(this.exportDetails));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", md5=").append(String.valueOf(this.md5));
+        sb.append(", signature=").append(String.valueOf(this.signature));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImportManifest)) {
+            return false;
+        }
+
+        ImportManifest other = (ImportManifest) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.exportType, other.exportType)
+                && java.util.Objects.equals(this.exportDetails, other.exportDetails)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.md5, other.md5)
+                && java.util.Objects.equals(this.signature, other.signature)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.exportType == null ? 43 : this.exportType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportDetails == null ? 43 : this.exportDetails.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.md5 == null ? 43 : this.md5.hashCode());
+        result = (result * PRIME) + (this.signature == null ? 43 : this.signature.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

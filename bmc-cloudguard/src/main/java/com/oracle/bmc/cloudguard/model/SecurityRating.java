@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Security Ratings
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum SecurityRating {
     Excellent("EXCELLENT"),
     Good("GOOD"),
@@ -21,6 +20,9 @@ public enum SecurityRating {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(SecurityRating.class);
 
     private final String value;
     private static java.util.Map<String, SecurityRating> map;

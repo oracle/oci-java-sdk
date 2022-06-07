@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateAuditProfileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAuditProfileRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateAuditProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateAuditProfileDetails> {
@@ -26,11 +18,17 @@ public class UpdateAuditProfileRequest
      */
     private String auditProfileId;
 
+    public String getAuditProfileId() {
+        return auditProfileId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.datasafe.model.UpdateAuditProfileDetails updateAuditProfileDetails;
 
+    public com.oracle.bmc.datasafe.model.UpdateAuditProfileDetails getUpdateAuditProfileDetails() {
+        return updateAuditProfileDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the if-match parameter to the value of the
@@ -41,10 +39,17 @@ public class UpdateAuditProfileRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +68,57 @@ public class UpdateAuditProfileRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String auditProfileId = null;
+
+        /**
+         * The OCID of the audit.
+         * @return this builder instance
+         */
+        public Builder auditProfileId(String auditProfileId) {
+            this.auditProfileId = auditProfileId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.UpdateAuditProfileDetails updateAuditProfileDetails =
+                null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateAuditProfileDetails(
+                com.oracle.bmc.datasafe.model.UpdateAuditProfileDetails updateAuditProfileDetails) {
+            this.updateAuditProfileDetails = updateAuditProfileDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +184,87 @@ public class UpdateAuditProfileRequest
             updateAuditProfileDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateAuditProfileRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateAuditProfileRequest
+         */
+        public UpdateAuditProfileRequest buildWithoutInvocationCallback() {
+            UpdateAuditProfileRequest request = new UpdateAuditProfileRequest();
+            request.auditProfileId = auditProfileId;
+            request.updateAuditProfileDetails = updateAuditProfileDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateAuditProfileRequest(auditProfileId, updateAuditProfileDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .auditProfileId(auditProfileId)
+                .updateAuditProfileDetails(updateAuditProfileDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",auditProfileId=").append(String.valueOf(this.auditProfileId));
+        sb.append(",updateAuditProfileDetails=")
+                .append(String.valueOf(this.updateAuditProfileDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAuditProfileRequest)) {
+            return false;
+        }
+
+        UpdateAuditProfileRequest other = (UpdateAuditProfileRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.auditProfileId, other.auditProfileId)
+                && java.util.Objects.equals(
+                        this.updateAuditProfileDetails, other.updateAuditProfileDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.auditProfileId == null ? 43 : this.auditProfileId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateAuditProfileDetails == null
+                                ? 43
+                                : this.updateAuditProfileDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

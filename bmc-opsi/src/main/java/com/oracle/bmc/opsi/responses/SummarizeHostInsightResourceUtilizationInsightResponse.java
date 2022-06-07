@@ -7,10 +7,6 @@ package com.oracle.bmc.opsi.responses;
 import com.oracle.bmc.opsi.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SummarizeHostInsightResourceUtilizationInsightResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -20,11 +16,20 @@ public class SummarizeHostInsightResourceUtilizationInsightResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned SummarizeHostInsightResourceUtilizationInsightAggregation instance.
      */
     private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUtilizationInsightAggregation
             summarizeHostInsightResourceUtilizationInsightAggregation;
+
+    public com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUtilizationInsightAggregation
+            getSummarizeHostInsightResourceUtilizationInsightAggregation() {
+        return summarizeHostInsightResourceUtilizationInsightAggregation;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -50,6 +55,24 @@ public class SummarizeHostInsightResourceUtilizationInsightResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUtilizationInsightAggregation
+                summarizeHostInsightResourceUtilizationInsightAggregation;
+
+        public Builder summarizeHostInsightResourceUtilizationInsightAggregation(
+                com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUtilizationInsightAggregation
+                        summarizeHostInsightResourceUtilizationInsightAggregation) {
+            this.summarizeHostInsightResourceUtilizationInsightAggregation =
+                    summarizeHostInsightResourceUtilizationInsightAggregation;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -69,5 +92,53 @@ public class SummarizeHostInsightResourceUtilizationInsightResponse
                     opcRequestId,
                     summarizeHostInsightResourceUtilizationInsightAggregation);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",summarizeHostInsightResourceUtilizationInsightAggregation=")
+                .append(String.valueOf(summarizeHostInsightResourceUtilizationInsightAggregation));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeHostInsightResourceUtilizationInsightResponse)) {
+            return false;
+        }
+
+        SummarizeHostInsightResourceUtilizationInsightResponse other =
+                (SummarizeHostInsightResourceUtilizationInsightResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.summarizeHostInsightResourceUtilizationInsightAggregation,
+                        other.summarizeHostInsightResourceUtilizationInsightAggregation);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.summarizeHostInsightResourceUtilizationInsightAggregation == null
+                                ? 43
+                                : this.summarizeHostInsightResourceUtilizationInsightAggregation
+                                        .hashCode());
+        return result;
     }
 }

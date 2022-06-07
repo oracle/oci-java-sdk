@@ -8,7 +8,6 @@ package com.oracle.bmc.marketplace.model;
  * Possible values for the pricing currency code.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.extern.slf4j.Slf4j
 public enum PricingCurrencyEnum {
     Usd("USD"),
     Cad("CAD"),
@@ -23,6 +22,9 @@ public enum PricingCurrencyEnum {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PricingCurrencyEnum.class);
 
     private final String value;
     private static java.util.Map<String, PricingCurrencyEnum> map;

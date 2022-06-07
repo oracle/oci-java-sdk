@@ -9,14 +9,6 @@ import com.oracle.bmc.resourcemanager.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeConfigurationSourceProviderCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeConfigurationSourceProviderCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeConfigurationSourceProviderCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.resourcemanager.model
@@ -28,12 +20,19 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
      */
     private String configurationSourceProviderId;
 
+    public String getConfigurationSourceProviderId() {
+        return configurationSourceProviderId;
+    }
     /**
      * Defines the properties of changeConfigurationSourceProviderCompartment operation.
      */
     private com.oracle.bmc.resourcemanager.model.ChangeConfigurationSourceProviderCompartmentDetails
             changeConfigurationSourceProviderCompartmentDetails;
 
+    public com.oracle.bmc.resourcemanager.model.ChangeConfigurationSourceProviderCompartmentDetails
+            getChangeConfigurationSourceProviderCompartmentDetails() {
+        return changeConfigurationSourceProviderCompartmentDetails;
+    }
     /**
      * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
@@ -42,6 +41,9 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -49,6 +51,9 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of retrying the same action. Retry tokens expire after
@@ -58,6 +63,10 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -78,6 +87,78 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String configurationSourceProviderId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
+         *
+         * @return this builder instance
+         */
+        public Builder configurationSourceProviderId(String configurationSourceProviderId) {
+            this.configurationSourceProviderId = configurationSourceProviderId;
+            return this;
+        }
+
+        private com.oracle.bmc.resourcemanager.model
+                        .ChangeConfigurationSourceProviderCompartmentDetails
+                changeConfigurationSourceProviderCompartmentDetails = null;
+
+        /**
+         * Defines the properties of changeConfigurationSourceProviderCompartment operation.
+         * @return this builder instance
+         */
+        public Builder changeConfigurationSourceProviderCompartmentDetails(
+                com.oracle.bmc.resourcemanager.model
+                                .ChangeConfigurationSourceProviderCompartmentDetails
+                        changeConfigurationSourceProviderCompartmentDetails) {
+            this.changeConfigurationSourceProviderCompartmentDetails =
+                    changeConfigurationSourceProviderCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of retrying the same action. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -149,5 +230,105 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
             changeConfigurationSourceProviderCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeConfigurationSourceProviderCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeConfigurationSourceProviderCompartmentRequest
+         */
+        public ChangeConfigurationSourceProviderCompartmentRequest
+                buildWithoutInvocationCallback() {
+            ChangeConfigurationSourceProviderCompartmentRequest request =
+                    new ChangeConfigurationSourceProviderCompartmentRequest();
+            request.configurationSourceProviderId = configurationSourceProviderId;
+            request.changeConfigurationSourceProviderCompartmentDetails =
+                    changeConfigurationSourceProviderCompartmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new ChangeConfigurationSourceProviderCompartmentRequest(configurationSourceProviderId, changeConfigurationSourceProviderCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .configurationSourceProviderId(configurationSourceProviderId)
+                .changeConfigurationSourceProviderCompartmentDetails(
+                        changeConfigurationSourceProviderCompartmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",configurationSourceProviderId=")
+                .append(String.valueOf(this.configurationSourceProviderId));
+        sb.append(",changeConfigurationSourceProviderCompartmentDetails=")
+                .append(String.valueOf(this.changeConfigurationSourceProviderCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeConfigurationSourceProviderCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeConfigurationSourceProviderCompartmentRequest other =
+                (ChangeConfigurationSourceProviderCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.configurationSourceProviderId, other.configurationSourceProviderId)
+                && java.util.Objects.equals(
+                        this.changeConfigurationSourceProviderCompartmentDetails,
+                        other.changeConfigurationSourceProviderCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.configurationSourceProviderId == null
+                                ? 43
+                                : this.configurationSourceProviderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeConfigurationSourceProviderCompartmentDetails == null
+                                ? 43
+                                : this.changeConfigurationSourceProviderCompartmentDetails
+                                        .hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

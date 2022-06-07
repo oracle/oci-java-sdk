@@ -16,14 +16,29 @@ package com.oracle.bmc.announcementsservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AffectedResource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AffectedResource {
+public final class AffectedResource {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "resourceId",
+        "resourceName",
+        "region",
+        "additionalProperties"
+    })
+    public AffectedResource(
+            String resourceId,
+            String resourceName,
+            String region,
+            java.util.List<Property> additionalProperties) {
+        super();
+        this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.region = region;
+        this.additionalProperties = additionalProperties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
@@ -91,30 +106,102 @@ public class AffectedResource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the affected resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The friendly name of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * The region where the affected resource exists.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * Additional properties associated with the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
-    java.util.List<Property> additionalProperties;
+    private final java.util.List<Property> additionalProperties;
+
+    public java.util.List<Property> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AffectedResource(");
+        sb.append("resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", additionalProperties=").append(String.valueOf(this.additionalProperties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AffectedResource)) {
+            return false;
+        }
+
+        AffectedResource other = (AffectedResource) o;
+        return java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.additionalProperties, other.additionalProperties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalProperties == null
+                                ? 43
+                                : this.additionalProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

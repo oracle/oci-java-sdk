@@ -18,16 +18,76 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IPSecConnectionTunnel.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IPSecConnectionTunnel {
+public final class IPSecConnectionTunnel {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "id",
+        "vpnIp",
+        "cpeIp",
+        "status",
+        "ikeVersion",
+        "lifecycleState",
+        "displayName",
+        "bgpSessionInfo",
+        "encryptionDomainConfig",
+        "routing",
+        "timeCreated",
+        "timeStatusUpdated",
+        "oracleCanInitiate",
+        "natTranslationEnabled",
+        "dpdMode",
+        "dpdTimeoutInSec",
+        "phaseOneDetails",
+        "phaseTwoDetails"
+    })
+    public IPSecConnectionTunnel(
+            String compartmentId,
+            String id,
+            String vpnIp,
+            String cpeIp,
+            Status status,
+            IkeVersion ikeVersion,
+            LifecycleState lifecycleState,
+            String displayName,
+            BgpSessionInfo bgpSessionInfo,
+            EncryptionDomainConfig encryptionDomainConfig,
+            Routing routing,
+            java.util.Date timeCreated,
+            java.util.Date timeStatusUpdated,
+            OracleCanInitiate oracleCanInitiate,
+            NatTranslationEnabled natTranslationEnabled,
+            DpdMode dpdMode,
+            Integer dpdTimeoutInSec,
+            TunnelPhaseOneDetails phaseOneDetails,
+            TunnelPhaseTwoDetails phaseTwoDetails) {
+        super();
+        this.compartmentId = compartmentId;
+        this.id = id;
+        this.vpnIp = vpnIp;
+        this.cpeIp = cpeIp;
+        this.status = status;
+        this.ikeVersion = ikeVersion;
+        this.lifecycleState = lifecycleState;
+        this.displayName = displayName;
+        this.bgpSessionInfo = bgpSessionInfo;
+        this.encryptionDomainConfig = encryptionDomainConfig;
+        this.routing = routing;
+        this.timeCreated = timeCreated;
+        this.timeStatusUpdated = timeStatusUpdated;
+        this.oracleCanInitiate = oracleCanInitiate;
+        this.natTranslationEnabled = natTranslationEnabled;
+        this.dpdMode = dpdMode;
+        this.dpdTimeoutInSec = dpdTimeoutInSec;
+        this.phaseOneDetails = phaseOneDetails;
+        this.phaseTwoDetails = phaseTwoDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -264,18 +324,30 @@ public class IPSecConnectionTunnel {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The IP address of the Oracle VPN headend for the connection.
@@ -284,7 +356,11 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpnIp")
-    String vpnIp;
+    private final String vpnIp;
+
+    public String getVpnIp() {
+        return vpnIp;
+    }
 
     /**
      * The IP address of the CPE device's VPN headend.
@@ -293,11 +369,15 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeIp")
-    String cpeIp;
+    private final String cpeIp;
+
+    public String getCpeIp() {
+        return cpeIp;
+    }
+
     /**
      * The status of the tunnel based on IPSec protocol characteristics.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Up("UP"),
         Down("DOWN"),
@@ -309,6 +389,8 @@ public class IPSecConnectionTunnel {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -346,12 +428,16 @@ public class IPSecConnectionTunnel {
      * The status of the tunnel based on IPSec protocol characteristics.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
+
     /**
      * Internet Key Exchange protocol version.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum IkeVersion {
         V1("V1"),
         V2("V2"),
@@ -361,6 +447,9 @@ public class IPSecConnectionTunnel {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IkeVersion.class);
 
         private final String value;
         private static java.util.Map<String, IkeVersion> map;
@@ -399,11 +488,15 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
-    IkeVersion ikeVersion;
+    private final IkeVersion ikeVersion;
+
+    public IkeVersion getIkeVersion() {
+        return ikeVersion;
+    }
+
     /**
      * The tunnel's lifecycle state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -415,6 +508,9 @@ public class IPSecConnectionTunnel {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -452,7 +548,11 @@ public class IPSecConnectionTunnel {
      * The tunnel's lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -460,18 +560,30 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionInfo")
-    BgpSessionInfo bgpSessionInfo;
+    private final BgpSessionInfo bgpSessionInfo;
+
+    public BgpSessionInfo getBgpSessionInfo() {
+        return bgpSessionInfo;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
-    EncryptionDomainConfig encryptionDomainConfig;
+    private final EncryptionDomainConfig encryptionDomainConfig;
+
+    public EncryptionDomainConfig getEncryptionDomainConfig() {
+        return encryptionDomainConfig;
+    }
+
     /**
      * The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Routing {
         Bgp("BGP"),
         Static("STATIC"),
@@ -482,6 +594,9 @@ public class IPSecConnectionTunnel {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Routing.class);
 
         private final String value;
         private static java.util.Map<String, Routing> map;
@@ -520,7 +635,11 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
-    Routing routing;
+    private final Routing routing;
+
+    public Routing getRouting() {
+        return routing;
+    }
 
     /**
      * The date and time the IPSec tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -529,7 +648,11 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -538,12 +661,16 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
-    java.util.Date timeStatusUpdated;
+    private final java.util.Date timeStatusUpdated;
+
+    public java.util.Date getTimeStatusUpdated() {
+        return timeStatusUpdated;
+    }
+
     /**
      * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OracleCanInitiate {
         InitiatorOrResponder("INITIATOR_OR_RESPONDER"),
         ResponderOnly("RESPONDER_ONLY"),
@@ -553,6 +680,9 @@ public class IPSecConnectionTunnel {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OracleCanInitiate.class);
 
         private final String value;
         private static java.util.Map<String, OracleCanInitiate> map;
@@ -591,7 +721,12 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleCanInitiate")
-    OracleCanInitiate oracleCanInitiate;
+    private final OracleCanInitiate oracleCanInitiate;
+
+    public OracleCanInitiate getOracleCanInitiate() {
+        return oracleCanInitiate;
+    }
+
     /**
      * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
      * and when it detects that the port used to forward packets has changed (most likely because a NAT device
@@ -606,7 +741,6 @@ public class IPSecConnectionTunnel {
      * .
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum NatTranslationEnabled {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
@@ -617,6 +751,9 @@ public class IPSecConnectionTunnel {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NatTranslationEnabled.class);
 
         private final String value;
         private static java.util.Map<String, NatTranslationEnabled> map;
@@ -665,14 +802,18 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
-    NatTranslationEnabled natTranslationEnabled;
+    private final NatTranslationEnabled natTranslationEnabled;
+
+    public NatTranslationEnabled getNatTranslationEnabled() {
+        return natTranslationEnabled;
+    }
+
     /**
      * Dead peer detection (DPD) mode set on the Oracle side of the connection.
      * This mode sets whether Oracle can only respond to a request from the CPE device to start DPD,
      * or both respond to and initiate requests.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DpdMode {
         InitiateAndRespond("INITIATE_AND_RESPOND"),
         RespondOnly("RESPOND_ONLY"),
@@ -682,6 +823,9 @@ public class IPSecConnectionTunnel {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DpdMode.class);
 
         private final String value;
         private static java.util.Map<String, DpdMode> map;
@@ -722,20 +866,154 @@ public class IPSecConnectionTunnel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
-    DpdMode dpdMode;
+    private final DpdMode dpdMode;
+
+    public DpdMode getDpdMode() {
+        return dpdMode;
+    }
 
     /**
      * DPD timeout in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
-    Integer dpdTimeoutInSec;
+    private final Integer dpdTimeoutInSec;
+
+    public Integer getDpdTimeoutInSec() {
+        return dpdTimeoutInSec;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("phaseOneDetails")
-    TunnelPhaseOneDetails phaseOneDetails;
+    private final TunnelPhaseOneDetails phaseOneDetails;
+
+    public TunnelPhaseOneDetails getPhaseOneDetails() {
+        return phaseOneDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("phaseTwoDetails")
-    TunnelPhaseTwoDetails phaseTwoDetails;
+    private final TunnelPhaseTwoDetails phaseTwoDetails;
+
+    public TunnelPhaseTwoDetails getPhaseTwoDetails() {
+        return phaseTwoDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IPSecConnectionTunnel(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", vpnIp=").append(String.valueOf(this.vpnIp));
+        sb.append(", cpeIp=").append(String.valueOf(this.cpeIp));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", ikeVersion=").append(String.valueOf(this.ikeVersion));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", bgpSessionInfo=").append(String.valueOf(this.bgpSessionInfo));
+        sb.append(", encryptionDomainConfig=").append(String.valueOf(this.encryptionDomainConfig));
+        sb.append(", routing=").append(String.valueOf(this.routing));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeStatusUpdated=").append(String.valueOf(this.timeStatusUpdated));
+        sb.append(", oracleCanInitiate=").append(String.valueOf(this.oracleCanInitiate));
+        sb.append(", natTranslationEnabled=").append(String.valueOf(this.natTranslationEnabled));
+        sb.append(", dpdMode=").append(String.valueOf(this.dpdMode));
+        sb.append(", dpdTimeoutInSec=").append(String.valueOf(this.dpdTimeoutInSec));
+        sb.append(", phaseOneDetails=").append(String.valueOf(this.phaseOneDetails));
+        sb.append(", phaseTwoDetails=").append(String.valueOf(this.phaseTwoDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IPSecConnectionTunnel)) {
+            return false;
+        }
+
+        IPSecConnectionTunnel other = (IPSecConnectionTunnel) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.vpnIp, other.vpnIp)
+                && java.util.Objects.equals(this.cpeIp, other.cpeIp)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.ikeVersion, other.ikeVersion)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.bgpSessionInfo, other.bgpSessionInfo)
+                && java.util.Objects.equals(
+                        this.encryptionDomainConfig, other.encryptionDomainConfig)
+                && java.util.Objects.equals(this.routing, other.routing)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeStatusUpdated, other.timeStatusUpdated)
+                && java.util.Objects.equals(this.oracleCanInitiate, other.oracleCanInitiate)
+                && java.util.Objects.equals(this.natTranslationEnabled, other.natTranslationEnabled)
+                && java.util.Objects.equals(this.dpdMode, other.dpdMode)
+                && java.util.Objects.equals(this.dpdTimeoutInSec, other.dpdTimeoutInSec)
+                && java.util.Objects.equals(this.phaseOneDetails, other.phaseOneDetails)
+                && java.util.Objects.equals(this.phaseTwoDetails, other.phaseTwoDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.vpnIp == null ? 43 : this.vpnIp.hashCode());
+        result = (result * PRIME) + (this.cpeIp == null ? 43 : this.cpeIp.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.ikeVersion == null ? 43 : this.ikeVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bgpSessionInfo == null ? 43 : this.bgpSessionInfo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionDomainConfig == null
+                                ? 43
+                                : this.encryptionDomainConfig.hashCode());
+        result = (result * PRIME) + (this.routing == null ? 43 : this.routing.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeStatusUpdated == null ? 43 : this.timeStatusUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleCanInitiate == null ? 43 : this.oracleCanInitiate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.natTranslationEnabled == null
+                                ? 43
+                                : this.natTranslationEnabled.hashCode());
+        result = (result * PRIME) + (this.dpdMode == null ? 43 : this.dpdMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dpdTimeoutInSec == null ? 43 : this.dpdTimeoutInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.phaseOneDetails == null ? 43 : this.phaseOneDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.phaseTwoDetails == null ? 43 : this.phaseTwoDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

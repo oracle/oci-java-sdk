@@ -15,14 +15,65 @@ package com.oracle.bmc.artifacts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ContainerImage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ContainerImage {
+public final class ContainerImage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "createdBy",
+        "digest",
+        "displayName",
+        "id",
+        "layers",
+        "layersSizeInBytes",
+        "lifecycleState",
+        "manifestSizeInBytes",
+        "pullCount",
+        "repositoryId",
+        "repositoryName",
+        "timeCreated",
+        "timeLastPulled",
+        "version",
+        "versions"
+    })
+    public ContainerImage(
+            String compartmentId,
+            String createdBy,
+            String digest,
+            String displayName,
+            String id,
+            java.util.List<ContainerImageLayer> layers,
+            Long layersSizeInBytes,
+            LifecycleState lifecycleState,
+            Integer manifestSizeInBytes,
+            Long pullCount,
+            String repositoryId,
+            String repositoryName,
+            java.util.Date timeCreated,
+            java.util.Date timeLastPulled,
+            String version,
+            java.util.List<ContainerVersion> versions) {
+        super();
+        this.compartmentId = compartmentId;
+        this.createdBy = createdBy;
+        this.digest = digest;
+        this.displayName = displayName;
+        this.id = id;
+        this.layers = layers;
+        this.layersSizeInBytes = layersSizeInBytes;
+        this.lifecycleState = lifecycleState;
+        this.manifestSizeInBytes = manifestSizeInBytes;
+        this.pullCount = pullCount;
+        this.repositoryId = repositoryId;
+        this.repositoryName = repositoryName;
+        this.timeCreated = timeCreated;
+        this.timeLastPulled = timeLastPulled;
+        this.version = version;
+        this.versions = versions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -226,23 +277,39 @@ public class ContainerImage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The compartment OCID to which the container image belongs. Inferred from the container repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user or principal that created the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    String createdBy;
+    private final String createdBy;
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
 
     /**
      * The container image digest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("digest")
-    String digest;
+    private final String digest;
+
+    public String getDigest() {
+        return digest;
+    }
 
     /**
      * The repository name and the most recent version associated with the image.
@@ -253,7 +320,11 @@ public class ContainerImage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
@@ -262,23 +333,35 @@ public class ContainerImage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Layers of which the image is composed, ordered by the layer digest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("layers")
-    java.util.List<ContainerImageLayer> layers;
+    private final java.util.List<ContainerImageLayer> layers;
+
+    public java.util.List<ContainerImageLayer> getLayers() {
+        return layers;
+    }
 
     /**
      * The total size of the container image layers in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
-    Long layersSizeInBytes;
+    private final Long layersSizeInBytes;
+
+    public Long getLayersSizeInBytes() {
+        return layersSizeInBytes;
+    }
+
     /**
      * The current state of the container image.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Available("AVAILABLE"),
         Deleted("DELETED"),
@@ -289,6 +372,9 @@ public class ContainerImage {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -326,56 +412,190 @@ public class ContainerImage {
      * The current state of the container image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The size of the container image manifest in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("manifestSizeInBytes")
-    Integer manifestSizeInBytes;
+    private final Integer manifestSizeInBytes;
+
+    public Integer getManifestSizeInBytes() {
+        return manifestSizeInBytes;
+    }
 
     /**
      * Total number of pulls.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pullCount")
-    Long pullCount;
+    private final Long pullCount;
+
+    public Long getPullCount() {
+        return pullCount;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
-    String repositoryId;
+    private final String repositoryId;
+
+    public String getRepositoryId() {
+        return repositoryId;
+    }
 
     /**
      * The container repository name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
-    String repositoryName;
+    private final String repositoryName;
+
+    public String getRepositoryName() {
+        return repositoryName;
+    }
 
     /**
      * An RFC 3339 timestamp indicating when the image was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * An RFC 3339 timestamp indicating when the image was last pulled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastPulled")
-    java.util.Date timeLastPulled;
+    private final java.util.Date timeLastPulled;
+
+    public java.util.Date getTimeLastPulled() {
+        return timeLastPulled;
+    }
 
     /**
      * The most recent version associated with this image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The versions associated with this image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versions")
-    java.util.List<ContainerVersion> versions;
+    private final java.util.List<ContainerVersion> versions;
+
+    public java.util.List<ContainerVersion> getVersions() {
+        return versions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ContainerImage(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", digest=").append(String.valueOf(this.digest));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", layers=").append(String.valueOf(this.layers));
+        sb.append(", layersSizeInBytes=").append(String.valueOf(this.layersSizeInBytes));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", manifestSizeInBytes=").append(String.valueOf(this.manifestSizeInBytes));
+        sb.append(", pullCount=").append(String.valueOf(this.pullCount));
+        sb.append(", repositoryId=").append(String.valueOf(this.repositoryId));
+        sb.append(", repositoryName=").append(String.valueOf(this.repositoryName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLastPulled=").append(String.valueOf(this.timeLastPulled));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", versions=").append(String.valueOf(this.versions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ContainerImage)) {
+            return false;
+        }
+
+        ContainerImage other = (ContainerImage) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.digest, other.digest)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.layers, other.layers)
+                && java.util.Objects.equals(this.layersSizeInBytes, other.layersSizeInBytes)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.manifestSizeInBytes, other.manifestSizeInBytes)
+                && java.util.Objects.equals(this.pullCount, other.pullCount)
+                && java.util.Objects.equals(this.repositoryId, other.repositoryId)
+                && java.util.Objects.equals(this.repositoryName, other.repositoryName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLastPulled, other.timeLastPulled)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.versions, other.versions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.digest == null ? 43 : this.digest.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.layers == null ? 43 : this.layers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.layersSizeInBytes == null ? 43 : this.layersSizeInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.manifestSizeInBytes == null
+                                ? 43
+                                : this.manifestSizeInBytes.hashCode());
+        result = (result * PRIME) + (this.pullCount == null ? 43 : this.pullCount.hashCode());
+        result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryName == null ? 43 : this.repositoryName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastPulled == null ? 43 : this.timeLastPulled.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.versions == null ? 43 : this.versions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

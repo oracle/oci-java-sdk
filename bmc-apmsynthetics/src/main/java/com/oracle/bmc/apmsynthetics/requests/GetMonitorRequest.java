@@ -9,14 +9,6 @@ import com.oracle.bmc.apmsynthetics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMonitorRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetMonitorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,11 +17,17 @@ public class GetMonitorRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String apmDomainId;
 
+    public String getApmDomainId() {
+        return apmDomainId;
+    }
     /**
      * The OCID of the monitor.
      */
     private String monitorId;
 
+    public String getMonitorId() {
+        return monitorId;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -37,12 +35,52 @@ public class GetMonitorRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetMonitorRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String apmDomainId = null;
+
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         * @return this builder instance
+         */
+        public Builder apmDomainId(String apmDomainId) {
+            this.apmDomainId = apmDomainId;
+            return this;
+        }
+
+        private String monitorId = null;
+
+        /**
+         * The OCID of the monitor.
+         * @return this builder instance
+         */
+        public Builder monitorId(String monitorId) {
+            this.monitorId = monitorId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -96,5 +134,74 @@ public class GetMonitorRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetMonitorRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetMonitorRequest
+         */
+        public GetMonitorRequest buildWithoutInvocationCallback() {
+            GetMonitorRequest request = new GetMonitorRequest();
+            request.apmDomainId = apmDomainId;
+            request.monitorId = monitorId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetMonitorRequest(apmDomainId, monitorId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .apmDomainId(apmDomainId)
+                .monitorId(monitorId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
+        sb.append(",monitorId=").append(String.valueOf(this.monitorId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetMonitorRequest)) {
+            return false;
+        }
+
+        GetMonitorRequest other = (GetMonitorRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
+                && java.util.Objects.equals(this.monitorId, other.monitorId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
+        result = (result * PRIME) + (this.monitorId == null ? 43 : this.monitorId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

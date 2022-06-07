@@ -15,14 +15,41 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryProperties.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class QueryProperties {
+public final class QueryProperties {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "groupBy",
+        "groupByTag",
+        "filter",
+        "compartmentDepth",
+        "granularity",
+        "queryType",
+        "isAggregateByTime",
+        "dateRange"
+    })
+    public QueryProperties(
+            java.util.List<String> groupBy,
+            java.util.List<Tag> groupByTag,
+            Filter filter,
+            java.math.BigDecimal compartmentDepth,
+            Granularity granularity,
+            QueryType queryType,
+            Boolean isAggregateByTime,
+            DateRange dateRange) {
+        super();
+        this.groupBy = groupBy;
+        this.groupByTag = groupByTag;
+        this.filter = filter;
+        this.compartmentDepth = compartmentDepth;
+        this.granularity = granularity;
+        this.queryType = queryType;
+        this.isAggregateByTime = isAggregateByTime;
+        this.dateRange = dateRange;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
@@ -138,28 +165,49 @@ public class QueryProperties {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
-    java.util.List<String> groupBy;
+    private final java.util.List<String> groupBy;
+
+    public java.util.List<String> getGroupBy() {
+        return groupBy;
+    }
 
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
-    java.util.List<Tag> groupByTag;
+    private final java.util.List<Tag> groupByTag;
+
+    public java.util.List<Tag> getGroupByTag() {
+        return groupByTag;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
-    Filter filter;
+    private final Filter filter;
+
+    public Filter getFilter() {
+        return filter;
+    }
 
     /**
      * The depth level of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
-    java.math.BigDecimal compartmentDepth;
+    private final java.math.BigDecimal compartmentDepth;
+
+    public java.math.BigDecimal getCompartmentDepth() {
+        return compartmentDepth;
+    }
+
     /**
      * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
      * Allowed values are:
@@ -167,7 +215,6 @@ public class QueryProperties {
      *   MONTHLY
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Granularity {
         Daily("DAILY"),
         Monthly("MONTHLY"),
@@ -177,6 +224,9 @@ public class QueryProperties {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Granularity.class);
 
         private final String value;
         private static java.util.Map<String, Granularity> map;
@@ -218,7 +268,12 @@ public class QueryProperties {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("granularity")
-    Granularity granularity;
+    private final Granularity granularity;
+
+    public Granularity getGranularity() {
+        return granularity;
+    }
+
     /**
      * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
      * Allowed values are:
@@ -227,7 +282,6 @@ public class QueryProperties {
      *   USAGE_AND_COST
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum QueryType {
         Usage("USAGE"),
         Cost("COST"),
@@ -238,6 +292,9 @@ public class QueryProperties {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(QueryType.class);
 
         private final String value;
         private static java.util.Map<String, QueryType> map;
@@ -280,17 +337,93 @@ public class QueryProperties {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
-    QueryType queryType;
+    private final QueryType queryType;
+
+    public QueryType getQueryType() {
+        return queryType;
+    }
 
     /**
      * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
-    Boolean isAggregateByTime;
+    private final Boolean isAggregateByTime;
+
+    public Boolean getIsAggregateByTime() {
+        return isAggregateByTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dateRange")
-    DateRange dateRange;
+    private final DateRange dateRange;
+
+    public DateRange getDateRange() {
+        return dateRange;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("QueryProperties(");
+        sb.append("groupBy=").append(String.valueOf(this.groupBy));
+        sb.append(", groupByTag=").append(String.valueOf(this.groupByTag));
+        sb.append(", filter=").append(String.valueOf(this.filter));
+        sb.append(", compartmentDepth=").append(String.valueOf(this.compartmentDepth));
+        sb.append(", granularity=").append(String.valueOf(this.granularity));
+        sb.append(", queryType=").append(String.valueOf(this.queryType));
+        sb.append(", isAggregateByTime=").append(String.valueOf(this.isAggregateByTime));
+        sb.append(", dateRange=").append(String.valueOf(this.dateRange));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QueryProperties)) {
+            return false;
+        }
+
+        QueryProperties other = (QueryProperties) o;
+        return java.util.Objects.equals(this.groupBy, other.groupBy)
+                && java.util.Objects.equals(this.groupByTag, other.groupByTag)
+                && java.util.Objects.equals(this.filter, other.filter)
+                && java.util.Objects.equals(this.compartmentDepth, other.compartmentDepth)
+                && java.util.Objects.equals(this.granularity, other.granularity)
+                && java.util.Objects.equals(this.queryType, other.queryType)
+                && java.util.Objects.equals(this.isAggregateByTime, other.isAggregateByTime)
+                && java.util.Objects.equals(this.dateRange, other.dateRange)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
+        result = (result * PRIME) + (this.groupByTag == null ? 43 : this.groupByTag.hashCode());
+        result = (result * PRIME) + (this.filter == null ? 43 : this.filter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentDepth == null ? 43 : this.compartmentDepth.hashCode());
+        result = (result * PRIME) + (this.granularity == null ? 43 : this.granularity.hashCode());
+        result = (result * PRIME) + (this.queryType == null ? 43 : this.queryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAggregateByTime == null ? 43 : this.isAggregateByTime.hashCode());
+        result = (result * PRIME) + (this.dateRange == null ? 43 : this.dateRange.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

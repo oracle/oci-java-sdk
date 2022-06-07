@@ -15,16 +15,20 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FilterGroupMembershipResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FilterGroupMembershipResult {
+public final class FilterGroupMembershipResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"principal", "groupIds"})
+    public FilterGroupMembershipResult(Principal principal, java.util.List<String> groupIds) {
+        super();
+        this.principal = principal;
+        this.groupIds = groupIds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("principal")
         private Principal principal;
@@ -70,18 +74,72 @@ public class FilterGroupMembershipResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Return passed-in resolved principal object
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("principal")
-    Principal principal;
+    private final Principal principal;
+
+    public Principal getPrincipal() {
+        return principal;
+    }
 
     /**
      * An array of group or dynamic group Ids which present the intersection between the passed-in group/dynamic-group and the actual group/dynamic-group the resovled principal belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupIds")
-    java.util.List<String> groupIds;
+    private final java.util.List<String> groupIds;
+
+    public java.util.List<String> getGroupIds() {
+        return groupIds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FilterGroupMembershipResult(");
+        sb.append("principal=").append(String.valueOf(this.principal));
+        sb.append(", groupIds=").append(String.valueOf(this.groupIds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FilterGroupMembershipResult)) {
+            return false;
+        }
+
+        FilterGroupMembershipResult other = (FilterGroupMembershipResult) o;
+        return java.util.Objects.equals(this.principal, other.principal)
+                && java.util.Objects.equals(this.groupIds, other.groupIds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.principal == null ? 43 : this.principal.hashCode());
+        result = (result * PRIME) + (this.groupIds == null ? 43 : this.groupIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

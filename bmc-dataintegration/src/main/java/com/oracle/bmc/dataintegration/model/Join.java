@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Join.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Join extends PushDownOperation {
+public final class Join extends PushDownOperation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
@@ -73,6 +68,10 @@ public class Join extends PushDownOperation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Join(String condition, Policy policy) {
         super();
@@ -84,11 +83,15 @@ public class Join extends PushDownOperation {
      * The join condition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    String condition;
+    private final String condition;
+
+    public String getCondition() {
+        return condition;
+    }
+
     /**
      * The type of join.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Policy {
         InnerJoin("INNER_JOIN"),
         LeftJoin("LEFT_JOIN"),
@@ -100,6 +103,8 @@ public class Join extends PushDownOperation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Policy.class);
 
         private final String value;
         private static java.util.Map<String, Policy> map;
@@ -137,8 +142,56 @@ public class Join extends PushDownOperation {
      * The type of join.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
-    Policy policy;
+    private final Policy policy;
+
+    public Policy getPolicy() {
+        return policy;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Join(");
+        sb.append("super=").append(super.toString());
+        sb.append(", condition=").append(String.valueOf(this.condition));
+        sb.append(", policy=").append(String.valueOf(this.policy));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Join)) {
+            return false;
+        }
+
+        Join other = (Join) o;
+        return java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.policy, other.policy)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

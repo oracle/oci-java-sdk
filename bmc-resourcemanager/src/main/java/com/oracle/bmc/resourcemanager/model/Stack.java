@@ -17,14 +17,56 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Stack.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Stack {
+public final class Stack {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "description",
+        "timeCreated",
+        "lifecycleState",
+        "configSource",
+        "variables",
+        "terraformVersion",
+        "stackDriftStatus",
+        "timeDriftLastChecked",
+        "freeformTags",
+        "definedTags"
+    })
+    public Stack(
+            String id,
+            String compartmentId,
+            String displayName,
+            String description,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState,
+            ConfigSource configSource,
+            java.util.Map<String, String> variables,
+            String terraformVersion,
+            StackDriftStatus stackDriftStatus,
+            java.util.Date timeDriftLastChecked,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+        this.configSource = configSource;
+        this.variables = variables;
+        this.terraformVersion = terraformVersion;
+        this.stackDriftStatus = stackDriftStatus;
+        this.timeDriftLastChecked = timeDriftLastChecked;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -196,29 +238,49 @@ public class Stack {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the stack.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Human-readable name of the stack.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the stack.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The date and time at which the stack was created.
@@ -227,14 +289,18 @@ public class Stack {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The current lifecycle state of the stack.
      * For more information about stack lifecycle states in Resource Manager, see
      * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -247,6 +313,9 @@ public class Stack {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -287,10 +356,18 @@ public class Stack {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configSource")
-    ConfigSource configSource;
+    private final ConfigSource configSource;
+
+    public ConfigSource getConfigSource() {
+        return configSource;
+    }
 
     /**
      * Terraform variables associated with this resource.
@@ -300,20 +377,28 @@ public class Stack {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
-    java.util.Map<String, String> variables;
+    private final java.util.Map<String, String> variables;
+
+    public java.util.Map<String, String> getVariables() {
+        return variables;
+    }
 
     /**
      * The version of Terraform specified for the stack. Example: {@code 0.12.x}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
-    String terraformVersion;
+    private final String terraformVersion;
+
+    public String getTerraformVersion() {
+        return terraformVersion;
+    }
+
     /**
      * Drift status of the stack.
      * Drift refers to differences between the actual (current) state of the stack and the expected (defined) state of the stack.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum StackDriftStatus {
         NotChecked("NOT_CHECKED"),
         InSync("IN_SYNC"),
@@ -324,6 +409,9 @@ public class Stack {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StackDriftStatus.class);
 
         private final String value;
         private static java.util.Map<String, StackDriftStatus> map;
@@ -363,7 +451,11 @@ public class Stack {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackDriftStatus")
-    StackDriftStatus stackDriftStatus;
+    private final StackDriftStatus stackDriftStatus;
+
+    public StackDriftStatus getStackDriftStatus() {
+        return stackDriftStatus;
+    }
 
     /**
      * The date and time when the drift detection was last executed.
@@ -372,7 +464,11 @@ public class Stack {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDriftLastChecked")
-    java.util.Date timeDriftLastChecked;
+    private final java.util.Date timeDriftLastChecked;
+
+    public java.util.Date getTimeDriftLastChecked() {
+        return timeDriftLastChecked;
+    }
 
     /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
@@ -381,7 +477,11 @@ public class Stack {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -390,8 +490,99 @@ public class Stack {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Stack(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", configSource=").append(String.valueOf(this.configSource));
+        sb.append(", variables=").append(String.valueOf(this.variables));
+        sb.append(", terraformVersion=").append(String.valueOf(this.terraformVersion));
+        sb.append(", stackDriftStatus=").append(String.valueOf(this.stackDriftStatus));
+        sb.append(", timeDriftLastChecked=").append(String.valueOf(this.timeDriftLastChecked));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Stack)) {
+            return false;
+        }
+
+        Stack other = (Stack) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.configSource, other.configSource)
+                && java.util.Objects.equals(this.variables, other.variables)
+                && java.util.Objects.equals(this.terraformVersion, other.terraformVersion)
+                && java.util.Objects.equals(this.stackDriftStatus, other.stackDriftStatus)
+                && java.util.Objects.equals(this.timeDriftLastChecked, other.timeDriftLastChecked)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.configSource == null ? 43 : this.configSource.hashCode());
+        result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.terraformVersion == null ? 43 : this.terraformVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stackDriftStatus == null ? 43 : this.stackDriftStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDriftLastChecked == null
+                                ? 43
+                                : this.timeDriftLastChecked.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

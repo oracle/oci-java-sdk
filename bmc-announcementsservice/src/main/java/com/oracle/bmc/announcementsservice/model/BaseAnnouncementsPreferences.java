@@ -15,12 +15,6 @@ package com.oracle.bmc.announcementsservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,6 +33,30 @@ package com.oracle.bmc.announcementsservice.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BaseAnnouncementsPreferences {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "id",
+        "isUnsubscribed",
+        "timeCreated",
+        "timeUpdated",
+        "preferenceType"
+    })
+    protected BaseAnnouncementsPreferences(
+            String compartmentId,
+            String id,
+            Boolean isUnsubscribed,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType) {
+        super();
+        this.compartmentId = compartmentId;
+        this.id = id;
+        this.isUnsubscribed = isUnsubscribed;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.preferenceType = preferenceType;
+    }
 
     /**
      * The OCID of the compartment for which the email preferences apply. Because announcements are
@@ -46,13 +64,21 @@ public class BaseAnnouncementsPreferences {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The ID of the preferences.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A Boolean value to indicate whether the specified compartment chooses to not to receive informational announcements by email.
@@ -60,23 +86,90 @@ public class BaseAnnouncementsPreferences {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsubscribed")
-    Boolean isUnsubscribed;
+    private final Boolean isUnsubscribed;
+
+    public Boolean getIsUnsubscribed() {
+        return isUnsubscribed;
+    }
 
     /**
      * When the preferences were set initially.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * When the preferences were last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The string representing the user's preference regarding receiving announcements by email.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferenceType")
-    BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType;
+    private final BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType;
+
+    public BaseCreateAnnouncementsPreferencesDetails.PreferenceType getPreferenceType() {
+        return preferenceType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BaseAnnouncementsPreferences(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", isUnsubscribed=").append(String.valueOf(this.isUnsubscribed));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", preferenceType=").append(String.valueOf(this.preferenceType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BaseAnnouncementsPreferences)) {
+            return false;
+        }
+
+        BaseAnnouncementsPreferences other = (BaseAnnouncementsPreferences) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.isUnsubscribed, other.isUnsubscribed)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.preferenceType, other.preferenceType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnsubscribed == null ? 43 : this.isUnsubscribed.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preferenceType == null ? 43 : this.preferenceType.hashCode());
+        return result;
+    }
 }

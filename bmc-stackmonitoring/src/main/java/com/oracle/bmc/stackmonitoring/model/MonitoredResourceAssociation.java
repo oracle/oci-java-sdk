@@ -15,16 +15,52 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonitoredResourceAssociation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonitoredResourceAssociation {
+public final class MonitoredResourceAssociation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "associationType",
+        "compartmentId",
+        "tenantId",
+        "sourceResourceId",
+        "destinationResourceId",
+        "sourceResourceDetails",
+        "destinationResourceDetails",
+        "timeCreated",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public MonitoredResourceAssociation(
+            String associationType,
+            String compartmentId,
+            String tenantId,
+            String sourceResourceId,
+            String destinationResourceId,
+            AssociationResourceDetails sourceResourceDetails,
+            AssociationResourceDetails destinationResourceDetails,
+            java.util.Date timeCreated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.associationType = associationType;
+        this.compartmentId = compartmentId;
+        this.tenantId = tenantId;
+        this.sourceResourceId = sourceResourceId;
+        this.destinationResourceId = destinationResourceId;
+        this.sourceResourceDetails = sourceResourceDetails;
+        this.destinationResourceDetails = destinationResourceDetails;
+        this.timeCreated = timeCreated;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private String associationType;
@@ -175,47 +211,83 @@ public class MonitoredResourceAssociation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Association Type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
-    String associationType;
+    private final String associationType;
+
+    public String getAssociationType() {
+        return associationType;
+    }
 
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
-    String sourceResourceId;
+    private final String sourceResourceId;
+
+    public String getSourceResourceId() {
+        return sourceResourceId;
+    }
 
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
-    String destinationResourceId;
+    private final String destinationResourceId;
+
+    public String getDestinationResourceId() {
+        return destinationResourceId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceDetails")
-    AssociationResourceDetails sourceResourceDetails;
+    private final AssociationResourceDetails sourceResourceDetails;
+
+    public AssociationResourceDetails getSourceResourceDetails() {
+        return sourceResourceDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceDetails")
-    AssociationResourceDetails destinationResourceDetails;
+    private final AssociationResourceDetails destinationResourceDetails;
+
+    public AssociationResourceDetails getDestinationResourceDetails() {
+        return destinationResourceDetails;
+    }
 
     /**
      * The time when the association was created. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -223,7 +295,11 @@ public class MonitoredResourceAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -231,7 +307,11 @@ public class MonitoredResourceAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
@@ -239,8 +319,101 @@ public class MonitoredResourceAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitoredResourceAssociation(");
+        sb.append("associationType=").append(String.valueOf(this.associationType));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", sourceResourceId=").append(String.valueOf(this.sourceResourceId));
+        sb.append(", destinationResourceId=").append(String.valueOf(this.destinationResourceId));
+        sb.append(", sourceResourceDetails=").append(String.valueOf(this.sourceResourceDetails));
+        sb.append(", destinationResourceDetails=")
+                .append(String.valueOf(this.destinationResourceDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitoredResourceAssociation)) {
+            return false;
+        }
+
+        MonitoredResourceAssociation other = (MonitoredResourceAssociation) o;
+        return java.util.Objects.equals(this.associationType, other.associationType)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.sourceResourceId, other.sourceResourceId)
+                && java.util.Objects.equals(this.destinationResourceId, other.destinationResourceId)
+                && java.util.Objects.equals(this.sourceResourceDetails, other.sourceResourceDetails)
+                && java.util.Objects.equals(
+                        this.destinationResourceDetails, other.destinationResourceDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.associationType == null ? 43 : this.associationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceResourceId == null ? 43 : this.sourceResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationResourceId == null
+                                ? 43
+                                : this.destinationResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceResourceDetails == null
+                                ? 43
+                                : this.sourceResourceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationResourceDetails == null
+                                ? 43
+                                : this.destinationResourceDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

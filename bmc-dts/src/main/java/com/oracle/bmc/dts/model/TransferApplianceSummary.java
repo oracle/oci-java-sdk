@@ -15,16 +15,26 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TransferApplianceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TransferApplianceSummary {
+public final class TransferApplianceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"label", "lifecycleState", "serialNumber", "creationTime"})
+    public TransferApplianceSummary(
+            String label,
+            LifecycleState lifecycleState,
+            String serialNumber,
+            java.util.Date creationTime) {
+        super();
+        this.label = label;
+        this.lifecycleState = lifecycleState;
+        this.serialNumber = serialNumber;
+        this.creationTime = creationTime;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
@@ -92,11 +102,19 @@ public class TransferApplianceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("label")
-    String label;
+    private final String label;
+
+    public String getLabel() {
+        return label;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Requested("REQUESTED"),
         OraclePreparing("ORACLE_PREPARING"),
@@ -124,6 +142,9 @@ public class TransferApplianceSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -159,14 +180,76 @@ public class TransferApplianceSummary {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
-    String serialNumber;
+    private final String serialNumber;
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
-    java.util.Date creationTime;
+    private final java.util.Date creationTime;
+
+    public java.util.Date getCreationTime() {
+        return creationTime;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TransferApplianceSummary(");
+        sb.append("label=").append(String.valueOf(this.label));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
+        sb.append(", creationTime=").append(String.valueOf(this.creationTime));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TransferApplianceSummary)) {
+            return false;
+        }
+
+        TransferApplianceSummary other = (TransferApplianceSummary) o;
+        return java.util.Objects.equals(this.label, other.label)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.serialNumber, other.serialNumber)
+                && java.util.Objects.equals(this.creationTime, other.creationTime)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.label == null ? 43 : this.label.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.serialNumber == null ? 43 : this.serialNumber.hashCode());
+        result = (result * PRIME) + (this.creationTime == null ? 43 : this.creationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

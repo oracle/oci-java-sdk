@@ -9,14 +9,6 @@ import com.oracle.bmc.datalabelingservicedataplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservicedataplane/UpdateRecordExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateRecordRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateRecordRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datalabelingservicedataplane.model.UpdateRecordDetails> {
@@ -26,12 +18,19 @@ public class UpdateRecordRequest
      */
     private String recordId;
 
+    public String getRecordId() {
+        return recordId;
+    }
     /**
      * Information to be updated.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.UpdateRecordDetails
             updateRecordDetails;
 
+    public com.oracle.bmc.datalabelingservicedataplane.model.UpdateRecordDetails
+            getUpdateRecordDetails() {
+        return updateRecordDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -42,10 +41,17 @@ public class UpdateRecordRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +70,58 @@ public class UpdateRecordRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String recordId = null;
+
+        /**
+         * The OCID of the record annotated.
+         * @return this builder instance
+         */
+        public Builder recordId(String recordId) {
+            this.recordId = recordId;
+            return this;
+        }
+
+        private com.oracle.bmc.datalabelingservicedataplane.model.UpdateRecordDetails
+                updateRecordDetails = null;
+
+        /**
+         * Information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateRecordDetails(
+                com.oracle.bmc.datalabelingservicedataplane.model.UpdateRecordDetails
+                        updateRecordDetails) {
+            this.updateRecordDetails = updateRecordDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +188,83 @@ public class UpdateRecordRequest
             updateRecordDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateRecordRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateRecordRequest
+         */
+        public UpdateRecordRequest buildWithoutInvocationCallback() {
+            UpdateRecordRequest request = new UpdateRecordRequest();
+            request.recordId = recordId;
+            request.updateRecordDetails = updateRecordDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateRecordRequest(recordId, updateRecordDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .recordId(recordId)
+                .updateRecordDetails(updateRecordDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",recordId=").append(String.valueOf(this.recordId));
+        sb.append(",updateRecordDetails=").append(String.valueOf(this.updateRecordDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateRecordRequest)) {
+            return false;
+        }
+
+        UpdateRecordRequest other = (UpdateRecordRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.recordId, other.recordId)
+                && java.util.Objects.equals(this.updateRecordDetails, other.updateRecordDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.recordId == null ? 43 : this.recordId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateRecordDetails == null
+                                ? 43
+                                : this.updateRecordDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

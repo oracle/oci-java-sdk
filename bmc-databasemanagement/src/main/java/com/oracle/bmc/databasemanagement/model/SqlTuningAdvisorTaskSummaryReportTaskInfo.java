@@ -15,16 +15,43 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningAdvisorTaskSummaryReportTaskInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningAdvisorTaskSummaryReportTaskInfo {
+public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "description",
+        "owner",
+        "status",
+        "timeStarted",
+        "timeEnded",
+        "runningTime"
+    })
+    public SqlTuningAdvisorTaskSummaryReportTaskInfo(
+            Long id,
+            String name,
+            String description,
+            String owner,
+            SqlTuningTaskStatusTypes status,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded,
+            Integer runningTime) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.owner = owner;
+        this.status = status;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+        this.runningTime = runningTime;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
@@ -140,54 +167,151 @@ public class SqlTuningAdvisorTaskSummaryReportTaskInfo {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    Long id;
+    private final Long id;
+
+    public Long getId() {
+        return id;
+    }
 
     /**
      * The name of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The owner of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
-    String owner;
+    private final String owner;
+
+    public String getOwner() {
+        return owner;
+    }
 
     /**
      * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    SqlTuningTaskStatusTypes status;
+    private final SqlTuningTaskStatusTypes status;
+
+    public SqlTuningTaskStatusTypes getStatus() {
+        return status;
+    }
 
     /**
      * The start time of the task execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The end time of the task execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
 
     /**
      * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("runningTime")
-    Integer runningTime;
+    private final Integer runningTime;
+
+    public Integer getRunningTime() {
+        return runningTime;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningAdvisorTaskSummaryReportTaskInfo(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", owner=").append(String.valueOf(this.owner));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", runningTime=").append(String.valueOf(this.runningTime));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningAdvisorTaskSummaryReportTaskInfo)) {
+            return false;
+        }
+
+        SqlTuningAdvisorTaskSummaryReportTaskInfo other =
+                (SqlTuningAdvisorTaskSummaryReportTaskInfo) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.runningTime, other.runningTime)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result = (result * PRIME) + (this.runningTime == null ? 43 : this.runningTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

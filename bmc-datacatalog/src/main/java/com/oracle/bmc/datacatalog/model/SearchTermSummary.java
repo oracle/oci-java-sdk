@@ -16,16 +16,37 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SearchTermSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SearchTermSummary {
+public final class SearchTermSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "displayName",
+        "glossaryKey",
+        "glossaryName",
+        "parentTermKey",
+        "parentTermName"
+    })
+    public SearchTermSummary(
+            String key,
+            String displayName,
+            String glossaryKey,
+            String glossaryName,
+            String parentTermKey,
+            String parentTermName) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.glossaryKey = glossaryKey;
+        this.glossaryName = glossaryName;
+        this.parentTermKey = parentTermKey;
+        this.parentTermName = parentTermName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -119,11 +140,19 @@ public class SearchTermSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique term key that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -131,32 +160,110 @@ public class SearchTermSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Unique id of the parent glossary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
-    String glossaryKey;
+    private final String glossaryKey;
+
+    public String getGlossaryKey() {
+        return glossaryKey;
+    }
 
     /**
      * Name of the parent glossary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryName")
-    String glossaryName;
+    private final String glossaryName;
+
+    public String getGlossaryName() {
+        return glossaryName;
+    }
 
     /**
      * This terms parent term key. Will be null if the term has no parent term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
-    String parentTermKey;
+    private final String parentTermKey;
+
+    public String getParentTermKey() {
+        return parentTermKey;
+    }
 
     /**
      * Name of the parent term key. Will be null if the term has no parent term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermName")
-    String parentTermName;
+    private final String parentTermName;
+
+    public String getParentTermName() {
+        return parentTermName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchTermSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", glossaryKey=").append(String.valueOf(this.glossaryKey));
+        sb.append(", glossaryName=").append(String.valueOf(this.glossaryName));
+        sb.append(", parentTermKey=").append(String.valueOf(this.parentTermKey));
+        sb.append(", parentTermName=").append(String.valueOf(this.parentTermName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchTermSummary)) {
+            return false;
+        }
+
+        SearchTermSummary other = (SearchTermSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
+                && java.util.Objects.equals(this.glossaryName, other.glossaryName)
+                && java.util.Objects.equals(this.parentTermKey, other.parentTermKey)
+                && java.util.Objects.equals(this.parentTermName, other.parentTermName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
+        result = (result * PRIME) + (this.glossaryName == null ? 43 : this.glossaryName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTermKey == null ? 43 : this.parentTermKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTermName == null ? 43 : this.parentTermName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

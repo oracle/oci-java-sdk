@@ -36,14 +36,68 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vnic.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Vnic {
+public final class Vnic {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "hostnameLabel",
+        "id",
+        "isPrimary",
+        "lifecycleState",
+        "macAddress",
+        "nsgIds",
+        "vlanId",
+        "privateIp",
+        "publicIp",
+        "skipSourceDestCheck",
+        "subnetId",
+        "timeCreated"
+    })
+    public Vnic(
+            String availabilityDomain,
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String hostnameLabel,
+            String id,
+            Boolean isPrimary,
+            LifecycleState lifecycleState,
+            String macAddress,
+            java.util.List<String> nsgIds,
+            String vlanId,
+            String privateIp,
+            String publicIp,
+            Boolean skipSourceDestCheck,
+            String subnetId,
+            java.util.Date timeCreated) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.hostnameLabel = hostnameLabel;
+        this.id = id;
+        this.isPrimary = isPrimary;
+        this.lifecycleState = lifecycleState;
+        this.macAddress = macAddress;
+        this.nsgIds = nsgIds;
+        this.vlanId = vlanId;
+        this.privateIp = privateIp;
+        this.publicIp = publicIp;
+        this.skipSourceDestCheck = skipSourceDestCheck;
+        this.subnetId = subnetId;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -259,6 +313,10 @@ public class Vnic {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The VNIC's availability domain.
      * <p>
@@ -266,13 +324,21 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -282,7 +348,11 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -290,7 +360,11 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -300,7 +374,11 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
@@ -317,13 +395,21 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
-    String hostnameLabel;
+    private final String hostnameLabel;
+
+    public String getHostnameLabel() {
+        return hostnameLabel;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Whether the VNIC is the primary VNIC (the VNIC that is automatically created
@@ -331,11 +417,15 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
-    Boolean isPrimary;
+    private final Boolean isPrimary;
+
+    public Boolean getIsPrimary() {
+        return isPrimary;
+    }
+
     /**
      * The current state of the VNIC.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -347,6 +437,9 @@ public class Vnic {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -384,7 +477,11 @@ public class Vnic {
      * The current state of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The MAC address of the VNIC.
@@ -397,7 +494,11 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
-    String macAddress;
+    private final String macAddress;
+
+    public String getMacAddress() {
+        return macAddress;
+    }
 
     /**
      * A list of the OCIDs of the network security groups that the VNIC belongs to.
@@ -411,7 +512,11 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
@@ -420,7 +525,11 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
-    String vlanId;
+    private final String vlanId;
+
+    public String getVlanId() {
+        return vlanId;
+    }
 
     /**
      * The private IP address of the primary {@code privateIp} object on the VNIC.
@@ -430,14 +539,22 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    String privateIp;
+    private final String privateIp;
+
+    public String getPrivateIp() {
+        return privateIp;
+    }
 
     /**
      * The public IP address of the VNIC, if one is assigned.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
-    String publicIp;
+    private final String publicIp;
+
+    public String getPublicIp() {
+        return publicIp;
+    }
 
     /**
      * Whether the source/destination check is disabled on the VNIC.
@@ -454,13 +571,21 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
-    Boolean skipSourceDestCheck;
+    private final Boolean skipSourceDestCheck;
+
+    public Boolean getSkipSourceDestCheck() {
+        return skipSourceDestCheck;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -469,8 +594,113 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Vnic(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", macAddress=").append(String.valueOf(this.macAddress));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", vlanId=").append(String.valueOf(this.vlanId));
+        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", publicIp=").append(String.valueOf(this.publicIp));
+        sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Vnic)) {
+            return false;
+        }
+
+        Vnic other = (Vnic) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.macAddress, other.macAddress)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.vlanId, other.vlanId)
+                && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.publicIp, other.publicIp)
+                && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.macAddress == null ? 43 : this.macAddress.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
+        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.publicIp == null ? 43 : this.publicIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.skipSourceDestCheck == null
+                                ? 43
+                                : this.skipSourceDestCheck.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

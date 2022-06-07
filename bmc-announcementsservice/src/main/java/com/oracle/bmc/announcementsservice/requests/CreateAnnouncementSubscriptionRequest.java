@@ -9,14 +9,6 @@ import com.oracle.bmc.announcementsservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/CreateAnnouncementSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateAnnouncementSubscriptionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateAnnouncementSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.CreateAnnouncementSubscriptionDetails> {
@@ -27,6 +19,10 @@ public class CreateAnnouncementSubscriptionRequest
     private com.oracle.bmc.announcementsservice.model.CreateAnnouncementSubscriptionDetails
             createAnnouncementSubscriptionDetails;
 
+    public com.oracle.bmc.announcementsservice.model.CreateAnnouncementSubscriptionDetails
+            getCreateAnnouncementSubscriptionDetails() {
+        return createAnnouncementSubscriptionDetails;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -37,12 +33,19 @@ public class CreateAnnouncementSubscriptionRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the complete request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +66,49 @@ public class CreateAnnouncementSubscriptionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.announcementsservice.model.CreateAnnouncementSubscriptionDetails
+                createAnnouncementSubscriptionDetails = null;
+
+        /**
+         * Details of the new announcement subscription.
+         * @return this builder instance
+         */
+        public Builder createAnnouncementSubscriptionDetails(
+                com.oracle.bmc.announcementsservice.model.CreateAnnouncementSubscriptionDetails
+                        createAnnouncementSubscriptionDetails) {
+            this.createAnnouncementSubscriptionDetails = createAnnouncementSubscriptionDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -129,5 +175,84 @@ public class CreateAnnouncementSubscriptionRequest
             createAnnouncementSubscriptionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateAnnouncementSubscriptionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateAnnouncementSubscriptionRequest
+         */
+        public CreateAnnouncementSubscriptionRequest buildWithoutInvocationCallback() {
+            CreateAnnouncementSubscriptionRequest request =
+                    new CreateAnnouncementSubscriptionRequest();
+            request.createAnnouncementSubscriptionDetails = createAnnouncementSubscriptionDetails;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new CreateAnnouncementSubscriptionRequest(createAnnouncementSubscriptionDetails, opcRetryToken, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createAnnouncementSubscriptionDetails(createAnnouncementSubscriptionDetails)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createAnnouncementSubscriptionDetails=")
+                .append(String.valueOf(this.createAnnouncementSubscriptionDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAnnouncementSubscriptionRequest)) {
+            return false;
+        }
+
+        CreateAnnouncementSubscriptionRequest other = (CreateAnnouncementSubscriptionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createAnnouncementSubscriptionDetails,
+                        other.createAnnouncementSubscriptionDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createAnnouncementSubscriptionDetails == null
+                                ? 43
+                                : this.createAnnouncementSubscriptionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

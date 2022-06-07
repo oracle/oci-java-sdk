@@ -15,16 +15,43 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseHomeMetricDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseHomeMetricDefinition {
+public final class DatabaseHomeMetricDefinition {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "activityTimeSeriesMetrics",
+        "dbTimeAggregateMetrics",
+        "ioAggregateMetrics",
+        "memoryAggregateMetrics",
+        "dbStorageAggregateMetrics",
+        "cpuUtilizationAggregateMetrics",
+        "statementsAggregateMetrics",
+        "failedConnectionsAggregateMetrics"
+    })
+    public DatabaseHomeMetricDefinition(
+            java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics,
+            DatabaseTimeAggregateMetrics dbTimeAggregateMetrics,
+            DatabaseIOAggregateMetrics ioAggregateMetrics,
+            MemoryAggregateMetrics memoryAggregateMetrics,
+            DatabaseStorageAggregateMetrics dbStorageAggregateMetrics,
+            CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics,
+            StatementsAggregateMetrics statementsAggregateMetrics,
+            FailedConnectionsAggregateMetrics failedConnectionsAggregateMetrics) {
+        super();
+        this.activityTimeSeriesMetrics = activityTimeSeriesMetrics;
+        this.dbTimeAggregateMetrics = dbTimeAggregateMetrics;
+        this.ioAggregateMetrics = ioAggregateMetrics;
+        this.memoryAggregateMetrics = memoryAggregateMetrics;
+        this.dbStorageAggregateMetrics = dbStorageAggregateMetrics;
+        this.cpuUtilizationAggregateMetrics = cpuUtilizationAggregateMetrics;
+        this.statementsAggregateMetrics = statementsAggregateMetrics;
+        this.failedConnectionsAggregateMetrics = failedConnectionsAggregateMetrics;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
         private java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
@@ -146,33 +173,174 @@ public class DatabaseHomeMetricDefinition {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A list of the active session metrics for CPU and Wait time for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
-    java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
+    private final java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
+
+    public java.util.List<ActivityTimeSeriesMetrics> getActivityTimeSeriesMetrics() {
+        return activityTimeSeriesMetrics;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeAggregateMetrics")
-    DatabaseTimeAggregateMetrics dbTimeAggregateMetrics;
+    private final DatabaseTimeAggregateMetrics dbTimeAggregateMetrics;
+
+    public DatabaseTimeAggregateMetrics getDbTimeAggregateMetrics() {
+        return dbTimeAggregateMetrics;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ioAggregateMetrics")
-    DatabaseIOAggregateMetrics ioAggregateMetrics;
+    private final DatabaseIOAggregateMetrics ioAggregateMetrics;
+
+    public DatabaseIOAggregateMetrics getIoAggregateMetrics() {
+        return ioAggregateMetrics;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("memoryAggregateMetrics")
-    MemoryAggregateMetrics memoryAggregateMetrics;
+    private final MemoryAggregateMetrics memoryAggregateMetrics;
+
+    public MemoryAggregateMetrics getMemoryAggregateMetrics() {
+        return memoryAggregateMetrics;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbStorageAggregateMetrics")
-    DatabaseStorageAggregateMetrics dbStorageAggregateMetrics;
+    private final DatabaseStorageAggregateMetrics dbStorageAggregateMetrics;
+
+    public DatabaseStorageAggregateMetrics getDbStorageAggregateMetrics() {
+        return dbStorageAggregateMetrics;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationAggregateMetrics")
-    CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics;
+    private final CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics;
+
+    public CpuUtilizationAggregateMetrics getCpuUtilizationAggregateMetrics() {
+        return cpuUtilizationAggregateMetrics;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("statementsAggregateMetrics")
-    StatementsAggregateMetrics statementsAggregateMetrics;
+    private final StatementsAggregateMetrics statementsAggregateMetrics;
+
+    public StatementsAggregateMetrics getStatementsAggregateMetrics() {
+        return statementsAggregateMetrics;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("failedConnectionsAggregateMetrics")
-    FailedConnectionsAggregateMetrics failedConnectionsAggregateMetrics;
+    private final FailedConnectionsAggregateMetrics failedConnectionsAggregateMetrics;
+
+    public FailedConnectionsAggregateMetrics getFailedConnectionsAggregateMetrics() {
+        return failedConnectionsAggregateMetrics;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseHomeMetricDefinition(");
+        sb.append("activityTimeSeriesMetrics=")
+                .append(String.valueOf(this.activityTimeSeriesMetrics));
+        sb.append(", dbTimeAggregateMetrics=").append(String.valueOf(this.dbTimeAggregateMetrics));
+        sb.append(", ioAggregateMetrics=").append(String.valueOf(this.ioAggregateMetrics));
+        sb.append(", memoryAggregateMetrics=").append(String.valueOf(this.memoryAggregateMetrics));
+        sb.append(", dbStorageAggregateMetrics=")
+                .append(String.valueOf(this.dbStorageAggregateMetrics));
+        sb.append(", cpuUtilizationAggregateMetrics=")
+                .append(String.valueOf(this.cpuUtilizationAggregateMetrics));
+        sb.append(", statementsAggregateMetrics=")
+                .append(String.valueOf(this.statementsAggregateMetrics));
+        sb.append(", failedConnectionsAggregateMetrics=")
+                .append(String.valueOf(this.failedConnectionsAggregateMetrics));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseHomeMetricDefinition)) {
+            return false;
+        }
+
+        DatabaseHomeMetricDefinition other = (DatabaseHomeMetricDefinition) o;
+        return java.util.Objects.equals(
+                        this.activityTimeSeriesMetrics, other.activityTimeSeriesMetrics)
+                && java.util.Objects.equals(
+                        this.dbTimeAggregateMetrics, other.dbTimeAggregateMetrics)
+                && java.util.Objects.equals(this.ioAggregateMetrics, other.ioAggregateMetrics)
+                && java.util.Objects.equals(
+                        this.memoryAggregateMetrics, other.memoryAggregateMetrics)
+                && java.util.Objects.equals(
+                        this.dbStorageAggregateMetrics, other.dbStorageAggregateMetrics)
+                && java.util.Objects.equals(
+                        this.cpuUtilizationAggregateMetrics, other.cpuUtilizationAggregateMetrics)
+                && java.util.Objects.equals(
+                        this.statementsAggregateMetrics, other.statementsAggregateMetrics)
+                && java.util.Objects.equals(
+                        this.failedConnectionsAggregateMetrics,
+                        other.failedConnectionsAggregateMetrics)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.activityTimeSeriesMetrics == null
+                                ? 43
+                                : this.activityTimeSeriesMetrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbTimeAggregateMetrics == null
+                                ? 43
+                                : this.dbTimeAggregateMetrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ioAggregateMetrics == null
+                                ? 43
+                                : this.ioAggregateMetrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryAggregateMetrics == null
+                                ? 43
+                                : this.memoryAggregateMetrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbStorageAggregateMetrics == null
+                                ? 43
+                                : this.dbStorageAggregateMetrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuUtilizationAggregateMetrics == null
+                                ? 43
+                                : this.cpuUtilizationAggregateMetrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statementsAggregateMetrics == null
+                                ? 43
+                                : this.statementsAggregateMetrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failedConnectionsAggregateMetrics == null
+                                ? 43
+                                : this.failedConnectionsAggregateMetrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

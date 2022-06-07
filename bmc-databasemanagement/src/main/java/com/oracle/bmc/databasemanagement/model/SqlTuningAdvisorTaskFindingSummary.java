@@ -17,16 +17,70 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningAdvisorTaskFindingSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningAdvisorTaskFindingSummary {
+public final class SqlTuningAdvisorTaskFindingSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sqlTuningAdvisorTaskId",
+        "sqlTuningAdvisorTaskObjectId",
+        "sqlTuningAdvisorTaskObjectExecutionId",
+        "sqlText",
+        "parsingSchema",
+        "sqlKey",
+        "dbTimeBenefit",
+        "perExecutionPercentage",
+        "isStatsFindingPresent",
+        "isSqlProfileFindingPresent",
+        "isSqlProfileFindingImplemented",
+        "isIndexFindingPresent",
+        "isRestructureSqlFindingPresent",
+        "isAlternativePlanFindingPresent",
+        "isMiscellaneousFindingPresent",
+        "isErrorFindingPresent",
+        "isTimeoutFindingPresent"
+    })
+    public SqlTuningAdvisorTaskFindingSummary(
+            Long sqlTuningAdvisorTaskId,
+            Long sqlTuningAdvisorTaskObjectId,
+            Long sqlTuningAdvisorTaskObjectExecutionId,
+            String sqlText,
+            String parsingSchema,
+            String sqlKey,
+            Float dbTimeBenefit,
+            Integer perExecutionPercentage,
+            Boolean isStatsFindingPresent,
+            Boolean isSqlProfileFindingPresent,
+            Boolean isSqlProfileFindingImplemented,
+            Boolean isIndexFindingPresent,
+            Boolean isRestructureSqlFindingPresent,
+            Boolean isAlternativePlanFindingPresent,
+            Boolean isMiscellaneousFindingPresent,
+            Boolean isErrorFindingPresent,
+            Boolean isTimeoutFindingPresent) {
+        super();
+        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+        this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
+        this.sqlTuningAdvisorTaskObjectExecutionId = sqlTuningAdvisorTaskObjectExecutionId;
+        this.sqlText = sqlText;
+        this.parsingSchema = parsingSchema;
+        this.sqlKey = sqlKey;
+        this.dbTimeBenefit = dbTimeBenefit;
+        this.perExecutionPercentage = perExecutionPercentage;
+        this.isStatsFindingPresent = isStatsFindingPresent;
+        this.isSqlProfileFindingPresent = isSqlProfileFindingPresent;
+        this.isSqlProfileFindingImplemented = isSqlProfileFindingImplemented;
+        this.isIndexFindingPresent = isIndexFindingPresent;
+        this.isRestructureSqlFindingPresent = isRestructureSqlFindingPresent;
+        this.isAlternativePlanFindingPresent = isAlternativePlanFindingPresent;
+        this.isMiscellaneousFindingPresent = isMiscellaneousFindingPresent;
+        this.isErrorFindingPresent = isErrorFindingPresent;
+        this.isTimeoutFindingPresent = isTimeoutFindingPresent;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
         private Long sqlTuningAdvisorTaskId;
@@ -243,11 +297,19 @@ public class SqlTuningAdvisorTaskFindingSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
-    Long sqlTuningAdvisorTaskId;
+    private final Long sqlTuningAdvisorTaskId;
+
+    public Long getSqlTuningAdvisorTaskId() {
+        return sqlTuningAdvisorTaskId;
+    }
 
     /**
      * The key of the object to which these recommendations apply.
@@ -255,98 +317,323 @@ public class SqlTuningAdvisorTaskFindingSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectId")
-    Long sqlTuningAdvisorTaskObjectId;
+    private final Long sqlTuningAdvisorTaskObjectId;
+
+    public Long getSqlTuningAdvisorTaskObjectId() {
+        return sqlTuningAdvisorTaskObjectId;
+    }
 
     /**
      * The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectExecutionId")
-    Long sqlTuningAdvisorTaskObjectExecutionId;
+    private final Long sqlTuningAdvisorTaskObjectExecutionId;
+
+    public Long getSqlTuningAdvisorTaskObjectExecutionId() {
+        return sqlTuningAdvisorTaskObjectExecutionId;
+    }
 
     /**
      * The text of the SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
-    String sqlText;
+    private final String sqlText;
+
+    public String getSqlText() {
+        return sqlText;
+    }
 
     /**
      * The parsing schema of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsingSchema")
-    String parsingSchema;
+    private final String parsingSchema;
+
+    public String getParsingSchema() {
+        return parsingSchema;
+    }
 
     /**
      * The unique key of this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlKey")
-    String sqlKey;
+    private final String sqlKey;
+
+    public String getSqlKey() {
+        return sqlKey;
+    }
 
     /**
      * The time benefit (in seconds) for the highest-rated finding for this object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBenefit")
-    Float dbTimeBenefit;
+    private final Float dbTimeBenefit;
+
+    public Float getDbTimeBenefit() {
+        return dbTimeBenefit;
+    }
 
     /**
      * The per-execution percentage benefit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("perExecutionPercentage")
-    Integer perExecutionPercentage;
+    private final Integer perExecutionPercentage;
+
+    public Integer getPerExecutionPercentage() {
+        return perExecutionPercentage;
+    }
 
     /**
      * Indicates whether a statistics recommendation was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStatsFindingPresent")
-    Boolean isStatsFindingPresent;
+    private final Boolean isStatsFindingPresent;
+
+    public Boolean getIsStatsFindingPresent() {
+        return isStatsFindingPresent;
+    }
 
     /**
      * Indicates whether a SQL Profile recommendation was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSqlProfileFindingPresent")
-    Boolean isSqlProfileFindingPresent;
+    private final Boolean isSqlProfileFindingPresent;
+
+    public Boolean getIsSqlProfileFindingPresent() {
+        return isSqlProfileFindingPresent;
+    }
 
     /**
      * Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSqlProfileFindingImplemented")
-    Boolean isSqlProfileFindingImplemented;
+    private final Boolean isSqlProfileFindingImplemented;
+
+    public Boolean getIsSqlProfileFindingImplemented() {
+        return isSqlProfileFindingImplemented;
+    }
 
     /**
      * Indicates whether an index recommendation was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIndexFindingPresent")
-    Boolean isIndexFindingPresent;
+    private final Boolean isIndexFindingPresent;
+
+    public Boolean getIsIndexFindingPresent() {
+        return isIndexFindingPresent;
+    }
 
     /**
      * Indicates whether a restructure SQL recommendation was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRestructureSqlFindingPresent")
-    Boolean isRestructureSqlFindingPresent;
+    private final Boolean isRestructureSqlFindingPresent;
+
+    public Boolean getIsRestructureSqlFindingPresent() {
+        return isRestructureSqlFindingPresent;
+    }
 
     /**
      * Indicates whether an alternative execution plan was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAlternativePlanFindingPresent")
-    Boolean isAlternativePlanFindingPresent;
+    private final Boolean isAlternativePlanFindingPresent;
+
+    public Boolean getIsAlternativePlanFindingPresent() {
+        return isAlternativePlanFindingPresent;
+    }
 
     /**
      * Indicates whether a miscellaneous finding was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMiscellaneousFindingPresent")
-    Boolean isMiscellaneousFindingPresent;
+    private final Boolean isMiscellaneousFindingPresent;
+
+    public Boolean getIsMiscellaneousFindingPresent() {
+        return isMiscellaneousFindingPresent;
+    }
 
     /**
      * Indicates whether there is an error in this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isErrorFindingPresent")
-    Boolean isErrorFindingPresent;
+    private final Boolean isErrorFindingPresent;
+
+    public Boolean getIsErrorFindingPresent() {
+        return isErrorFindingPresent;
+    }
 
     /**
      * Indicates whether the task timed out.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTimeoutFindingPresent")
-    Boolean isTimeoutFindingPresent;
+    private final Boolean isTimeoutFindingPresent;
+
+    public Boolean getIsTimeoutFindingPresent() {
+        return isTimeoutFindingPresent;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningAdvisorTaskFindingSummary(");
+        sb.append("sqlTuningAdvisorTaskId=").append(String.valueOf(this.sqlTuningAdvisorTaskId));
+        sb.append(", sqlTuningAdvisorTaskObjectId=")
+                .append(String.valueOf(this.sqlTuningAdvisorTaskObjectId));
+        sb.append(", sqlTuningAdvisorTaskObjectExecutionId=")
+                .append(String.valueOf(this.sqlTuningAdvisorTaskObjectExecutionId));
+        sb.append(", sqlText=").append(String.valueOf(this.sqlText));
+        sb.append(", parsingSchema=").append(String.valueOf(this.parsingSchema));
+        sb.append(", sqlKey=").append(String.valueOf(this.sqlKey));
+        sb.append(", dbTimeBenefit=").append(String.valueOf(this.dbTimeBenefit));
+        sb.append(", perExecutionPercentage=").append(String.valueOf(this.perExecutionPercentage));
+        sb.append(", isStatsFindingPresent=").append(String.valueOf(this.isStatsFindingPresent));
+        sb.append(", isSqlProfileFindingPresent=")
+                .append(String.valueOf(this.isSqlProfileFindingPresent));
+        sb.append(", isSqlProfileFindingImplemented=")
+                .append(String.valueOf(this.isSqlProfileFindingImplemented));
+        sb.append(", isIndexFindingPresent=").append(String.valueOf(this.isIndexFindingPresent));
+        sb.append(", isRestructureSqlFindingPresent=")
+                .append(String.valueOf(this.isRestructureSqlFindingPresent));
+        sb.append(", isAlternativePlanFindingPresent=")
+                .append(String.valueOf(this.isAlternativePlanFindingPresent));
+        sb.append(", isMiscellaneousFindingPresent=")
+                .append(String.valueOf(this.isMiscellaneousFindingPresent));
+        sb.append(", isErrorFindingPresent=").append(String.valueOf(this.isErrorFindingPresent));
+        sb.append(", isTimeoutFindingPresent=")
+                .append(String.valueOf(this.isTimeoutFindingPresent));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningAdvisorTaskFindingSummary)) {
+            return false;
+        }
+
+        SqlTuningAdvisorTaskFindingSummary other = (SqlTuningAdvisorTaskFindingSummary) o;
+        return java.util.Objects.equals(this.sqlTuningAdvisorTaskId, other.sqlTuningAdvisorTaskId)
+                && java.util.Objects.equals(
+                        this.sqlTuningAdvisorTaskObjectId, other.sqlTuningAdvisorTaskObjectId)
+                && java.util.Objects.equals(
+                        this.sqlTuningAdvisorTaskObjectExecutionId,
+                        other.sqlTuningAdvisorTaskObjectExecutionId)
+                && java.util.Objects.equals(this.sqlText, other.sqlText)
+                && java.util.Objects.equals(this.parsingSchema, other.parsingSchema)
+                && java.util.Objects.equals(this.sqlKey, other.sqlKey)
+                && java.util.Objects.equals(this.dbTimeBenefit, other.dbTimeBenefit)
+                && java.util.Objects.equals(
+                        this.perExecutionPercentage, other.perExecutionPercentage)
+                && java.util.Objects.equals(this.isStatsFindingPresent, other.isStatsFindingPresent)
+                && java.util.Objects.equals(
+                        this.isSqlProfileFindingPresent, other.isSqlProfileFindingPresent)
+                && java.util.Objects.equals(
+                        this.isSqlProfileFindingImplemented, other.isSqlProfileFindingImplemented)
+                && java.util.Objects.equals(this.isIndexFindingPresent, other.isIndexFindingPresent)
+                && java.util.Objects.equals(
+                        this.isRestructureSqlFindingPresent, other.isRestructureSqlFindingPresent)
+                && java.util.Objects.equals(
+                        this.isAlternativePlanFindingPresent, other.isAlternativePlanFindingPresent)
+                && java.util.Objects.equals(
+                        this.isMiscellaneousFindingPresent, other.isMiscellaneousFindingPresent)
+                && java.util.Objects.equals(this.isErrorFindingPresent, other.isErrorFindingPresent)
+                && java.util.Objects.equals(
+                        this.isTimeoutFindingPresent, other.isTimeoutFindingPresent)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sqlTuningAdvisorTaskId == null
+                                ? 43
+                                : this.sqlTuningAdvisorTaskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlTuningAdvisorTaskObjectId == null
+                                ? 43
+                                : this.sqlTuningAdvisorTaskObjectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlTuningAdvisorTaskObjectExecutionId == null
+                                ? 43
+                                : this.sqlTuningAdvisorTaskObjectExecutionId.hashCode());
+        result = (result * PRIME) + (this.sqlText == null ? 43 : this.sqlText.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parsingSchema == null ? 43 : this.parsingSchema.hashCode());
+        result = (result * PRIME) + (this.sqlKey == null ? 43 : this.sqlKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbTimeBenefit == null ? 43 : this.dbTimeBenefit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.perExecutionPercentage == null
+                                ? 43
+                                : this.perExecutionPercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isStatsFindingPresent == null
+                                ? 43
+                                : this.isStatsFindingPresent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSqlProfileFindingPresent == null
+                                ? 43
+                                : this.isSqlProfileFindingPresent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSqlProfileFindingImplemented == null
+                                ? 43
+                                : this.isSqlProfileFindingImplemented.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIndexFindingPresent == null
+                                ? 43
+                                : this.isIndexFindingPresent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRestructureSqlFindingPresent == null
+                                ? 43
+                                : this.isRestructureSqlFindingPresent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAlternativePlanFindingPresent == null
+                                ? 43
+                                : this.isAlternativePlanFindingPresent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMiscellaneousFindingPresent == null
+                                ? 43
+                                : this.isMiscellaneousFindingPresent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isErrorFindingPresent == null
+                                ? 43
+                                : this.isErrorFindingPresent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTimeoutFindingPresent == null
+                                ? 43
+                                : this.isTimeoutFindingPresent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

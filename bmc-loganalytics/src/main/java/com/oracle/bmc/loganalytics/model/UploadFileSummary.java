@@ -15,16 +15,64 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UploadFileSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UploadFileSummary {
+public final class UploadFileSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "reference",
+        "name",
+        "status",
+        "totalChunks",
+        "chunksConsumed",
+        "chunksSuccess",
+        "chunksFail",
+        "timeStarted",
+        "sourceName",
+        "entityType",
+        "entityName",
+        "logNamespace",
+        "logGroupId",
+        "logGroupName",
+        "failureDetails"
+    })
+    public UploadFileSummary(
+            String reference,
+            String name,
+            Status status,
+            java.math.BigDecimal totalChunks,
+            java.math.BigDecimal chunksConsumed,
+            java.math.BigDecimal chunksSuccess,
+            java.math.BigDecimal chunksFail,
+            java.util.Date timeStarted,
+            String sourceName,
+            String entityType,
+            String entityName,
+            String logNamespace,
+            String logGroupId,
+            String logGroupName,
+            String failureDetails) {
+        super();
+        this.reference = reference;
+        this.name = name;
+        this.status = status;
+        this.totalChunks = totalChunks;
+        this.chunksConsumed = chunksConsumed;
+        this.chunksSuccess = chunksSuccess;
+        this.chunksFail = chunksFail;
+        this.timeStarted = timeStarted;
+        this.sourceName = sourceName;
+        this.entityType = entityType;
+        this.entityName = entityName;
+        this.logNamespace = logNamespace;
+        this.logGroupId = logGroupId;
+        this.logGroupName = logGroupName;
+        this.failureDetails = failureDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("reference")
         private String reference;
@@ -217,21 +265,33 @@ public class UploadFileSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique internal identifier to refer upload file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
-    String reference;
+    private final String reference;
+
+    public String getReference() {
+        return reference;
+    }
 
     /**
      * Name of the file
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * Processing status of the file.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         InProgress("IN_PROGRESS"),
         Successful("SUCCESSFUL"),
@@ -242,6 +302,8 @@ public class UploadFileSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -279,80 +341,219 @@ public class UploadFileSummary {
      * Processing status of the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * Number of estimated chunks for this file. A chunk is a portion of the log file used for the processing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
-    java.math.BigDecimal totalChunks;
+    private final java.math.BigDecimal totalChunks;
+
+    public java.math.BigDecimal getTotalChunks() {
+        return totalChunks;
+    }
 
     /**
      * Number of chunks processed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunksConsumed")
-    java.math.BigDecimal chunksConsumed;
+    private final java.math.BigDecimal chunksConsumed;
+
+    public java.math.BigDecimal getChunksConsumed() {
+        return chunksConsumed;
+    }
 
     /**
      * Number of chunks processed successfully.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunksSuccess")
-    java.math.BigDecimal chunksSuccess;
+    private final java.math.BigDecimal chunksSuccess;
+
+    public java.math.BigDecimal getChunksSuccess() {
+        return chunksSuccess;
+    }
 
     /**
      * Number of chunks failed processing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunksFail")
-    java.math.BigDecimal chunksFail;
+    private final java.math.BigDecimal chunksFail;
+
+    public java.math.BigDecimal getChunksFail() {
+        return chunksFail;
+    }
 
     /**
      * The time when this file processing started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * Name of the log source used for processing this file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
 
     /**
      * Name of the entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
 
     /**
      * Name of the entity associated with the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
-    String entityName;
+    private final String entityName;
+
+    public String getEntityName() {
+        return entityName;
+    }
 
     /**
      * (Deprecated) Name of the log namespace associated with the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logNamespace")
-    String logNamespace;
+    private final String logNamespace;
+
+    public String getLogNamespace() {
+        return logNamespace;
+    }
 
     /**
      * Log group OCID associated with the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
-    String logGroupId;
+    private final String logGroupId;
+
+    public String getLogGroupId() {
+        return logGroupId;
+    }
 
     /**
      * Name of the log group associated with the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupName")
-    String logGroupName;
+    private final String logGroupName;
+
+    public String getLogGroupName() {
+        return logGroupName;
+    }
 
     /**
      * The details about upload processing failure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
-    String failureDetails;
+    private final String failureDetails;
+
+    public String getFailureDetails() {
+        return failureDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UploadFileSummary(");
+        sb.append("reference=").append(String.valueOf(this.reference));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", totalChunks=").append(String.valueOf(this.totalChunks));
+        sb.append(", chunksConsumed=").append(String.valueOf(this.chunksConsumed));
+        sb.append(", chunksSuccess=").append(String.valueOf(this.chunksSuccess));
+        sb.append(", chunksFail=").append(String.valueOf(this.chunksFail));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", entityName=").append(String.valueOf(this.entityName));
+        sb.append(", logNamespace=").append(String.valueOf(this.logNamespace));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", logGroupName=").append(String.valueOf(this.logGroupName));
+        sb.append(", failureDetails=").append(String.valueOf(this.failureDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UploadFileSummary)) {
+            return false;
+        }
+
+        UploadFileSummary other = (UploadFileSummary) o;
+        return java.util.Objects.equals(this.reference, other.reference)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.totalChunks, other.totalChunks)
+                && java.util.Objects.equals(this.chunksConsumed, other.chunksConsumed)
+                && java.util.Objects.equals(this.chunksSuccess, other.chunksSuccess)
+                && java.util.Objects.equals(this.chunksFail, other.chunksFail)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.entityName, other.entityName)
+                && java.util.Objects.equals(this.logNamespace, other.logNamespace)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.logGroupName, other.logGroupName)
+                && java.util.Objects.equals(this.failureDetails, other.failureDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.reference == null ? 43 : this.reference.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.totalChunks == null ? 43 : this.totalChunks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.chunksConsumed == null ? 43 : this.chunksConsumed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.chunksSuccess == null ? 43 : this.chunksSuccess.hashCode());
+        result = (result * PRIME) + (this.chunksFail == null ? 43 : this.chunksFail.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
+        result = (result * PRIME) + (this.logNamespace == null ? 43 : this.logNamespace.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result = (result * PRIME) + (this.logGroupName == null ? 43 : this.logGroupName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureDetails == null ? 43 : this.failureDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

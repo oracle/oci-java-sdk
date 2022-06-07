@@ -18,16 +18,22 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CommitMultipartUploadDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CommitMultipartUploadDetails {
+public final class CommitMultipartUploadDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"partsToCommit", "partsToExclude"})
+    public CommitMultipartUploadDetails(
+            java.util.List<CommitMultipartUploadPartDetails> partsToCommit,
+            java.util.List<Integer> partsToExclude) {
+        super();
+        this.partsToCommit = partsToCommit;
+        this.partsToExclude = partsToExclude;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("partsToCommit")
         private java.util.List<CommitMultipartUploadPartDetails> partsToCommit;
@@ -75,11 +81,19 @@ public class CommitMultipartUploadDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The part numbers and entity tags (ETags) for the parts to be committed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partsToCommit")
-    java.util.List<CommitMultipartUploadPartDetails> partsToCommit;
+    private final java.util.List<CommitMultipartUploadPartDetails> partsToCommit;
+
+    public java.util.List<CommitMultipartUploadPartDetails> getPartsToCommit() {
+        return partsToCommit;
+    }
 
     /**
      * The part numbers for the parts to be excluded from the completed object.
@@ -87,8 +101,58 @@ public class CommitMultipartUploadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partsToExclude")
-    java.util.List<Integer> partsToExclude;
+    private final java.util.List<Integer> partsToExclude;
+
+    public java.util.List<Integer> getPartsToExclude() {
+        return partsToExclude;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CommitMultipartUploadDetails(");
+        sb.append("partsToCommit=").append(String.valueOf(this.partsToCommit));
+        sb.append(", partsToExclude=").append(String.valueOf(this.partsToExclude));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CommitMultipartUploadDetails)) {
+            return false;
+        }
+
+        CommitMultipartUploadDetails other = (CommitMultipartUploadDetails) o;
+        return java.util.Objects.equals(this.partsToCommit, other.partsToCommit)
+                && java.util.Objects.equals(this.partsToExclude, other.partsToExclude)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.partsToCommit == null ? 43 : this.partsToCommit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partsToExclude == null ? 43 : this.partsToExclude.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

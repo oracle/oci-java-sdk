@@ -15,16 +15,21 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MetricThresholdRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MetricThresholdRule {
+public final class MetricThresholdRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({"durationInMinutes", "operator", "value"})
+    public MetricThresholdRule(Integer durationInMinutes, Operator operator, Integer value) {
+        super();
+        this.durationInMinutes = durationInMinutes;
+        this.operator = operator;
+        this.value = value;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
         private Integer durationInMinutes;
@@ -82,15 +87,23 @@ public class MetricThresholdRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
-    Integer durationInMinutes;
+    private final Integer durationInMinutes;
+
+    public Integer getDurationInMinutes() {
+        return durationInMinutes;
+    }
+
     /**
      * The comparison operator to use. Options are greater than (GT) or less than (LT).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Operator {
         Gt("GT"),
         Lt("LT"),
@@ -100,6 +113,9 @@ public class MetricThresholdRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Operator.class);
 
         private final String value;
         private static java.util.Map<String, Operator> map;
@@ -137,14 +153,69 @@ public class MetricThresholdRule {
      * The comparison operator to use. Options are greater than (GT) or less than (LT).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
-    Operator operator;
+    private final Operator operator;
+
+    public Operator getOperator() {
+        return operator;
+    }
 
     /**
      * Integer non-negative value. 0 < value < 100
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    Integer value;
+    private final Integer value;
+
+    public Integer getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MetricThresholdRule(");
+        sb.append("durationInMinutes=").append(String.valueOf(this.durationInMinutes));
+        sb.append(", operator=").append(String.valueOf(this.operator));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MetricThresholdRule)) {
+            return false;
+        }
+
+        MetricThresholdRule other = (MetricThresholdRule) o;
+        return java.util.Objects.equals(this.durationInMinutes, other.durationInMinutes)
+                && java.util.Objects.equals(this.operator, other.operator)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.durationInMinutes == null ? 43 : this.durationInMinutes.hashCode());
+        result = (result * PRIME) + (this.operator == null ? 43 : this.operator.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

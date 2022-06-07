@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVolumeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetVolumeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,12 +16,27 @@ public class GetVolumeRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String volumeId;
 
+    public String getVolumeId() {
+        return volumeId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetVolumeRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String volumeId = null;
+
+        /**
+         * The OCID of the volume.
+         * @return this builder instance
+         */
+        public Builder volumeId(String volumeId) {
+            this.volumeId = volumeId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -81,5 +88,62 @@ public class GetVolumeRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetVolumeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetVolumeRequest
+         */
+        public GetVolumeRequest buildWithoutInvocationCallback() {
+            GetVolumeRequest request = new GetVolumeRequest();
+            request.volumeId = volumeId;
+            return request;
+            // new GetVolumeRequest(volumeId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().volumeId(volumeId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",volumeId=").append(String.valueOf(this.volumeId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetVolumeRequest)) {
+            return false;
+        }
+
+        GetVolumeRequest other = (GetVolumeRequest) o;
+        return super.equals(o) && java.util.Objects.equals(this.volumeId, other.volumeId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.volumeId == null ? 43 : this.volumeId.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,31 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StandardTagNamespaceTemplate.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StandardTagNamespaceTemplate {
+public final class StandardTagNamespaceTemplate {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "standardTagNamespaceName",
+        "tagDefinitionTemplates",
+        "status"
+    })
+    public StandardTagNamespaceTemplate(
+            String description,
+            String standardTagNamespaceName,
+            java.util.List<StandardTagDefinitionTemplate> tagDefinitionTemplates,
+            String status) {
+        super();
+        this.description = description;
+        this.standardTagNamespaceName = standardTagNamespaceName;
+        this.tagDefinitionTemplates = tagDefinitionTemplates;
+        this.status = status;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -94,30 +109,109 @@ public class StandardTagNamespaceTemplate {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The default description of the tag namespace that users can use to create the tag namespace
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The reserved name of this standard tag namespace
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standardTagNamespaceName")
-    String standardTagNamespaceName;
+    private final String standardTagNamespaceName;
+
+    public String getStandardTagNamespaceName() {
+        return standardTagNamespaceName;
+    }
 
     /**
      * The template of the tag definition. This object includes necessary details to create the provided standard tag definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionTemplates")
-    java.util.List<StandardTagDefinitionTemplate> tagDefinitionTemplates;
+    private final java.util.List<StandardTagDefinitionTemplate> tagDefinitionTemplates;
+
+    public java.util.List<StandardTagDefinitionTemplate> getTagDefinitionTemplates() {
+        return tagDefinitionTemplates;
+    }
 
     /**
      * The status of the standard tag namespace
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StandardTagNamespaceTemplate(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", standardTagNamespaceName=")
+                .append(String.valueOf(this.standardTagNamespaceName));
+        sb.append(", tagDefinitionTemplates=").append(String.valueOf(this.tagDefinitionTemplates));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StandardTagNamespaceTemplate)) {
+            return false;
+        }
+
+        StandardTagNamespaceTemplate other = (StandardTagNamespaceTemplate) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.standardTagNamespaceName, other.standardTagNamespaceName)
+                && java.util.Objects.equals(
+                        this.tagDefinitionTemplates, other.tagDefinitionTemplates)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standardTagNamespaceName == null
+                                ? 43
+                                : this.standardTagNamespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagDefinitionTemplates == null
+                                ? 43
+                                : this.tagDefinitionTemplates.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,16 +7,16 @@ package com.oracle.bmc.genericartifactscontent.responses;
 import com.oracle.bmc.genericartifactscontent.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class PutGenericArtifactContentByPathResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,10 +25,18 @@ public class PutGenericArtifactContentByPathResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned GenericArtifact instance.
      */
     private com.oracle.bmc.genericartifactscontent.model.GenericArtifact genericArtifact;
+
+    public com.oracle.bmc.genericartifactscontent.model.GenericArtifact getGenericArtifact() {
+        return genericArtifact;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -55,6 +63,28 @@ public class PutGenericArtifactContentByPathResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.genericartifactscontent.model.GenericArtifact genericArtifact;
+
+        public Builder genericArtifact(
+                com.oracle.bmc.genericartifactscontent.model.GenericArtifact genericArtifact) {
+            this.genericArtifact = genericArtifact;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -72,5 +102,49 @@ public class PutGenericArtifactContentByPathResponse extends com.oracle.bmc.resp
             return new PutGenericArtifactContentByPathResponse(
                     __httpStatusCode__, etag, opcRequestId, genericArtifact);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",genericArtifact=").append(String.valueOf(genericArtifact));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PutGenericArtifactContentByPathResponse)) {
+            return false;
+        }
+
+        PutGenericArtifactContentByPathResponse other = (PutGenericArtifactContentByPathResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.genericArtifact, other.genericArtifact);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.genericArtifact == null ? 43 : this.genericArtifact.hashCode());
+        return result;
     }
 }

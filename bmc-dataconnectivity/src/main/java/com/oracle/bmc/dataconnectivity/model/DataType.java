@@ -15,20 +15,15 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataType.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataType extends BaseType {
+public final class DataType extends BaseType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -155,6 +150,10 @@ public class DataType extends BaseType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DataType(
             String key,
@@ -175,7 +174,6 @@ public class DataType extends BaseType {
     /**
      * The data type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DtType {
         Primitive("PRIMITIVE"),
         Structured("STRUCTURED"),
@@ -185,6 +183,8 @@ public class DataType extends BaseType {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(DtType.class);
 
         private final String value;
         private static java.util.Map<String, DtType> map;
@@ -222,17 +222,80 @@ public class DataType extends BaseType {
      * The data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dtType")
-    DtType dtType;
+    private final DtType dtType;
+
+    public DtType getDtType() {
+        return dtType;
+    }
 
     /**
      * The data type system name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeSystemName")
-    String typeSystemName;
+    private final String typeSystemName;
+
+    public String getTypeSystemName() {
+        return typeSystemName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configDefinition")
-    ConfigDefinition configDefinition;
+    private final ConfigDefinition configDefinition;
+
+    public ConfigDefinition getConfigDefinition() {
+        return configDefinition;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataType(");
+        sb.append("super=").append(super.toString());
+        sb.append(", dtType=").append(String.valueOf(this.dtType));
+        sb.append(", typeSystemName=").append(String.valueOf(this.typeSystemName));
+        sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataType)) {
+            return false;
+        }
+
+        DataType other = (DataType) o;
+        return java.util.Objects.equals(this.dtType, other.dtType)
+                && java.util.Objects.equals(this.typeSystemName, other.typeSystemName)
+                && java.util.Objects.equals(this.configDefinition, other.configDefinition)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dtType == null ? 43 : this.dtType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.typeSystemName == null ? 43 : this.typeSystemName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configDefinition == null ? 43 : this.configDefinition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

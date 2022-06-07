@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.31.0 - 2022-06-07
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the eu-paris-1 region
+- Support for private endpoints in Resource Manager service
+- Support downloading generated Terraform plan output in JSON or binary format in Resource Manager service
+- Support for querying OPSI Data Objects in the Operations Insights service
+
+### Changed
+- Network security groups (NSGs) are now optional for autonomous databases on private endpoints in the Database service
+
+### Fixed
+- Fixed a potential data curruption problem for binary data upload with default retries. We recommend that you update to this version `2.31.0` or later. For details, see https://github.com/oracle/oci-java-sdk/issues/304
+
 ## 2.30.0 - 2022-05-31
 ### Added
 

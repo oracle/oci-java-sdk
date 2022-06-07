@@ -15,14 +15,35 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RecalledData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RecalledData {
+public final class RecalledData {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeDataEnded",
+        "timeDataStarted",
+        "timeStarted",
+        "status",
+        "recallCount",
+        "storageUsageInBytes"
+    })
+    public RecalledData(
+            java.util.Date timeDataEnded,
+            java.util.Date timeDataStarted,
+            java.util.Date timeStarted,
+            Status status,
+            Integer recallCount,
+            Long storageUsageInBytes) {
+        super();
+        this.timeDataEnded = timeDataEnded;
+        this.timeDataStarted = timeDataStarted;
+        this.timeStarted = timeStarted;
+        this.status = status;
+        this.recallCount = recallCount;
+        this.storageUsageInBytes = storageUsageInBytes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
@@ -116,27 +137,43 @@ public class RecalledData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This is the end of the time range of the related data
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
-    java.util.Date timeDataEnded;
+    private final java.util.Date timeDataEnded;
+
+    public java.util.Date getTimeDataEnded() {
+        return timeDataEnded;
+    }
 
     /**
      * This is the start of the time range of the related data
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
-    java.util.Date timeDataStarted;
+    private final java.util.Date timeDataStarted;
+
+    public java.util.Date getTimeDataStarted() {
+        return timeDataStarted;
+    }
 
     /**
      * This is the time when the first recall operation was started for this RecalledData
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
+
     /**
      * This is the status of the recall
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Recalled("RECALLED"),
         Pending("PENDING"),
@@ -146,6 +183,8 @@ public class RecalledData {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -183,7 +222,11 @@ public class RecalledData {
      * This is the status of the recall
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * This is the number of recall operations for this recall.  Note one RecalledData can be merged from the results
@@ -191,14 +234,84 @@ public class RecalledData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recallCount")
-    Integer recallCount;
+    private final Integer recallCount;
+
+    public Integer getRecallCount() {
+        return recallCount;
+    }
 
     /**
      * This is the size in bytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
-    Long storageUsageInBytes;
+    private final Long storageUsageInBytes;
+
+    public Long getStorageUsageInBytes() {
+        return storageUsageInBytes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RecalledData(");
+        sb.append("timeDataEnded=").append(String.valueOf(this.timeDataEnded));
+        sb.append(", timeDataStarted=").append(String.valueOf(this.timeDataStarted));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", recallCount=").append(String.valueOf(this.recallCount));
+        sb.append(", storageUsageInBytes=").append(String.valueOf(this.storageUsageInBytes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RecalledData)) {
+            return false;
+        }
+
+        RecalledData other = (RecalledData) o;
+        return java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
+                && java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.recallCount, other.recallCount)
+                && java.util.Objects.equals(this.storageUsageInBytes, other.storageUsageInBytes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeDataEnded == null ? 43 : this.timeDataEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataStarted == null ? 43 : this.timeDataStarted.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.recallCount == null ? 43 : this.recallCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageUsageInBytes == null
+                                ? 43
+                                : this.storageUsageInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

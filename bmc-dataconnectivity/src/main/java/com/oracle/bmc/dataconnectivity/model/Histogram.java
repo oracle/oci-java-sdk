@@ -15,14 +15,18 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Histogram.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Histogram {
+public final class Histogram {
+    @Deprecated
+    @java.beans.ConstructorProperties({"ranges", "counts"})
+    public Histogram(java.util.List<String> ranges, java.util.List<Integer> counts) {
+        super();
+        this.ranges = ranges;
+        this.counts = counts;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ranges")
         private java.util.List<String> ranges;
@@ -67,18 +71,72 @@ public class Histogram {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Range of values
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ranges")
-    java.util.List<String> ranges;
+    private final java.util.List<String> ranges;
+
+    public java.util.List<String> getRanges() {
+        return ranges;
+    }
 
     /**
      * Count of each ranges.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("counts")
-    java.util.List<Integer> counts;
+    private final java.util.List<Integer> counts;
+
+    public java.util.List<Integer> getCounts() {
+        return counts;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Histogram(");
+        sb.append("ranges=").append(String.valueOf(this.ranges));
+        sb.append(", counts=").append(String.valueOf(this.counts));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Histogram)) {
+            return false;
+        }
+
+        Histogram other = (Histogram) o;
+        return java.util.Objects.equals(this.ranges, other.ranges)
+                && java.util.Objects.equals(this.counts, other.counts)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ranges == null ? 43 : this.ranges.hashCode());
+        result = (result * PRIME) + (this.counts == null ? 43 : this.counts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

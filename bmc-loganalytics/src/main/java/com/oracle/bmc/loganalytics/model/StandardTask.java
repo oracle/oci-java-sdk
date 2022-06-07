@@ -16,20 +16,15 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StandardTask.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "kind"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StandardTask extends ScheduledTask {
+public final class StandardTask extends ScheduledTask {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -256,6 +251,10 @@ public class StandardTask extends ScheduledTask {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public StandardTask(
             String id,
@@ -300,7 +299,6 @@ public class StandardTask extends ScheduledTask {
     /**
      * The most recent task execution status.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LastExecutionStatus {
         Failed("FAILED"),
         Succeeded("SUCCEEDED"),
@@ -310,6 +308,9 @@ public class StandardTask extends ScheduledTask {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LastExecutionStatus.class);
 
         private final String value;
         private static java.util.Map<String, LastExecutionStatus> map;
@@ -347,14 +348,72 @@ public class StandardTask extends ScheduledTask {
      * The most recent task execution status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
-    LastExecutionStatus lastExecutionStatus;
+    private final LastExecutionStatus lastExecutionStatus;
+
+    public LastExecutionStatus getLastExecutionStatus() {
+        return lastExecutionStatus;
+    }
 
     /**
      * The date and time the scheduled task last executed, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
-    java.util.Date timeLastExecuted;
+    private final java.util.Date timeLastExecuted;
+
+    public java.util.Date getTimeLastExecuted() {
+        return timeLastExecuted;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StandardTask(");
+        sb.append("super=").append(super.toString());
+        sb.append(", lastExecutionStatus=").append(String.valueOf(this.lastExecutionStatus));
+        sb.append(", timeLastExecuted=").append(String.valueOf(this.timeLastExecuted));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StandardTask)) {
+            return false;
+        }
+
+        StandardTask other = (StandardTask) o;
+        return java.util.Objects.equals(this.lastExecutionStatus, other.lastExecutionStatus)
+                && java.util.Objects.equals(this.timeLastExecuted, other.timeLastExecuted)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.lastExecutionStatus == null
+                                ? 43
+                                : this.lastExecutionStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastExecuted == null ? 43 : this.timeLastExecuted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

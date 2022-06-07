@@ -15,14 +15,29 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VaultUsage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VaultUsage {
+public final class VaultUsage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "keyCount",
+        "keyVersionCount",
+        "softwareKeyCount",
+        "softwareKeyVersionCount"
+    })
+    public VaultUsage(
+            Integer keyCount,
+            Integer keyVersionCount,
+            Integer softwareKeyCount,
+            Integer softwareKeyVersionCount) {
+        super();
+        this.keyCount = keyCount;
+        this.keyVersionCount = keyVersionCount;
+        this.softwareKeyCount = softwareKeyCount;
+        this.softwareKeyVersionCount = softwareKeyVersionCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("keyCount")
         private Integer keyCount;
@@ -91,30 +106,108 @@ public class VaultUsage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of keys in this vault that persist on a hardware security module (HSM), across all compartments, excluding keys in a {@code DELETED} state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyCount")
-    Integer keyCount;
+    private final Integer keyCount;
+
+    public Integer getKeyCount() {
+        return keyCount;
+    }
 
     /**
      * The number of key versions in this vault that persist on a hardware security module (HSM), across all compartments, excluding key versions in a {@code DELETED} state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionCount")
-    Integer keyVersionCount;
+    private final Integer keyVersionCount;
+
+    public Integer getKeyVersionCount() {
+        return keyVersionCount;
+    }
 
     /**
      * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a {@code DELETED} state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyCount")
-    Integer softwareKeyCount;
+    private final Integer softwareKeyCount;
+
+    public Integer getSoftwareKeyCount() {
+        return softwareKeyCount;
+    }
 
     /**
      * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a {@code DELETED} state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyVersionCount")
-    Integer softwareKeyVersionCount;
+    private final Integer softwareKeyVersionCount;
+
+    public Integer getSoftwareKeyVersionCount() {
+        return softwareKeyVersionCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VaultUsage(");
+        sb.append("keyCount=").append(String.valueOf(this.keyCount));
+        sb.append(", keyVersionCount=").append(String.valueOf(this.keyVersionCount));
+        sb.append(", softwareKeyCount=").append(String.valueOf(this.softwareKeyCount));
+        sb.append(", softwareKeyVersionCount=")
+                .append(String.valueOf(this.softwareKeyVersionCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VaultUsage)) {
+            return false;
+        }
+
+        VaultUsage other = (VaultUsage) o;
+        return java.util.Objects.equals(this.keyCount, other.keyCount)
+                && java.util.Objects.equals(this.keyVersionCount, other.keyVersionCount)
+                && java.util.Objects.equals(this.softwareKeyCount, other.softwareKeyCount)
+                && java.util.Objects.equals(
+                        this.softwareKeyVersionCount, other.softwareKeyVersionCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.keyCount == null ? 43 : this.keyCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyVersionCount == null ? 43 : this.keyVersionCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareKeyCount == null ? 43 : this.softwareKeyCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareKeyVersionCount == null
+                                ? 43
+                                : this.softwareKeyVersionCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

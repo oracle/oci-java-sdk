@@ -15,14 +15,44 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterMetadata.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClusterMetadata {
+public final class ClusterMetadata {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeCreated",
+        "createdByUserId",
+        "createdByWorkRequestId",
+        "timeDeleted",
+        "deletedByUserId",
+        "deletedByWorkRequestId",
+        "timeUpdated",
+        "updatedByUserId",
+        "updatedByWorkRequestId"
+    })
+    public ClusterMetadata(
+            java.util.Date timeCreated,
+            String createdByUserId,
+            String createdByWorkRequestId,
+            java.util.Date timeDeleted,
+            String deletedByUserId,
+            String deletedByWorkRequestId,
+            java.util.Date timeUpdated,
+            String updatedByUserId,
+            String updatedByWorkRequestId) {
+        super();
+        this.timeCreated = timeCreated;
+        this.createdByUserId = createdByUserId;
+        this.createdByWorkRequestId = createdByWorkRequestId;
+        this.timeDeleted = timeDeleted;
+        this.deletedByUserId = deletedByUserId;
+        this.deletedByWorkRequestId = deletedByWorkRequestId;
+        this.timeUpdated = timeUpdated;
+        this.updatedByUserId = updatedByUserId;
+        this.updatedByWorkRequestId = updatedByWorkRequestId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -149,60 +179,184 @@ public class ClusterMetadata {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The time the cluster was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The user who created the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByUserId")
-    String createdByUserId;
+    private final String createdByUserId;
+
+    public String getCreatedByUserId() {
+        return createdByUserId;
+    }
 
     /**
      * The OCID of the work request which created the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByWorkRequestId")
-    String createdByWorkRequestId;
+    private final String createdByWorkRequestId;
+
+    public String getCreatedByWorkRequestId() {
+        return createdByWorkRequestId;
+    }
 
     /**
      * The time the cluster was deleted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDeleted")
-    java.util.Date timeDeleted;
+    private final java.util.Date timeDeleted;
+
+    public java.util.Date getTimeDeleted() {
+        return timeDeleted;
+    }
 
     /**
      * The user who deleted the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletedByUserId")
-    String deletedByUserId;
+    private final String deletedByUserId;
+
+    public String getDeletedByUserId() {
+        return deletedByUserId;
+    }
 
     /**
      * The OCID of the work request which deleted the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletedByWorkRequestId")
-    String deletedByWorkRequestId;
+    private final String deletedByWorkRequestId;
+
+    public String getDeletedByWorkRequestId() {
+        return deletedByWorkRequestId;
+    }
 
     /**
      * The time the cluster was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The user who updated the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByUserId")
-    String updatedByUserId;
+    private final String updatedByUserId;
+
+    public String getUpdatedByUserId() {
+        return updatedByUserId;
+    }
 
     /**
      * The OCID of the work request which updated the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByWorkRequestId")
-    String updatedByWorkRequestId;
+    private final String updatedByWorkRequestId;
+
+    public String getUpdatedByWorkRequestId() {
+        return updatedByWorkRequestId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClusterMetadata(");
+        sb.append("timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", createdByUserId=").append(String.valueOf(this.createdByUserId));
+        sb.append(", createdByWorkRequestId=").append(String.valueOf(this.createdByWorkRequestId));
+        sb.append(", timeDeleted=").append(String.valueOf(this.timeDeleted));
+        sb.append(", deletedByUserId=").append(String.valueOf(this.deletedByUserId));
+        sb.append(", deletedByWorkRequestId=").append(String.valueOf(this.deletedByWorkRequestId));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", updatedByUserId=").append(String.valueOf(this.updatedByUserId));
+        sb.append(", updatedByWorkRequestId=").append(String.valueOf(this.updatedByWorkRequestId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClusterMetadata)) {
+            return false;
+        }
+
+        ClusterMetadata other = (ClusterMetadata) o;
+        return java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.createdByUserId, other.createdByUserId)
+                && java.util.Objects.equals(
+                        this.createdByWorkRequestId, other.createdByWorkRequestId)
+                && java.util.Objects.equals(this.timeDeleted, other.timeDeleted)
+                && java.util.Objects.equals(this.deletedByUserId, other.deletedByUserId)
+                && java.util.Objects.equals(
+                        this.deletedByWorkRequestId, other.deletedByWorkRequestId)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.updatedByUserId, other.updatedByUserId)
+                && java.util.Objects.equals(
+                        this.updatedByWorkRequestId, other.updatedByWorkRequestId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createdByUserId == null ? 43 : this.createdByUserId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createdByWorkRequestId == null
+                                ? 43
+                                : this.createdByWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.timeDeleted == null ? 43 : this.timeDeleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deletedByUserId == null ? 43 : this.deletedByUserId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deletedByWorkRequestId == null
+                                ? 43
+                                : this.deletedByWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updatedByUserId == null ? 43 : this.updatedByUserId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updatedByWorkRequestId == null
+                                ? 43
+                                : this.updatedByWorkRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

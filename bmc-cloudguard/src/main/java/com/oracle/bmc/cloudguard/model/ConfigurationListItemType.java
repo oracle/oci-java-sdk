@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Possible configuration list item types
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum ConfigurationListItemType {
     Managed("MANAGED"),
     Custom("CUSTOM"),
@@ -18,6 +17,9 @@ public enum ConfigurationListItemType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ConfigurationListItemType.class);
 
     private final String value;
     private static java.util.Map<String, ConfigurationListItemType> map;

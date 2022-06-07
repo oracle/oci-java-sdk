@@ -15,14 +15,35 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateSdkDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSdkDetails {
+public final class CreateSdkDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "targetLanguage",
+        "apiId",
+        "freeformTags",
+        "definedTags",
+        "parameters"
+    })
+    public CreateSdkDetails(
+            String displayName,
+            String targetLanguage,
+            String apiId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> parameters) {
+        super();
+        this.displayName = displayName;
+        this.targetLanguage = targetLanguage;
+        this.apiId = apiId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.parameters = parameters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -117,6 +138,10 @@ public class CreateSdkDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
@@ -125,21 +150,33 @@ public class CreateSdkDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The string representing the target programming language for generating the SDK.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetLanguage")
-    String targetLanguage;
+    private final String targetLanguage;
+
+    public String getTargetLanguage() {
+        return targetLanguage;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of API resource
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiId")
-    String apiId;
+    private final String apiId;
+
+    public String getApiId() {
+        return apiId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
@@ -150,7 +187,11 @@ public class CreateSdkDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -161,7 +202,11 @@ public class CreateSdkDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Additional optional configurations that can be passed to generate SDK Api.
@@ -171,8 +216,68 @@ public class CreateSdkDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.Map<String, String> parameters;
+    private final java.util.Map<String, String> parameters;
+
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSdkDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", targetLanguage=").append(String.valueOf(this.targetLanguage));
+        sb.append(", apiId=").append(String.valueOf(this.apiId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSdkDetails)) {
+            return false;
+        }
+
+        CreateSdkDetails other = (CreateSdkDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.targetLanguage, other.targetLanguage)
+                && java.util.Objects.equals(this.apiId, other.apiId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetLanguage == null ? 43 : this.targetLanguage.hashCode());
+        result = (result * PRIME) + (this.apiId == null ? 43 : this.apiId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,20 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DbIormConfigUpdateDetail.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbIormConfigUpdateDetail {
+public final class DbIormConfigUpdateDetail {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dbName", "share"})
+    public DbIormConfigUpdateDetail(String dbName, Integer share) {
+        super();
+        this.dbName = dbName;
+        this.share = share;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
@@ -70,20 +74,74 @@ public class DbIormConfigUpdateDetail {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     /**
      * The relative priority of this database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("share")
-    Integer share;
+    private final Integer share;
+
+    public Integer getShare() {
+        return share;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbIormConfigUpdateDetail(");
+        sb.append("dbName=").append(String.valueOf(this.dbName));
+        sb.append(", share=").append(String.valueOf(this.share));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbIormConfigUpdateDetail)) {
+            return false;
+        }
+
+        DbIormConfigUpdateDetail other = (DbIormConfigUpdateDetail) o;
+        return java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.share, other.share)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.share == null ? 43 : this.share.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

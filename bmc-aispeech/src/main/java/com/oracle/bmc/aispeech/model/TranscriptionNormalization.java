@@ -15,16 +15,21 @@ package com.oracle.bmc.aispeech.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TranscriptionNormalization.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TranscriptionNormalization {
+public final class TranscriptionNormalization {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isPunctuationEnabled", "filters"})
+    public TranscriptionNormalization(
+            Boolean isPunctuationEnabled, java.util.List<TranscriptionFilter> filters) {
+        super();
+        this.isPunctuationEnabled = isPunctuationEnabled;
+        this.filters = filters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isPunctuationEnabled")
         private Boolean isPunctuationEnabled;
@@ -71,18 +76,76 @@ public class TranscriptionNormalization {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Whether to add punctuation in generated transcription. By default it is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPunctuationEnabled")
-    Boolean isPunctuationEnabled;
+    private final Boolean isPunctuationEnabled;
+
+    public Boolean getIsPunctuationEnabled() {
+        return isPunctuationEnabled;
+    }
 
     /**
      * List of filters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
-    java.util.List<TranscriptionFilter> filters;
+    private final java.util.List<TranscriptionFilter> filters;
+
+    public java.util.List<TranscriptionFilter> getFilters() {
+        return filters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TranscriptionNormalization(");
+        sb.append("isPunctuationEnabled=").append(String.valueOf(this.isPunctuationEnabled));
+        sb.append(", filters=").append(String.valueOf(this.filters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TranscriptionNormalization)) {
+            return false;
+        }
+
+        TranscriptionNormalization other = (TranscriptionNormalization) o;
+        return java.util.Objects.equals(this.isPunctuationEnabled, other.isPunctuationEnabled)
+                && java.util.Objects.equals(this.filters, other.filters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isPunctuationEnabled == null
+                                ? 43
+                                : this.isPunctuationEnabled.hashCode());
+        result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

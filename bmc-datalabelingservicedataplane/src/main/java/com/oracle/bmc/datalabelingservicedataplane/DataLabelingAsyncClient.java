@@ -7,6 +7,7 @@ package com.oracle.bmc.datalabelingservicedataplane;
 import com.oracle.bmc.datalabelingservicedataplane.internal.http.*;
 import com.oracle.bmc.datalabelingservicedataplane.requests.*;
 import com.oracle.bmc.datalabelingservicedataplane.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for DataLabeling service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.datalabelingservicedataplane.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.extern.slf4j.Slf4j
 public class DataLabelingAsyncClient implements DataLabelingAsync {
     /**
      * Service instance for DataLabeling.
@@ -35,7 +35,9 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                             "https://datalabeling-dp.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataLabelingAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
          * @return the client
          */
         public DataLabelingAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DataLabelingAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

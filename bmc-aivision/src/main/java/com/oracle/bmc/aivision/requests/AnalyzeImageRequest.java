@@ -9,14 +9,6 @@ import com.oracle.bmc.aivision.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/AnalyzeImageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AnalyzeImageRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AnalyzeImageRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.aivision.model.AnalyzeImageDetails> {
@@ -26,10 +18,17 @@ public class AnalyzeImageRequest
      */
     private com.oracle.bmc.aivision.model.AnalyzeImageDetails analyzeImageDetails;
 
+    public com.oracle.bmc.aivision.model.AnalyzeImageDetails getAnalyzeImageDetails() {
+        return analyzeImageDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -47,6 +46,29 @@ public class AnalyzeImageRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.aivision.model.AnalyzeImageDetails analyzeImageDetails = null;
+
+        /**
+         * Details about how to analyze an image.
+         * @return this builder instance
+         */
+        public Builder analyzeImageDetails(
+                com.oracle.bmc.aivision.model.AnalyzeImageDetails analyzeImageDetails) {
+            this.analyzeImageDetails = analyzeImageDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -110,5 +132,71 @@ public class AnalyzeImageRequest
             analyzeImageDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AnalyzeImageRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AnalyzeImageRequest
+         */
+        public AnalyzeImageRequest buildWithoutInvocationCallback() {
+            AnalyzeImageRequest request = new AnalyzeImageRequest();
+            request.analyzeImageDetails = analyzeImageDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new AnalyzeImageRequest(analyzeImageDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().analyzeImageDetails(analyzeImageDetails).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",analyzeImageDetails=").append(String.valueOf(this.analyzeImageDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnalyzeImageRequest)) {
+            return false;
+        }
+
+        AnalyzeImageRequest other = (AnalyzeImageRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.analyzeImageDetails, other.analyzeImageDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.analyzeImageDetails == null
+                                ? 43
+                                : this.analyzeImageDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

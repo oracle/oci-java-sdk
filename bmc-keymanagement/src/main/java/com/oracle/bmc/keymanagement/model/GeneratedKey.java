@@ -15,14 +15,19 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GeneratedKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GeneratedKey {
+public final class GeneratedKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({"ciphertext", "plaintext", "plaintextChecksum"})
+    public GeneratedKey(String ciphertext, String plaintext, String plaintextChecksum) {
+        super();
+        this.ciphertext = ciphertext;
+        this.plaintext = plaintext;
+        this.plaintextChecksum = plaintextChecksum;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
         private String ciphertext;
@@ -79,11 +84,19 @@ public class GeneratedKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The encrypted data encryption key generated from a master encryption key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
-    String ciphertext;
+    private final String ciphertext;
+
+    public String getCiphertext() {
+        return ciphertext;
+    }
 
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
@@ -92,7 +105,11 @@ public class GeneratedKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
-    String plaintext;
+    private final String plaintext;
+
+    public String getPlaintext() {
+        return plaintext;
+    }
 
     /**
      * The checksum of the plaintext data encryption key, which is included if the
@@ -101,8 +118,59 @@ public class GeneratedKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
-    String plaintextChecksum;
+    private final String plaintextChecksum;
+
+    public String getPlaintextChecksum() {
+        return plaintextChecksum;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GeneratedKey(");
+        sb.append("ciphertext=").append(String.valueOf(this.ciphertext));
+        sb.append(", plaintext=").append(String.valueOf(this.plaintext));
+        sb.append(", plaintextChecksum=").append(String.valueOf(this.plaintextChecksum));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GeneratedKey)) {
+            return false;
+        }
+
+        GeneratedKey other = (GeneratedKey) o;
+        return java.util.Objects.equals(this.ciphertext, other.ciphertext)
+                && java.util.Objects.equals(this.plaintext, other.plaintext)
+                && java.util.Objects.equals(this.plaintextChecksum, other.plaintextChecksum)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ciphertext == null ? 43 : this.ciphertext.hashCode());
+        result = (result * PRIME) + (this.plaintext == null ? 43 : this.plaintext.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.plaintextChecksum == null ? 43 : this.plaintextChecksum.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

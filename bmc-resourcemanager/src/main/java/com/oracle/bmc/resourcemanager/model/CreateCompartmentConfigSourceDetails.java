@@ -16,22 +16,17 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateCompartmentConfigSourceDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "configSourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateCompartmentConfigSourceDetails extends CreateConfigSourceDetails {
+public final class CreateCompartmentConfigSourceDetails extends CreateConfigSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
         private String workingDirectory;
@@ -100,6 +95,10 @@ public class CreateCompartmentConfigSourceDetails extends CreateConfigSourceDeta
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateCompartmentConfigSourceDetails(
             String workingDirectory,
@@ -118,7 +117,11 @@ public class CreateCompartmentConfigSourceDetails extends CreateConfigSourceDeta
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The region to use for creating the stack. The new stack will include definitions for
@@ -126,7 +129,11 @@ public class CreateCompartmentConfigSourceDetails extends CreateConfigSourceDeta
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * Filter for [services to use with Resource Discovery](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
@@ -136,8 +143,65 @@ public class CreateCompartmentConfigSourceDetails extends CreateConfigSourceDeta
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("servicesToDiscover")
-    java.util.List<String> servicesToDiscover;
+    private final java.util.List<String> servicesToDiscover;
+
+    public java.util.List<String> getServicesToDiscover() {
+        return servicesToDiscover;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateCompartmentConfigSourceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", servicesToDiscover=").append(String.valueOf(this.servicesToDiscover));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateCompartmentConfigSourceDetails)) {
+            return false;
+        }
+
+        CreateCompartmentConfigSourceDetails other = (CreateCompartmentConfigSourceDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.servicesToDiscover, other.servicesToDiscover)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.servicesToDiscover == null
+                                ? 43
+                                : this.servicesToDiscover.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

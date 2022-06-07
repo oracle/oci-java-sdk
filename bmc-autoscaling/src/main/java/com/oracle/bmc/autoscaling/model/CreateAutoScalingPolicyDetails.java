@@ -23,12 +23,6 @@ package com.oracle.bmc.autoscaling.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -47,23 +41,80 @@ package com.oracle.bmc.autoscaling.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateAutoScalingPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"capacity", "displayName", "isEnabled"})
+    protected CreateAutoScalingPolicyDetails(
+            Capacity capacity, String displayName, Boolean isEnabled) {
+        super();
+        this.capacity = capacity;
+        this.displayName = displayName;
+        this.isEnabled = isEnabled;
+    }
 
     /**
      * The capacity requirements of the autoscaling policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
-    Capacity capacity;
+    private final Capacity capacity;
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Whether the autoscaling policy is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateAutoScalingPolicyDetails(");
+        sb.append("capacity=").append(String.valueOf(this.capacity));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAutoScalingPolicyDetails)) {
+            return false;
+        }
+
+        CreateAutoScalingPolicyDetails other = (CreateAutoScalingPolicyDetails) o;
+        return java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        return result;
+    }
 }

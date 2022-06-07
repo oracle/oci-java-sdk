@@ -7,6 +7,7 @@ package com.oracle.bmc.integration;
 import com.oracle.bmc.integration.internal.http.*;
 import com.oracle.bmc.integration.requests.*;
 import com.oracle.bmc.integration.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for IntegrationInstance service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.integration.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
-@lombok.extern.slf4j.Slf4j
 public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync {
     /**
      * Service instance for IntegrationInstance.
@@ -34,7 +34,9 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                     .serviceEndpointTemplate("https://integration.{region}.ocp.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(IntegrationInstanceAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
          * @return the client
          */
         public IntegrationInstanceAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new IntegrationInstanceAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

@@ -15,16 +15,22 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateBulkProblemStatusDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateBulkProblemStatusDetails {
+public final class UpdateBulkProblemStatusDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"status", "problemIds", "comment"})
+    public UpdateBulkProblemStatusDetails(
+            ProblemLifecycleDetail status, java.util.List<String> problemIds, String comment) {
+        super();
+        this.status = status;
+        this.problemIds = problemIds;
+        this.comment = comment;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ProblemLifecycleDetail status;
@@ -80,24 +86,85 @@ public class UpdateBulkProblemStatusDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Action taken by user
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    ProblemLifecycleDetail status;
+    private final ProblemLifecycleDetail status;
+
+    public ProblemLifecycleDetail getStatus() {
+        return status;
+    }
 
     /**
      * List of ProblemIds to be passed in to update the Problem status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
-    java.util.List<String> problemIds;
+    private final java.util.List<String> problemIds;
+
+    public java.util.List<String> getProblemIds() {
+        return problemIds;
+    }
 
     /**
      * User defined comment to be passed in to update the problem.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
-    String comment;
+    private final String comment;
+
+    public String getComment() {
+        return comment;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateBulkProblemStatusDetails(");
+        sb.append("status=").append(String.valueOf(this.status));
+        sb.append(", problemIds=").append(String.valueOf(this.problemIds));
+        sb.append(", comment=").append(String.valueOf(this.comment));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBulkProblemStatusDetails)) {
+            return false;
+        }
+
+        UpdateBulkProblemStatusDetails other = (UpdateBulkProblemStatusDetails) o;
+        return java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.problemIds, other.problemIds)
+                && java.util.Objects.equals(this.comment, other.comment)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.problemIds == null ? 43 : this.problemIds.hashCode());
+        result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

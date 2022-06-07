@@ -9,14 +9,6 @@ import com.oracle.bmc.dts.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferApplianceAdminCredentialsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateTransferApplianceAdminCredentialsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateTransferApplianceAdminCredentialsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.TransferAppliancePublicKey> {
@@ -26,15 +18,25 @@ public class CreateTransferApplianceAdminCredentialsRequest
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * Label of the Transfer Appliance
      */
     private String transferApplianceLabel;
 
+    public String getTransferApplianceLabel() {
+        return transferApplianceLabel;
+    }
     /**
      *
      */
     private com.oracle.bmc.dts.model.TransferAppliancePublicKey adminPublicKey;
+
+    public com.oracle.bmc.dts.model.TransferAppliancePublicKey getAdminPublicKey() {
+        return adminPublicKey;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -53,6 +55,40 @@ public class CreateTransferApplianceAdminCredentialsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String id = null;
+
+        /**
+         * ID of the Transfer Job
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String transferApplianceLabel = null;
+
+        /**
+         * Label of the Transfer Appliance
+         * @return this builder instance
+         */
+        public Builder transferApplianceLabel(String transferApplianceLabel) {
+            this.transferApplianceLabel = transferApplianceLabel;
+            return this;
+        }
+
+        private com.oracle.bmc.dts.model.TransferAppliancePublicKey adminPublicKey = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder adminPublicKey(
+                com.oracle.bmc.dts.model.TransferAppliancePublicKey adminPublicKey) {
+            this.adminPublicKey = adminPublicKey;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -118,5 +154,83 @@ public class CreateTransferApplianceAdminCredentialsRequest
             adminPublicKey(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateTransferApplianceAdminCredentialsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateTransferApplianceAdminCredentialsRequest
+         */
+        public CreateTransferApplianceAdminCredentialsRequest buildWithoutInvocationCallback() {
+            CreateTransferApplianceAdminCredentialsRequest request =
+                    new CreateTransferApplianceAdminCredentialsRequest();
+            request.id = id;
+            request.transferApplianceLabel = transferApplianceLabel;
+            request.adminPublicKey = adminPublicKey;
+            return request;
+            // new CreateTransferApplianceAdminCredentialsRequest(id, transferApplianceLabel, adminPublicKey);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .id(id)
+                .transferApplianceLabel(transferApplianceLabel)
+                .adminPublicKey(adminPublicKey);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",transferApplianceLabel=").append(String.valueOf(this.transferApplianceLabel));
+        sb.append(",adminPublicKey=").append(String.valueOf(this.adminPublicKey));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTransferApplianceAdminCredentialsRequest)) {
+            return false;
+        }
+
+        CreateTransferApplianceAdminCredentialsRequest other =
+                (CreateTransferApplianceAdminCredentialsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.transferApplianceLabel, other.transferApplianceLabel)
+                && java.util.Objects.equals(this.adminPublicKey, other.adminPublicKey);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transferApplianceLabel == null
+                                ? 43
+                                : this.transferApplianceLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPublicKey == null ? 43 : this.adminPublicKey.hashCode());
+        return result;
     }
 }

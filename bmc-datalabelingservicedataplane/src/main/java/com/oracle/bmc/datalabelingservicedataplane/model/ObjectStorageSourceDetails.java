@@ -15,22 +15,17 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectStorageSourceDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "sourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectStorageSourceDetails extends SourceDetails {
+public final class ObjectStorageSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("relativePath")
         private String relativePath;
@@ -98,6 +93,10 @@ public class ObjectStorageSourceDetails extends SourceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ObjectStorageSourceDetails(
             String relativePath,
@@ -115,26 +114,92 @@ public class ObjectStorageSourceDetails extends SourceDetails {
      * The path relative to the prefix specified in the dataset source details (file name).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relativePath")
-    String relativePath;
+    private final String relativePath;
+
+    public String getRelativePath() {
+        return relativePath;
+    }
 
     /**
      * The full path of the file this record belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * The offset into the file containing the content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
-    java.math.BigDecimal offset;
+    private final java.math.BigDecimal offset;
+
+    public java.math.BigDecimal getOffset() {
+        return offset;
+    }
 
     /**
      * The length from the offset into the file containing the content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
-    java.math.BigDecimal length;
+    private final java.math.BigDecimal length;
+
+    public java.math.BigDecimal getLength() {
+        return length;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectStorageSourceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", relativePath=").append(String.valueOf(this.relativePath));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", offset=").append(String.valueOf(this.offset));
+        sb.append(", length=").append(String.valueOf(this.length));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectStorageSourceDetails)) {
+            return false;
+        }
+
+        ObjectStorageSourceDetails other = (ObjectStorageSourceDetails) o;
+        return java.util.Objects.equals(this.relativePath, other.relativePath)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.offset, other.offset)
+                && java.util.Objects.equals(this.length, other.length)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.relativePath == null ? 43 : this.relativePath.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
+        result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

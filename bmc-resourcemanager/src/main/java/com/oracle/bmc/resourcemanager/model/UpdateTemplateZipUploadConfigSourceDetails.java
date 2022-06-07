@@ -15,22 +15,18 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateTemplateZipUploadConfigSourceDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "templateConfigSourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTemplateZipUploadConfigSourceDetails extends UpdateTemplateConfigSourceDetails {
+public final class UpdateTemplateZipUploadConfigSourceDetails
+        extends UpdateTemplateConfigSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("zipFileBase64Encoded")
         private String zipFileBase64Encoded;
@@ -67,6 +63,10 @@ public class UpdateTemplateZipUploadConfigSourceDetails extends UpdateTemplateCo
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateTemplateZipUploadConfigSourceDetails(String zipFileBase64Encoded) {
         super();
@@ -74,8 +74,58 @@ public class UpdateTemplateZipUploadConfigSourceDetails extends UpdateTemplateCo
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("zipFileBase64Encoded")
-    String zipFileBase64Encoded;
+    private final String zipFileBase64Encoded;
+
+    public String getZipFileBase64Encoded() {
+        return zipFileBase64Encoded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTemplateZipUploadConfigSourceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", zipFileBase64Encoded=").append(String.valueOf(this.zipFileBase64Encoded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTemplateZipUploadConfigSourceDetails)) {
+            return false;
+        }
+
+        UpdateTemplateZipUploadConfigSourceDetails other =
+                (UpdateTemplateZipUploadConfigSourceDetails) o;
+        return java.util.Objects.equals(this.zipFileBase64Encoded, other.zipFileBase64Encoded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.zipFileBase64Encoded == null
+                                ? 43
+                                : this.zipFileBase64Encoded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,18 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Storage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Storage {
+public final class Storage {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isArchivingEnabled", "archivingConfiguration"})
+    public Storage(Boolean isArchivingEnabled, ArchivingConfiguration archivingConfiguration) {
+        super();
+        this.isArchivingEnabled = isArchivingEnabled;
+        this.archivingConfiguration = archivingConfiguration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
         private Boolean isArchivingEnabled;
@@ -69,15 +73,78 @@ public class Storage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This indicates if old data can be archived for a tenancy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
-    Boolean isArchivingEnabled;
+    private final Boolean isArchivingEnabled;
+
+    public Boolean getIsArchivingEnabled() {
+        return isArchivingEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("archivingConfiguration")
-    ArchivingConfiguration archivingConfiguration;
+    private final ArchivingConfiguration archivingConfiguration;
+
+    public ArchivingConfiguration getArchivingConfiguration() {
+        return archivingConfiguration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Storage(");
+        sb.append("isArchivingEnabled=").append(String.valueOf(this.isArchivingEnabled));
+        sb.append(", archivingConfiguration=").append(String.valueOf(this.archivingConfiguration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Storage)) {
+            return false;
+        }
+
+        Storage other = (Storage) o;
+        return java.util.Objects.equals(this.isArchivingEnabled, other.isArchivingEnabled)
+                && java.util.Objects.equals(
+                        this.archivingConfiguration, other.archivingConfiguration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isArchivingEnabled == null
+                                ? 43
+                                : this.isArchivingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.archivingConfiguration == null
+                                ? 43
+                                : this.archivingConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

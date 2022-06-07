@@ -18,16 +18,64 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousDataWarehouseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousDataWarehouseSummary {
+public final class AutonomousDataWarehouseSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "lifecycleState",
+        "lifecycleDetails",
+        "dbName",
+        "cpuCoreCount",
+        "dataStorageSizeInTBs",
+        "timeCreated",
+        "displayName",
+        "serviceConsoleUrl",
+        "connectionStrings",
+        "licenseModel",
+        "freeformTags",
+        "definedTags",
+        "dbVersion"
+    })
+    public AutonomousDataWarehouseSummary(
+            String id,
+            String compartmentId,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            String dbName,
+            Integer cpuCoreCount,
+            Integer dataStorageSizeInTBs,
+            java.util.Date timeCreated,
+            String displayName,
+            String serviceConsoleUrl,
+            AutonomousDataWarehouseConnectionStrings connectionStrings,
+            LicenseModel licenseModel,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String dbVersion) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.dbName = dbName;
+        this.cpuCoreCount = cpuCoreCount;
+        this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+        this.timeCreated = timeCreated;
+        this.displayName = displayName;
+        this.serviceConsoleUrl = serviceConsoleUrl;
+        this.connectionStrings = connectionStrings;
+        this.licenseModel = licenseModel;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.dbVersion = dbVersion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -222,17 +270,30 @@ public class AutonomousDataWarehouseSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * The current state of the database.
      **/
@@ -283,55 +344,92 @@ public class AutonomousDataWarehouseSummary {
      * The current state of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     /**
      * The number of CPU cores to be made available to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The quantity of data in the database, in terabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-    Integer dataStorageSizeInTBs;
+    private final Integer dataStorageSizeInTBs;
+
+    public Integer getDataStorageSizeInTBs() {
+        return dataStorageSizeInTBs;
+    }
 
     /**
      * The date and time the database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The user-friendly name for the Autonomous Data Warehouse. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The URL of the Service Console for the Data Warehouse.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConsoleUrl")
-    String serviceConsoleUrl;
+    private final String serviceConsoleUrl;
+
+    public String getServiceConsoleUrl() {
+        return serviceConsoleUrl;
+    }
 
     /**
      * The connection string used to connect to the Data Warehouse. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Data Warehouse for the password value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
-    AutonomousDataWarehouseConnectionStrings connectionStrings;
+    private final AutonomousDataWarehouseConnectionStrings connectionStrings;
+
+    public AutonomousDataWarehouseConnectionStrings getConnectionStrings() {
+        return connectionStrings;
+    }
+
     /**
      * The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
      *
@@ -373,7 +471,11 @@ public class AutonomousDataWarehouseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -383,7 +485,11 @@ public class AutonomousDataWarehouseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -391,14 +497,117 @@ public class AutonomousDataWarehouseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A valid Oracle Database version for Autonomous Data Warehouse.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-    String dbVersion;
+    private final String dbVersion;
+
+    public String getDbVersion() {
+        return dbVersion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousDataWarehouseSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", serviceConsoleUrl=").append(String.valueOf(this.serviceConsoleUrl));
+        sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousDataWarehouseSummary)) {
+            return false;
+        }
+
+        AutonomousDataWarehouseSummary other = (AutonomousDataWarehouseSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.serviceConsoleUrl, other.serviceConsoleUrl)
+                && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInTBs == null
+                                ? 43
+                                : this.dataStorageSizeInTBs.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceConsoleUrl == null ? 43 : this.serviceConsoleUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionStrings == null ? 43 : this.connectionStrings.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

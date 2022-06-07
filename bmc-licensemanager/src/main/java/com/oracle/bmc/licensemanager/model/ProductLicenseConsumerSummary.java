@@ -16,16 +16,55 @@ package com.oracle.bmc.licensemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProductLicenseConsumerSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProductLicenseConsumerSummary {
+public final class ProductLicenseConsumerSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "resourceId",
+        "resourceName",
+        "productName",
+        "resourceCompartmentId",
+        "resourceCompartmentName",
+        "resourceUnitType",
+        "resourceUnitCount",
+        "licenseUnitType",
+        "licenseUnitsConsumed",
+        "isBaseLicenseAvailable",
+        "areAllOptionsAvailable",
+        "missingProducts"
+    })
+    public ProductLicenseConsumerSummary(
+            String resourceId,
+            String resourceName,
+            String productName,
+            String resourceCompartmentId,
+            String resourceCompartmentName,
+            ResourceUnit resourceUnitType,
+            Double resourceUnitCount,
+            LicenseUnit licenseUnitType,
+            Double licenseUnitsConsumed,
+            Boolean isBaseLicenseAvailable,
+            Boolean areAllOptionsAvailable,
+            java.util.List<Product> missingProducts) {
+        super();
+        this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.productName = productName;
+        this.resourceCompartmentId = resourceCompartmentId;
+        this.resourceCompartmentName = resourceCompartmentName;
+        this.resourceUnitType = resourceUnitType;
+        this.resourceUnitCount = resourceUnitCount;
+        this.licenseUnitType = licenseUnitType;
+        this.licenseUnitsConsumed = licenseUnitsConsumed;
+        this.isBaseLicenseAvailable = isBaseLicenseAvailable;
+        this.areAllOptionsAvailable = areAllOptionsAvailable;
+        this.missingProducts = missingProducts;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
@@ -185,78 +224,234 @@ public class ProductLicenseConsumerSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The display name of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * The resource product name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
-    String productName;
+    private final String productName;
+
+    public String getProductName() {
+        return productName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
-    String resourceCompartmentId;
+    private final String resourceCompartmentId;
+
+    public String getResourceCompartmentId() {
+        return resourceCompartmentId;
+    }
 
     /**
      * The display name of the compartment that contains the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentName")
-    String resourceCompartmentName;
+    private final String resourceCompartmentName;
+
+    public String getResourceCompartmentName() {
+        return resourceCompartmentName;
+    }
 
     /**
      * The unit type for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUnitType")
-    ResourceUnit resourceUnitType;
+    private final ResourceUnit resourceUnitType;
+
+    public ResourceUnit getResourceUnitType() {
+        return resourceUnitType;
+    }
 
     /**
      * Number of units of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUnitCount")
-    Double resourceUnitCount;
+    private final Double resourceUnitCount;
+
+    public Double getResourceUnitCount() {
+        return resourceUnitCount;
+    }
 
     /**
      * The product license unit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseUnitType")
-    LicenseUnit licenseUnitType;
+    private final LicenseUnit licenseUnitType;
+
+    public LicenseUnit getLicenseUnitType() {
+        return licenseUnitType;
+    }
 
     /**
      * Number of license units consumed by the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseUnitsConsumed")
-    Double licenseUnitsConsumed;
+    private final Double licenseUnitsConsumed;
+
+    public Double getLicenseUnitsConsumed() {
+        return licenseUnitsConsumed;
+    }
 
     /**
      * Specifies if the base license is available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBaseLicenseAvailable")
-    Boolean isBaseLicenseAvailable;
+    private final Boolean isBaseLicenseAvailable;
+
+    public Boolean getIsBaseLicenseAvailable() {
+        return isBaseLicenseAvailable;
+    }
 
     /**
      * Specifies if all options are available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areAllOptionsAvailable")
-    Boolean areAllOptionsAvailable;
+    private final Boolean areAllOptionsAvailable;
+
+    public Boolean getAreAllOptionsAvailable() {
+        return areAllOptionsAvailable;
+    }
 
     /**
      * Collection of missing product licenses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("missingProducts")
-    java.util.List<Product> missingProducts;
+    private final java.util.List<Product> missingProducts;
+
+    public java.util.List<Product> getMissingProducts() {
+        return missingProducts;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProductLicenseConsumerSummary(");
+        sb.append("resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", productName=").append(String.valueOf(this.productName));
+        sb.append(", resourceCompartmentId=").append(String.valueOf(this.resourceCompartmentId));
+        sb.append(", resourceCompartmentName=")
+                .append(String.valueOf(this.resourceCompartmentName));
+        sb.append(", resourceUnitType=").append(String.valueOf(this.resourceUnitType));
+        sb.append(", resourceUnitCount=").append(String.valueOf(this.resourceUnitCount));
+        sb.append(", licenseUnitType=").append(String.valueOf(this.licenseUnitType));
+        sb.append(", licenseUnitsConsumed=").append(String.valueOf(this.licenseUnitsConsumed));
+        sb.append(", isBaseLicenseAvailable=").append(String.valueOf(this.isBaseLicenseAvailable));
+        sb.append(", areAllOptionsAvailable=").append(String.valueOf(this.areAllOptionsAvailable));
+        sb.append(", missingProducts=").append(String.valueOf(this.missingProducts));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProductLicenseConsumerSummary)) {
+            return false;
+        }
+
+        ProductLicenseConsumerSummary other = (ProductLicenseConsumerSummary) o;
+        return java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.productName, other.productName)
+                && java.util.Objects.equals(this.resourceCompartmentId, other.resourceCompartmentId)
+                && java.util.Objects.equals(
+                        this.resourceCompartmentName, other.resourceCompartmentName)
+                && java.util.Objects.equals(this.resourceUnitType, other.resourceUnitType)
+                && java.util.Objects.equals(this.resourceUnitCount, other.resourceUnitCount)
+                && java.util.Objects.equals(this.licenseUnitType, other.licenseUnitType)
+                && java.util.Objects.equals(this.licenseUnitsConsumed, other.licenseUnitsConsumed)
+                && java.util.Objects.equals(
+                        this.isBaseLicenseAvailable, other.isBaseLicenseAvailable)
+                && java.util.Objects.equals(
+                        this.areAllOptionsAvailable, other.areAllOptionsAvailable)
+                && java.util.Objects.equals(this.missingProducts, other.missingProducts)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.productName == null ? 43 : this.productName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCompartmentId == null
+                                ? 43
+                                : this.resourceCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCompartmentName == null
+                                ? 43
+                                : this.resourceCompartmentName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceUnitType == null ? 43 : this.resourceUnitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceUnitCount == null ? 43 : this.resourceUnitCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licenseUnitType == null ? 43 : this.licenseUnitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licenseUnitsConsumed == null
+                                ? 43
+                                : this.licenseUnitsConsumed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBaseLicenseAvailable == null
+                                ? 43
+                                : this.isBaseLicenseAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areAllOptionsAvailable == null
+                                ? 43
+                                : this.areAllOptionsAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.missingProducts == null ? 43 : this.missingProducts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,12 +16,6 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -42,20 +36,64 @@ package com.oracle.bmc.loganalytics.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AbstractField {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "isDeclared",
+        "originalDisplayNames",
+        "internalName",
+        "valueType",
+        "isGroupable",
+        "isDuration",
+        "alias",
+        "filterQueryString",
+        "unitType"
+    })
+    protected AbstractField(
+            String displayName,
+            Boolean isDeclared,
+            java.util.List<String> originalDisplayNames,
+            String internalName,
+            ValueType valueType,
+            Boolean isGroupable,
+            Boolean isDuration,
+            String alias,
+            String filterQueryString,
+            String unitType) {
+        super();
+        this.displayName = displayName;
+        this.isDeclared = isDeclared;
+        this.originalDisplayNames = originalDisplayNames;
+        this.internalName = internalName;
+        this.valueType = valueType;
+        this.isGroupable = isGroupable;
+        this.isDuration = isDuration;
+        this.alias = alias;
+        this.filterQueryString = filterQueryString;
+        this.unitType = unitType;
+    }
 
     /**
      * Field display name - will be alias if field is renamed by queryStrng.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Field denoting if this is a declaration of the field in the queryString.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeclared")
-    Boolean isDeclared;
+    private final Boolean isDeclared;
+
+    public Boolean getIsDeclared() {
+        return isDeclared;
+    }
 
     /**
      * Same as displayName unless field renamed in which case this will hold the original display names for the field
@@ -63,62 +101,156 @@ public class AbstractField {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalDisplayNames")
-    java.util.List<String> originalDisplayNames;
+    private final java.util.List<String> originalDisplayNames;
+
+    public java.util.List<String> getOriginalDisplayNames() {
+        return originalDisplayNames;
+    }
 
     /**
      * Internal identifier for the field.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
-    String internalName;
+    private final String internalName;
+
+    public String getInternalName() {
+        return internalName;
+    }
 
     /**
      * Field denoting field data type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
-    ValueType valueType;
+    private final ValueType valueType;
+
+    public ValueType getValueType() {
+        return valueType;
+    }
 
     /**
      * Identifies if this field can be used as a grouping field in any grouping command.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGroupable")
-    Boolean isGroupable;
+    private final Boolean isGroupable;
+
+    public Boolean getIsGroupable() {
+        return isGroupable;
+    }
 
     /**
      * Identifies if this field format is a duration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDuration")
-    Boolean isDuration;
+    private final Boolean isDuration;
+
+    public Boolean getIsDuration() {
+        return isDuration;
+    }
 
     /**
      * Alias of field if renamed by queryStrng.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
-    String alias;
+    private final String alias;
+
+    public String getAlias() {
+        return alias;
+    }
 
     /**
      * Query used to derive this field if specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterQueryString")
-    String filterQueryString;
+    private final String filterQueryString;
+
+    public String getFilterQueryString() {
+        return filterQueryString;
+    }
 
     /**
      * Field denoting field unit type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
-    String unitType;
+    private final String unitType;
+
+    public String getUnitType() {
+        return unitType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractField(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isDeclared=").append(String.valueOf(this.isDeclared));
+        sb.append(", originalDisplayNames=").append(String.valueOf(this.originalDisplayNames));
+        sb.append(", internalName=").append(String.valueOf(this.internalName));
+        sb.append(", valueType=").append(String.valueOf(this.valueType));
+        sb.append(", isGroupable=").append(String.valueOf(this.isGroupable));
+        sb.append(", isDuration=").append(String.valueOf(this.isDuration));
+        sb.append(", alias=").append(String.valueOf(this.alias));
+        sb.append(", filterQueryString=").append(String.valueOf(this.filterQueryString));
+        sb.append(", unitType=").append(String.valueOf(this.unitType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractField)) {
+            return false;
+        }
+
+        AbstractField other = (AbstractField) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isDeclared, other.isDeclared)
+                && java.util.Objects.equals(this.originalDisplayNames, other.originalDisplayNames)
+                && java.util.Objects.equals(this.internalName, other.internalName)
+                && java.util.Objects.equals(this.valueType, other.valueType)
+                && java.util.Objects.equals(this.isGroupable, other.isGroupable)
+                && java.util.Objects.equals(this.isDuration, other.isDuration)
+                && java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.filterQueryString, other.filterQueryString)
+                && java.util.Objects.equals(this.unitType, other.unitType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.isDeclared == null ? 43 : this.isDeclared.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalDisplayNames == null
+                                ? 43
+                                : this.originalDisplayNames.hashCode());
+        result = (result * PRIME) + (this.internalName == null ? 43 : this.internalName.hashCode());
+        result = (result * PRIME) + (this.valueType == null ? 43 : this.valueType.hashCode());
+        result = (result * PRIME) + (this.isGroupable == null ? 43 : this.isGroupable.hashCode());
+        result = (result * PRIME) + (this.isDuration == null ? 43 : this.isDuration.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterQueryString == null ? 43 : this.filterQueryString.hashCode());
+        result = (result * PRIME) + (this.unitType == null ? 43 : this.unitType.hashCode());
+        return result;
+    }
 
     /**
      * Field type classification.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Name {
         Field("FIELD"),
         Fields("FIELDS"),
@@ -130,6 +262,8 @@ public class AbstractField {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Name.class);
 
         private final String value;
         private static java.util.Map<String, Name> map;

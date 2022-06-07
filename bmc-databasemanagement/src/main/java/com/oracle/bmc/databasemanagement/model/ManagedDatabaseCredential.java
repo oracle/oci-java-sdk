@@ -15,12 +15,6 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,12 +33,24 @@ package com.oracle.bmc.databasemanagement.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ManagedDatabaseCredential {
+    @Deprecated
+    @java.beans.ConstructorProperties({"username", "role"})
+    protected ManagedDatabaseCredential(String username, Role role) {
+        super();
+        this.username = username;
+        this.role = role;
+    }
 
     /**
      * The user to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
-    String username;
+    private final String username;
+
+    public String getUsername() {
+        return username;
+    }
+
     /**
      * The role of the database user.
      **/
@@ -84,7 +90,44 @@ public class ManagedDatabaseCredential {
      * The role of the database user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    Role role;
+    private final Role role;
+
+    public Role getRole() {
+        return role;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagedDatabaseCredential(");
+        sb.append("username=").append(String.valueOf(this.username));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagedDatabaseCredential)) {
+            return false;
+        }
+
+        ManagedDatabaseCredential other = (ManagedDatabaseCredential) o;
+        return java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.role, other.role);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        return result;
+    }
 
     /**
      * The type of the credential has access to retrieve optimizer statistics gathering & advisor task details.

@@ -15,14 +15,32 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Anomaly.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Anomaly {
+public final class Anomaly {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "signalName",
+        "actualValue",
+        "estimatedValue",
+        "imputedValue",
+        "anomalyScore"
+    })
+    public Anomaly(
+            String signalName,
+            Double actualValue,
+            Double estimatedValue,
+            Double imputedValue,
+            Double anomalyScore) {
+        super();
+        this.signalName = signalName;
+        this.actualValue = actualValue;
+        this.estimatedValue = estimatedValue;
+        this.imputedValue = imputedValue;
+        this.anomalyScore = anomalyScore;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("signalName")
         private String signalName;
@@ -101,36 +119,113 @@ public class Anomaly {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of a signal where current anomaly point belongs to
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signalName")
-    String signalName;
+    private final String signalName;
+
+    public String getSignalName() {
+        return signalName;
+    }
 
     /**
      * The actual value for the anomaly point at given signal and timestamp/row
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualValue")
-    Double actualValue;
+    private final Double actualValue;
+
+    public Double getActualValue() {
+        return actualValue;
+    }
 
     /**
      * The estimated value for the anomaly point at given signal and timestamp/row
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedValue")
-    Double estimatedValue;
+    private final Double estimatedValue;
+
+    public Double getEstimatedValue() {
+        return estimatedValue;
+    }
 
     /**
      * The value imputed by one of IDP step for missing values in origin data
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imputedValue")
-    Double imputedValue;
+    private final Double imputedValue;
+
+    public Double getImputedValue() {
+        return imputedValue;
+    }
 
     /**
      * A significant score ranged from 0 to 1 to each anomaly point
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("anomalyScore")
-    Double anomalyScore;
+    private final Double anomalyScore;
+
+    public Double getAnomalyScore() {
+        return anomalyScore;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Anomaly(");
+        sb.append("signalName=").append(String.valueOf(this.signalName));
+        sb.append(", actualValue=").append(String.valueOf(this.actualValue));
+        sb.append(", estimatedValue=").append(String.valueOf(this.estimatedValue));
+        sb.append(", imputedValue=").append(String.valueOf(this.imputedValue));
+        sb.append(", anomalyScore=").append(String.valueOf(this.anomalyScore));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Anomaly)) {
+            return false;
+        }
+
+        Anomaly other = (Anomaly) o;
+        return java.util.Objects.equals(this.signalName, other.signalName)
+                && java.util.Objects.equals(this.actualValue, other.actualValue)
+                && java.util.Objects.equals(this.estimatedValue, other.estimatedValue)
+                && java.util.Objects.equals(this.imputedValue, other.imputedValue)
+                && java.util.Objects.equals(this.anomalyScore, other.anomalyScore)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.signalName == null ? 43 : this.signalName.hashCode());
+        result = (result * PRIME) + (this.actualValue == null ? 43 : this.actualValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.estimatedValue == null ? 43 : this.estimatedValue.hashCode());
+        result = (result * PRIME) + (this.imputedValue == null ? 43 : this.imputedValue.hashCode());
+        result = (result * PRIME) + (this.anomalyScore == null ? 43 : this.anomalyScore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

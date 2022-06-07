@@ -15,12 +15,6 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -47,29 +41,86 @@ package com.oracle.bmc.devops.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BuildSource {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "repositoryUrl", "branch"})
+    protected BuildSource(String name, String repositoryUrl, String branch) {
+        super();
+        this.name = name;
+        this.repositoryUrl = repositoryUrl;
+        this.branch = branch;
+    }
 
     /**
      * Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * URL for the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
-    String repositoryUrl;
+    private final String repositoryUrl;
+
+    public String getRepositoryUrl() {
+        return repositoryUrl;
+    }
 
     /**
      * Branch name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("branch")
-    String branch;
+    private final String branch;
+
+    public String getBranch() {
+        return branch;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BuildSource(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", repositoryUrl=").append(String.valueOf(this.repositoryUrl));
+        sb.append(", branch=").append(String.valueOf(this.branch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BuildSource)) {
+            return false;
+        }
+
+        BuildSource other = (BuildSource) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.repositoryUrl, other.repositoryUrl)
+                && java.util.Objects.equals(this.branch, other.branch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryUrl == null ? 43 : this.repositoryUrl.hashCode());
+        result = (result * PRIME) + (this.branch == null ? 43 : this.branch.hashCode());
+        return result;
+    }
 
     /**
      * The type of source provider.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ConnectionType {
         Github("GITHUB"),
         Gitlab("GITLAB"),
@@ -81,6 +132,9 @@ public class BuildSource {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConnectionType.class);
 
         private final String value;
         private static java.util.Map<String, ConnectionType> map;

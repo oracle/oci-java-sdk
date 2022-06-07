@@ -24,14 +24,35 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MultipartUpload.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MultipartUpload {
+public final class MultipartUpload {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "namespace",
+        "bucket",
+        "object",
+        "uploadId",
+        "timeCreated",
+        "storageTier"
+    })
+    public MultipartUpload(
+            String namespace,
+            String bucket,
+            String object,
+            String uploadId,
+            java.util.Date timeCreated,
+            StorageTier storageTier) {
+        super();
+        this.namespace = namespace;
+        this.bucket = bucket;
+        this.object = object;
+        this.uploadId = uploadId;
+        this.timeCreated = timeCreated;
+        this.storageTier = storageTier;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
@@ -120,42 +141,124 @@ public class MultipartUpload {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The Object Storage namespace in which the in-progress multipart upload is stored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * The bucket in which the in-progress multipart upload is stored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
-    String bucket;
+    private final String bucket;
+
+    public String getBucket() {
+        return bucket;
+    }
 
     /**
      * The object name of the in-progress multipart upload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("object")
-    String object;
+    private final String object;
+
+    public String getObject() {
+        return object;
+    }
 
     /**
      * The unique identifier for the in-progress multipart upload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
-    String uploadId;
+    private final String uploadId;
+
+    public String getUploadId() {
+        return uploadId;
+    }
 
     /**
      * The date and time the upload was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The storage tier that the object is stored in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
-    StorageTier storageTier;
+    private final StorageTier storageTier;
+
+    public StorageTier getStorageTier() {
+        return storageTier;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MultipartUpload(");
+        sb.append("namespace=").append(String.valueOf(this.namespace));
+        sb.append(", bucket=").append(String.valueOf(this.bucket));
+        sb.append(", object=").append(String.valueOf(this.object));
+        sb.append(", uploadId=").append(String.valueOf(this.uploadId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", storageTier=").append(String.valueOf(this.storageTier));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MultipartUpload)) {
+            return false;
+        }
+
+        MultipartUpload other = (MultipartUpload) o;
+        return java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.bucket, other.bucket)
+                && java.util.Objects.equals(this.object, other.object)
+                && java.util.Objects.equals(this.uploadId, other.uploadId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.storageTier, other.storageTier)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.bucket == null ? 43 : this.bucket.hashCode());
+        result = (result * PRIME) + (this.object == null ? 43 : this.object.hashCode());
+        result = (result * PRIME) + (this.uploadId == null ? 43 : this.uploadId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.storageTier == null ? 43 : this.storageTier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

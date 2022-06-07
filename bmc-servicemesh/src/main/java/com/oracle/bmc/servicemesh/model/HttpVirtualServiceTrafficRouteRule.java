@@ -15,22 +15,17 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HttpVirtualServiceTrafficRouteRule.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTrafficRouteRule {
+public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTrafficRouteRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<VirtualDeploymentTrafficRuleTarget> destinations;
@@ -99,6 +94,10 @@ public class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTrafficRou
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HttpVirtualServiceTrafficRouteRule(
             java.util.List<VirtualDeploymentTrafficRuleTarget> destinations,
@@ -115,11 +114,15 @@ public class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTrafficRou
      * Route to match
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
+
     /**
      * Match type for the route
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PathType {
         Prefix("PREFIX"),
 
@@ -128,6 +131,9 @@ public class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTrafficRou
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PathType.class);
 
         private final String value;
         private static java.util.Map<String, PathType> map;
@@ -165,7 +171,11 @@ public class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTrafficRou
      * Match type for the route
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathType")
-    PathType pathType;
+    private final PathType pathType;
+
+    public PathType getPathType() {
+        return pathType;
+    }
 
     /**
      * If true, the rule will check that the content-type header has a application/grpc
@@ -173,8 +183,59 @@ public class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTrafficRou
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGrpc")
-    Boolean isGrpc;
+    private final Boolean isGrpc;
+
+    public Boolean getIsGrpc() {
+        return isGrpc;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HttpVirtualServiceTrafficRouteRule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", pathType=").append(String.valueOf(this.pathType));
+        sb.append(", isGrpc=").append(String.valueOf(this.isGrpc));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HttpVirtualServiceTrafficRouteRule)) {
+            return false;
+        }
+
+        HttpVirtualServiceTrafficRouteRule other = (HttpVirtualServiceTrafficRouteRule) o;
+        return java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.pathType, other.pathType)
+                && java.util.Objects.equals(this.isGrpc, other.isGrpc)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.pathType == null ? 43 : this.pathType.hashCode());
+        result = (result * PRIME) + (this.isGrpc == null ? 43 : this.isGrpc.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

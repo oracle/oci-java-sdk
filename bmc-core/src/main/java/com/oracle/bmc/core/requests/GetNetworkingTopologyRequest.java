@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkingTopologyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetNetworkingTopologyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetNetworkingTopologyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class GetNetworkingTopologyRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
      * Setting this to {@code ACCESSIBLE} returns only compartments for which a
@@ -79,6 +74,10 @@ public class GetNetworkingTopologyRequest
             throw new IllegalArgumentException("Invalid AccessLevel: " + key);
         }
     };
+
+    public AccessLevel getAccessLevel() {
+        return accessLevel;
+    }
     /**
      * When set to true, the hierarchy of compartments is traversed
      * and the specified compartment and its subcompartments are
@@ -88,6 +87,9 @@ public class GetNetworkingTopologyRequest
      */
     private Boolean queryCompartmentSubtree;
 
+    public Boolean getQueryCompartmentSubtree() {
+        return queryCompartmentSubtree;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -95,6 +97,9 @@ public class GetNetworkingTopologyRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For querying if there is a cached value on the server. The If-None-Match HTTP request header
      * makes the request conditional. For GET and HEAD methods, the server will send back the requested
@@ -105,6 +110,9 @@ public class GetNetworkingTopologyRequest
      */
     private String ifNoneMatch;
 
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
     /**
      * The Cache-Control HTTP header holds directives (instructions)
      * for caching in both requests and responses.
@@ -112,12 +120,102 @@ public class GetNetworkingTopologyRequest
      */
     private String cacheControl;
 
+    public String getCacheControl() {
+        return cacheControl;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetNetworkingTopologyRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private AccessLevel accessLevel = null;
+
+        /**
+         * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
+         * Setting this to {@code ACCESSIBLE} returns only compartments for which a
+         * user has INSPECT permissions, either directly or indirectly (permissions can be on a
+         * resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
+         * indirect INSPECT permissions.
+         * <p>
+         * When set to {@code ANY} permissions are not checked.
+         *
+         * @return this builder instance
+         */
+        public Builder accessLevel(AccessLevel accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
+
+        private Boolean queryCompartmentSubtree = null;
+
+        /**
+         * When set to true, the hierarchy of compartments is traversed
+         * and the specified compartment and its subcompartments are
+         * inspected depending on the the setting of {@code accessLevel}.
+         * Default is false.
+         *
+         * @return this builder instance
+         */
+        public Builder queryCompartmentSubtree(Boolean queryCompartmentSubtree) {
+            this.queryCompartmentSubtree = queryCompartmentSubtree;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifNoneMatch = null;
+
+        /**
+         * For querying if there is a cached value on the server. The If-None-Match HTTP request header
+         * makes the request conditional. For GET and HEAD methods, the server will send back the requested
+         * resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+         * For other methods, the request will be processed only if the eventually existing resource's
+         * ETag doesn't match any of the values listed.
+         *
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
+
+        private String cacheControl = null;
+
+        /**
+         * The Cache-Control HTTP header holds directives (instructions)
+         * for caching in both requests and responses.
+         *
+         * @return this builder instance
+         */
+        public Builder cacheControl(String cacheControl) {
+            this.cacheControl = cacheControl;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -174,5 +272,96 @@ public class GetNetworkingTopologyRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetNetworkingTopologyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetNetworkingTopologyRequest
+         */
+        public GetNetworkingTopologyRequest buildWithoutInvocationCallback() {
+            GetNetworkingTopologyRequest request = new GetNetworkingTopologyRequest();
+            request.compartmentId = compartmentId;
+            request.accessLevel = accessLevel;
+            request.queryCompartmentSubtree = queryCompartmentSubtree;
+            request.opcRequestId = opcRequestId;
+            request.ifNoneMatch = ifNoneMatch;
+            request.cacheControl = cacheControl;
+            return request;
+            // new GetNetworkingTopologyRequest(compartmentId, accessLevel, queryCompartmentSubtree, opcRequestId, ifNoneMatch, cacheControl);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .accessLevel(accessLevel)
+                .queryCompartmentSubtree(queryCompartmentSubtree)
+                .opcRequestId(opcRequestId)
+                .ifNoneMatch(ifNoneMatch)
+                .cacheControl(cacheControl);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
+        sb.append(",queryCompartmentSubtree=").append(String.valueOf(this.queryCompartmentSubtree));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
+        sb.append(",cacheControl=").append(String.valueOf(this.cacheControl));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetNetworkingTopologyRequest)) {
+            return false;
+        }
+
+        GetNetworkingTopologyRequest other = (GetNetworkingTopologyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel)
+                && java.util.Objects.equals(
+                        this.queryCompartmentSubtree, other.queryCompartmentSubtree)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
+                && java.util.Objects.equals(this.cacheControl, other.cacheControl);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryCompartmentSubtree == null
+                                ? 43
+                                : this.queryCompartmentSubtree.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
+        result = (result * PRIME) + (this.cacheControl == null ? 43 : this.cacheControl.hashCode());
+        return result;
     }
 }

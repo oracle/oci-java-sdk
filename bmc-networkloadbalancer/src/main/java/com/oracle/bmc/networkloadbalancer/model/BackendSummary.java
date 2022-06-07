@@ -17,14 +17,41 @@ package com.oracle.bmc.networkloadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackendSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackendSummary {
+public final class BackendSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "ipAddress",
+        "targetId",
+        "port",
+        "weight",
+        "isDrain",
+        "isBackup",
+        "isOffline"
+    })
+    public BackendSummary(
+            String name,
+            String ipAddress,
+            String targetId,
+            Integer port,
+            Integer weight,
+            Boolean isDrain,
+            Boolean isBackup,
+            Boolean isOffline) {
+        super();
+        this.name = name;
+        this.ipAddress = ipAddress;
+        this.targetId = targetId;
+        this.port = port;
+        this.weight = weight;
+        this.isDrain = isDrain;
+        this.isBackup = isBackup;
+        this.isOffline = isOffline;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -133,6 +160,10 @@ public class BackendSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.
      * <p>
@@ -140,7 +171,11 @@ public class BackendSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The IP address of the backend server.
@@ -148,7 +183,11 @@ public class BackendSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * The IP OCID/Instance OCID associated with the backend server.
@@ -156,7 +195,11 @@ public class BackendSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The communication port for the backend server.
@@ -165,7 +208,11 @@ public class BackendSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
@@ -178,7 +225,11 @@ public class BackendSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    Integer weight;
+    private final Integer weight;
+
+    public Integer getWeight() {
+        return weight;
+    }
 
     /**
      * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no
@@ -188,7 +239,11 @@ public class BackendSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDrain")
-    Boolean isDrain;
+    private final Boolean isDrain;
+
+    public Boolean getIsDrain() {
+        return isDrain;
+    }
 
     /**
      * Whether the network load balancer should treat this server as a backup unit. If {@code true}, then the network load balancer forwards no ingress
@@ -198,7 +253,11 @@ public class BackendSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBackup")
-    Boolean isBackup;
+    private final Boolean isBackup;
+
+    public Boolean getIsBackup() {
+        return isBackup;
+    }
 
     /**
      * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming
@@ -208,8 +267,72 @@ public class BackendSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOffline")
-    Boolean isOffline;
+    private final Boolean isOffline;
+
+    public Boolean getIsOffline() {
+        return isOffline;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackendSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append(", isDrain=").append(String.valueOf(this.isDrain));
+        sb.append(", isBackup=").append(String.valueOf(this.isBackup));
+        sb.append(", isOffline=").append(String.valueOf(this.isOffline));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackendSummary)) {
+            return false;
+        }
+
+        BackendSummary other = (BackendSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.isDrain, other.isDrain)
+                && java.util.Objects.equals(this.isBackup, other.isBackup)
+                && java.util.Objects.equals(this.isOffline, other.isOffline)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result = (result * PRIME) + (this.isDrain == null ? 43 : this.isDrain.hashCode());
+        result = (result * PRIME) + (this.isBackup == null ? 43 : this.isBackup.hashCode());
+        result = (result * PRIME) + (this.isOffline == null ? 43 : this.isOffline.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

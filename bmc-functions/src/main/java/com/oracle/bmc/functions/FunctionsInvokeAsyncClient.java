@@ -7,6 +7,7 @@ package com.oracle.bmc.functions;
 import com.oracle.bmc.functions.internal.http.*;
 import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for FunctionsInvoke service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.functions.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
     /**
      * Service instance for FunctionsInvoke.
@@ -34,7 +34,9 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
                     .serviceEndpointTemplate("https://functions.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(FunctionsInvokeAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
          * @return the client
          */
         public FunctionsInvokeAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new FunctionsInvokeAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

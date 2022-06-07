@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OracleAdwcWriteAttribute.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
+public final class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
@@ -99,6 +94,10 @@ public class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public OracleAdwcWriteAttribute(
             String bucketName,
@@ -116,20 +115,92 @@ public class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
      * The bucket name for the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     /**
      * The file name for the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stagingFileName")
-    String stagingFileName;
+    private final String stagingFileName;
+
+    public String getStagingFileName() {
+        return stagingFileName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("stagingDataAsset")
-    DataAsset stagingDataAsset;
+    private final DataAsset stagingDataAsset;
+
+    public DataAsset getStagingDataAsset() {
+        return stagingDataAsset;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("stagingConnection")
-    Connection stagingConnection;
+    private final Connection stagingConnection;
+
+    public Connection getStagingConnection() {
+        return stagingConnection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OracleAdwcWriteAttribute(");
+        sb.append("super=").append(super.toString());
+        sb.append(", bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", stagingFileName=").append(String.valueOf(this.stagingFileName));
+        sb.append(", stagingDataAsset=").append(String.valueOf(this.stagingDataAsset));
+        sb.append(", stagingConnection=").append(String.valueOf(this.stagingConnection));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OracleAdwcWriteAttribute)) {
+            return false;
+        }
+
+        OracleAdwcWriteAttribute other = (OracleAdwcWriteAttribute) o;
+        return java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.stagingFileName, other.stagingFileName)
+                && java.util.Objects.equals(this.stagingDataAsset, other.stagingDataAsset)
+                && java.util.Objects.equals(this.stagingConnection, other.stagingConnection)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stagingFileName == null ? 43 : this.stagingFileName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stagingDataAsset == null ? 43 : this.stagingDataAsset.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stagingConnection == null ? 43 : this.stagingConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

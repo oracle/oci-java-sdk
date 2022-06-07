@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ExecuteResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ExecuteResponderExecutionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ExecuteResponderExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails> {
@@ -26,11 +18,17 @@ public class ExecuteResponderExecutionRequest
      */
     private String responderExecutionId;
 
+    public String getResponderExecutionId() {
+        return responderExecutionId;
+    }
     /**
      * The ID of the compartment in which to list resources.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -41,11 +39,17 @@ public class ExecuteResponderExecutionRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -56,11 +60,19 @@ public class ExecuteResponderExecutionRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * Details for Responder Configuration
      */
     private com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails
             executeResponderExecutionDetails;
+
+    public com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails
+            getExecuteResponderExecutionDetails() {
+        return executeResponderExecutionDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -79,6 +91,85 @@ public class ExecuteResponderExecutionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String responderExecutionId = null;
+
+        /**
+         * The identifier of the responder execution.
+         * @return this builder instance
+         */
+        public Builder responderExecutionId(String responderExecutionId) {
+            this.responderExecutionId = responderExecutionId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails
+                executeResponderExecutionDetails = null;
+
+        /**
+         * Details for Responder Configuration
+         * @return this builder instance
+         */
+        public Builder executeResponderExecutionDetails(
+                com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails
+                        executeResponderExecutionDetails) {
+            this.executeResponderExecutionDetails = executeResponderExecutionDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -147,5 +238,104 @@ public class ExecuteResponderExecutionRequest
             executeResponderExecutionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ExecuteResponderExecutionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ExecuteResponderExecutionRequest
+         */
+        public ExecuteResponderExecutionRequest buildWithoutInvocationCallback() {
+            ExecuteResponderExecutionRequest request = new ExecuteResponderExecutionRequest();
+            request.responderExecutionId = responderExecutionId;
+            request.compartmentId = compartmentId;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            request.executeResponderExecutionDetails = executeResponderExecutionDetails;
+            return request;
+            // new ExecuteResponderExecutionRequest(responderExecutionId, compartmentId, ifMatch, opcRequestId, opcRetryToken, executeResponderExecutionDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .responderExecutionId(responderExecutionId)
+                .compartmentId(compartmentId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken)
+                .executeResponderExecutionDetails(executeResponderExecutionDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",responderExecutionId=").append(String.valueOf(this.responderExecutionId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",executeResponderExecutionDetails=")
+                .append(String.valueOf(this.executeResponderExecutionDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExecuteResponderExecutionRequest)) {
+            return false;
+        }
+
+        ExecuteResponderExecutionRequest other = (ExecuteResponderExecutionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.responderExecutionId, other.responderExecutionId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(
+                        this.executeResponderExecutionDetails,
+                        other.executeResponderExecutionDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.responderExecutionId == null
+                                ? 43
+                                : this.responderExecutionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executeResponderExecutionDetails == null
+                                ? 43
+                                : this.executeResponderExecutionDetails.hashCode());
+        return result;
     }
 }

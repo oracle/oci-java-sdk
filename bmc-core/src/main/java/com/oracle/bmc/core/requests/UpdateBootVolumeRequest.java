@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBootVolumeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateBootVolumeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateBootVolumeDetails> {
@@ -26,11 +18,17 @@ public class UpdateBootVolumeRequest
      */
     private String bootVolumeId;
 
+    public String getBootVolumeId() {
+        return bootVolumeId;
+    }
     /**
      * Update boot volume's display name.
      */
     private com.oracle.bmc.core.model.UpdateBootVolumeDetails updateBootVolumeDetails;
 
+    public com.oracle.bmc.core.model.UpdateBootVolumeDetails getUpdateBootVolumeDetails() {
+        return updateBootVolumeDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -38,6 +36,10 @@ public class UpdateBootVolumeRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -55,6 +57,43 @@ public class UpdateBootVolumeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bootVolumeId = null;
+
+        /**
+         * The OCID of the boot volume.
+         * @return this builder instance
+         */
+        public Builder bootVolumeId(String bootVolumeId) {
+            this.bootVolumeId = bootVolumeId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateBootVolumeDetails updateBootVolumeDetails = null;
+
+        /**
+         * Update boot volume's display name.
+         * @return this builder instance
+         */
+        public Builder updateBootVolumeDetails(
+                com.oracle.bmc.core.model.UpdateBootVolumeDetails updateBootVolumeDetails) {
+            this.updateBootVolumeDetails = updateBootVolumeDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -119,5 +158,79 @@ public class UpdateBootVolumeRequest
             updateBootVolumeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateBootVolumeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateBootVolumeRequest
+         */
+        public UpdateBootVolumeRequest buildWithoutInvocationCallback() {
+            UpdateBootVolumeRequest request = new UpdateBootVolumeRequest();
+            request.bootVolumeId = bootVolumeId;
+            request.updateBootVolumeDetails = updateBootVolumeDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateBootVolumeRequest(bootVolumeId, updateBootVolumeDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .bootVolumeId(bootVolumeId)
+                .updateBootVolumeDetails(updateBootVolumeDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bootVolumeId=").append(String.valueOf(this.bootVolumeId));
+        sb.append(",updateBootVolumeDetails=").append(String.valueOf(this.updateBootVolumeDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBootVolumeRequest)) {
+            return false;
+        }
+
+        UpdateBootVolumeRequest other = (UpdateBootVolumeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.bootVolumeId, other.bootVolumeId)
+                && java.util.Objects.equals(
+                        this.updateBootVolumeDetails, other.updateBootVolumeDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.bootVolumeId == null ? 43 : this.bootVolumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateBootVolumeDetails == null
+                                ? 43
+                                : this.updateBootVolumeDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

@@ -21,14 +21,68 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vcn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Vcn {
+public final class Vcn {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "byoipv6CidrBlocks",
+        "ipv6PrivateCidrBlocks",
+        "cidrBlock",
+        "cidrBlocks",
+        "compartmentId",
+        "defaultDhcpOptionsId",
+        "defaultRouteTableId",
+        "defaultSecurityListId",
+        "definedTags",
+        "displayName",
+        "dnsLabel",
+        "freeformTags",
+        "id",
+        "ipv6CidrBlocks",
+        "lifecycleState",
+        "timeCreated",
+        "vcnDomainName"
+    })
+    public Vcn(
+            java.util.List<String> byoipv6CidrBlocks,
+            java.util.List<String> ipv6PrivateCidrBlocks,
+            String cidrBlock,
+            java.util.List<String> cidrBlocks,
+            String compartmentId,
+            String defaultDhcpOptionsId,
+            String defaultRouteTableId,
+            String defaultSecurityListId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            String dnsLabel,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            java.util.List<String> ipv6CidrBlocks,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            String vcnDomainName) {
+        super();
+        this.byoipv6CidrBlocks = byoipv6CidrBlocks;
+        this.ipv6PrivateCidrBlocks = ipv6PrivateCidrBlocks;
+        this.cidrBlock = cidrBlock;
+        this.cidrBlocks = cidrBlocks;
+        this.compartmentId = compartmentId;
+        this.defaultDhcpOptionsId = defaultDhcpOptionsId;
+        this.defaultRouteTableId = defaultRouteTableId;
+        this.defaultSecurityListId = defaultSecurityListId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.dnsLabel = dnsLabel;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.ipv6CidrBlocks = ipv6CidrBlocks;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.vcnDomainName = vcnDomainName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
         private java.util.List<String> byoipv6CidrBlocks;
@@ -244,19 +298,31 @@ public class Vcn {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
-    java.util.List<String> byoipv6CidrBlocks;
+    private final java.util.List<String> byoipv6CidrBlocks;
+
+    public java.util.List<String> getByoipv6CidrBlocks() {
+        return byoipv6CidrBlocks;
+    }
 
     /**
      * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
-    java.util.List<String> ipv6PrivateCidrBlocks;
+    private final java.util.List<String> ipv6PrivateCidrBlocks;
+
+    public java.util.List<String> getIpv6PrivateCidrBlocks() {
+        return ipv6PrivateCidrBlocks;
+    }
 
     /**
      * Deprecated. The first CIDR IP address from cidrBlocks.
@@ -265,39 +331,63 @@ public class Vcn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    String cidrBlock;
+    private final String cidrBlock;
+
+    public String getCidrBlock() {
+        return cidrBlock;
+    }
 
     /**
      * The list of IPv4 CIDR blocks the VCN will use.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
-    java.util.List<String> cidrBlocks;
+    private final java.util.List<String> cidrBlocks;
+
+    public java.util.List<String> getCidrBlocks() {
+        return cidrBlocks;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultDhcpOptionsId")
-    String defaultDhcpOptionsId;
+    private final String defaultDhcpOptionsId;
+
+    public String getDefaultDhcpOptionsId() {
+        return defaultDhcpOptionsId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRouteTableId")
-    String defaultRouteTableId;
+    private final String defaultRouteTableId;
+
+    public String getDefaultRouteTableId() {
+        return defaultRouteTableId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSecurityListId")
-    String defaultSecurityListId;
+    private final String defaultSecurityListId;
+
+    public String getDefaultSecurityListId() {
+        return defaultSecurityListId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -307,7 +397,11 @@ public class Vcn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -315,7 +409,11 @@ public class Vcn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
@@ -334,7 +432,11 @@ public class Vcn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
-    String dnsLabel;
+    private final String dnsLabel;
+
+    public String getDnsLabel() {
+        return dnsLabel;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -344,13 +446,21 @@ public class Vcn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
@@ -358,11 +468,15 @@ public class Vcn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
-    java.util.List<String> ipv6CidrBlocks;
+    private final java.util.List<String> ipv6CidrBlocks;
+
+    public java.util.List<String> getIpv6CidrBlocks() {
+        return ipv6CidrBlocks;
+    }
+
     /**
      * The VCN's current state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -375,6 +489,9 @@ public class Vcn {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -412,7 +529,11 @@ public class Vcn {
      * The VCN's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -421,7 +542,11 @@ public class Vcn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The VCN's domain name, which consists of the VCN's DNS label, and the
@@ -434,8 +559,125 @@ public class Vcn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnDomainName")
-    String vcnDomainName;
+    private final String vcnDomainName;
+
+    public String getVcnDomainName() {
+        return vcnDomainName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Vcn(");
+        sb.append("byoipv6CidrBlocks=").append(String.valueOf(this.byoipv6CidrBlocks));
+        sb.append(", ipv6PrivateCidrBlocks=").append(String.valueOf(this.ipv6PrivateCidrBlocks));
+        sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
+        sb.append(", cidrBlocks=").append(String.valueOf(this.cidrBlocks));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", defaultDhcpOptionsId=").append(String.valueOf(this.defaultDhcpOptionsId));
+        sb.append(", defaultRouteTableId=").append(String.valueOf(this.defaultRouteTableId));
+        sb.append(", defaultSecurityListId=").append(String.valueOf(this.defaultSecurityListId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", vcnDomainName=").append(String.valueOf(this.vcnDomainName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Vcn)) {
+            return false;
+        }
+
+        Vcn other = (Vcn) o;
+        return java.util.Objects.equals(this.byoipv6CidrBlocks, other.byoipv6CidrBlocks)
+                && java.util.Objects.equals(this.ipv6PrivateCidrBlocks, other.ipv6PrivateCidrBlocks)
+                && java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
+                && java.util.Objects.equals(this.cidrBlocks, other.cidrBlocks)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.defaultDhcpOptionsId, other.defaultDhcpOptionsId)
+                && java.util.Objects.equals(this.defaultRouteTableId, other.defaultRouteTableId)
+                && java.util.Objects.equals(this.defaultSecurityListId, other.defaultSecurityListId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.vcnDomainName, other.vcnDomainName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.byoipv6CidrBlocks == null ? 43 : this.byoipv6CidrBlocks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6PrivateCidrBlocks == null
+                                ? 43
+                                : this.ipv6PrivateCidrBlocks.hashCode());
+        result = (result * PRIME) + (this.cidrBlock == null ? 43 : this.cidrBlock.hashCode());
+        result = (result * PRIME) + (this.cidrBlocks == null ? 43 : this.cidrBlocks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultDhcpOptionsId == null
+                                ? 43
+                                : this.defaultDhcpOptionsId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultRouteTableId == null
+                                ? 43
+                                : this.defaultRouteTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultSecurityListId == null
+                                ? 43
+                                : this.defaultSecurityListId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.dnsLabel == null ? 43 : this.dnsLabel.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlocks == null ? 43 : this.ipv6CidrBlocks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vcnDomainName == null ? 43 : this.vcnDomainName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

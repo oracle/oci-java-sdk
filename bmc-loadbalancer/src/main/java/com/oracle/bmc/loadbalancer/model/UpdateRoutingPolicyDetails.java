@@ -15,16 +15,21 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateRoutingPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateRoutingPolicyDetails {
+public final class UpdateRoutingPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"conditionLanguageVersion", "rules"})
+    public UpdateRoutingPolicyDetails(
+            ConditionLanguageVersion conditionLanguageVersion, java.util.List<RoutingRule> rules) {
+        super();
+        this.conditionLanguageVersion = conditionLanguageVersion;
+        this.rules = rules;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
         private ConditionLanguageVersion conditionLanguageVersion;
@@ -71,6 +76,10 @@ public class UpdateRoutingPolicyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The version of the language in which {@code condition} of {@code rules} are composed.
      *
@@ -111,14 +120,70 @@ public class UpdateRoutingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
-    ConditionLanguageVersion conditionLanguageVersion;
+    private final ConditionLanguageVersion conditionLanguageVersion;
+
+    public ConditionLanguageVersion getConditionLanguageVersion() {
+        return conditionLanguageVersion;
+    }
 
     /**
      * The list of routing rules.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
-    java.util.List<RoutingRule> rules;
+    private final java.util.List<RoutingRule> rules;
+
+    public java.util.List<RoutingRule> getRules() {
+        return rules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateRoutingPolicyDetails(");
+        sb.append("conditionLanguageVersion=")
+                .append(String.valueOf(this.conditionLanguageVersion));
+        sb.append(", rules=").append(String.valueOf(this.rules));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateRoutingPolicyDetails)) {
+            return false;
+        }
+
+        UpdateRoutingPolicyDetails other = (UpdateRoutingPolicyDetails) o;
+        return java.util.Objects.equals(
+                        this.conditionLanguageVersion, other.conditionLanguageVersion)
+                && java.util.Objects.equals(this.rules, other.rules)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.conditionLanguageVersion == null
+                                ? 43
+                                : this.conditionLanguageVersion.hashCode());
+        result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

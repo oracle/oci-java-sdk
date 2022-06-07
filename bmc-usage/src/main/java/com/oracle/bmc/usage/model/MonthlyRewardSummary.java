@@ -15,16 +15,55 @@ package com.oracle.bmc.usage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonthlyRewardSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonthlyRewardSummary {
+public final class MonthlyRewardSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availableRewards",
+        "redeemedRewards",
+        "earnedRewards",
+        "isManual",
+        "timeRewardsExpired",
+        "timeRewardsEarned",
+        "timeUsageStarted",
+        "timeUsageEnded",
+        "usageAmount",
+        "eligibleUsageAmount",
+        "ineligibleUsageAmount",
+        "usagePeriodKey"
+    })
+    public MonthlyRewardSummary(
+            Float availableRewards,
+            Float redeemedRewards,
+            Float earnedRewards,
+            Boolean isManual,
+            java.util.Date timeRewardsExpired,
+            java.util.Date timeRewardsEarned,
+            java.util.Date timeUsageStarted,
+            java.util.Date timeUsageEnded,
+            Double usageAmount,
+            Double eligibleUsageAmount,
+            Double ineligibleUsageAmount,
+            String usagePeriodKey) {
+        super();
+        this.availableRewards = availableRewards;
+        this.redeemedRewards = redeemedRewards;
+        this.earnedRewards = earnedRewards;
+        this.isManual = isManual;
+        this.timeRewardsExpired = timeRewardsExpired;
+        this.timeRewardsEarned = timeRewardsEarned;
+        this.timeUsageStarted = timeUsageStarted;
+        this.timeUsageEnded = timeUsageEnded;
+        this.usageAmount = usageAmount;
+        this.eligibleUsageAmount = eligibleUsageAmount;
+        this.ineligibleUsageAmount = ineligibleUsageAmount;
+        this.usagePeriodKey = usagePeriodKey;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availableRewards")
         private Float availableRewards;
@@ -184,85 +223,235 @@ public class MonthlyRewardSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of rewards available for a specific usage period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableRewards")
-    Float availableRewards;
+    private final Float availableRewards;
+
+    public Float getAvailableRewards() {
+        return availableRewards;
+    }
 
     /**
      * The number of rewards redeemed for a specific month.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redeemedRewards")
-    Float redeemedRewards;
+    private final Float redeemedRewards;
+
+    public Float getRedeemedRewards() {
+        return redeemedRewards;
+    }
 
     /**
      * The number of rewards earned for the specific usage period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("earnedRewards")
-    Float earnedRewards;
+    private final Float earnedRewards;
+
+    public Float getEarnedRewards() {
+        return earnedRewards;
+    }
 
     /**
      * The boolean parameter to indicate whether or not the available rewards are manually posted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManual")
-    Boolean isManual;
+    private final Boolean isManual;
+
+    public Boolean getIsManual() {
+        return isManual;
+    }
 
     /**
      * The date and time when rewards expire.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRewardsExpired")
-    java.util.Date timeRewardsExpired;
+    private final java.util.Date timeRewardsExpired;
+
+    public java.util.Date getTimeRewardsExpired() {
+        return timeRewardsExpired;
+    }
 
     /**
      * The date and time when rewards accrue.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRewardsEarned")
-    java.util.Date timeRewardsEarned;
+    private final java.util.Date timeRewardsEarned;
+
+    public java.util.Date getTimeRewardsEarned() {
+        return timeRewardsEarned;
+    }
 
     /**
      * The start date and time for the usage period.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
-    java.util.Date timeUsageStarted;
+    private final java.util.Date timeUsageStarted;
+
+    public java.util.Date getTimeUsageStarted() {
+        return timeUsageStarted;
+    }
 
     /**
      * The end date and time for the usage period.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
-    java.util.Date timeUsageEnded;
+    private final java.util.Date timeUsageEnded;
+
+    public java.util.Date getTimeUsageEnded() {
+        return timeUsageEnded;
+    }
 
     /**
      * The usage amount for the usage period.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageAmount")
-    Double usageAmount;
+    private final Double usageAmount;
+
+    public Double getUsageAmount() {
+        return usageAmount;
+    }
 
     /**
      * The eligible usage amount for the usage period.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eligibleUsageAmount")
-    Double eligibleUsageAmount;
+    private final Double eligibleUsageAmount;
+
+    public Double getEligibleUsageAmount() {
+        return eligibleUsageAmount;
+    }
 
     /**
      * The ineligible usage amount for the usage period.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ineligibleUsageAmount")
-    Double ineligibleUsageAmount;
+    private final Double ineligibleUsageAmount;
+
+    public Double getIneligibleUsageAmount() {
+        return ineligibleUsageAmount;
+    }
 
     /**
      * The usage period ID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usagePeriodKey")
-    String usagePeriodKey;
+    private final String usagePeriodKey;
+
+    public String getUsagePeriodKey() {
+        return usagePeriodKey;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonthlyRewardSummary(");
+        sb.append("availableRewards=").append(String.valueOf(this.availableRewards));
+        sb.append(", redeemedRewards=").append(String.valueOf(this.redeemedRewards));
+        sb.append(", earnedRewards=").append(String.valueOf(this.earnedRewards));
+        sb.append(", isManual=").append(String.valueOf(this.isManual));
+        sb.append(", timeRewardsExpired=").append(String.valueOf(this.timeRewardsExpired));
+        sb.append(", timeRewardsEarned=").append(String.valueOf(this.timeRewardsEarned));
+        sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
+        sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
+        sb.append(", usageAmount=").append(String.valueOf(this.usageAmount));
+        sb.append(", eligibleUsageAmount=").append(String.valueOf(this.eligibleUsageAmount));
+        sb.append(", ineligibleUsageAmount=").append(String.valueOf(this.ineligibleUsageAmount));
+        sb.append(", usagePeriodKey=").append(String.valueOf(this.usagePeriodKey));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonthlyRewardSummary)) {
+            return false;
+        }
+
+        MonthlyRewardSummary other = (MonthlyRewardSummary) o;
+        return java.util.Objects.equals(this.availableRewards, other.availableRewards)
+                && java.util.Objects.equals(this.redeemedRewards, other.redeemedRewards)
+                && java.util.Objects.equals(this.earnedRewards, other.earnedRewards)
+                && java.util.Objects.equals(this.isManual, other.isManual)
+                && java.util.Objects.equals(this.timeRewardsExpired, other.timeRewardsExpired)
+                && java.util.Objects.equals(this.timeRewardsEarned, other.timeRewardsEarned)
+                && java.util.Objects.equals(this.timeUsageStarted, other.timeUsageStarted)
+                && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
+                && java.util.Objects.equals(this.usageAmount, other.usageAmount)
+                && java.util.Objects.equals(this.eligibleUsageAmount, other.eligibleUsageAmount)
+                && java.util.Objects.equals(this.ineligibleUsageAmount, other.ineligibleUsageAmount)
+                && java.util.Objects.equals(this.usagePeriodKey, other.usagePeriodKey)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availableRewards == null ? 43 : this.availableRewards.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.redeemedRewards == null ? 43 : this.redeemedRewards.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.earnedRewards == null ? 43 : this.earnedRewards.hashCode());
+        result = (result * PRIME) + (this.isManual == null ? 43 : this.isManual.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRewardsExpired == null
+                                ? 43
+                                : this.timeRewardsExpired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRewardsEarned == null ? 43 : this.timeRewardsEarned.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUsageStarted == null ? 43 : this.timeUsageStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUsageEnded == null ? 43 : this.timeUsageEnded.hashCode());
+        result = (result * PRIME) + (this.usageAmount == null ? 43 : this.usageAmount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.eligibleUsageAmount == null
+                                ? 43
+                                : this.eligibleUsageAmount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ineligibleUsageAmount == null
+                                ? 43
+                                : this.ineligibleUsageAmount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usagePeriodKey == null ? 43 : this.usagePeriodKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,9 +9,9 @@ import com.oracle.bmc.logging.requests.*;
 import com.oracle.bmc.logging.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.extern.slf4j.Slf4j
 public class LoggingManagementClient implements LoggingManagement {
     /**
      * Service instance for LoggingManagement.
@@ -25,13 +25,17 @@ public class LoggingManagementClient implements LoggingManagement {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LoggingManagementAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final LoggingManagementWaiters waiters;
 
     private final LoggingManagementPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -400,9 +404,13 @@ public class LoggingManagementClient implements LoggingManagement {
          * @return the client
          */
         public LoggingManagementClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new LoggingManagementClient(
                     authenticationDetailsProvider,
                     configuration,

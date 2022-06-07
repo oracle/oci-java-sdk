@@ -19,14 +19,44 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequest {
+public final class WorkRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "loadBalancerId",
+        "type",
+        "compartmentId",
+        "lifecycleState",
+        "message",
+        "timeAccepted",
+        "timeFinished",
+        "errorDetails"
+    })
+    public WorkRequest(
+            String id,
+            String loadBalancerId,
+            String type,
+            String compartmentId,
+            LifecycleState lifecycleState,
+            String message,
+            java.util.Date timeAccepted,
+            java.util.Date timeFinished,
+            java.util.List<WorkRequestError> errorDetails) {
+        super();
+        this.id = id;
+        this.loadBalancerId = loadBalancerId;
+        this.type = type;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+        this.message = message;
+        this.timeAccepted = timeAccepted;
+        this.timeFinished = timeFinished;
+        this.errorDetails = errorDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -153,11 +183,19 @@ public class WorkRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer with which the work request
@@ -165,7 +203,11 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
-    String loadBalancerId;
+    private final String loadBalancerId;
+
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
 
     /**
      * The type of action the work request represents.
@@ -174,18 +216,26 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * The current state of the work request.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -197,6 +247,9 @@ public class WorkRequest {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -235,7 +288,11 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A collection of data, related to the load balancer provisioning process, that helps with debugging in the event of failure.
@@ -249,7 +306,11 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * The date and time the work request was created, in the format defined by RFC3339.
@@ -258,7 +319,11 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
-    java.util.Date timeAccepted;
+    private final java.util.Date timeAccepted;
+
+    public java.util.Date getTimeAccepted() {
+        return timeAccepted;
+    }
 
     /**
      * The date and time the work request was completed, in the format defined by RFC3339.
@@ -267,11 +332,88 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
-    java.util.List<WorkRequestError> errorDetails;
+    private final java.util.List<WorkRequestError> errorDetails;
+
+    public java.util.List<WorkRequestError> getErrorDetails() {
+        return errorDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequest(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", errorDetails=").append(String.valueOf(this.errorDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequest)) {
+            return false;
+        }
+
+        WorkRequest other = (WorkRequest) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.errorDetails, other.errorDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result = (result * PRIME) + (this.errorDetails == null ? 43 : this.errorDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

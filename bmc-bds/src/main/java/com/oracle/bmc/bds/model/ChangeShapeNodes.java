@@ -15,14 +15,44 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChangeShapeNodes.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChangeShapeNodes {
+public final class ChangeShapeNodes {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "worker",
+        "workerShapeConfig",
+        "computeOnlyWorker",
+        "computeOnlyWorkerShapeConfig",
+        "master",
+        "masterShapeConfig",
+        "utility",
+        "utilityShapeConfig",
+        "cloudsql"
+    })
+    public ChangeShapeNodes(
+            String worker,
+            ShapeConfigDetails workerShapeConfig,
+            String computeOnlyWorker,
+            ShapeConfigDetails computeOnlyWorkerShapeConfig,
+            String master,
+            ShapeConfigDetails masterShapeConfig,
+            String utility,
+            ShapeConfigDetails utilityShapeConfig,
+            String cloudsql) {
+        super();
+        this.worker = worker;
+        this.workerShapeConfig = workerShapeConfig;
+        this.computeOnlyWorker = computeOnlyWorker;
+        this.computeOnlyWorkerShapeConfig = computeOnlyWorkerShapeConfig;
+        this.master = master;
+        this.masterShapeConfig = masterShapeConfig;
+        this.utility = utility;
+        this.utilityShapeConfig = utilityShapeConfig;
+        this.cloudsql = cloudsql;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("worker")
         private String worker;
@@ -150,48 +180,167 @@ public class ChangeShapeNodes {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("worker")
-    String worker;
+    private final String worker;
+
+    public String getWorker() {
+        return worker;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("workerShapeConfig")
-    ShapeConfigDetails workerShapeConfig;
+    private final ShapeConfigDetails workerShapeConfig;
+
+    public ShapeConfigDetails getWorkerShapeConfig() {
+        return workerShapeConfig;
+    }
 
     /**
      * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeOnlyWorker")
-    String computeOnlyWorker;
+    private final String computeOnlyWorker;
+
+    public String getComputeOnlyWorker() {
+        return computeOnlyWorker;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("computeOnlyWorkerShapeConfig")
-    ShapeConfigDetails computeOnlyWorkerShapeConfig;
+    private final ShapeConfigDetails computeOnlyWorkerShapeConfig;
+
+    public ShapeConfigDetails getComputeOnlyWorkerShapeConfig() {
+        return computeOnlyWorkerShapeConfig;
+    }
 
     /**
      * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("master")
-    String master;
+    private final String master;
+
+    public String getMaster() {
+        return master;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("masterShapeConfig")
-    ShapeConfigDetails masterShapeConfig;
+    private final ShapeConfigDetails masterShapeConfig;
+
+    public ShapeConfigDetails getMasterShapeConfig() {
+        return masterShapeConfig;
+    }
 
     /**
      * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("utility")
-    String utility;
+    private final String utility;
+
+    public String getUtility() {
+        return utility;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("utilityShapeConfig")
-    ShapeConfigDetails utilityShapeConfig;
+    private final ShapeConfigDetails utilityShapeConfig;
+
+    public ShapeConfigDetails getUtilityShapeConfig() {
+        return utilityShapeConfig;
+    }
 
     /**
      * Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudsql")
-    String cloudsql;
+    private final String cloudsql;
+
+    public String getCloudsql() {
+        return cloudsql;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChangeShapeNodes(");
+        sb.append("worker=").append(String.valueOf(this.worker));
+        sb.append(", workerShapeConfig=").append(String.valueOf(this.workerShapeConfig));
+        sb.append(", computeOnlyWorker=").append(String.valueOf(this.computeOnlyWorker));
+        sb.append(", computeOnlyWorkerShapeConfig=")
+                .append(String.valueOf(this.computeOnlyWorkerShapeConfig));
+        sb.append(", master=").append(String.valueOf(this.master));
+        sb.append(", masterShapeConfig=").append(String.valueOf(this.masterShapeConfig));
+        sb.append(", utility=").append(String.valueOf(this.utility));
+        sb.append(", utilityShapeConfig=").append(String.valueOf(this.utilityShapeConfig));
+        sb.append(", cloudsql=").append(String.valueOf(this.cloudsql));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeShapeNodes)) {
+            return false;
+        }
+
+        ChangeShapeNodes other = (ChangeShapeNodes) o;
+        return java.util.Objects.equals(this.worker, other.worker)
+                && java.util.Objects.equals(this.workerShapeConfig, other.workerShapeConfig)
+                && java.util.Objects.equals(this.computeOnlyWorker, other.computeOnlyWorker)
+                && java.util.Objects.equals(
+                        this.computeOnlyWorkerShapeConfig, other.computeOnlyWorkerShapeConfig)
+                && java.util.Objects.equals(this.master, other.master)
+                && java.util.Objects.equals(this.masterShapeConfig, other.masterShapeConfig)
+                && java.util.Objects.equals(this.utility, other.utility)
+                && java.util.Objects.equals(this.utilityShapeConfig, other.utilityShapeConfig)
+                && java.util.Objects.equals(this.cloudsql, other.cloudsql)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.worker == null ? 43 : this.worker.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workerShapeConfig == null ? 43 : this.workerShapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeOnlyWorker == null ? 43 : this.computeOnlyWorker.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeOnlyWorkerShapeConfig == null
+                                ? 43
+                                : this.computeOnlyWorkerShapeConfig.hashCode());
+        result = (result * PRIME) + (this.master == null ? 43 : this.master.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.masterShapeConfig == null ? 43 : this.masterShapeConfig.hashCode());
+        result = (result * PRIME) + (this.utility == null ? 43 : this.utility.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.utilityShapeConfig == null
+                                ? 43
+                                : this.utilityShapeConfig.hashCode());
+        result = (result * PRIME) + (this.cloudsql == null ? 43 : this.cloudsql.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

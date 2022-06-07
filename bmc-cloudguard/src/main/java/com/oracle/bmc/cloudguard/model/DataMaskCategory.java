@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Possible data masking categories
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum DataMaskCategory {
     Actor("ACTOR"),
     Pii("PII"),
@@ -22,6 +21,9 @@ public enum DataMaskCategory {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataMaskCategory.class);
 
     private final String value;
     private static java.util.Map<String, DataMaskCategory> map;

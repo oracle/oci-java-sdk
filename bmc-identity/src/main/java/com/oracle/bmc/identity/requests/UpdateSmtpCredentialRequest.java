@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateSmtpCredentialExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSmtpCredentialRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateSmtpCredentialRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.UpdateSmtpCredentialDetails> {
@@ -26,16 +18,26 @@ public class UpdateSmtpCredentialRequest
      */
     private String userId;
 
+    public String getUserId() {
+        return userId;
+    }
     /**
      * The OCID of the SMTP credential.
      */
     private String smtpCredentialId;
 
+    public String getSmtpCredentialId() {
+        return smtpCredentialId;
+    }
     /**
      * Request object for updating a SMTP credential.
      */
     private com.oracle.bmc.identity.model.UpdateSmtpCredentialDetails updateSmtpCredentialDetails;
 
+    public com.oracle.bmc.identity.model.UpdateSmtpCredentialDetails
+            getUpdateSmtpCredentialDetails() {
+        return updateSmtpCredentialDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -43,6 +45,10 @@ public class UpdateSmtpCredentialRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -61,6 +67,56 @@ public class UpdateSmtpCredentialRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String userId = null;
+
+        /**
+         * The OCID of the user.
+         * @return this builder instance
+         */
+        public Builder userId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        private String smtpCredentialId = null;
+
+        /**
+         * The OCID of the SMTP credential.
+         * @return this builder instance
+         */
+        public Builder smtpCredentialId(String smtpCredentialId) {
+            this.smtpCredentialId = smtpCredentialId;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.UpdateSmtpCredentialDetails
+                updateSmtpCredentialDetails = null;
+
+        /**
+         * Request object for updating a SMTP credential.
+         * @return this builder instance
+         */
+        public Builder updateSmtpCredentialDetails(
+                com.oracle.bmc.identity.model.UpdateSmtpCredentialDetails
+                        updateSmtpCredentialDetails) {
+            this.updateSmtpCredentialDetails = updateSmtpCredentialDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -126,5 +182,87 @@ public class UpdateSmtpCredentialRequest
             updateSmtpCredentialDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateSmtpCredentialRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateSmtpCredentialRequest
+         */
+        public UpdateSmtpCredentialRequest buildWithoutInvocationCallback() {
+            UpdateSmtpCredentialRequest request = new UpdateSmtpCredentialRequest();
+            request.userId = userId;
+            request.smtpCredentialId = smtpCredentialId;
+            request.updateSmtpCredentialDetails = updateSmtpCredentialDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateSmtpCredentialRequest(userId, smtpCredentialId, updateSmtpCredentialDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .userId(userId)
+                .smtpCredentialId(smtpCredentialId)
+                .updateSmtpCredentialDetails(updateSmtpCredentialDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",userId=").append(String.valueOf(this.userId));
+        sb.append(",smtpCredentialId=").append(String.valueOf(this.smtpCredentialId));
+        sb.append(",updateSmtpCredentialDetails=")
+                .append(String.valueOf(this.updateSmtpCredentialDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSmtpCredentialRequest)) {
+            return false;
+        }
+
+        UpdateSmtpCredentialRequest other = (UpdateSmtpCredentialRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.smtpCredentialId, other.smtpCredentialId)
+                && java.util.Objects.equals(
+                        this.updateSmtpCredentialDetails, other.updateSmtpCredentialDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.smtpCredentialId == null ? 43 : this.smtpCredentialId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateSmtpCredentialDetails == null
+                                ? 43
+                                : this.updateSmtpCredentialDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

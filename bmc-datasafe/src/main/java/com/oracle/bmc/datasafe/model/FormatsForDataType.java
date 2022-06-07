@@ -15,16 +15,20 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FormatsForDataType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FormatsForDataType {
+public final class FormatsForDataType {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dataType", "maskingFormats"})
+    public FormatsForDataType(String dataType, java.util.List<FormatSummary> maskingFormats) {
+        super();
+        this.dataType = dataType;
+        this.maskingFormats = maskingFormats;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
@@ -69,6 +73,10 @@ public class FormatsForDataType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The data type category, which can be one of the following -
      *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
@@ -79,14 +87,66 @@ public class FormatsForDataType {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    String dataType;
+    private final String dataType;
+
+    public String getDataType() {
+        return dataType;
+    }
 
     /**
      * An array of the basic masking formats compatible with the data type category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
-    java.util.List<FormatSummary> maskingFormats;
+    private final java.util.List<FormatSummary> maskingFormats;
+
+    public java.util.List<FormatSummary> getMaskingFormats() {
+        return maskingFormats;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FormatsForDataType(");
+        sb.append("dataType=").append(String.valueOf(this.dataType));
+        sb.append(", maskingFormats=").append(String.valueOf(this.maskingFormats));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FormatsForDataType)) {
+            return false;
+        }
+
+        FormatsForDataType other = (FormatsForDataType) o;
+        return java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.maskingFormats, other.maskingFormats)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingFormats == null ? 43 : this.maskingFormats.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

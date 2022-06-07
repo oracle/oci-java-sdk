@@ -9,14 +9,6 @@ import com.oracle.bmc.healthchecks.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListPingProbeResultsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPingProbeResultsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListPingProbeResultsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class ListPingProbeResultsRequest
      */
     private String probeConfigurationId;
 
+    public String getProbeConfigurationId() {
+        return probeConfigurationId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -32,12 +27,18 @@ public class ListPingProbeResultsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header
      * from the previous "List" call.
@@ -45,16 +46,25 @@ public class ListPingProbeResultsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Returns results with a {@code startTime} equal to or greater than the specified value.
      */
     private Double startTimeGreaterThanOrEqualTo;
 
+    public Double getStartTimeGreaterThanOrEqualTo() {
+        return startTimeGreaterThanOrEqualTo;
+    }
     /**
      * Returns results with a {@code startTime} equal to or less than the specified value.
      */
     private Double startTimeLessThanOrEqualTo;
 
+    public Double getStartTimeLessThanOrEqualTo() {
+        return startTimeLessThanOrEqualTo;
+    }
     /**
      * Controls the sort order of results.
      */
@@ -95,10 +105,18 @@ public class ListPingProbeResultsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Filters results that match the {@code target}.
      */
     private String target;
+
+    public String getTarget() {
+        return target;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -106,6 +124,99 @@ public class ListPingProbeResultsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String probeConfigurationId = null;
+
+        /**
+         * The OCID of a monitor or on-demand probe.
+         * @return this builder instance
+         */
+        public Builder probeConfigurationId(String probeConfigurationId) {
+            this.probeConfigurationId = probeConfigurationId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header
+         * from the previous "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Double startTimeGreaterThanOrEqualTo = null;
+
+        /**
+         * Returns results with a {@code startTime} equal to or greater than the specified value.
+         * @return this builder instance
+         */
+        public Builder startTimeGreaterThanOrEqualTo(Double startTimeGreaterThanOrEqualTo) {
+            this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private Double startTimeLessThanOrEqualTo = null;
+
+        /**
+         * Returns results with a {@code startTime} equal to or less than the specified value.
+         * @return this builder instance
+         */
+        public Builder startTimeLessThanOrEqualTo(Double startTimeLessThanOrEqualTo) {
+            this.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * Controls the sort order of results.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String target = null;
+
+        /**
+         * Filters results that match the {@code target}.
+         * @return this builder instance
+         */
+        public Builder target(String target) {
+            this.target = target;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -164,5 +275,115 @@ public class ListPingProbeResultsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListPingProbeResultsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListPingProbeResultsRequest
+         */
+        public ListPingProbeResultsRequest buildWithoutInvocationCallback() {
+            ListPingProbeResultsRequest request = new ListPingProbeResultsRequest();
+            request.probeConfigurationId = probeConfigurationId;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            request.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
+            request.sortOrder = sortOrder;
+            request.target = target;
+            return request;
+            // new ListPingProbeResultsRequest(probeConfigurationId, opcRequestId, limit, page, startTimeGreaterThanOrEqualTo, startTimeLessThanOrEqualTo, sortOrder, target);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .probeConfigurationId(probeConfigurationId)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .startTimeGreaterThanOrEqualTo(startTimeGreaterThanOrEqualTo)
+                .startTimeLessThanOrEqualTo(startTimeLessThanOrEqualTo)
+                .sortOrder(sortOrder)
+                .target(target);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",probeConfigurationId=").append(String.valueOf(this.probeConfigurationId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",startTimeGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.startTimeGreaterThanOrEqualTo));
+        sb.append(",startTimeLessThanOrEqualTo=")
+                .append(String.valueOf(this.startTimeLessThanOrEqualTo));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",target=").append(String.valueOf(this.target));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListPingProbeResultsRequest)) {
+            return false;
+        }
+
+        ListPingProbeResultsRequest other = (ListPingProbeResultsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.probeConfigurationId, other.probeConfigurationId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(
+                        this.startTimeGreaterThanOrEqualTo, other.startTimeGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.startTimeLessThanOrEqualTo, other.startTimeLessThanOrEqualTo)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.target, other.target);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.probeConfigurationId == null
+                                ? 43
+                                : this.probeConfigurationId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.startTimeGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.startTimeGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.startTimeLessThanOrEqualTo == null
+                                ? 43
+                                : this.startTimeLessThanOrEqualTo.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        return result;
     }
 }

@@ -16,20 +16,15 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChartColumn.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChartColumn extends AbstractColumn {
+public final class ChartColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -222,6 +217,10 @@ public class ChartColumn extends AbstractColumn {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ChartColumn(
             String displayName,
@@ -262,29 +261,99 @@ public class ChartColumn extends AbstractColumn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
-    String intervalGap;
+    private final String intervalGap;
+
+    public String getIntervalGap() {
+        return intervalGap;
+    }
 
     /**
      * List of timestamps making up the timeseries datapoints.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervals")
-    java.util.List<Long> intervals;
+    private final java.util.List<Long> intervals;
+
+    public java.util.List<Long> getIntervals() {
+        return intervals;
+    }
 
     /**
      * Total matching count for each timeseries datapoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCounts")
-    java.util.List<Long> totalIntervalCounts;
+    private final java.util.List<Long> totalIntervalCounts;
+
+    public java.util.List<Long> getTotalIntervalCounts() {
+        return totalIntervalCounts;
+    }
 
     /**
      * List of series data sets representing various link command results.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("series")
-    java.util.List<ChartDataColumn> series;
+    private final java.util.List<ChartDataColumn> series;
+
+    public java.util.List<ChartDataColumn> getSeries() {
+        return series;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChartColumn(");
+        sb.append("super=").append(super.toString());
+        sb.append(", intervalGap=").append(String.valueOf(this.intervalGap));
+        sb.append(", intervals=").append(String.valueOf(this.intervals));
+        sb.append(", totalIntervalCounts=").append(String.valueOf(this.totalIntervalCounts));
+        sb.append(", series=").append(String.valueOf(this.series));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChartColumn)) {
+            return false;
+        }
+
+        ChartColumn other = (ChartColumn) o;
+        return java.util.Objects.equals(this.intervalGap, other.intervalGap)
+                && java.util.Objects.equals(this.intervals, other.intervals)
+                && java.util.Objects.equals(this.totalIntervalCounts, other.totalIntervalCounts)
+                && java.util.Objects.equals(this.series, other.series)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.intervalGap == null ? 43 : this.intervalGap.hashCode());
+        result = (result * PRIME) + (this.intervals == null ? 43 : this.intervals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalIntervalCounts == null
+                                ? 43
+                                : this.totalIntervalCounts.hashCode());
+        result = (result * PRIME) + (this.series == null ? 43 : this.series.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

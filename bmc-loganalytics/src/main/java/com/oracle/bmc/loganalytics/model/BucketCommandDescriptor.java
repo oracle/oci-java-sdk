@@ -16,22 +16,17 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BucketCommandDescriptor.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "name"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BucketCommandDescriptor extends AbstractCommandDescriptor {
+public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
@@ -158,6 +153,10 @@ public class BucketCommandDescriptor extends AbstractCommandDescriptor {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public BucketCommandDescriptor(
             String displayQueryString,
@@ -181,29 +180,95 @@ public class BucketCommandDescriptor extends AbstractCommandDescriptor {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxBuckets")
-    Integer maxBuckets;
+    private final Integer maxBuckets;
+
+    public Integer getMaxBuckets() {
+        return maxBuckets;
+    }
 
     /**
      * Size of each numeric range if specified. Data type should match numeric field data type specified in the query string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("span")
-    java.math.BigDecimal span;
+    private final java.math.BigDecimal span;
+
+    public java.math.BigDecimal getSpan() {
+        return span;
+    }
 
     /**
      * List of the specified numeric ranges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ranges")
-    java.util.List<BucketRange> ranges;
+    private final java.util.List<BucketRange> ranges;
+
+    public java.util.List<BucketRange> getRanges() {
+        return ranges;
+    }
 
     /**
      * Default value to use in place of null if a result does not fit into any of the specified / calculated ranges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
-    String defaultValue;
+    private final String defaultValue;
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BucketCommandDescriptor(");
+        sb.append("super=").append(super.toString());
+        sb.append(", maxBuckets=").append(String.valueOf(this.maxBuckets));
+        sb.append(", span=").append(String.valueOf(this.span));
+        sb.append(", ranges=").append(String.valueOf(this.ranges));
+        sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BucketCommandDescriptor)) {
+            return false;
+        }
+
+        BucketCommandDescriptor other = (BucketCommandDescriptor) o;
+        return java.util.Objects.equals(this.maxBuckets, other.maxBuckets)
+                && java.util.Objects.equals(this.span, other.span)
+                && java.util.Objects.equals(this.ranges, other.ranges)
+                && java.util.Objects.equals(this.defaultValue, other.defaultValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.maxBuckets == null ? 43 : this.maxBuckets.hashCode());
+        result = (result * PRIME) + (this.span == null ? 43 : this.span.hashCode());
+        result = (result * PRIME) + (this.ranges == null ? 43 : this.ranges.hashCode());
+        result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

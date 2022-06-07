@@ -18,16 +18,40 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDatabaseDetails {
+public final class UpdateDatabaseDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "dbBackupConfig",
+        "dbHomeId",
+        "newAdminPassword",
+        "oldTdeWalletPassword",
+        "newTdeWalletPassword",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateDatabaseDetails(
+            DbBackupConfig dbBackupConfig,
+            String dbHomeId,
+            String newAdminPassword,
+            String oldTdeWalletPassword,
+            String newTdeWalletPassword,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.dbBackupConfig = dbBackupConfig;
+        this.dbHomeId = dbHomeId;
+        this.newAdminPassword = newAdminPassword;
+        this.oldTdeWalletPassword = oldTdeWalletPassword;
+        this.newTdeWalletPassword = newTdeWalletPassword;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
         private DbBackupConfig dbBackupConfig;
@@ -133,32 +157,56 @@ public class UpdateDatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
-    DbBackupConfig dbBackupConfig;
+    private final DbBackupConfig dbBackupConfig;
+
+    public DbBackupConfig getDbBackupConfig() {
+        return dbBackupConfig;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
-    String dbHomeId;
+    private final String dbHomeId;
+
+    public String getDbHomeId() {
+        return dbHomeId;
+    }
 
     /**
      * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newAdminPassword")
-    String newAdminPassword;
+    private final String newAdminPassword;
+
+    public String getNewAdminPassword() {
+        return newAdminPassword;
+    }
 
     /**
      * The existing TDE wallet password. You must provide the existing password in order to set a new TDE wallet password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
-    String oldTdeWalletPassword;
+    private final String oldTdeWalletPassword;
+
+    public String getOldTdeWalletPassword() {
+        return oldTdeWalletPassword;
+    }
 
     /**
      * The new password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newTdeWalletPassword")
-    String newTdeWalletPassword;
+    private final String newTdeWalletPassword;
+
+    public String getNewTdeWalletPassword() {
+        return newTdeWalletPassword;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -168,7 +216,11 @@ public class UpdateDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -176,8 +228,81 @@ public class UpdateDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDatabaseDetails(");
+        sb.append("dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
+        sb.append(", dbHomeId=").append(String.valueOf(this.dbHomeId));
+        sb.append(", newAdminPassword=").append(String.valueOf(this.newAdminPassword));
+        sb.append(", oldTdeWalletPassword=").append(String.valueOf(this.oldTdeWalletPassword));
+        sb.append(", newTdeWalletPassword=").append(String.valueOf(this.newTdeWalletPassword));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDatabaseDetails)) {
+            return false;
+        }
+
+        UpdateDatabaseDetails other = (UpdateDatabaseDetails) o;
+        return java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
+                && java.util.Objects.equals(this.dbHomeId, other.dbHomeId)
+                && java.util.Objects.equals(this.newAdminPassword, other.newAdminPassword)
+                && java.util.Objects.equals(this.oldTdeWalletPassword, other.oldTdeWalletPassword)
+                && java.util.Objects.equals(this.newTdeWalletPassword, other.newTdeWalletPassword)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
+        result = (result * PRIME) + (this.dbHomeId == null ? 43 : this.dbHomeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.newAdminPassword == null ? 43 : this.newAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oldTdeWalletPassword == null
+                                ? 43
+                                : this.oldTdeWalletPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.newTdeWalletPassword == null
+                                ? 43
+                                : this.newTdeWalletPassword.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

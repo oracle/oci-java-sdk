@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Indication that conveys our certainty that a Sighting is a True Positive
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum Confidence {
     Critical("CRITICAL"),
     High("HIGH"),
@@ -21,6 +20,8 @@ public enum Confidence {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Confidence.class);
 
     private final String value;
     private static java.util.Map<String, Confidence> map;

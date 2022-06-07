@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfilesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResourceProfilesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListResourceProfilesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,26 +17,41 @@ public class ListResourceProfilesRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
      */
     private java.util.Date timeLastDetectedGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeLastDetectedGreaterThanOrEqualTo() {
+        return timeLastDetectedGreaterThanOrEqualTo;
+    }
     /**
      * End time for a filter. If end time is not specified, end time will be set to current time.
      */
     private java.util.Date timeLastDetectedLessThanOrEqualTo;
 
+    public java.util.Date getTimeLastDetectedLessThanOrEqualTo() {
+        return timeLastDetectedLessThanOrEqualTo;
+    }
     /**
      * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
      */
     private java.util.Date timeFirstDetectedGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeFirstDetectedGreaterThanOrEqualTo() {
+        return timeFirstDetectedGreaterThanOrEqualTo;
+    }
     /**
      * End time for a filter. If end time is not specified, end time will be set to current time.
      */
     private java.util.Date timeFirstDetectedLessThanOrEqualTo;
 
+    public java.util.Date getTimeFirstDetectedLessThanOrEqualTo() {
+        return timeFirstDetectedLessThanOrEqualTo;
+    }
     /**
      * Default is false.
      * When set to true, the hierarchy of compartments is traversed
@@ -54,6 +61,9 @@ public class ListResourceProfilesRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
      * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
@@ -104,46 +114,74 @@ public class ListResourceProfilesRequest
             throw new IllegalArgumentException("Invalid AccessLevel: " + key);
         }
     };
+
+    public AccessLevel getAccessLevel() {
+        return accessLevel;
+    }
     /**
      * A filter to return only resources that match the list of resource types given
      */
     private java.util.List<String> resourceTypes;
 
+    public java.util.List<String> getResourceTypes() {
+        return resourceTypes;
+    }
     /**
      * risk score filter
      */
     private Double riskScoreGreaterThanOrEqualTo;
 
+    public Double getRiskScoreGreaterThanOrEqualTo() {
+        return riskScoreGreaterThanOrEqualTo;
+    }
     /**
      * risk score filter
      */
     private Double riskScoreLessThanOrEqualTo;
 
+    public Double getRiskScoreLessThanOrEqualTo() {
+        return riskScoreLessThanOrEqualTo;
+    }
     /**
      * A filter to return only resources that match the list of techniques given
      */
     private java.util.List<String> techniques;
 
+    public java.util.List<String> getTechniques() {
+        return techniques;
+    }
     /**
      * A filter to return only resources that match the list of tactics given.
      */
     private java.util.List<String> tactics;
 
+    public java.util.List<String> getTactics() {
+        return tactics;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort resource profiles. Only one sort order may be provided. Default order for timeLastDetected is descending. If no value is specified timeLastDetected is default.
      *
@@ -191,10 +229,18 @@ public class ListResourceProfilesRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -202,6 +248,96 @@ public class ListResourceProfilesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private java.util.Date timeLastDetectedGreaterThanOrEqualTo = null;
+
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         * @return this builder instance
+         */
+        public Builder timeLastDetectedGreaterThanOrEqualTo(
+                java.util.Date timeLastDetectedGreaterThanOrEqualTo) {
+            this.timeLastDetectedGreaterThanOrEqualTo = timeLastDetectedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeLastDetectedLessThanOrEqualTo = null;
+
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to current time.
+         * @return this builder instance
+         */
+        public Builder timeLastDetectedLessThanOrEqualTo(
+                java.util.Date timeLastDetectedLessThanOrEqualTo) {
+            this.timeLastDetectedLessThanOrEqualTo = timeLastDetectedLessThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeFirstDetectedGreaterThanOrEqualTo = null;
+
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         * @return this builder instance
+         */
+        public Builder timeFirstDetectedGreaterThanOrEqualTo(
+                java.util.Date timeFirstDetectedGreaterThanOrEqualTo) {
+            this.timeFirstDetectedGreaterThanOrEqualTo = timeFirstDetectedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeFirstDetectedLessThanOrEqualTo = null;
+
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to current time.
+         * @return this builder instance
+         */
+        public Builder timeFirstDetectedLessThanOrEqualTo(
+                java.util.Date timeFirstDetectedLessThanOrEqualTo) {
+            this.timeFirstDetectedLessThanOrEqualTo = timeFirstDetectedLessThanOrEqualTo;
+            return this;
+        }
+
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        private AccessLevel accessLevel = null;
+
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         * @return this builder instance
+         */
+        public Builder accessLevel(AccessLevel accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
 
         private java.util.List<String> resourceTypes = null;
 
@@ -220,6 +356,28 @@ public class ListResourceProfilesRequest
          */
         public Builder resourceTypes(String singularValue) {
             return this.resourceTypes(java.util.Arrays.asList(singularValue));
+        }
+
+        private Double riskScoreGreaterThanOrEqualTo = null;
+
+        /**
+         * risk score filter
+         * @return this builder instance
+         */
+        public Builder riskScoreGreaterThanOrEqualTo(Double riskScoreGreaterThanOrEqualTo) {
+            this.riskScoreGreaterThanOrEqualTo = riskScoreGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private Double riskScoreLessThanOrEqualTo = null;
+
+        /**
+         * risk score filter
+         * @return this builder instance
+         */
+        public Builder riskScoreLessThanOrEqualTo(Double riskScoreLessThanOrEqualTo) {
+            this.riskScoreLessThanOrEqualTo = riskScoreLessThanOrEqualTo;
+            return this;
         }
 
         private java.util.List<String> techniques = null;
@@ -258,6 +416,62 @@ public class ListResourceProfilesRequest
          */
         public Builder tactics(String singularValue) {
             return this.tactics(java.util.Arrays.asList(singularValue));
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.cloudguard.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort resource profiles. Only one sort order may be provided. Default order for timeLastDetected is descending. If no value is specified timeLastDetected is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -326,5 +540,193 @@ public class ListResourceProfilesRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListResourceProfilesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListResourceProfilesRequest
+         */
+        public ListResourceProfilesRequest buildWithoutInvocationCallback() {
+            ListResourceProfilesRequest request = new ListResourceProfilesRequest();
+            request.compartmentId = compartmentId;
+            request.timeLastDetectedGreaterThanOrEqualTo = timeLastDetectedGreaterThanOrEqualTo;
+            request.timeLastDetectedLessThanOrEqualTo = timeLastDetectedLessThanOrEqualTo;
+            request.timeFirstDetectedGreaterThanOrEqualTo = timeFirstDetectedGreaterThanOrEqualTo;
+            request.timeFirstDetectedLessThanOrEqualTo = timeFirstDetectedLessThanOrEqualTo;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.accessLevel = accessLevel;
+            request.resourceTypes = resourceTypes;
+            request.riskScoreGreaterThanOrEqualTo = riskScoreGreaterThanOrEqualTo;
+            request.riskScoreLessThanOrEqualTo = riskScoreLessThanOrEqualTo;
+            request.techniques = techniques;
+            request.tactics = tactics;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListResourceProfilesRequest(compartmentId, timeLastDetectedGreaterThanOrEqualTo, timeLastDetectedLessThanOrEqualTo, timeFirstDetectedGreaterThanOrEqualTo, timeFirstDetectedLessThanOrEqualTo, compartmentIdInSubtree, accessLevel, resourceTypes, riskScoreGreaterThanOrEqualTo, riskScoreLessThanOrEqualTo, techniques, tactics, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .timeLastDetectedGreaterThanOrEqualTo(timeLastDetectedGreaterThanOrEqualTo)
+                .timeLastDetectedLessThanOrEqualTo(timeLastDetectedLessThanOrEqualTo)
+                .timeFirstDetectedGreaterThanOrEqualTo(timeFirstDetectedGreaterThanOrEqualTo)
+                .timeFirstDetectedLessThanOrEqualTo(timeFirstDetectedLessThanOrEqualTo)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .accessLevel(accessLevel)
+                .resourceTypes(resourceTypes)
+                .riskScoreGreaterThanOrEqualTo(riskScoreGreaterThanOrEqualTo)
+                .riskScoreLessThanOrEqualTo(riskScoreLessThanOrEqualTo)
+                .techniques(techniques)
+                .tactics(tactics)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",timeLastDetectedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeLastDetectedGreaterThanOrEqualTo));
+        sb.append(",timeLastDetectedLessThanOrEqualTo=")
+                .append(String.valueOf(this.timeLastDetectedLessThanOrEqualTo));
+        sb.append(",timeFirstDetectedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeFirstDetectedGreaterThanOrEqualTo));
+        sb.append(",timeFirstDetectedLessThanOrEqualTo=")
+                .append(String.valueOf(this.timeFirstDetectedLessThanOrEqualTo));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
+        sb.append(",resourceTypes=").append(String.valueOf(this.resourceTypes));
+        sb.append(",riskScoreGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.riskScoreGreaterThanOrEqualTo));
+        sb.append(",riskScoreLessThanOrEqualTo=")
+                .append(String.valueOf(this.riskScoreLessThanOrEqualTo));
+        sb.append(",techniques=").append(String.valueOf(this.techniques));
+        sb.append(",tactics=").append(String.valueOf(this.tactics));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListResourceProfilesRequest)) {
+            return false;
+        }
+
+        ListResourceProfilesRequest other = (ListResourceProfilesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.timeLastDetectedGreaterThanOrEqualTo,
+                        other.timeLastDetectedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeLastDetectedLessThanOrEqualTo,
+                        other.timeLastDetectedLessThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeFirstDetectedGreaterThanOrEqualTo,
+                        other.timeFirstDetectedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeFirstDetectedLessThanOrEqualTo,
+                        other.timeFirstDetectedLessThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel)
+                && java.util.Objects.equals(this.resourceTypes, other.resourceTypes)
+                && java.util.Objects.equals(
+                        this.riskScoreGreaterThanOrEqualTo, other.riskScoreGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.riskScoreLessThanOrEqualTo, other.riskScoreLessThanOrEqualTo)
+                && java.util.Objects.equals(this.techniques, other.techniques)
+                && java.util.Objects.equals(this.tactics, other.tactics)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDetectedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeLastDetectedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDetectedLessThanOrEqualTo == null
+                                ? 43
+                                : this.timeLastDetectedLessThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstDetectedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeFirstDetectedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstDetectedLessThanOrEqualTo == null
+                                ? 43
+                                : this.timeFirstDetectedLessThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceTypes == null ? 43 : this.resourceTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.riskScoreGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.riskScoreGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.riskScoreLessThanOrEqualTo == null
+                                ? 43
+                                : this.riskScoreLessThanOrEqualTo.hashCode());
+        result = (result * PRIME) + (this.techniques == null ? 43 : this.techniques.hashCode());
+        result = (result * PRIME) + (this.tactics == null ? 43 : this.tactics.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

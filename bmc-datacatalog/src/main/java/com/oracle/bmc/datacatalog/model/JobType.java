@@ -20,7 +20,6 @@ package com.oracle.bmc.datacatalog.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.extern.slf4j.Slf4j
 public enum JobType {
     Harvest("HARVEST"),
     Profiling("PROFILING"),
@@ -45,6 +44,8 @@ public enum JobType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(JobType.class);
 
     private final String value;
     private static java.util.Map<String, JobType> map;

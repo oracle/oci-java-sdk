@@ -9,14 +9,6 @@ import com.oracle.bmc.certificates.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificates/GetCertificateBundleExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCertificateBundleRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetCertificateBundleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class GetCertificateBundleRequest
      */
     private String certificateId;
 
+    public String getCertificateId() {
+        return certificateId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
      * please provide the request ID.
@@ -32,17 +27,26 @@ public class GetCertificateBundleRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
      */
     private Long versionNumber;
 
+    public Long getVersionNumber() {
+        return versionNumber;
+    }
     /**
      * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
      *
      */
     private String certificateVersionName;
 
+    public String getCertificateVersionName() {
+        return certificateVersionName;
+    }
     /**
      * The rotation state of the certificate version.
      */
@@ -86,6 +90,10 @@ public class GetCertificateBundleRequest
             throw new IllegalArgumentException("Invalid Stage: " + key);
         }
     };
+
+    public Stage getStage() {
+        return stage;
+    }
     /**
      * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
      *
@@ -129,12 +137,86 @@ public class GetCertificateBundleRequest
         }
     };
 
+    public CertificateBundleType getCertificateBundleType() {
+        return certificateBundleType;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetCertificateBundleRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String certificateId = null;
+
+        /**
+         * The OCID of the certificate.
+         * @return this builder instance
+         */
+        public Builder certificateId(String certificateId) {
+            this.certificateId = certificateId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Long versionNumber = null;
+
+        /**
+         * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
+         * @return this builder instance
+         */
+        public Builder versionNumber(Long versionNumber) {
+            this.versionNumber = versionNumber;
+            return this;
+        }
+
+        private String certificateVersionName = null;
+
+        /**
+         * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
+         *
+         * @return this builder instance
+         */
+        public Builder certificateVersionName(String certificateVersionName) {
+            this.certificateVersionName = certificateVersionName;
+            return this;
+        }
+
+        private Stage stage = null;
+
+        /**
+         * The rotation state of the certificate version.
+         * @return this builder instance
+         */
+        public Builder stage(Stage stage) {
+            this.stage = stage;
+            return this;
+        }
+
+        private CertificateBundleType certificateBundleType = null;
+
+        /**
+         * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
+         *
+         * @return this builder instance
+         */
+        public Builder certificateBundleType(CertificateBundleType certificateBundleType) {
+            this.certificateBundleType = certificateBundleType;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -191,5 +273,103 @@ public class GetCertificateBundleRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetCertificateBundleRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetCertificateBundleRequest
+         */
+        public GetCertificateBundleRequest buildWithoutInvocationCallback() {
+            GetCertificateBundleRequest request = new GetCertificateBundleRequest();
+            request.certificateId = certificateId;
+            request.opcRequestId = opcRequestId;
+            request.versionNumber = versionNumber;
+            request.certificateVersionName = certificateVersionName;
+            request.stage = stage;
+            request.certificateBundleType = certificateBundleType;
+            return request;
+            // new GetCertificateBundleRequest(certificateId, opcRequestId, versionNumber, certificateVersionName, stage, certificateBundleType);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .certificateId(certificateId)
+                .opcRequestId(opcRequestId)
+                .versionNumber(versionNumber)
+                .certificateVersionName(certificateVersionName)
+                .stage(stage)
+                .certificateBundleType(certificateBundleType);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",certificateId=").append(String.valueOf(this.certificateId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",versionNumber=").append(String.valueOf(this.versionNumber));
+        sb.append(",certificateVersionName=").append(String.valueOf(this.certificateVersionName));
+        sb.append(",stage=").append(String.valueOf(this.stage));
+        sb.append(",certificateBundleType=").append(String.valueOf(this.certificateBundleType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetCertificateBundleRequest)) {
+            return false;
+        }
+
+        GetCertificateBundleRequest other = (GetCertificateBundleRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.certificateId, other.certificateId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.versionNumber, other.versionNumber)
+                && java.util.Objects.equals(
+                        this.certificateVersionName, other.certificateVersionName)
+                && java.util.Objects.equals(this.stage, other.stage)
+                && java.util.Objects.equals(
+                        this.certificateBundleType, other.certificateBundleType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.certificateId == null ? 43 : this.certificateId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionNumber == null ? 43 : this.versionNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateVersionName == null
+                                ? 43
+                                : this.certificateVersionName.hashCode());
+        result = (result * PRIME) + (this.stage == null ? 43 : this.stage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateBundleType == null
+                                ? 43
+                                : this.certificateBundleType.hashCode());
+        return result;
     }
 }

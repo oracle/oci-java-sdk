@@ -8,7 +8,6 @@ package com.oracle.bmc.loganalytics.model;
  * Job execution mode
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.extern.slf4j.Slf4j
 public enum JobMode {
     Foreground("FOREGROUND"),
     Background("BACKGROUND"),
@@ -18,6 +17,8 @@ public enum JobMode {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(JobMode.class);
 
     private final String value;
     private static java.util.Map<String, JobMode> map;

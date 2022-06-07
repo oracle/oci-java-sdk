@@ -15,14 +15,20 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JavaRuntimeId.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JavaRuntimeId {
+public final class JavaRuntimeId {
+    @Deprecated
+    @java.beans.ConstructorProperties({"version", "vendor", "distribution", "jreKey"})
+    public JavaRuntimeId(String version, String vendor, String distribution, String jreKey) {
+        super();
+        this.version = version;
+        this.vendor = vendor;
+        this.distribution = distribution;
+        this.jreKey = jreKey;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
@@ -89,30 +95,98 @@ public class JavaRuntimeId {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The version of the Java Runtime.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The vendor of the Java Runtime.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
-    String vendor;
+    private final String vendor;
+
+    public String getVendor() {
+        return vendor;
+    }
 
     /**
      * The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("distribution")
-    String distribution;
+    private final String distribution;
+
+    public String getDistribution() {
+        return distribution;
+    }
 
     /**
      * The unique identifier for a Java Runtime.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jreKey")
-    String jreKey;
+    private final String jreKey;
+
+    public String getJreKey() {
+        return jreKey;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JavaRuntimeId(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", vendor=").append(String.valueOf(this.vendor));
+        sb.append(", distribution=").append(String.valueOf(this.distribution));
+        sb.append(", jreKey=").append(String.valueOf(this.jreKey));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JavaRuntimeId)) {
+            return false;
+        }
+
+        JavaRuntimeId other = (JavaRuntimeId) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.vendor, other.vendor)
+                && java.util.Objects.equals(this.distribution, other.distribution)
+                && java.util.Objects.equals(this.jreKey, other.jreKey)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.vendor == null ? 43 : this.vendor.hashCode());
+        result = (result * PRIME) + (this.distribution == null ? 43 : this.distribution.hashCode());
+        result = (result * PRIME) + (this.jreKey == null ? 43 : this.jreKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

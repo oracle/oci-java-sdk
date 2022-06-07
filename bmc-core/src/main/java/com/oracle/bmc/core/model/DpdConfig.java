@@ -16,14 +16,18 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DpdConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DpdConfig {
+public final class DpdConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dpdMode", "dpdTimeoutInSec"})
+    public DpdConfig(DpdMode dpdMode, Integer dpdTimeoutInSec) {
+        super();
+        this.dpdMode = dpdMode;
+        this.dpdTimeoutInSec = dpdTimeoutInSec;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
         private DpdMode dpdMode;
@@ -68,6 +72,10 @@ public class DpdConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This option defines whether DPD can be initiated from the Oracle side of the connection.
      *
@@ -109,15 +117,67 @@ public class DpdConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
-    DpdMode dpdMode;
+    private final DpdMode dpdMode;
+
+    public DpdMode getDpdMode() {
+        return dpdMode;
+    }
 
     /**
      * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
-    Integer dpdTimeoutInSec;
+    private final Integer dpdTimeoutInSec;
+
+    public Integer getDpdTimeoutInSec() {
+        return dpdTimeoutInSec;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DpdConfig(");
+        sb.append("dpdMode=").append(String.valueOf(this.dpdMode));
+        sb.append(", dpdTimeoutInSec=").append(String.valueOf(this.dpdTimeoutInSec));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DpdConfig)) {
+            return false;
+        }
+
+        DpdConfig other = (DpdConfig) o;
+        return java.util.Objects.equals(this.dpdMode, other.dpdMode)
+                && java.util.Objects.equals(this.dpdTimeoutInSec, other.dpdTimeoutInSec)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dpdMode == null ? 43 : this.dpdMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dpdTimeoutInSec == null ? 43 : this.dpdTimeoutInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

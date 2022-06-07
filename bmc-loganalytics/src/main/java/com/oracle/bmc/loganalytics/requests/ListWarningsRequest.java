@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWarningsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWarningsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,11 +17,17 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The ID of the compartment in which to list resources.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The warning state used for filtering.  A value of SUPPRESSED will return only
      * suppressed warnings, a value of UNSUPPRESSED will return only unsuppressed
@@ -79,11 +77,18 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid WarningState: " + key);
         }
     };
+
+    public WarningState getWarningState() {
+        return warningState;
+    }
     /**
      * The source name.
      */
     private String sourceName;
 
+    public String getSourceName() {
+        return sourceName;
+    }
     /**
      * The source pattern used for filtering.  Only warnings associated with a source with the
      * specified pattern will be returned.
@@ -91,11 +96,17 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String sourcePattern;
 
+    public String getSourcePattern() {
+        return sourcePattern;
+    }
     /**
      * warning message query parameter
      */
     private String warningMessage;
 
+    public String getWarningMessage() {
+        return warningMessage;
+    }
     /**
      * The entity name used for filtering.  Only warnings associated with an entity with the
      * specified name will be returned.
@@ -103,6 +114,9 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String entityName;
 
+    public String getEntityName() {
+        return entityName;
+    }
     /**
      * The entity type used for filtering.  Only associations on an entity with the
      * specified type will be returned.
@@ -110,11 +124,17 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String entityType;
 
+    public String getEntityType() {
+        return entityType;
+    }
     /**
      * The warning type query parameter.
      */
     private String warningType;
 
+    public String getWarningType() {
+        return warningType;
+    }
     /**
      * A flag indicating whether to filter warnings based on source display name or on warning level.
      * A value of true will filter based on warning level (rule, source, or pattern), while a
@@ -123,26 +143,41 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Boolean isNoSource;
 
+    public Boolean getIsNoSource() {
+        return isNoSource;
+    }
     /**
      * The warning start date query parameter.
      */
     private String startTime;
 
+    public String getStartTime() {
+        return startTime;
+    }
     /**
      * The warning end date query parameter.
      */
     private String endTime;
 
+    public String getEndTime() {
+        return endTime;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -185,6 +220,10 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The attribute used to sort the returned warnings
      */
@@ -231,10 +270,18 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -242,6 +289,208 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private WarningState warningState = null;
+
+        /**
+         * The warning state used for filtering.  A value of SUPPRESSED will return only
+         * suppressed warnings, a value of UNSUPPRESSED will return only unsuppressed
+         * warnings, and a value of ALL will return all warnings regardless of their
+         * suppression state.  Default is UNSUPPRESSED.
+         *
+         * @return this builder instance
+         */
+        public Builder warningState(WarningState warningState) {
+            this.warningState = warningState;
+            return this;
+        }
+
+        private String sourceName = null;
+
+        /**
+         * The source name.
+         * @return this builder instance
+         */
+        public Builder sourceName(String sourceName) {
+            this.sourceName = sourceName;
+            return this;
+        }
+
+        private String sourcePattern = null;
+
+        /**
+         * The source pattern used for filtering.  Only warnings associated with a source with the
+         * specified pattern will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder sourcePattern(String sourcePattern) {
+            this.sourcePattern = sourcePattern;
+            return this;
+        }
+
+        private String warningMessage = null;
+
+        /**
+         * warning message query parameter
+         * @return this builder instance
+         */
+        public Builder warningMessage(String warningMessage) {
+            this.warningMessage = warningMessage;
+            return this;
+        }
+
+        private String entityName = null;
+
+        /**
+         * The entity name used for filtering.  Only warnings associated with an entity with the
+         * specified name will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder entityName(String entityName) {
+            this.entityName = entityName;
+            return this;
+        }
+
+        private String entityType = null;
+
+        /**
+         * The entity type used for filtering.  Only associations on an entity with the
+         * specified type will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder entityType(String entityType) {
+            this.entityType = entityType;
+            return this;
+        }
+
+        private String warningType = null;
+
+        /**
+         * The warning type query parameter.
+         * @return this builder instance
+         */
+        public Builder warningType(String warningType) {
+            this.warningType = warningType;
+            return this;
+        }
+
+        private Boolean isNoSource = null;
+
+        /**
+         * A flag indicating whether to filter warnings based on source display name or on warning level.
+         * A value of true will filter based on warning level (rule, source, or pattern), while a
+         * value of false will filter based on source display name.
+         *
+         * @return this builder instance
+         */
+        public Builder isNoSource(Boolean isNoSource) {
+            this.isNoSource = isNoSource;
+            return this;
+        }
+
+        private String startTime = null;
+
+        /**
+         * The warning start date query parameter.
+         * @return this builder instance
+         */
+        public Builder startTime(String startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+
+        private String endTime = null;
+
+        /**
+         * The warning end date query parameter.
+         * @return this builder instance
+         */
+        public Builder endTime(String endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The attribute used to sort the returned warnings
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -309,5 +558,152 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListWarningsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListWarningsRequest
+         */
+        public ListWarningsRequest buildWithoutInvocationCallback() {
+            ListWarningsRequest request = new ListWarningsRequest();
+            request.namespaceName = namespaceName;
+            request.compartmentId = compartmentId;
+            request.warningState = warningState;
+            request.sourceName = sourceName;
+            request.sourcePattern = sourcePattern;
+            request.warningMessage = warningMessage;
+            request.entityName = entityName;
+            request.entityType = entityType;
+            request.warningType = warningType;
+            request.isNoSource = isNoSource;
+            request.startTime = startTime;
+            request.endTime = endTime;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListWarningsRequest(namespaceName, compartmentId, warningState, sourceName, sourcePattern, warningMessage, entityName, entityType, warningType, isNoSource, startTime, endTime, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .compartmentId(compartmentId)
+                .warningState(warningState)
+                .sourceName(sourceName)
+                .sourcePattern(sourcePattern)
+                .warningMessage(warningMessage)
+                .entityName(entityName)
+                .entityType(entityType)
+                .warningType(warningType)
+                .isNoSource(isNoSource)
+                .startTime(startTime)
+                .endTime(endTime)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",warningState=").append(String.valueOf(this.warningState));
+        sb.append(",sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(",sourcePattern=").append(String.valueOf(this.sourcePattern));
+        sb.append(",warningMessage=").append(String.valueOf(this.warningMessage));
+        sb.append(",entityName=").append(String.valueOf(this.entityName));
+        sb.append(",entityType=").append(String.valueOf(this.entityType));
+        sb.append(",warningType=").append(String.valueOf(this.warningType));
+        sb.append(",isNoSource=").append(String.valueOf(this.isNoSource));
+        sb.append(",startTime=").append(String.valueOf(this.startTime));
+        sb.append(",endTime=").append(String.valueOf(this.endTime));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListWarningsRequest)) {
+            return false;
+        }
+
+        ListWarningsRequest other = (ListWarningsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.warningState, other.warningState)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.sourcePattern, other.sourcePattern)
+                && java.util.Objects.equals(this.warningMessage, other.warningMessage)
+                && java.util.Objects.equals(this.entityName, other.entityName)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.warningType, other.warningType)
+                && java.util.Objects.equals(this.isNoSource, other.isNoSource)
+                && java.util.Objects.equals(this.startTime, other.startTime)
+                && java.util.Objects.equals(this.endTime, other.endTime)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.warningState == null ? 43 : this.warningState.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourcePattern == null ? 43 : this.sourcePattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.warningMessage == null ? 43 : this.warningMessage.hashCode());
+        result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result = (result * PRIME) + (this.warningType == null ? 43 : this.warningType.hashCode());
+        result = (result * PRIME) + (this.isNoSource == null ? 43 : this.isNoSource.hashCode());
+        result = (result * PRIME) + (this.startTime == null ? 43 : this.startTime.hashCode());
+        result = (result * PRIME) + (this.endTime == null ? 43 : this.endTime.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

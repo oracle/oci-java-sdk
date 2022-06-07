@@ -15,14 +15,29 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FlattenDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FlattenDetails {
+public final class FlattenDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "flattenProjectionPreferences",
+        "flattenAttributeRoot",
+        "flattenAttributePath",
+        "flattenColumns"
+    })
+    public FlattenDetails(
+            FlattenProjectionPreferences flattenProjectionPreferences,
+            String flattenAttributeRoot,
+            String flattenAttributePath,
+            java.util.List<TypedObject> flattenColumns) {
+        super();
+        this.flattenProjectionPreferences = flattenProjectionPreferences;
+        this.flattenAttributeRoot = flattenAttributeRoot;
+        this.flattenAttributePath = flattenAttributePath;
+        this.flattenColumns = flattenColumns;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("flattenProjectionPreferences")
         private FlattenProjectionPreferences flattenProjectionPreferences;
@@ -95,27 +110,111 @@ public class FlattenDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("flattenProjectionPreferences")
-    FlattenProjectionPreferences flattenProjectionPreferences;
+    private final FlattenProjectionPreferences flattenProjectionPreferences;
+
+    public FlattenProjectionPreferences getFlattenProjectionPreferences() {
+        return flattenProjectionPreferences;
+    }
 
     /**
      * The string of flatten attribute column name where the flatten process starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("flattenAttributeRoot")
-    String flattenAttributeRoot;
+    private final String flattenAttributeRoot;
+
+    public String getFlattenAttributeRoot() {
+        return flattenAttributeRoot;
+    }
 
     /**
      * The string of flatten attribute path in flattenAttributeRoot from upper level to leaf/targeted level concatenated with dot(.)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("flattenAttributePath")
-    String flattenAttributePath;
+    private final String flattenAttributePath;
+
+    public String getFlattenAttributePath() {
+        return flattenAttributePath;
+    }
 
     /**
      * The array of flatten columns which are the input to flatten.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("flattenColumns")
-    java.util.List<TypedObject> flattenColumns;
+    private final java.util.List<TypedObject> flattenColumns;
+
+    public java.util.List<TypedObject> getFlattenColumns() {
+        return flattenColumns;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FlattenDetails(");
+        sb.append("flattenProjectionPreferences=")
+                .append(String.valueOf(this.flattenProjectionPreferences));
+        sb.append(", flattenAttributeRoot=").append(String.valueOf(this.flattenAttributeRoot));
+        sb.append(", flattenAttributePath=").append(String.valueOf(this.flattenAttributePath));
+        sb.append(", flattenColumns=").append(String.valueOf(this.flattenColumns));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FlattenDetails)) {
+            return false;
+        }
+
+        FlattenDetails other = (FlattenDetails) o;
+        return java.util.Objects.equals(
+                        this.flattenProjectionPreferences, other.flattenProjectionPreferences)
+                && java.util.Objects.equals(this.flattenAttributeRoot, other.flattenAttributeRoot)
+                && java.util.Objects.equals(this.flattenAttributePath, other.flattenAttributePath)
+                && java.util.Objects.equals(this.flattenColumns, other.flattenColumns)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.flattenProjectionPreferences == null
+                                ? 43
+                                : this.flattenProjectionPreferences.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flattenAttributeRoot == null
+                                ? 43
+                                : this.flattenAttributeRoot.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flattenAttributePath == null
+                                ? 43
+                                : this.flattenAttributePath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flattenColumns == null ? 43 : this.flattenColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

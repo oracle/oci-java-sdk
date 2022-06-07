@@ -11,11 +11,13 @@ import com.oracle.bmc.email.responses.*;
 import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.extern.slf4j.Slf4j
 public class GetSuppressionConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(GetSuppressionConverter.class);
 
     public static com.oracle.bmc.email.requests.GetSuppressionRequest interceptRequest(
             com.oracle.bmc.email.requests.GetSuppressionRequest request) {

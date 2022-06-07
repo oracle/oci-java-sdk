@@ -18,16 +18,31 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDataGuardAssociationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDataGuardAssociationDetails {
+public final class UpdateDataGuardAssociationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "databaseAdminPassword",
+        "protectionMode",
+        "transportType",
+        "isActiveDataGuardEnabled"
+    })
+    public UpdateDataGuardAssociationDetails(
+            String databaseAdminPassword,
+            ProtectionMode protectionMode,
+            TransportType transportType,
+            Boolean isActiveDataGuardEnabled) {
+        super();
+        this.databaseAdminPassword = databaseAdminPassword;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
+        this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
@@ -99,6 +114,10 @@ public class UpdateDataGuardAssociationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A strong password for the 'SYS', 'SYSTEM', and 'PDB Admin' users to apply during standby creation.
      * <p>
@@ -116,7 +135,12 @@ public class UpdateDataGuardAssociationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
-    String databaseAdminPassword;
+    private final String databaseAdminPassword;
+
+    public String getDatabaseAdminPassword() {
+        return databaseAdminPassword;
+    }
+
     /**
      * The protection mode for the Data Guard association's primary and standby database. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
@@ -163,7 +187,12 @@ public class UpdateDataGuardAssociationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
-    ProtectionMode protectionMode;
+    private final ProtectionMode protectionMode;
+
+    public ProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
     /**
      * The redo transport type to use for this Data Guard association.  Valid values depend on the specified 'protectionMode':
      * * MAXIMUM_AVAILABILITY - Use SYNC or FASTSYNC
@@ -220,14 +249,84 @@ public class UpdateDataGuardAssociationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
-    TransportType transportType;
+    private final TransportType transportType;
+
+    public TransportType getTransportType() {
+        return transportType;
+    }
 
     /**
      * True if active Data Guard is enabled. Update this parameter to change the Data Guard setting.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
-    Boolean isActiveDataGuardEnabled;
+    private final Boolean isActiveDataGuardEnabled;
+
+    public Boolean getIsActiveDataGuardEnabled() {
+        return isActiveDataGuardEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDataGuardAssociationDetails(");
+        sb.append("databaseAdminPassword=").append(String.valueOf(this.databaseAdminPassword));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", transportType=").append(String.valueOf(this.transportType));
+        sb.append(", isActiveDataGuardEnabled=")
+                .append(String.valueOf(this.isActiveDataGuardEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDataGuardAssociationDetails)) {
+            return false;
+        }
+
+        UpdateDataGuardAssociationDetails other = (UpdateDataGuardAssociationDetails) o;
+        return java.util.Objects.equals(this.databaseAdminPassword, other.databaseAdminPassword)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.transportType, other.transportType)
+                && java.util.Objects.equals(
+                        this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.databaseAdminPassword == null
+                                ? 43
+                                : this.databaseAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportType == null ? 43 : this.transportType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isActiveDataGuardEnabled == null
+                                ? 43
+                                : this.isActiveDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

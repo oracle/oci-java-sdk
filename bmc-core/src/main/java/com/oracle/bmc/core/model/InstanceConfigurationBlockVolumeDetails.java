@@ -16,16 +16,24 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceConfigurationBlockVolumeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceConfigurationBlockVolumeDetails {
+public final class InstanceConfigurationBlockVolumeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"attachDetails", "createDetails", "volumeId"})
+    public InstanceConfigurationBlockVolumeDetails(
+            InstanceConfigurationAttachVolumeDetails attachDetails,
+            InstanceConfigurationCreateVolumeDetails createDetails,
+            String volumeId) {
+        super();
+        this.attachDetails = attachDetails;
+        this.createDetails = createDetails;
+        this.volumeId = volumeId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("attachDetails")
         private InstanceConfigurationAttachVolumeDetails attachDetails;
@@ -84,18 +92,83 @@ public class InstanceConfigurationBlockVolumeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("attachDetails")
-    InstanceConfigurationAttachVolumeDetails attachDetails;
+    private final InstanceConfigurationAttachVolumeDetails attachDetails;
+
+    public InstanceConfigurationAttachVolumeDetails getAttachDetails() {
+        return attachDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("createDetails")
-    InstanceConfigurationCreateVolumeDetails createDetails;
+    private final InstanceConfigurationCreateVolumeDetails createDetails;
+
+    public InstanceConfigurationCreateVolumeDetails getCreateDetails() {
+        return createDetails;
+    }
 
     /**
      * The OCID of the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
-    String volumeId;
+    private final String volumeId;
+
+    public String getVolumeId() {
+        return volumeId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceConfigurationBlockVolumeDetails(");
+        sb.append("attachDetails=").append(String.valueOf(this.attachDetails));
+        sb.append(", createDetails=").append(String.valueOf(this.createDetails));
+        sb.append(", volumeId=").append(String.valueOf(this.volumeId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceConfigurationBlockVolumeDetails)) {
+            return false;
+        }
+
+        InstanceConfigurationBlockVolumeDetails other = (InstanceConfigurationBlockVolumeDetails) o;
+        return java.util.Objects.equals(this.attachDetails, other.attachDetails)
+                && java.util.Objects.equals(this.createDetails, other.createDetails)
+                && java.util.Objects.equals(this.volumeId, other.volumeId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.attachDetails == null ? 43 : this.attachDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createDetails == null ? 43 : this.createDetails.hashCode());
+        result = (result * PRIME) + (this.volumeId == null ? 43 : this.volumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,16 +7,16 @@ package com.oracle.bmc.aivision.responses;
 import com.oracle.bmc.aivision.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      */
     private String opcWorkRequestId;
+
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
 
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,16 +25,28 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The returned Model instance.
      */
     private com.oracle.bmc.aivision.model.Model model;
+
+    public com.oracle.bmc.aivision.model.Model getModel() {
+        return model;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -64,6 +76,34 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private com.oracle.bmc.aivision.model.Model model;
+
+        public Builder model(com.oracle.bmc.aivision.model.Model model) {
+            this.model = model;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -82,5 +122,52 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
             return new CreateModelResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId, etag, model);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",model=").append(String.valueOf(model));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateModelResponse)) {
+            return false;
+        }
+
+        CreateModelResponse other = (CreateModelResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.model, other.model);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.model == null ? 43 : this.model.hashCode());
+        return result;
     }
 }

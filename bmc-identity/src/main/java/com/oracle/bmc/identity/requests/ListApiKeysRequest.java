@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListApiKeysExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListApiKeysRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListApiKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,12 +16,27 @@ public class ListApiKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String userId;
 
+    public String getUserId() {
+        return userId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListApiKeysRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String userId = null;
+
+        /**
+         * The OCID of the user.
+         * @return this builder instance
+         */
+        public Builder userId(String userId) {
+            this.userId = userId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -81,5 +88,62 @@ public class ListApiKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListApiKeysRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListApiKeysRequest
+         */
+        public ListApiKeysRequest buildWithoutInvocationCallback() {
+            ListApiKeysRequest request = new ListApiKeysRequest();
+            request.userId = userId;
+            return request;
+            // new ListApiKeysRequest(userId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().userId(userId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",userId=").append(String.valueOf(this.userId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListApiKeysRequest)) {
+            return false;
+        }
+
+        ListApiKeysRequest other = (ListApiKeysRequest) o;
+        return super.equals(o) && java.util.Objects.equals(this.userId, other.userId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,34 @@ package com.oracle.bmc.optimizer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BulkApplyResourceAction.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BulkApplyResourceAction {
+public final class BulkApplyResourceAction {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "resourceActionId",
+        "status",
+        "timeStatusEnd",
+        "parameters",
+        "strategyName"
+    })
+    public BulkApplyResourceAction(
+            String resourceActionId,
+            Status status,
+            java.util.Date timeStatusEnd,
+            java.util.Map<String, Object> parameters,
+            String strategyName) {
+        super();
+        this.resourceActionId = resourceActionId;
+        this.status = status;
+        this.timeStatusEnd = timeStatusEnd;
+        this.parameters = parameters;
+        this.strategyName = strategyName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceActionId")
         private String resourceActionId;
@@ -103,17 +121,29 @@ public class BulkApplyResourceAction {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique OCIDs of the resource actions that recommendations are applied to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceActionId")
-    String resourceActionId;
+    private final String resourceActionId;
+
+    public String getResourceActionId() {
+        return resourceActionId;
+    }
 
     /**
      * The current status of the recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
@@ -123,7 +153,11 @@ public class BulkApplyResourceAction {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
-    java.util.Date timeStatusEnd;
+    private final java.util.Date timeStatusEnd;
+
+    public java.util.Date getTimeStatusEnd() {
+        return timeStatusEnd;
+    }
 
     /**
      * Additional parameter key-value pairs defining the resource action.
@@ -133,14 +167,77 @@ public class BulkApplyResourceAction {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.Map<String, Object> parameters;
+    private final java.util.Map<String, Object> parameters;
+
+    public java.util.Map<String, Object> getParameters() {
+        return parameters;
+    }
 
     /**
      * The name of the strategy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("strategyName")
-    String strategyName;
+    private final String strategyName;
+
+    public String getStrategyName() {
+        return strategyName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BulkApplyResourceAction(");
+        sb.append("resourceActionId=").append(String.valueOf(this.resourceActionId));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeStatusEnd=").append(String.valueOf(this.timeStatusEnd));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", strategyName=").append(String.valueOf(this.strategyName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BulkApplyResourceAction)) {
+            return false;
+        }
+
+        BulkApplyResourceAction other = (BulkApplyResourceAction) o;
+        return java.util.Objects.equals(this.resourceActionId, other.resourceActionId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeStatusEnd, other.timeStatusEnd)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.strategyName, other.strategyName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.resourceActionId == null ? 43 : this.resourceActionId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeStatusEnd == null ? 43 : this.timeStatusEnd.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.strategyName == null ? 43 : this.strategyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

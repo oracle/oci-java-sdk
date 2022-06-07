@@ -9,9 +9,9 @@ import com.oracle.bmc.adm.requests.*;
 import com.oracle.bmc.adm.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-@lombok.extern.slf4j.Slf4j
 public class ApplicationDependencyManagementClient implements ApplicationDependencyManagement {
     /**
      * Service instance for ApplicationDependencyManagement.
@@ -25,13 +25,17 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ApplicationDependencyManagementAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final ApplicationDependencyManagementWaiters waiters;
 
     private final ApplicationDependencyManagementPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -401,9 +405,13 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
          * @return the client
          */
         public ApplicationDependencyManagementClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new ApplicationDependencyManagementClient(
                     authenticationDetailsProvider,
                     configuration,

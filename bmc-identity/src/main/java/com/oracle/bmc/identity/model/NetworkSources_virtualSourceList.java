@@ -15,16 +15,20 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = NetworkSources_virtualSourceList.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NetworkSources_virtualSourceList {
+public final class NetworkSources_virtualSourceList {
+    @Deprecated
+    @java.beans.ConstructorProperties({"vcnId", "ipRanges"})
+    public NetworkSources_virtualSourceList(String vcnId, java.util.List<String> ipRanges) {
+        super();
+        this.vcnId = vcnId;
+        this.ipRanges = ipRanges;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
@@ -70,12 +74,66 @@ public class NetworkSources_virtualSourceList {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    String vcnId;
+    private final String vcnId;
+
+    public String getVcnId() {
+        return vcnId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ipRanges")
-    java.util.List<String> ipRanges;
+    private final java.util.List<String> ipRanges;
+
+    public java.util.List<String> getIpRanges() {
+        return ipRanges;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NetworkSources_virtualSourceList(");
+        sb.append("vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", ipRanges=").append(String.valueOf(this.ipRanges));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NetworkSources_virtualSourceList)) {
+            return false;
+        }
+
+        NetworkSources_virtualSourceList other = (NetworkSources_virtualSourceList) o;
+        return java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.ipRanges, other.ipRanges)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result = (result * PRIME) + (this.ipRanges == null ? 43 : this.ipRanges.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

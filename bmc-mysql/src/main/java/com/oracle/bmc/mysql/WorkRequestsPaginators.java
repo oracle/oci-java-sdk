@@ -26,9 +26,12 @@ import com.oracle.bmc.mysql.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.RequiredArgsConstructor
 public class WorkRequestsPaginators {
     private final WorkRequests client;
+
+    public WorkRequestsPaginators(WorkRequests client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable

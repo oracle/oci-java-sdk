@@ -15,16 +15,20 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LoadBalancerHealthSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LoadBalancerHealthSummary {
+public final class LoadBalancerHealthSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"loadBalancerId", "status"})
+    public LoadBalancerHealthSummary(String loadBalancerId, Status status) {
+        super();
+        this.loadBalancerId = loadBalancerId;
+        this.status = status;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
@@ -70,12 +74,21 @@ public class LoadBalancerHealthSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer the health status is associated with.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
-    String loadBalancerId;
+    private final String loadBalancerId;
+
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
+
     /**
      * The overall health status of the load balancer.
      * <p>
@@ -98,7 +111,6 @@ public class LoadBalancerHealthSummary {
      *  The system could not retrieve metrics for any reason.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Ok("OK"),
         Warning("WARNING"),
@@ -110,6 +122,8 @@ public class LoadBalancerHealthSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -166,8 +180,56 @@ public class LoadBalancerHealthSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LoadBalancerHealthSummary(");
+        sb.append("loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LoadBalancerHealthSummary)) {
+            return false;
+        }
+
+        LoadBalancerHealthSummary other = (LoadBalancerHealthSummary) o;
+        return java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

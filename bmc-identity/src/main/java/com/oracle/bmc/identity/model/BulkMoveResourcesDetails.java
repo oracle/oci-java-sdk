@@ -15,16 +15,21 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BulkMoveResourcesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BulkMoveResourcesDetails {
+public final class BulkMoveResourcesDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"resources", "targetCompartmentId"})
+    public BulkMoveResourcesDetails(
+            java.util.List<BulkActionResource> resources, String targetCompartmentId) {
+        super();
+        this.resources = resources;
+        this.targetCompartmentId = targetCompartmentId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<BulkActionResource> resources;
@@ -71,12 +76,20 @@ public class BulkMoveResourcesDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The resources to be moved.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
-    java.util.List<BulkActionResource> resources;
+    private final java.util.List<BulkActionResource> resources;
+
+    public java.util.List<BulkActionResource> getResources() {
+        return resources;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination compartment
@@ -84,8 +97,58 @@ public class BulkMoveResourcesDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
-    String targetCompartmentId;
+    private final String targetCompartmentId;
+
+    public String getTargetCompartmentId() {
+        return targetCompartmentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BulkMoveResourcesDetails(");
+        sb.append("resources=").append(String.valueOf(this.resources));
+        sb.append(", targetCompartmentId=").append(String.valueOf(this.targetCompartmentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BulkMoveResourcesDetails)) {
+            return false;
+        }
+
+        BulkMoveResourcesDetails other = (BulkMoveResourcesDetails) o;
+        return java.util.Objects.equals(this.resources, other.resources)
+                && java.util.Objects.equals(this.targetCompartmentId, other.targetCompartmentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetCompartmentId == null
+                                ? 43
+                                : this.targetCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

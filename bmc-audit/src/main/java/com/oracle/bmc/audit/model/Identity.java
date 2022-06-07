@@ -16,14 +16,47 @@ package com.oracle.bmc.audit.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Identity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Identity {
+public final class Identity {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "principalName",
+        "principalId",
+        "authType",
+        "callerName",
+        "callerId",
+        "tenantId",
+        "ipAddress",
+        "credentials",
+        "userAgent",
+        "consoleSessionId"
+    })
+    public Identity(
+            String principalName,
+            String principalId,
+            String authType,
+            String callerName,
+            String callerId,
+            String tenantId,
+            String ipAddress,
+            String credentials,
+            String userAgent,
+            String consoleSessionId) {
+        super();
+        this.principalName = principalName;
+        this.principalId = principalId;
+        this.authType = authType;
+        this.callerName = callerName;
+        this.callerId = callerId;
+        this.tenantId = tenantId;
+        this.ipAddress = ipAddress;
+        this.credentials = credentials;
+        this.userAgent = userAgent;
+        this.consoleSessionId = consoleSessionId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("principalName")
         private String principalName;
@@ -161,6 +194,10 @@ public class Identity {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the user or service. This value is the friendly name associated with {@code principalId}.
      * <p>
@@ -168,14 +205,22 @@ public class Identity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("principalName")
-    String principalName;
+    private final String principalName;
+
+    public String getPrincipalName() {
+        return principalName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the principal.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("principalId")
-    String principalId;
+    private final String principalId;
+
+    public String getPrincipalId() {
+        return principalId;
+    }
 
     /**
      * The type of authentication used.
@@ -184,14 +229,22 @@ public class Identity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authType")
-    String authType;
+    private final String authType;
+
+    public String getAuthType() {
+        return authType;
+    }
 
     /**
      * The name of the user or service. This value is the friendly name associated with {@code callerId}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("callerName")
-    String callerName;
+    private final String callerName;
+
+    public String getCallerName() {
+        return callerName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
@@ -199,14 +252,22 @@ public class Identity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("callerId")
-    String callerId;
+    private final String callerId;
+
+    public String getCallerId() {
+        return callerId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenant.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * The IP address of the source of the request.
@@ -215,7 +276,11 @@ public class Identity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * The credential ID of the user. This value is extracted from the HTTP 'Authorization' request
@@ -223,7 +288,11 @@ public class Identity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentials")
-    String credentials;
+    private final String credentials;
+
+    public String getCredentials() {
+        return credentials;
+    }
 
     /**
      * The user agent of the client that made the request.
@@ -232,15 +301,93 @@ public class Identity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAgent")
-    String userAgent;
+    private final String userAgent;
+
+    public String getUserAgent() {
+        return userAgent;
+    }
 
     /**
      * This value identifies any Console session associated with this request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consoleSessionId")
-    String consoleSessionId;
+    private final String consoleSessionId;
+
+    public String getConsoleSessionId() {
+        return consoleSessionId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Identity(");
+        sb.append("principalName=").append(String.valueOf(this.principalName));
+        sb.append(", principalId=").append(String.valueOf(this.principalId));
+        sb.append(", authType=").append(String.valueOf(this.authType));
+        sb.append(", callerName=").append(String.valueOf(this.callerName));
+        sb.append(", callerId=").append(String.valueOf(this.callerId));
+        sb.append(", tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", userAgent=").append(String.valueOf(this.userAgent));
+        sb.append(", consoleSessionId=").append(String.valueOf(this.consoleSessionId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Identity)) {
+            return false;
+        }
+
+        Identity other = (Identity) o;
+        return java.util.Objects.equals(this.principalName, other.principalName)
+                && java.util.Objects.equals(this.principalId, other.principalId)
+                && java.util.Objects.equals(this.authType, other.authType)
+                && java.util.Objects.equals(this.callerName, other.callerName)
+                && java.util.Objects.equals(this.callerId, other.callerId)
+                && java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.userAgent, other.userAgent)
+                && java.util.Objects.equals(this.consoleSessionId, other.consoleSessionId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.principalName == null ? 43 : this.principalName.hashCode());
+        result = (result * PRIME) + (this.principalId == null ? 43 : this.principalId.hashCode());
+        result = (result * PRIME) + (this.authType == null ? 43 : this.authType.hashCode());
+        result = (result * PRIME) + (this.callerName == null ? 43 : this.callerName.hashCode());
+        result = (result * PRIME) + (this.callerId == null ? 43 : this.callerId.hashCode());
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result = (result * PRIME) + (this.userAgent == null ? 43 : this.userAgent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consoleSessionId == null ? 43 : this.consoleSessionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

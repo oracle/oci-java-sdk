@@ -16,16 +16,46 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GenerateRecommendedNetworkDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GenerateRecommendedNetworkDetails {
+public final class GenerateRecommendedNetworkDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "scanListenerPortTcp",
+        "scanListenerPortTcpSsl",
+        "networks",
+        "dns",
+        "ntp",
+        "freeformTags",
+        "definedTags"
+    })
+    public GenerateRecommendedNetworkDetails(
+            String compartmentId,
+            String displayName,
+            Integer scanListenerPortTcp,
+            Integer scanListenerPortTcpSsl,
+            java.util.List<InfoForNetworkGenDetails> networks,
+            java.util.List<String> dns,
+            java.util.List<String> ntp,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.scanListenerPortTcp = scanListenerPortTcp;
+        this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+        this.networks = networks;
+        this.dns = dns;
+        this.ntp = ntp;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -153,47 +183,79 @@ public class GenerateRecommendedNetworkDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The user-friendly name for the VM cluster network. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The SCAN TCPIP port. Default is 1521.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
-    Integer scanListenerPortTcp;
+    private final Integer scanListenerPortTcp;
+
+    public Integer getScanListenerPortTcp() {
+        return scanListenerPortTcp;
+    }
 
     /**
      * The SCAN TCPIP SSL port. Default is 2484.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
-    Integer scanListenerPortTcpSsl;
+    private final Integer scanListenerPortTcpSsl;
+
+    public Integer getScanListenerPortTcpSsl() {
+        return scanListenerPortTcpSsl;
+    }
 
     /**
      * List of parameters for generation of the client and backup networks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networks")
-    java.util.List<InfoForNetworkGenDetails> networks;
+    private final java.util.List<InfoForNetworkGenDetails> networks;
+
+    public java.util.List<InfoForNetworkGenDetails> getNetworks() {
+        return networks;
+    }
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dns")
-    java.util.List<String> dns;
+    private final java.util.List<String> dns;
+
+    public java.util.List<String> getDns() {
+        return dns;
+    }
 
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ntp")
-    java.util.List<String> ntp;
+    private final java.util.List<String> ntp;
+
+    public java.util.List<String> getNtp() {
+        return ntp;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -203,7 +265,11 @@ public class GenerateRecommendedNetworkDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -211,8 +277,86 @@ public class GenerateRecommendedNetworkDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GenerateRecommendedNetworkDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
+        sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
+        sb.append(", networks=").append(String.valueOf(this.networks));
+        sb.append(", dns=").append(String.valueOf(this.dns));
+        sb.append(", ntp=").append(String.valueOf(this.ntp));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateRecommendedNetworkDetails)) {
+            return false;
+        }
+
+        GenerateRecommendedNetworkDetails other = (GenerateRecommendedNetworkDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.scanListenerPortTcp, other.scanListenerPortTcp)
+                && java.util.Objects.equals(
+                        this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
+                && java.util.Objects.equals(this.networks, other.networks)
+                && java.util.Objects.equals(this.dns, other.dns)
+                && java.util.Objects.equals(this.ntp, other.ntp)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTcp == null
+                                ? 43
+                                : this.scanListenerPortTcp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTcpSsl == null
+                                ? 43
+                                : this.scanListenerPortTcpSsl.hashCode());
+        result = (result * PRIME) + (this.networks == null ? 43 : this.networks.hashCode());
+        result = (result * PRIME) + (this.dns == null ? 43 : this.dns.hashCode());
+        result = (result * PRIME) + (this.ntp == null ? 43 : this.ntp.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,37 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApiSpecificationRoute.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApiSpecificationRoute {
+public final class ApiSpecificationRoute {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "path",
+        "methods",
+        "requestPolicies",
+        "responsePolicies",
+        "loggingPolicies",
+        "backend"
+    })
+    public ApiSpecificationRoute(
+            String path,
+            java.util.List<Methods> methods,
+            ApiSpecificationRouteRequestPolicies requestPolicies,
+            ApiSpecificationRouteResponsePolicies responsePolicies,
+            ApiSpecificationLoggingPolicies loggingPolicies,
+            ApiSpecificationRouteBackend backend) {
+        super();
+        this.path = path;
+        this.methods = methods;
+        this.requestPolicies = requestPolicies;
+        this.responsePolicies = responsePolicies;
+        this.loggingPolicies = loggingPolicies;
+        this.backend = backend;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
@@ -119,16 +140,24 @@ public class ApiSpecificationRoute {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers
      * to allow wildcard and parameterized matching.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Methods {
         Any("ANY"),
         Head("HEAD"),
@@ -144,6 +173,9 @@ public class ApiSpecificationRoute {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Methods.class);
 
         private final String value;
         private static java.util.Map<String, Methods> map;
@@ -182,20 +214,100 @@ public class ApiSpecificationRoute {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("methods")
-    java.util.List<Methods> methods;
+    private final java.util.List<Methods> methods;
+
+    public java.util.List<Methods> getMethods() {
+        return methods;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("requestPolicies")
-    ApiSpecificationRouteRequestPolicies requestPolicies;
+    private final ApiSpecificationRouteRequestPolicies requestPolicies;
+
+    public ApiSpecificationRouteRequestPolicies getRequestPolicies() {
+        return requestPolicies;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("responsePolicies")
-    ApiSpecificationRouteResponsePolicies responsePolicies;
+    private final ApiSpecificationRouteResponsePolicies responsePolicies;
+
+    public ApiSpecificationRouteResponsePolicies getResponsePolicies() {
+        return responsePolicies;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("loggingPolicies")
-    ApiSpecificationLoggingPolicies loggingPolicies;
+    private final ApiSpecificationLoggingPolicies loggingPolicies;
+
+    public ApiSpecificationLoggingPolicies getLoggingPolicies() {
+        return loggingPolicies;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backend")
-    ApiSpecificationRouteBackend backend;
+    private final ApiSpecificationRouteBackend backend;
+
+    public ApiSpecificationRouteBackend getBackend() {
+        return backend;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApiSpecificationRoute(");
+        sb.append("path=").append(String.valueOf(this.path));
+        sb.append(", methods=").append(String.valueOf(this.methods));
+        sb.append(", requestPolicies=").append(String.valueOf(this.requestPolicies));
+        sb.append(", responsePolicies=").append(String.valueOf(this.responsePolicies));
+        sb.append(", loggingPolicies=").append(String.valueOf(this.loggingPolicies));
+        sb.append(", backend=").append(String.valueOf(this.backend));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApiSpecificationRoute)) {
+            return false;
+        }
+
+        ApiSpecificationRoute other = (ApiSpecificationRoute) o;
+        return java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.methods, other.methods)
+                && java.util.Objects.equals(this.requestPolicies, other.requestPolicies)
+                && java.util.Objects.equals(this.responsePolicies, other.responsePolicies)
+                && java.util.Objects.equals(this.loggingPolicies, other.loggingPolicies)
+                && java.util.Objects.equals(this.backend, other.backend)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.methods == null ? 43 : this.methods.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestPolicies == null ? 43 : this.requestPolicies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responsePolicies == null ? 43 : this.responsePolicies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loggingPolicies == null ? 43 : this.loggingPolicies.hashCode());
+        result = (result * PRIME) + (this.backend == null ? 43 : this.backend.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,46 @@ package com.oracle.bmc.budget.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateAlertRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateAlertRuleDetails {
+public final class CreateAlertRuleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "type",
+        "threshold",
+        "thresholdType",
+        "recipients",
+        "message",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateAlertRuleDetails(
+            String displayName,
+            String description,
+            AlertType type,
+            java.math.BigDecimal threshold,
+            ThresholdType thresholdType,
+            String recipients,
+            String message,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.type = type;
+        this.threshold = threshold;
+        this.thresholdType = thresholdType;
+        this.recipients = recipients;
+        this.message = message;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -152,17 +182,29 @@ public class CreateAlertRuleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the alert rule. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The description of the alert rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
@@ -170,7 +212,11 @@ public class CreateAlertRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    AlertType type;
+    private final AlertType type;
+
+    public AlertType getType() {
+        return type;
+    }
 
     /**
      * The threshold for triggering the alert, expressed as a whole number or decimal value.
@@ -179,25 +225,41 @@ public class CreateAlertRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
-    java.math.BigDecimal threshold;
+    private final java.math.BigDecimal threshold;
+
+    public java.math.BigDecimal getThreshold() {
+        return threshold;
+    }
 
     /**
      * The type of threshold.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("thresholdType")
-    ThresholdType thresholdType;
+    private final ThresholdType thresholdType;
+
+    public ThresholdType getThresholdType() {
+        return thresholdType;
+    }
 
     /**
      * The audience that receives the alert when it triggers. An empty string is interpreted as null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipients")
-    String recipients;
+    private final String recipients;
+
+    public String getRecipients() {
+        return recipients;
+    }
 
     /**
      * The message to be sent to the recipients when the alert rule is triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -207,7 +269,11 @@ public class CreateAlertRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -217,8 +283,77 @@ public class CreateAlertRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateAlertRuleDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", threshold=").append(String.valueOf(this.threshold));
+        sb.append(", thresholdType=").append(String.valueOf(this.thresholdType));
+        sb.append(", recipients=").append(String.valueOf(this.recipients));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAlertRuleDetails)) {
+            return false;
+        }
+
+        CreateAlertRuleDetails other = (CreateAlertRuleDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.threshold, other.threshold)
+                && java.util.Objects.equals(this.thresholdType, other.thresholdType)
+                && java.util.Objects.equals(this.recipients, other.recipients)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.threshold == null ? 43 : this.threshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.thresholdType == null ? 43 : this.thresholdType.hashCode());
+        result = (result * PRIME) + (this.recipients == null ? 43 : this.recipients.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

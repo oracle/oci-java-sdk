@@ -7,16 +7,16 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RemoveExportDrgRouteDistributionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,10 +25,18 @@ public class RemoveExportDrgRouteDistributionResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned DrgAttachment instance.
      */
     private com.oracle.bmc.core.model.DrgAttachment drgAttachment;
+
+    public com.oracle.bmc.core.model.DrgAttachment getDrgAttachment() {
+        return drgAttachment;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -55,6 +63,27 @@ public class RemoveExportDrgRouteDistributionResponse extends com.oracle.bmc.res
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.DrgAttachment drgAttachment;
+
+        public Builder drgAttachment(com.oracle.bmc.core.model.DrgAttachment drgAttachment) {
+            this.drgAttachment = drgAttachment;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -72,5 +101,50 @@ public class RemoveExportDrgRouteDistributionResponse extends com.oracle.bmc.res
             return new RemoveExportDrgRouteDistributionResponse(
                     __httpStatusCode__, etag, opcRequestId, drgAttachment);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",drgAttachment=").append(String.valueOf(drgAttachment));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RemoveExportDrgRouteDistributionResponse)) {
+            return false;
+        }
+
+        RemoveExportDrgRouteDistributionResponse other =
+                (RemoveExportDrgRouteDistributionResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.drgAttachment, other.drgAttachment);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drgAttachment == null ? 43 : this.drgAttachment.hashCode());
+        return result;
     }
 }

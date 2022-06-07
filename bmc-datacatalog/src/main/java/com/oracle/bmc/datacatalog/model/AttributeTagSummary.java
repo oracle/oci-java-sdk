@@ -15,16 +15,49 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AttributeTagSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AttributeTagSummary {
+public final class AttributeTagSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "attributeKey",
+        "key",
+        "timeCreated",
+        "name",
+        "uri",
+        "termKey",
+        "termPath",
+        "termDescription",
+        "glossaryKey",
+        "lifecycleState"
+    })
+    public AttributeTagSummary(
+            String attributeKey,
+            String key,
+            java.util.Date timeCreated,
+            String name,
+            String uri,
+            String termKey,
+            String termPath,
+            String termDescription,
+            String glossaryKey,
+            LifecycleState lifecycleState) {
+        super();
+        this.attributeKey = attributeKey;
+        this.key = key;
+        this.timeCreated = timeCreated;
+        this.name = name;
+        this.uri = uri;
+        this.termKey = termKey;
+        this.termPath = termPath;
+        this.termDescription = termDescription;
+        this.glossaryKey = glossaryKey;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("attributeKey")
         private String attributeKey;
@@ -162,17 +195,29 @@ public class AttributeTagSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key of the parent attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeKey")
-    String attributeKey;
+    private final String attributeKey;
+
+    public String getAttributeKey() {
+        return attributeKey;
+    }
 
     /**
      * Unique tag key that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The date and time the tag was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -180,50 +225,152 @@ public class AttributeTagSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Name of the tag that matches the term name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * URI to the tag instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
 
     /**
      * Unique key of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("termKey")
-    String termKey;
+    private final String termKey;
+
+    public String getTermKey() {
+        return termKey;
+    }
 
     /**
      * Path of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("termPath")
-    String termPath;
+    private final String termPath;
+
+    public String getTermPath() {
+        return termPath;
+    }
 
     /**
      * Description of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("termDescription")
-    String termDescription;
+    private final String termDescription;
+
+    public String getTermDescription() {
+        return termDescription;
+    }
 
     /**
      * Unique id of the parent glossary of the term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
-    String glossaryKey;
+    private final String glossaryKey;
+
+    public String getGlossaryKey() {
+        return glossaryKey;
+    }
 
     /**
      * State of the Tag.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AttributeTagSummary(");
+        sb.append("attributeKey=").append(String.valueOf(this.attributeKey));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append(", termKey=").append(String.valueOf(this.termKey));
+        sb.append(", termPath=").append(String.valueOf(this.termPath));
+        sb.append(", termDescription=").append(String.valueOf(this.termDescription));
+        sb.append(", glossaryKey=").append(String.valueOf(this.glossaryKey));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AttributeTagSummary)) {
+            return false;
+        }
+
+        AttributeTagSummary other = (AttributeTagSummary) o;
+        return java.util.Objects.equals(this.attributeKey, other.attributeKey)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.termKey, other.termKey)
+                && java.util.Objects.equals(this.termPath, other.termPath)
+                && java.util.Objects.equals(this.termDescription, other.termDescription)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.attributeKey == null ? 43 : this.attributeKey.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result = (result * PRIME) + (this.termKey == null ? 43 : this.termKey.hashCode());
+        result = (result * PRIME) + (this.termPath == null ? 43 : this.termPath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.termDescription == null ? 43 : this.termDescription.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/SkipBulkResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SkipBulkResponderExecutionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SkipBulkResponderExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails> {
@@ -27,10 +19,18 @@ public class SkipBulkResponderExecutionRequest
     private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
             skipBulkResponderExecutionDetails;
 
+    public com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
+            getSkipBulkResponderExecutionDetails() {
+        return skipBulkResponderExecutionDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -49,6 +49,31 @@ public class SkipBulkResponderExecutionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
+                skipBulkResponderExecutionDetails = null;
+
+        /**
+         * A list of responder execution ids to skip the execution
+         * @return this builder instance
+         */
+        public Builder skipBulkResponderExecutionDetails(
+                com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
+                        skipBulkResponderExecutionDetails) {
+            this.skipBulkResponderExecutionDetails = skipBulkResponderExecutionDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -113,5 +138,76 @@ public class SkipBulkResponderExecutionRequest
             skipBulkResponderExecutionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of SkipBulkResponderExecutionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of SkipBulkResponderExecutionRequest
+         */
+        public SkipBulkResponderExecutionRequest buildWithoutInvocationCallback() {
+            SkipBulkResponderExecutionRequest request = new SkipBulkResponderExecutionRequest();
+            request.skipBulkResponderExecutionDetails = skipBulkResponderExecutionDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new SkipBulkResponderExecutionRequest(skipBulkResponderExecutionDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .skipBulkResponderExecutionDetails(skipBulkResponderExecutionDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",skipBulkResponderExecutionDetails=")
+                .append(String.valueOf(this.skipBulkResponderExecutionDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SkipBulkResponderExecutionRequest)) {
+            return false;
+        }
+
+        SkipBulkResponderExecutionRequest other = (SkipBulkResponderExecutionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.skipBulkResponderExecutionDetails,
+                        other.skipBulkResponderExecutionDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.skipBulkResponderExecutionDetails == null
+                                ? 43
+                                : this.skipBulkResponderExecutionDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

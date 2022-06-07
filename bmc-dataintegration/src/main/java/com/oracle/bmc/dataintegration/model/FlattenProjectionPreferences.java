@@ -15,16 +15,31 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FlattenProjectionPreferences.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FlattenProjectionPreferences {
+public final class FlattenProjectionPreferences {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "createArrayIndex",
+        "retainAllAttributes",
+        "ignoreNullValues",
+        "retainParentNameLineage"
+    })
+    public FlattenProjectionPreferences(
+            CreateArrayIndex createArrayIndex,
+            RetainAllAttributes retainAllAttributes,
+            IgnoreNullValues ignoreNullValues,
+            RetainParentNameLineage retainParentNameLineage) {
+        super();
+        this.createArrayIndex = createArrayIndex;
+        this.retainAllAttributes = retainAllAttributes;
+        this.ignoreNullValues = ignoreNullValues;
+        this.retainParentNameLineage = retainParentNameLineage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("createArrayIndex")
         private CreateArrayIndex createArrayIndex;
@@ -96,10 +111,13 @@ public class FlattenProjectionPreferences {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Property defining whether to create array indexes in flattened result.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CreateArrayIndex {
         Allow("ALLOW"),
         DoNotAllow("DO_NOT_ALLOW"),
@@ -109,6 +127,9 @@ public class FlattenProjectionPreferences {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CreateArrayIndex.class);
 
         private final String value;
         private static java.util.Map<String, CreateArrayIndex> map;
@@ -146,11 +167,15 @@ public class FlattenProjectionPreferences {
      * Property defining whether to create array indexes in flattened result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createArrayIndex")
-    CreateArrayIndex createArrayIndex;
+    private final CreateArrayIndex createArrayIndex;
+
+    public CreateArrayIndex getCreateArrayIndex() {
+        return createArrayIndex;
+    }
+
     /**
      * Property defining whether to retain all attributes in flattened result.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RetainAllAttributes {
         Allow("ALLOW"),
         DoNotAllow("DO_NOT_ALLOW"),
@@ -160,6 +185,9 @@ public class FlattenProjectionPreferences {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RetainAllAttributes.class);
 
         private final String value;
         private static java.util.Map<String, RetainAllAttributes> map;
@@ -197,11 +225,15 @@ public class FlattenProjectionPreferences {
      * Property defining whether to retain all attributes in flattened result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retainAllAttributes")
-    RetainAllAttributes retainAllAttributes;
+    private final RetainAllAttributes retainAllAttributes;
+
+    public RetainAllAttributes getRetainAllAttributes() {
+        return retainAllAttributes;
+    }
+
     /**
      * Property defining whether to ignore null values in flattened result.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum IgnoreNullValues {
         Allow("ALLOW"),
         DoNotAllow("DO_NOT_ALLOW"),
@@ -211,6 +243,9 @@ public class FlattenProjectionPreferences {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IgnoreNullValues.class);
 
         private final String value;
         private static java.util.Map<String, IgnoreNullValues> map;
@@ -248,11 +283,15 @@ public class FlattenProjectionPreferences {
      * Property defining whether to ignore null values in flattened result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ignoreNullValues")
-    IgnoreNullValues ignoreNullValues;
+    private final IgnoreNullValues ignoreNullValues;
+
+    public IgnoreNullValues getIgnoreNullValues() {
+        return ignoreNullValues;
+    }
+
     /**
      * Property defining whether to retain parent name lineage.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RetainParentNameLineage {
         Allow("ALLOW"),
         DoNotAllow("DO_NOT_ALLOW"),
@@ -262,6 +301,9 @@ public class FlattenProjectionPreferences {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RetainParentNameLineage.class);
 
         private final String value;
         private static java.util.Map<String, RetainParentNameLineage> map;
@@ -299,8 +341,74 @@ public class FlattenProjectionPreferences {
      * Property defining whether to retain parent name lineage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retainParentNameLineage")
-    RetainParentNameLineage retainParentNameLineage;
+    private final RetainParentNameLineage retainParentNameLineage;
+
+    public RetainParentNameLineage getRetainParentNameLineage() {
+        return retainParentNameLineage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FlattenProjectionPreferences(");
+        sb.append("createArrayIndex=").append(String.valueOf(this.createArrayIndex));
+        sb.append(", retainAllAttributes=").append(String.valueOf(this.retainAllAttributes));
+        sb.append(", ignoreNullValues=").append(String.valueOf(this.ignoreNullValues));
+        sb.append(", retainParentNameLineage=")
+                .append(String.valueOf(this.retainParentNameLineage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FlattenProjectionPreferences)) {
+            return false;
+        }
+
+        FlattenProjectionPreferences other = (FlattenProjectionPreferences) o;
+        return java.util.Objects.equals(this.createArrayIndex, other.createArrayIndex)
+                && java.util.Objects.equals(this.retainAllAttributes, other.retainAllAttributes)
+                && java.util.Objects.equals(this.ignoreNullValues, other.ignoreNullValues)
+                && java.util.Objects.equals(
+                        this.retainParentNameLineage, other.retainParentNameLineage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.createArrayIndex == null ? 43 : this.createArrayIndex.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retainAllAttributes == null
+                                ? 43
+                                : this.retainAllAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ignoreNullValues == null ? 43 : this.ignoreNullValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retainParentNameLineage == null
+                                ? 43
+                                : this.retainParentNameLineage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

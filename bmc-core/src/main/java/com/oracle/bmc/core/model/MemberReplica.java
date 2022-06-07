@@ -15,14 +15,17 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MemberReplica.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MemberReplica {
+public final class MemberReplica {
+    @Deprecated
+    @java.beans.ConstructorProperties({"volumeReplicaId"})
+    public MemberReplica(String volumeReplicaId) {
+        super();
+        this.volumeReplicaId = volumeReplicaId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("volumeReplicaId")
         private String volumeReplicaId;
@@ -58,12 +61,61 @@ public class MemberReplica {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The volume replica ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeReplicaId")
-    String volumeReplicaId;
+    private final String volumeReplicaId;
+
+    public String getVolumeReplicaId() {
+        return volumeReplicaId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MemberReplica(");
+        sb.append("volumeReplicaId=").append(String.valueOf(this.volumeReplicaId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MemberReplica)) {
+            return false;
+        }
+
+        MemberReplica other = (MemberReplica) o;
+        return java.util.Objects.equals(this.volumeReplicaId, other.volumeReplicaId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.volumeReplicaId == null ? 43 : this.volumeReplicaId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

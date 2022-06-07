@@ -15,16 +15,22 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AnalyzeImageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AnalyzeImageDetails {
+public final class AnalyzeImageDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"features", "image", "compartmentId"})
+    public AnalyzeImageDetails(
+            java.util.List<ImageFeature> features, ImageDetails image, String compartmentId) {
+        super();
+        this.features = features;
+        this.image = image;
+        this.compartmentId = compartmentId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<ImageFeature> features;
@@ -82,21 +88,84 @@ public class AnalyzeImageDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The types of image analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
-    java.util.List<ImageFeature> features;
+    private final java.util.List<ImageFeature> features;
+
+    public java.util.List<ImageFeature> getFeatures() {
+        return features;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("image")
-    ImageDetails image;
+    private final ImageDetails image;
+
+    public ImageDetails getImage() {
+        return image;
+    }
 
     /**
      * The OCID of the compartment that calls the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AnalyzeImageDetails(");
+        sb.append("features=").append(String.valueOf(this.features));
+        sb.append(", image=").append(String.valueOf(this.image));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnalyzeImageDetails)) {
+            return false;
+        }
+
+        AnalyzeImageDetails other = (AnalyzeImageDetails) o;
+        return java.util.Objects.equals(this.features, other.features)
+                && java.util.Objects.equals(this.image, other.image)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
+        result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

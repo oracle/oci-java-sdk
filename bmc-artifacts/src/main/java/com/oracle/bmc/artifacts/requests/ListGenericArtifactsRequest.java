@@ -9,14 +9,6 @@ import com.oracle.bmc.artifacts.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListGenericArtifactsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListGenericArtifactsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListGenericArtifactsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,48 +17,72 @@ public class ListGenericArtifactsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * A filter to return the artifacts only for the specified repository OCID.
      *
      */
     private String repositoryId;
 
+    public String getRepositoryId() {
+        return repositoryId;
+    }
     /**
      * A filter to return the resources for the specified OCID.
      *
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * A filter to return only resources that match the given display name exactly.
      *
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * Filter results by a prefix for the {@code artifactPath} and and return artifacts that begin with the specified prefix in their path.
      *
      */
     private String artifactPath;
 
+    public String getArtifactPath() {
+        return artifactPath;
+    }
     /**
      * Filter results by a prefix for {@code version} and return artifacts that that begin with the specified prefix in their version.
      *
      */
     private String version;
 
+    public String getVersion() {
+        return version;
+    }
     /**
      * Filter results by a specified SHA256 digest for the artifact.
      *
      */
     private String sha256;
 
+    public String getSha256() {
+        return sha256;
+    }
     /**
      * A filter to return only resources that match the given lifecycle state name exactly.
      *
      */
     private String lifecycleState;
 
+    public String getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * "List" call. For important details about how pagination works, see
@@ -77,6 +93,9 @@ public class ListGenericArtifactsRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
@@ -85,6 +104,9 @@ public class ListGenericArtifactsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -92,6 +114,9 @@ public class ListGenericArtifactsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
@@ -148,6 +173,10 @@ public class ListGenericArtifactsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
      * is case sensitive.
@@ -193,12 +222,186 @@ public class ListGenericArtifactsRequest
         }
     };
 
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListGenericArtifactsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String repositoryId = null;
+
+        /**
+         * A filter to return the artifacts only for the specified repository OCID.
+         *
+         * @return this builder instance
+         */
+        public Builder repositoryId(String repositoryId) {
+            this.repositoryId = repositoryId;
+            return this;
+        }
+
+        private String id = null;
+
+        /**
+         * A filter to return the resources for the specified OCID.
+         *
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private String artifactPath = null;
+
+        /**
+         * Filter results by a prefix for the {@code artifactPath} and and return artifacts that begin with the specified prefix in their path.
+         *
+         * @return this builder instance
+         */
+        public Builder artifactPath(String artifactPath) {
+            this.artifactPath = artifactPath;
+            return this;
+        }
+
+        private String version = null;
+
+        /**
+         * Filter results by a prefix for {@code version} and return artifacts that that begin with the specified prefix in their version.
+         *
+         * @return this builder instance
+         */
+        public Builder version(String version) {
+            this.version = version;
+            return this;
+        }
+
+        private String sha256 = null;
+
+        /**
+         * Filter results by a specified SHA256 digest for the artifact.
+         *
+         * @return this builder instance
+         */
+        public Builder sha256(String sha256) {
+            this.sha256 = sha256;
+            return this;
+        }
+
+        private String lifecycleState = null;
+
+        /**
+         * A filter to return only resources that match the given lifecycle state name exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder lifecycleState(String lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -262,5 +465,128 @@ public class ListGenericArtifactsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListGenericArtifactsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListGenericArtifactsRequest
+         */
+        public ListGenericArtifactsRequest buildWithoutInvocationCallback() {
+            ListGenericArtifactsRequest request = new ListGenericArtifactsRequest();
+            request.compartmentId = compartmentId;
+            request.repositoryId = repositoryId;
+            request.id = id;
+            request.displayName = displayName;
+            request.artifactPath = artifactPath;
+            request.version = version;
+            request.sha256 = sha256;
+            request.lifecycleState = lifecycleState;
+            request.limit = limit;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            return request;
+            // new ListGenericArtifactsRequest(compartmentId, repositoryId, id, displayName, artifactPath, version, sha256, lifecycleState, limit, page, opcRequestId, sortBy, sortOrder);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .repositoryId(repositoryId)
+                .id(id)
+                .displayName(displayName)
+                .artifactPath(artifactPath)
+                .version(version)
+                .sha256(sha256)
+                .lifecycleState(lifecycleState)
+                .limit(limit)
+                .page(page)
+                .opcRequestId(opcRequestId)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",repositoryId=").append(String.valueOf(this.repositoryId));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",artifactPath=").append(String.valueOf(this.artifactPath));
+        sb.append(",version=").append(String.valueOf(this.version));
+        sb.append(",sha256=").append(String.valueOf(this.sha256));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListGenericArtifactsRequest)) {
+            return false;
+        }
+
+        ListGenericArtifactsRequest other = (ListGenericArtifactsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.repositoryId, other.repositoryId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.artifactPath, other.artifactPath)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.sha256, other.sha256)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.artifactPath == null ? 43 : this.artifactPath.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.sha256 == null ? 43 : this.sha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        return result;
     }
 }

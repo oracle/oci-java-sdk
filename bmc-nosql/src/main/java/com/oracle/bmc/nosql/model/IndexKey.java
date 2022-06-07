@@ -15,14 +15,19 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IndexKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IndexKey {
+public final class IndexKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({"columnName", "jsonPath", "jsonFieldType"})
+    public IndexKey(String columnName, String jsonPath, String jsonFieldType) {
+        super();
+        this.columnName = columnName;
+        this.jsonPath = jsonPath;
+        this.jsonFieldType = jsonFieldType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
@@ -79,11 +84,19 @@ public class IndexKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of a column to be included as an index key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
-    String columnName;
+    private final String columnName;
+
+    public String getColumnName() {
+        return columnName;
+    }
 
     /**
      * If the specified column is of type JSON, jsonPath contains
@@ -92,7 +105,11 @@ public class IndexKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsonPath")
-    String jsonPath;
+    private final String jsonPath;
+
+    public String getJsonPath() {
+        return jsonPath;
+    }
 
     /**
      * If the specified column is of type JSON, jsonFieldType contains
@@ -100,8 +117,59 @@ public class IndexKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsonFieldType")
-    String jsonFieldType;
+    private final String jsonFieldType;
+
+    public String getJsonFieldType() {
+        return jsonFieldType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IndexKey(");
+        sb.append("columnName=").append(String.valueOf(this.columnName));
+        sb.append(", jsonPath=").append(String.valueOf(this.jsonPath));
+        sb.append(", jsonFieldType=").append(String.valueOf(this.jsonFieldType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IndexKey)) {
+            return false;
+        }
+
+        IndexKey other = (IndexKey) o;
+        return java.util.Objects.equals(this.columnName, other.columnName)
+                && java.util.Objects.equals(this.jsonPath, other.jsonPath)
+                && java.util.Objects.equals(this.jsonFieldType, other.jsonFieldType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
+        result = (result * PRIME) + (this.jsonPath == null ? 43 : this.jsonPath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jsonFieldType == null ? 43 : this.jsonFieldType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

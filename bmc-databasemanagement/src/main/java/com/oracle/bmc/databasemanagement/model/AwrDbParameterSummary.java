@@ -15,16 +15,40 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AwrDbParameterSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AwrDbParameterSummary {
+public final class AwrDbParameterSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "instanceNumber",
+        "beginValue",
+        "endValue",
+        "isChanged",
+        "valueModified",
+        "isDefault"
+    })
+    public AwrDbParameterSummary(
+            String name,
+            Integer instanceNumber,
+            String beginValue,
+            String endValue,
+            Boolean isChanged,
+            String valueModified,
+            Boolean isDefault) {
+        super();
+        this.name = name;
+        this.instanceNumber = instanceNumber;
+        this.beginValue = beginValue;
+        this.endValue = endValue;
+        this.isChanged = isChanged;
+        this.valueModified = valueModified;
+        this.isDefault = isDefault;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -129,35 +153,59 @@ public class AwrDbParameterSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The database instance number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
-    Integer instanceNumber;
+    private final Integer instanceNumber;
+
+    public Integer getInstanceNumber() {
+        return instanceNumber;
+    }
 
     /**
      * The parameter value when the period began.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("beginValue")
-    String beginValue;
+    private final String beginValue;
+
+    public String getBeginValue() {
+        return beginValue;
+    }
 
     /**
      * The parameter value when the period ended.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endValue")
-    String endValue;
+    private final String endValue;
+
+    public String getEndValue() {
+        return endValue;
+    }
 
     /**
      * Indicates whether the parameter value changed within the period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isChanged")
-    Boolean isChanged;
+    private final Boolean isChanged;
+
+    public Boolean getIsChanged() {
+        return isChanged;
+    }
 
     /**
      * Indicates whether the parameter has been modified after instance startup:
@@ -167,14 +215,83 @@ public class AwrDbParameterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueModified")
-    String valueModified;
+    private final String valueModified;
+
+    public String getValueModified() {
+        return valueModified;
+    }
 
     /**
      * Indicates whether the parameter value in the end snapshot is the default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AwrDbParameterSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", instanceNumber=").append(String.valueOf(this.instanceNumber));
+        sb.append(", beginValue=").append(String.valueOf(this.beginValue));
+        sb.append(", endValue=").append(String.valueOf(this.endValue));
+        sb.append(", isChanged=").append(String.valueOf(this.isChanged));
+        sb.append(", valueModified=").append(String.valueOf(this.valueModified));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AwrDbParameterSummary)) {
+            return false;
+        }
+
+        AwrDbParameterSummary other = (AwrDbParameterSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.instanceNumber, other.instanceNumber)
+                && java.util.Objects.equals(this.beginValue, other.beginValue)
+                && java.util.Objects.equals(this.endValue, other.endValue)
+                && java.util.Objects.equals(this.isChanged, other.isChanged)
+                && java.util.Objects.equals(this.valueModified, other.valueModified)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceNumber == null ? 43 : this.instanceNumber.hashCode());
+        result = (result * PRIME) + (this.beginValue == null ? 43 : this.beginValue.hashCode());
+        result = (result * PRIME) + (this.endValue == null ? 43 : this.endValue.hashCode());
+        result = (result * PRIME) + (this.isChanged == null ? 43 : this.isChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.valueModified == null ? 43 : this.valueModified.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

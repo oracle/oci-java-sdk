@@ -8,7 +8,6 @@ package com.oracle.bmc.applicationmigration.model;
  * The type of the target database associated with the target instance.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.extern.slf4j.Slf4j
 public enum TargetDatabaseTypes {
     DatabaseSystem("DATABASE_SYSTEM"),
     NotSet("NOT_SET"),
@@ -18,6 +17,9 @@ public enum TargetDatabaseTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(TargetDatabaseTypes.class);
 
     private final String value;
     private static java.util.Map<String, TargetDatabaseTypes> map;

@@ -15,16 +15,21 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RestoreObjectsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RestoreObjectsDetails {
+public final class RestoreObjectsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"objectName", "hours", "versionId"})
+    public RestoreObjectsDetails(String objectName, Integer hours, String versionId) {
+        super();
+        this.objectName = objectName;
+        this.hours = hours;
+        this.versionId = versionId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
@@ -80,11 +85,19 @@ public class RestoreObjectsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An object that is in an archive storage tier and needs to be restored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * The number of hours for which this object will be restored.
@@ -92,15 +105,68 @@ public class RestoreObjectsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hours")
-    Integer hours;
+    private final Integer hours;
+
+    public Integer getHours() {
+        return hours;
+    }
 
     /**
      * The versionId of the object to restore. Current object version is used by default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionId")
-    String versionId;
+    private final String versionId;
+
+    public String getVersionId() {
+        return versionId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RestoreObjectsDetails(");
+        sb.append("objectName=").append(String.valueOf(this.objectName));
+        sb.append(", hours=").append(String.valueOf(this.hours));
+        sb.append(", versionId=").append(String.valueOf(this.versionId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RestoreObjectsDetails)) {
+            return false;
+        }
+
+        RestoreObjectsDetails other = (RestoreObjectsDetails) o;
+        return java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.hours, other.hours)
+                && java.util.Objects.equals(this.versionId, other.versionId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.hours == null ? 43 : this.hours.hashCode());
+        result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

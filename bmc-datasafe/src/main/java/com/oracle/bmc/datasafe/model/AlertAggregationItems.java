@@ -15,16 +15,34 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AlertAggregationItems.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AlertAggregationItems {
+public final class AlertAggregationItems {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "metricName",
+        "timeStarted",
+        "timeEnded",
+        "count",
+        "dimensions"
+    })
+    public AlertAggregationItems(
+            String metricName,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded,
+            Long count,
+            AlertsAggregationDimension dimensions) {
+        super();
+        this.metricName = metricName;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+        this.count = count;
+        this.dimensions = dimensions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
@@ -103,33 +121,108 @@ public class AlertAggregationItems {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the aggregation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
-    String metricName;
+    private final String metricName;
+
+    public String getMetricName() {
+        return metricName;
+    }
 
     /**
      * The time at which the aggregation started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The time at which the aggregation ended.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
 
     /**
      * Total count of aggregated values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    Long count;
+    private final Long count;
+
+    public Long getCount() {
+        return count;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    AlertsAggregationDimension dimensions;
+    private final AlertsAggregationDimension dimensions;
+
+    public AlertsAggregationDimension getDimensions() {
+        return dimensions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AlertAggregationItems(");
+        sb.append("metricName=").append(String.valueOf(this.metricName));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", count=").append(String.valueOf(this.count));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AlertAggregationItems)) {
+            return false;
+        }
+
+        AlertAggregationItems other = (AlertAggregationItems) o;
+        return java.util.Objects.equals(this.metricName, other.metricName)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

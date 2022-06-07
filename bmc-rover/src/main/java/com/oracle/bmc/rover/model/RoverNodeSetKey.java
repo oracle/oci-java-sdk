@@ -15,14 +15,17 @@ package com.oracle.bmc.rover.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoverNodeSetKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RoverNodeSetKey {
+public final class RoverNodeSetKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isSuccessful"})
+    public RoverNodeSetKey(Boolean isSuccessful) {
+        super();
+        this.isSuccessful = isSuccessful;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isSuccessful")
         private Boolean isSuccessful;
@@ -58,12 +61,59 @@ public class RoverNodeSetKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Whether the node's resource principal public key was set correctly
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSuccessful")
-    Boolean isSuccessful;
+    private final Boolean isSuccessful;
+
+    public Boolean getIsSuccessful() {
+        return isSuccessful;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RoverNodeSetKey(");
+        sb.append("isSuccessful=").append(String.valueOf(this.isSuccessful));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RoverNodeSetKey)) {
+            return false;
+        }
+
+        RoverNodeSetKey other = (RoverNodeSetKey) o;
+        return java.util.Objects.equals(this.isSuccessful, other.isSuccessful)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isSuccessful == null ? 43 : this.isSuccessful.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

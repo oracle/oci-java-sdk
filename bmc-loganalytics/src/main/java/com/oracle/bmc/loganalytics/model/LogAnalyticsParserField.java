@@ -15,16 +15,49 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsParserField.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsParserField {
+public final class LogAnalyticsParserField {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "field",
+        "parserFieldId",
+        "parserFieldExpression",
+        "parserFieldName",
+        "storageFieldName",
+        "parserFieldIntegratorName",
+        "parserName",
+        "parserFieldSequence",
+        "parser",
+        "structuredColumnInfo"
+    })
+    public LogAnalyticsParserField(
+            LogAnalyticsField field,
+            Long parserFieldId,
+            String parserFieldExpression,
+            String parserFieldName,
+            String storageFieldName,
+            String parserFieldIntegratorName,
+            String parserName,
+            Long parserFieldSequence,
+            LogAnalyticsParser parser,
+            String structuredColumnInfo) {
+        super();
+        this.field = field;
+        this.parserFieldId = parserFieldId;
+        this.parserFieldExpression = parserFieldExpression;
+        this.parserFieldName = parserFieldName;
+        this.storageFieldName = storageFieldName;
+        this.parserFieldIntegratorName = parserFieldIntegratorName;
+        this.parserName = parserName;
+        this.parserFieldSequence = parserFieldSequence;
+        this.parser = parser;
+        this.structuredColumnInfo = structuredColumnInfo;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private LogAnalyticsField field;
@@ -162,60 +195,194 @@ public class LogAnalyticsParserField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("field")
-    LogAnalyticsField field;
+    private final LogAnalyticsField field;
+
+    public LogAnalyticsField getField() {
+        return field;
+    }
 
     /**
      * The parser field unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldId")
-    Long parserFieldId;
+    private final Long parserFieldId;
+
+    public Long getParserFieldId() {
+        return parserFieldId;
+    }
 
     /**
      * the parser field expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldExpression")
-    String parserFieldExpression;
+    private final String parserFieldExpression;
+
+    public String getParserFieldExpression() {
+        return parserFieldExpression;
+    }
 
     /**
      * The parser field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldName")
-    String parserFieldName;
+    private final String parserFieldName;
+
+    public String getParserFieldName() {
+        return parserFieldName;
+    }
 
     /**
      * The storage field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageFieldName")
-    String storageFieldName;
+    private final String storageFieldName;
+
+    public String getStorageFieldName() {
+        return storageFieldName;
+    }
 
     /**
      * The integrator name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldIntegratorName")
-    String parserFieldIntegratorName;
+    private final String parserFieldIntegratorName;
+
+    public String getParserFieldIntegratorName() {
+        return parserFieldIntegratorName;
+    }
 
     /**
      * The parser internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
-    String parserName;
+    private final String parserName;
+
+    public String getParserName() {
+        return parserName;
+    }
 
     /**
      * The parser field sequence.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldSequence")
-    Long parserFieldSequence;
+    private final Long parserFieldSequence;
+
+    public Long getParserFieldSequence() {
+        return parserFieldSequence;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parser")
-    LogAnalyticsParser parser;
+    private final LogAnalyticsParser parser;
+
+    public LogAnalyticsParser getParser() {
+        return parser;
+    }
 
     /**
      * The structured column information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("structuredColumnInfo")
-    String structuredColumnInfo;
+    private final String structuredColumnInfo;
+
+    public String getStructuredColumnInfo() {
+        return structuredColumnInfo;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsParserField(");
+        sb.append("field=").append(String.valueOf(this.field));
+        sb.append(", parserFieldId=").append(String.valueOf(this.parserFieldId));
+        sb.append(", parserFieldExpression=").append(String.valueOf(this.parserFieldExpression));
+        sb.append(", parserFieldName=").append(String.valueOf(this.parserFieldName));
+        sb.append(", storageFieldName=").append(String.valueOf(this.storageFieldName));
+        sb.append(", parserFieldIntegratorName=")
+                .append(String.valueOf(this.parserFieldIntegratorName));
+        sb.append(", parserName=").append(String.valueOf(this.parserName));
+        sb.append(", parserFieldSequence=").append(String.valueOf(this.parserFieldSequence));
+        sb.append(", parser=").append(String.valueOf(this.parser));
+        sb.append(", structuredColumnInfo=").append(String.valueOf(this.structuredColumnInfo));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsParserField)) {
+            return false;
+        }
+
+        LogAnalyticsParserField other = (LogAnalyticsParserField) o;
+        return java.util.Objects.equals(this.field, other.field)
+                && java.util.Objects.equals(this.parserFieldId, other.parserFieldId)
+                && java.util.Objects.equals(this.parserFieldExpression, other.parserFieldExpression)
+                && java.util.Objects.equals(this.parserFieldName, other.parserFieldName)
+                && java.util.Objects.equals(this.storageFieldName, other.storageFieldName)
+                && java.util.Objects.equals(
+                        this.parserFieldIntegratorName, other.parserFieldIntegratorName)
+                && java.util.Objects.equals(this.parserName, other.parserName)
+                && java.util.Objects.equals(this.parserFieldSequence, other.parserFieldSequence)
+                && java.util.Objects.equals(this.parser, other.parser)
+                && java.util.Objects.equals(this.structuredColumnInfo, other.structuredColumnInfo)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.field == null ? 43 : this.field.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserFieldId == null ? 43 : this.parserFieldId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserFieldExpression == null
+                                ? 43
+                                : this.parserFieldExpression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserFieldName == null ? 43 : this.parserFieldName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageFieldName == null ? 43 : this.storageFieldName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserFieldIntegratorName == null
+                                ? 43
+                                : this.parserFieldIntegratorName.hashCode());
+        result = (result * PRIME) + (this.parserName == null ? 43 : this.parserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserFieldSequence == null
+                                ? 43
+                                : this.parserFieldSequence.hashCode());
+        result = (result * PRIME) + (this.parser == null ? 43 : this.parser.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.structuredColumnInfo == null
+                                ? 43
+                                : this.structuredColumnInfo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

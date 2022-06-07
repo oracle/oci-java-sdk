@@ -15,14 +15,20 @@ package com.oracle.bmc.optimizer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EvaluatedMetric.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EvaluatedMetric {
+public final class EvaluatedMetric {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "statistic", "threshold", "target"})
+    public EvaluatedMetric(String name, String statistic, Double threshold, Double target) {
+        super();
+        this.name = name;
+        this.statistic = statistic;
+        this.threshold = threshold;
+        this.target = target;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -89,30 +95,98 @@ public class EvaluatedMetric {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the metric (e.g., {@code CpuUtilization}).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The name of the statistic (e.g., {@code p95}).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statistic")
-    String statistic;
+    private final String statistic;
+
+    public String getStatistic() {
+        return statistic;
+    }
 
     /**
      * The threshold that must be crossed for the recommendation to appear.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
-    Double threshold;
+    private final Double threshold;
+
+    public Double getThreshold() {
+        return threshold;
+    }
 
     /**
      * Optional. The metric value that the recommendation will target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    Double target;
+    private final Double target;
+
+    public Double getTarget() {
+        return target;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EvaluatedMetric(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", statistic=").append(String.valueOf(this.statistic));
+        sb.append(", threshold=").append(String.valueOf(this.threshold));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EvaluatedMetric)) {
+            return false;
+        }
+
+        EvaluatedMetric other = (EvaluatedMetric) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.statistic, other.statistic)
+                && java.util.Objects.equals(this.threshold, other.threshold)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.statistic == null ? 43 : this.statistic.hashCode());
+        result = (result * PRIME) + (this.threshold == null ? 43 : this.threshold.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

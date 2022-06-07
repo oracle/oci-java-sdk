@@ -15,16 +15,31 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AllowedIkeIPSecParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AllowedIkeIPSecParameters {
+public final class AllowedIkeIPSecParameters {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "allowedPhaseOneParameters",
+        "allowedPhaseTwoParameters",
+        "defaultPhaseOneParameters",
+        "defaultPhaseTwoParameters"
+    })
+    public AllowedIkeIPSecParameters(
+            AllowedPhaseOneParameters allowedPhaseOneParameters,
+            AllowedPhaseTwoParameters allowedPhaseTwoParameters,
+            DefaultPhaseOneParameters defaultPhaseOneParameters,
+            DefaultPhaseTwoParameters defaultPhaseTwoParameters) {
+        super();
+        this.allowedPhaseOneParameters = allowedPhaseOneParameters;
+        this.allowedPhaseTwoParameters = allowedPhaseTwoParameters;
+        this.defaultPhaseOneParameters = defaultPhaseOneParameters;
+        this.defaultPhaseTwoParameters = defaultPhaseTwoParameters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("allowedPhaseOneParameters")
         private AllowedPhaseOneParameters allowedPhaseOneParameters;
@@ -100,18 +115,110 @@ public class AllowedIkeIPSecParameters {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("allowedPhaseOneParameters")
-    AllowedPhaseOneParameters allowedPhaseOneParameters;
+    private final AllowedPhaseOneParameters allowedPhaseOneParameters;
+
+    public AllowedPhaseOneParameters getAllowedPhaseOneParameters() {
+        return allowedPhaseOneParameters;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("allowedPhaseTwoParameters")
-    AllowedPhaseTwoParameters allowedPhaseTwoParameters;
+    private final AllowedPhaseTwoParameters allowedPhaseTwoParameters;
+
+    public AllowedPhaseTwoParameters getAllowedPhaseTwoParameters() {
+        return allowedPhaseTwoParameters;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPhaseOneParameters")
-    DefaultPhaseOneParameters defaultPhaseOneParameters;
+    private final DefaultPhaseOneParameters defaultPhaseOneParameters;
+
+    public DefaultPhaseOneParameters getDefaultPhaseOneParameters() {
+        return defaultPhaseOneParameters;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPhaseTwoParameters")
-    DefaultPhaseTwoParameters defaultPhaseTwoParameters;
+    private final DefaultPhaseTwoParameters defaultPhaseTwoParameters;
+
+    public DefaultPhaseTwoParameters getDefaultPhaseTwoParameters() {
+        return defaultPhaseTwoParameters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AllowedIkeIPSecParameters(");
+        sb.append("allowedPhaseOneParameters=")
+                .append(String.valueOf(this.allowedPhaseOneParameters));
+        sb.append(", allowedPhaseTwoParameters=")
+                .append(String.valueOf(this.allowedPhaseTwoParameters));
+        sb.append(", defaultPhaseOneParameters=")
+                .append(String.valueOf(this.defaultPhaseOneParameters));
+        sb.append(", defaultPhaseTwoParameters=")
+                .append(String.valueOf(this.defaultPhaseTwoParameters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AllowedIkeIPSecParameters)) {
+            return false;
+        }
+
+        AllowedIkeIPSecParameters other = (AllowedIkeIPSecParameters) o;
+        return java.util.Objects.equals(
+                        this.allowedPhaseOneParameters, other.allowedPhaseOneParameters)
+                && java.util.Objects.equals(
+                        this.allowedPhaseTwoParameters, other.allowedPhaseTwoParameters)
+                && java.util.Objects.equals(
+                        this.defaultPhaseOneParameters, other.defaultPhaseOneParameters)
+                && java.util.Objects.equals(
+                        this.defaultPhaseTwoParameters, other.defaultPhaseTwoParameters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.allowedPhaseOneParameters == null
+                                ? 43
+                                : this.allowedPhaseOneParameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedPhaseTwoParameters == null
+                                ? 43
+                                : this.allowedPhaseTwoParameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultPhaseOneParameters == null
+                                ? 43
+                                : this.defaultPhaseOneParameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultPhaseTwoParameters == null
+                                ? 43
+                                : this.defaultPhaseTwoParameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

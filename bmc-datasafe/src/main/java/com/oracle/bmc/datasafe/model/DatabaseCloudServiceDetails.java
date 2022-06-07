@@ -15,22 +15,17 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseCloudServiceDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "databaseType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseCloudServiceDetails extends DatabaseDetails {
+public final class DatabaseCloudServiceDetails extends DatabaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
         private InfrastructureType infrastructureType;
@@ -99,6 +94,10 @@ public class DatabaseCloudServiceDetails extends DatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DatabaseCloudServiceDetails(
             InfrastructureType infrastructureType,
@@ -115,20 +114,79 @@ public class DatabaseCloudServiceDetails extends DatabaseDetails {
      * The OCID of the VM cluster in which the database is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
-    String vmClusterId;
+    private final String vmClusterId;
+
+    public String getVmClusterId() {
+        return vmClusterId;
+    }
 
     /**
      * The OCID of the cloud database system registered as a target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
+    private final String dbSystemId;
+
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
 
     /**
      * The database service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseCloudServiceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseCloudServiceDetails)) {
+            return false;
+        }
+
+        DatabaseCloudServiceDetails other = (DatabaseCloudServiceDetails) o;
+        return java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

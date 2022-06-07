@@ -18,16 +18,67 @@ package com.oracle.bmc.healthchecks.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PingProbeResultSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PingProbeResultSummary {
+public final class PingProbeResultSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "probeConfigurationId",
+        "startTime",
+        "target",
+        "vantagePointName",
+        "isTimedOut",
+        "isHealthy",
+        "errorCategory",
+        "errorMessage",
+        "protocol",
+        "connection",
+        "dns",
+        "domainLookupStart",
+        "domainLookupEnd",
+        "latencyInMs",
+        "icmpCode"
+    })
+    public PingProbeResultSummary(
+            String key,
+            String probeConfigurationId,
+            Double startTime,
+            String target,
+            String vantagePointName,
+            Boolean isTimedOut,
+            Boolean isHealthy,
+            ErrorCategory errorCategory,
+            String errorMessage,
+            PingProbeProtocol protocol,
+            Connection connection,
+            DNS dns,
+            Double domainLookupStart,
+            Double domainLookupEnd,
+            Double latencyInMs,
+            Integer icmpCode) {
+        super();
+        this.key = key;
+        this.probeConfigurationId = probeConfigurationId;
+        this.startTime = startTime;
+        this.target = target;
+        this.vantagePointName = vantagePointName;
+        this.isTimedOut = isTimedOut;
+        this.isHealthy = isHealthy;
+        this.errorCategory = errorCategory;
+        this.errorMessage = errorMessage;
+        this.protocol = protocol;
+        this.connection = connection;
+        this.dns = dns;
+        this.domainLookupStart = domainLookupStart;
+        this.domainLookupEnd = domainLookupEnd;
+        this.latencyInMs = latencyInMs;
+        this.icmpCode = icmpCode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -231,20 +282,32 @@ public class PingProbeResultSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A value identifying this specific probe result. The key is only unique within
      * the results of its probe configuration. The key may be reused after 90 days.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The OCID of the monitor or on-demand probe responsible for creating this result.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("probeConfigurationId")
-    String probeConfigurationId;
+    private final String probeConfigurationId;
+
+    public String getProbeConfigurationId() {
+        return probeConfigurationId;
+    }
 
     /**
      * The date and time the probe was executed, expressed in milliseconds since the
@@ -254,26 +317,42 @@ public class PingProbeResultSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
-    Double startTime;
+    private final Double startTime;
+
+    public Double getStartTime() {
+        return startTime;
+    }
 
     /**
      * The target hostname or IP address of the probe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    String target;
+    private final String target;
+
+    public String getTarget() {
+        return target;
+    }
 
     /**
      * The name of the vantage point that executed the probe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePointName")
-    String vantagePointName;
+    private final String vantagePointName;
+
+    public String getVantagePointName() {
+        return vantagePointName;
+    }
 
     /**
      * True if the probe did not complete before the configured {@code timeoutInSeconds} value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTimedOut")
-    Boolean isTimedOut;
+    private final Boolean isTimedOut;
+
+    public Boolean getIsTimedOut() {
+        return isTimedOut;
+    }
 
     /**
      * True if the probe result is determined to be healthy based on probe
@@ -283,7 +362,12 @@ public class PingProbeResultSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHealthy")
-    Boolean isHealthy;
+    private final Boolean isHealthy;
+
+    public Boolean getIsHealthy() {
+        return isHealthy;
+    }
+
     /**
      * The category of error if an error occurs executing the probe.
      * The {@code errorMessage} field provides a message with the error details.
@@ -294,7 +378,6 @@ public class PingProbeResultSummary {
      * * SYSTEM - Internal system errors.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ErrorCategory {
         None("NONE"),
         Dns("DNS"),
@@ -307,6 +390,9 @@ public class PingProbeResultSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ErrorCategory.class);
 
         private final String value;
         private static java.util.Map<String, ErrorCategory> map;
@@ -351,22 +437,42 @@ public class PingProbeResultSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCategory")
-    ErrorCategory errorCategory;
+    private final ErrorCategory errorCategory;
+
+    public ErrorCategory getErrorCategory() {
+        return errorCategory;
+    }
 
     /**
      * The error information indicating why a probe execution failed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    PingProbeProtocol protocol;
+    private final PingProbeProtocol protocol;
+
+    public PingProbeProtocol getProtocol() {
+        return protocol;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connection")
-    Connection connection;
+    private final Connection connection;
+
+    public Connection getConnection() {
+        return connection;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dns")
-    DNS dns;
+    private final DNS dns;
+
+    public DNS getDns() {
+        return dns;
+    }
 
     /**
      * The time immediately before the vantage point starts the domain name lookup for
@@ -374,7 +480,11 @@ public class PingProbeResultSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainLookupStart")
-    Double domainLookupStart;
+    private final Double domainLookupStart;
+
+    public Double getDomainLookupStart() {
+        return domainLookupStart;
+    }
 
     /**
      * The time immediately before the vantage point finishes the domain name lookup for
@@ -382,14 +492,22 @@ public class PingProbeResultSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainLookupEnd")
-    Double domainLookupEnd;
+    private final Double domainLookupEnd;
+
+    public Double getDomainLookupEnd() {
+        return domainLookupEnd;
+    }
 
     /**
      * The latency of the probe execution, in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("latencyInMs")
-    Double latencyInMs;
+    private final Double latencyInMs;
+
+    public Double getLatencyInMs() {
+        return latencyInMs;
+    }
 
     /**
      * The ICMP code of the response message.  This field is not used when the protocol
@@ -398,8 +516,108 @@ public class PingProbeResultSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("icmpCode")
-    Integer icmpCode;
+    private final Integer icmpCode;
+
+    public Integer getIcmpCode() {
+        return icmpCode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PingProbeResultSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", probeConfigurationId=").append(String.valueOf(this.probeConfigurationId));
+        sb.append(", startTime=").append(String.valueOf(this.startTime));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", vantagePointName=").append(String.valueOf(this.vantagePointName));
+        sb.append(", isTimedOut=").append(String.valueOf(this.isTimedOut));
+        sb.append(", isHealthy=").append(String.valueOf(this.isHealthy));
+        sb.append(", errorCategory=").append(String.valueOf(this.errorCategory));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", connection=").append(String.valueOf(this.connection));
+        sb.append(", dns=").append(String.valueOf(this.dns));
+        sb.append(", domainLookupStart=").append(String.valueOf(this.domainLookupStart));
+        sb.append(", domainLookupEnd=").append(String.valueOf(this.domainLookupEnd));
+        sb.append(", latencyInMs=").append(String.valueOf(this.latencyInMs));
+        sb.append(", icmpCode=").append(String.valueOf(this.icmpCode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PingProbeResultSummary)) {
+            return false;
+        }
+
+        PingProbeResultSummary other = (PingProbeResultSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.probeConfigurationId, other.probeConfigurationId)
+                && java.util.Objects.equals(this.startTime, other.startTime)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.vantagePointName, other.vantagePointName)
+                && java.util.Objects.equals(this.isTimedOut, other.isTimedOut)
+                && java.util.Objects.equals(this.isHealthy, other.isHealthy)
+                && java.util.Objects.equals(this.errorCategory, other.errorCategory)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.connection, other.connection)
+                && java.util.Objects.equals(this.dns, other.dns)
+                && java.util.Objects.equals(this.domainLookupStart, other.domainLookupStart)
+                && java.util.Objects.equals(this.domainLookupEnd, other.domainLookupEnd)
+                && java.util.Objects.equals(this.latencyInMs, other.latencyInMs)
+                && java.util.Objects.equals(this.icmpCode, other.icmpCode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.probeConfigurationId == null
+                                ? 43
+                                : this.probeConfigurationId.hashCode());
+        result = (result * PRIME) + (this.startTime == null ? 43 : this.startTime.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vantagePointName == null ? 43 : this.vantagePointName.hashCode());
+        result = (result * PRIME) + (this.isTimedOut == null ? 43 : this.isTimedOut.hashCode());
+        result = (result * PRIME) + (this.isHealthy == null ? 43 : this.isHealthy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.errorCategory == null ? 43 : this.errorCategory.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.connection == null ? 43 : this.connection.hashCode());
+        result = (result * PRIME) + (this.dns == null ? 43 : this.dns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainLookupStart == null ? 43 : this.domainLookupStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainLookupEnd == null ? 43 : this.domainLookupEnd.hashCode());
+        result = (result * PRIME) + (this.latencyInMs == null ? 43 : this.latencyInMs.hashCode());
+        result = (result * PRIME) + (this.icmpCode == null ? 43 : this.icmpCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

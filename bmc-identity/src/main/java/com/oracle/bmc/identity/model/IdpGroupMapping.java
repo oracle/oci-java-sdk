@@ -26,14 +26,41 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IdpGroupMapping.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IdpGroupMapping {
+public final class IdpGroupMapping {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "idpId",
+        "idpGroupName",
+        "groupId",
+        "compartmentId",
+        "timeCreated",
+        "lifecycleState",
+        "inactiveStatus"
+    })
+    public IdpGroupMapping(
+            String id,
+            String idpId,
+            String idpGroupName,
+            String groupId,
+            String compartmentId,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState,
+            Long inactiveStatus) {
+        super();
+        this.id = id;
+        this.idpId = idpId;
+        this.idpGroupName = idpGroupName;
+        this.groupId = groupId;
+        this.compartmentId = compartmentId;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+        this.inactiveStatus = inactiveStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -149,35 +176,59 @@ public class IdpGroupMapping {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the {@code IdpGroupMapping}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the {@code IdentityProvider} this mapping belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idpId")
-    String idpId;
+    private final String idpId;
+
+    public String getIdpId() {
+        return idpId;
+    }
 
     /**
      * The name of the IdP group that is mapped to the IAM Service group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
-    String idpGroupName;
+    private final String idpGroupName;
+
+    public String getIdpGroupName() {
+        return idpGroupName;
+    }
 
     /**
      * The OCID of the IAM Service group that is mapped to the IdP group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
-    String groupId;
+    private final String groupId;
+
+    public String getGroupId() {
+        return groupId;
+    }
 
     /**
      * The OCID of the tenancy containing the {@code IdentityProvider}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Date and time the mapping was created, in the format defined by RFC3339.
@@ -186,13 +237,17 @@ public class IdpGroupMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The mapping's current state.  After creating a mapping object, make sure its {@code lifecycleState} changes
      * from CREATING to ACTIVE before using it.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -205,6 +260,9 @@ public class IdpGroupMapping {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -244,14 +302,88 @@ public class IdpGroupMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
-    Long inactiveStatus;
+    private final Long inactiveStatus;
+
+    public Long getInactiveStatus() {
+        return inactiveStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IdpGroupMapping(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", idpId=").append(String.valueOf(this.idpId));
+        sb.append(", idpGroupName=").append(String.valueOf(this.idpGroupName));
+        sb.append(", groupId=").append(String.valueOf(this.groupId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", inactiveStatus=").append(String.valueOf(this.inactiveStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IdpGroupMapping)) {
+            return false;
+        }
+
+        IdpGroupMapping other = (IdpGroupMapping) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.idpId, other.idpId)
+                && java.util.Objects.equals(this.idpGroupName, other.idpGroupName)
+                && java.util.Objects.equals(this.groupId, other.groupId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.inactiveStatus, other.inactiveStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.idpId == null ? 43 : this.idpId.hashCode());
+        result = (result * PRIME) + (this.idpGroupName == null ? 43 : this.idpGroupName.hashCode());
+        result = (result * PRIME) + (this.groupId == null ? 43 : this.groupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inactiveStatus == null ? 43 : this.inactiveStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,14 +16,18 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkloadType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkloadType {
+public final class WorkloadType {
+    @Deprecated
+    @java.beans.ConstructorProperties({"atp", "adw"})
+    public WorkloadType(Float atp, Float adw) {
+        super();
+        this.atp = atp;
+        this.adw = adw;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("atp")
         private Float atp;
@@ -68,18 +72,72 @@ public class WorkloadType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("atp")
-    Float atp;
+    private final Float atp;
+
+    public Float getAtp() {
+        return atp;
+    }
 
     /**
      * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adw")
-    Float adw;
+    private final Float adw;
+
+    public Float getAdw() {
+        return adw;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkloadType(");
+        sb.append("atp=").append(String.valueOf(this.atp));
+        sb.append(", adw=").append(String.valueOf(this.adw));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkloadType)) {
+            return false;
+        }
+
+        WorkloadType other = (WorkloadType) o;
+        return java.util.Objects.equals(this.atp, other.atp)
+                && java.util.Objects.equals(this.adw, other.adw)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.atp == null ? 43 : this.atp.hashCode());
+        result = (result * PRIME) + (this.adw == null ? 43 : this.adw.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

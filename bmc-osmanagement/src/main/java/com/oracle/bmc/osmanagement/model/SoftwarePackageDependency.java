@@ -15,16 +15,22 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SoftwarePackageDependency.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SoftwarePackageDependency {
+public final class SoftwarePackageDependency {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dependency", "dependencyType", "dependencyModifier"})
+    public SoftwarePackageDependency(
+            String dependency, String dependencyType, String dependencyModifier) {
+        super();
+        this.dependency = dependency;
+        this.dependencyType = dependencyType;
+        this.dependencyModifier = dependencyModifier;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dependency")
         private String dependency;
@@ -82,24 +88,91 @@ public class SoftwarePackageDependency {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * the software package's dependency
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependency")
-    String dependency;
+    private final String dependency;
+
+    public String getDependency() {
+        return dependency;
+    }
 
     /**
      * the type of the dependency
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependencyType")
-    String dependencyType;
+    private final String dependencyType;
+
+    public String getDependencyType() {
+        return dependencyType;
+    }
 
     /**
      * the modifier for the dependency
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependencyModifier")
-    String dependencyModifier;
+    private final String dependencyModifier;
+
+    public String getDependencyModifier() {
+        return dependencyModifier;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SoftwarePackageDependency(");
+        sb.append("dependency=").append(String.valueOf(this.dependency));
+        sb.append(", dependencyType=").append(String.valueOf(this.dependencyType));
+        sb.append(", dependencyModifier=").append(String.valueOf(this.dependencyModifier));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SoftwarePackageDependency)) {
+            return false;
+        }
+
+        SoftwarePackageDependency other = (SoftwarePackageDependency) o;
+        return java.util.Objects.equals(this.dependency, other.dependency)
+                && java.util.Objects.equals(this.dependencyType, other.dependencyType)
+                && java.util.Objects.equals(this.dependencyModifier, other.dependencyModifier)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dependency == null ? 43 : this.dependency.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dependencyType == null ? 43 : this.dependencyType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dependencyModifier == null
+                                ? 43
+                                : this.dependencyModifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

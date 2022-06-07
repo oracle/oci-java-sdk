@@ -44,16 +44,40 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CrossConnectMapping.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CrossConnectMapping {
+public final class CrossConnectMapping {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bgpMd5AuthKey",
+        "crossConnectOrCrossConnectGroupId",
+        "customerBgpPeeringIp",
+        "oracleBgpPeeringIp",
+        "customerBgpPeeringIpv6",
+        "oracleBgpPeeringIpv6",
+        "vlan"
+    })
+    public CrossConnectMapping(
+            String bgpMd5AuthKey,
+            String crossConnectOrCrossConnectGroupId,
+            String customerBgpPeeringIp,
+            String oracleBgpPeeringIp,
+            String customerBgpPeeringIpv6,
+            String oracleBgpPeeringIpv6,
+            Integer vlan) {
+        super();
+        this.bgpMd5AuthKey = bgpMd5AuthKey;
+        this.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
+        this.customerBgpPeeringIp = customerBgpPeeringIp;
+        this.oracleBgpPeeringIp = oracleBgpPeeringIp;
+        this.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
+        this.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
+        this.vlan = vlan;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bgpMd5AuthKey")
         private String bgpMd5AuthKey;
@@ -159,6 +183,10 @@ public class CrossConnectMapping {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key for BGP MD5 authentication. Only applicable if your system
      * requires MD5 authentication. If empty or not set (null), that
@@ -166,7 +194,11 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpMd5AuthKey")
-    String bgpMd5AuthKey;
+    private final String bgpMd5AuthKey;
+
+    public String getBgpMd5AuthKey() {
+        return bgpMd5AuthKey;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
@@ -176,7 +208,11 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectOrCrossConnectGroupId")
-    String crossConnectOrCrossConnectGroupId;
+    private final String crossConnectOrCrossConnectGroupId;
+
+    public String getCrossConnectOrCrossConnectGroupId() {
+        return crossConnectOrCrossConnectGroupId;
+    }
 
     /**
      * The BGP IPv4 address for the router on the other end of the BGP session from
@@ -191,7 +227,11 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIp")
-    String customerBgpPeeringIp;
+    private final String customerBgpPeeringIp;
+
+    public String getCustomerBgpPeeringIp() {
+        return customerBgpPeeringIp;
+    }
 
     /**
      * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31
@@ -205,7 +245,11 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIp")
-    String oracleBgpPeeringIp;
+    private final String oracleBgpPeeringIp;
+
+    public String getOracleBgpPeeringIp() {
+        return oracleBgpPeeringIp;
+    }
 
     /**
      * The BGP IPv6 address for the router on the other end of the BGP session from
@@ -223,7 +267,11 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIpv6")
-    String customerBgpPeeringIpv6;
+    private final String customerBgpPeeringIpv6;
+
+    public String getCustomerBgpPeeringIpv6() {
+        return customerBgpPeeringIpv6;
+    }
 
     /**
      * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed.
@@ -240,7 +288,11 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIpv6")
-    String oracleBgpPeeringIpv6;
+    private final String oracleBgpPeeringIpv6;
+
+    public String getOracleBgpPeeringIpv6() {
+        return oracleBgpPeeringIpv6;
+    }
 
     /**
      * The number of the specific VLAN (on the cross-connect or cross-connect group)
@@ -252,8 +304,95 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlan")
-    Integer vlan;
+    private final Integer vlan;
+
+    public Integer getVlan() {
+        return vlan;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CrossConnectMapping(");
+        sb.append("bgpMd5AuthKey=").append(String.valueOf(this.bgpMd5AuthKey));
+        sb.append(", crossConnectOrCrossConnectGroupId=")
+                .append(String.valueOf(this.crossConnectOrCrossConnectGroupId));
+        sb.append(", customerBgpPeeringIp=").append(String.valueOf(this.customerBgpPeeringIp));
+        sb.append(", oracleBgpPeeringIp=").append(String.valueOf(this.oracleBgpPeeringIp));
+        sb.append(", customerBgpPeeringIpv6=").append(String.valueOf(this.customerBgpPeeringIpv6));
+        sb.append(", oracleBgpPeeringIpv6=").append(String.valueOf(this.oracleBgpPeeringIpv6));
+        sb.append(", vlan=").append(String.valueOf(this.vlan));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CrossConnectMapping)) {
+            return false;
+        }
+
+        CrossConnectMapping other = (CrossConnectMapping) o;
+        return java.util.Objects.equals(this.bgpMd5AuthKey, other.bgpMd5AuthKey)
+                && java.util.Objects.equals(
+                        this.crossConnectOrCrossConnectGroupId,
+                        other.crossConnectOrCrossConnectGroupId)
+                && java.util.Objects.equals(this.customerBgpPeeringIp, other.customerBgpPeeringIp)
+                && java.util.Objects.equals(this.oracleBgpPeeringIp, other.oracleBgpPeeringIp)
+                && java.util.Objects.equals(
+                        this.customerBgpPeeringIpv6, other.customerBgpPeeringIpv6)
+                && java.util.Objects.equals(this.oracleBgpPeeringIpv6, other.oracleBgpPeeringIpv6)
+                && java.util.Objects.equals(this.vlan, other.vlan)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.bgpMd5AuthKey == null ? 43 : this.bgpMd5AuthKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.crossConnectOrCrossConnectGroupId == null
+                                ? 43
+                                : this.crossConnectOrCrossConnectGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerBgpPeeringIp == null
+                                ? 43
+                                : this.customerBgpPeeringIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleBgpPeeringIp == null
+                                ? 43
+                                : this.oracleBgpPeeringIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerBgpPeeringIpv6 == null
+                                ? 43
+                                : this.customerBgpPeeringIpv6.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleBgpPeeringIpv6 == null
+                                ? 43
+                                : this.oracleBgpPeeringIpv6.hashCode());
+        result = (result * PRIME) + (this.vlan == null ? 43 : this.vlan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,71 @@ package com.oracle.bmc.ocvp.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SddcSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SddcSummary {
+public final class SddcSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "computeAvailabilityDomain",
+        "displayName",
+        "vmwareSoftwareVersion",
+        "compartmentId",
+        "esxiHostsCount",
+        "hcxFqdn",
+        "isHcxEnabled",
+        "vcenterFqdn",
+        "nsxManagerFqdn",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "isShieldedInstanceEnabled",
+        "initialHostShapeName",
+        "initialHostOcpuCount",
+        "freeformTags",
+        "definedTags"
+    })
+    public SddcSummary(
+            String id,
+            String computeAvailabilityDomain,
+            String displayName,
+            String vmwareSoftwareVersion,
+            String compartmentId,
+            Integer esxiHostsCount,
+            String hcxFqdn,
+            Boolean isHcxEnabled,
+            String vcenterFqdn,
+            String nsxManagerFqdn,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleStates lifecycleState,
+            Boolean isShieldedInstanceEnabled,
+            String initialHostShapeName,
+            Float initialHostOcpuCount,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.computeAvailabilityDomain = computeAvailabilityDomain;
+        this.displayName = displayName;
+        this.vmwareSoftwareVersion = vmwareSoftwareVersion;
+        this.compartmentId = compartmentId;
+        this.esxiHostsCount = esxiHostsCount;
+        this.hcxFqdn = hcxFqdn;
+        this.isHcxEnabled = isHcxEnabled;
+        this.vcenterFqdn = vcenterFqdn;
+        this.nsxManagerFqdn = nsxManagerFqdn;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
+        this.initialHostShapeName = initialHostShapeName;
+        this.initialHostOcpuCount = initialHostOcpuCount;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -249,20 +306,32 @@ public class SddcSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
      * contains the SDDC.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The availability domain that the SDDC's ESXi hosts are running in. For Multi-AD SDDC, it is {@code multi-AD}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
-    String computeAvailabilityDomain;
+    private final String computeAvailabilityDomain;
+
+    public String getComputeAvailabilityDomain() {
+        return computeAvailabilityDomain;
+    }
 
     /**
      * A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits,
@@ -271,7 +340,11 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * In general, this is a specific version of bundled VMware software supported by
@@ -291,7 +364,11 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
-    String vmwareSoftwareVersion;
+    private final String vmwareSoftwareVersion;
+
+    public String getVmwareSoftwareVersion() {
+        return vmwareSoftwareVersion;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
@@ -299,25 +376,41 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The number of ESXi hosts in the SDDC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
-    Integer esxiHostsCount;
+    private final Integer esxiHostsCount;
+
+    public Integer getEsxiHostsCount() {
+        return esxiHostsCount;
+    }
 
     /**
      * HCX Fully Qualified Domain Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxFqdn")
-    String hcxFqdn;
+    private final String hcxFqdn;
+
+    public String getHcxFqdn() {
+        return hcxFqdn;
+    }
 
     /**
      * Indicates whether HCX is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
-    Boolean isHcxEnabled;
+    private final Boolean isHcxEnabled;
+
+    public Boolean getIsHcxEnabled() {
+        return isHcxEnabled;
+    }
 
     /**
      * FQDN for vCenter
@@ -326,7 +419,11 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterFqdn")
-    String vcenterFqdn;
+    private final String vcenterFqdn;
+
+    public String getVcenterFqdn() {
+        return vcenterFqdn;
+    }
 
     /**
      * FQDN for NSX Manager
@@ -335,7 +432,11 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxManagerFqdn")
-    String nsxManagerFqdn;
+    private final String nsxManagerFqdn;
+
+    public String getNsxManagerFqdn() {
+        return nsxManagerFqdn;
+    }
 
     /**
      * The date and time the SDDC was created, in the format defined by
@@ -345,7 +446,11 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the SDDC was updated, in the format defined by
@@ -353,20 +458,32 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the SDDC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Indicates whether shielded instance is enabled at the SDDC level.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
-    Boolean isShieldedInstanceEnabled;
+    private final Boolean isShieldedInstanceEnabled;
+
+    public Boolean getIsShieldedInstanceEnabled() {
+        return isShieldedInstanceEnabled;
+    }
 
     /**
      * The initial compute shape of the SDDC's ESXi hosts.
@@ -374,14 +491,22 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
-    String initialHostShapeName;
+    private final String initialHostShapeName;
+
+    public String getInitialHostShapeName() {
+        return initialHostShapeName;
+    }
 
     /**
      * The initial OCPU count of the SDDC's ESXi hosts.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
-    Float initialHostOcpuCount;
+    private final Float initialHostOcpuCount;
+
+    public Float getInitialHostOcpuCount() {
+        return initialHostOcpuCount;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -391,7 +516,11 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -401,8 +530,134 @@ public class SddcSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SddcSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", computeAvailabilityDomain=")
+                .append(String.valueOf(this.computeAvailabilityDomain));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", esxiHostsCount=").append(String.valueOf(this.esxiHostsCount));
+        sb.append(", hcxFqdn=").append(String.valueOf(this.hcxFqdn));
+        sb.append(", isHcxEnabled=").append(String.valueOf(this.isHcxEnabled));
+        sb.append(", vcenterFqdn=").append(String.valueOf(this.vcenterFqdn));
+        sb.append(", nsxManagerFqdn=").append(String.valueOf(this.nsxManagerFqdn));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isShieldedInstanceEnabled=")
+                .append(String.valueOf(this.isShieldedInstanceEnabled));
+        sb.append(", initialHostShapeName=").append(String.valueOf(this.initialHostShapeName));
+        sb.append(", initialHostOcpuCount=").append(String.valueOf(this.initialHostOcpuCount));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SddcSummary)) {
+            return false;
+        }
+
+        SddcSummary other = (SddcSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.computeAvailabilityDomain, other.computeAvailabilityDomain)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.esxiHostsCount, other.esxiHostsCount)
+                && java.util.Objects.equals(this.hcxFqdn, other.hcxFqdn)
+                && java.util.Objects.equals(this.isHcxEnabled, other.isHcxEnabled)
+                && java.util.Objects.equals(this.vcenterFqdn, other.vcenterFqdn)
+                && java.util.Objects.equals(this.nsxManagerFqdn, other.nsxManagerFqdn)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
+                && java.util.Objects.equals(this.initialHostShapeName, other.initialHostShapeName)
+                && java.util.Objects.equals(this.initialHostOcpuCount, other.initialHostOcpuCount)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeAvailabilityDomain == null
+                                ? 43
+                                : this.computeAvailabilityDomain.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmwareSoftwareVersion == null
+                                ? 43
+                                : this.vmwareSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.esxiHostsCount == null ? 43 : this.esxiHostsCount.hashCode());
+        result = (result * PRIME) + (this.hcxFqdn == null ? 43 : this.hcxFqdn.hashCode());
+        result = (result * PRIME) + (this.isHcxEnabled == null ? 43 : this.isHcxEnabled.hashCode());
+        result = (result * PRIME) + (this.vcenterFqdn == null ? 43 : this.vcenterFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxManagerFqdn == null ? 43 : this.nsxManagerFqdn.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isShieldedInstanceEnabled == null
+                                ? 43
+                                : this.isShieldedInstanceEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialHostShapeName == null
+                                ? 43
+                                : this.initialHostShapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialHostOcpuCount == null
+                                ? 43
+                                : this.initialHostOcpuCount.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -17,16 +17,58 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateVmClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateVmClusterDetails {
+public final class UpdateVmClusterDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "cpuCoreCount",
+        "ocpuCount",
+        "memorySizeInGBs",
+        "dbNodeStorageSizeInGBs",
+        "dataStorageSizeInTBs",
+        "dataStorageSizeInGBs",
+        "licenseModel",
+        "sshPublicKeys",
+        "version",
+        "updateDetails",
+        "freeformTags",
+        "definedTags",
+        "dataCollectionOptions"
+    })
+    public UpdateVmClusterDetails(
+            Integer cpuCoreCount,
+            Float ocpuCount,
+            Integer memorySizeInGBs,
+            Integer dbNodeStorageSizeInGBs,
+            Double dataStorageSizeInTBs,
+            Double dataStorageSizeInGBs,
+            LicenseModel licenseModel,
+            java.util.List<String> sshPublicKeys,
+            PatchDetails version,
+            VmClusterUpdateDetails updateDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            DataCollectionOptions dataCollectionOptions) {
+        super();
+        this.cpuCoreCount = cpuCoreCount;
+        this.ocpuCount = ocpuCount;
+        this.memorySizeInGBs = memorySizeInGBs;
+        this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+        this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.licenseModel = licenseModel;
+        this.sshPublicKeys = sshPublicKeys;
+        this.version = version;
+        this.updateDetails = updateDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.dataCollectionOptions = dataCollectionOptions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
@@ -198,41 +240,70 @@ public class UpdateVmClusterDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of CPU cores to enable for the VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
-    Float ocpuCount;
+    private final Float ocpuCount;
+
+    public Float getOcpuCount() {
+        return ocpuCount;
+    }
 
     /**
      * The memory to be allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
-    Integer memorySizeInGBs;
+    private final Integer memorySizeInGBs;
+
+    public Integer getMemorySizeInGBs() {
+        return memorySizeInGBs;
+    }
 
     /**
      * The local node storage to be allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
-    Integer dbNodeStorageSizeInGBs;
+    private final Integer dbNodeStorageSizeInGBs;
+
+    public Integer getDbNodeStorageSizeInGBs() {
+        return dbNodeStorageSizeInGBs;
+    }
 
     /**
      * The data disk group size to be allocated in TBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-    Double dataStorageSizeInTBs;
+    private final Double dataStorageSizeInTBs;
+
+    public Double getDataStorageSizeInTBs() {
+        return dataStorageSizeInTBs;
+    }
 
     /**
      * The data disk group size to be allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-    Double dataStorageSizeInGBs;
+    private final Double dataStorageSizeInGBs;
+
+    public Double getDataStorageSizeInGBs() {
+        return dataStorageSizeInGBs;
+    }
+
     /**
      * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      *
@@ -274,19 +345,35 @@ public class UpdateVmClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
-    java.util.List<String> sshPublicKeys;
+    private final java.util.List<String> sshPublicKeys;
+
+    public java.util.List<String> getSshPublicKeys() {
+        return sshPublicKeys;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    PatchDetails version;
+    private final PatchDetails version;
+
+    public PatchDetails getVersion() {
+        return version;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("updateDetails")
-    VmClusterUpdateDetails updateDetails;
+    private final VmClusterUpdateDetails updateDetails;
+
+    public VmClusterUpdateDetails getUpdateDetails() {
+        return updateDetails;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -296,7 +383,11 @@ public class UpdateVmClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -304,11 +395,117 @@ public class UpdateVmClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
-    DataCollectionOptions dataCollectionOptions;
+    private final DataCollectionOptions dataCollectionOptions;
+
+    public DataCollectionOptions getDataCollectionOptions() {
+        return dataCollectionOptions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateVmClusterDetails(");
+        sb.append("cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
+        sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
+        sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", sshPublicKeys=").append(String.valueOf(this.sshPublicKeys));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", updateDetails=").append(String.valueOf(this.updateDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateVmClusterDetails)) {
+            return false;
+        }
+
+        UpdateVmClusterDetails other = (UpdateVmClusterDetails) o;
+        return java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(
+                        this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
+                && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.sshPublicKeys, other.sshPublicKeys)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.updateDetails, other.updateDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbNodeStorageSizeInGBs == null
+                                ? 43
+                                : this.dbNodeStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInTBs == null
+                                ? 43
+                                : this.dataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInGBs == null
+                                ? 43
+                                : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sshPublicKeys == null ? 43 : this.sshPublicKeys.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDetails == null ? 43 : this.updateDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataCollectionOptions == null
+                                ? 43
+                                : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

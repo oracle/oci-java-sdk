@@ -503,7 +503,7 @@ public class RequestSignerImpl implements RequestSigner {
         throw new IllegalArgumentException("Unexpected body type: " + body.getClass().getName());
     }
 
-    private static String base64Encode(byte[] bytes) {
+    static String base64Encode(byte[] bytes) {
         // encodeBase64String changed from chunked in v1.4 to not chunked in
         // v1.5 so we cannot rely on which version is going to be used by clients,
         // be explicit that this is not-chunked

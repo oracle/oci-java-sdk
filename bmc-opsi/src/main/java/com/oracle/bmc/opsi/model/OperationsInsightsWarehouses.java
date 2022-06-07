@@ -15,16 +15,19 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OperationsInsightsWarehouses.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperationsInsightsWarehouses {
+public final class OperationsInsightsWarehouses {
+    @Deprecated
+    @java.beans.ConstructorProperties({"operationsInsightsWarehouses"})
+    public OperationsInsightsWarehouses(Object operationsInsightsWarehouses) {
+        super();
+        this.operationsInsightsWarehouses = operationsInsightsWarehouses;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouses")
         private Object operationsInsightsWarehouses;
@@ -62,12 +65,65 @@ public class OperationsInsightsWarehouses {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Operations Insights Warehouse Object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouses")
-    Object operationsInsightsWarehouses;
+    private final Object operationsInsightsWarehouses;
+
+    public Object getOperationsInsightsWarehouses() {
+        return operationsInsightsWarehouses;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperationsInsightsWarehouses(");
+        sb.append("operationsInsightsWarehouses=")
+                .append(String.valueOf(this.operationsInsightsWarehouses));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperationsInsightsWarehouses)) {
+            return false;
+        }
+
+        OperationsInsightsWarehouses other = (OperationsInsightsWarehouses) o;
+        return java.util.Objects.equals(
+                        this.operationsInsightsWarehouses, other.operationsInsightsWarehouses)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operationsInsightsWarehouses == null
+                                ? 43
+                                : this.operationsInsightsWarehouses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

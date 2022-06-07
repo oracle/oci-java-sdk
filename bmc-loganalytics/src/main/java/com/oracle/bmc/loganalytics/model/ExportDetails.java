@@ -16,14 +16,53 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExportDetails {
+public final class ExportDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "compartmentIdInSubtree",
+        "queryString",
+        "subSystem",
+        "scopeFilters",
+        "maxTotalCount",
+        "timeFilter",
+        "queryTimeoutInSeconds",
+        "shouldIncludeColumns",
+        "outputFormat",
+        "shouldLocalize",
+        "shouldUseAcceleration"
+    })
+    public ExportDetails(
+            String compartmentId,
+            Boolean compartmentIdInSubtree,
+            String queryString,
+            SubSystemName subSystem,
+            java.util.List<ScopeFilter> scopeFilters,
+            Integer maxTotalCount,
+            TimeRange timeFilter,
+            Integer queryTimeoutInSeconds,
+            Boolean shouldIncludeColumns,
+            OutputFormat outputFormat,
+            Boolean shouldLocalize,
+            Boolean shouldUseAcceleration) {
+        super();
+        this.compartmentId = compartmentId;
+        this.compartmentIdInSubtree = compartmentIdInSubtree;
+        this.queryString = queryString;
+        this.subSystem = subSystem;
+        this.scopeFilters = scopeFilters;
+        this.maxTotalCount = maxTotalCount;
+        this.timeFilter = timeFilter;
+        this.queryTimeoutInSeconds = queryTimeoutInSeconds;
+        this.shouldIncludeColumns = shouldIncludeColumns;
+        this.outputFormat = outputFormat;
+        this.shouldLocalize = shouldLocalize;
+        this.shouldUseAcceleration = shouldUseAcceleration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -183,38 +222,62 @@ public class ExportDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
-    Boolean compartmentIdInSubtree;
+    private final Boolean compartmentIdInSubtree;
+
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
 
     /**
      * Query to perform.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
-    String queryString;
+    private final String queryString;
+
+    public String getQueryString() {
+        return queryString;
+    }
 
     /**
      * Default subsystem to qualify fields with in the queryString if not specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
-    SubSystemName subSystem;
+    private final SubSystemName subSystem;
+
+    public SubSystemName getSubSystem() {
+        return subSystem;
+    }
 
     /**
      * List of filters to be applied when the query executes. More than one filter per field is not permitted.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopeFilters")
-    java.util.List<ScopeFilter> scopeFilters;
+    private final java.util.List<ScopeFilter> scopeFilters;
+
+    public java.util.List<ScopeFilter> getScopeFilters() {
+        return scopeFilters;
+    }
 
     /**
      * Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
@@ -229,22 +292,39 @@ public class ExportDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalCount")
-    Integer maxTotalCount;
+    private final Integer maxTotalCount;
+
+    public Integer getMaxTotalCount() {
+        return maxTotalCount;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("timeFilter")
-    TimeRange timeFilter;
+    private final TimeRange timeFilter;
+
+    public TimeRange getTimeFilter() {
+        return timeFilter;
+    }
 
     /**
      * Amount of time, in seconds, allowed for a query to execute. If this time expires before the query is complete, any partial results will be returned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryTimeoutInSeconds")
-    Integer queryTimeoutInSeconds;
+    private final Integer queryTimeoutInSeconds;
+
+    public Integer getQueryTimeoutInSeconds() {
+        return queryTimeoutInSeconds;
+    }
 
     /**
      * Include columns in response
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeColumns")
-    Boolean shouldIncludeColumns;
+    private final Boolean shouldIncludeColumns;
+
+    public Boolean getShouldIncludeColumns() {
+        return shouldIncludeColumns;
+    }
+
     /**
      * Specifies the format for the returned results.
      **/
@@ -284,21 +364,128 @@ public class ExportDetails {
      * Specifies the format for the returned results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputFormat")
-    OutputFormat outputFormat;
+    private final OutputFormat outputFormat;
+
+    public OutputFormat getOutputFormat() {
+        return outputFormat;
+    }
 
     /**
      * Localize results, including header columns, List-Of-Values and timestamp values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldLocalize")
-    Boolean shouldLocalize;
+    private final Boolean shouldLocalize;
+
+    public Boolean getShouldLocalize() {
+        return shouldLocalize;
+    }
 
     /**
      * Controls if query should ignore pre-calculated results if available and only use raw data.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseAcceleration")
-    Boolean shouldUseAcceleration;
+    private final Boolean shouldUseAcceleration;
+
+    public Boolean getShouldUseAcceleration() {
+        return shouldUseAcceleration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExportDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(", queryString=").append(String.valueOf(this.queryString));
+        sb.append(", subSystem=").append(String.valueOf(this.subSystem));
+        sb.append(", scopeFilters=").append(String.valueOf(this.scopeFilters));
+        sb.append(", maxTotalCount=").append(String.valueOf(this.maxTotalCount));
+        sb.append(", timeFilter=").append(String.valueOf(this.timeFilter));
+        sb.append(", queryTimeoutInSeconds=").append(String.valueOf(this.queryTimeoutInSeconds));
+        sb.append(", shouldIncludeColumns=").append(String.valueOf(this.shouldIncludeColumns));
+        sb.append(", outputFormat=").append(String.valueOf(this.outputFormat));
+        sb.append(", shouldLocalize=").append(String.valueOf(this.shouldLocalize));
+        sb.append(", shouldUseAcceleration=").append(String.valueOf(this.shouldUseAcceleration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportDetails)) {
+            return false;
+        }
+
+        ExportDetails other = (ExportDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.queryString, other.queryString)
+                && java.util.Objects.equals(this.subSystem, other.subSystem)
+                && java.util.Objects.equals(this.scopeFilters, other.scopeFilters)
+                && java.util.Objects.equals(this.maxTotalCount, other.maxTotalCount)
+                && java.util.Objects.equals(this.timeFilter, other.timeFilter)
+                && java.util.Objects.equals(this.queryTimeoutInSeconds, other.queryTimeoutInSeconds)
+                && java.util.Objects.equals(this.shouldIncludeColumns, other.shouldIncludeColumns)
+                && java.util.Objects.equals(this.outputFormat, other.outputFormat)
+                && java.util.Objects.equals(this.shouldLocalize, other.shouldLocalize)
+                && java.util.Objects.equals(this.shouldUseAcceleration, other.shouldUseAcceleration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.queryString == null ? 43 : this.queryString.hashCode());
+        result = (result * PRIME) + (this.subSystem == null ? 43 : this.subSystem.hashCode());
+        result = (result * PRIME) + (this.scopeFilters == null ? 43 : this.scopeFilters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxTotalCount == null ? 43 : this.maxTotalCount.hashCode());
+        result = (result * PRIME) + (this.timeFilter == null ? 43 : this.timeFilter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryTimeoutInSeconds == null
+                                ? 43
+                                : this.queryTimeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldIncludeColumns == null
+                                ? 43
+                                : this.shouldIncludeColumns.hashCode());
+        result = (result * PRIME) + (this.outputFormat == null ? 43 : this.outputFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldLocalize == null ? 43 : this.shouldLocalize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldUseAcceleration == null
+                                ? 43
+                                : this.shouldUseAcceleration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

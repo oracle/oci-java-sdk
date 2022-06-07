@@ -15,16 +15,40 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateBlockchainPlatformDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateBlockchainPlatformDetails {
+public final class UpdateBlockchainPlatformDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "storageSizeInTBs",
+        "replicas",
+        "totalOcpuCapacity",
+        "loadBalancerShape",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateBlockchainPlatformDetails(
+            String description,
+            Double storageSizeInTBs,
+            ReplicaDetails replicas,
+            Integer totalOcpuCapacity,
+            BlockchainPlatform.LoadBalancerShape loadBalancerShape,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.description = description;
+        this.storageSizeInTBs = storageSizeInTBs;
+        this.replicas = replicas;
+        this.totalOcpuCapacity = totalOcpuCapacity;
+        this.loadBalancerShape = loadBalancerShape;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -130,32 +154,56 @@ public class UpdateBlockchainPlatformDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Platform Description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Storage size in TBs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
-    Double storageSizeInTBs;
+    private final Double storageSizeInTBs;
+
+    public Double getStorageSizeInTBs() {
+        return storageSizeInTBs;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("replicas")
-    ReplicaDetails replicas;
+    private final ReplicaDetails replicas;
+
+    public ReplicaDetails getReplicas() {
+        return replicas;
+    }
 
     /**
      * Number of total OCPUs to allocate
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuCapacity")
-    Integer totalOcpuCapacity;
+    private final Integer totalOcpuCapacity;
+
+    public Integer getTotalOcpuCapacity() {
+        return totalOcpuCapacity;
+    }
 
     /**
      * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
-    BlockchainPlatform.LoadBalancerShape loadBalancerShape;
+    private final BlockchainPlatform.LoadBalancerShape loadBalancerShape;
+
+    public BlockchainPlatform.LoadBalancerShape getLoadBalancerShape() {
+        return loadBalancerShape;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -163,7 +211,11 @@ public class UpdateBlockchainPlatformDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -171,8 +223,75 @@ public class UpdateBlockchainPlatformDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateBlockchainPlatformDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", storageSizeInTBs=").append(String.valueOf(this.storageSizeInTBs));
+        sb.append(", replicas=").append(String.valueOf(this.replicas));
+        sb.append(", totalOcpuCapacity=").append(String.valueOf(this.totalOcpuCapacity));
+        sb.append(", loadBalancerShape=").append(String.valueOf(this.loadBalancerShape));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBlockchainPlatformDetails)) {
+            return false;
+        }
+
+        UpdateBlockchainPlatformDetails other = (UpdateBlockchainPlatformDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.storageSizeInTBs, other.storageSizeInTBs)
+                && java.util.Objects.equals(this.replicas, other.replicas)
+                && java.util.Objects.equals(this.totalOcpuCapacity, other.totalOcpuCapacity)
+                && java.util.Objects.equals(this.loadBalancerShape, other.loadBalancerShape)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeInTBs == null ? 43 : this.storageSizeInTBs.hashCode());
+        result = (result * PRIME) + (this.replicas == null ? 43 : this.replicas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalOcpuCapacity == null ? 43 : this.totalOcpuCapacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerShape == null ? 43 : this.loadBalancerShape.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

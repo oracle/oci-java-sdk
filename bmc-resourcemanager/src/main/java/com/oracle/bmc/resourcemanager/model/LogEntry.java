@@ -15,14 +15,20 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LogEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogEntry {
+public final class LogEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({"type", "level", "timestamp", "message"})
+    public LogEntry(Type type, Level level, java.util.Date timestamp, String message) {
+        super();
+        this.type = type;
+        this.level = level;
+        this.timestamp = timestamp;
+        this.message = message;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -89,10 +95,13 @@ public class LogEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Specifies the log type for the log entry.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         TerraformConsole("TERRAFORM_CONSOLE"),
 
@@ -101,6 +110,8 @@ public class LogEntry {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -137,11 +148,15 @@ public class LogEntry {
      * Specifies the log type for the log entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
+
     /**
      * Specifies the severity level of the log entry.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Level {
         Trace("TRACE"),
         Debug("DEBUG"),
@@ -155,6 +170,8 @@ public class LogEntry {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Level.class);
 
         private final String value;
         private static java.util.Map<String, Level> map;
@@ -192,7 +209,11 @@ public class LogEntry {
      * Specifies the severity level of the log entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
-    Level level;
+    private final Level level;
+
+    public Level getLevel() {
+        return level;
+    }
 
     /**
      * The date and time of the log entry.
@@ -201,14 +222,70 @@ public class LogEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * The log entry value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogEntry(");
+        sb.append("type=").append(String.valueOf(this.type));
+        sb.append(", level=").append(String.valueOf(this.level));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogEntry)) {
+            return false;
+        }
+
+        LogEntry other = (LogEntry) o;
+        return java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.level, other.level)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.level == null ? 43 : this.level.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

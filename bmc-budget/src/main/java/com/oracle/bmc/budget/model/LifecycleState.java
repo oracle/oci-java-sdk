@@ -8,7 +8,6 @@ package com.oracle.bmc.budget.model;
  * The current state of the resource.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.extern.slf4j.Slf4j
 public enum LifecycleState {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
@@ -18,6 +17,9 @@ public enum LifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, LifecycleState> map;

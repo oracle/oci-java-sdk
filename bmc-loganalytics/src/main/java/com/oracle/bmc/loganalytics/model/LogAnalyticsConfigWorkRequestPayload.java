@@ -15,16 +15,31 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsConfigWorkRequestPayload.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsConfigWorkRequestPayload {
+public final class LogAnalyticsConfigWorkRequestPayload {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sourceName",
+        "entityId",
+        "lookupReference",
+        "lookupReferenceString"
+    })
+    public LogAnalyticsConfigWorkRequestPayload(
+            String sourceName,
+            String entityId,
+            Long lookupReference,
+            String lookupReferenceString) {
+        super();
+        this.sourceName = sourceName;
+        this.entityId = entityId;
+        this.lookupReference = lookupReference;
+        this.lookupReferenceString = lookupReferenceString;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
@@ -93,30 +108,104 @@ public class LogAnalyticsConfigWorkRequestPayload {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The source name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
 
     /**
      * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
-    String entityId;
+    private final String entityId;
+
+    public String getEntityId() {
+        return entityId;
+    }
 
     /**
      * The lookup reference as an integer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
-    Long lookupReference;
+    private final Long lookupReference;
+
+    public Long getLookupReference() {
+        return lookupReference;
+    }
 
     /**
      * lookupReference
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
-    String lookupReferenceString;
+    private final String lookupReferenceString;
+
+    public String getLookupReferenceString() {
+        return lookupReferenceString;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsConfigWorkRequestPayload(");
+        sb.append("sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", entityId=").append(String.valueOf(this.entityId));
+        sb.append(", lookupReference=").append(String.valueOf(this.lookupReference));
+        sb.append(", lookupReferenceString=").append(String.valueOf(this.lookupReferenceString));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsConfigWorkRequestPayload)) {
+            return false;
+        }
+
+        LogAnalyticsConfigWorkRequestPayload other = (LogAnalyticsConfigWorkRequestPayload) o;
+        return java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.lookupReference, other.lookupReference)
+                && java.util.Objects.equals(this.lookupReferenceString, other.lookupReferenceString)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lookupReference == null ? 43 : this.lookupReference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lookupReferenceString == null
+                                ? 43
+                                : this.lookupReferenceString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

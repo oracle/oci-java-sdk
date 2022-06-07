@@ -16,14 +16,24 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Quota.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Quota {
+public final class Quota {
+    @Deprecated
+    @java.beans.ConstructorProperties({"value", "unit", "resetPolicy", "operationOnBreach"})
+    public Quota(
+            Integer value,
+            Unit unit,
+            ResetPolicy resetPolicy,
+            OperationOnBreach operationOnBreach) {
+        super();
+        this.value = value;
+        this.unit = unit;
+        this.resetPolicy = resetPolicy;
+        this.operationOnBreach = operationOnBreach;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
@@ -90,18 +100,26 @@ public class Quota {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of requests that can be made per time period.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    Integer value;
+    private final Integer value;
+
+    public Integer getValue() {
+        return value;
+    }
+
     /**
      * The unit of time over which quotas are calculated.
      * Example: {@code MINUTE} or {@code MONTH}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Unit {
         Minute("MINUTE"),
         Hour("HOUR"),
@@ -114,6 +132,8 @@ public class Quota {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Unit.class);
 
         private final String value;
         private static java.util.Map<String, Unit> map;
@@ -152,13 +172,17 @@ public class Quota {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    Unit unit;
+    private final Unit unit;
+
+    public Unit getUnit() {
+        return unit;
+    }
+
     /**
      * The policy that controls when quotas will reset.
      * Example: {@code CALENDAR}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ResetPolicy {
         Calendar("CALENDAR"),
 
@@ -167,6 +191,9 @@ public class Quota {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResetPolicy.class);
 
         private final String value;
         private static java.util.Map<String, ResetPolicy> map;
@@ -206,14 +233,18 @@ public class Quota {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resetPolicy")
-    ResetPolicy resetPolicy;
+    private final ResetPolicy resetPolicy;
+
+    public ResetPolicy getResetPolicy() {
+        return resetPolicy;
+    }
+
     /**
      * What the usage plan will do when a quota is breached:
      * {@code REJECT} will allow no further requests
      * {@code ALLOW} will continue to allow further requests
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OperationOnBreach {
         Reject("REJECT"),
         Allow("ALLOW"),
@@ -223,6 +254,9 @@ public class Quota {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OperationOnBreach.class);
 
         private final String value;
         private static java.util.Map<String, OperationOnBreach> map;
@@ -263,8 +297,62 @@ public class Quota {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationOnBreach")
-    OperationOnBreach operationOnBreach;
+    private final OperationOnBreach operationOnBreach;
+
+    public OperationOnBreach getOperationOnBreach() {
+        return operationOnBreach;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Quota(");
+        sb.append("value=").append(String.valueOf(this.value));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append(", resetPolicy=").append(String.valueOf(this.resetPolicy));
+        sb.append(", operationOnBreach=").append(String.valueOf(this.operationOnBreach));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Quota)) {
+            return false;
+        }
+
+        Quota other = (Quota) o;
+        return java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.resetPolicy, other.resetPolicy)
+                && java.util.Objects.equals(this.operationOnBreach, other.operationOnBreach)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result = (result * PRIME) + (this.resetPolicy == null ? 43 : this.resetPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationOnBreach == null ? 43 : this.operationOnBreach.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

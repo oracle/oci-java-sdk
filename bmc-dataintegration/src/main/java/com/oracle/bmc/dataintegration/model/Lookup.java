@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Lookup.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Lookup extends Operator {
+public final class Lookup extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -232,6 +227,10 @@ public class Lookup extends Operator {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Lookup(
             String key,
@@ -270,17 +269,25 @@ public class Lookup extends Operator {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("lookupCondition")
-    Expression lookupCondition;
+    private final Expression lookupCondition;
+
+    public Expression getLookupCondition() {
+        return lookupCondition;
+    }
 
     /**
      * For the rows for which lookup condition does not satisfy, if set to true - do not return those rows of primary Input source and if set to false - create a row with primary input fields values and lookup field values as NULL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipNoMatch")
-    Boolean isSkipNoMatch;
+    private final Boolean isSkipNoMatch;
+
+    public Boolean getIsSkipNoMatch() {
+        return isSkipNoMatch;
+    }
+
     /**
      * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MultiMatchStrategy {
         ReturnAny("RETURN_ANY"),
         ReturnFirst("RETURN_FIRST"),
@@ -293,6 +300,9 @@ public class Lookup extends Operator {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MultiMatchStrategy.class);
 
         private final String value;
         private static java.util.Map<String, MultiMatchStrategy> map;
@@ -330,14 +340,82 @@ public class Lookup extends Operator {
      * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("multiMatchStrategy")
-    MultiMatchStrategy multiMatchStrategy;
+    private final MultiMatchStrategy multiMatchStrategy;
+
+    public MultiMatchStrategy getMultiMatchStrategy() {
+        return multiMatchStrategy;
+    }
 
     /**
      * this map is used for replacing NULL values in the record. Key is the column name and value is the NULL replacement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nullFillValues")
-    java.util.Map<String, Object> nullFillValues;
+    private final java.util.Map<String, Object> nullFillValues;
+
+    public java.util.Map<String, Object> getNullFillValues() {
+        return nullFillValues;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Lookup(");
+        sb.append("super=").append(super.toString());
+        sb.append(", lookupCondition=").append(String.valueOf(this.lookupCondition));
+        sb.append(", isSkipNoMatch=").append(String.valueOf(this.isSkipNoMatch));
+        sb.append(", multiMatchStrategy=").append(String.valueOf(this.multiMatchStrategy));
+        sb.append(", nullFillValues=").append(String.valueOf(this.nullFillValues));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Lookup)) {
+            return false;
+        }
+
+        Lookup other = (Lookup) o;
+        return java.util.Objects.equals(this.lookupCondition, other.lookupCondition)
+                && java.util.Objects.equals(this.isSkipNoMatch, other.isSkipNoMatch)
+                && java.util.Objects.equals(this.multiMatchStrategy, other.multiMatchStrategy)
+                && java.util.Objects.equals(this.nullFillValues, other.nullFillValues)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.lookupCondition == null ? 43 : this.lookupCondition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSkipNoMatch == null ? 43 : this.isSkipNoMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multiMatchStrategy == null
+                                ? 43
+                                : this.multiMatchStrategy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nullFillValues == null ? 43 : this.nullFillValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.core.model;
  * Type of encryption cipher suite to use for the MACsec connection.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.extern.slf4j.Slf4j
 public enum MacsecEncryptionCipher {
     Aes128Gcm("AES128_GCM"),
     Aes128GcmXpn("AES128_GCM_XPN"),
@@ -20,6 +19,9 @@ public enum MacsecEncryptionCipher {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MacsecEncryptionCipher.class);
 
     private final String value;
     private static java.util.Map<String, MacsecEncryptionCipher> map;

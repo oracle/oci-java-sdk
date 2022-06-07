@@ -9,14 +9,6 @@ import com.oracle.bmc.announcementsservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/CreateAnnouncementsPreferenceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateAnnouncementsPreferenceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateAnnouncementsPreferenceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails> {
@@ -27,6 +19,10 @@ public class CreateAnnouncementsPreferenceRequest
     private com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails
             announcementsPreferenceDetails;
 
+    public com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails
+            getAnnouncementsPreferenceDetails() {
+        return announcementsPreferenceDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the complete request ID.
@@ -34,10 +30,17 @@ public class CreateAnnouncementsPreferenceRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Idempotency token
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -58,6 +61,44 @@ public class CreateAnnouncementsPreferenceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails
+                announcementsPreferenceDetails = null;
+
+        /**
+         * The object that contains details about tenancy preferences for receiving announcements by email.
+         * @return this builder instance
+         */
+        public Builder announcementsPreferenceDetails(
+                com.oracle.bmc.announcementsservice.model.CreateAnnouncementsPreferencesDetails
+                        announcementsPreferenceDetails) {
+            this.announcementsPreferenceDetails = announcementsPreferenceDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * Idempotency token
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -124,5 +165,83 @@ public class CreateAnnouncementsPreferenceRequest
             announcementsPreferenceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateAnnouncementsPreferenceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateAnnouncementsPreferenceRequest
+         */
+        public CreateAnnouncementsPreferenceRequest buildWithoutInvocationCallback() {
+            CreateAnnouncementsPreferenceRequest request =
+                    new CreateAnnouncementsPreferenceRequest();
+            request.announcementsPreferenceDetails = announcementsPreferenceDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateAnnouncementsPreferenceRequest(announcementsPreferenceDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .announcementsPreferenceDetails(announcementsPreferenceDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",announcementsPreferenceDetails=")
+                .append(String.valueOf(this.announcementsPreferenceDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAnnouncementsPreferenceRequest)) {
+            return false;
+        }
+
+        CreateAnnouncementsPreferenceRequest other = (CreateAnnouncementsPreferenceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.announcementsPreferenceDetails, other.announcementsPreferenceDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.announcementsPreferenceDetails == null
+                                ? 43
+                                : this.announcementsPreferenceDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

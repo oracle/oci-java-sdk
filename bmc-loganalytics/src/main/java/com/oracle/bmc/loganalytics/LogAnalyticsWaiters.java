@@ -6,6 +6,7 @@ package com.oracle.bmc.loganalytics;
 
 import com.oracle.bmc.loganalytics.requests.*;
 import com.oracle.bmc.loganalytics.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,15 @@ import com.oracle.bmc.loganalytics.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.RequiredArgsConstructor
 public class LogAnalyticsWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final LogAnalytics client;
+
+    public LogAnalyticsWaiters(
+            java.util.concurrent.ExecutorService executorService, LogAnalytics client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

@@ -16,14 +16,19 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PatternDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PatternDetails {
+public final class PatternDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"inclusionPatterns", "exclusionPatterns"})
+    public PatternDetails(
+            java.util.List<String> inclusionPatterns, java.util.List<String> exclusionPatterns) {
+        super();
+        this.inclusionPatterns = inclusionPatterns;
+        this.exclusionPatterns = exclusionPatterns;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("inclusionPatterns")
         private java.util.List<String> inclusionPatterns;
@@ -70,6 +75,10 @@ public class PatternDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An array of glob patterns to match the object names to include. An empty array includes all objects in the
      * bucket. Exclusion patterns take precedence over inclusion patterns.
@@ -94,7 +103,11 @@ public class PatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inclusionPatterns")
-    java.util.List<String> inclusionPatterns;
+    private final java.util.List<String> inclusionPatterns;
+
+    public java.util.List<String> getInclusionPatterns() {
+        return inclusionPatterns;
+    }
 
     /**
      * An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion
@@ -120,8 +133,58 @@ public class PatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exclusionPatterns")
-    java.util.List<String> exclusionPatterns;
+    private final java.util.List<String> exclusionPatterns;
+
+    public java.util.List<String> getExclusionPatterns() {
+        return exclusionPatterns;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PatternDetails(");
+        sb.append("inclusionPatterns=").append(String.valueOf(this.inclusionPatterns));
+        sb.append(", exclusionPatterns=").append(String.valueOf(this.exclusionPatterns));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PatternDetails)) {
+            return false;
+        }
+
+        PatternDetails other = (PatternDetails) o;
+        return java.util.Objects.equals(this.inclusionPatterns, other.inclusionPatterns)
+                && java.util.Objects.equals(this.exclusionPatterns, other.exclusionPatterns)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.inclusionPatterns == null ? 43 : this.inclusionPatterns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exclusionPatterns == null ? 43 : this.exclusionPatterns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

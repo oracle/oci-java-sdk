@@ -26,9 +26,12 @@ import com.oracle.bmc.servicemesh.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.RequiredArgsConstructor
 public class ServiceMeshPaginators {
     private final ServiceMesh client;
+
+    public ServiceMeshPaginators(ServiceMesh client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listAccessPolicies operation. This iterable

@@ -15,16 +15,31 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceAgentConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceAgentConfig {
+public final class InstanceAgentConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isMonitoringDisabled",
+        "isManagementDisabled",
+        "areAllPluginsDisabled",
+        "pluginsConfig"
+    })
+    public InstanceAgentConfig(
+            Boolean isMonitoringDisabled,
+            Boolean isManagementDisabled,
+            Boolean areAllPluginsDisabled,
+            java.util.List<InstanceAgentPluginConfigDetails> pluginsConfig) {
+        super();
+        this.isMonitoringDisabled = isMonitoringDisabled;
+        this.isManagementDisabled = isManagementDisabled;
+        this.areAllPluginsDisabled = areAllPluginsDisabled;
+        this.pluginsConfig = pluginsConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringDisabled")
         private Boolean isMonitoringDisabled;
@@ -97,6 +112,10 @@ public class InstanceAgentConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
      * monitoring plugins.
@@ -115,7 +134,11 @@ public class InstanceAgentConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringDisabled")
-    Boolean isMonitoringDisabled;
+    private final Boolean isMonitoringDisabled;
+
+    public Boolean getIsMonitoringDisabled() {
+        return isMonitoringDisabled;
+    }
 
     /**
      * Whether Oracle Cloud Agent can run all the available management plugins.
@@ -134,7 +157,11 @@ public class InstanceAgentConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagementDisabled")
-    Boolean isManagementDisabled;
+    private final Boolean isManagementDisabled;
+
+    public Boolean getIsManagementDisabled() {
+        return isManagementDisabled;
+    }
 
     /**
      * Whether Oracle Cloud Agent can run all of the available plugins.
@@ -145,14 +172,84 @@ public class InstanceAgentConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areAllPluginsDisabled")
-    Boolean areAllPluginsDisabled;
+    private final Boolean areAllPluginsDisabled;
+
+    public Boolean getAreAllPluginsDisabled() {
+        return areAllPluginsDisabled;
+    }
 
     /**
      * The configuration of plugins associated with this instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginsConfig")
-    java.util.List<InstanceAgentPluginConfigDetails> pluginsConfig;
+    private final java.util.List<InstanceAgentPluginConfigDetails> pluginsConfig;
+
+    public java.util.List<InstanceAgentPluginConfigDetails> getPluginsConfig() {
+        return pluginsConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceAgentConfig(");
+        sb.append("isMonitoringDisabled=").append(String.valueOf(this.isMonitoringDisabled));
+        sb.append(", isManagementDisabled=").append(String.valueOf(this.isManagementDisabled));
+        sb.append(", areAllPluginsDisabled=").append(String.valueOf(this.areAllPluginsDisabled));
+        sb.append(", pluginsConfig=").append(String.valueOf(this.pluginsConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceAgentConfig)) {
+            return false;
+        }
+
+        InstanceAgentConfig other = (InstanceAgentConfig) o;
+        return java.util.Objects.equals(this.isMonitoringDisabled, other.isMonitoringDisabled)
+                && java.util.Objects.equals(this.isManagementDisabled, other.isManagementDisabled)
+                && java.util.Objects.equals(this.areAllPluginsDisabled, other.areAllPluginsDisabled)
+                && java.util.Objects.equals(this.pluginsConfig, other.pluginsConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isMonitoringDisabled == null
+                                ? 43
+                                : this.isMonitoringDisabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isManagementDisabled == null
+                                ? 43
+                                : this.isManagementDisabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areAllPluginsDisabled == null
+                                ? 43
+                                : this.areAllPluginsDisabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pluginsConfig == null ? 43 : this.pluginsConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,40 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDomainGovernanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDomainGovernanceDetails {
+public final class CreateDomainGovernanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "domainId",
+        "subscriptionEmail",
+        "onsTopicId",
+        "onsSubscriptionId",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateDomainGovernanceDetails(
+            String compartmentId,
+            String domainId,
+            String subscriptionEmail,
+            String onsTopicId,
+            String onsSubscriptionId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.domainId = domainId;
+        this.subscriptionEmail = subscriptionEmail;
+        this.onsTopicId = onsTopicId;
+        this.onsSubscriptionId = onsSubscriptionId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -130,35 +154,59 @@ public class CreateDomainGovernanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * OCID of the domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
-    String domainId;
+    private final String domainId;
+
+    public String getDomainId() {
+        return domainId;
+    }
 
     /**
      * The email to notify the user, and that the ONS subscription will be created with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
-    String subscriptionEmail;
+    private final String subscriptionEmail;
+
+    public String getSubscriptionEmail() {
+        return subscriptionEmail;
+    }
 
     /**
      * The ONS topic associated with this domain governance entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
-    String onsTopicId;
+    private final String onsTopicId;
+
+    public String getOnsTopicId() {
+        return onsTopicId;
+    }
 
     /**
      * The ONS subscription associated with this domain governance entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onsSubscriptionId")
-    String onsSubscriptionId;
+    private final String onsSubscriptionId;
+
+    public String getOnsSubscriptionId() {
+        return onsSubscriptionId;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -166,7 +214,11 @@ public class CreateDomainGovernanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -174,8 +226,75 @@ public class CreateDomainGovernanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDomainGovernanceDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", domainId=").append(String.valueOf(this.domainId));
+        sb.append(", subscriptionEmail=").append(String.valueOf(this.subscriptionEmail));
+        sb.append(", onsTopicId=").append(String.valueOf(this.onsTopicId));
+        sb.append(", onsSubscriptionId=").append(String.valueOf(this.onsSubscriptionId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDomainGovernanceDetails)) {
+            return false;
+        }
+
+        CreateDomainGovernanceDetails other = (CreateDomainGovernanceDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.domainId, other.domainId)
+                && java.util.Objects.equals(this.subscriptionEmail, other.subscriptionEmail)
+                && java.util.Objects.equals(this.onsTopicId, other.onsTopicId)
+                && java.util.Objects.equals(this.onsSubscriptionId, other.onsSubscriptionId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionEmail == null ? 43 : this.subscriptionEmail.hashCode());
+        result = (result * PRIME) + (this.onsTopicId == null ? 43 : this.onsTopicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onsSubscriptionId == null ? 43 : this.onsSubscriptionId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,20 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetricDataPoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MetricDataPoint {
+public final class MetricDataPoint {
+    @Deprecated
+    @java.beans.ConstructorProperties({"value", "unit", "dimensions"})
+    public MetricDataPoint(
+            Double value, String unit, java.util.List<MetricDimensionDefinition> dimensions) {
+        super();
+        this.value = value;
+        this.unit = unit;
+        this.dimensions = dimensions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Double value;
@@ -77,24 +83,85 @@ public class MetricDataPoint {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The value of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    Double value;
+    private final Double value;
+
+    public Double getValue() {
+        return value;
+    }
 
     /**
      * The unit of the metric value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    String unit;
+    private final String unit;
+
+    public String getUnit() {
+        return unit;
+    }
 
     /**
      * The dimensions of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    java.util.List<MetricDimensionDefinition> dimensions;
+    private final java.util.List<MetricDimensionDefinition> dimensions;
+
+    public java.util.List<MetricDimensionDefinition> getDimensions() {
+        return dimensions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MetricDataPoint(");
+        sb.append("value=").append(String.valueOf(this.value));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MetricDataPoint)) {
+            return false;
+        }
+
+        MetricDataPoint other = (MetricDataPoint) o;
+        return java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

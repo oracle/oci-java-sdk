@@ -24,16 +24,67 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DataGuardAssociationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataGuardAssociationSummary {
+public final class DataGuardAssociationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "databaseId",
+        "role",
+        "lifecycleState",
+        "lifecycleDetails",
+        "peerDbSystemId",
+        "peerDbHomeId",
+        "peerDatabaseId",
+        "peerDataGuardAssociationId",
+        "peerRole",
+        "applyLag",
+        "applyRate",
+        "protectionMode",
+        "transportType",
+        "timeCreated",
+        "isActiveDataGuardEnabled"
+    })
+    public DataGuardAssociationSummary(
+            String id,
+            String databaseId,
+            Role role,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            String peerDbSystemId,
+            String peerDbHomeId,
+            String peerDatabaseId,
+            String peerDataGuardAssociationId,
+            PeerRole peerRole,
+            String applyLag,
+            String applyRate,
+            ProtectionMode protectionMode,
+            TransportType transportType,
+            java.util.Date timeCreated,
+            Boolean isActiveDataGuardEnabled) {
+        super();
+        this.id = id;
+        this.databaseId = databaseId;
+        this.role = role;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.peerDbSystemId = peerDbSystemId;
+        this.peerDbHomeId = peerDbHomeId;
+        this.peerDatabaseId = peerDatabaseId;
+        this.peerDataGuardAssociationId = peerDataGuardAssociationId;
+        this.peerRole = peerRole;
+        this.applyLag = applyLag;
+        this.applyRate = applyRate;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
+        this.timeCreated = timeCreated;
+        this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -237,21 +288,33 @@ public class DataGuardAssociationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the reporting database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
+    private final String databaseId;
+
+    public String getDatabaseId() {
+        return databaseId;
+    }
+
     /**
      * The role of the reporting database in this Data Guard association.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Role {
         Primary("PRIMARY"),
         Standby("STANDBY"),
@@ -262,6 +325,8 @@ public class DataGuardAssociationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Role.class);
 
         private final String value;
         private static java.util.Map<String, Role> map;
@@ -298,11 +363,15 @@ public class DataGuardAssociationSummary {
      * The role of the reporting database in this Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    Role role;
+    private final Role role;
+
+    public Role getRole() {
+        return role;
+    }
+
     /**
      * The current state of the Data Guard association.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -317,6 +386,9 @@ public class DataGuardAssociationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -354,14 +426,22 @@ public class DataGuardAssociationSummary {
      * The current state of the Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycleState, if available.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system containing the associated
@@ -369,30 +449,46 @@ public class DataGuardAssociationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
-    String peerDbSystemId;
+    private final String peerDbSystemId;
+
+    public String getPeerDbSystemId() {
+        return peerDbSystemId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
-    String peerDbHomeId;
+    private final String peerDbHomeId;
+
+    public String getPeerDbHomeId() {
+        return peerDbHomeId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated peer database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDatabaseId")
-    String peerDatabaseId;
+    private final String peerDatabaseId;
+
+    public String getPeerDatabaseId() {
+        return peerDatabaseId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDataGuardAssociationId")
-    String peerDataGuardAssociationId;
+    private final String peerDataGuardAssociationId;
+
+    public String getPeerDataGuardAssociationId() {
+        return peerDataGuardAssociationId;
+    }
+
     /**
      * The role of the peer database in this Data Guard association.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PeerRole {
         Primary("PRIMARY"),
         Standby("STANDBY"),
@@ -403,6 +499,9 @@ public class DataGuardAssociationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PeerRole.class);
 
         private final String value;
         private static java.util.Map<String, PeerRole> map;
@@ -440,7 +539,11 @@ public class DataGuardAssociationSummary {
      * The role of the peer database in this Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
-    PeerRole peerRole;
+    private final PeerRole peerRole;
+
+    public PeerRole getPeerRole() {
+        return peerRole;
+    }
 
     /**
      * The lag time between updates to the primary database and application of the redo data on the standby database,
@@ -450,7 +553,11 @@ public class DataGuardAssociationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
-    String applyLag;
+    private final String applyLag;
+
+    public String getApplyLag() {
+        return applyLag;
+    }
 
     /**
      * The rate at which redo logs are synced between the associated databases.
@@ -459,14 +566,18 @@ public class DataGuardAssociationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
-    String applyRate;
+    private final String applyRate;
+
+    public String getApplyRate() {
+        return applyRate;
+    }
+
     /**
      * The protection mode of this Data Guard association. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ProtectionMode {
         MaximumAvailability("MAXIMUM_AVAILABILITY"),
         MaximumPerformance("MAXIMUM_PERFORMANCE"),
@@ -477,6 +588,9 @@ public class DataGuardAssociationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ProtectionMode.class);
 
         private final String value;
         private static java.util.Map<String, ProtectionMode> map;
@@ -517,14 +631,18 @@ public class DataGuardAssociationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
-    ProtectionMode protectionMode;
+    private final ProtectionMode protectionMode;
+
+    public ProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
     /**
      * The redo transport type used by this Data Guard association.  For more information, see
      * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
      * in the Oracle Data Guard documentation.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TransportType {
         Sync("SYNC"),
         Async("ASYNC"),
@@ -535,6 +653,9 @@ public class DataGuardAssociationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TransportType.class);
 
         private final String value;
         private static java.util.Map<String, TransportType> map;
@@ -575,20 +696,140 @@ public class DataGuardAssociationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
-    TransportType transportType;
+    private final TransportType transportType;
+
+    public TransportType getTransportType() {
+        return transportType;
+    }
 
     /**
      * The date and time the Data Guard association was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * True if active Data Guard is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
-    Boolean isActiveDataGuardEnabled;
+    private final Boolean isActiveDataGuardEnabled;
+
+    public Boolean getIsActiveDataGuardEnabled() {
+        return isActiveDataGuardEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataGuardAssociationSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", peerDbSystemId=").append(String.valueOf(this.peerDbSystemId));
+        sb.append(", peerDbHomeId=").append(String.valueOf(this.peerDbHomeId));
+        sb.append(", peerDatabaseId=").append(String.valueOf(this.peerDatabaseId));
+        sb.append(", peerDataGuardAssociationId=")
+                .append(String.valueOf(this.peerDataGuardAssociationId));
+        sb.append(", peerRole=").append(String.valueOf(this.peerRole));
+        sb.append(", applyLag=").append(String.valueOf(this.applyLag));
+        sb.append(", applyRate=").append(String.valueOf(this.applyRate));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", transportType=").append(String.valueOf(this.transportType));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", isActiveDataGuardEnabled=")
+                .append(String.valueOf(this.isActiveDataGuardEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataGuardAssociationSummary)) {
+            return false;
+        }
+
+        DataGuardAssociationSummary other = (DataGuardAssociationSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.peerDbSystemId, other.peerDbSystemId)
+                && java.util.Objects.equals(this.peerDbHomeId, other.peerDbHomeId)
+                && java.util.Objects.equals(this.peerDatabaseId, other.peerDatabaseId)
+                && java.util.Objects.equals(
+                        this.peerDataGuardAssociationId, other.peerDataGuardAssociationId)
+                && java.util.Objects.equals(this.peerRole, other.peerRole)
+                && java.util.Objects.equals(this.applyLag, other.applyLag)
+                && java.util.Objects.equals(this.applyRate, other.applyRate)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.transportType, other.transportType)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(
+                        this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerDbSystemId == null ? 43 : this.peerDbSystemId.hashCode());
+        result = (result * PRIME) + (this.peerDbHomeId == null ? 43 : this.peerDbHomeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerDatabaseId == null ? 43 : this.peerDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerDataGuardAssociationId == null
+                                ? 43
+                                : this.peerDataGuardAssociationId.hashCode());
+        result = (result * PRIME) + (this.peerRole == null ? 43 : this.peerRole.hashCode());
+        result = (result * PRIME) + (this.applyLag == null ? 43 : this.applyLag.hashCode());
+        result = (result * PRIME) + (this.applyRate == null ? 43 : this.applyRate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportType == null ? 43 : this.transportType.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isActiveDataGuardEnabled == null
+                                ? 43
+                                : this.isActiveDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

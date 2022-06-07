@@ -15,14 +15,50 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlBucket.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlBucket {
+public final class SqlBucket {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "version",
+        "databaseType",
+        "timeCollected",
+        "sqlIdentifier",
+        "planHash",
+        "bucketId",
+        "executionsCount",
+        "cpuTimeInSec",
+        "ioTimeInSec",
+        "otherWaitTimeInSec",
+        "totalTimeInSec"
+    })
+    public SqlBucket(
+            Float version,
+            String databaseType,
+            java.util.Date timeCollected,
+            String sqlIdentifier,
+            Long planHash,
+            String bucketId,
+            Integer executionsCount,
+            Float cpuTimeInSec,
+            Float ioTimeInSec,
+            Float otherWaitTimeInSec,
+            Float totalTimeInSec) {
+        super();
+        this.version = version;
+        this.databaseType = databaseType;
+        this.timeCollected = timeCollected;
+        this.sqlIdentifier = sqlIdentifier;
+        this.planHash = planHash;
+        this.bucketId = bucketId;
+        this.executionsCount = executionsCount;
+        this.cpuTimeInSec = cpuTimeInSec;
+        this.ioTimeInSec = ioTimeInSec;
+        this.otherWaitTimeInSec = otherWaitTimeInSec;
+        this.totalTimeInSec = totalTimeInSec;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Float version;
@@ -171,19 +207,31 @@ public class SqlBucket {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Version
      * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    Float version;
+    private final Float version;
+
+    public Float getVersion() {
+        return version;
+    }
 
     /**
      * Operations Insights internal representation of the database type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    String databaseType;
+    private final String databaseType;
+
+    public String getDatabaseType() {
+        return databaseType;
+    }
 
     /**
      * Collection timestamp
@@ -191,20 +239,32 @@ public class SqlBucket {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
-    java.util.Date timeCollected;
+    private final java.util.Date timeCollected;
+
+    public java.util.Date getTimeCollected() {
+        return timeCollected;
+    }
 
     /**
      * Unique SQL_ID for a SQL Statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
-    String sqlIdentifier;
+    private final String sqlIdentifier;
+
+    public String getSqlIdentifier() {
+        return sqlIdentifier;
+    }
 
     /**
      * Plan hash value for the SQL Execution Plan
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
-    Long planHash;
+    private final Long planHash;
+
+    public Long getPlanHash() {
+        return planHash;
+    }
 
     /**
      * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min
@@ -212,7 +272,11 @@ public class SqlBucket {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
-    String bucketId;
+    private final String bucketId;
+
+    public String getBucketId() {
+        return bucketId;
+    }
 
     /**
      * Total number of executions
@@ -220,7 +284,11 @@ public class SqlBucket {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
-    Integer executionsCount;
+    private final Integer executionsCount;
+
+    public Integer getExecutionsCount() {
+        return executionsCount;
+    }
 
     /**
      * Total CPU time
@@ -228,7 +296,11 @@ public class SqlBucket {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
-    Float cpuTimeInSec;
+    private final Float cpuTimeInSec;
+
+    public Float getCpuTimeInSec() {
+        return cpuTimeInSec;
+    }
 
     /**
      * Total IO time
@@ -236,7 +308,11 @@ public class SqlBucket {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
-    Float ioTimeInSec;
+    private final Float ioTimeInSec;
+
+    public Float getIoTimeInSec() {
+        return ioTimeInSec;
+    }
 
     /**
      * Total other wait time
@@ -244,7 +320,11 @@ public class SqlBucket {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherWaitTimeInSec")
-    Float otherWaitTimeInSec;
+    private final Float otherWaitTimeInSec;
+
+    public Float getOtherWaitTimeInSec() {
+        return otherWaitTimeInSec;
+    }
 
     /**
      * Total time
@@ -252,8 +332,93 @@ public class SqlBucket {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalTimeInSec")
-    Float totalTimeInSec;
+    private final Float totalTimeInSec;
+
+    public Float getTotalTimeInSec() {
+        return totalTimeInSec;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlBucket(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", timeCollected=").append(String.valueOf(this.timeCollected));
+        sb.append(", sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
+        sb.append(", planHash=").append(String.valueOf(this.planHash));
+        sb.append(", bucketId=").append(String.valueOf(this.bucketId));
+        sb.append(", executionsCount=").append(String.valueOf(this.executionsCount));
+        sb.append(", cpuTimeInSec=").append(String.valueOf(this.cpuTimeInSec));
+        sb.append(", ioTimeInSec=").append(String.valueOf(this.ioTimeInSec));
+        sb.append(", otherWaitTimeInSec=").append(String.valueOf(this.otherWaitTimeInSec));
+        sb.append(", totalTimeInSec=").append(String.valueOf(this.totalTimeInSec));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlBucket)) {
+            return false;
+        }
+
+        SqlBucket other = (SqlBucket) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.timeCollected, other.timeCollected)
+                && java.util.Objects.equals(this.sqlIdentifier, other.sqlIdentifier)
+                && java.util.Objects.equals(this.planHash, other.planHash)
+                && java.util.Objects.equals(this.bucketId, other.bucketId)
+                && java.util.Objects.equals(this.executionsCount, other.executionsCount)
+                && java.util.Objects.equals(this.cpuTimeInSec, other.cpuTimeInSec)
+                && java.util.Objects.equals(this.ioTimeInSec, other.ioTimeInSec)
+                && java.util.Objects.equals(this.otherWaitTimeInSec, other.otherWaitTimeInSec)
+                && java.util.Objects.equals(this.totalTimeInSec, other.totalTimeInSec)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCollected == null ? 43 : this.timeCollected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlIdentifier == null ? 43 : this.sqlIdentifier.hashCode());
+        result = (result * PRIME) + (this.planHash == null ? 43 : this.planHash.hashCode());
+        result = (result * PRIME) + (this.bucketId == null ? 43 : this.bucketId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionsCount == null ? 43 : this.executionsCount.hashCode());
+        result = (result * PRIME) + (this.cpuTimeInSec == null ? 43 : this.cpuTimeInSec.hashCode());
+        result = (result * PRIME) + (this.ioTimeInSec == null ? 43 : this.ioTimeInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.otherWaitTimeInSec == null
+                                ? 43
+                                : this.otherWaitTimeInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalTimeInSec == null ? 43 : this.totalTimeInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

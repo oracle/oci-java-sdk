@@ -9,14 +9,6 @@ import com.oracle.bmc.datascience.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeModelDeploymentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeModelDeploymentCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeModelDeploymentCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails> {
@@ -26,12 +18,19 @@ public class ChangeModelDeploymentCompartmentRequest
      */
     private String modelDeploymentId;
 
+    public String getModelDeploymentId() {
+        return modelDeploymentId;
+    }
     /**
      * Details for changing the compartment of a model deployment.
      */
     private com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails
             changeModelDeploymentCompartmentDetails;
 
+    public com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails
+            getChangeModelDeploymentCompartmentDetails() {
+        return changeModelDeploymentCompartmentDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -42,17 +41,27 @@ public class ChangeModelDeploymentCompartmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -71,6 +80,71 @@ public class ChangeModelDeploymentCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String modelDeploymentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
+         * @return this builder instance
+         */
+        public Builder modelDeploymentId(String modelDeploymentId) {
+            this.modelDeploymentId = modelDeploymentId;
+            return this;
+        }
+
+        private com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails
+                changeModelDeploymentCompartmentDetails = null;
+
+        /**
+         * Details for changing the compartment of a model deployment.
+         * @return this builder instance
+         */
+        public Builder changeModelDeploymentCompartmentDetails(
+                com.oracle.bmc.datascience.model.ChangeModelDeploymentCompartmentDetails
+                        changeModelDeploymentCompartmentDetails) {
+            this.changeModelDeploymentCompartmentDetails = changeModelDeploymentCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -138,5 +212,97 @@ public class ChangeModelDeploymentCompartmentRequest
             changeModelDeploymentCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeModelDeploymentCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeModelDeploymentCompartmentRequest
+         */
+        public ChangeModelDeploymentCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeModelDeploymentCompartmentRequest request =
+                    new ChangeModelDeploymentCompartmentRequest();
+            request.modelDeploymentId = modelDeploymentId;
+            request.changeModelDeploymentCompartmentDetails =
+                    changeModelDeploymentCompartmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new ChangeModelDeploymentCompartmentRequest(modelDeploymentId, changeModelDeploymentCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .modelDeploymentId(modelDeploymentId)
+                .changeModelDeploymentCompartmentDetails(changeModelDeploymentCompartmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",modelDeploymentId=").append(String.valueOf(this.modelDeploymentId));
+        sb.append(",changeModelDeploymentCompartmentDetails=")
+                .append(String.valueOf(this.changeModelDeploymentCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeModelDeploymentCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeModelDeploymentCompartmentRequest other = (ChangeModelDeploymentCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.modelDeploymentId, other.modelDeploymentId)
+                && java.util.Objects.equals(
+                        this.changeModelDeploymentCompartmentDetails,
+                        other.changeModelDeploymentCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.modelDeploymentId == null ? 43 : this.modelDeploymentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeModelDeploymentCompartmentDetails == null
+                                ? 43
+                                : this.changeModelDeploymentCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

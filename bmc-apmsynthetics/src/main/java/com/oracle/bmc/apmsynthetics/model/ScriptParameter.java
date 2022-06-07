@@ -17,14 +17,19 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScriptParameter.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScriptParameter {
+public final class ScriptParameter {
+    @Deprecated
+    @java.beans.ConstructorProperties({"paramName", "paramValue", "isSecret"})
+    public ScriptParameter(String paramName, String paramValue, Boolean isSecret) {
+        super();
+        this.paramName = paramName;
+        this.paramValue = paramValue;
+        this.isSecret = isSecret;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("paramName")
         private String paramName;
@@ -81,24 +86,85 @@ public class ScriptParameter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paramName")
-    String paramName;
+    private final String paramName;
+
+    public String getParamName() {
+        return paramName;
+    }
 
     /**
      * Value of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paramValue")
-    String paramValue;
+    private final String paramValue;
+
+    public String getParamValue() {
+        return paramValue;
+    }
 
     /**
      * If the parameter value is secret and should be kept confidential, then set isSecret to true.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecret")
-    Boolean isSecret;
+    private final Boolean isSecret;
+
+    public Boolean getIsSecret() {
+        return isSecret;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScriptParameter(");
+        sb.append("paramName=").append(String.valueOf(this.paramName));
+        sb.append(", paramValue=").append(String.valueOf(this.paramValue));
+        sb.append(", isSecret=").append(String.valueOf(this.isSecret));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScriptParameter)) {
+            return false;
+        }
+
+        ScriptParameter other = (ScriptParameter) o;
+        return java.util.Objects.equals(this.paramName, other.paramName)
+                && java.util.Objects.equals(this.paramValue, other.paramValue)
+                && java.util.Objects.equals(this.isSecret, other.isSecret)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.paramName == null ? 43 : this.paramName.hashCode());
+        result = (result * PRIME) + (this.paramValue == null ? 43 : this.paramValue.hashCode());
+        result = (result * PRIME) + (this.isSecret == null ? 43 : this.isSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

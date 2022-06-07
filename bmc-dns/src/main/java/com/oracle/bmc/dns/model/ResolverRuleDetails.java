@@ -18,12 +18,6 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -38,6 +32,15 @@ package com.oracle.bmc.dns.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ResolverRuleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"clientAddressConditions", "qnameCoverConditions"})
+    protected ResolverRuleDetails(
+            java.util.List<String> clientAddressConditions,
+            java.util.List<String> qnameCoverConditions) {
+        super();
+        this.clientAddressConditions = clientAddressConditions;
+        this.qnameCoverConditions = qnameCoverConditions;
+    }
 
     /**
      * A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action
@@ -45,14 +48,63 @@ public class ResolverRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientAddressConditions")
-    java.util.List<String> clientAddressConditions;
+    private final java.util.List<String> clientAddressConditions;
+
+    public java.util.List<String> getClientAddressConditions() {
+        return clientAddressConditions;
+    }
 
     /**
      * A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("qnameCoverConditions")
-    java.util.List<String> qnameCoverConditions;
+    private final java.util.List<String> qnameCoverConditions;
+
+    public java.util.List<String> getQnameCoverConditions() {
+        return qnameCoverConditions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResolverRuleDetails(");
+        sb.append("clientAddressConditions=").append(String.valueOf(this.clientAddressConditions));
+        sb.append(", qnameCoverConditions=").append(String.valueOf(this.qnameCoverConditions));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResolverRuleDetails)) {
+            return false;
+        }
+
+        ResolverRuleDetails other = (ResolverRuleDetails) o;
+        return java.util.Objects.equals(this.clientAddressConditions, other.clientAddressConditions)
+                && java.util.Objects.equals(this.qnameCoverConditions, other.qnameCoverConditions);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.clientAddressConditions == null
+                                ? 43
+                                : this.clientAddressConditions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.qnameCoverConditions == null
+                                ? 43
+                                : this.qnameCoverConditions.hashCode());
+        return result;
+    }
 
     /**
      * The action determines the behavior of the rule. If a query matches a supplied condition, the action will

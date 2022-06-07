@@ -17,14 +17,32 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RouteRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RouteRule {
+public final class RouteRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "cidrBlock",
+        "destination",
+        "destinationType",
+        "networkEntityId",
+        "description"
+    })
+    public RouteRule(
+            String cidrBlock,
+            String destination,
+            DestinationType destinationType,
+            String networkEntityId,
+            String description) {
+        super();
+        this.cidrBlock = cidrBlock;
+        this.destination = destination;
+        this.destinationType = destinationType;
+        this.networkEntityId = networkEntityId;
+        this.description = description;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
@@ -103,6 +121,10 @@ public class RouteRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Deprecated. Instead use {@code destination} and {@code destinationType}. Requests that include both
      * {@code cidrBlock} and {@code destination} will be rejected.
@@ -116,7 +138,11 @@ public class RouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    String cidrBlock;
+    private final String cidrBlock;
+
+    public String getCidrBlock() {
+        return cidrBlock;
+    }
 
     /**
      * Conceptually, this is the range of IP addresses used for matching when routing
@@ -136,7 +162,12 @@ public class RouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
-    String destination;
+    private final String destination;
+
+    public String getDestination() {
+        return destination;
+    }
+
     /**
      * Type of destination for the rule. Required if you provide a {@code destination}.
      * <p>
@@ -147,7 +178,6 @@ public class RouteRule {
      *     particular {@code Service} through a service gateway).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DestinationType {
         CidrBlock("CIDR_BLOCK"),
         ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
@@ -157,6 +187,9 @@ public class RouteRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DestinationType.class);
 
         private final String value;
         private static java.util.Map<String, DestinationType> map;
@@ -201,7 +234,11 @@ public class RouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
-    DestinationType destinationType;
+    private final DestinationType destinationType;
+
+    public DestinationType getDestinationType() {
+        return destinationType;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
@@ -210,15 +247,78 @@ public class RouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkEntityId")
-    String networkEntityId;
+    private final String networkEntityId;
+
+    public String getNetworkEntityId() {
+        return networkEntityId;
+    }
 
     /**
      * An optional description of your choice for the rule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RouteRule(");
+        sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
+        sb.append(", destination=").append(String.valueOf(this.destination));
+        sb.append(", destinationType=").append(String.valueOf(this.destinationType));
+        sb.append(", networkEntityId=").append(String.valueOf(this.networkEntityId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RouteRule)) {
+            return false;
+        }
+
+        RouteRule other = (RouteRule) o;
+        return java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
+                && java.util.Objects.equals(this.destination, other.destination)
+                && java.util.Objects.equals(this.destinationType, other.destinationType)
+                && java.util.Objects.equals(this.networkEntityId, other.networkEntityId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cidrBlock == null ? 43 : this.cidrBlock.hashCode());
+        result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationType == null ? 43 : this.destinationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkEntityId == null ? 43 : this.networkEntityId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

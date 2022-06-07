@@ -15,14 +15,41 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffResponse.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DiffResponse {
+public final class DiffResponse {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "areAllChangesIncluded",
+        "changeTypeCount",
+        "commonCommit",
+        "commitsAheadCount",
+        "commitsBehindCount",
+        "addedLinesCount",
+        "deletedLinesCount",
+        "changes"
+    })
+    public DiffResponse(
+            Boolean areAllChangesIncluded,
+            java.util.Map<String, Integer> changeTypeCount,
+            String commonCommit,
+            Integer commitsAheadCount,
+            Integer commitsBehindCount,
+            Integer addedLinesCount,
+            Integer deletedLinesCount,
+            java.util.List<DiffResponseEntry> changes) {
+        super();
+        this.areAllChangesIncluded = areAllChangesIncluded;
+        this.changeTypeCount = changeTypeCount;
+        this.commonCommit = commonCommit;
+        this.commitsAheadCount = commitsAheadCount;
+        this.commitsBehindCount = commitsBehindCount;
+        this.addedLinesCount = addedLinesCount;
+        this.deletedLinesCount = deletedLinesCount;
+        this.changes = changes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("areAllChangesIncluded")
         private Boolean areAllChangesIncluded;
@@ -138,54 +165,166 @@ public class DiffResponse {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Boolean value to indicate if all changes are included in the response.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areAllChangesIncluded")
-    Boolean areAllChangesIncluded;
+    private final Boolean areAllChangesIncluded;
+
+    public Boolean getAreAllChangesIncluded() {
+        return areAllChangesIncluded;
+    }
 
     /**
      * Count of each type of change in difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeTypeCount")
-    java.util.Map<String, Integer> changeTypeCount;
+    private final java.util.Map<String, Integer> changeTypeCount;
+
+    public java.util.Map<String, Integer> getChangeTypeCount() {
+        return changeTypeCount;
+    }
 
     /**
      * The ID of the common commit between source and target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commonCommit")
-    String commonCommit;
+    private final String commonCommit;
+
+    public String getCommonCommit() {
+        return commonCommit;
+    }
 
     /**
      * The number of commits source is ahead of target by.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitsAheadCount")
-    Integer commitsAheadCount;
+    private final Integer commitsAheadCount;
+
+    public Integer getCommitsAheadCount() {
+        return commitsAheadCount;
+    }
 
     /**
      * The number of commits source is behind target by.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitsBehindCount")
-    Integer commitsBehindCount;
+    private final Integer commitsBehindCount;
+
+    public Integer getCommitsBehindCount() {
+        return commitsBehindCount;
+    }
 
     /**
      * The number of lines added in whole difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addedLinesCount")
-    Integer addedLinesCount;
+    private final Integer addedLinesCount;
+
+    public Integer getAddedLinesCount() {
+        return addedLinesCount;
+    }
 
     /**
      * The number of lines deleted in whole difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletedLinesCount")
-    Integer deletedLinesCount;
+    private final Integer deletedLinesCount;
+
+    public Integer getDeletedLinesCount() {
+        return deletedLinesCount;
+    }
 
     /**
      * List of changes in the difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changes")
-    java.util.List<DiffResponseEntry> changes;
+    private final java.util.List<DiffResponseEntry> changes;
+
+    public java.util.List<DiffResponseEntry> getChanges() {
+        return changes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DiffResponse(");
+        sb.append("areAllChangesIncluded=").append(String.valueOf(this.areAllChangesIncluded));
+        sb.append(", changeTypeCount=").append(String.valueOf(this.changeTypeCount));
+        sb.append(", commonCommit=").append(String.valueOf(this.commonCommit));
+        sb.append(", commitsAheadCount=").append(String.valueOf(this.commitsAheadCount));
+        sb.append(", commitsBehindCount=").append(String.valueOf(this.commitsBehindCount));
+        sb.append(", addedLinesCount=").append(String.valueOf(this.addedLinesCount));
+        sb.append(", deletedLinesCount=").append(String.valueOf(this.deletedLinesCount));
+        sb.append(", changes=").append(String.valueOf(this.changes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DiffResponse)) {
+            return false;
+        }
+
+        DiffResponse other = (DiffResponse) o;
+        return java.util.Objects.equals(this.areAllChangesIncluded, other.areAllChangesIncluded)
+                && java.util.Objects.equals(this.changeTypeCount, other.changeTypeCount)
+                && java.util.Objects.equals(this.commonCommit, other.commonCommit)
+                && java.util.Objects.equals(this.commitsAheadCount, other.commitsAheadCount)
+                && java.util.Objects.equals(this.commitsBehindCount, other.commitsBehindCount)
+                && java.util.Objects.equals(this.addedLinesCount, other.addedLinesCount)
+                && java.util.Objects.equals(this.deletedLinesCount, other.deletedLinesCount)
+                && java.util.Objects.equals(this.changes, other.changes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.areAllChangesIncluded == null
+                                ? 43
+                                : this.areAllChangesIncluded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeTypeCount == null ? 43 : this.changeTypeCount.hashCode());
+        result = (result * PRIME) + (this.commonCommit == null ? 43 : this.commonCommit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.commitsAheadCount == null ? 43 : this.commitsAheadCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.commitsBehindCount == null
+                                ? 43
+                                : this.commitsBehindCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addedLinesCount == null ? 43 : this.addedLinesCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deletedLinesCount == null ? 43 : this.deletedLinesCount.hashCode());
+        result = (result * PRIME) + (this.changes == null ? 43 : this.changes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

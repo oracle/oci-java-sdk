@@ -8,7 +8,6 @@ package com.oracle.bmc.oda.model;
  * The payload version defines the expected structure of the payloads sent and received by the Webhook channel.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.extern.slf4j.Slf4j
 public enum WebhookPayloadVersion {
     _10("1.0"),
     _11("1.1"),
@@ -18,6 +17,9 @@ public enum WebhookPayloadVersion {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WebhookPayloadVersion.class);
 
     private final String value;
     private static java.util.Map<String, WebhookPayloadVersion> map;

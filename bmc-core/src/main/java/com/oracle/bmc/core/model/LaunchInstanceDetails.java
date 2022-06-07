@@ -17,16 +17,94 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LaunchInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LaunchInstanceDetails {
+public final class LaunchInstanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "capacityReservationId",
+        "compartmentId",
+        "createVnicDetails",
+        "dedicatedVmHostId",
+        "definedTags",
+        "displayName",
+        "extendedMetadata",
+        "faultDomain",
+        "freeformTags",
+        "hostnameLabel",
+        "imageId",
+        "ipxeScript",
+        "launchOptions",
+        "instanceOptions",
+        "availabilityConfig",
+        "preemptibleInstanceConfig",
+        "metadata",
+        "agentConfig",
+        "shape",
+        "shapeConfig",
+        "sourceDetails",
+        "subnetId",
+        "isPvEncryptionInTransitEnabled",
+        "platformConfig"
+    })
+    public LaunchInstanceDetails(
+            String availabilityDomain,
+            String capacityReservationId,
+            String compartmentId,
+            CreateVnicDetails createVnicDetails,
+            String dedicatedVmHostId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, Object> extendedMetadata,
+            String faultDomain,
+            java.util.Map<String, String> freeformTags,
+            String hostnameLabel,
+            String imageId,
+            String ipxeScript,
+            LaunchOptions launchOptions,
+            InstanceOptions instanceOptions,
+            LaunchInstanceAvailabilityConfigDetails availabilityConfig,
+            PreemptibleInstanceConfigDetails preemptibleInstanceConfig,
+            java.util.Map<String, String> metadata,
+            LaunchInstanceAgentConfigDetails agentConfig,
+            String shape,
+            LaunchInstanceShapeConfigDetails shapeConfig,
+            InstanceSourceDetails sourceDetails,
+            String subnetId,
+            Boolean isPvEncryptionInTransitEnabled,
+            LaunchInstancePlatformConfig platformConfig) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.capacityReservationId = capacityReservationId;
+        this.compartmentId = compartmentId;
+        this.createVnicDetails = createVnicDetails;
+        this.dedicatedVmHostId = dedicatedVmHostId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.extendedMetadata = extendedMetadata;
+        this.faultDomain = faultDomain;
+        this.freeformTags = freeformTags;
+        this.hostnameLabel = hostnameLabel;
+        this.imageId = imageId;
+        this.ipxeScript = ipxeScript;
+        this.launchOptions = launchOptions;
+        this.instanceOptions = instanceOptions;
+        this.availabilityConfig = availabilityConfig;
+        this.preemptibleInstanceConfig = preemptibleInstanceConfig;
+        this.metadata = metadata;
+        this.agentConfig = agentConfig;
+        this.shape = shape;
+        this.shapeConfig = shapeConfig;
+        this.sourceDetails = sourceDetails;
+        this.subnetId = subnetId;
+        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+        this.platformConfig = platformConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -332,6 +410,10 @@ public class LaunchInstanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain of the instance.
      * <p>
@@ -339,7 +421,11 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The OCID of the compute capacity reservation this instance is launched under.
@@ -348,23 +434,39 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
-    String capacityReservationId;
+    private final String capacityReservationId;
+
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
 
     /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
-    CreateVnicDetails createVnicDetails;
+    private final CreateVnicDetails createVnicDetails;
+
+    public CreateVnicDetails getCreateVnicDetails() {
+        return createVnicDetails;
+    }
 
     /**
      * The OCID of the dedicated VM host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
-    String dedicatedVmHostId;
+    private final String dedicatedVmHostId;
+
+    public String getDedicatedVmHostId() {
+        return dedicatedVmHostId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -374,7 +476,11 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -382,7 +488,11 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and
@@ -396,7 +506,11 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
-    java.util.Map<String, Object> extendedMetadata;
+    private final java.util.Map<String, Object> extendedMetadata;
+
+    public java.util.Map<String, Object> getExtendedMetadata() {
+        return extendedMetadata;
+    }
 
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain.
@@ -416,7 +530,11 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -426,7 +544,11 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Deprecated. Instead use {@code hostnameLabel} in
@@ -435,7 +557,11 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
-    String hostnameLabel;
+    private final String hostnameLabel;
+
+    public String getHostnameLabel() {
+        return hostnameLabel;
+    }
 
     /**
      * Deprecated. Use {@code sourceDetails} with {@link #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest) instanceSourceViaImageDetails}
@@ -443,7 +569,11 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
-    String imageId;
+    private final String imageId;
+
+    public String getImageId() {
+        return imageId;
+    }
 
     /**
      * This is an advanced option.
@@ -479,19 +609,39 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
-    String ipxeScript;
+    private final String ipxeScript;
+
+    public String getIpxeScript() {
+        return ipxeScript;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
-    LaunchOptions launchOptions;
+    private final LaunchOptions launchOptions;
+
+    public LaunchOptions getLaunchOptions() {
+        return launchOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
-    InstanceOptions instanceOptions;
+    private final InstanceOptions instanceOptions;
+
+    public InstanceOptions getInstanceOptions() {
+        return instanceOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
-    LaunchInstanceAvailabilityConfigDetails availabilityConfig;
+    private final LaunchInstanceAvailabilityConfigDetails availabilityConfig;
+
+    public LaunchInstanceAvailabilityConfigDetails getAvailabilityConfig() {
+        return availabilityConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("preemptibleInstanceConfig")
-    PreemptibleInstanceConfigDetails preemptibleInstanceConfig;
+    private final PreemptibleInstanceConfigDetails preemptibleInstanceConfig;
+
+    public PreemptibleInstanceConfigDetails getPreemptibleInstanceConfig() {
+        return preemptibleInstanceConfig;
+    }
 
     /**
      * Custom metadata key/value pairs that you provide, such as the SSH public key
@@ -545,10 +695,18 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    java.util.Map<String, String> metadata;
+    private final java.util.Map<String, String> metadata;
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
-    LaunchInstanceAgentConfigDetails agentConfig;
+    private final LaunchInstanceAgentConfigDetails agentConfig;
+
+    public LaunchInstanceAgentConfigDetails getAgentConfig() {
+        return agentConfig;
+    }
 
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory,
@@ -558,13 +716,25 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
-    LaunchInstanceShapeConfigDetails shapeConfig;
+    private final LaunchInstanceShapeConfigDetails shapeConfig;
+
+    public LaunchInstanceShapeConfigDetails getShapeConfig() {
+        return shapeConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
-    InstanceSourceDetails sourceDetails;
+    private final InstanceSourceDetails sourceDetails;
+
+    public InstanceSourceDetails getSourceDetails() {
+        return sourceDetails;
+    }
 
     /**
      * Deprecated. Instead use {@code subnetId} in
@@ -573,17 +743,182 @@ public class LaunchInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
-    Boolean isPvEncryptionInTransitEnabled;
+    private final Boolean isPvEncryptionInTransitEnabled;
+
+    public Boolean getIsPvEncryptionInTransitEnabled() {
+        return isPvEncryptionInTransitEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
-    LaunchInstancePlatformConfig platformConfig;
+    private final LaunchInstancePlatformConfig platformConfig;
+
+    public LaunchInstancePlatformConfig getPlatformConfig() {
+        return platformConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LaunchInstanceDetails(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", createVnicDetails=").append(String.valueOf(this.createVnicDetails));
+        sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
+        sb.append(", imageId=").append(String.valueOf(this.imageId));
+        sb.append(", ipxeScript=").append(String.valueOf(this.ipxeScript));
+        sb.append(", launchOptions=").append(String.valueOf(this.launchOptions));
+        sb.append(", instanceOptions=").append(String.valueOf(this.instanceOptions));
+        sb.append(", availabilityConfig=").append(String.valueOf(this.availabilityConfig));
+        sb.append(", preemptibleInstanceConfig=")
+                .append(String.valueOf(this.preemptibleInstanceConfig));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", agentConfig=").append(String.valueOf(this.agentConfig));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", isPvEncryptionInTransitEnabled=")
+                .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LaunchInstanceDetails)) {
+            return false;
+        }
+
+        LaunchInstanceDetails other = (LaunchInstanceDetails) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.createVnicDetails, other.createVnicDetails)
+                && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
+                && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.ipxeScript, other.ipxeScript)
+                && java.util.Objects.equals(this.launchOptions, other.launchOptions)
+                && java.util.Objects.equals(this.instanceOptions, other.instanceOptions)
+                && java.util.Objects.equals(this.availabilityConfig, other.availabilityConfig)
+                && java.util.Objects.equals(
+                        this.preemptibleInstanceConfig, other.preemptibleInstanceConfig)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.agentConfig, other.agentConfig)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(
+                        this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(this.platformConfig, other.platformConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createVnicDetails == null ? 43 : this.createVnicDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.ipxeScript == null ? 43 : this.ipxeScript.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.launchOptions == null ? 43 : this.launchOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceOptions == null ? 43 : this.instanceOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityConfig == null
+                                ? 43
+                                : this.availabilityConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preemptibleInstanceConfig == null
+                                ? 43
+                                : this.preemptibleInstanceConfig.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.agentConfig == null ? 43 : this.agentConfig.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPvEncryptionInTransitEnabled == null
+                                ? 43
+                                : this.isPvEncryptionInTransitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,55 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TargetDatabaseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TargetDatabaseSummary {
+public final class TargetDatabaseSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "id",
+        "displayName",
+        "description",
+        "infrastructureType",
+        "databaseType",
+        "associatedResourceIds",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "freeformTags",
+        "definedTags"
+    })
+    public TargetDatabaseSummary(
+            String compartmentId,
+            String id,
+            String displayName,
+            String description,
+            InfrastructureType infrastructureType,
+            DatabaseType databaseType,
+            java.util.List<String> associatedResourceIds,
+            TargetDatabaseLifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.infrastructureType = infrastructureType;
+        this.databaseType = databaseType;
+        this.associatedResourceIds = associatedResourceIds;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -185,65 +224,109 @@ public class TargetDatabaseSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment that contains the Data Safe target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the Data Safe target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The display name of the target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The description of the target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The infrastructure type the database is running on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
-    InfrastructureType infrastructureType;
+    private final InfrastructureType infrastructureType;
+
+    public InfrastructureType getInfrastructureType() {
+        return infrastructureType;
+    }
 
     /**
      * The database type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    DatabaseType databaseType;
+    private final DatabaseType databaseType;
+
+    public DatabaseType getDatabaseType() {
+        return databaseType;
+    }
 
     /**
      * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
-    java.util.List<String> associatedResourceIds;
+    private final java.util.List<String> associatedResourceIds;
+
+    public java.util.List<String> getAssociatedResourceIds() {
+        return associatedResourceIds;
+    }
 
     /**
      * The current state of the target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    TargetDatabaseLifecycleState lifecycleState;
+    private final TargetDatabaseLifecycleState lifecycleState;
+
+    public TargetDatabaseLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Details about the current state of the target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time the database was registered in Data Safe and created as a target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -252,7 +335,11 @@ public class TargetDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -261,8 +348,98 @@ public class TargetDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TargetDatabaseSummary(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", infrastructureType=").append(String.valueOf(this.infrastructureType));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", associatedResourceIds=").append(String.valueOf(this.associatedResourceIds));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TargetDatabaseSummary)) {
+            return false;
+        }
+
+        TargetDatabaseSummary other = (TargetDatabaseSummary) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.associatedResourceIds, other.associatedResourceIds)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureType == null
+                                ? 43
+                                : this.infrastructureType.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedResourceIds == null
+                                ? 43
+                                : this.associatedResourceIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

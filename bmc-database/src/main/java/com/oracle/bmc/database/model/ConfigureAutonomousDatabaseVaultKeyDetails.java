@@ -15,16 +15,22 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConfigureAutonomousDatabaseVaultKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConfigureAutonomousDatabaseVaultKeyDetails {
+public final class ConfigureAutonomousDatabaseVaultKeyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"kmsKeyId", "vaultId", "isUsingOracleManagedKeys"})
+    public ConfigureAutonomousDatabaseVaultKeyDetails(
+            String kmsKeyId, String vaultId, Boolean isUsingOracleManagedKeys) {
+        super();
+        this.kmsKeyId = kmsKeyId;
+        this.vaultId = vaultId;
+        this.isUsingOracleManagedKeys = isUsingOracleManagedKeys;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
@@ -83,24 +89,92 @@ public class ConfigureAutonomousDatabaseVaultKeyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * True if disable Customer Managed Keys and use Oracle Managed Keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUsingOracleManagedKeys")
-    Boolean isUsingOracleManagedKeys;
+    private final Boolean isUsingOracleManagedKeys;
+
+    public Boolean getIsUsingOracleManagedKeys() {
+        return isUsingOracleManagedKeys;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConfigureAutonomousDatabaseVaultKeyDetails(");
+        sb.append("kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", isUsingOracleManagedKeys=")
+                .append(String.valueOf(this.isUsingOracleManagedKeys));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConfigureAutonomousDatabaseVaultKeyDetails)) {
+            return false;
+        }
+
+        ConfigureAutonomousDatabaseVaultKeyDetails other =
+                (ConfigureAutonomousDatabaseVaultKeyDetails) o;
+        return java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(
+                        this.isUsingOracleManagedKeys, other.isUsingOracleManagedKeys)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUsingOracleManagedKeys == null
+                                ? 43
+                                : this.isUsingOracleManagedKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

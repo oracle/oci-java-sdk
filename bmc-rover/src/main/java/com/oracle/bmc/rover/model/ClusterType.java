@@ -8,7 +8,6 @@ package com.oracle.bmc.rover.model;
  * Possible rover node types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.extern.slf4j.Slf4j
 public enum ClusterType {
     Standalone("STANDALONE"),
     Station("STATION"),
@@ -18,6 +17,9 @@ public enum ClusterType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ClusterType.class);
 
     private final String value;
     private static java.util.Map<String, ClusterType> map;

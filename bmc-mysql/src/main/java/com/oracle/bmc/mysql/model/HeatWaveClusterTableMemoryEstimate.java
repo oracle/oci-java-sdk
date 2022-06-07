@@ -17,16 +17,37 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HeatWaveClusterTableMemoryEstimate.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HeatWaveClusterTableMemoryEstimate {
+public final class HeatWaveClusterTableMemoryEstimate {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tableName",
+        "toLoadColumnCount",
+        "varlenColumnCount",
+        "estimatedRowCount",
+        "analyticalFootprintInMbs",
+        "errorComment"
+    })
+    public HeatWaveClusterTableMemoryEstimate(
+            String tableName,
+            Integer toLoadColumnCount,
+            Integer varlenColumnCount,
+            Long estimatedRowCount,
+            Long analyticalFootprintInMbs,
+            String errorComment) {
+        super();
+        this.tableName = tableName;
+        this.toLoadColumnCount = toLoadColumnCount;
+        this.varlenColumnCount = varlenColumnCount;
+        this.estimatedRowCount = estimatedRowCount;
+        this.analyticalFootprintInMbs = analyticalFootprintInMbs;
+        this.errorComment = errorComment;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
@@ -120,11 +141,19 @@ public class HeatWaveClusterTableMemoryEstimate {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The table name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
-    String tableName;
+    private final String tableName;
+
+    public String getTableName() {
+        return tableName;
+    }
 
     /**
      * The number of columns to be loaded to HeatWave cluster memory.
@@ -132,7 +161,11 @@ public class HeatWaveClusterTableMemoryEstimate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("toLoadColumnCount")
-    Integer toLoadColumnCount;
+    private final Integer toLoadColumnCount;
+
+    public Integer getToLoadColumnCount() {
+        return toLoadColumnCount;
+    }
 
     /**
      * The number of variable-length columns to be loaded to HeatWave cluster memory.
@@ -140,7 +173,11 @@ public class HeatWaveClusterTableMemoryEstimate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("varlenColumnCount")
-    Integer varlenColumnCount;
+    private final Integer varlenColumnCount;
+
+    public Integer getVarlenColumnCount() {
+        return varlenColumnCount;
+    }
 
     /**
      * The estimated number of rows in the table. This number was used to
@@ -148,7 +185,11 @@ public class HeatWaveClusterTableMemoryEstimate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedRowCount")
-    Long estimatedRowCount;
+    private final Long estimatedRowCount;
+
+    public Long getEstimatedRowCount() {
+        return estimatedRowCount;
+    }
 
     /**
      * The estimated memory footprint of the table in MBs when loaded to
@@ -157,15 +198,89 @@ public class HeatWaveClusterTableMemoryEstimate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("analyticalFootprintInMbs")
-    Long analyticalFootprintInMbs;
+    private final Long analyticalFootprintInMbs;
+
+    public Long getAnalyticalFootprintInMbs() {
+        return analyticalFootprintInMbs;
+    }
 
     /**
      * Error comment (empty string if no errors occured).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorComment")
-    String errorComment;
+    private final String errorComment;
+
+    public String getErrorComment() {
+        return errorComment;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HeatWaveClusterTableMemoryEstimate(");
+        sb.append("tableName=").append(String.valueOf(this.tableName));
+        sb.append(", toLoadColumnCount=").append(String.valueOf(this.toLoadColumnCount));
+        sb.append(", varlenColumnCount=").append(String.valueOf(this.varlenColumnCount));
+        sb.append(", estimatedRowCount=").append(String.valueOf(this.estimatedRowCount));
+        sb.append(", analyticalFootprintInMbs=")
+                .append(String.valueOf(this.analyticalFootprintInMbs));
+        sb.append(", errorComment=").append(String.valueOf(this.errorComment));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HeatWaveClusterTableMemoryEstimate)) {
+            return false;
+        }
+
+        HeatWaveClusterTableMemoryEstimate other = (HeatWaveClusterTableMemoryEstimate) o;
+        return java.util.Objects.equals(this.tableName, other.tableName)
+                && java.util.Objects.equals(this.toLoadColumnCount, other.toLoadColumnCount)
+                && java.util.Objects.equals(this.varlenColumnCount, other.varlenColumnCount)
+                && java.util.Objects.equals(this.estimatedRowCount, other.estimatedRowCount)
+                && java.util.Objects.equals(
+                        this.analyticalFootprintInMbs, other.analyticalFootprintInMbs)
+                && java.util.Objects.equals(this.errorComment, other.errorComment)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.toLoadColumnCount == null ? 43 : this.toLoadColumnCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.varlenColumnCount == null ? 43 : this.varlenColumnCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.estimatedRowCount == null ? 43 : this.estimatedRowCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.analyticalFootprintInMbs == null
+                                ? 43
+                                : this.analyticalFootprintInMbs.hashCode());
+        result = (result * PRIME) + (this.errorComment == null ? 43 : this.errorComment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -18,16 +18,73 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateLoadBalancerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateLoadBalancerDetails {
+public final class CreateLoadBalancerDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "shapeName",
+        "shapeDetails",
+        "isPrivate",
+        "ipMode",
+        "reservedIps",
+        "listeners",
+        "hostnames",
+        "backendSets",
+        "networkSecurityGroupIds",
+        "subnetIds",
+        "certificates",
+        "sslCipherSuites",
+        "pathRouteSets",
+        "freeformTags",
+        "definedTags",
+        "ruleSets"
+    })
+    public CreateLoadBalancerDetails(
+            String compartmentId,
+            String displayName,
+            String shapeName,
+            ShapeDetails shapeDetails,
+            Boolean isPrivate,
+            IpMode ipMode,
+            java.util.List<ReservedIP> reservedIps,
+            java.util.Map<String, ListenerDetails> listeners,
+            java.util.Map<String, HostnameDetails> hostnames,
+            java.util.Map<String, BackendSetDetails> backendSets,
+            java.util.List<String> networkSecurityGroupIds,
+            java.util.List<String> subnetIds,
+            java.util.Map<String, CertificateDetails> certificates,
+            java.util.Map<String, SSLCipherSuiteDetails> sslCipherSuites,
+            java.util.Map<String, PathRouteSetDetails> pathRouteSets,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, RuleSetDetails> ruleSets) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.shapeName = shapeName;
+        this.shapeDetails = shapeDetails;
+        this.isPrivate = isPrivate;
+        this.ipMode = ipMode;
+        this.reservedIps = reservedIps;
+        this.listeners = listeners;
+        this.hostnames = hostnames;
+        this.backendSets = backendSets;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
+        this.subnetIds = subnetIds;
+        this.certificates = certificates;
+        this.sslCipherSuites = sslCipherSuites;
+        this.pathRouteSets = pathRouteSets;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.ruleSets = ruleSets;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -255,11 +312,19 @@ public class CreateLoadBalancerDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
@@ -269,7 +334,11 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
@@ -280,14 +349,22 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    String shapeName;
+    private final String shapeName;
+
+    public String getShapeName() {
+        return shapeName;
+    }
 
     /**
      * The configuration details to create load balancer using Flexible shape. This is required only if shapeName is {@code Flexible}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
-    ShapeDetails shapeDetails;
+    private final ShapeDetails shapeDetails;
+
+    public ShapeDetails getShapeDetails() {
+        return shapeDetails;
+    }
 
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
@@ -304,7 +381,12 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
-    Boolean isPrivate;
+    private final Boolean isPrivate;
+
+    public Boolean getIsPrivate() {
+        return isPrivate;
+    }
+
     /**
      * Whether the load balancer has an IPv4 or IPv6 IP address.
      * <p>
@@ -358,23 +440,43 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
-    IpMode ipMode;
+    private final IpMode ipMode;
+
+    public IpMode getIpMode() {
+        return ipMode;
+    }
 
     /**
      * An array of reserved Ips.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
-    java.util.List<ReservedIP> reservedIps;
+    private final java.util.List<ReservedIP> reservedIps;
+
+    public java.util.List<ReservedIP> getReservedIps() {
+        return reservedIps;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
-    java.util.Map<String, ListenerDetails> listeners;
+    private final java.util.Map<String, ListenerDetails> listeners;
+
+    public java.util.Map<String, ListenerDetails> getListeners() {
+        return listeners;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
-    java.util.Map<String, HostnameDetails> hostnames;
+    private final java.util.Map<String, HostnameDetails> hostnames;
+
+    public java.util.Map<String, HostnameDetails> getHostnames() {
+        return hostnames;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
-    java.util.Map<String, BackendSetDetails> backendSets;
+    private final java.util.Map<String, BackendSetDetails> backendSets;
+
+    public java.util.Map<String, BackendSetDetails> getBackendSets() {
+        return backendSets;
+    }
 
     /**
      * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
@@ -392,22 +494,42 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
-    java.util.List<String> networkSecurityGroupIds;
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
 
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
-    java.util.List<String> subnetIds;
+    private final java.util.List<String> subnetIds;
+
+    public java.util.List<String> getSubnetIds() {
+        return subnetIds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("certificates")
-    java.util.Map<String, CertificateDetails> certificates;
+    private final java.util.Map<String, CertificateDetails> certificates;
+
+    public java.util.Map<String, CertificateDetails> getCertificates() {
+        return certificates;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sslCipherSuites")
-    java.util.Map<String, SSLCipherSuiteDetails> sslCipherSuites;
+    private final java.util.Map<String, SSLCipherSuiteDetails> sslCipherSuites;
+
+    public java.util.Map<String, SSLCipherSuiteDetails> getSslCipherSuites() {
+        return sslCipherSuites;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSets")
-    java.util.Map<String, PathRouteSetDetails> pathRouteSets;
+    private final java.util.Map<String, PathRouteSetDetails> pathRouteSets;
+
+    public java.util.Map<String, PathRouteSetDetails> getPathRouteSets() {
+        return pathRouteSets;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -417,7 +539,11 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -427,11 +553,121 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
-    java.util.Map<String, RuleSetDetails> ruleSets;
+    private final java.util.Map<String, RuleSetDetails> ruleSets;
+
+    public java.util.Map<String, RuleSetDetails> getRuleSets() {
+        return ruleSets;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateLoadBalancerDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", shapeDetails=").append(String.valueOf(this.shapeDetails));
+        sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
+        sb.append(", ipMode=").append(String.valueOf(this.ipMode));
+        sb.append(", reservedIps=").append(String.valueOf(this.reservedIps));
+        sb.append(", listeners=").append(String.valueOf(this.listeners));
+        sb.append(", hostnames=").append(String.valueOf(this.hostnames));
+        sb.append(", backendSets=").append(String.valueOf(this.backendSets));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
+        sb.append(", subnetIds=").append(String.valueOf(this.subnetIds));
+        sb.append(", certificates=").append(String.valueOf(this.certificates));
+        sb.append(", sslCipherSuites=").append(String.valueOf(this.sslCipherSuites));
+        sb.append(", pathRouteSets=").append(String.valueOf(this.pathRouteSets));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateLoadBalancerDetails)) {
+            return false;
+        }
+
+        CreateLoadBalancerDetails other = (CreateLoadBalancerDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.shapeDetails, other.shapeDetails)
+                && java.util.Objects.equals(this.isPrivate, other.isPrivate)
+                && java.util.Objects.equals(this.ipMode, other.ipMode)
+                && java.util.Objects.equals(this.reservedIps, other.reservedIps)
+                && java.util.Objects.equals(this.listeners, other.listeners)
+                && java.util.Objects.equals(this.hostnames, other.hostnames)
+                && java.util.Objects.equals(this.backendSets, other.backendSets)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
+                && java.util.Objects.equals(this.subnetIds, other.subnetIds)
+                && java.util.Objects.equals(this.certificates, other.certificates)
+                && java.util.Objects.equals(this.sslCipherSuites, other.sslCipherSuites)
+                && java.util.Objects.equals(this.pathRouteSets, other.pathRouteSets)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.ruleSets, other.ruleSets)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.shapeDetails == null ? 43 : this.shapeDetails.hashCode());
+        result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
+        result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
+        result = (result * PRIME) + (this.reservedIps == null ? 43 : this.reservedIps.hashCode());
+        result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
+        result = (result * PRIME) + (this.hostnames == null ? 43 : this.hostnames.hashCode());
+        result = (result * PRIME) + (this.backendSets == null ? 43 : this.backendSets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
+        result = (result * PRIME) + (this.subnetIds == null ? 43 : this.subnetIds.hashCode());
+        result = (result * PRIME) + (this.certificates == null ? 43 : this.certificates.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslCipherSuites == null ? 43 : this.sslCipherSuites.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pathRouteSets == null ? 43 : this.pathRouteSets.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.ruleSets == null ? 43 : this.ruleSets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

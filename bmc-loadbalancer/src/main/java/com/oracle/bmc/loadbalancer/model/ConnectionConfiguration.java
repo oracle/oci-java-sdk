@@ -16,16 +16,20 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConnectionConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConnectionConfiguration {
+public final class ConnectionConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({"idleTimeout", "backendTcpProxyProtocolVersion"})
+    public ConnectionConfiguration(Long idleTimeout, Integer backendTcpProxyProtocolVersion) {
+        super();
+        this.idleTimeout = idleTimeout;
+        this.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("idleTimeout")
         private Long idleTimeout;
@@ -73,6 +77,10 @@ public class ConnectionConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The maximum idle time, in seconds, allowed between two successive receive or two successive send operations
      * between the client and backend servers. A send operation does not reset the timer for receive operations. A
@@ -84,7 +92,11 @@ public class ConnectionConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idleTimeout")
-    Long idleTimeout;
+    private final Long idleTimeout;
+
+    public Long getIdleTimeout() {
+        return idleTimeout;
+    }
 
     /**
      * The backend TCP Proxy Protocol version.
@@ -93,8 +105,60 @@ public class ConnectionConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolVersion")
-    Integer backendTcpProxyProtocolVersion;
+    private final Integer backendTcpProxyProtocolVersion;
+
+    public Integer getBackendTcpProxyProtocolVersion() {
+        return backendTcpProxyProtocolVersion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConnectionConfiguration(");
+        sb.append("idleTimeout=").append(String.valueOf(this.idleTimeout));
+        sb.append(", backendTcpProxyProtocolVersion=")
+                .append(String.valueOf(this.backendTcpProxyProtocolVersion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConnectionConfiguration)) {
+            return false;
+        }
+
+        ConnectionConfiguration other = (ConnectionConfiguration) o;
+        return java.util.Objects.equals(this.idleTimeout, other.idleTimeout)
+                && java.util.Objects.equals(
+                        this.backendTcpProxyProtocolVersion, other.backendTcpProxyProtocolVersion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.idleTimeout == null ? 43 : this.idleTimeout.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendTcpProxyProtocolVersion == null
+                                ? 43
+                                : this.backendTcpProxyProtocolVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

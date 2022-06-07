@@ -15,16 +15,20 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ByoipAllocatedRangeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ByoipAllocatedRangeSummary {
+public final class ByoipAllocatedRangeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"cidrBlock", "publicIpPoolId"})
+    public ByoipAllocatedRangeSummary(String cidrBlock, String publicIpPoolId) {
+        super();
+        this.cidrBlock = cidrBlock;
+        this.publicIpPoolId = publicIpPoolId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
@@ -71,19 +75,75 @@ public class ByoipAllocatedRangeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    String cidrBlock;
+    private final String cidrBlock;
+
+    public String getCidrBlock() {
+        return cidrBlock;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
-    String publicIpPoolId;
+    private final String publicIpPoolId;
+
+    public String getPublicIpPoolId() {
+        return publicIpPoolId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ByoipAllocatedRangeSummary(");
+        sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
+        sb.append(", publicIpPoolId=").append(String.valueOf(this.publicIpPoolId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ByoipAllocatedRangeSummary)) {
+            return false;
+        }
+
+        ByoipAllocatedRangeSummary other = (ByoipAllocatedRangeSummary) o;
+        return java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
+                && java.util.Objects.equals(this.publicIpPoolId, other.publicIpPoolId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cidrBlock == null ? 43 : this.cidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicIpPoolId == null ? 43 : this.publicIpPoolId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

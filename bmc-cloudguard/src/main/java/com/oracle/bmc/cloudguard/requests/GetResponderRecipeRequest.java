@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetResponderRecipeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetResponderRecipeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,10 +16,17 @@ public class GetResponderRecipeRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String responderRecipeId;
 
+    public String getResponderRecipeId() {
+        return responderRecipeId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -35,6 +34,28 @@ public class GetResponderRecipeRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String responderRecipeId = null;
+
+        /**
+         * OCID of ResponderRecipe
+         * @return this builder instance
+         */
+        public Builder responderRecipeId(String responderRecipeId) {
+            this.responderRecipeId = responderRecipeId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -87,5 +108,69 @@ public class GetResponderRecipeRequest extends com.oracle.bmc.requests.BmcReques
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetResponderRecipeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetResponderRecipeRequest
+         */
+        public GetResponderRecipeRequest buildWithoutInvocationCallback() {
+            GetResponderRecipeRequest request = new GetResponderRecipeRequest();
+            request.responderRecipeId = responderRecipeId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetResponderRecipeRequest(responderRecipeId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().responderRecipeId(responderRecipeId).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",responderRecipeId=").append(String.valueOf(this.responderRecipeId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetResponderRecipeRequest)) {
+            return false;
+        }
+
+        GetResponderRecipeRequest other = (GetResponderRecipeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.responderRecipeId, other.responderRecipeId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.responderRecipeId == null ? 43 : this.responderRecipeId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

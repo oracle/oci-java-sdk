@@ -15,12 +15,6 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -63,57 +57,184 @@ package com.oracle.bmc.dataintegration.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateDataAssetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelVersion",
+        "name",
+        "description",
+        "objectStatus",
+        "identifier",
+        "externalKey",
+        "assetProperties",
+        "registryMetadata"
+    })
+    protected CreateDataAssetDetails(
+            String key,
+            String modelVersion,
+            String name,
+            String description,
+            Integer objectStatus,
+            String identifier,
+            String externalKey,
+            java.util.Map<String, String> assetProperties,
+            RegistryMetadata registryMetadata) {
+        super();
+        this.key = key;
+        this.modelVersion = modelVersion;
+        this.name = name;
+        this.description = description;
+        this.objectStatus = objectStatus;
+        this.identifier = identifier;
+        this.externalKey = externalKey;
+        this.assetProperties = assetProperties;
+        this.registryMetadata = registryMetadata;
+    }
 
     /**
      * Currently not used on data asset creation. Reserved for future.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * User-defined description of the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * The external key for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
-    String externalKey;
+    private final String externalKey;
+
+    public String getExternalKey() {
+        return externalKey;
+    }
 
     /**
      * Additional properties for the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetProperties")
-    java.util.Map<String, String> assetProperties;
+    private final java.util.Map<String, String> assetProperties;
+
+    public java.util.Map<String, String> getAssetProperties() {
+        return assetProperties;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
-    RegistryMetadata registryMetadata;
+    private final RegistryMetadata registryMetadata;
+
+    public RegistryMetadata getRegistryMetadata() {
+        return registryMetadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDataAssetDetails(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", externalKey=").append(String.valueOf(this.externalKey));
+        sb.append(", assetProperties=").append(String.valueOf(this.assetProperties));
+        sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDataAssetDetails)) {
+            return false;
+        }
+
+        CreateDataAssetDetails other = (CreateDataAssetDetails) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.externalKey, other.externalKey)
+                && java.util.Objects.equals(this.assetProperties, other.assetProperties)
+                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assetProperties == null ? 43 : this.assetProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
+        return result;
+    }
 
     /**
      * The type of the data asset.

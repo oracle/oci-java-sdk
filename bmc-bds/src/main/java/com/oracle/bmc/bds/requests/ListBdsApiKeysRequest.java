@@ -9,14 +9,6 @@ import com.oracle.bmc.bds.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsApiKeysExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBdsApiKeysRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListBdsApiKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,26 +16,41 @@ public class ListBdsApiKeysRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String bdsInstanceId;
 
+    public String getBdsInstanceId() {
+        return bdsInstanceId;
+    }
     /**
      * The state of the API key.
      */
     private com.oracle.bmc.bds.model.BdsApiKey.LifecycleState lifecycleState;
 
+    public com.oracle.bmc.bds.model.BdsApiKey.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * The OCID of the user for whom the API key belongs.
      */
     private String userId;
 
+    public String getUserId() {
+        return userId;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
      *
@@ -86,20 +93,34 @@ public class ListBdsApiKeysRequest extends com.oracle.bmc.requests.BmcRequest<ja
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
     private com.oracle.bmc.bds.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.bds.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * A filter to return only resources that match the entire display name given.
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -107,6 +128,107 @@ public class ListBdsApiKeysRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bdsInstanceId = null;
+
+        /**
+         * The OCID of the cluster.
+         * @return this builder instance
+         */
+        public Builder bdsInstanceId(String bdsInstanceId) {
+            this.bdsInstanceId = bdsInstanceId;
+            return this;
+        }
+
+        private com.oracle.bmc.bds.model.BdsApiKey.LifecycleState lifecycleState = null;
+
+        /**
+         * The state of the API key.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.bds.model.BdsApiKey.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String userId = null;
+
+        /**
+         * The OCID of the user for whom the API key belongs.
+         * @return this builder instance
+         */
+        public Builder userId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.bds.model.SortOrders sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.bds.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return only resources that match the entire display name given.
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -166,5 +288,108 @@ public class ListBdsApiKeysRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListBdsApiKeysRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListBdsApiKeysRequest
+         */
+        public ListBdsApiKeysRequest buildWithoutInvocationCallback() {
+            ListBdsApiKeysRequest request = new ListBdsApiKeysRequest();
+            request.bdsInstanceId = bdsInstanceId;
+            request.lifecycleState = lifecycleState;
+            request.userId = userId;
+            request.page = page;
+            request.limit = limit;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.displayName = displayName;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListBdsApiKeysRequest(bdsInstanceId, lifecycleState, userId, page, limit, sortBy, sortOrder, displayName, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .bdsInstanceId(bdsInstanceId)
+                .lifecycleState(lifecycleState)
+                .userId(userId)
+                .page(page)
+                .limit(limit)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .displayName(displayName)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bdsInstanceId=").append(String.valueOf(this.bdsInstanceId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",userId=").append(String.valueOf(this.userId));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListBdsApiKeysRequest)) {
+            return false;
+        }
+
+        ListBdsApiKeysRequest other = (ListBdsApiKeysRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.bdsInstanceId, other.bdsInstanceId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.bdsInstanceId == null ? 43 : this.bdsInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

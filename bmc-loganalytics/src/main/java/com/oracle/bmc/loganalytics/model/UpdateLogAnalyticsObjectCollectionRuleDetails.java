@@ -16,16 +16,49 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateLogAnalyticsObjectCollectionRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateLogAnalyticsObjectCollectionRuleDetails {
+public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "logGroupId",
+        "logSourceName",
+        "entityId",
+        "charEncoding",
+        "isEnabled",
+        "overrides",
+        "objectNameFilters",
+        "definedTags",
+        "freeformTags"
+    })
+    public UpdateLogAnalyticsObjectCollectionRuleDetails(
+            String description,
+            String logGroupId,
+            String logSourceName,
+            String entityId,
+            String charEncoding,
+            Boolean isEnabled,
+            java.util.Map<String, java.util.List<PropertyOverride>> overrides,
+            java.util.List<String> objectNameFilters,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags) {
+        super();
+        this.description = description;
+        this.logGroupId = logGroupId;
+        this.logSourceName = logSourceName;
+        this.entityId = entityId;
+        this.charEncoding = charEncoding;
+        this.isEnabled = isEnabled;
+        this.overrides = overrides;
+        this.objectNameFilters = objectNameFilters;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -165,31 +198,51 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A string that describes the details of the rule.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Logging Analytics Log group OCID to associate the processed logs with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
-    String logGroupId;
+    private final String logGroupId;
+
+    public String getLogGroupId() {
+        return logGroupId;
+    }
 
     /**
      * Name of the Logging Analytics Source to use for the processing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logSourceName")
-    String logSourceName;
+    private final String logSourceName;
+
+    public String getLogSourceName() {
+        return logSourceName;
+    }
 
     /**
      * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
-    String entityId;
+    private final String entityId;
+
+    public String getEntityId() {
+        return entityId;
+    }
 
     /**
      * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
@@ -199,14 +252,22 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("charEncoding")
-    String charEncoding;
+    private final String charEncoding;
+
+    public String getCharEncoding() {
+        return charEncoding;
+    }
 
     /**
      * Whether or not this rule is currently enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Use this to override some property values which are defined at bucket level to the scope of object.
@@ -215,7 +276,11 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overrides")
-    java.util.Map<String, java.util.List<PropertyOverride>> overrides;
+    private final java.util.Map<String, java.util.List<PropertyOverride>> overrides;
+
+    public java.util.Map<String, java.util.List<PropertyOverride>> getOverrides() {
+        return overrides;
+    }
 
     /**
      * When the filters are provided, only the objects matching the filters are picked up for processing.
@@ -224,7 +289,11 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilters")
-    java.util.List<String> objectNameFilters;
+    private final java.util.List<String> objectNameFilters;
+
+    public java.util.List<String> getObjectNameFilters() {
+        return objectNameFilters;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -232,7 +301,11 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -240,8 +313,83 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateLogAnalyticsObjectCollectionRuleDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", logSourceName=").append(String.valueOf(this.logSourceName));
+        sb.append(", entityId=").append(String.valueOf(this.entityId));
+        sb.append(", charEncoding=").append(String.valueOf(this.charEncoding));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", overrides=").append(String.valueOf(this.overrides));
+        sb.append(", objectNameFilters=").append(String.valueOf(this.objectNameFilters));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLogAnalyticsObjectCollectionRuleDetails)) {
+            return false;
+        }
+
+        UpdateLogAnalyticsObjectCollectionRuleDetails other =
+                (UpdateLogAnalyticsObjectCollectionRuleDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.logSourceName, other.logSourceName)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.charEncoding, other.charEncoding)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.overrides, other.overrides)
+                && java.util.Objects.equals(this.objectNameFilters, other.objectNameFilters)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logSourceName == null ? 43 : this.logSourceName.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.charEncoding == null ? 43 : this.charEncoding.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.overrides == null ? 43 : this.overrides.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectNameFilters == null ? 43 : this.objectNameFilters.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,12 +15,6 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -83,53 +77,171 @@ package com.oracle.bmc.logging.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UnifiedAgentParser {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "fieldTimeKey",
+        "types",
+        "nullValuePattern",
+        "isNullEmptyString",
+        "isEstimateCurrentEvent",
+        "isKeepTimeKey",
+        "timeoutInMilliseconds"
+    })
+    protected UnifiedAgentParser(
+            String fieldTimeKey,
+            java.util.Map<String, String> types,
+            String nullValuePattern,
+            Boolean isNullEmptyString,
+            Boolean isEstimateCurrentEvent,
+            Boolean isKeepTimeKey,
+            Integer timeoutInMilliseconds) {
+        super();
+        this.fieldTimeKey = fieldTimeKey;
+        this.types = types;
+        this.nullValuePattern = nullValuePattern;
+        this.isNullEmptyString = isNullEmptyString;
+        this.isEstimateCurrentEvent = isEstimateCurrentEvent;
+        this.isKeepTimeKey = isKeepTimeKey;
+        this.timeoutInMilliseconds = timeoutInMilliseconds;
+    }
 
     /**
      * Specify time field for the event time. If the event doesn't have this field, the current time is used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
-    String fieldTimeKey;
+    private final String fieldTimeKey;
+
+    public String getFieldTimeKey() {
+        return fieldTimeKey;
+    }
 
     /**
      * Specify types for converting a field into another type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("types")
-    java.util.Map<String, String> types;
+    private final java.util.Map<String, String> types;
+
+    public java.util.Map<String, String> getTypes() {
+        return types;
+    }
 
     /**
      * Specify the null value pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nullValuePattern")
-    String nullValuePattern;
+    private final String nullValuePattern;
+
+    public String getNullValuePattern() {
+        return nullValuePattern;
+    }
 
     /**
      * If true, an empty string field is replaced with nil.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNullEmptyString")
-    Boolean isNullEmptyString;
+    private final Boolean isNullEmptyString;
+
+    public Boolean getIsNullEmptyString() {
+        return isNullEmptyString;
+    }
 
     /**
      * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEstimateCurrentEvent")
-    Boolean isEstimateCurrentEvent;
+    private final Boolean isEstimateCurrentEvent;
+
+    public Boolean getIsEstimateCurrentEvent() {
+        return isEstimateCurrentEvent;
+    }
 
     /**
      * If true, keep time field in the record.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKeepTimeKey")
-    Boolean isKeepTimeKey;
+    private final Boolean isKeepTimeKey;
+
+    public Boolean getIsKeepTimeKey() {
+        return isKeepTimeKey;
+    }
 
     /**
      * Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMilliseconds")
-    Integer timeoutInMilliseconds;
+    private final Integer timeoutInMilliseconds;
+
+    public Integer getTimeoutInMilliseconds() {
+        return timeoutInMilliseconds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UnifiedAgentParser(");
+        sb.append("fieldTimeKey=").append(String.valueOf(this.fieldTimeKey));
+        sb.append(", types=").append(String.valueOf(this.types));
+        sb.append(", nullValuePattern=").append(String.valueOf(this.nullValuePattern));
+        sb.append(", isNullEmptyString=").append(String.valueOf(this.isNullEmptyString));
+        sb.append(", isEstimateCurrentEvent=").append(String.valueOf(this.isEstimateCurrentEvent));
+        sb.append(", isKeepTimeKey=").append(String.valueOf(this.isKeepTimeKey));
+        sb.append(", timeoutInMilliseconds=").append(String.valueOf(this.timeoutInMilliseconds));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UnifiedAgentParser)) {
+            return false;
+        }
+
+        UnifiedAgentParser other = (UnifiedAgentParser) o;
+        return java.util.Objects.equals(this.fieldTimeKey, other.fieldTimeKey)
+                && java.util.Objects.equals(this.types, other.types)
+                && java.util.Objects.equals(this.nullValuePattern, other.nullValuePattern)
+                && java.util.Objects.equals(this.isNullEmptyString, other.isNullEmptyString)
+                && java.util.Objects.equals(
+                        this.isEstimateCurrentEvent, other.isEstimateCurrentEvent)
+                && java.util.Objects.equals(this.isKeepTimeKey, other.isKeepTimeKey)
+                && java.util.Objects.equals(
+                        this.timeoutInMilliseconds, other.timeoutInMilliseconds);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fieldTimeKey == null ? 43 : this.fieldTimeKey.hashCode());
+        result = (result * PRIME) + (this.types == null ? 43 : this.types.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nullValuePattern == null ? 43 : this.nullValuePattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isNullEmptyString == null ? 43 : this.isNullEmptyString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEstimateCurrentEvent == null
+                                ? 43
+                                : this.isEstimateCurrentEvent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isKeepTimeKey == null ? 43 : this.isKeepTimeKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeoutInMilliseconds == null
+                                ? 43
+                                : this.timeoutInMilliseconds.hashCode());
+        return result;
+    }
 
     /**
      * Type of fluent parser.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ParserType {
         Auditd("AUDITD"),
         Json("JSON"),
@@ -150,6 +262,9 @@ public class UnifiedAgentParser {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ParserType.class);
 
         private final String value;
         private static java.util.Map<String, ParserType> map;

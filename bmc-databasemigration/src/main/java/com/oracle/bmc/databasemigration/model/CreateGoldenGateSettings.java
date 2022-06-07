@@ -16,16 +16,22 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateGoldenGateSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateGoldenGateSettings {
+public final class CreateGoldenGateSettings {
+    @Deprecated
+    @java.beans.ConstructorProperties({"extract", "replicat", "acceptableLag"})
+    public CreateGoldenGateSettings(
+            CreateExtract extract, CreateReplicat replicat, Integer acceptableLag) {
+        super();
+        this.extract = extract;
+        this.replicat = replicat;
+        this.acceptableLag = acceptableLag;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("extract")
         private CreateExtract extract;
@@ -83,19 +89,82 @@ public class CreateGoldenGateSettings {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("extract")
-    CreateExtract extract;
+    private final CreateExtract extract;
+
+    public CreateExtract getExtract() {
+        return extract;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("replicat")
-    CreateReplicat replicat;
+    private final CreateReplicat replicat;
+
+    public CreateReplicat getReplicat() {
+        return replicat;
+    }
 
     /**
      * ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("acceptableLag")
-    Integer acceptableLag;
+    private final Integer acceptableLag;
+
+    public Integer getAcceptableLag() {
+        return acceptableLag;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateGoldenGateSettings(");
+        sb.append("extract=").append(String.valueOf(this.extract));
+        sb.append(", replicat=").append(String.valueOf(this.replicat));
+        sb.append(", acceptableLag=").append(String.valueOf(this.acceptableLag));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateGoldenGateSettings)) {
+            return false;
+        }
+
+        CreateGoldenGateSettings other = (CreateGoldenGateSettings) o;
+        return java.util.Objects.equals(this.extract, other.extract)
+                && java.util.Objects.equals(this.replicat, other.replicat)
+                && java.util.Objects.equals(this.acceptableLag, other.acceptableLag)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.extract == null ? 43 : this.extract.hashCode());
+        result = (result * PRIME) + (this.replicat == null ? 43 : this.replicat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.acceptableLag == null ? 43 : this.acceptableLag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

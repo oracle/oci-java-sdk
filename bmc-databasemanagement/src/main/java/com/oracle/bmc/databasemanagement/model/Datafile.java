@@ -15,14 +15,62 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Datafile.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Datafile {
+public final class Datafile {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "status",
+        "onlineStatus",
+        "isAutoExtensible",
+        "lostWriteProtect",
+        "shared",
+        "instanceId",
+        "maxSizeKB",
+        "allocatedSizeKB",
+        "userSizeKB",
+        "incrementBy",
+        "freeSpaceKB",
+        "usedSpaceKB",
+        "usedPercentAvailable",
+        "usedPercentAllocated"
+    })
+    public Datafile(
+            String name,
+            Status status,
+            OnlineStatus onlineStatus,
+            Boolean isAutoExtensible,
+            LostWriteProtect lostWriteProtect,
+            Shared shared,
+            java.math.BigDecimal instanceId,
+            java.math.BigDecimal maxSizeKB,
+            java.math.BigDecimal allocatedSizeKB,
+            java.math.BigDecimal userSizeKB,
+            java.math.BigDecimal incrementBy,
+            java.math.BigDecimal freeSpaceKB,
+            java.math.BigDecimal usedSpaceKB,
+            Double usedPercentAvailable,
+            Double usedPercentAllocated) {
+        super();
+        this.name = name;
+        this.status = status;
+        this.onlineStatus = onlineStatus;
+        this.isAutoExtensible = isAutoExtensible;
+        this.lostWriteProtect = lostWriteProtect;
+        this.shared = shared;
+        this.instanceId = instanceId;
+        this.maxSizeKB = maxSizeKB;
+        this.allocatedSizeKB = allocatedSizeKB;
+        this.userSizeKB = userSizeKB;
+        this.incrementBy = incrementBy;
+        this.freeSpaceKB = freeSpaceKB;
+        this.usedSpaceKB = usedSpaceKB;
+        this.usedPercentAvailable = usedPercentAvailable;
+        this.usedPercentAllocated = usedPercentAllocated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -215,15 +263,23 @@ public class Datafile {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The filename (including the path) of the data file or temp file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Available("AVAILABLE"),
         Invalid("INVALID"),
@@ -236,6 +292,8 @@ public class Datafile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -273,11 +331,15 @@ public class Datafile {
      * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
+
     /**
      * The online status of the file.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OnlineStatus {
         Sysoff("SYSOFF"),
         System("SYSTEM"),
@@ -290,6 +352,9 @@ public class Datafile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OnlineStatus.class);
 
         private final String value;
         private static java.util.Map<String, OnlineStatus> map;
@@ -327,17 +392,25 @@ public class Datafile {
      * The online status of the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onlineStatus")
-    OnlineStatus onlineStatus;
+    private final OnlineStatus onlineStatus;
+
+    public OnlineStatus getOnlineStatus() {
+        return onlineStatus;
+    }
 
     /**
      * Indicates whether the data file is auto-extensible.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
-    Boolean isAutoExtensible;
+    private final Boolean isAutoExtensible;
+
+    public Boolean getIsAutoExtensible() {
+        return isAutoExtensible;
+    }
+
     /**
      * The lost write protection status of the file.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LostWriteProtect {
         Enabled("ENABLED"),
         ProtectOff("PROTECT_OFF"),
@@ -348,6 +421,9 @@ public class Datafile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LostWriteProtect.class);
 
         private final String value;
         private static java.util.Map<String, LostWriteProtect> map;
@@ -385,11 +461,15 @@ public class Datafile {
      * The lost write protection status of the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lostWriteProtect")
-    LostWriteProtect lostWriteProtect;
+    private final LostWriteProtect lostWriteProtect;
+
+    public LostWriteProtect getLostWriteProtect() {
+        return lostWriteProtect;
+    }
+
     /**
      * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all instance types.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Shared {
         Shared("SHARED"),
         LocalForRim("LOCAL_FOR_RIM"),
@@ -400,6 +480,8 @@ public class Datafile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Shared.class);
 
         private final String value;
         private static java.util.Map<String, Shared> map;
@@ -437,62 +519,197 @@ public class Datafile {
      * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all instance types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shared")
-    Shared shared;
+    private final Shared shared;
+
+    public Shared getShared() {
+        return shared;
+    }
 
     /**
      * Instance ID of the instance to which the temp file belongs. This column has a NULL value for temp files that belong to shared tablespaces.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    java.math.BigDecimal instanceId;
+    private final java.math.BigDecimal instanceId;
+
+    public java.math.BigDecimal getInstanceId() {
+        return instanceId;
+    }
 
     /**
      * The maximum file size in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSizeKB")
-    java.math.BigDecimal maxSizeKB;
+    private final java.math.BigDecimal maxSizeKB;
+
+    public java.math.BigDecimal getMaxSizeKB() {
+        return maxSizeKB;
+    }
 
     /**
      * The allocated file size in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allocatedSizeKB")
-    java.math.BigDecimal allocatedSizeKB;
+    private final java.math.BigDecimal allocatedSizeKB;
+
+    public java.math.BigDecimal getAllocatedSizeKB() {
+        return allocatedSizeKB;
+    }
 
     /**
      * The size of the file available for user data in KB. The actual size of the file minus the USER_BYTES value is used to store file-related metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userSizeKB")
-    java.math.BigDecimal userSizeKB;
+    private final java.math.BigDecimal userSizeKB;
+
+    public java.math.BigDecimal getUserSizeKB() {
+        return userSizeKB;
+    }
 
     /**
      * The number of blocks used as auto-extension increment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("incrementBy")
-    java.math.BigDecimal incrementBy;
+    private final java.math.BigDecimal incrementBy;
+
+    public java.math.BigDecimal getIncrementBy() {
+        return incrementBy;
+    }
 
     /**
      * The free space available in the data file in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeSpaceKB")
-    java.math.BigDecimal freeSpaceKB;
+    private final java.math.BigDecimal freeSpaceKB;
+
+    public java.math.BigDecimal getFreeSpaceKB() {
+        return freeSpaceKB;
+    }
 
     /**
      * The total space used in the data file in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedSpaceKB")
-    java.math.BigDecimal usedSpaceKB;
+    private final java.math.BigDecimal usedSpaceKB;
+
+    public java.math.BigDecimal getUsedSpaceKB() {
+        return usedSpaceKB;
+    }
 
     /**
      * The percentage of used space out of the maximum available space in the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAvailable")
-    Double usedPercentAvailable;
+    private final Double usedPercentAvailable;
+
+    public Double getUsedPercentAvailable() {
+        return usedPercentAvailable;
+    }
 
     /**
      * The percentage of used space out of the total allocated space in the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAllocated")
-    Double usedPercentAllocated;
+    private final Double usedPercentAllocated;
+
+    public Double getUsedPercentAllocated() {
+        return usedPercentAllocated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Datafile(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", onlineStatus=").append(String.valueOf(this.onlineStatus));
+        sb.append(", isAutoExtensible=").append(String.valueOf(this.isAutoExtensible));
+        sb.append(", lostWriteProtect=").append(String.valueOf(this.lostWriteProtect));
+        sb.append(", shared=").append(String.valueOf(this.shared));
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", maxSizeKB=").append(String.valueOf(this.maxSizeKB));
+        sb.append(", allocatedSizeKB=").append(String.valueOf(this.allocatedSizeKB));
+        sb.append(", userSizeKB=").append(String.valueOf(this.userSizeKB));
+        sb.append(", incrementBy=").append(String.valueOf(this.incrementBy));
+        sb.append(", freeSpaceKB=").append(String.valueOf(this.freeSpaceKB));
+        sb.append(", usedSpaceKB=").append(String.valueOf(this.usedSpaceKB));
+        sb.append(", usedPercentAvailable=").append(String.valueOf(this.usedPercentAvailable));
+        sb.append(", usedPercentAllocated=").append(String.valueOf(this.usedPercentAllocated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Datafile)) {
+            return false;
+        }
+
+        Datafile other = (Datafile) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.onlineStatus, other.onlineStatus)
+                && java.util.Objects.equals(this.isAutoExtensible, other.isAutoExtensible)
+                && java.util.Objects.equals(this.lostWriteProtect, other.lostWriteProtect)
+                && java.util.Objects.equals(this.shared, other.shared)
+                && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.maxSizeKB, other.maxSizeKB)
+                && java.util.Objects.equals(this.allocatedSizeKB, other.allocatedSizeKB)
+                && java.util.Objects.equals(this.userSizeKB, other.userSizeKB)
+                && java.util.Objects.equals(this.incrementBy, other.incrementBy)
+                && java.util.Objects.equals(this.freeSpaceKB, other.freeSpaceKB)
+                && java.util.Objects.equals(this.usedSpaceKB, other.usedSpaceKB)
+                && java.util.Objects.equals(this.usedPercentAvailable, other.usedPercentAvailable)
+                && java.util.Objects.equals(this.usedPercentAllocated, other.usedPercentAllocated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.onlineStatus == null ? 43 : this.onlineStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoExtensible == null ? 43 : this.isAutoExtensible.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lostWriteProtect == null ? 43 : this.lostWriteProtect.hashCode());
+        result = (result * PRIME) + (this.shared == null ? 43 : this.shared.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result = (result * PRIME) + (this.maxSizeKB == null ? 43 : this.maxSizeKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allocatedSizeKB == null ? 43 : this.allocatedSizeKB.hashCode());
+        result = (result * PRIME) + (this.userSizeKB == null ? 43 : this.userSizeKB.hashCode());
+        result = (result * PRIME) + (this.incrementBy == null ? 43 : this.incrementBy.hashCode());
+        result = (result * PRIME) + (this.freeSpaceKB == null ? 43 : this.freeSpaceKB.hashCode());
+        result = (result * PRIME) + (this.usedSpaceKB == null ? 43 : this.usedSpaceKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usedPercentAvailable == null
+                                ? 43
+                                : this.usedPercentAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usedPercentAllocated == null
+                                ? 43
+                                : this.usedPercentAllocated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

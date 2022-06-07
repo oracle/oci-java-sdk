@@ -15,16 +15,49 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagedInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagedInstanceSummary {
+public final class ManagedInstanceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "id",
+        "lastCheckin",
+        "lastBoot",
+        "updatesAvailable",
+        "compartmentId",
+        "description",
+        "status",
+        "osFamily",
+        "isRebootRequired"
+    })
+    public ManagedInstanceSummary(
+            String displayName,
+            String id,
+            String lastCheckin,
+            String lastBoot,
+            Integer updatesAvailable,
+            String compartmentId,
+            String description,
+            Status status,
+            OsFamilies osFamily,
+            Boolean isRebootRequired) {
+        super();
+        this.displayName = displayName;
+        this.id = id;
+        this.lastCheckin = lastCheckin;
+        this.lastBoot = lastBoot;
+        this.updatesAvailable = updatesAvailable;
+        this.compartmentId = compartmentId;
+        this.description = description;
+        this.status = status;
+        this.osFamily = osFamily;
+        this.isRebootRequired = isRebootRequired;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -162,51 +195,83 @@ public class ManagedInstanceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * user settable name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * OCID for the managed instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Time at which the instance last checked in
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastCheckin")
-    String lastCheckin;
+    private final String lastCheckin;
+
+    public String getLastCheckin() {
+        return lastCheckin;
+    }
 
     /**
      * Time at which the instance last booted
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastBoot")
-    String lastBoot;
+    private final String lastBoot;
+
+    public String getLastBoot() {
+        return lastBoot;
+    }
 
     /**
      * Number of updates available to be installed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
-    Integer updatesAvailable;
+    private final Integer updatesAvailable;
+
+    public Integer getUpdatesAvailable() {
+        return updatesAvailable;
+    }
 
     /**
      * OCID for the Compartment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Information specified by the user about the managed instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
     /**
      * status of the managed instance.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Normal("NORMAL"),
         Unreachable("UNREACHABLE"),
@@ -218,6 +283,8 @@ public class ManagedInstanceSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -255,20 +322,104 @@ public class ManagedInstanceSummary {
      * status of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The Operating System type of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
-    OsFamilies osFamily;
+    private final OsFamilies osFamily;
+
+    public OsFamilies getOsFamily() {
+        return osFamily;
+    }
 
     /**
      * Indicates whether a reboot is required to complete installation of updates.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
-    Boolean isRebootRequired;
+    private final Boolean isRebootRequired;
+
+    public Boolean getIsRebootRequired() {
+        return isRebootRequired;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagedInstanceSummary(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lastCheckin=").append(String.valueOf(this.lastCheckin));
+        sb.append(", lastBoot=").append(String.valueOf(this.lastBoot));
+        sb.append(", updatesAvailable=").append(String.valueOf(this.updatesAvailable));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(", isRebootRequired=").append(String.valueOf(this.isRebootRequired));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagedInstanceSummary)) {
+            return false;
+        }
+
+        ManagedInstanceSummary other = (ManagedInstanceSummary) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lastCheckin, other.lastCheckin)
+                && java.util.Objects.equals(this.lastBoot, other.lastBoot)
+                && java.util.Objects.equals(this.updatesAvailable, other.updatesAvailable)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.isRebootRequired, other.isRebootRequired)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.lastCheckin == null ? 43 : this.lastCheckin.hashCode());
+        result = (result * PRIME) + (this.lastBoot == null ? 43 : this.lastBoot.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updatesAvailable == null ? 43 : this.updatesAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRebootRequired == null ? 43 : this.isRebootRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

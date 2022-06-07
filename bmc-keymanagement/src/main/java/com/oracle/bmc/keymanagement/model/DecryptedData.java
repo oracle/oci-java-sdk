@@ -15,14 +15,32 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DecryptedData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DecryptedData {
+public final class DecryptedData {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "plaintext",
+        "plaintextChecksum",
+        "keyId",
+        "keyVersionId",
+        "encryptionAlgorithm"
+    })
+    public DecryptedData(
+            String plaintext,
+            String plaintextChecksum,
+            String keyId,
+            String keyVersionId,
+            EncryptionAlgorithm encryptionAlgorithm) {
+        super();
+        this.plaintext = plaintext;
+        this.plaintextChecksum = plaintextChecksum;
+        this.keyId = keyId;
+        this.keyVersionId = keyVersionId;
+        this.encryptionAlgorithm = encryptionAlgorithm;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
         private String plaintext;
@@ -101,29 +119,50 @@ public class DecryptedData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The decrypted data, expressed as a base64-encoded value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
-    String plaintext;
+    private final String plaintext;
+
+    public String getPlaintext() {
+        return plaintext;
+    }
 
     /**
      * The checksum of the decrypted data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
-    String plaintextChecksum;
+    private final String plaintextChecksum;
+
+    public String getPlaintextChecksum() {
+        return plaintextChecksum;
+    }
 
     /**
      * The OCID of the key used to encrypt the ciphertext.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * The OCID of the key version used to encrypt the ciphertext.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
-    String keyVersionId;
+    private final String keyVersionId;
+
+    public String getKeyVersionId() {
+        return keyVersionId;
+    }
+
     /**
      * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key
      * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
@@ -133,7 +172,6 @@ public class DecryptedData {
      * and uses OAEP.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EncryptionAlgorithm {
         Aes256Gcm("AES_256_GCM"),
         RsaOaepSha1("RSA_OAEP_SHA_1"),
@@ -144,6 +182,9 @@ public class DecryptedData {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EncryptionAlgorithm.class);
 
         private final String value;
         private static java.util.Map<String, EncryptionAlgorithm> map;
@@ -187,8 +228,69 @@ public class DecryptedData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
-    EncryptionAlgorithm encryptionAlgorithm;
+    private final EncryptionAlgorithm encryptionAlgorithm;
+
+    public EncryptionAlgorithm getEncryptionAlgorithm() {
+        return encryptionAlgorithm;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DecryptedData(");
+        sb.append("plaintext=").append(String.valueOf(this.plaintext));
+        sb.append(", plaintextChecksum=").append(String.valueOf(this.plaintextChecksum));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
+        sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DecryptedData)) {
+            return false;
+        }
+
+        DecryptedData other = (DecryptedData) o;
+        return java.util.Objects.equals(this.plaintext, other.plaintext)
+                && java.util.Objects.equals(this.plaintextChecksum, other.plaintextChecksum)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
+                && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.plaintext == null ? 43 : this.plaintext.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.plaintextChecksum == null ? 43 : this.plaintextChecksum.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.keyVersionId == null ? 43 : this.keyVersionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionAlgorithm == null
+                                ? 43
+                                : this.encryptionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

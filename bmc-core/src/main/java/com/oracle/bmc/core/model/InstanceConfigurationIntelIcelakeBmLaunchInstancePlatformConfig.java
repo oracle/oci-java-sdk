@@ -17,23 +17,18 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
+public final class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
         extends InstanceConfigurationLaunchInstancePlatformConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isSecureBootEnabled")
         private Boolean isSecureBootEnabled;
@@ -142,6 +137,10 @@ public class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig(
             Boolean isSecureBootEnabled,
@@ -162,7 +161,6 @@ public class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
      * The number of NUMA nodes per socket (NPS).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum NumaNodesPerSocket {
         Nps1("NPS1"),
         Nps2("NPS2"),
@@ -172,6 +170,9 @@ public class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NumaNodesPerSocket.class);
 
         private final String value;
         private static java.util.Map<String, NumaNodesPerSocket> map;
@@ -210,7 +211,11 @@ public class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
-    NumaNodesPerSocket numaNodesPerSocket;
+    private final NumaNodesPerSocket numaNodesPerSocket;
+
+    public NumaNodesPerSocket getNumaNodesPerSocket() {
+        return numaNodesPerSocket;
+    }
 
     /**
      * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
@@ -223,14 +228,22 @@ public class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
-    Boolean isSymmetricMultiThreadingEnabled;
+    private final Boolean isSymmetricMultiThreadingEnabled;
+
+    public Boolean getIsSymmetricMultiThreadingEnabled() {
+        return isSymmetricMultiThreadingEnabled;
+    }
 
     /**
      * Whether the input-output memory management unit is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
-    Boolean isInputOutputMemoryManagementUnitEnabled;
+    private final Boolean isInputOutputMemoryManagementUnitEnabled;
+
+    public Boolean getIsInputOutputMemoryManagementUnitEnabled() {
+        return isInputOutputMemoryManagementUnitEnabled;
+    }
 
     /**
      * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
@@ -243,8 +256,87 @@ public class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabled")
-    Integer percentageOfCoresEnabled;
+    private final Integer percentageOfCoresEnabled;
+
+    public Integer getPercentageOfCoresEnabled() {
+        return percentageOfCoresEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig(");
+        sb.append("super=").append(super.toString());
+        sb.append(", numaNodesPerSocket=").append(String.valueOf(this.numaNodesPerSocket));
+        sb.append(", isSymmetricMultiThreadingEnabled=")
+                .append(String.valueOf(this.isSymmetricMultiThreadingEnabled));
+        sb.append(", isInputOutputMemoryManagementUnitEnabled=")
+                .append(String.valueOf(this.isInputOutputMemoryManagementUnitEnabled));
+        sb.append(", percentageOfCoresEnabled=")
+                .append(String.valueOf(this.percentageOfCoresEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig)) {
+            return false;
+        }
+
+        InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig other =
+                (InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig) o;
+        return java.util.Objects.equals(this.numaNodesPerSocket, other.numaNodesPerSocket)
+                && java.util.Objects.equals(
+                        this.isSymmetricMultiThreadingEnabled,
+                        other.isSymmetricMultiThreadingEnabled)
+                && java.util.Objects.equals(
+                        this.isInputOutputMemoryManagementUnitEnabled,
+                        other.isInputOutputMemoryManagementUnitEnabled)
+                && java.util.Objects.equals(
+                        this.percentageOfCoresEnabled, other.percentageOfCoresEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.numaNodesPerSocket == null
+                                ? 43
+                                : this.numaNodesPerSocket.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSymmetricMultiThreadingEnabled == null
+                                ? 43
+                                : this.isSymmetricMultiThreadingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInputOutputMemoryManagementUnitEnabled == null
+                                ? 43
+                                : this.isInputOutputMemoryManagementUnitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentageOfCoresEnabled == null
+                                ? 43
+                                : this.percentageOfCoresEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

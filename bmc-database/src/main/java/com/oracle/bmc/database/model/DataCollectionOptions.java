@@ -16,16 +16,19 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DataCollectionOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataCollectionOptions {
+public final class DataCollectionOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isDiagnosticsEventsEnabled"})
+    public DataCollectionOptions(Boolean isDiagnosticsEventsEnabled) {
+        super();
+        this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isDiagnosticsEventsEnabled")
         private Boolean isDiagnosticsEventsEnabled;
@@ -62,13 +65,66 @@ public class DataCollectionOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDiagnosticsEventsEnabled")
-    Boolean isDiagnosticsEventsEnabled;
+    private final Boolean isDiagnosticsEventsEnabled;
+
+    public Boolean getIsDiagnosticsEventsEnabled() {
+        return isDiagnosticsEventsEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataCollectionOptions(");
+        sb.append("isDiagnosticsEventsEnabled=")
+                .append(String.valueOf(this.isDiagnosticsEventsEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataCollectionOptions)) {
+            return false;
+        }
+
+        DataCollectionOptions other = (DataCollectionOptions) o;
+        return java.util.Objects.equals(
+                        this.isDiagnosticsEventsEnabled, other.isDiagnosticsEventsEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isDiagnosticsEventsEnabled == null
+                                ? 43
+                                : this.isDiagnosticsEventsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

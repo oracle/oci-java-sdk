@@ -7,10 +7,6 @@ package com.oracle.bmc.keymanagement.responses;
 import com.oracle.bmc.keymanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -19,10 +15,18 @@ public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned EncryptedData instance.
      */
     private com.oracle.bmc.keymanagement.model.EncryptedData encryptedData;
+
+    public com.oracle.bmc.keymanagement.model.EncryptedData getEncryptedData() {
+        return encryptedData;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "encryptedData"})
     private EncryptResponse(
@@ -42,6 +46,21 @@ public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.keymanagement.model.EncryptedData encryptedData;
+
+        public Builder encryptedData(
+                com.oracle.bmc.keymanagement.model.EncryptedData encryptedData) {
+            this.encryptedData = encryptedData;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +76,46 @@ public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
         public EncryptResponse build() {
             return new EncryptResponse(__httpStatusCode__, opcRequestId, encryptedData);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",encryptedData=").append(String.valueOf(encryptedData));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EncryptResponse)) {
+            return false;
+        }
+
+        EncryptResponse other = (EncryptResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.encryptedData, other.encryptedData);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptedData == null ? 43 : this.encryptedData.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,22 @@ package com.oracle.bmc.licensemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BulkUploadLicenseRecordsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BulkUploadLicenseRecordsDetails {
+public final class BulkUploadLicenseRecordsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"compartmentId", "fileName", "fileContent"})
+    public BulkUploadLicenseRecordsDetails(
+            String compartmentId, String fileName, String fileContent) {
+        super();
+        this.compartmentId = compartmentId;
+        this.fileName = fileName;
+        this.fileContent = fileContent;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -82,25 +88,88 @@ public class BulkUploadLicenseRecordsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where license records are created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Name of the file that is being uploaded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileName")
-    String fileName;
+    private final String fileName;
+
+    public String getFileName() {
+        return fileName;
+    }
 
     /**
      * The file to be uploaded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileContent")
-    String fileContent;
+    private final String fileContent;
+
+    public String getFileContent() {
+        return fileContent;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BulkUploadLicenseRecordsDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", fileName=").append(String.valueOf(this.fileName));
+        sb.append(", fileContent=").append(String.valueOf(this.fileContent));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BulkUploadLicenseRecordsDetails)) {
+            return false;
+        }
+
+        BulkUploadLicenseRecordsDetails other = (BulkUploadLicenseRecordsDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.fileName, other.fileName)
+                && java.util.Objects.equals(this.fileContent, other.fileContent)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.fileName == null ? 43 : this.fileName.hashCode());
+        result = (result * PRIME) + (this.fileContent == null ? 43 : this.fileContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

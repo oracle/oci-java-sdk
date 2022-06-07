@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OutputPort.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OutputPort extends TypedObject {
+public final class OutputPort extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -155,6 +150,10 @@ public class OutputPort extends TypedObject {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public OutputPort(
             String key,
@@ -174,7 +173,6 @@ public class OutputPort extends TypedObject {
     /**
      * The port details for the data asset.Type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PortType {
         Data("DATA"),
         Control("CONTROL"),
@@ -185,6 +183,9 @@ public class OutputPort extends TypedObject {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PortType.class);
 
         private final String value;
         private static java.util.Map<String, PortType> map;
@@ -222,14 +223,66 @@ public class OutputPort extends TypedObject {
      * The port details for the data asset.Type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portType")
-    PortType portType;
+    private final PortType portType;
+
+    public PortType getPortType() {
+        return portType;
+    }
 
     /**
      * An array of fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
-    java.util.List<TypedObject> fields;
+    private final java.util.List<TypedObject> fields;
+
+    public java.util.List<TypedObject> getFields() {
+        return fields;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OutputPort(");
+        sb.append("super=").append(super.toString());
+        sb.append(", portType=").append(String.valueOf(this.portType));
+        sb.append(", fields=").append(String.valueOf(this.fields));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OutputPort)) {
+            return false;
+        }
+
+        OutputPort other = (OutputPort) o;
+        return java.util.Objects.equals(this.portType, other.portType)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.portType == null ? 43 : this.portType.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,7 +16,6 @@ package com.oracle.bmc.databasemanagement.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.extern.slf4j.Slf4j
 public enum DeploymentType {
     Onpremise("ONPREMISE"),
     Bm("BM"),
@@ -30,6 +29,9 @@ public enum DeploymentType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DeploymentType.class);
 
     private final String value;
     private static java.util.Map<String, DeploymentType> map;

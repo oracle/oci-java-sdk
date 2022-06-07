@@ -15,12 +15,6 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -47,12 +41,40 @@ package com.oracle.bmc.core.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AttachVolumeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "device",
+        "displayName",
+        "instanceId",
+        "isReadOnly",
+        "isShareable",
+        "volumeId"
+    })
+    protected AttachVolumeDetails(
+            String device,
+            String displayName,
+            String instanceId,
+            Boolean isReadOnly,
+            Boolean isShareable,
+            String volumeId) {
+        super();
+        this.device = device;
+        this.displayName = displayName;
+        this.instanceId = instanceId;
+        this.isReadOnly = isReadOnly;
+        this.isShareable = isShareable;
+        this.volumeId = volumeId;
+    }
 
     /**
      * The device name. To retrieve a list of devices for a given instance, see {@link #listInstanceDevices(ListInstanceDevicesRequest) listInstanceDevices}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("device")
-    String device;
+    private final String device;
+
+    public String getDevice() {
+        return device;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -60,19 +82,31 @@ public class AttachVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
 
     /**
      * Whether the attachment was created in read-only mode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
-    Boolean isReadOnly;
+    private final Boolean isReadOnly;
+
+    public Boolean getIsReadOnly() {
+        return isReadOnly;
+    }
 
     /**
      * Whether the attachment should be created in shareable mode. If an attachment
@@ -82,11 +116,64 @@ public class AttachVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
-    Boolean isShareable;
+    private final Boolean isShareable;
+
+    public Boolean getIsShareable() {
+        return isShareable;
+    }
 
     /**
      * The OCID of the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
-    String volumeId;
+    private final String volumeId;
+
+    public String getVolumeId() {
+        return volumeId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AttachVolumeDetails(");
+        sb.append("device=").append(String.valueOf(this.device));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", isReadOnly=").append(String.valueOf(this.isReadOnly));
+        sb.append(", isShareable=").append(String.valueOf(this.isShareable));
+        sb.append(", volumeId=").append(String.valueOf(this.volumeId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AttachVolumeDetails)) {
+            return false;
+        }
+
+        AttachVolumeDetails other = (AttachVolumeDetails) o;
+        return java.util.Objects.equals(this.device, other.device)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.isReadOnly, other.isReadOnly)
+                && java.util.Objects.equals(this.isShareable, other.isShareable)
+                && java.util.Objects.equals(this.volumeId, other.volumeId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.device == null ? 43 : this.device.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result = (result * PRIME) + (this.isReadOnly == null ? 43 : this.isReadOnly.hashCode());
+        result = (result * PRIME) + (this.isShareable == null ? 43 : this.isShareable.hashCode());
+        result = (result * PRIME) + (this.volumeId == null ? 43 : this.volumeId.hashCode());
+        return result;
+    }
 }

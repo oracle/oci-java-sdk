@@ -9,7 +9,6 @@ package com.oracle.bmc.integration.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
-@lombok.extern.slf4j.Slf4j
 public enum NetworkEndpointType {
     Public("PUBLIC"),
 
@@ -18,6 +17,9 @@ public enum NetworkEndpointType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(NetworkEndpointType.class);
 
     private final String value;
     private static java.util.Map<String, NetworkEndpointType> map;

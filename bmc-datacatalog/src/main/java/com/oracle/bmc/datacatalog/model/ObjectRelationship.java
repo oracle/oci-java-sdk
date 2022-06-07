@@ -15,16 +15,49 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectRelationship.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectRelationship {
+public final class ObjectRelationship {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "relationshipType",
+        "key",
+        "name",
+        "typeName",
+        "typeKey",
+        "timeCreated",
+        "timeUpdated",
+        "path",
+        "parentKey",
+        "parentPath"
+    })
+    public ObjectRelationship(
+            String relationshipType,
+            String key,
+            String name,
+            String typeName,
+            String typeKey,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String path,
+            String parentKey,
+            String parentPath) {
+        super();
+        this.relationshipType = relationshipType;
+        this.key = key;
+        this.name = name;
+        this.typeName = typeName;
+        this.typeKey = typeKey;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.path = path;
+        this.parentKey = parentKey;
+        this.parentPath = parentPath;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("relationshipType")
         private String relationshipType;
@@ -162,35 +195,59 @@ public class ObjectRelationship {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Type of relationship with the referencing object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relationshipType")
-    String relationshipType;
+    private final String relationshipType;
+
+    public String getRelationshipType() {
+        return relationshipType;
+    }
 
     /**
      * Unique id of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Name of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Type name of the object. Type names can be found via the '/types' endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
-    String typeName;
+    private final String typeName;
+
+    public String getTypeName() {
+        return typeName;
+    }
 
     /**
      * Type key of the object. Type keys can be found via the '/types' endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
-    String typeKey;
+    private final String typeKey;
+
+    public String getTypeKey() {
+        return typeKey;
+    }
 
     /**
      * The date and time the relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -198,33 +255,121 @@ public class ObjectRelationship {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The last time a change was made to this reference. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Full path of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * Key of the parent object for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
-    String parentKey;
+    private final String parentKey;
+
+    public String getParentKey() {
+        return parentKey;
+    }
 
     /**
      * Full path of the parent object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentPath")
-    String parentPath;
+    private final String parentPath;
+
+    public String getParentPath() {
+        return parentPath;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectRelationship(");
+        sb.append("relationshipType=").append(String.valueOf(this.relationshipType));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", typeName=").append(String.valueOf(this.typeName));
+        sb.append(", typeKey=").append(String.valueOf(this.typeKey));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", parentKey=").append(String.valueOf(this.parentKey));
+        sb.append(", parentPath=").append(String.valueOf(this.parentPath));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectRelationship)) {
+            return false;
+        }
+
+        ObjectRelationship other = (ObjectRelationship) o;
+        return java.util.Objects.equals(this.relationshipType, other.relationshipType)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.typeName, other.typeName)
+                && java.util.Objects.equals(this.typeKey, other.typeKey)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.parentKey, other.parentKey)
+                && java.util.Objects.equals(this.parentPath, other.parentPath)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.relationshipType == null ? 43 : this.relationshipType.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.typeName == null ? 43 : this.typeName.hashCode());
+        result = (result * PRIME) + (this.typeKey == null ? 43 : this.typeKey.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.parentKey == null ? 43 : this.parentKey.hashCode());
+        result = (result * PRIME) + (this.parentPath == null ? 43 : this.parentPath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

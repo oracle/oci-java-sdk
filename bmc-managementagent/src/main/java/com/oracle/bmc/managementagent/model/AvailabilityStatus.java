@@ -8,7 +8,6 @@ package com.oracle.bmc.managementagent.model;
  * Possible availability status.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.extern.slf4j.Slf4j
 public enum AvailabilityStatus {
     Active("ACTIVE"),
     Silent("SILENT"),
@@ -19,6 +18,9 @@ public enum AvailabilityStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AvailabilityStatus.class);
 
     private final String value;
     private static java.util.Map<String, AvailabilityStatus> map;

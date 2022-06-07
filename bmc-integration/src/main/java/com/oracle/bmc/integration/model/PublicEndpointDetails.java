@@ -16,22 +16,17 @@ package com.oracle.bmc.integration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PublicEndpointDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "networkEndpointType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PublicEndpointDetails extends NetworkEndpointDetails {
+public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpIps")
         private java.util.List<String> allowlistedHttpIps;
@@ -91,6 +86,10 @@ public class PublicEndpointDetails extends NetworkEndpointDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public PublicEndpointDetails(
             java.util.List<String> allowlistedHttpIps,
@@ -107,21 +106,94 @@ public class PublicEndpointDetails extends NetworkEndpointDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpIps")
-    java.util.List<String> allowlistedHttpIps;
+    private final java.util.List<String> allowlistedHttpIps;
+
+    public java.util.List<String> getAllowlistedHttpIps() {
+        return allowlistedHttpIps;
+    }
 
     /**
      * Virtual Cloud Networks allowed to access this network endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpVcns")
-    java.util.List<VirtualCloudNetwork> allowlistedHttpVcns;
+    private final java.util.List<VirtualCloudNetwork> allowlistedHttpVcns;
+
+    public java.util.List<VirtualCloudNetwork> getAllowlistedHttpVcns() {
+        return allowlistedHttpVcns;
+    }
 
     /**
      * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIntegrationVcnAllowlisted")
-    Boolean isIntegrationVcnAllowlisted;
+    private final Boolean isIntegrationVcnAllowlisted;
+
+    public Boolean getIsIntegrationVcnAllowlisted() {
+        return isIntegrationVcnAllowlisted;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PublicEndpointDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", allowlistedHttpIps=").append(String.valueOf(this.allowlistedHttpIps));
+        sb.append(", allowlistedHttpVcns=").append(String.valueOf(this.allowlistedHttpVcns));
+        sb.append(", isIntegrationVcnAllowlisted=")
+                .append(String.valueOf(this.isIntegrationVcnAllowlisted));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PublicEndpointDetails)) {
+            return false;
+        }
+
+        PublicEndpointDetails other = (PublicEndpointDetails) o;
+        return java.util.Objects.equals(this.allowlistedHttpIps, other.allowlistedHttpIps)
+                && java.util.Objects.equals(this.allowlistedHttpVcns, other.allowlistedHttpVcns)
+                && java.util.Objects.equals(
+                        this.isIntegrationVcnAllowlisted, other.isIntegrationVcnAllowlisted)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.allowlistedHttpIps == null
+                                ? 43
+                                : this.allowlistedHttpIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowlistedHttpVcns == null
+                                ? 43
+                                : this.allowlistedHttpVcns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIntegrationVcnAllowlisted == null
+                                ? 43
+                                : this.isIntegrationVcnAllowlisted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

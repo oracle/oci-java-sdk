@@ -15,16 +15,49 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TargetResponderRecipe.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TargetResponderRecipe {
+public final class TargetResponderRecipe {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "responderRecipeId",
+        "compartmentId",
+        "displayName",
+        "description",
+        "owner",
+        "timeCreated",
+        "timeUpdated",
+        "responderRules",
+        "effectiveResponderRules"
+    })
+    public TargetResponderRecipe(
+            String id,
+            String responderRecipeId,
+            String compartmentId,
+            String displayName,
+            String description,
+            OwnerType owner,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.List<TargetResponderRecipeResponderRule> responderRules,
+            java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules) {
+        super();
+        this.id = id;
+        this.responderRecipeId = responderRecipeId;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.description = description;
+        this.owner = owner;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.responderRules = responderRules;
+        this.effectiveResponderRules = effectiveResponderRules;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -164,66 +197,188 @@ public class TargetResponderRecipe {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier of TargetResponderRecipe that can't be changed after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Unique identifier for Responder Recipe of which this is an extension.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
-    String responderRecipeId;
+    private final String responderRecipeId;
+
+    public String getResponderRecipeId() {
+        return responderRecipeId;
+    }
 
     /**
      * Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * ResponderRecipe display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * ResponderRecipe description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Owner of ResponderRecipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
-    OwnerType owner;
+    private final OwnerType owner;
+
+    public OwnerType getOwner() {
+        return owner;
+    }
 
     /**
      * The date and time the target responder recipe rule was created. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the target responder recipe rule was updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * List of responder rules associated with the recipe - user input
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
-    java.util.List<TargetResponderRecipeResponderRule> responderRules;
+    private final java.util.List<TargetResponderRecipeResponderRule> responderRules;
+
+    public java.util.List<TargetResponderRecipeResponderRule> getResponderRules() {
+        return responderRules;
+    }
 
     /**
      * List of responder rules associated with the recipe after applying all defaults
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
-    java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules;
+    private final java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules;
+
+    public java.util.List<TargetResponderRecipeResponderRule> getEffectiveResponderRules() {
+        return effectiveResponderRules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TargetResponderRecipe(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", responderRecipeId=").append(String.valueOf(this.responderRecipeId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", owner=").append(String.valueOf(this.owner));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", responderRules=").append(String.valueOf(this.responderRules));
+        sb.append(", effectiveResponderRules=")
+                .append(String.valueOf(this.effectiveResponderRules));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TargetResponderRecipe)) {
+            return false;
+        }
+
+        TargetResponderRecipe other = (TargetResponderRecipe) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.responderRecipeId, other.responderRecipeId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.responderRules, other.responderRules)
+                && java.util.Objects.equals(
+                        this.effectiveResponderRules, other.effectiveResponderRules)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderRecipeId == null ? 43 : this.responderRecipeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderRules == null ? 43 : this.responderRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.effectiveResponderRules == null
+                                ? 43
+                                : this.effectiveResponderRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

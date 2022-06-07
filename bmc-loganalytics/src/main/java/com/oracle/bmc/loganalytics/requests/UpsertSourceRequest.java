@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertSourceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpsertSourceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpsertSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails> {
@@ -27,12 +19,19 @@ public class UpsertSourceRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * Details for the new LoganSourceDetails.
      */
     private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails
             upsertLogAnalyticsSourceDetails;
 
+    public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails
+            getUpsertLogAnalyticsSourceDetails() {
+        return upsertLogAnalyticsSourceDetails;
+    }
     /**
      * The unique identifier of the source to use as the reference for a create like
      * operation.
@@ -40,6 +39,9 @@ public class UpsertSourceRequest
      */
     private Integer createLikeSourceId;
 
+    public Integer getCreateLikeSourceId() {
+        return createLikeSourceId;
+    }
     /**
      * A flag indicating whether or not the update of a source is incremental or not.  If incremental,
      * the name of the source must be specified.
@@ -47,11 +49,17 @@ public class UpsertSourceRequest
      */
     private Boolean isIncremental;
 
+    public Boolean getIsIncremental() {
+        return isIncremental;
+    }
     /**
      * is ignore warning
      */
     private Boolean isIgnoreWarning;
 
+    public Boolean getIsIgnoreWarning() {
+        return isIgnoreWarning;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -62,11 +70,17 @@ public class UpsertSourceRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -76,6 +90,10 @@ public class UpsertSourceRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -99,6 +117,112 @@ public class UpsertSourceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails
+                upsertLogAnalyticsSourceDetails = null;
+
+        /**
+         * Details for the new LoganSourceDetails.
+         * @return this builder instance
+         */
+        public Builder upsertLogAnalyticsSourceDetails(
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails
+                        upsertLogAnalyticsSourceDetails) {
+            this.upsertLogAnalyticsSourceDetails = upsertLogAnalyticsSourceDetails;
+            return this;
+        }
+
+        private Integer createLikeSourceId = null;
+
+        /**
+         * The unique identifier of the source to use as the reference for a create like
+         * operation.
+         *
+         * @return this builder instance
+         */
+        public Builder createLikeSourceId(Integer createLikeSourceId) {
+            this.createLikeSourceId = createLikeSourceId;
+            return this;
+        }
+
+        private Boolean isIncremental = null;
+
+        /**
+         * A flag indicating whether or not the update of a source is incremental or not.  If incremental,
+         * the name of the source must be specified.
+         *
+         * @return this builder instance
+         */
+        public Builder isIncremental(Boolean isIncremental) {
+            this.isIncremental = isIncremental;
+            return this;
+        }
+
+        private Boolean isIgnoreWarning = null;
+
+        /**
+         * is ignore warning
+         * @return this builder instance
+         */
+        public Builder isIgnoreWarning(Boolean isIgnoreWarning) {
+            this.isIgnoreWarning = isIgnoreWarning;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -169,5 +293,117 @@ public class UpsertSourceRequest
             upsertLogAnalyticsSourceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpsertSourceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpsertSourceRequest
+         */
+        public UpsertSourceRequest buildWithoutInvocationCallback() {
+            UpsertSourceRequest request = new UpsertSourceRequest();
+            request.namespaceName = namespaceName;
+            request.upsertLogAnalyticsSourceDetails = upsertLogAnalyticsSourceDetails;
+            request.createLikeSourceId = createLikeSourceId;
+            request.isIncremental = isIncremental;
+            request.isIgnoreWarning = isIgnoreWarning;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpsertSourceRequest(namespaceName, upsertLogAnalyticsSourceDetails, createLikeSourceId, isIncremental, isIgnoreWarning, opcRetryToken, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .upsertLogAnalyticsSourceDetails(upsertLogAnalyticsSourceDetails)
+                .createLikeSourceId(createLikeSourceId)
+                .isIncremental(isIncremental)
+                .isIgnoreWarning(isIgnoreWarning)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",upsertLogAnalyticsSourceDetails=")
+                .append(String.valueOf(this.upsertLogAnalyticsSourceDetails));
+        sb.append(",createLikeSourceId=").append(String.valueOf(this.createLikeSourceId));
+        sb.append(",isIncremental=").append(String.valueOf(this.isIncremental));
+        sb.append(",isIgnoreWarning=").append(String.valueOf(this.isIgnoreWarning));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpsertSourceRequest)) {
+            return false;
+        }
+
+        UpsertSourceRequest other = (UpsertSourceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(
+                        this.upsertLogAnalyticsSourceDetails, other.upsertLogAnalyticsSourceDetails)
+                && java.util.Objects.equals(this.createLikeSourceId, other.createLikeSourceId)
+                && java.util.Objects.equals(this.isIncremental, other.isIncremental)
+                && java.util.Objects.equals(this.isIgnoreWarning, other.isIgnoreWarning)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upsertLogAnalyticsSourceDetails == null
+                                ? 43
+                                : this.upsertLogAnalyticsSourceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createLikeSourceId == null
+                                ? 43
+                                : this.createLikeSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncremental == null ? 43 : this.isIncremental.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIgnoreWarning == null ? 43 : this.isIgnoreWarning.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

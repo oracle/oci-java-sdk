@@ -15,16 +15,40 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AbstractParserTestResultLogEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AbstractParserTestResultLogEntry {
+public final class AbstractParserTestResultLogEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "extraInfoAttributes",
+        "fieldNameValueMap",
+        "fieldPositionValueMap",
+        "fields",
+        "logEntry",
+        "matchStatus",
+        "matchStatusDescription"
+    })
+    public AbstractParserTestResultLogEntry(
+            java.util.Map<String, String> extraInfoAttributes,
+            java.util.Map<String, String> fieldNameValueMap,
+            java.util.Map<String, String> fieldPositionValueMap,
+            java.util.Map<String, String> fields,
+            String logEntry,
+            String matchStatus,
+            String matchStatusDescription) {
+        super();
+        this.extraInfoAttributes = extraInfoAttributes;
+        this.fieldNameValueMap = fieldNameValueMap;
+        this.fieldPositionValueMap = fieldPositionValueMap;
+        this.fields = fields;
+        this.logEntry = logEntry;
+        this.matchStatus = matchStatus;
+        this.matchStatusDescription = matchStatusDescription;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("extraInfoAttributes")
         private java.util.Map<String, String> extraInfoAttributes;
@@ -129,48 +153,152 @@ public class AbstractParserTestResultLogEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Extra information attributes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extraInfoAttributes")
-    java.util.Map<String, String> extraInfoAttributes;
+    private final java.util.Map<String, String> extraInfoAttributes;
+
+    public java.util.Map<String, String> getExtraInfoAttributes() {
+        return extraInfoAttributes;
+    }
 
     /**
      * The field name value map.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNameValueMap")
-    java.util.Map<String, String> fieldNameValueMap;
+    private final java.util.Map<String, String> fieldNameValueMap;
+
+    public java.util.Map<String, String> getFieldNameValueMap() {
+        return fieldNameValueMap;
+    }
 
     /**
      * The field position value map.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldPositionValueMap")
-    java.util.Map<String, String> fieldPositionValueMap;
+    private final java.util.Map<String, String> fieldPositionValueMap;
+
+    public java.util.Map<String, String> getFieldPositionValueMap() {
+        return fieldPositionValueMap;
+    }
 
     /**
      * The parser fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
-    java.util.Map<String, String> fields;
+    private final java.util.Map<String, String> fields;
+
+    public java.util.Map<String, String> getFields() {
+        return fields;
+    }
 
     /**
      * The log entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logEntry")
-    String logEntry;
+    private final String logEntry;
+
+    public String getLogEntry() {
+        return logEntry;
+    }
 
     /**
      * The match status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
-    String matchStatus;
+    private final String matchStatus;
+
+    public String getMatchStatus() {
+        return matchStatus;
+    }
 
     /**
      * The match status description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatusDescription")
-    String matchStatusDescription;
+    private final String matchStatusDescription;
+
+    public String getMatchStatusDescription() {
+        return matchStatusDescription;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractParserTestResultLogEntry(");
+        sb.append("extraInfoAttributes=").append(String.valueOf(this.extraInfoAttributes));
+        sb.append(", fieldNameValueMap=").append(String.valueOf(this.fieldNameValueMap));
+        sb.append(", fieldPositionValueMap=").append(String.valueOf(this.fieldPositionValueMap));
+        sb.append(", fields=").append(String.valueOf(this.fields));
+        sb.append(", logEntry=").append(String.valueOf(this.logEntry));
+        sb.append(", matchStatus=").append(String.valueOf(this.matchStatus));
+        sb.append(", matchStatusDescription=").append(String.valueOf(this.matchStatusDescription));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractParserTestResultLogEntry)) {
+            return false;
+        }
+
+        AbstractParserTestResultLogEntry other = (AbstractParserTestResultLogEntry) o;
+        return java.util.Objects.equals(this.extraInfoAttributes, other.extraInfoAttributes)
+                && java.util.Objects.equals(this.fieldNameValueMap, other.fieldNameValueMap)
+                && java.util.Objects.equals(this.fieldPositionValueMap, other.fieldPositionValueMap)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.logEntry, other.logEntry)
+                && java.util.Objects.equals(this.matchStatus, other.matchStatus)
+                && java.util.Objects.equals(
+                        this.matchStatusDescription, other.matchStatusDescription)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.extraInfoAttributes == null
+                                ? 43
+                                : this.extraInfoAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fieldNameValueMap == null ? 43 : this.fieldNameValueMap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fieldPositionValueMap == null
+                                ? 43
+                                : this.fieldPositionValueMap.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.logEntry == null ? 43 : this.logEntry.hashCode());
+        result = (result * PRIME) + (this.matchStatus == null ? 43 : this.matchStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.matchStatusDescription == null
+                                ? 43
+                                : this.matchStatusDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

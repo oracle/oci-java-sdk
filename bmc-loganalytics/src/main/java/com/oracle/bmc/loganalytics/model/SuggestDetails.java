@@ -16,14 +16,29 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SuggestDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SuggestDetails {
+public final class SuggestDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "compartmentIdInSubtree",
+        "queryString",
+        "subSystem"
+    })
+    public SuggestDetails(
+            String compartmentId,
+            Boolean compartmentIdInSubtree,
+            String queryString,
+            SubSystemName subSystem) {
+        super();
+        this.compartmentId = compartmentId;
+        this.compartmentIdInSubtree = compartmentIdInSubtree;
+        this.queryString = queryString;
+        this.subSystem = subSystem;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -92,33 +107,108 @@ public class SuggestDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
-    Boolean compartmentIdInSubtree;
+    private final Boolean compartmentIdInSubtree;
+
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
 
     /**
      * Query seeking suggestions for.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
-    String queryString;
+    private final String queryString;
+
+    public String getQueryString() {
+        return queryString;
+    }
 
     /**
      * Default subsystem to qualify fields with in the queryString if not specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
-    SubSystemName subSystem;
+    private final SubSystemName subSystem;
+
+    public SubSystemName getSubSystem() {
+        return subSystem;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SuggestDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(", queryString=").append(String.valueOf(this.queryString));
+        sb.append(", subSystem=").append(String.valueOf(this.subSystem));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SuggestDetails)) {
+            return false;
+        }
+
+        SuggestDetails other = (SuggestDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.queryString, other.queryString)
+                && java.util.Objects.equals(this.subSystem, other.subSystem)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.queryString == null ? 43 : this.queryString.hashCode());
+        result = (result * PRIME) + (this.subSystem == null ? 43 : this.subSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

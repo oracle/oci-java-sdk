@@ -15,16 +15,20 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OdaInstanceAttachmentOwner.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OdaInstanceAttachmentOwner {
+public final class OdaInstanceAttachmentOwner {
+    @Deprecated
+    @java.beans.ConstructorProperties({"ownerServiceName", "ownerServiceTenancy"})
+    public OdaInstanceAttachmentOwner(String ownerServiceName, String ownerServiceTenancy) {
+        super();
+        this.ownerServiceName = ownerServiceName;
+        this.ownerServiceTenancy = ownerServiceTenancy;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ownerServiceName")
         private String ownerServiceName;
@@ -72,18 +76,78 @@ public class OdaInstanceAttachmentOwner {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the owner service principal
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerServiceName")
-    String ownerServiceName;
+    private final String ownerServiceName;
+
+    public String getOwnerServiceName() {
+        return ownerServiceName;
+    }
 
     /**
      * Tenancy OCID of the owner service principal
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerServiceTenancy")
-    String ownerServiceTenancy;
+    private final String ownerServiceTenancy;
+
+    public String getOwnerServiceTenancy() {
+        return ownerServiceTenancy;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OdaInstanceAttachmentOwner(");
+        sb.append("ownerServiceName=").append(String.valueOf(this.ownerServiceName));
+        sb.append(", ownerServiceTenancy=").append(String.valueOf(this.ownerServiceTenancy));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OdaInstanceAttachmentOwner)) {
+            return false;
+        }
+
+        OdaInstanceAttachmentOwner other = (OdaInstanceAttachmentOwner) o;
+        return java.util.Objects.equals(this.ownerServiceName, other.ownerServiceName)
+                && java.util.Objects.equals(this.ownerServiceTenancy, other.ownerServiceTenancy)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.ownerServiceName == null ? 43 : this.ownerServiceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ownerServiceTenancy == null
+                                ? 43
+                                : this.ownerServiceTenancy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

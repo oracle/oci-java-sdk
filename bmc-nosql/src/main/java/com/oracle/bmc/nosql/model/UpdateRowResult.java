@@ -15,14 +15,32 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateRowResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateRowResult {
+public final class UpdateRowResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "version",
+        "existingVersion",
+        "existingValue",
+        "generatedValue",
+        "usage"
+    })
+    public UpdateRowResult(
+            String version,
+            String existingVersion,
+            java.util.Map<String, Object> existingValue,
+            String generatedValue,
+            RequestUsage usage) {
+        super();
+        this.version = version;
+        this.existingVersion = existingVersion;
+        this.existingValue = existingValue;
+        this.generatedValue = generatedValue;
+        this.usage = usage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
@@ -101,11 +119,19 @@ public class UpdateRowResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An opaque version string associated with the row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The version string associated with the existing row.
@@ -114,13 +140,21 @@ public class UpdateRowResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("existingVersion")
-    String existingVersion;
+    private final String existingVersion;
+
+    public String getExistingVersion() {
+        return existingVersion;
+    }
 
     /**
      * The map of values from a row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("existingValue")
-    java.util.Map<String, Object> existingValue;
+    private final java.util.Map<String, Object> existingValue;
+
+    public java.util.Map<String, Object> getExistingValue() {
+        return existingValue;
+    }
 
     /**
      * The value generated if the operation created a new value for
@@ -130,11 +164,76 @@ public class UpdateRowResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("generatedValue")
-    String generatedValue;
+    private final String generatedValue;
+
+    public String getGeneratedValue() {
+        return generatedValue;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
-    RequestUsage usage;
+    private final RequestUsage usage;
+
+    public RequestUsage getUsage() {
+        return usage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateRowResult(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", existingVersion=").append(String.valueOf(this.existingVersion));
+        sb.append(", existingValue=").append(String.valueOf(this.existingValue));
+        sb.append(", generatedValue=").append(String.valueOf(this.generatedValue));
+        sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateRowResult)) {
+            return false;
+        }
+
+        UpdateRowResult other = (UpdateRowResult) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.existingVersion, other.existingVersion)
+                && java.util.Objects.equals(this.existingValue, other.existingValue)
+                && java.util.Objects.equals(this.generatedValue, other.generatedValue)
+                && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.existingVersion == null ? 43 : this.existingVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.existingValue == null ? 43 : this.existingValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.generatedValue == null ? 43 : this.generatedValue.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

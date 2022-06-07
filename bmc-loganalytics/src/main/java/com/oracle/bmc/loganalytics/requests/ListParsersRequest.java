@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParsersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListParsersRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,6 +17,9 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * A flag indicating how to handle filtering when multiple filter criteria are specified.
      * A value of true will always result in the most expansive list of items being returned.
@@ -35,6 +30,9 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Boolean isMatchAll;
 
+    public Boolean getIsMatchAll() {
+        return isMatchAll;
+    }
     /**
      * The source type used for filtering.  Only parsers associated with a source of the
      * specified type will be returned.
@@ -81,12 +79,19 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid SourceType: " + key);
         }
     };
+
+    public SourceType getSourceType() {
+        return sourceType;
+    }
     /**
      * The parser name used for filtering.
      *
      */
     private String parserName;
 
+    public String getParserName() {
+        return parserName;
+    }
     /**
      * The parser display text used for filtering.  Only parsers with the specified name
      * or description will be returned.
@@ -94,6 +99,9 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String parserDisplayText;
 
+    public String getParserDisplayText() {
+        return parserDisplayText;
+    }
     /**
      * The parser type used for filtering.  Only items with, or associated with, parsers
      * of the specified type will be returned.
@@ -142,11 +150,18 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid ParserType: " + key);
         }
     };
+
+    public ParserType getParserType() {
+        return parserType;
+    }
     /**
      * A comma-separated list of categories used for filtering
      */
     private String categories;
 
+    public String getCategories() {
+        return categories;
+    }
     /**
      * The system value used for filtering.  Only items with the specified system value
      * will be returned.  Valid values are built in, custom (for user defined items), or
@@ -194,16 +209,26 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid IsSystem: " + key);
         }
     };
+
+    public IsSystem getIsSystem() {
+        return isSystem;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -246,6 +271,10 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The attribute used to sort the returned parsers
      */
@@ -288,10 +317,18 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -299,6 +336,166 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private Boolean isMatchAll = null;
+
+        /**
+         * A flag indicating how to handle filtering when multiple filter criteria are specified.
+         * A value of true will always result in the most expansive list of items being returned.
+         * For example, if two field lists are supplies as filter criteria, a value of true will
+         * result in any item matching a field in either list being returned, while a value of
+         * false will result in a list of items which only have fields contained in both input lists.
+         *
+         * @return this builder instance
+         */
+        public Builder isMatchAll(Boolean isMatchAll) {
+            this.isMatchAll = isMatchAll;
+            return this;
+        }
+
+        private SourceType sourceType = null;
+
+        /**
+         * The source type used for filtering.  Only parsers associated with a source of the
+         * specified type will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            return this;
+        }
+
+        private String parserName = null;
+
+        /**
+         * The parser name used for filtering.
+         *
+         * @return this builder instance
+         */
+        public Builder parserName(String parserName) {
+            this.parserName = parserName;
+            return this;
+        }
+
+        private String parserDisplayText = null;
+
+        /**
+         * The parser display text used for filtering.  Only parsers with the specified name
+         * or description will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder parserDisplayText(String parserDisplayText) {
+            this.parserDisplayText = parserDisplayText;
+            return this;
+        }
+
+        private ParserType parserType = null;
+
+        /**
+         * The parser type used for filtering.  Only items with, or associated with, parsers
+         * of the specified type will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder parserType(ParserType parserType) {
+            this.parserType = parserType;
+            return this;
+        }
+
+        private String categories = null;
+
+        /**
+         * A comma-separated list of categories used for filtering
+         * @return this builder instance
+         */
+        public Builder categories(String categories) {
+            this.categories = categories;
+            return this;
+        }
+
+        private IsSystem isSystem = null;
+
+        /**
+         * The system value used for filtering.  Only items with the specified system value
+         * will be returned.  Valid values are built in, custom (for user defined items), or
+         * all (for all items, regardless of system value).
+         *
+         * @return this builder instance
+         */
+        public Builder isSystem(IsSystem isSystem) {
+            this.isSystem = isSystem;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The attribute used to sort the returned parsers
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -362,5 +559,128 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListParsersRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListParsersRequest
+         */
+        public ListParsersRequest buildWithoutInvocationCallback() {
+            ListParsersRequest request = new ListParsersRequest();
+            request.namespaceName = namespaceName;
+            request.isMatchAll = isMatchAll;
+            request.sourceType = sourceType;
+            request.parserName = parserName;
+            request.parserDisplayText = parserDisplayText;
+            request.parserType = parserType;
+            request.categories = categories;
+            request.isSystem = isSystem;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListParsersRequest(namespaceName, isMatchAll, sourceType, parserName, parserDisplayText, parserType, categories, isSystem, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .isMatchAll(isMatchAll)
+                .sourceType(sourceType)
+                .parserName(parserName)
+                .parserDisplayText(parserDisplayText)
+                .parserType(parserType)
+                .categories(categories)
+                .isSystem(isSystem)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",isMatchAll=").append(String.valueOf(this.isMatchAll));
+        sb.append(",sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(",parserName=").append(String.valueOf(this.parserName));
+        sb.append(",parserDisplayText=").append(String.valueOf(this.parserDisplayText));
+        sb.append(",parserType=").append(String.valueOf(this.parserType));
+        sb.append(",categories=").append(String.valueOf(this.categories));
+        sb.append(",isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListParsersRequest)) {
+            return false;
+        }
+
+        ListParsersRequest other = (ListParsersRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.isMatchAll, other.isMatchAll)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.parserName, other.parserName)
+                && java.util.Objects.equals(this.parserDisplayText, other.parserDisplayText)
+                && java.util.Objects.equals(this.parserType, other.parserType)
+                && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.isMatchAll == null ? 43 : this.isMatchAll.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result = (result * PRIME) + (this.parserName == null ? 43 : this.parserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserDisplayText == null ? 43 : this.parserDisplayText.hashCode());
+        result = (result * PRIME) + (this.parserType == null ? 43 : this.parserType.hashCode());
+        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

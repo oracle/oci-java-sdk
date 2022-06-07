@@ -6,6 +6,7 @@ package com.oracle.bmc.computeinstanceagent;
 
 import com.oracle.bmc.computeinstanceagent.requests.*;
 import com.oracle.bmc.computeinstanceagent.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,15 @@ import com.oracle.bmc.computeinstanceagent.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.RequiredArgsConstructor
 public class ComputeInstanceAgentWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final ComputeInstanceAgent client;
+
+    public ComputeInstanceAgentWaiters(
+            java.util.concurrent.ExecutorService executorService, ComputeInstanceAgent client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

@@ -9,9 +9,9 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.extern.slf4j.Slf4j
 public class KmsManagementClient implements KmsManagement {
     /**
      * Service instance for KmsManagement.
@@ -25,13 +25,17 @@ public class KmsManagementClient implements KmsManagement {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(KmsManagementAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final KmsManagementWaiters waiters;
 
     private final KmsManagementPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -905,8 +909,12 @@ public class KmsManagementClient implements KmsManagement {
     public RestoreKeyFromFileResponse restoreKeyFromFile(RestoreKeyFromFileRequest request) {
         LOG.trace("Called restoreKeyFromFile");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -919,10 +927,6 @@ public class KmsManagementClient implements KmsManagement {
                     RestoreKeyFromFileConverter.fromRequest(client, interceptedRequest);
             com.google.common.base.Function<javax.ws.rs.core.Response, RestoreKeyFromFileResponse>
                     transformer = RestoreKeyFromFileConverter.fromResponse();
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -947,6 +951,7 @@ public class KmsManagementClient implements KmsManagement {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -1125,5 +1130,31 @@ public class KmsManagementClient implements KmsManagement {
     @Override
     public KmsManagementPaginators getPaginators() {
         return paginators;
+    }
+
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

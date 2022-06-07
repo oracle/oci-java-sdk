@@ -17,14 +17,29 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbBackupConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbBackupConfig {
+public final class DbBackupConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "autoBackupEnabled",
+        "recoveryWindowInDays",
+        "autoBackupWindow",
+        "backupDestinationDetails"
+    })
+    public DbBackupConfig(
+            Boolean autoBackupEnabled,
+            Integer recoveryWindowInDays,
+            AutoBackupWindow autoBackupWindow,
+            java.util.List<BackupDestinationDetails> backupDestinationDetails) {
+        super();
+        this.autoBackupEnabled = autoBackupEnabled;
+        this.recoveryWindowInDays = recoveryWindowInDays;
+        this.autoBackupWindow = autoBackupWindow;
+        this.backupDestinationDetails = backupDestinationDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("autoBackupEnabled")
         private Boolean autoBackupEnabled;
@@ -97,11 +112,19 @@ public class DbBackupConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoBackupEnabled")
-    Boolean autoBackupEnabled;
+    private final Boolean autoBackupEnabled;
+
+    public Boolean getAutoBackupEnabled() {
+        return autoBackupEnabled;
+    }
 
     /**
      * Number of days between the current and the earliest point of recoverability covered by automatic backups.
@@ -110,14 +133,18 @@ public class DbBackupConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
-    Integer recoveryWindowInDays;
+    private final Integer recoveryWindowInDays;
+
+    public Integer getRecoveryWindowInDays() {
+        return recoveryWindowInDays;
+    }
+
     /**
      * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
      * <p>
      * Example: {@code SLOT_TWO}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AutoBackupWindow {
         SlotOne("SLOT_ONE"),
         SlotTwo("SLOT_TWO"),
@@ -137,6 +164,9 @@ public class DbBackupConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AutoBackupWindow.class);
 
         private final String value;
         private static java.util.Map<String, AutoBackupWindow> map;
@@ -177,14 +207,84 @@ public class DbBackupConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoBackupWindow")
-    AutoBackupWindow autoBackupWindow;
+    private final AutoBackupWindow autoBackupWindow;
+
+    public AutoBackupWindow getAutoBackupWindow() {
+        return autoBackupWindow;
+    }
 
     /**
      * Backup destination details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
-    java.util.List<BackupDestinationDetails> backupDestinationDetails;
+    private final java.util.List<BackupDestinationDetails> backupDestinationDetails;
+
+    public java.util.List<BackupDestinationDetails> getBackupDestinationDetails() {
+        return backupDestinationDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbBackupConfig(");
+        sb.append("autoBackupEnabled=").append(String.valueOf(this.autoBackupEnabled));
+        sb.append(", recoveryWindowInDays=").append(String.valueOf(this.recoveryWindowInDays));
+        sb.append(", autoBackupWindow=").append(String.valueOf(this.autoBackupWindow));
+        sb.append(", backupDestinationDetails=")
+                .append(String.valueOf(this.backupDestinationDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbBackupConfig)) {
+            return false;
+        }
+
+        DbBackupConfig other = (DbBackupConfig) o;
+        return java.util.Objects.equals(this.autoBackupEnabled, other.autoBackupEnabled)
+                && java.util.Objects.equals(this.recoveryWindowInDays, other.recoveryWindowInDays)
+                && java.util.Objects.equals(this.autoBackupWindow, other.autoBackupWindow)
+                && java.util.Objects.equals(
+                        this.backupDestinationDetails, other.backupDestinationDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.autoBackupEnabled == null ? 43 : this.autoBackupEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recoveryWindowInDays == null
+                                ? 43
+                                : this.recoveryWindowInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoBackupWindow == null ? 43 : this.autoBackupWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationDetails == null
+                                ? 43
+                                : this.backupDestinationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

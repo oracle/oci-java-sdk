@@ -15,16 +15,46 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateTaskRunDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTaskRunDetails {
+public final class UpdateTaskRunDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "status",
+        "modelType",
+        "modelVersion",
+        "name",
+        "description",
+        "objectVersion",
+        "taskScheduleKey",
+        "registryMetadata"
+    })
+    public UpdateTaskRunDetails(
+            String key,
+            Status status,
+            String modelType,
+            String modelVersion,
+            String name,
+            String description,
+            Integer objectVersion,
+            String taskScheduleKey,
+            RegistryMetadata registryMetadata) {
+        super();
+        this.key = key;
+        this.status = status;
+        this.modelType = modelType;
+        this.modelVersion = modelVersion;
+        this.name = name;
+        this.description = description;
+        this.objectVersion = objectVersion;
+        this.taskScheduleKey = taskScheduleKey;
+        this.registryMetadata = registryMetadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -151,11 +181,20 @@ public class UpdateTaskRunDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
+
     /**
      * The status of the object.
      **/
@@ -194,47 +233,148 @@ public class UpdateTaskRunDetails {
      * The status of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The type of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The version of the object that is used to track changes in the object instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     /**
      * Optional task schedule key reference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskScheduleKey")
-    String taskScheduleKey;
+    private final String taskScheduleKey;
+
+    public String getTaskScheduleKey() {
+        return taskScheduleKey;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
-    RegistryMetadata registryMetadata;
+    private final RegistryMetadata registryMetadata;
+
+    public RegistryMetadata getRegistryMetadata() {
+        return registryMetadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTaskRunDetails(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", taskScheduleKey=").append(String.valueOf(this.taskScheduleKey));
+        sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTaskRunDetails)) {
+            return false;
+        }
+
+        UpdateTaskRunDetails other = (UpdateTaskRunDetails) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.taskScheduleKey, other.taskScheduleKey)
+                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.taskScheduleKey == null ? 43 : this.taskScheduleKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

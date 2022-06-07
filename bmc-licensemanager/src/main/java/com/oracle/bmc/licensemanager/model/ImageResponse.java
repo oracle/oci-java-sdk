@@ -15,14 +15,32 @@ package com.oracle.bmc.licensemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageResponse.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ImageResponse {
+public final class ImageResponse {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "listingName",
+        "publisher",
+        "listingId",
+        "packageVersion"
+    })
+    public ImageResponse(
+            String id,
+            String listingName,
+            String publisher,
+            String listingId,
+            String packageVersion) {
+        super();
+        this.id = id;
+        this.listingName = listingName;
+        this.publisher = publisher;
+        this.listingId = listingId;
+        this.packageVersion = packageVersion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -100,36 +118,113 @@ public class ImageResponse {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The image ID associated with the product license.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The listing name associated with the product license.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingName")
-    String listingName;
+    private final String listingName;
+
+    public String getListingName() {
+        return listingName;
+    }
 
     /**
      * The image publisher.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publisher")
-    String publisher;
+    private final String publisher;
+
+    public String getPublisher() {
+        return publisher;
+    }
 
     /**
      * The image listing ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * The image package version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
-    String packageVersion;
+    private final String packageVersion;
+
+    public String getPackageVersion() {
+        return packageVersion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImageResponse(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", listingName=").append(String.valueOf(this.listingName));
+        sb.append(", publisher=").append(String.valueOf(this.publisher));
+        sb.append(", listingId=").append(String.valueOf(this.listingId));
+        sb.append(", packageVersion=").append(String.valueOf(this.packageVersion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImageResponse)) {
+            return false;
+        }
+
+        ImageResponse other = (ImageResponse) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.listingName, other.listingName)
+                && java.util.Objects.equals(this.publisher, other.publisher)
+                && java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.packageVersion, other.packageVersion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.listingName == null ? 43 : this.listingName.hashCode());
+        result = (result * PRIME) + (this.publisher == null ? 43 : this.publisher.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

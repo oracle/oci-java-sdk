@@ -7,10 +7,6 @@ package com.oracle.bmc.tenantmanagercontrolplane.responses;
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UnapproveOrganizationTenancyForTransferResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -20,16 +16,29 @@ public class UnapproveOrganizationTenancyForTransferResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The returned OrganizationTenancy instance.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy organizationTenancy;
+
+    public com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy
+            getOrganizationTenancy() {
+        return organizationTenancy;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -57,6 +66,30 @@ public class UnapproveOrganizationTenancyForTransferResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy
+                organizationTenancy;
+
+        public Builder organizationTenancy(
+                com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy
+                        organizationTenancy) {
+            this.organizationTenancy = organizationTenancy;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -74,5 +107,52 @@ public class UnapproveOrganizationTenancyForTransferResponse
             return new UnapproveOrganizationTenancyForTransferResponse(
                     __httpStatusCode__, opcRequestId, etag, organizationTenancy);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",organizationTenancy=").append(String.valueOf(organizationTenancy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UnapproveOrganizationTenancyForTransferResponse)) {
+            return false;
+        }
+
+        UnapproveOrganizationTenancyForTransferResponse other =
+                (UnapproveOrganizationTenancyForTransferResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.organizationTenancy, other.organizationTenancy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.organizationTenancy == null
+                                ? 43
+                                : this.organizationTenancy.hashCode());
+        return result;
     }
 }

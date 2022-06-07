@@ -15,14 +15,18 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KerberosDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class KerberosDetails {
+public final class KerberosDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"principalName", "keytabFile"})
+    public KerberosDetails(String principalName, String keytabFile) {
+        super();
+        this.principalName = principalName;
+        this.keytabFile = keytabFile;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("principalName")
         private String principalName;
@@ -68,18 +72,74 @@ public class KerberosDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the Kerberos principal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("principalName")
-    String principalName;
+    private final String principalName;
+
+    public String getPrincipalName() {
+        return principalName;
+    }
 
     /**
      * Location of the keytab file
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keytabFile")
-    String keytabFile;
+    private final String keytabFile;
+
+    public String getKeytabFile() {
+        return keytabFile;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("KerberosDetails(");
+        sb.append("principalName=").append(String.valueOf(this.principalName));
+        sb.append(", keytabFile=").append(String.valueOf(this.keytabFile));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof KerberosDetails)) {
+            return false;
+        }
+
+        KerberosDetails other = (KerberosDetails) o;
+        return java.util.Objects.equals(this.principalName, other.principalName)
+                && java.util.Objects.equals(this.keytabFile, other.keytabFile)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.principalName == null ? 43 : this.principalName.hashCode());
+        result = (result * PRIME) + (this.keytabFile == null ? 43 : this.keytabFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,49 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateTablespaceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTablespaceDetails {
+public final class UpdateTablespaceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "credentialDetails",
+        "name",
+        "type",
+        "fileSize",
+        "status",
+        "isAutoExtensible",
+        "autoExtendNextSize",
+        "autoExtendMaxSize",
+        "isMaxSizeUnlimited",
+        "isDefault"
+    })
+    public UpdateTablespaceDetails(
+            TablespaceAdminCredentialDetails credentialDetails,
+            String name,
+            Type type,
+            TablespaceStorageSize fileSize,
+            Status status,
+            Boolean isAutoExtensible,
+            TablespaceStorageSize autoExtendNextSize,
+            TablespaceStorageSize autoExtendMaxSize,
+            Boolean isMaxSizeUnlimited,
+            Boolean isDefault) {
+        super();
+        this.credentialDetails = credentialDetails;
+        this.name = name;
+        this.type = type;
+        this.fileSize = fileSize;
+        this.status = status;
+        this.isAutoExtensible = isAutoExtensible;
+        this.autoExtendNextSize = autoExtendNextSize;
+        this.autoExtendMaxSize = autoExtendMaxSize;
+        this.isMaxSizeUnlimited = isMaxSizeUnlimited;
+        this.isDefault = isDefault;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private TablespaceAdminCredentialDetails credentialDetails;
@@ -162,15 +195,28 @@ public class UpdateTablespaceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
-    TablespaceAdminCredentialDetails credentialDetails;
+    private final TablespaceAdminCredentialDetails credentialDetails;
+
+    public TablespaceAdminCredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
 
     /**
      * The name of the tablespace. It must be unique within a database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The type of tablespace.
      *
@@ -212,14 +258,23 @@ public class UpdateTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The size of each data file or temp file.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
-    TablespaceStorageSize fileSize;
+    private final TablespaceStorageSize fileSize;
+
+    public TablespaceStorageSize getFileSize() {
+        return fileSize;
+    }
+
     /**
      * The status of the tablespace.
      *
@@ -261,43 +316,147 @@ public class UpdateTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * Specifies whether the data file or temp file can be extended automatically.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
-    Boolean isAutoExtensible;
+    private final Boolean isAutoExtensible;
+
+    public Boolean getIsAutoExtensible() {
+        return isAutoExtensible;
+    }
 
     /**
      * The size of the next increment of disk space to be allocated automatically when more extents are required.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
-    TablespaceStorageSize autoExtendNextSize;
+    private final TablespaceStorageSize autoExtendNextSize;
+
+    public TablespaceStorageSize getAutoExtendNextSize() {
+        return autoExtendNextSize;
+    }
 
     /**
      * The maximum disk space allowed for automatic extension of the data files or temp files.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
-    TablespaceStorageSize autoExtendMaxSize;
+    private final TablespaceStorageSize autoExtendMaxSize;
+
+    public TablespaceStorageSize getAutoExtendMaxSize() {
+        return autoExtendMaxSize;
+    }
 
     /**
      * Specifies whether the disk space of the data file or temp file can be limited.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
-    Boolean isMaxSizeUnlimited;
+    private final Boolean isMaxSizeUnlimited;
+
+    public Boolean getIsMaxSizeUnlimited() {
+        return isMaxSizeUnlimited;
+    }
 
     /**
      * Specifies whether the tablespace is the default tablespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTablespaceDetails(");
+        sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", fileSize=").append(String.valueOf(this.fileSize));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", isAutoExtensible=").append(String.valueOf(this.isAutoExtensible));
+        sb.append(", autoExtendNextSize=").append(String.valueOf(this.autoExtendNextSize));
+        sb.append(", autoExtendMaxSize=").append(String.valueOf(this.autoExtendMaxSize));
+        sb.append(", isMaxSizeUnlimited=").append(String.valueOf(this.isMaxSizeUnlimited));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTablespaceDetails)) {
+            return false;
+        }
+
+        UpdateTablespaceDetails other = (UpdateTablespaceDetails) o;
+        return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.fileSize, other.fileSize)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.isAutoExtensible, other.isAutoExtensible)
+                && java.util.Objects.equals(this.autoExtendNextSize, other.autoExtendNextSize)
+                && java.util.Objects.equals(this.autoExtendMaxSize, other.autoExtendMaxSize)
+                && java.util.Objects.equals(this.isMaxSizeUnlimited, other.isMaxSizeUnlimited)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.fileSize == null ? 43 : this.fileSize.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoExtensible == null ? 43 : this.isAutoExtensible.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoExtendNextSize == null
+                                ? 43
+                                : this.autoExtendNextSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoExtendMaxSize == null ? 43 : this.autoExtendMaxSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaxSizeUnlimited == null
+                                ? 43
+                                : this.isMaxSizeUnlimited.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

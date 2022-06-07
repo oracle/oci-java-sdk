@@ -26,9 +26,12 @@ import com.oracle.bmc.aianomalydetection.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.RequiredArgsConstructor
 public class AnomalyDetectionPaginators {
     private final AnomalyDetection client;
+
+    public AnomalyDetectionPaginators(AnomalyDetection client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listAiPrivateEndpoints operation. This iterable

@@ -26,9 +26,12 @@ import com.oracle.bmc.databasetools.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.RequiredArgsConstructor
 public class DatabaseToolsPaginators {
     private final DatabaseTools client;
+
+    public DatabaseToolsPaginators(DatabaseTools client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listDatabaseToolsConnections operation. This iterable

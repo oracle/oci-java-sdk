@@ -9,9 +9,9 @@ import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.extern.slf4j.Slf4j
 public class DataScienceClient implements DataScience {
     /**
      * Service instance for DataScience.
@@ -25,13 +25,17 @@ public class DataScienceClient implements DataScience {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataScienceAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final DataScienceWaiters waiters;
 
     private final DataSciencePaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -400,9 +404,13 @@ public class DataScienceClient implements DataScience {
          * @return the client
          */
         public DataScienceClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DataScienceClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -920,8 +928,12 @@ public class DataScienceClient implements DataScience {
     public CreateJobArtifactResponse createJobArtifact(CreateJobArtifactRequest request) {
         LOG.trace("Called createJobArtifact");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -938,10 +950,6 @@ public class DataScienceClient implements DataScience {
             ib.property(
                     com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                     com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -968,6 +976,7 @@ public class DataScienceClient implements DataScience {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -1069,8 +1078,12 @@ public class DataScienceClient implements DataScience {
     public CreateModelArtifactResponse createModelArtifact(CreateModelArtifactRequest request) {
         LOG.trace("Called createModelArtifact");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -1087,10 +1100,6 @@ public class DataScienceClient implements DataScience {
             ib.property(
                     com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                     com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -1117,6 +1126,7 @@ public class DataScienceClient implements DataScience {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -2765,5 +2775,31 @@ public class DataScienceClient implements DataScience {
     @Override
     public DataSciencePaginators getPaginators() {
         return paginators;
+    }
+
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

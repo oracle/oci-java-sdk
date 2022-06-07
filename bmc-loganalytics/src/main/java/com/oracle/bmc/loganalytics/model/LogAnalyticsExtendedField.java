@@ -15,16 +15,40 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsExtendedField.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsExtendedField {
+public final class LogAnalyticsExtendedField {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "field",
+        "extendedFieldDefinition",
+        "extendedFieldDefinitionId",
+        "fieldName",
+        "fieldDisplayName",
+        "savedRegularExpressionName",
+        "extendedFieldId"
+    })
+    public LogAnalyticsExtendedField(
+            LogAnalyticsField field,
+            LogAnalyticsSourceExtendedFieldDefinition extendedFieldDefinition,
+            Long extendedFieldDefinitionId,
+            String fieldName,
+            String fieldDisplayName,
+            String savedRegularExpressionName,
+            Long extendedFieldId) {
+        super();
+        this.field = field;
+        this.extendedFieldDefinition = extendedFieldDefinition;
+        this.extendedFieldDefinitionId = extendedFieldDefinitionId;
+        this.fieldName = fieldName;
+        this.fieldDisplayName = fieldDisplayName;
+        this.savedRegularExpressionName = savedRegularExpressionName;
+        this.extendedFieldId = extendedFieldId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private LogAnalyticsField field;
@@ -130,42 +154,153 @@ public class LogAnalyticsExtendedField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("field")
-    LogAnalyticsField field;
+    private final LogAnalyticsField field;
+
+    public LogAnalyticsField getField() {
+        return field;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinition")
-    LogAnalyticsSourceExtendedFieldDefinition extendedFieldDefinition;
+    private final LogAnalyticsSourceExtendedFieldDefinition extendedFieldDefinition;
+
+    public LogAnalyticsSourceExtendedFieldDefinition getExtendedFieldDefinition() {
+        return extendedFieldDefinition;
+    }
 
     /**
      * The extended field unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
-    Long extendedFieldDefinitionId;
+    private final Long extendedFieldDefinitionId;
+
+    public Long getExtendedFieldDefinitionId() {
+        return extendedFieldDefinitionId;
+    }
 
     /**
      * The field internal name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
-    String fieldName;
+    private final String fieldName;
+
+    public String getFieldName() {
+        return fieldName;
+    }
 
     /**
      * The field internal display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayName")
-    String fieldDisplayName;
+    private final String fieldDisplayName;
+
+    public String getFieldDisplayName() {
+        return fieldDisplayName;
+    }
 
     /**
      * The saved regular expression name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedRegularExpressionName")
-    String savedRegularExpressionName;
+    private final String savedRegularExpressionName;
+
+    public String getSavedRegularExpressionName() {
+        return savedRegularExpressionName;
+    }
 
     /**
      * The extended field unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldId")
-    Long extendedFieldId;
+    private final Long extendedFieldId;
+
+    public Long getExtendedFieldId() {
+        return extendedFieldId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsExtendedField(");
+        sb.append("field=").append(String.valueOf(this.field));
+        sb.append(", extendedFieldDefinition=")
+                .append(String.valueOf(this.extendedFieldDefinition));
+        sb.append(", extendedFieldDefinitionId=")
+                .append(String.valueOf(this.extendedFieldDefinitionId));
+        sb.append(", fieldName=").append(String.valueOf(this.fieldName));
+        sb.append(", fieldDisplayName=").append(String.valueOf(this.fieldDisplayName));
+        sb.append(", savedRegularExpressionName=")
+                .append(String.valueOf(this.savedRegularExpressionName));
+        sb.append(", extendedFieldId=").append(String.valueOf(this.extendedFieldId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsExtendedField)) {
+            return false;
+        }
+
+        LogAnalyticsExtendedField other = (LogAnalyticsExtendedField) o;
+        return java.util.Objects.equals(this.field, other.field)
+                && java.util.Objects.equals(
+                        this.extendedFieldDefinition, other.extendedFieldDefinition)
+                && java.util.Objects.equals(
+                        this.extendedFieldDefinitionId, other.extendedFieldDefinitionId)
+                && java.util.Objects.equals(this.fieldName, other.fieldName)
+                && java.util.Objects.equals(this.fieldDisplayName, other.fieldDisplayName)
+                && java.util.Objects.equals(
+                        this.savedRegularExpressionName, other.savedRegularExpressionName)
+                && java.util.Objects.equals(this.extendedFieldId, other.extendedFieldId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.field == null ? 43 : this.field.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedFieldDefinition == null
+                                ? 43
+                                : this.extendedFieldDefinition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedFieldDefinitionId == null
+                                ? 43
+                                : this.extendedFieldDefinitionId.hashCode());
+        result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fieldDisplayName == null ? 43 : this.fieldDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.savedRegularExpressionName == null
+                                ? 43
+                                : this.savedRegularExpressionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedFieldId == null ? 43 : this.extendedFieldId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,70 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CertificateSubject.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CertificateSubject {
+public final class CertificateSubject {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "commonName",
+        "country",
+        "domainComponent",
+        "distinguishedNameQualifier",
+        "generationQualifier",
+        "givenName",
+        "initials",
+        "localityName",
+        "organization",
+        "organizationalUnit",
+        "pseudonym",
+        "serialNumber",
+        "stateOrProvinceName",
+        "street",
+        "surname",
+        "title",
+        "userId"
+    })
+    public CertificateSubject(
+            String commonName,
+            String country,
+            String domainComponent,
+            String distinguishedNameQualifier,
+            String generationQualifier,
+            String givenName,
+            String initials,
+            String localityName,
+            String organization,
+            String organizationalUnit,
+            String pseudonym,
+            String serialNumber,
+            String stateOrProvinceName,
+            String street,
+            String surname,
+            String title,
+            String userId) {
+        super();
+        this.commonName = commonName;
+        this.country = country;
+        this.domainComponent = domainComponent;
+        this.distinguishedNameQualifier = distinguishedNameQualifier;
+        this.generationQualifier = generationQualifier;
+        this.givenName = givenName;
+        this.initials = initials;
+        this.localityName = localityName;
+        this.organization = organization;
+        this.organizationalUnit = organizationalUnit;
+        this.pseudonym = pseudonym;
+        this.serialNumber = serialNumber;
+        this.stateOrProvinceName = stateOrProvinceName;
+        this.street = street;
+        this.surname = surname;
+        this.title = title;
+        this.userId = userId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("commonName")
         private String commonName;
@@ -240,108 +294,287 @@ public class CertificateSubject {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Common name or fully-qualified domain name (RDN CN).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commonName")
-    String commonName;
+    private final String commonName;
+
+    public String getCommonName() {
+        return commonName;
+    }
 
     /**
      * Country name (RDN C).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
-    String country;
+    private final String country;
+
+    public String getCountry() {
+        return country;
+    }
 
     /**
      * Domain component (RDN DC).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainComponent")
-    String domainComponent;
+    private final String domainComponent;
+
+    public String getDomainComponent() {
+        return domainComponent;
+    }
 
     /**
      * Distinguished name qualifier(RDN DNQ).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("distinguishedNameQualifier")
-    String distinguishedNameQualifier;
+    private final String distinguishedNameQualifier;
+
+    public String getDistinguishedNameQualifier() {
+        return distinguishedNameQualifier;
+    }
 
     /**
      * Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("generationQualifier")
-    String generationQualifier;
+    private final String generationQualifier;
+
+    public String getGenerationQualifier() {
+        return generationQualifier;
+    }
 
     /**
      * Personal given name (RDN G or GN).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("givenName")
-    String givenName;
+    private final String givenName;
+
+    public String getGivenName() {
+        return givenName;
+    }
 
     /**
      * Personal initials.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initials")
-    String initials;
+    private final String initials;
+
+    public String getInitials() {
+        return initials;
+    }
 
     /**
      * Locality (RDN L).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localityName")
-    String localityName;
+    private final String localityName;
+
+    public String getLocalityName() {
+        return localityName;
+    }
 
     /**
      * Organization (RDN O).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("organization")
-    String organization;
+    private final String organization;
+
+    public String getOrganization() {
+        return organization;
+    }
 
     /**
      * Organizational unit (RDN OU).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
-    String organizationalUnit;
+    private final String organizationalUnit;
+
+    public String getOrganizationalUnit() {
+        return organizationalUnit;
+    }
 
     /**
      * Subject pseudonym.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pseudonym")
-    String pseudonym;
+    private final String pseudonym;
+
+    public String getPseudonym() {
+        return pseudonym;
+    }
 
     /**
      * Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
-    String serialNumber;
+    private final String serialNumber;
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 
     /**
      * State or province name (RDN ST or S).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateOrProvinceName")
-    String stateOrProvinceName;
+    private final String stateOrProvinceName;
+
+    public String getStateOrProvinceName() {
+        return stateOrProvinceName;
+    }
 
     /**
      * Street address (RDN STREET).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("street")
-    String street;
+    private final String street;
+
+    public String getStreet() {
+        return street;
+    }
 
     /**
      * Personal surname (RDN SN).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("surname")
-    String surname;
+    private final String surname;
+
+    public String getSurname() {
+        return surname;
+    }
 
     /**
      * Title (RDN T or TITLE).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
-    String title;
+    private final String title;
+
+    public String getTitle() {
+        return title;
+    }
 
     /**
      * User ID (RDN UID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateSubject(");
+        sb.append("commonName=").append(String.valueOf(this.commonName));
+        sb.append(", country=").append(String.valueOf(this.country));
+        sb.append(", domainComponent=").append(String.valueOf(this.domainComponent));
+        sb.append(", distinguishedNameQualifier=")
+                .append(String.valueOf(this.distinguishedNameQualifier));
+        sb.append(", generationQualifier=").append(String.valueOf(this.generationQualifier));
+        sb.append(", givenName=").append(String.valueOf(this.givenName));
+        sb.append(", initials=").append(String.valueOf(this.initials));
+        sb.append(", localityName=").append(String.valueOf(this.localityName));
+        sb.append(", organization=").append(String.valueOf(this.organization));
+        sb.append(", organizationalUnit=").append(String.valueOf(this.organizationalUnit));
+        sb.append(", pseudonym=").append(String.valueOf(this.pseudonym));
+        sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
+        sb.append(", stateOrProvinceName=").append(String.valueOf(this.stateOrProvinceName));
+        sb.append(", street=").append(String.valueOf(this.street));
+        sb.append(", surname=").append(String.valueOf(this.surname));
+        sb.append(", title=").append(String.valueOf(this.title));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateSubject)) {
+            return false;
+        }
+
+        CertificateSubject other = (CertificateSubject) o;
+        return java.util.Objects.equals(this.commonName, other.commonName)
+                && java.util.Objects.equals(this.country, other.country)
+                && java.util.Objects.equals(this.domainComponent, other.domainComponent)
+                && java.util.Objects.equals(
+                        this.distinguishedNameQualifier, other.distinguishedNameQualifier)
+                && java.util.Objects.equals(this.generationQualifier, other.generationQualifier)
+                && java.util.Objects.equals(this.givenName, other.givenName)
+                && java.util.Objects.equals(this.initials, other.initials)
+                && java.util.Objects.equals(this.localityName, other.localityName)
+                && java.util.Objects.equals(this.organization, other.organization)
+                && java.util.Objects.equals(this.organizationalUnit, other.organizationalUnit)
+                && java.util.Objects.equals(this.pseudonym, other.pseudonym)
+                && java.util.Objects.equals(this.serialNumber, other.serialNumber)
+                && java.util.Objects.equals(this.stateOrProvinceName, other.stateOrProvinceName)
+                && java.util.Objects.equals(this.street, other.street)
+                && java.util.Objects.equals(this.surname, other.surname)
+                && java.util.Objects.equals(this.title, other.title)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.commonName == null ? 43 : this.commonName.hashCode());
+        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainComponent == null ? 43 : this.domainComponent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distinguishedNameQualifier == null
+                                ? 43
+                                : this.distinguishedNameQualifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.generationQualifier == null
+                                ? 43
+                                : this.generationQualifier.hashCode());
+        result = (result * PRIME) + (this.givenName == null ? 43 : this.givenName.hashCode());
+        result = (result * PRIME) + (this.initials == null ? 43 : this.initials.hashCode());
+        result = (result * PRIME) + (this.localityName == null ? 43 : this.localityName.hashCode());
+        result = (result * PRIME) + (this.organization == null ? 43 : this.organization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.organizationalUnit == null
+                                ? 43
+                                : this.organizationalUnit.hashCode());
+        result = (result * PRIME) + (this.pseudonym == null ? 43 : this.pseudonym.hashCode());
+        result = (result * PRIME) + (this.serialNumber == null ? 43 : this.serialNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stateOrProvinceName == null
+                                ? 43
+                                : this.stateOrProvinceName.hashCode());
+        result = (result * PRIME) + (this.street == null ? 43 : this.street.hashCode());
+        result = (result * PRIME) + (this.surname == null ? 43 : this.surname.hashCode());
+        result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

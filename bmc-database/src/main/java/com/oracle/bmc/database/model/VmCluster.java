@@ -16,14 +16,98 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VmCluster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VmCluster {
+public final class VmCluster {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "lastPatchHistoryEntryId",
+        "lifecycleState",
+        "displayName",
+        "timeCreated",
+        "lifecycleDetails",
+        "timeZone",
+        "isLocalBackupEnabled",
+        "exadataInfrastructureId",
+        "isSparseDiskgroupEnabled",
+        "vmClusterNetworkId",
+        "cpusEnabled",
+        "ocpusEnabled",
+        "memorySizeInGBs",
+        "dbNodeStorageSizeInGBs",
+        "dataStorageSizeInTBs",
+        "dataStorageSizeInGBs",
+        "shape",
+        "giVersion",
+        "systemVersion",
+        "sshPublicKeys",
+        "licenseModel",
+        "dbServers",
+        "freeformTags",
+        "definedTags",
+        "dataCollectionOptions"
+    })
+    public VmCluster(
+            String id,
+            String compartmentId,
+            String lastPatchHistoryEntryId,
+            LifecycleState lifecycleState,
+            String displayName,
+            java.util.Date timeCreated,
+            String lifecycleDetails,
+            String timeZone,
+            Boolean isLocalBackupEnabled,
+            String exadataInfrastructureId,
+            Boolean isSparseDiskgroupEnabled,
+            String vmClusterNetworkId,
+            Integer cpusEnabled,
+            Float ocpusEnabled,
+            Integer memorySizeInGBs,
+            Integer dbNodeStorageSizeInGBs,
+            Double dataStorageSizeInTBs,
+            Double dataStorageSizeInGBs,
+            String shape,
+            String giVersion,
+            String systemVersion,
+            java.util.List<String> sshPublicKeys,
+            LicenseModel licenseModel,
+            java.util.List<String> dbServers,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            DataCollectionOptions dataCollectionOptions) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+        this.lifecycleState = lifecycleState;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeZone = timeZone;
+        this.isLocalBackupEnabled = isLocalBackupEnabled;
+        this.exadataInfrastructureId = exadataInfrastructureId;
+        this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
+        this.vmClusterNetworkId = vmClusterNetworkId;
+        this.cpusEnabled = cpusEnabled;
+        this.ocpusEnabled = ocpusEnabled;
+        this.memorySizeInGBs = memorySizeInGBs;
+        this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+        this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.shape = shape;
+        this.giVersion = giVersion;
+        this.systemVersion = systemVersion;
+        this.sshPublicKeys = sshPublicKeys;
+        this.licenseModel = licenseModel;
+        this.dbServers = dbServers;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.dataCollectionOptions = dataCollectionOptions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -349,27 +433,43 @@ public class VmCluster {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
-    String lastPatchHistoryEntryId;
+    private final String lastPatchHistoryEntryId;
+
+    public String getLastPatchHistoryEntryId() {
+        return lastPatchHistoryEntryId;
+    }
+
     /**
      * The current state of the VM cluster.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -384,6 +484,9 @@ public class VmCluster {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -421,123 +524,199 @@ public class VmCluster {
      * The current state of the VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time that the VM cluster was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    String timeZone;
+    private final String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
 
     /**
      * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
-    Boolean isLocalBackupEnabled;
+    private final Boolean isLocalBackupEnabled;
+
+    public Boolean getIsLocalBackupEnabled() {
+        return isLocalBackupEnabled;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
-    String exadataInfrastructureId;
+    private final String exadataInfrastructureId;
+
+    public String getExadataInfrastructureId() {
+        return exadataInfrastructureId;
+    }
 
     /**
      * If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSparseDiskgroupEnabled")
-    Boolean isSparseDiskgroupEnabled;
+    private final Boolean isSparseDiskgroupEnabled;
+
+    public Boolean getIsSparseDiskgroupEnabled() {
+        return isSparseDiskgroupEnabled;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
-    String vmClusterNetworkId;
+    private final String vmClusterNetworkId;
+
+    public String getVmClusterNetworkId() {
+        return vmClusterNetworkId;
+    }
 
     /**
      * The number of enabled CPU cores.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpusEnabled")
-    Integer cpusEnabled;
+    private final Integer cpusEnabled;
+
+    public Integer getCpusEnabled() {
+        return cpusEnabled;
+    }
 
     /**
      * The number of enabled OCPU cores.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpusEnabled")
-    Float ocpusEnabled;
+    private final Float ocpusEnabled;
+
+    public Float getOcpusEnabled() {
+        return ocpusEnabled;
+    }
 
     /**
      * The memory allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
-    Integer memorySizeInGBs;
+    private final Integer memorySizeInGBs;
+
+    public Integer getMemorySizeInGBs() {
+        return memorySizeInGBs;
+    }
 
     /**
      * The local node storage allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
-    Integer dbNodeStorageSizeInGBs;
+    private final Integer dbNodeStorageSizeInGBs;
+
+    public Integer getDbNodeStorageSizeInGBs() {
+        return dbNodeStorageSizeInGBs;
+    }
 
     /**
      * Size, in terabytes, of the DATA disk group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-    Double dataStorageSizeInTBs;
+    private final Double dataStorageSizeInTBs;
+
+    public Double getDataStorageSizeInTBs() {
+        return dataStorageSizeInTBs;
+    }
 
     /**
      * Size of the DATA disk group in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-    Double dataStorageSizeInGBs;
+    private final Double dataStorageSizeInGBs;
+
+    public Double getDataStorageSizeInGBs() {
+        return dataStorageSizeInGBs;
+    }
 
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The Oracle Grid Infrastructure software version for the VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
-    String giVersion;
+    private final String giVersion;
+
+    public String getGiVersion() {
+        return giVersion;
+    }
 
     /**
      * Operating system version of the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
-    String systemVersion;
+    private final String systemVersion;
+
+    public String getSystemVersion() {
+        return systemVersion;
+    }
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
-    java.util.List<String> sshPublicKeys;
+    private final java.util.List<String> sshPublicKeys;
+
+    public java.util.List<String> getSshPublicKeys() {
+        return sshPublicKeys;
+    }
+
     /**
      * The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
@@ -547,6 +726,9 @@ public class VmCluster {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LicenseModel.class);
 
         private final String value;
         private static java.util.Map<String, LicenseModel> map;
@@ -585,13 +767,21 @@ public class VmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * The list of Db server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
-    java.util.List<String> dbServers;
+    private final java.util.List<String> dbServers;
+
+    public java.util.List<String> getDbServers() {
+        return dbServers;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -601,7 +791,11 @@ public class VmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -609,11 +803,191 @@ public class VmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
-    DataCollectionOptions dataCollectionOptions;
+    private final DataCollectionOptions dataCollectionOptions;
+
+    public DataCollectionOptions getDataCollectionOptions() {
+        return dataCollectionOptions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VmCluster(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lastPatchHistoryEntryId=")
+                .append(String.valueOf(this.lastPatchHistoryEntryId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", isLocalBackupEnabled=").append(String.valueOf(this.isLocalBackupEnabled));
+        sb.append(", exadataInfrastructureId=")
+                .append(String.valueOf(this.exadataInfrastructureId));
+        sb.append(", isSparseDiskgroupEnabled=")
+                .append(String.valueOf(this.isSparseDiskgroupEnabled));
+        sb.append(", vmClusterNetworkId=").append(String.valueOf(this.vmClusterNetworkId));
+        sb.append(", cpusEnabled=").append(String.valueOf(this.cpusEnabled));
+        sb.append(", ocpusEnabled=").append(String.valueOf(this.ocpusEnabled));
+        sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
+        sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
+        sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", giVersion=").append(String.valueOf(this.giVersion));
+        sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(", sshPublicKeys=").append(String.valueOf(this.sshPublicKeys));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", dbServers=").append(String.valueOf(this.dbServers));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VmCluster)) {
+            return false;
+        }
+
+        VmCluster other = (VmCluster) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.lastPatchHistoryEntryId, other.lastPatchHistoryEntryId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.isLocalBackupEnabled, other.isLocalBackupEnabled)
+                && java.util.Objects.equals(
+                        this.exadataInfrastructureId, other.exadataInfrastructureId)
+                && java.util.Objects.equals(
+                        this.isSparseDiskgroupEnabled, other.isSparseDiskgroupEnabled)
+                && java.util.Objects.equals(this.vmClusterNetworkId, other.vmClusterNetworkId)
+                && java.util.Objects.equals(this.cpusEnabled, other.cpusEnabled)
+                && java.util.Objects.equals(this.ocpusEnabled, other.ocpusEnabled)
+                && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(
+                        this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
+                && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.giVersion, other.giVersion)
+                && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && java.util.Objects.equals(this.sshPublicKeys, other.sshPublicKeys)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.dbServers, other.dbServers)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastPatchHistoryEntryId == null
+                                ? 43
+                                : this.lastPatchHistoryEntryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLocalBackupEnabled == null
+                                ? 43
+                                : this.isLocalBackupEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfrastructureId == null
+                                ? 43
+                                : this.exadataInfrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSparseDiskgroupEnabled == null
+                                ? 43
+                                : this.isSparseDiskgroupEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterNetworkId == null
+                                ? 43
+                                : this.vmClusterNetworkId.hashCode());
+        result = (result * PRIME) + (this.cpusEnabled == null ? 43 : this.cpusEnabled.hashCode());
+        result = (result * PRIME) + (this.ocpusEnabled == null ? 43 : this.ocpusEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbNodeStorageSizeInGBs == null
+                                ? 43
+                                : this.dbNodeStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInTBs == null
+                                ? 43
+                                : this.dataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInGBs == null
+                                ? 43
+                                : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.giVersion == null ? 43 : this.giVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sshPublicKeys == null ? 43 : this.sshPublicKeys.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataCollectionOptions == null
+                                ? 43
+                                : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

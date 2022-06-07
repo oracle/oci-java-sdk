@@ -15,22 +15,17 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateChannelTargetFromDbSystemDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "targetType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateChannelTargetFromDbSystemDetails extends CreateChannelTargetDetails {
+public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelTargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
@@ -89,6 +84,10 @@ public class CreateChannelTargetFromDbSystemDetails extends CreateChannelTargetD
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateChannelTargetFromDbSystemDetails(
             String dbSystemId, String channelName, String applierUsername) {
@@ -102,7 +101,11 @@ public class CreateChannelTargetFromDbSystemDetails extends CreateChannelTargetD
      * The OCID of the target DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
+    private final String dbSystemId;
+
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
 
     /**
      * The case-insensitive name that identifies the replication channel. Channel names
@@ -111,14 +114,71 @@ public class CreateChannelTargetFromDbSystemDetails extends CreateChannelTargetD
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("channelName")
-    String channelName;
+    private final String channelName;
+
+    public String getChannelName() {
+        return channelName;
+    }
 
     /**
      * The username for the replication applier of the target MySQL DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applierUsername")
-    String applierUsername;
+    private final String applierUsername;
+
+    public String getApplierUsername() {
+        return applierUsername;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateChannelTargetFromDbSystemDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", channelName=").append(String.valueOf(this.channelName));
+        sb.append(", applierUsername=").append(String.valueOf(this.applierUsername));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateChannelTargetFromDbSystemDetails)) {
+            return false;
+        }
+
+        CreateChannelTargetFromDbSystemDetails other = (CreateChannelTargetFromDbSystemDetails) o;
+        return java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.channelName, other.channelName)
+                && java.util.Objects.equals(this.applierUsername, other.applierUsername)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result = (result * PRIME) + (this.channelName == null ? 43 : this.channelName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applierUsername == null ? 43 : this.applierUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

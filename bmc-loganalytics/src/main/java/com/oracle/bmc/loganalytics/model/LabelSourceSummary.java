@@ -15,16 +15,40 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LabelSourceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LabelSourceSummary {
+public final class LabelSourceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sourceDisplayName",
+        "sourceName",
+        "sourceId",
+        "labelOperatorName",
+        "labelCondition",
+        "labelFieldDisplayname",
+        "labelFieldName"
+    })
+    public LabelSourceSummary(
+            String sourceDisplayName,
+            String sourceName,
+            Long sourceId,
+            String labelOperatorName,
+            String labelCondition,
+            String labelFieldDisplayname,
+            String labelFieldName) {
+        super();
+        this.sourceDisplayName = sourceDisplayName;
+        this.sourceName = sourceName;
+        this.sourceId = sourceId;
+        this.labelOperatorName = labelOperatorName;
+        this.labelCondition = labelCondition;
+        this.labelFieldDisplayname = labelFieldDisplayname;
+        this.labelFieldName = labelFieldName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
         private String sourceDisplayName;
@@ -129,48 +153,149 @@ public class LabelSourceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The source display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
-    String sourceDisplayName;
+    private final String sourceDisplayName;
+
+    public String getSourceDisplayName() {
+        return sourceDisplayName;
+    }
 
     /**
      * The source internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
 
     /**
      * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    Long sourceId;
+    private final Long sourceId;
+
+    public Long getSourceId() {
+        return sourceId;
+    }
 
     /**
      * The label operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelOperatorName")
-    String labelOperatorName;
+    private final String labelOperatorName;
+
+    public String getLabelOperatorName() {
+        return labelOperatorName;
+    }
 
     /**
      * The label condition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelCondition")
-    String labelCondition;
+    private final String labelCondition;
+
+    public String getLabelCondition() {
+        return labelCondition;
+    }
 
     /**
      * The label field display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldDisplayname")
-    String labelFieldDisplayname;
+    private final String labelFieldDisplayname;
+
+    public String getLabelFieldDisplayname() {
+        return labelFieldDisplayname;
+    }
 
     /**
      * The label field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldName")
-    String labelFieldName;
+    private final String labelFieldName;
+
+    public String getLabelFieldName() {
+        return labelFieldName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LabelSourceSummary(");
+        sb.append("sourceDisplayName=").append(String.valueOf(this.sourceDisplayName));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", labelOperatorName=").append(String.valueOf(this.labelOperatorName));
+        sb.append(", labelCondition=").append(String.valueOf(this.labelCondition));
+        sb.append(", labelFieldDisplayname=").append(String.valueOf(this.labelFieldDisplayname));
+        sb.append(", labelFieldName=").append(String.valueOf(this.labelFieldName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LabelSourceSummary)) {
+            return false;
+        }
+
+        LabelSourceSummary other = (LabelSourceSummary) o;
+        return java.util.Objects.equals(this.sourceDisplayName, other.sourceDisplayName)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.labelOperatorName, other.labelOperatorName)
+                && java.util.Objects.equals(this.labelCondition, other.labelCondition)
+                && java.util.Objects.equals(this.labelFieldDisplayname, other.labelFieldDisplayname)
+                && java.util.Objects.equals(this.labelFieldName, other.labelFieldName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sourceDisplayName == null ? 43 : this.sourceDisplayName.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.labelOperatorName == null ? 43 : this.labelOperatorName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.labelCondition == null ? 43 : this.labelCondition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.labelFieldDisplayname == null
+                                ? 43
+                                : this.labelFieldDisplayname.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.labelFieldName == null ? 43 : this.labelFieldName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

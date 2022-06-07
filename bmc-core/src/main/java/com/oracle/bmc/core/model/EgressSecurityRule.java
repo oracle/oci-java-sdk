@@ -15,16 +15,43 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = EgressSecurityRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EgressSecurityRule {
+public final class EgressSecurityRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "destination",
+        "destinationType",
+        "icmpOptions",
+        "isStateless",
+        "protocol",
+        "tcpOptions",
+        "udpOptions",
+        "description"
+    })
+    public EgressSecurityRule(
+            String destination,
+            DestinationType destinationType,
+            IcmpOptions icmpOptions,
+            Boolean isStateless,
+            String protocol,
+            TcpOptions tcpOptions,
+            UdpOptions udpOptions,
+            String description) {
+        super();
+        this.destination = destination;
+        this.destinationType = destinationType;
+        this.icmpOptions = icmpOptions;
+        this.isStateless = isStateless;
+        this.protocol = protocol;
+        this.tcpOptions = tcpOptions;
+        this.udpOptions = udpOptions;
+        this.description = description;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
@@ -140,6 +167,10 @@ public class EgressSecurityRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance
      * can go to.
@@ -156,7 +187,12 @@ public class EgressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
-    String destination;
+    private final String destination;
+
+    public String getDestination() {
+        return destination;
+    }
+
     /**
      * Type of destination for the rule. The default is {@code CIDR_BLOCK}.
      * <p>
@@ -169,7 +205,6 @@ public class EgressSecurityRule {
      *     particular {@code Service} through a service gateway).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DestinationType {
         CidrBlock("CIDR_BLOCK"),
         ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
@@ -179,6 +214,9 @@ public class EgressSecurityRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DestinationType.class);
 
         private final String value;
         private static java.util.Map<String, DestinationType> map;
@@ -225,10 +263,18 @@ public class EgressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
-    DestinationType destinationType;
+    private final DestinationType destinationType;
+
+    public DestinationType getDestinationType() {
+        return destinationType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
-    IcmpOptions icmpOptions;
+    private final IcmpOptions icmpOptions;
+
+    public IcmpOptions getIcmpOptions() {
+        return icmpOptions;
+    }
 
     /**
      * A stateless rule allows traffic in one direction. Remember to add a corresponding
@@ -239,7 +285,11 @@ public class EgressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
-    Boolean isStateless;
+    private final Boolean isStateless;
+
+    public Boolean getIsStateless() {
+        return isStateless;
+    }
 
     /**
      * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
@@ -249,21 +299,99 @@ public class EgressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
+    private final String protocol;
+
+    public String getProtocol() {
+        return protocol;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("tcpOptions")
-    TcpOptions tcpOptions;
+    private final TcpOptions tcpOptions;
+
+    public TcpOptions getTcpOptions() {
+        return tcpOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("udpOptions")
-    UdpOptions udpOptions;
+    private final UdpOptions udpOptions;
+
+    public UdpOptions getUdpOptions() {
+        return udpOptions;
+    }
 
     /**
      * An optional description of your choice for the rule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EgressSecurityRule(");
+        sb.append("destination=").append(String.valueOf(this.destination));
+        sb.append(", destinationType=").append(String.valueOf(this.destinationType));
+        sb.append(", icmpOptions=").append(String.valueOf(this.icmpOptions));
+        sb.append(", isStateless=").append(String.valueOf(this.isStateless));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
+        sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EgressSecurityRule)) {
+            return false;
+        }
+
+        EgressSecurityRule other = (EgressSecurityRule) o;
+        return java.util.Objects.equals(this.destination, other.destination)
+                && java.util.Objects.equals(this.destinationType, other.destinationType)
+                && java.util.Objects.equals(this.icmpOptions, other.icmpOptions)
+                && java.util.Objects.equals(this.isStateless, other.isStateless)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
+                && java.util.Objects.equals(this.udpOptions, other.udpOptions)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationType == null ? 43 : this.destinationType.hashCode());
+        result = (result * PRIME) + (this.icmpOptions == null ? 43 : this.icmpOptions.hashCode());
+        result = (result * PRIME) + (this.isStateless == null ? 43 : this.isStateless.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
+        result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

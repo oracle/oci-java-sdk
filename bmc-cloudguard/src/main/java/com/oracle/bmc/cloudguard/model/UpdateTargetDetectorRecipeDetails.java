@@ -15,16 +15,28 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateTargetDetectorRecipeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTargetDetectorRecipeDetails {
+public final class UpdateTargetDetectorRecipeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "detectorRecipeId",
+        "isValidationOnlyQuery",
+        "detectorRules"
+    })
+    public UpdateTargetDetectorRecipeDetails(
+            String detectorRecipeId,
+            Boolean isValidationOnlyQuery,
+            java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules) {
+        super();
+        this.detectorRecipeId = detectorRecipeId;
+        this.isValidationOnlyQuery = isValidationOnlyQuery;
+        this.detectorRules = detectorRules;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
         private String detectorRecipeId;
@@ -84,24 +96,93 @@ public class UpdateTargetDetectorRecipeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Detector recipe identifier associated with the target
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
-    String detectorRecipeId;
+    private final String detectorRecipeId;
+
+    public String getDetectorRecipeId() {
+        return detectorRecipeId;
+    }
 
     /**
      * When enabled, validation is performed for attaching the detector recipe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationOnlyQuery")
-    Boolean isValidationOnlyQuery;
+    private final Boolean isValidationOnlyQuery;
+
+    public Boolean getIsValidationOnlyQuery() {
+        return isValidationOnlyQuery;
+    }
 
     /**
      * Update detector rules associated with detector recipe in a target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
-    java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
+    private final java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
+
+    public java.util.List<UpdateTargetRecipeDetectorRuleDetails> getDetectorRules() {
+        return detectorRules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTargetDetectorRecipeDetails(");
+        sb.append("detectorRecipeId=").append(String.valueOf(this.detectorRecipeId));
+        sb.append(", isValidationOnlyQuery=").append(String.valueOf(this.isValidationOnlyQuery));
+        sb.append(", detectorRules=").append(String.valueOf(this.detectorRules));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTargetDetectorRecipeDetails)) {
+            return false;
+        }
+
+        UpdateTargetDetectorRecipeDetails other = (UpdateTargetDetectorRecipeDetails) o;
+        return java.util.Objects.equals(this.detectorRecipeId, other.detectorRecipeId)
+                && java.util.Objects.equals(this.isValidationOnlyQuery, other.isValidationOnlyQuery)
+                && java.util.Objects.equals(this.detectorRules, other.detectorRules)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.detectorRecipeId == null ? 43 : this.detectorRecipeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isValidationOnlyQuery == null
+                                ? 43
+                                : this.isValidationOnlyQuery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRules == null ? 43 : this.detectorRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

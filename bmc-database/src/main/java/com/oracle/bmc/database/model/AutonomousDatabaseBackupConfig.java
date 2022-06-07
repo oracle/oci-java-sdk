@@ -16,16 +16,21 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousDatabaseBackupConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousDatabaseBackupConfig {
+public final class AutonomousDatabaseBackupConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"manualBackupBucketName", "manualBackupType"})
+    public AutonomousDatabaseBackupConfig(
+            String manualBackupBucketName, ManualBackupType manualBackupType) {
+        super();
+        this.manualBackupBucketName = manualBackupBucketName;
+        this.manualBackupType = manualBackupType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("manualBackupBucketName")
         private String manualBackupBucketName;
@@ -73,15 +78,23 @@ public class AutonomousDatabaseBackupConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("manualBackupBucketName")
-    String manualBackupBucketName;
+    private final String manualBackupBucketName;
+
+    public String getManualBackupBucketName() {
+        return manualBackupBucketName;
+    }
+
     /**
      * The manual backup destination type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ManualBackupType {
         None("NONE"),
         ObjectStore("OBJECT_STORE"),
@@ -91,6 +104,9 @@ public class AutonomousDatabaseBackupConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManualBackupType.class);
 
         private final String value;
         private static java.util.Map<String, ManualBackupType> map;
@@ -128,8 +144,60 @@ public class AutonomousDatabaseBackupConfig {
      * The manual backup destination type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("manualBackupType")
-    ManualBackupType manualBackupType;
+    private final ManualBackupType manualBackupType;
+
+    public ManualBackupType getManualBackupType() {
+        return manualBackupType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousDatabaseBackupConfig(");
+        sb.append("manualBackupBucketName=").append(String.valueOf(this.manualBackupBucketName));
+        sb.append(", manualBackupType=").append(String.valueOf(this.manualBackupType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousDatabaseBackupConfig)) {
+            return false;
+        }
+
+        AutonomousDatabaseBackupConfig other = (AutonomousDatabaseBackupConfig) o;
+        return java.util.Objects.equals(this.manualBackupBucketName, other.manualBackupBucketName)
+                && java.util.Objects.equals(this.manualBackupType, other.manualBackupType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.manualBackupBucketName == null
+                                ? 43
+                                : this.manualBackupBucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.manualBackupType == null ? 43 : this.manualBackupType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagNamespacesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTagNamespacesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,18 +17,27 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call.
      *
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this
      * parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
@@ -44,11 +45,18 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean includeSubcompartments;
 
+    public Boolean getIncludeSubcompartments() {
+        return includeSubcompartments;
+    }
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
     private com.oracle.bmc.identity.model.TagNamespace.LifecycleState lifecycleState;
+
+    public com.oracle.bmc.identity.model.TagNamespace.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -56,6 +64,68 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private Boolean includeSubcompartments = null;
+
+        /**
+         * An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this
+         * parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
+         *
+         * @return this builder instance
+         */
+        public Builder includeSubcompartments(Boolean includeSubcompartments) {
+            this.includeSubcompartments = includeSubcompartments;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.TagNamespace.LifecycleState lifecycleState = null;
+
+        /**
+         * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.identity.model.TagNamespace.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -111,5 +181,93 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListTagNamespacesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListTagNamespacesRequest
+         */
+        public ListTagNamespacesRequest buildWithoutInvocationCallback() {
+            ListTagNamespacesRequest request = new ListTagNamespacesRequest();
+            request.compartmentId = compartmentId;
+            request.page = page;
+            request.limit = limit;
+            request.includeSubcompartments = includeSubcompartments;
+            request.lifecycleState = lifecycleState;
+            return request;
+            // new ListTagNamespacesRequest(compartmentId, page, limit, includeSubcompartments, lifecycleState);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .page(page)
+                .limit(limit)
+                .includeSubcompartments(includeSubcompartments)
+                .lifecycleState(lifecycleState);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",includeSubcompartments=").append(String.valueOf(this.includeSubcompartments));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListTagNamespacesRequest)) {
+            return false;
+        }
+
+        ListTagNamespacesRequest other = (ListTagNamespacesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(
+                        this.includeSubcompartments, other.includeSubcompartments)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeSubcompartments == null
+                                ? 43
+                                : this.includeSubcompartments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        return result;
     }
 }

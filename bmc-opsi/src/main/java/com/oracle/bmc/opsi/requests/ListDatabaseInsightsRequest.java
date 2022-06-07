@@ -9,14 +9,6 @@ import com.oracle.bmc.opsi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListDatabaseInsightsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDatabaseInsightsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListDatabaseInsightsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,27 +17,42 @@ public class ListDatabaseInsightsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Unique Enterprise Manager bridge identifier
      */
     private String enterpriseManagerBridgeId;
 
+    public String getEnterpriseManagerBridgeId() {
+        return enterpriseManagerBridgeId;
+    }
     /**
      * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private java.util.List<String> id;
 
+    public java.util.List<String> getId() {
+        return id;
+    }
     /**
      * Resource Status
      */
     private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
 
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
     /**
      * Lifecycle states
      */
     private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState;
 
+    public java.util.List<com.oracle.bmc.opsi.model.LifecycleState> getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * Filter by one or more database type.
      * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
@@ -103,12 +110,19 @@ public class ListDatabaseInsightsRequest
             throw new IllegalArgumentException("Invalid DatabaseType: " + key);
         }
     };
+
+    public java.util.List<DatabaseType> getDatabaseType() {
+        return databaseType;
+    }
     /**
      * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private java.util.List<String> databaseId;
 
+    public java.util.List<String> getDatabaseId() {
+        return databaseId;
+    }
     /**
      * Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
      *
@@ -157,6 +171,10 @@ public class ListDatabaseInsightsRequest
             throw new IllegalArgumentException("Invalid Fields: " + key);
         }
     };
+
+    public java.util.List<Fields> getFields() {
+        return fields;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to
      * return in a paginated "List" call.
@@ -167,6 +185,9 @@ public class ListDatabaseInsightsRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from
      * the previous "List" call. For important details about how pagination works,
@@ -175,12 +196,18 @@ public class ListDatabaseInsightsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Database insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
      *
@@ -224,23 +251,36 @@ public class ListDatabaseInsightsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
      *
      */
     private String exadataInsightId;
 
+    public String getExadataInsightId() {
+        return exadataInsightId;
+    }
     /**
      * A flag to search all resources within a given compartment and all sub-compartments.
      *
      */
     private Boolean compartmentIdInSubtree;
 
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /**
      * Unique Operations Insights PrivateEndpoint identifier
      */
     private String opsiPrivateEndpointId;
 
+    public String getOpsiPrivateEndpointId() {
+        return opsiPrivateEndpointId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -248,12 +288,38 @@ public class ListDatabaseInsightsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDatabaseInsightsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String enterpriseManagerBridgeId = null;
+
+        /**
+         * Unique Enterprise Manager bridge identifier
+         * @return this builder instance
+         */
+        public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            return this;
+        }
 
         private java.util.List<String> id = null;
 
@@ -380,6 +446,108 @@ public class ListDatabaseInsightsRequest
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.opsi.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * Database insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String exadataInsightId = null;
+
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        private String opsiPrivateEndpointId = null;
+
+        /**
+         * Unique Operations Insights PrivateEndpoint identifier
+         * @return this builder instance
+         */
+        public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
+            this.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
@@ -445,5 +613,160 @@ public class ListDatabaseInsightsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListDatabaseInsightsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListDatabaseInsightsRequest
+         */
+        public ListDatabaseInsightsRequest buildWithoutInvocationCallback() {
+            ListDatabaseInsightsRequest request = new ListDatabaseInsightsRequest();
+            request.compartmentId = compartmentId;
+            request.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            request.id = id;
+            request.status = status;
+            request.lifecycleState = lifecycleState;
+            request.databaseType = databaseType;
+            request.databaseId = databaseId;
+            request.fields = fields;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.exadataInsightId = exadataInsightId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListDatabaseInsightsRequest(compartmentId, enterpriseManagerBridgeId, id, status, lifecycleState, databaseType, databaseId, fields, limit, page, sortOrder, sortBy, exadataInsightId, compartmentIdInSubtree, opsiPrivateEndpointId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .enterpriseManagerBridgeId(enterpriseManagerBridgeId)
+                .id(id)
+                .status(status)
+                .lifecycleState(lifecycleState)
+                .databaseType(databaseType)
+                .databaseId(databaseId)
+                .fields(fields)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .exadataInsightId(exadataInsightId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .opsiPrivateEndpointId(opsiPrivateEndpointId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",enterpriseManagerBridgeId=")
+                .append(String.valueOf(this.enterpriseManagerBridgeId));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(",databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(",fields=").append(String.valueOf(this.fields));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListDatabaseInsightsRequest)) {
+            return false;
+        }
+
+        ListDatabaseInsightsRequest other = (ListDatabaseInsightsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerBridgeId == null
+                                ? 43
+                                : this.enterpriseManagerBridgeId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opsiPrivateEndpointId == null
+                                ? 43
+                                : this.opsiPrivateEndpointId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

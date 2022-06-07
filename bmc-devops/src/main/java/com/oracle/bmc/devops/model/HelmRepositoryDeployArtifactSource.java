@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HelmRepositoryDeployArtifactSource.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployArtifactSourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HelmRepositoryDeployArtifactSource extends DeployArtifactSource {
+public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("chartUrl")
         private String chartUrl;
@@ -77,6 +72,10 @@ public class HelmRepositoryDeployArtifactSource extends DeployArtifactSource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HelmRepositoryDeployArtifactSource(String chartUrl, String deployArtifactVersion) {
         super();
@@ -88,14 +87,70 @@ public class HelmRepositoryDeployArtifactSource extends DeployArtifactSource {
      * The URL of an OCIR repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chartUrl")
-    String chartUrl;
+    private final String chartUrl;
+
+    public String getChartUrl() {
+        return chartUrl;
+    }
 
     /**
      * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactVersion")
-    String deployArtifactVersion;
+    private final String deployArtifactVersion;
+
+    public String getDeployArtifactVersion() {
+        return deployArtifactVersion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HelmRepositoryDeployArtifactSource(");
+        sb.append("super=").append(super.toString());
+        sb.append(", chartUrl=").append(String.valueOf(this.chartUrl));
+        sb.append(", deployArtifactVersion=").append(String.valueOf(this.deployArtifactVersion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HelmRepositoryDeployArtifactSource)) {
+            return false;
+        }
+
+        HelmRepositoryDeployArtifactSource other = (HelmRepositoryDeployArtifactSource) o;
+        return java.util.Objects.equals(this.chartUrl, other.chartUrl)
+                && java.util.Objects.equals(this.deployArtifactVersion, other.deployArtifactVersion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.chartUrl == null ? 43 : this.chartUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployArtifactVersion == null
+                                ? 43
+                                : this.deployArtifactVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

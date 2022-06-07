@@ -15,22 +15,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DBExternalInstance.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DBExternalInstance extends DatabaseConfigurationMetricGroup {
+public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -201,6 +196,10 @@ public class DBExternalInstance extends DatabaseConfigurationMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DBExternalInstance(
             java.util.Date timeCollected,
@@ -235,74 +234,202 @@ public class DBExternalInstance extends DatabaseConfigurationMetricGroup {
      * Name of the database instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
-    String instanceName;
+    private final String instanceName;
+
+    public String getInstanceName() {
+        return instanceName;
+    }
 
     /**
      * Host name of the database instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
-    String hostName;
+    private final String hostName;
+
+    public String getHostName() {
+        return hostName;
+    }
 
     /**
      * Total number of CPUs allocated for the host.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
-    Integer cpuCount;
+    private final Integer cpuCount;
+
+    public Integer getCpuCount() {
+        return cpuCount;
+    }
 
     /**
      * Total amount of usable Physical RAM Memory available in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostMemoryCapacity")
-    Double hostMemoryCapacity;
+    private final Double hostMemoryCapacity;
+
+    public Double getHostMemoryCapacity() {
+        return hostMemoryCapacity;
+    }
 
     /**
      * Database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * Indicates whether the instance is mounted in cluster database mode (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parallel")
-    String parallel;
+    private final String parallel;
+
+    public String getParallel() {
+        return parallel;
+    }
 
     /**
      * Role (permissions) of the database instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceRole")
-    String instanceRole;
+    private final String instanceRole;
+
+    public String getInstanceRole() {
+        return instanceRole;
+    }
 
     /**
      * Indicates if logins are allowed or restricted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logins")
-    String logins;
+    private final String logins;
+
+    public String getLogins() {
+        return logins;
+    }
 
     /**
      * Status of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseStatus")
-    String databaseStatus;
+    private final String databaseStatus;
+
+    public String getDatabaseStatus() {
+        return databaseStatus;
+    }
 
     /**
      * Status of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * The edition of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("edition")
-    String edition;
+    private final String edition;
+
+    public String getEdition() {
+        return edition;
+    }
 
     /**
      * Start up time of the database instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startupTime")
-    java.util.Date startupTime;
+    private final java.util.Date startupTime;
+
+    public java.util.Date getStartupTime() {
+        return startupTime;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DBExternalInstance(");
+        sb.append("super=").append(super.toString());
+        sb.append(", instanceName=").append(String.valueOf(this.instanceName));
+        sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", cpuCount=").append(String.valueOf(this.cpuCount));
+        sb.append(", hostMemoryCapacity=").append(String.valueOf(this.hostMemoryCapacity));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", parallel=").append(String.valueOf(this.parallel));
+        sb.append(", instanceRole=").append(String.valueOf(this.instanceRole));
+        sb.append(", logins=").append(String.valueOf(this.logins));
+        sb.append(", databaseStatus=").append(String.valueOf(this.databaseStatus));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", edition=").append(String.valueOf(this.edition));
+        sb.append(", startupTime=").append(String.valueOf(this.startupTime));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DBExternalInstance)) {
+            return false;
+        }
+
+        DBExternalInstance other = (DBExternalInstance) o;
+        return java.util.Objects.equals(this.instanceName, other.instanceName)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.cpuCount, other.cpuCount)
+                && java.util.Objects.equals(this.hostMemoryCapacity, other.hostMemoryCapacity)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.parallel, other.parallel)
+                && java.util.Objects.equals(this.instanceRole, other.instanceRole)
+                && java.util.Objects.equals(this.logins, other.logins)
+                && java.util.Objects.equals(this.databaseStatus, other.databaseStatus)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.edition, other.edition)
+                && java.util.Objects.equals(this.startupTime, other.startupTime)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.instanceName == null ? 43 : this.instanceName.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.cpuCount == null ? 43 : this.cpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostMemoryCapacity == null
+                                ? 43
+                                : this.hostMemoryCapacity.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.parallel == null ? 43 : this.parallel.hashCode());
+        result = (result * PRIME) + (this.instanceRole == null ? 43 : this.instanceRole.hashCode());
+        result = (result * PRIME) + (this.logins == null ? 43 : this.logins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseStatus == null ? 43 : this.databaseStatus.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.edition == null ? 43 : this.edition.hashCode());
+        result = (result * PRIME) + (this.startupTime == null ? 43 : this.startupTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

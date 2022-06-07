@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Indicates the classification status of the Sighitng
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum ClassificationStatus {
     FalsePositive("FALSE_POSITIVE"),
     FalseNegative("FALSE_NEGATIVE"),
@@ -21,6 +20,9 @@ public enum ClassificationStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ClassificationStatus.class);
 
     private final String value;
     private static java.util.Map<String, ClassificationStatus> map;

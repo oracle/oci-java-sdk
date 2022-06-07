@@ -16,16 +16,46 @@ package com.oracle.bmc.functions.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateFunctionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateFunctionDetails {
+public final class UpdateFunctionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "image",
+        "imageDigest",
+        "memoryInMBs",
+        "config",
+        "timeoutInSeconds",
+        "provisionedConcurrencyConfig",
+        "traceConfig",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateFunctionDetails(
+            String image,
+            String imageDigest,
+            Long memoryInMBs,
+            java.util.Map<String, String> config,
+            Integer timeoutInSeconds,
+            FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig,
+            FunctionTraceConfig traceConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.image = image;
+        this.imageDigest = imageDigest;
+        this.memoryInMBs = memoryInMBs;
+        this.config = config;
+        this.timeoutInSeconds = timeoutInSeconds;
+        this.provisionedConcurrencyConfig = provisionedConcurrencyConfig;
+        this.traceConfig = traceConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("image")
         private String image;
@@ -154,6 +184,10 @@ public class UpdateFunctionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The qualified name of the Docker image to use in the function, including the image tag.
      * The image should be in the OCI Registry that is in the same region as the function itself.
@@ -162,7 +196,11 @@ public class UpdateFunctionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("image")
-    String image;
+    private final String image;
+
+    public String getImage() {
+        return image;
+    }
 
     /**
      * The image digest for the version of the image that will be pulled when invoking this function.
@@ -170,13 +208,21 @@ public class UpdateFunctionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
-    String imageDigest;
+    private final String imageDigest;
+
+    public String getImageDigest() {
+        return imageDigest;
+    }
 
     /**
      * Maximum usable memory for the function (MiB).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
-    Long memoryInMBs;
+    private final Long memoryInMBs;
+
+    public Long getMemoryInMBs() {
+        return memoryInMBs;
+    }
 
     /**
      * Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values.
@@ -188,19 +234,35 @@ public class UpdateFunctionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
-    java.util.Map<String, String> config;
+    private final java.util.Map<String, String> config;
+
+    public java.util.Map<String, String> getConfig() {
+        return config;
+    }
 
     /**
      * Timeout for executions of the function. Value in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
-    Integer timeoutInSeconds;
+    private final Integer timeoutInSeconds;
+
+    public Integer getTimeoutInSeconds() {
+        return timeoutInSeconds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("provisionedConcurrencyConfig")
-    FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig;
+    private final FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig;
+
+    public FunctionProvisionedConcurrencyConfig getProvisionedConcurrencyConfig() {
+        return provisionedConcurrencyConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
-    FunctionTraceConfig traceConfig;
+    private final FunctionTraceConfig traceConfig;
+
+    public FunctionTraceConfig getTraceConfig() {
+        return traceConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -209,7 +271,11 @@ public class UpdateFunctionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -218,8 +284,83 @@ public class UpdateFunctionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateFunctionDetails(");
+        sb.append("image=").append(String.valueOf(this.image));
+        sb.append(", imageDigest=").append(String.valueOf(this.imageDigest));
+        sb.append(", memoryInMBs=").append(String.valueOf(this.memoryInMBs));
+        sb.append(", config=").append(String.valueOf(this.config));
+        sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
+        sb.append(", provisionedConcurrencyConfig=")
+                .append(String.valueOf(this.provisionedConcurrencyConfig));
+        sb.append(", traceConfig=").append(String.valueOf(this.traceConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateFunctionDetails)) {
+            return false;
+        }
+
+        UpdateFunctionDetails other = (UpdateFunctionDetails) o;
+        return java.util.Objects.equals(this.image, other.image)
+                && java.util.Objects.equals(this.imageDigest, other.imageDigest)
+                && java.util.Objects.equals(this.memoryInMBs, other.memoryInMBs)
+                && java.util.Objects.equals(this.config, other.config)
+                && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
+                && java.util.Objects.equals(
+                        this.provisionedConcurrencyConfig, other.provisionedConcurrencyConfig)
+                && java.util.Objects.equals(this.traceConfig, other.traceConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
+        result = (result * PRIME) + (this.imageDigest == null ? 43 : this.imageDigest.hashCode());
+        result = (result * PRIME) + (this.memoryInMBs == null ? 43 : this.memoryInMBs.hashCode());
+        result = (result * PRIME) + (this.config == null ? 43 : this.config.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedConcurrencyConfig == null
+                                ? 43
+                                : this.provisionedConcurrencyConfig.hashCode());
+        result = (result * PRIME) + (this.traceConfig == null ? 43 : this.traceConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

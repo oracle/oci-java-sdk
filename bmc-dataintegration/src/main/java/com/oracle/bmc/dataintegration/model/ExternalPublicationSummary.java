@@ -15,16 +15,73 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExternalPublicationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExternalPublicationSummary {
+public final class ExternalPublicationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "applicationId",
+        "applicationCompartmentId",
+        "displayName",
+        "resourceConfiguration",
+        "configurationDetails",
+        "status",
+        "errorMessage",
+        "key",
+        "modelType",
+        "modelVersion",
+        "name",
+        "description",
+        "objectVersion",
+        "objectStatus",
+        "identifier",
+        "parentRef",
+        "metadata",
+        "keyMap"
+    })
+    public ExternalPublicationSummary(
+            String applicationId,
+            String applicationCompartmentId,
+            String displayName,
+            ResourceConfiguration resourceConfiguration,
+            ConfigurationDetails configurationDetails,
+            Status status,
+            String errorMessage,
+            String key,
+            String modelType,
+            String modelVersion,
+            String name,
+            String description,
+            Integer objectVersion,
+            Integer objectStatus,
+            String identifier,
+            ParentReference parentRef,
+            ObjectMetadata metadata,
+            java.util.Map<String, String> keyMap) {
+        super();
+        this.applicationId = applicationId;
+        this.applicationCompartmentId = applicationCompartmentId;
+        this.displayName = displayName;
+        this.resourceConfiguration = resourceConfiguration;
+        this.configurationDetails = configurationDetails;
+        this.status = status;
+        this.errorMessage = errorMessage;
+        this.key = key;
+        this.modelType = modelType;
+        this.modelVersion = modelVersion;
+        this.name = name;
+        this.description = description;
+        this.objectVersion = objectVersion;
+        this.objectStatus = objectStatus;
+        this.identifier = identifier;
+        this.parentRef = parentRef;
+        this.metadata = metadata;
+        this.keyMap = keyMap;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
@@ -250,33 +307,57 @@ public class ExternalPublicationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
-    String applicationId;
+    private final String applicationId;
+
+    public String getApplicationId() {
+        return applicationId;
+    }
 
     /**
      * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationCompartmentId")
-    String applicationCompartmentId;
+    private final String applicationCompartmentId;
+
+    public String getApplicationCompartmentId() {
+        return applicationCompartmentId;
+    }
 
     /**
      * The name of the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("resourceConfiguration")
-    ResourceConfiguration resourceConfiguration;
+    private final ResourceConfiguration resourceConfiguration;
+
+    public ResourceConfiguration getResourceConfiguration() {
+        return resourceConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
-    ConfigurationDetails configurationDetails;
+    private final ConfigurationDetails configurationDetails;
+
+    public ConfigurationDetails getConfigurationDetails() {
+        return configurationDetails;
+    }
+
     /**
      * The status of the publishing action to Oracle Cloud Infrastructure Data Flow.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Successful("SUCCESSFUL"),
         Failed("FAILED"),
@@ -287,6 +368,8 @@ public class ExternalPublicationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -324,74 +407,234 @@ public class ExternalPublicationSummary {
      * The status of the publishing action to Oracle Cloud Infrastructure Data Flow.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The error of the published object in the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The object type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     /**
      * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The version of the object that is used to track changes in the object instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects. Other values are reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    ObjectMetadata metadata;
+    private final ObjectMetadata metadata;
+
+    public ObjectMetadata getMetadata() {
+        return metadata;
+    }
 
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
-    java.util.Map<String, String> keyMap;
+    private final java.util.Map<String, String> keyMap;
+
+    public java.util.Map<String, String> getKeyMap() {
+        return keyMap;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalPublicationSummary(");
+        sb.append("applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(", applicationCompartmentId=")
+                .append(String.valueOf(this.applicationCompartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", resourceConfiguration=").append(String.valueOf(this.resourceConfiguration));
+        sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", keyMap=").append(String.valueOf(this.keyMap));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalPublicationSummary)) {
+            return false;
+        }
+
+        ExternalPublicationSummary other = (ExternalPublicationSummary) o;
+        return java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(
+                        this.applicationCompartmentId, other.applicationCompartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.resourceConfiguration, other.resourceConfiguration)
+                && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.keyMap, other.keyMap)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationCompartmentId == null
+                                ? 43
+                                : this.applicationCompartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceConfiguration == null
+                                ? 43
+                                : this.resourceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationDetails == null
+                                ? 43
+                                : this.configurationDetails.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

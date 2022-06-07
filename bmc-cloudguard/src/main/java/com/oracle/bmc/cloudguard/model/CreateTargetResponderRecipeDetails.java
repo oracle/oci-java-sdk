@@ -15,16 +15,22 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateTargetResponderRecipeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateTargetResponderRecipeDetails {
+public final class CreateTargetResponderRecipeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"responderRecipeId", "responderRules"})
+    public CreateTargetResponderRecipeDetails(
+            String responderRecipeId,
+            java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules) {
+        super();
+        this.responderRecipeId = responderRecipeId;
+        this.responderRules = responderRules;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
         private String responderRecipeId;
@@ -73,18 +79,76 @@ public class CreateTargetResponderRecipeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Identifier for ResponderRecipe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
-    String responderRecipeId;
+    private final String responderRecipeId;
+
+    public String getResponderRecipeId() {
+        return responderRecipeId;
+    }
 
     /**
      * Override responder rules associated with reponder recipe in a target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
-    java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
+    private final java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
+
+    public java.util.List<UpdateTargetRecipeResponderRuleDetails> getResponderRules() {
+        return responderRules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateTargetResponderRecipeDetails(");
+        sb.append("responderRecipeId=").append(String.valueOf(this.responderRecipeId));
+        sb.append(", responderRules=").append(String.valueOf(this.responderRules));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTargetResponderRecipeDetails)) {
+            return false;
+        }
+
+        CreateTargetResponderRecipeDetails other = (CreateTargetResponderRecipeDetails) o;
+        return java.util.Objects.equals(this.responderRecipeId, other.responderRecipeId)
+                && java.util.Objects.equals(this.responderRules, other.responderRules)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.responderRecipeId == null ? 43 : this.responderRecipeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderRules == null ? 43 : this.responderRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

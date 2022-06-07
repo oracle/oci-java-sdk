@@ -15,14 +15,107 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Listing.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Listing {
+public final class Listing {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "version",
+        "tagline",
+        "keywords",
+        "shortDescription",
+        "usageInformation",
+        "longDescription",
+        "licenseModelDescription",
+        "systemRequirements",
+        "timeReleased",
+        "releaseNotes",
+        "categories",
+        "publisher",
+        "languages",
+        "screenshots",
+        "videos",
+        "supportContacts",
+        "supportLinks",
+        "documentationLinks",
+        "icon",
+        "banner",
+        "compatibleArchitectures",
+        "regions",
+        "packageType",
+        "defaultPackageVersion",
+        "links",
+        "isFeatured",
+        "listingType",
+        "supportedOperatingSystems"
+    })
+    public Listing(
+            String id,
+            String name,
+            String version,
+            String tagline,
+            String keywords,
+            String shortDescription,
+            String usageInformation,
+            String longDescription,
+            String licenseModelDescription,
+            String systemRequirements,
+            java.util.Date timeReleased,
+            String releaseNotes,
+            java.util.List<String> categories,
+            Publisher publisher,
+            java.util.List<Item> languages,
+            java.util.List<Screenshot> screenshots,
+            java.util.List<NamedLink> videos,
+            java.util.List<SupportContact> supportContacts,
+            java.util.List<NamedLink> supportLinks,
+            java.util.List<DocumentationLink> documentationLinks,
+            UploadData icon,
+            UploadData banner,
+            java.util.List<CompatibleArchitectures> compatibleArchitectures,
+            java.util.List<Region> regions,
+            PackageTypeEnum packageType,
+            String defaultPackageVersion,
+            java.util.List<Link> links,
+            Boolean isFeatured,
+            ListingType listingType,
+            java.util.List<OperatingSystem> supportedOperatingSystems) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.version = version;
+        this.tagline = tagline;
+        this.keywords = keywords;
+        this.shortDescription = shortDescription;
+        this.usageInformation = usageInformation;
+        this.longDescription = longDescription;
+        this.licenseModelDescription = licenseModelDescription;
+        this.systemRequirements = systemRequirements;
+        this.timeReleased = timeReleased;
+        this.releaseNotes = releaseNotes;
+        this.categories = categories;
+        this.publisher = publisher;
+        this.languages = languages;
+        this.screenshots = screenshots;
+        this.videos = videos;
+        this.supportContacts = supportContacts;
+        this.supportLinks = supportLinks;
+        this.documentationLinks = documentationLinks;
+        this.icon = icon;
+        this.banner = banner;
+        this.compatibleArchitectures = compatibleArchitectures;
+        this.regions = regions;
+        this.packageType = packageType;
+        this.defaultPackageVersion = defaultPackageVersion;
+        this.links = links;
+        this.isFeatured = isFeatured;
+        this.listingType = listingType;
+        this.supportedOperatingSystems = supportedOperatingSystems;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -382,131 +475,223 @@ public class Listing {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier for the listing in Marketplace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The version of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The tagline of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagline")
-    String tagline;
+    private final String tagline;
+
+    public String getTagline() {
+        return tagline;
+    }
 
     /**
      * Keywords associated with the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keywords")
-    String keywords;
+    private final String keywords;
+
+    public String getKeywords() {
+        return keywords;
+    }
 
     /**
      * A short description of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
-    String shortDescription;
+    private final String shortDescription;
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
 
     /**
      * Usage information for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageInformation")
-    String usageInformation;
+    private final String usageInformation;
+
+    public String getUsageInformation() {
+        return usageInformation;
+    }
 
     /**
      * A long description of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
-    String longDescription;
+    private final String longDescription;
+
+    public String getLongDescription() {
+        return longDescription;
+    }
 
     /**
      * A description of the publisher's licensing model for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModelDescription")
-    String licenseModelDescription;
+    private final String licenseModelDescription;
+
+    public String getLicenseModelDescription() {
+        return licenseModelDescription;
+    }
 
     /**
      * System requirements for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemRequirements")
-    String systemRequirements;
+    private final String systemRequirements;
+
+    public String getSystemRequirements() {
+        return systemRequirements;
+    }
 
     /**
      * The release date of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
-    java.util.Date timeReleased;
+    private final java.util.Date timeReleased;
+
+    public java.util.Date getTimeReleased() {
+        return timeReleased;
+    }
 
     /**
      * Release notes for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseNotes")
-    String releaseNotes;
+    private final String releaseNotes;
+
+    public String getReleaseNotes() {
+        return releaseNotes;
+    }
 
     /**
      * Categories that the listing belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
-    java.util.List<String> categories;
+    private final java.util.List<String> categories;
+
+    public java.util.List<String> getCategories() {
+        return categories;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("publisher")
-    Publisher publisher;
+    private final Publisher publisher;
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
 
     /**
      * Languages supported by the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languages")
-    java.util.List<Item> languages;
+    private final java.util.List<Item> languages;
+
+    public java.util.List<Item> getLanguages() {
+        return languages;
+    }
 
     /**
      * Screenshots of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("screenshots")
-    java.util.List<Screenshot> screenshots;
+    private final java.util.List<Screenshot> screenshots;
+
+    public java.util.List<Screenshot> getScreenshots() {
+        return screenshots;
+    }
 
     /**
      * Videos of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("videos")
-    java.util.List<NamedLink> videos;
+    private final java.util.List<NamedLink> videos;
+
+    public java.util.List<NamedLink> getVideos() {
+        return videos;
+    }
 
     /**
      * Contact information to use to get support from the publisher for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
-    java.util.List<SupportContact> supportContacts;
+    private final java.util.List<SupportContact> supportContacts;
+
+    public java.util.List<SupportContact> getSupportContacts() {
+        return supportContacts;
+    }
 
     /**
      * Links to support resources for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportLinks")
-    java.util.List<NamedLink> supportLinks;
+    private final java.util.List<NamedLink> supportLinks;
+
+    public java.util.List<NamedLink> getSupportLinks() {
+        return supportLinks;
+    }
 
     /**
      * Links to additional documentation provided by the publisher specifically for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentationLinks")
-    java.util.List<DocumentationLink> documentationLinks;
+    private final java.util.List<DocumentationLink> documentationLinks;
+
+    public java.util.List<DocumentationLink> getDocumentationLinks() {
+        return documentationLinks;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("icon")
-    UploadData icon;
+    private final UploadData icon;
+
+    public UploadData getIcon() {
+        return icon;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("banner")
-    UploadData banner;
+    private final UploadData banner;
+
+    public UploadData getBanner() {
+        return banner;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CompatibleArchitectures {
         X86("X86"),
         Arm("ARM"),
@@ -516,6 +701,9 @@ public class Listing {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CompatibleArchitectures.class);
 
         private final String value;
         private static java.util.Map<String, CompatibleArchitectures> map;
@@ -553,51 +741,247 @@ public class Listing {
      * The list of compatible architectures supported by the listing
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compatibleArchitectures")
-    java.util.List<CompatibleArchitectures> compatibleArchitectures;
+    private final java.util.List<CompatibleArchitectures> compatibleArchitectures;
+
+    public java.util.List<CompatibleArchitectures> getCompatibleArchitectures() {
+        return compatibleArchitectures;
+    }
 
     /**
      * The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
-    java.util.List<Region> regions;
+    private final java.util.List<Region> regions;
+
+    public java.util.List<Region> getRegions() {
+        return regions;
+    }
 
     /**
      * The listing's package type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
-    PackageTypeEnum packageType;
+    private final PackageTypeEnum packageType;
+
+    public PackageTypeEnum getPackageType() {
+        return packageType;
+    }
 
     /**
      * The default package version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPackageVersion")
-    String defaultPackageVersion;
+    private final String defaultPackageVersion;
+
+    public String getDefaultPackageVersion() {
+        return defaultPackageVersion;
+    }
 
     /**
      * Links to reference material.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("links")
-    java.util.List<Link> links;
+    private final java.util.List<Link> links;
+
+    public java.util.List<Link> getLinks() {
+        return links;
+    }
 
     /**
      * Indicates whether the listing is included in Featured Listings.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
-    Boolean isFeatured;
+    private final Boolean isFeatured;
+
+    public Boolean getIsFeatured() {
+        return isFeatured;
+    }
 
     /**
      * The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
-    ListingType listingType;
+    private final ListingType listingType;
+
+    public ListingType getListingType() {
+        return listingType;
+    }
 
     /**
      * List of operating systems supported by the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOperatingSystems")
-    java.util.List<OperatingSystem> supportedOperatingSystems;
+    private final java.util.List<OperatingSystem> supportedOperatingSystems;
+
+    public java.util.List<OperatingSystem> getSupportedOperatingSystems() {
+        return supportedOperatingSystems;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Listing(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", tagline=").append(String.valueOf(this.tagline));
+        sb.append(", keywords=").append(String.valueOf(this.keywords));
+        sb.append(", shortDescription=").append(String.valueOf(this.shortDescription));
+        sb.append(", usageInformation=").append(String.valueOf(this.usageInformation));
+        sb.append(", longDescription=").append(String.valueOf(this.longDescription));
+        sb.append(", licenseModelDescription=")
+                .append(String.valueOf(this.licenseModelDescription));
+        sb.append(", systemRequirements=").append(String.valueOf(this.systemRequirements));
+        sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
+        sb.append(", releaseNotes=").append(String.valueOf(this.releaseNotes));
+        sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append(", publisher=").append(String.valueOf(this.publisher));
+        sb.append(", languages=").append(String.valueOf(this.languages));
+        sb.append(", screenshots=").append(String.valueOf(this.screenshots));
+        sb.append(", videos=").append(String.valueOf(this.videos));
+        sb.append(", supportContacts=").append(String.valueOf(this.supportContacts));
+        sb.append(", supportLinks=").append(String.valueOf(this.supportLinks));
+        sb.append(", documentationLinks=").append(String.valueOf(this.documentationLinks));
+        sb.append(", icon=").append(String.valueOf(this.icon));
+        sb.append(", banner=").append(String.valueOf(this.banner));
+        sb.append(", compatibleArchitectures=")
+                .append(String.valueOf(this.compatibleArchitectures));
+        sb.append(", regions=").append(String.valueOf(this.regions));
+        sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", defaultPackageVersion=").append(String.valueOf(this.defaultPackageVersion));
+        sb.append(", links=").append(String.valueOf(this.links));
+        sb.append(", isFeatured=").append(String.valueOf(this.isFeatured));
+        sb.append(", listingType=").append(String.valueOf(this.listingType));
+        sb.append(", supportedOperatingSystems=")
+                .append(String.valueOf(this.supportedOperatingSystems));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Listing)) {
+            return false;
+        }
+
+        Listing other = (Listing) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.tagline, other.tagline)
+                && java.util.Objects.equals(this.keywords, other.keywords)
+                && java.util.Objects.equals(this.shortDescription, other.shortDescription)
+                && java.util.Objects.equals(this.usageInformation, other.usageInformation)
+                && java.util.Objects.equals(this.longDescription, other.longDescription)
+                && java.util.Objects.equals(
+                        this.licenseModelDescription, other.licenseModelDescription)
+                && java.util.Objects.equals(this.systemRequirements, other.systemRequirements)
+                && java.util.Objects.equals(this.timeReleased, other.timeReleased)
+                && java.util.Objects.equals(this.releaseNotes, other.releaseNotes)
+                && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.publisher, other.publisher)
+                && java.util.Objects.equals(this.languages, other.languages)
+                && java.util.Objects.equals(this.screenshots, other.screenshots)
+                && java.util.Objects.equals(this.videos, other.videos)
+                && java.util.Objects.equals(this.supportContacts, other.supportContacts)
+                && java.util.Objects.equals(this.supportLinks, other.supportLinks)
+                && java.util.Objects.equals(this.documentationLinks, other.documentationLinks)
+                && java.util.Objects.equals(this.icon, other.icon)
+                && java.util.Objects.equals(this.banner, other.banner)
+                && java.util.Objects.equals(
+                        this.compatibleArchitectures, other.compatibleArchitectures)
+                && java.util.Objects.equals(this.regions, other.regions)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.defaultPackageVersion, other.defaultPackageVersion)
+                && java.util.Objects.equals(this.links, other.links)
+                && java.util.Objects.equals(this.isFeatured, other.isFeatured)
+                && java.util.Objects.equals(this.listingType, other.listingType)
+                && java.util.Objects.equals(
+                        this.supportedOperatingSystems, other.supportedOperatingSystems)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.tagline == null ? 43 : this.tagline.hashCode());
+        result = (result * PRIME) + (this.keywords == null ? 43 : this.keywords.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shortDescription == null ? 43 : this.shortDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usageInformation == null ? 43 : this.usageInformation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.longDescription == null ? 43 : this.longDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licenseModelDescription == null
+                                ? 43
+                                : this.licenseModelDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemRequirements == null
+                                ? 43
+                                : this.systemRequirements.hashCode());
+        result = (result * PRIME) + (this.timeReleased == null ? 43 : this.timeReleased.hashCode());
+        result = (result * PRIME) + (this.releaseNotes == null ? 43 : this.releaseNotes.hashCode());
+        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.publisher == null ? 43 : this.publisher.hashCode());
+        result = (result * PRIME) + (this.languages == null ? 43 : this.languages.hashCode());
+        result = (result * PRIME) + (this.screenshots == null ? 43 : this.screenshots.hashCode());
+        result = (result * PRIME) + (this.videos == null ? 43 : this.videos.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportContacts == null ? 43 : this.supportContacts.hashCode());
+        result = (result * PRIME) + (this.supportLinks == null ? 43 : this.supportLinks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.documentationLinks == null
+                                ? 43
+                                : this.documentationLinks.hashCode());
+        result = (result * PRIME) + (this.icon == null ? 43 : this.icon.hashCode());
+        result = (result * PRIME) + (this.banner == null ? 43 : this.banner.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compatibleArchitectures == null
+                                ? 43
+                                : this.compatibleArchitectures.hashCode());
+        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultPackageVersion == null
+                                ? 43
+                                : this.defaultPackageVersion.hashCode());
+        result = (result * PRIME) + (this.links == null ? 43 : this.links.hashCode());
+        result = (result * PRIME) + (this.isFeatured == null ? 43 : this.isFeatured.hashCode());
+        result = (result * PRIME) + (this.listingType == null ? 43 : this.listingType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedOperatingSystems == null
+                                ? 43
+                                : this.supportedOperatingSystems.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

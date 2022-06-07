@@ -16,14 +16,26 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SearchCriteria.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SearchCriteria {
+public final class SearchCriteria {
+    @Deprecated
+    @java.beans.ConstructorProperties({"query", "facetedQuery", "dimensions", "sort", "filters"})
+    public SearchCriteria(
+            String query,
+            String facetedQuery,
+            java.util.List<String> dimensions,
+            java.util.List<FacetedSearchSortRequest> sort,
+            FacetedSearchFilterRequest filters) {
+        super();
+        this.query = query;
+        this.facetedQuery = facetedQuery;
+        this.dimensions = dimensions;
+        this.sort = sort;
+        this.filters = filters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
@@ -101,33 +113,108 @@ public class SearchCriteria {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Search query dsl that defines the query components including fields and predicates.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
-    String query;
+    private final String query;
+
+    public String getQuery() {
+        return query;
+    }
 
     /**
      * Query string that a dataObject is to be searched with. Used in the faceted query request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("facetedQuery")
-    String facetedQuery;
+    private final String facetedQuery;
+
+    public String getFacetedQuery() {
+        return facetedQuery;
+    }
 
     /**
      * List of properties of dataObjects that needs to aggregated on for facets.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    java.util.List<String> dimensions;
+    private final java.util.List<String> dimensions;
+
+    public java.util.List<String> getDimensions() {
+        return dimensions;
+    }
 
     /**
      * Array of objects having details about sort field and order.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sort")
-    java.util.List<FacetedSearchSortRequest> sort;
+    private final java.util.List<FacetedSearchSortRequest> sort;
+
+    public java.util.List<FacetedSearchSortRequest> getSort() {
+        return sort;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
-    FacetedSearchFilterRequest filters;
+    private final FacetedSearchFilterRequest filters;
+
+    public FacetedSearchFilterRequest getFilters() {
+        return filters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchCriteria(");
+        sb.append("query=").append(String.valueOf(this.query));
+        sb.append(", facetedQuery=").append(String.valueOf(this.facetedQuery));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append(", sort=").append(String.valueOf(this.sort));
+        sb.append(", filters=").append(String.valueOf(this.filters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchCriteria)) {
+            return false;
+        }
+
+        SearchCriteria other = (SearchCriteria) o;
+        return java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(this.facetedQuery, other.facetedQuery)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.sort, other.sort)
+                && java.util.Objects.equals(this.filters, other.filters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result = (result * PRIME) + (this.facetedQuery == null ? 43 : this.facetedQuery.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result = (result * PRIME) + (this.sort == null ? 43 : this.sort.hashCode());
+        result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

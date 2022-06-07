@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SwitchoverDataGuardAssociationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SwitchoverDataGuardAssociationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.SwitchoverDataGuardAssociationDetails> {
@@ -26,17 +18,27 @@ public class SwitchoverDataGuardAssociationRequest
      */
     private String databaseId;
 
+    public String getDatabaseId() {
+        return databaseId;
+    }
     /**
      * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dataGuardAssociationId;
 
+    public String getDataGuardAssociationId() {
+        return dataGuardAssociationId;
+    }
     /**
      * Request to swtichover a primary to a standby.
      */
     private com.oracle.bmc.database.model.SwitchoverDataGuardAssociationDetails
             switchoverDataGuardAssociationDetails;
 
+    public com.oracle.bmc.database.model.SwitchoverDataGuardAssociationDetails
+            getSwitchoverDataGuardAssociationDetails() {
+        return switchoverDataGuardAssociationDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -44,6 +46,10 @@ public class SwitchoverDataGuardAssociationRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -62,6 +68,56 @@ public class SwitchoverDataGuardAssociationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String databaseId = null;
+
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder databaseId(String databaseId) {
+            this.databaseId = databaseId;
+            return this;
+        }
+
+        private String dataGuardAssociationId = null;
+
+        /**
+         * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder dataGuardAssociationId(String dataGuardAssociationId) {
+            this.dataGuardAssociationId = dataGuardAssociationId;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.SwitchoverDataGuardAssociationDetails
+                switchoverDataGuardAssociationDetails = null;
+
+        /**
+         * Request to swtichover a primary to a standby.
+         * @return this builder instance
+         */
+        public Builder switchoverDataGuardAssociationDetails(
+                com.oracle.bmc.database.model.SwitchoverDataGuardAssociationDetails
+                        switchoverDataGuardAssociationDetails) {
+            this.switchoverDataGuardAssociationDetails = switchoverDataGuardAssociationDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +184,92 @@ public class SwitchoverDataGuardAssociationRequest
             switchoverDataGuardAssociationDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of SwitchoverDataGuardAssociationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of SwitchoverDataGuardAssociationRequest
+         */
+        public SwitchoverDataGuardAssociationRequest buildWithoutInvocationCallback() {
+            SwitchoverDataGuardAssociationRequest request =
+                    new SwitchoverDataGuardAssociationRequest();
+            request.databaseId = databaseId;
+            request.dataGuardAssociationId = dataGuardAssociationId;
+            request.switchoverDataGuardAssociationDetails = switchoverDataGuardAssociationDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new SwitchoverDataGuardAssociationRequest(databaseId, dataGuardAssociationId, switchoverDataGuardAssociationDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .databaseId(databaseId)
+                .dataGuardAssociationId(dataGuardAssociationId)
+                .switchoverDataGuardAssociationDetails(switchoverDataGuardAssociationDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(",dataGuardAssociationId=").append(String.valueOf(this.dataGuardAssociationId));
+        sb.append(",switchoverDataGuardAssociationDetails=")
+                .append(String.valueOf(this.switchoverDataGuardAssociationDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SwitchoverDataGuardAssociationRequest)) {
+            return false;
+        }
+
+        SwitchoverDataGuardAssociationRequest other = (SwitchoverDataGuardAssociationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(
+                        this.dataGuardAssociationId, other.dataGuardAssociationId)
+                && java.util.Objects.equals(
+                        this.switchoverDataGuardAssociationDetails,
+                        other.switchoverDataGuardAssociationDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataGuardAssociationId == null
+                                ? 43
+                                : this.dataGuardAssociationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.switchoverDataGuardAssociationDetails == null
+                                ? 43
+                                : this.switchoverDataGuardAssociationDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

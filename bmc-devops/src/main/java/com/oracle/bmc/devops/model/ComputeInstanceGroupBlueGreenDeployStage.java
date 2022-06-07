@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ComputeInstanceGroupBlueGreenDeployStage.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage {
+public final class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -304,6 +299,10 @@ public class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ComputeInstanceGroupBlueGreenDeployStage(
             String id,
@@ -357,38 +356,164 @@ public class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage {
      * First compute instance group environment OCID for deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentIdA")
-    String deployEnvironmentIdA;
+    private final String deployEnvironmentIdA;
+
+    public String getDeployEnvironmentIdA() {
+        return deployEnvironmentIdA;
+    }
 
     /**
      * Second compute instance group environment OCID for deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentIdB")
-    String deployEnvironmentIdB;
+    private final String deployEnvironmentIdB;
+
+    public String getDeployEnvironmentIdB() {
+        return deployEnvironmentIdB;
+    }
 
     /**
      * The OCID of the artifact that contains the deployment specification.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
-    String deploymentSpecDeployArtifactId;
+    private final String deploymentSpecDeployArtifactId;
+
+    public String getDeploymentSpecDeployArtifactId() {
+        return deploymentSpecDeployArtifactId;
+    }
 
     /**
      * The list of file artifact OCIDs to deploy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
-    java.util.List<String> deployArtifactIds;
+    private final java.util.List<String> deployArtifactIds;
+
+    public java.util.List<String> getDeployArtifactIds() {
+        return deployArtifactIds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("rolloutPolicy")
-    ComputeInstanceGroupRolloutPolicy rolloutPolicy;
+    private final ComputeInstanceGroupRolloutPolicy rolloutPolicy;
+
+    public ComputeInstanceGroupRolloutPolicy getRolloutPolicy() {
+        return rolloutPolicy;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("failurePolicy")
-    ComputeInstanceGroupFailurePolicy failurePolicy;
+    private final ComputeInstanceGroupFailurePolicy failurePolicy;
+
+    public ComputeInstanceGroupFailurePolicy getFailurePolicy() {
+        return failurePolicy;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("testLoadBalancerConfig")
-    LoadBalancerConfig testLoadBalancerConfig;
+    private final LoadBalancerConfig testLoadBalancerConfig;
+
+    public LoadBalancerConfig getTestLoadBalancerConfig() {
+        return testLoadBalancerConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("productionLoadBalancerConfig")
-    LoadBalancerConfig productionLoadBalancerConfig;
+    private final LoadBalancerConfig productionLoadBalancerConfig;
+
+    public LoadBalancerConfig getProductionLoadBalancerConfig() {
+        return productionLoadBalancerConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputeInstanceGroupBlueGreenDeployStage(");
+        sb.append("super=").append(super.toString());
+        sb.append(", deployEnvironmentIdA=").append(String.valueOf(this.deployEnvironmentIdA));
+        sb.append(", deployEnvironmentIdB=").append(String.valueOf(this.deployEnvironmentIdB));
+        sb.append(", deploymentSpecDeployArtifactId=")
+                .append(String.valueOf(this.deploymentSpecDeployArtifactId));
+        sb.append(", deployArtifactIds=").append(String.valueOf(this.deployArtifactIds));
+        sb.append(", rolloutPolicy=").append(String.valueOf(this.rolloutPolicy));
+        sb.append(", failurePolicy=").append(String.valueOf(this.failurePolicy));
+        sb.append(", testLoadBalancerConfig=").append(String.valueOf(this.testLoadBalancerConfig));
+        sb.append(", productionLoadBalancerConfig=")
+                .append(String.valueOf(this.productionLoadBalancerConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputeInstanceGroupBlueGreenDeployStage)) {
+            return false;
+        }
+
+        ComputeInstanceGroupBlueGreenDeployStage other =
+                (ComputeInstanceGroupBlueGreenDeployStage) o;
+        return java.util.Objects.equals(this.deployEnvironmentIdA, other.deployEnvironmentIdA)
+                && java.util.Objects.equals(this.deployEnvironmentIdB, other.deployEnvironmentIdB)
+                && java.util.Objects.equals(
+                        this.deploymentSpecDeployArtifactId, other.deploymentSpecDeployArtifactId)
+                && java.util.Objects.equals(this.deployArtifactIds, other.deployArtifactIds)
+                && java.util.Objects.equals(this.rolloutPolicy, other.rolloutPolicy)
+                && java.util.Objects.equals(this.failurePolicy, other.failurePolicy)
+                && java.util.Objects.equals(
+                        this.testLoadBalancerConfig, other.testLoadBalancerConfig)
+                && java.util.Objects.equals(
+                        this.productionLoadBalancerConfig, other.productionLoadBalancerConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.deployEnvironmentIdA == null
+                                ? 43
+                                : this.deployEnvironmentIdA.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployEnvironmentIdB == null
+                                ? 43
+                                : this.deployEnvironmentIdB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentSpecDeployArtifactId == null
+                                ? 43
+                                : this.deploymentSpecDeployArtifactId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployArtifactIds == null ? 43 : this.deployArtifactIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rolloutPolicy == null ? 43 : this.rolloutPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failurePolicy == null ? 43 : this.failurePolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.testLoadBalancerConfig == null
+                                ? 43
+                                : this.testLoadBalancerConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.productionLoadBalancerConfig == null
+                                ? 43
+                                : this.productionLoadBalancerConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

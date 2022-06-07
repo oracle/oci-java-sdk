@@ -18,22 +18,17 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = Saml2IdentityProvider.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "protocol"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Saml2IdentityProvider extends IdentityProvider {
+public final class Saml2IdentityProvider extends IdentityProvider {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -227,6 +222,10 @@ public class Saml2IdentityProvider extends IdentityProvider {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Saml2IdentityProvider(
             String id,
@@ -268,14 +267,22 @@ public class Saml2IdentityProvider extends IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
-    String metadataUrl;
+    private final String metadataUrl;
+
+    public String getMetadataUrl() {
+        return metadataUrl;
+    }
 
     /**
      * The XML that contains the information required for federating Identity with SAML2 Identity Provider.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    String metadata;
+    private final String metadata;
+
+    public String getMetadata() {
+        return metadata;
+    }
 
     /**
      * The identity provider's signing certificate used by the IAM Service
@@ -283,7 +290,11 @@ public class Saml2IdentityProvider extends IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
-    String signingCertificate;
+    private final String signingCertificate;
+
+    public String getSigningCertificate() {
+        return signingCertificate;
+    }
 
     /**
      * The URL to redirect federated users to for authentication with the
@@ -291,7 +302,11 @@ public class Saml2IdentityProvider extends IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
-    String redirectUrl;
+    private final String redirectUrl;
+
+    public String getRedirectUrl() {
+        return redirectUrl;
+    }
 
     /**
      * Extra name value pairs associated with this identity provider.
@@ -299,8 +314,73 @@ public class Saml2IdentityProvider extends IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformAttributes")
-    java.util.Map<String, String> freeformAttributes;
+    private final java.util.Map<String, String> freeformAttributes;
+
+    public java.util.Map<String, String> getFreeformAttributes() {
+        return freeformAttributes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Saml2IdentityProvider(");
+        sb.append("super=").append(super.toString());
+        sb.append(", metadataUrl=").append(String.valueOf(this.metadataUrl));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", signingCertificate=").append(String.valueOf(this.signingCertificate));
+        sb.append(", redirectUrl=").append(String.valueOf(this.redirectUrl));
+        sb.append(", freeformAttributes=").append(String.valueOf(this.freeformAttributes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Saml2IdentityProvider)) {
+            return false;
+        }
+
+        Saml2IdentityProvider other = (Saml2IdentityProvider) o;
+        return java.util.Objects.equals(this.metadataUrl, other.metadataUrl)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.signingCertificate, other.signingCertificate)
+                && java.util.Objects.equals(this.redirectUrl, other.redirectUrl)
+                && java.util.Objects.equals(this.freeformAttributes, other.freeformAttributes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.metadataUrl == null ? 43 : this.metadataUrl.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signingCertificate == null
+                                ? 43
+                                : this.signingCertificate.hashCode());
+        result = (result * PRIME) + (this.redirectUrl == null ? 43 : this.redirectUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeformAttributes == null
+                                ? 43
+                                : this.freeformAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

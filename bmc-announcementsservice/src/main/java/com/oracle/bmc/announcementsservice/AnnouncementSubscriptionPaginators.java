@@ -26,9 +26,12 @@ import com.oracle.bmc.announcementsservice.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.RequiredArgsConstructor
 public class AnnouncementSubscriptionPaginators {
     private final AnnouncementSubscription client;
+
+    public AnnouncementSubscriptionPaginators(AnnouncementSubscription client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listAnnouncementSubscriptions operation. This iterable

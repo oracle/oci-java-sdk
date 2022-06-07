@@ -15,16 +15,58 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateInstanceDetails {
+public final class UpdateInstanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "capacityReservationId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "agentConfig",
+        "metadata",
+        "extendedMetadata",
+        "shape",
+        "shapeConfig",
+        "instanceOptions",
+        "faultDomain",
+        "launchOptions",
+        "availabilityConfig"
+    })
+    public UpdateInstanceDetails(
+            String capacityReservationId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            UpdateInstanceAgentConfigDetails agentConfig,
+            java.util.Map<String, String> metadata,
+            java.util.Map<String, Object> extendedMetadata,
+            String shape,
+            UpdateInstanceShapeConfigDetails shapeConfig,
+            InstanceOptions instanceOptions,
+            String faultDomain,
+            UpdateLaunchOptions launchOptions,
+            UpdateInstanceAvailabilityConfigDetails availabilityConfig) {
+        super();
+        this.capacityReservationId = capacityReservationId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.agentConfig = agentConfig;
+        this.metadata = metadata;
+        this.extendedMetadata = extendedMetadata;
+        this.shape = shape;
+        this.shapeConfig = shapeConfig;
+        this.instanceOptions = instanceOptions;
+        this.faultDomain = faultDomain;
+        this.launchOptions = launchOptions;
+        this.availabilityConfig = availabilityConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
@@ -197,6 +239,10 @@ public class UpdateInstanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compute capacity reservation this instance is launched under.
      * You can remove the instance from a reservation by specifying an empty string as input for this field.
@@ -204,7 +250,11 @@ public class UpdateInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
-    String capacityReservationId;
+    private final String capacityReservationId;
+
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -214,7 +264,11 @@ public class UpdateInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -222,7 +276,11 @@ public class UpdateInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -232,10 +290,18 @@ public class UpdateInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
-    UpdateInstanceAgentConfigDetails agentConfig;
+    private final UpdateInstanceAgentConfigDetails agentConfig;
+
+    public UpdateInstanceAgentConfigDetails getAgentConfig() {
+        return agentConfig;
+    }
 
     /**
      * Custom metadata key/value string pairs that you provide. Any set of key/value pairs
@@ -252,7 +318,11 @@ public class UpdateInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    java.util.Map<String, String> metadata;
+    private final java.util.Map<String, String> metadata;
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
 
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and
@@ -271,7 +341,11 @@ public class UpdateInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
-    java.util.Map<String, Object> extendedMetadata;
+    private final java.util.Map<String, Object> extendedMetadata;
+
+    public java.util.Map<String, Object> getExtendedMetadata() {
+        return extendedMetadata;
+    }
 
     /**
      * The shape of the instance. The shape determines the number of CPUs and the amount of memory
@@ -292,13 +366,25 @@ public class UpdateInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
-    UpdateInstanceShapeConfigDetails shapeConfig;
+    private final UpdateInstanceShapeConfigDetails shapeConfig;
+
+    public UpdateInstanceShapeConfigDetails getShapeConfig() {
+        return shapeConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
-    InstanceOptions instanceOptions;
+    private final InstanceOptions instanceOptions;
+
+    public InstanceOptions getInstanceOptions() {
+        return instanceOptions;
+    }
 
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain.
@@ -315,14 +401,115 @@ public class UpdateInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
-    UpdateLaunchOptions launchOptions;
+    private final UpdateLaunchOptions launchOptions;
+
+    public UpdateLaunchOptions getLaunchOptions() {
+        return launchOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
-    UpdateInstanceAvailabilityConfigDetails availabilityConfig;
+    private final UpdateInstanceAvailabilityConfigDetails availabilityConfig;
+
+    public UpdateInstanceAvailabilityConfigDetails getAvailabilityConfig() {
+        return availabilityConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateInstanceDetails(");
+        sb.append("capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", agentConfig=").append(String.valueOf(this.agentConfig));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append(", instanceOptions=").append(String.valueOf(this.instanceOptions));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", launchOptions=").append(String.valueOf(this.launchOptions));
+        sb.append(", availabilityConfig=").append(String.valueOf(this.availabilityConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateInstanceDetails)) {
+            return false;
+        }
+
+        UpdateInstanceDetails other = (UpdateInstanceDetails) o;
+        return java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.agentConfig, other.agentConfig)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(this.instanceOptions, other.instanceOptions)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.launchOptions, other.launchOptions)
+                && java.util.Objects.equals(this.availabilityConfig, other.availabilityConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.agentConfig == null ? 43 : this.agentConfig.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceOptions == null ? 43 : this.instanceOptions.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.launchOptions == null ? 43 : this.launchOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityConfig == null
+                                ? 43
+                                : this.availabilityConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

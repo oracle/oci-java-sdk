@@ -19,16 +19,23 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSteeringPolicyAttachmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSteeringPolicyAttachmentDetails {
+public final class CreateSteeringPolicyAttachmentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"steeringPolicyId", "zoneId", "domainName", "displayName"})
+    public CreateSteeringPolicyAttachmentDetails(
+            String steeringPolicyId, String zoneId, String domainName, String displayName) {
+        super();
+        this.steeringPolicyId = steeringPolicyId;
+        this.zoneId = zoneId;
+        this.domainName = domainName;
+        this.displayName = displayName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("steeringPolicyId")
         private String steeringPolicyId;
@@ -97,23 +104,39 @@ public class CreateSteeringPolicyAttachmentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the attached steering policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("steeringPolicyId")
-    String steeringPolicyId;
+    private final String steeringPolicyId;
+
+    public String getSteeringPolicyId() {
+        return steeringPolicyId;
+    }
 
     /**
      * The OCID of the attached zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
-    String zoneId;
+    private final String zoneId;
+
+    public String getZoneId() {
+        return zoneId;
+    }
 
     /**
      * The attached domain within the attached zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
-    String domainName;
+    private final String domainName;
+
+    public String getDomainName() {
+        return domainName;
+    }
 
     /**
      * A user-friendly name for the steering policy attachment.
@@ -122,8 +145,62 @@ public class CreateSteeringPolicyAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSteeringPolicyAttachmentDetails(");
+        sb.append("steeringPolicyId=").append(String.valueOf(this.steeringPolicyId));
+        sb.append(", zoneId=").append(String.valueOf(this.zoneId));
+        sb.append(", domainName=").append(String.valueOf(this.domainName));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSteeringPolicyAttachmentDetails)) {
+            return false;
+        }
+
+        CreateSteeringPolicyAttachmentDetails other = (CreateSteeringPolicyAttachmentDetails) o;
+        return java.util.Objects.equals(this.steeringPolicyId, other.steeringPolicyId)
+                && java.util.Objects.equals(this.zoneId, other.zoneId)
+                && java.util.Objects.equals(this.domainName, other.domainName)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.steeringPolicyId == null ? 43 : this.steeringPolicyId.hashCode());
+        result = (result * PRIME) + (this.zoneId == null ? 43 : this.zoneId.hashCode());
+        result = (result * PRIME) + (this.domainName == null ? 43 : this.domainName.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

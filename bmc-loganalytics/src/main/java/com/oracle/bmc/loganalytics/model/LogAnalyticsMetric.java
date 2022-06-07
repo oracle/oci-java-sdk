@@ -15,16 +15,82 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsMetric.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsMetric {
+public final class LogAnalyticsMetric {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "aggregationField",
+        "bucketMetadata",
+        "clockPeriod",
+        "description",
+        "editVersion",
+        "fieldName",
+        "fieldValues",
+        "groupingField",
+        "isEnabled",
+        "isSystem",
+        "displayName",
+        "metricReference",
+        "name",
+        "metricType",
+        "isMetricSourceEnabled",
+        "operator",
+        "sources",
+        "entityType",
+        "timeUpdated",
+        "unitType",
+        "isUserCustomized"
+    })
+    public LogAnalyticsMetric(
+            String aggregationField,
+            String bucketMetadata,
+            String clockPeriod,
+            String description,
+            Long editVersion,
+            String fieldName,
+            java.util.List<String> fieldValues,
+            String groupingField,
+            Boolean isEnabled,
+            Boolean isSystem,
+            String displayName,
+            Long metricReference,
+            String name,
+            MetricType metricType,
+            Boolean isMetricSourceEnabled,
+            Operator operator,
+            java.util.List<LogAnalyticsSource> sources,
+            String entityType,
+            java.util.Date timeUpdated,
+            String unitType,
+            Boolean isUserCustomized) {
+        super();
+        this.aggregationField = aggregationField;
+        this.bucketMetadata = bucketMetadata;
+        this.clockPeriod = clockPeriod;
+        this.description = description;
+        this.editVersion = editVersion;
+        this.fieldName = fieldName;
+        this.fieldValues = fieldValues;
+        this.groupingField = groupingField;
+        this.isEnabled = isEnabled;
+        this.isSystem = isSystem;
+        this.displayName = displayName;
+        this.metricReference = metricReference;
+        this.name = name;
+        this.metricType = metricType;
+        this.isMetricSourceEnabled = isMetricSourceEnabled;
+        this.operator = operator;
+        this.sources = sources;
+        this.entityType = entityType;
+        this.timeUpdated = timeUpdated;
+        this.unitType = unitType;
+        this.isUserCustomized = isUserCustomized;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("aggregationField")
         private String aggregationField;
@@ -283,60 +349,100 @@ public class LogAnalyticsMetric {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The aggregation field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregationField")
-    String aggregationField;
+    private final String aggregationField;
+
+    public String getAggregationField() {
+        return aggregationField;
+    }
 
     /**
      * The bucket metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketMetadata")
-    String bucketMetadata;
+    private final String bucketMetadata;
+
+    public String getBucketMetadata() {
+        return bucketMetadata;
+    }
 
     /**
      * The clock period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockPeriod")
-    String clockPeriod;
+    private final String clockPeriod;
+
+    public String getClockPeriod() {
+        return clockPeriod;
+    }
 
     /**
      * The metric description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The metric edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
-    Long editVersion;
+    private final Long editVersion;
+
+    public Long getEditVersion() {
+        return editVersion;
+    }
 
     /**
      * The field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
-    String fieldName;
+    private final String fieldName;
+
+    public String getFieldName() {
+        return fieldName;
+    }
 
     /**
      * The field values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
-    java.util.List<String> fieldValues;
+    private final java.util.List<String> fieldValues;
+
+    public java.util.List<String> getFieldValues() {
+        return fieldValues;
+    }
 
     /**
      * The grouping fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupingField")
-    String groupingField;
+    private final String groupingField;
+
+    public String getGroupingField() {
+        return groupingField;
+    }
 
     /**
      * A flag inidcating whether or not the metric is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -344,31 +450,47 @@ public class LogAnalyticsMetric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The metric display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The metric unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricReference")
-    Long metricReference;
+    private final Long metricReference;
+
+    public Long getMetricReference() {
+        return metricReference;
+    }
 
     /**
      * The metric name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The metric type, specifying the type of aggreation to perform.  Default value
      * is COUNT.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MetricType {
         Count("COUNT"),
         Sum("SUM"),
@@ -382,6 +504,9 @@ public class LogAnalyticsMetric {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MetricType.class);
 
         private final String value;
         private static java.util.Map<String, MetricType> map;
@@ -421,18 +546,26 @@ public class LogAnalyticsMetric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
-    MetricType metricType;
+    private final MetricType metricType;
+
+    public MetricType getMetricType() {
+        return metricType;
+    }
 
     /**
      * A flag specifying whether or not the metric source is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
-    Boolean isMetricSourceEnabled;
+    private final Boolean isMetricSourceEnabled;
+
+    public Boolean getIsMetricSourceEnabled() {
+        return isMetricSourceEnabled;
+    }
+
     /**
      * The metric operator.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Operator {
         ContainsIgnoreCase("CONTAINS_IGNORE_CASE"),
         InIgnoreCase("IN_IGNORE_CASE"),
@@ -444,6 +577,9 @@ public class LogAnalyticsMetric {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Operator.class);
 
         private final String value;
         private static java.util.Map<String, Operator> map;
@@ -481,39 +617,176 @@ public class LogAnalyticsMetric {
      * The metric operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
-    Operator operator;
+    private final Operator operator;
+
+    public Operator getOperator() {
+        return operator;
+    }
 
     /**
      * The metric sources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
-    java.util.List<LogAnalyticsSource> sources;
+    private final java.util.List<LogAnalyticsSource> sources;
+
+    public java.util.List<LogAnalyticsSource> getSources() {
+        return sources;
+    }
 
     /**
      * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
 
     /**
      * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The unit type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
-    String unitType;
+    private final String unitType;
+
+    public String getUnitType() {
+        return unitType;
+    }
 
     /**
      * A flag specifying whether or not this is a custom (user defined) metric.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserCustomized")
-    Boolean isUserCustomized;
+    private final Boolean isUserCustomized;
+
+    public Boolean getIsUserCustomized() {
+        return isUserCustomized;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsMetric(");
+        sb.append("aggregationField=").append(String.valueOf(this.aggregationField));
+        sb.append(", bucketMetadata=").append(String.valueOf(this.bucketMetadata));
+        sb.append(", clockPeriod=").append(String.valueOf(this.clockPeriod));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", editVersion=").append(String.valueOf(this.editVersion));
+        sb.append(", fieldName=").append(String.valueOf(this.fieldName));
+        sb.append(", fieldValues=").append(String.valueOf(this.fieldValues));
+        sb.append(", groupingField=").append(String.valueOf(this.groupingField));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", metricReference=").append(String.valueOf(this.metricReference));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", metricType=").append(String.valueOf(this.metricType));
+        sb.append(", isMetricSourceEnabled=").append(String.valueOf(this.isMetricSourceEnabled));
+        sb.append(", operator=").append(String.valueOf(this.operator));
+        sb.append(", sources=").append(String.valueOf(this.sources));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", unitType=").append(String.valueOf(this.unitType));
+        sb.append(", isUserCustomized=").append(String.valueOf(this.isUserCustomized));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsMetric)) {
+            return false;
+        }
+
+        LogAnalyticsMetric other = (LogAnalyticsMetric) o;
+        return java.util.Objects.equals(this.aggregationField, other.aggregationField)
+                && java.util.Objects.equals(this.bucketMetadata, other.bucketMetadata)
+                && java.util.Objects.equals(this.clockPeriod, other.clockPeriod)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.editVersion, other.editVersion)
+                && java.util.Objects.equals(this.fieldName, other.fieldName)
+                && java.util.Objects.equals(this.fieldValues, other.fieldValues)
+                && java.util.Objects.equals(this.groupingField, other.groupingField)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.metricReference, other.metricReference)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.metricType, other.metricType)
+                && java.util.Objects.equals(this.isMetricSourceEnabled, other.isMetricSourceEnabled)
+                && java.util.Objects.equals(this.operator, other.operator)
+                && java.util.Objects.equals(this.sources, other.sources)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.unitType, other.unitType)
+                && java.util.Objects.equals(this.isUserCustomized, other.isUserCustomized)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.aggregationField == null ? 43 : this.aggregationField.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bucketMetadata == null ? 43 : this.bucketMetadata.hashCode());
+        result = (result * PRIME) + (this.clockPeriod == null ? 43 : this.clockPeriod.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.editVersion == null ? 43 : this.editVersion.hashCode());
+        result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
+        result = (result * PRIME) + (this.fieldValues == null ? 43 : this.fieldValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupingField == null ? 43 : this.groupingField.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metricReference == null ? 43 : this.metricReference.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.metricType == null ? 43 : this.metricType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMetricSourceEnabled == null
+                                ? 43
+                                : this.isMetricSourceEnabled.hashCode());
+        result = (result * PRIME) + (this.operator == null ? 43 : this.operator.hashCode());
+        result = (result * PRIME) + (this.sources == null ? 43 : this.sources.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.unitType == null ? 43 : this.unitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUserCustomized == null ? 43 : this.isUserCustomized.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

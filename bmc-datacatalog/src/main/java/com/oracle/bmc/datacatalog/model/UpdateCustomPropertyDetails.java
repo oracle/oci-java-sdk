@@ -15,16 +15,55 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateCustomPropertyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateCustomPropertyDetails {
+public final class UpdateCustomPropertyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "isSortable",
+        "isFilterable",
+        "isMultiValued",
+        "isHidden",
+        "isEditable",
+        "isShownInList",
+        "isHiddenInSearch",
+        "isEventEnabled",
+        "allowedValues",
+        "properties"
+    })
+    public UpdateCustomPropertyDetails(
+            String displayName,
+            String description,
+            Boolean isSortable,
+            Boolean isFilterable,
+            Boolean isMultiValued,
+            Boolean isHidden,
+            Boolean isEditable,
+            Boolean isShownInList,
+            Boolean isHiddenInSearch,
+            Boolean isEventEnabled,
+            java.util.List<String> allowedValues,
+            java.util.Map<String, java.util.Map<String, String>> properties) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.isSortable = isSortable;
+        this.isFilterable = isFilterable;
+        this.isMultiValued = isMultiValued;
+        this.isHidden = isHidden;
+        this.isEditable = isEditable;
+        this.isShownInList = isShownInList;
+        this.isHiddenInSearch = isHiddenInSearch;
+        this.isEventEnabled = isEventEnabled;
+        this.allowedValues = allowedValues;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -184,73 +223,121 @@ public class UpdateCustomPropertyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Detailed description of the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * If this field allows to sort from UI
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSortable")
-    Boolean isSortable;
+    private final Boolean isSortable;
+
+    public Boolean getIsSortable() {
+        return isSortable;
+    }
 
     /**
      * If this field allows to filter or create facets from UI
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFilterable")
-    Boolean isFilterable;
+    private final Boolean isFilterable;
+
+    public Boolean getIsFilterable() {
+        return isFilterable;
+    }
 
     /**
      * If this field allows multiple values to be set
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
-    Boolean isMultiValued;
+    private final Boolean isMultiValued;
+
+    public Boolean getIsMultiValued() {
+        return isMultiValued;
+    }
 
     /**
      * If this field is a hidden field
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
-    Boolean isHidden;
+    private final Boolean isHidden;
+
+    public Boolean getIsHidden() {
+        return isHidden;
+    }
 
     /**
      * If this field is a editable field
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
-    Boolean isEditable;
+    private final Boolean isEditable;
+
+    public Boolean getIsEditable() {
+        return isEditable;
+    }
 
     /**
      * If this field is displayed in a list view of applicable objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
-    Boolean isShownInList;
+    private final Boolean isShownInList;
+
+    public Boolean getIsShownInList() {
+        return isShownInList;
+    }
 
     /**
      * If this field is allowed to pop in search results
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenInSearch")
-    Boolean isHiddenInSearch;
+    private final Boolean isHiddenInSearch;
+
+    public Boolean getIsHiddenInSearch() {
+        return isHiddenInSearch;
+    }
 
     /**
      * If an OCI Event will be emitted when the custom property is modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
-    Boolean isEventEnabled;
+    private final Boolean isEventEnabled;
+
+    public Boolean getIsEventEnabled() {
+        return isEventEnabled;
+    }
 
     /**
      * Allowed values for the custom property if any
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
-    java.util.List<String> allowedValues;
+    private final java.util.List<String> allowedValues;
+
+    public java.util.List<String> getAllowedValues() {
+        return allowedValues;
+    }
 
     /**
      * A map of maps that contains the properties which are specific to the asset type. Each data asset type
@@ -261,8 +348,94 @@ public class UpdateCustomPropertyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, java.util.Map<String, String>> properties;
+    private final java.util.Map<String, java.util.Map<String, String>> properties;
+
+    public java.util.Map<String, java.util.Map<String, String>> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateCustomPropertyDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isSortable=").append(String.valueOf(this.isSortable));
+        sb.append(", isFilterable=").append(String.valueOf(this.isFilterable));
+        sb.append(", isMultiValued=").append(String.valueOf(this.isMultiValued));
+        sb.append(", isHidden=").append(String.valueOf(this.isHidden));
+        sb.append(", isEditable=").append(String.valueOf(this.isEditable));
+        sb.append(", isShownInList=").append(String.valueOf(this.isShownInList));
+        sb.append(", isHiddenInSearch=").append(String.valueOf(this.isHiddenInSearch));
+        sb.append(", isEventEnabled=").append(String.valueOf(this.isEventEnabled));
+        sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateCustomPropertyDetails)) {
+            return false;
+        }
+
+        UpdateCustomPropertyDetails other = (UpdateCustomPropertyDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isSortable, other.isSortable)
+                && java.util.Objects.equals(this.isFilterable, other.isFilterable)
+                && java.util.Objects.equals(this.isMultiValued, other.isMultiValued)
+                && java.util.Objects.equals(this.isHidden, other.isHidden)
+                && java.util.Objects.equals(this.isEditable, other.isEditable)
+                && java.util.Objects.equals(this.isShownInList, other.isShownInList)
+                && java.util.Objects.equals(this.isHiddenInSearch, other.isHiddenInSearch)
+                && java.util.Objects.equals(this.isEventEnabled, other.isEventEnabled)
+                && java.util.Objects.equals(this.allowedValues, other.allowedValues)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.isSortable == null ? 43 : this.isSortable.hashCode());
+        result = (result * PRIME) + (this.isFilterable == null ? 43 : this.isFilterable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultiValued == null ? 43 : this.isMultiValued.hashCode());
+        result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
+        result = (result * PRIME) + (this.isEditable == null ? 43 : this.isEditable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isShownInList == null ? 43 : this.isShownInList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHiddenInSearch == null ? 43 : this.isHiddenInSearch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEventEnabled == null ? 43 : this.isEventEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

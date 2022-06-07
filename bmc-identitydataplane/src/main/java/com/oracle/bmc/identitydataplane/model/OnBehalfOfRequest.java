@@ -15,16 +15,31 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OnBehalfOfRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OnBehalfOfRequest {
+public final class OnBehalfOfRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "requestHeaders",
+        "targetServiceName",
+        "oboToken",
+        "expiration"
+    })
+    public OnBehalfOfRequest(
+            java.util.Map<String, java.util.List<String>> requestHeaders,
+            String targetServiceName,
+            String oboToken,
+            String expiration) {
+        super();
+        this.requestHeaders = requestHeaders;
+        this.targetServiceName = targetServiceName;
+        this.oboToken = oboToken;
+        this.expiration = expiration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
         private java.util.Map<String, java.util.List<String>> requestHeaders;
@@ -93,30 +108,102 @@ public class OnBehalfOfRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The signed headers of the customer call.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
-    java.util.Map<String, java.util.List<String>> requestHeaders;
+    private final java.util.Map<String, java.util.List<String>> requestHeaders;
+
+    public java.util.Map<String, java.util.List<String>> getRequestHeaders() {
+        return requestHeaders;
+    }
 
     /**
      * The name of the target service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetServiceName")
-    String targetServiceName;
+    private final String targetServiceName;
+
+    public String getTargetServiceName() {
+        return targetServiceName;
+    }
 
     /**
      * If you have an obo token already, exchange that for a new obo token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oboToken")
-    String oboToken;
+    private final String oboToken;
+
+    public String getOboToken() {
+        return oboToken;
+    }
 
     /**
      * A duration for which the obo token is requested to be valid.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expiration")
-    String expiration;
+    private final String expiration;
+
+    public String getExpiration() {
+        return expiration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OnBehalfOfRequest(");
+        sb.append("requestHeaders=").append(String.valueOf(this.requestHeaders));
+        sb.append(", targetServiceName=").append(String.valueOf(this.targetServiceName));
+        sb.append(", oboToken=").append(String.valueOf(this.oboToken));
+        sb.append(", expiration=").append(String.valueOf(this.expiration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OnBehalfOfRequest)) {
+            return false;
+        }
+
+        OnBehalfOfRequest other = (OnBehalfOfRequest) o;
+        return java.util.Objects.equals(this.requestHeaders, other.requestHeaders)
+                && java.util.Objects.equals(this.targetServiceName, other.targetServiceName)
+                && java.util.Objects.equals(this.oboToken, other.oboToken)
+                && java.util.Objects.equals(this.expiration, other.expiration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.requestHeaders == null ? 43 : this.requestHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetServiceName == null ? 43 : this.targetServiceName.hashCode());
+        result = (result * PRIME) + (this.oboToken == null ? 43 : this.oboToken.hashCode());
+        result = (result * PRIME) + (this.expiration == null ? 43 : this.expiration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

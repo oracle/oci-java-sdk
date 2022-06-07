@@ -31,14 +31,41 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetricData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MetricData {
+public final class MetricData {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "namespace",
+        "resourceGroup",
+        "compartmentId",
+        "name",
+        "dimensions",
+        "metadata",
+        "resolution",
+        "aggregatedDatapoints"
+    })
+    public MetricData(
+            String namespace,
+            String resourceGroup,
+            String compartmentId,
+            String name,
+            java.util.Map<String, String> dimensions,
+            java.util.Map<String, String> metadata,
+            String resolution,
+            java.util.List<AggregatedDatapoint> aggregatedDatapoints) {
+        super();
+        this.namespace = namespace;
+        this.resourceGroup = resourceGroup;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.dimensions = dimensions;
+        this.metadata = metadata;
+        this.resolution = resolution;
+        this.aggregatedDatapoints = aggregatedDatapoints;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
@@ -155,6 +182,10 @@ public class MetricData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The reference provided in a metric definition to indicate the source service or
      * application that emitted the metric.
@@ -163,7 +194,11 @@ public class MetricData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
@@ -173,7 +208,11 @@ public class MetricData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
-    String resourceGroup;
+    private final String resourceGroup;
+
+    public String getResourceGroup() {
+        return resourceGroup;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
@@ -181,7 +220,11 @@ public class MetricData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the metric.
@@ -190,7 +233,11 @@ public class MetricData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Qualifiers provided in the definition of the returned metric.
@@ -200,7 +247,11 @@ public class MetricData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    java.util.Map<String, String> dimensions;
+    private final java.util.Map<String, String> dimensions;
+
+    public java.util.Map<String, String> getDimensions() {
+        return dimensions;
+    }
 
     /**
      * The references provided in a metric definition to indicate extra information about the metric.
@@ -209,7 +260,11 @@ public class MetricData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    java.util.Map<String, String> metadata;
+    private final java.util.Map<String, String> metadata;
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
 
     /**
      * The time between calculated aggregation windows. Use with the query interval to vary the
@@ -222,7 +277,11 @@ public class MetricData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolution")
-    String resolution;
+    private final String resolution;
+
+    public String getResolution() {
+        return resolution;
+    }
 
     /**
      * The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request.
@@ -230,8 +289,80 @@ public class MetricData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedDatapoints")
-    java.util.List<AggregatedDatapoint> aggregatedDatapoints;
+    private final java.util.List<AggregatedDatapoint> aggregatedDatapoints;
+
+    public java.util.List<AggregatedDatapoint> getAggregatedDatapoints() {
+        return aggregatedDatapoints;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MetricData(");
+        sb.append("namespace=").append(String.valueOf(this.namespace));
+        sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", resolution=").append(String.valueOf(this.resolution));
+        sb.append(", aggregatedDatapoints=").append(String.valueOf(this.aggregatedDatapoints));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MetricData)) {
+            return false;
+        }
+
+        MetricData other = (MetricData) o;
+        return java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.resolution, other.resolution)
+                && java.util.Objects.equals(this.aggregatedDatapoints, other.aggregatedDatapoints)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.resolution == null ? 43 : this.resolution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aggregatedDatapoints == null
+                                ? 43
+                                : this.aggregatedDatapoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

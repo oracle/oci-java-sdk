@@ -15,16 +15,31 @@ package com.oracle.bmc.datascience.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = NotebookSessionConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NotebookSessionConfigurationDetails {
+public final class NotebookSessionConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "shape",
+        "blockStorageSizeInGBs",
+        "subnetId",
+        "notebookSessionShapeConfigDetails"
+    })
+    public NotebookSessionConfigurationDetails(
+            String shape,
+            Integer blockStorageSizeInGBs,
+            String subnetId,
+            NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails) {
+        super();
+        this.shape = shape;
+        this.blockStorageSizeInGBs = blockStorageSizeInGBs;
+        this.subnetId = subnetId;
+        this.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
@@ -98,30 +113,109 @@ public class NotebookSessionConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
-    Integer blockStorageSizeInGBs;
+    private final Integer blockStorageSizeInGBs;
+
+    public Integer getBlockStorageSizeInGBs() {
+        return blockStorageSizeInGBs;
+    }
 
     /**
      * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionShapeConfigDetails")
-    NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
+    private final NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
+
+    public NotebookSessionShapeConfigDetails getNotebookSessionShapeConfigDetails() {
+        return notebookSessionShapeConfigDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NotebookSessionConfigurationDetails(");
+        sb.append("shape=").append(String.valueOf(this.shape));
+        sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", notebookSessionShapeConfigDetails=")
+                .append(String.valueOf(this.notebookSessionShapeConfigDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NotebookSessionConfigurationDetails)) {
+            return false;
+        }
+
+        NotebookSessionConfigurationDetails other = (NotebookSessionConfigurationDetails) o;
+        return java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(
+                        this.notebookSessionShapeConfigDetails,
+                        other.notebookSessionShapeConfigDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockStorageSizeInGBs == null
+                                ? 43
+                                : this.blockStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notebookSessionShapeConfigDetails == null
+                                ? 43
+                                : this.notebookSessionShapeConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

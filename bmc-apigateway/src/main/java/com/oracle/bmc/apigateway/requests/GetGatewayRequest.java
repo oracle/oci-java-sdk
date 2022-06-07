@@ -9,14 +9,6 @@ import com.oracle.bmc.apigateway.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetGatewayExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetGatewayRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetGatewayRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,10 +16,17 @@ public class GetGatewayRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String gatewayId;
 
+    public String getGatewayId() {
+        return gatewayId;
+    }
     /**
      * The client request id for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -35,6 +34,28 @@ public class GetGatewayRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String gatewayId = null;
+
+        /**
+         * The ocid of the gateway.
+         * @return this builder instance
+         */
+        public Builder gatewayId(String gatewayId) {
+            this.gatewayId = gatewayId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request id for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -87,5 +108,67 @@ public class GetGatewayRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetGatewayRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetGatewayRequest
+         */
+        public GetGatewayRequest buildWithoutInvocationCallback() {
+            GetGatewayRequest request = new GetGatewayRequest();
+            request.gatewayId = gatewayId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetGatewayRequest(gatewayId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().gatewayId(gatewayId).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",gatewayId=").append(String.valueOf(this.gatewayId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetGatewayRequest)) {
+            return false;
+        }
+
+        GetGatewayRequest other = (GetGatewayRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.gatewayId, other.gatewayId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.gatewayId == null ? 43 : this.gatewayId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

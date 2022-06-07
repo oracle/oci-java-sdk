@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTagRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateTagRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.identity.model.UpdateTagDetails> {
 
@@ -26,17 +18,26 @@ public class UpdateTagRequest
      */
     private String tagNamespaceId;
 
+    public String getTagNamespaceId() {
+        return tagNamespaceId;
+    }
     /**
      * The name of the tag.
      *
      */
     private String tagName;
 
+    public String getTagName() {
+        return tagName;
+    }
     /**
      * Request object for updating a tag.
      */
     private com.oracle.bmc.identity.model.UpdateTagDetails updateTagDetails;
 
+    public com.oracle.bmc.identity.model.UpdateTagDetails getUpdateTagDetails() {
+        return updateTagDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -44,6 +45,10 @@ public class UpdateTagRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -61,6 +66,56 @@ public class UpdateTagRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String tagNamespaceId = null;
+
+        /**
+         * The OCID of the tag namespace.
+         *
+         * @return this builder instance
+         */
+        public Builder tagNamespaceId(String tagNamespaceId) {
+            this.tagNamespaceId = tagNamespaceId;
+            return this;
+        }
+
+        private String tagName = null;
+
+        /**
+         * The name of the tag.
+         *
+         * @return this builder instance
+         */
+        public Builder tagName(String tagName) {
+            this.tagName = tagName;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.UpdateTagDetails updateTagDetails = null;
+
+        /**
+         * Request object for updating a tag.
+         * @return this builder instance
+         */
+        public Builder updateTagDetails(
+                com.oracle.bmc.identity.model.UpdateTagDetails updateTagDetails) {
+            this.updateTagDetails = updateTagDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -126,5 +181,83 @@ public class UpdateTagRequest
             updateTagDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateTagRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateTagRequest
+         */
+        public UpdateTagRequest buildWithoutInvocationCallback() {
+            UpdateTagRequest request = new UpdateTagRequest();
+            request.tagNamespaceId = tagNamespaceId;
+            request.tagName = tagName;
+            request.updateTagDetails = updateTagDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateTagRequest(tagNamespaceId, tagName, updateTagDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .tagNamespaceId(tagNamespaceId)
+                .tagName(tagName)
+                .updateTagDetails(updateTagDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
+        sb.append(",tagName=").append(String.valueOf(this.tagName));
+        sb.append(",updateTagDetails=").append(String.valueOf(this.updateTagDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTagRequest)) {
+            return false;
+        }
+
+        UpdateTagRequest other = (UpdateTagRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
+                && java.util.Objects.equals(this.tagName, other.tagName)
+                && java.util.Objects.equals(this.updateTagDetails, other.updateTagDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.tagNamespaceId == null ? 43 : this.tagNamespaceId.hashCode());
+        result = (result * PRIME) + (this.tagName == null ? 43 : this.tagName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateTagDetails == null ? 43 : this.updateTagDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

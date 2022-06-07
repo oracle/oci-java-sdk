@@ -17,22 +17,18 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GithubAccessTokenConfigurationSourceProvider.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "configSourceProviderType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GithubAccessTokenConfigurationSourceProvider extends ConfigurationSourceProvider {
+public final class GithubAccessTokenConfigurationSourceProvider
+        extends ConfigurationSourceProvider {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -88,6 +84,16 @@ public class GithubAccessTokenConfigurationSourceProvider extends ConfigurationS
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateServerConfigDetails")
+        private PrivateServerConfigDetails privateServerConfigDetails;
+
+        public Builder privateServerConfigDetails(
+                PrivateServerConfigDetails privateServerConfigDetails) {
+            this.privateServerConfigDetails = privateServerConfigDetails;
+            this.__explicitlySet__.add("privateServerConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -128,6 +134,7 @@ public class GithubAccessTokenConfigurationSourceProvider extends ConfigurationS
                             description,
                             timeCreated,
                             lifecycleState,
+                            privateServerConfigDetails,
                             freeformTags,
                             definedTags,
                             apiEndpoint);
@@ -144,6 +151,7 @@ public class GithubAccessTokenConfigurationSourceProvider extends ConfigurationS
                             .description(o.getDescription())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState())
+                            .privateServerConfigDetails(o.getPrivateServerConfigDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .apiEndpoint(o.getApiEndpoint());
@@ -160,6 +168,10 @@ public class GithubAccessTokenConfigurationSourceProvider extends ConfigurationS
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public GithubAccessTokenConfigurationSourceProvider(
             String id,
@@ -168,6 +180,7 @@ public class GithubAccessTokenConfigurationSourceProvider extends ConfigurationS
             String description,
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
+            PrivateServerConfigDetails privateServerConfigDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String apiEndpoint) {
@@ -178,6 +191,7 @@ public class GithubAccessTokenConfigurationSourceProvider extends ConfigurationS
                 description,
                 timeCreated,
                 lifecycleState,
+                privateServerConfigDetails,
                 freeformTags,
                 definedTags);
         this.apiEndpoint = apiEndpoint;
@@ -189,8 +203,54 @@ public class GithubAccessTokenConfigurationSourceProvider extends ConfigurationS
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
-    String apiEndpoint;
+    private final String apiEndpoint;
+
+    public String getApiEndpoint() {
+        return apiEndpoint;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GithubAccessTokenConfigurationSourceProvider(");
+        sb.append("super=").append(super.toString());
+        sb.append(", apiEndpoint=").append(String.valueOf(this.apiEndpoint));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GithubAccessTokenConfigurationSourceProvider)) {
+            return false;
+        }
+
+        GithubAccessTokenConfigurationSourceProvider other =
+                (GithubAccessTokenConfigurationSourceProvider) o;
+        return java.util.Objects.equals(this.apiEndpoint, other.apiEndpoint)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apiEndpoint == null ? 43 : this.apiEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

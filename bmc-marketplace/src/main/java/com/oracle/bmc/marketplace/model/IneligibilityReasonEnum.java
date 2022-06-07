@@ -8,7 +8,6 @@ package com.oracle.bmc.marketplace.model;
  * Possible values of on why a tenant cannot launch a listing
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.extern.slf4j.Slf4j
 public enum IneligibilityReasonEnum {
     IneligibleAccountCountry("INELIGIBLE_ACCOUNT_COUNTRY"),
     IneligibleRegion("INELIGIBLE_REGION"),
@@ -26,6 +25,9 @@ public enum IneligibilityReasonEnum {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(IneligibilityReasonEnum.class);
 
     private final String value;
     private static java.util.Map<String, IneligibilityReasonEnum> map;

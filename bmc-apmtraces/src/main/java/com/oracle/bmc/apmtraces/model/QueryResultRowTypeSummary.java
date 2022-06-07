@@ -16,16 +16,34 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = QueryResultRowTypeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class QueryResultRowTypeSummary {
+public final class QueryResultRowTypeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "dataType",
+        "unit",
+        "displayName",
+        "expression",
+        "queryResultRowTypeSummaries"
+    })
+    public QueryResultRowTypeSummary(
+            String dataType,
+            String unit,
+            String displayName,
+            String expression,
+            java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries) {
+        super();
+        this.dataType = dataType;
+        this.unit = unit;
+        this.displayName = displayName;
+        this.expression = expression;
+        this.queryResultRowTypeSummaries = queryResultRowTypeSummaries;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
@@ -105,19 +123,31 @@ public class QueryResultRowTypeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Datatype of the query result row element.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    String dataType;
+    private final String dataType;
+
+    public String getDataType() {
+        return dataType;
+    }
 
     /**
      * Granular unit in which the query result row element's data is represented.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    String unit;
+    private final String unit;
+
+    public String getUnit() {
+        return unit;
+    }
 
     /**
      * Alias name if an alias is used for the query result row element or an assigned display name from the query language
@@ -125,22 +155,91 @@ public class QueryResultRowTypeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Actual show expression in the user typed query that produced this column.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
-    String expression;
+    private final String expression;
+
+    public String getExpression() {
+        return expression;
+    }
 
     /**
      * A query result row type summary object that represents a nested table structure.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowTypeSummaries")
-    java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
+    private final java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
+
+    public java.util.List<QueryResultRowTypeSummary> getQueryResultRowTypeSummaries() {
+        return queryResultRowTypeSummaries;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("QueryResultRowTypeSummary(");
+        sb.append("dataType=").append(String.valueOf(this.dataType));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", expression=").append(String.valueOf(this.expression));
+        sb.append(", queryResultRowTypeSummaries=")
+                .append(String.valueOf(this.queryResultRowTypeSummaries));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QueryResultRowTypeSummary)) {
+            return false;
+        }
+
+        QueryResultRowTypeSummary other = (QueryResultRowTypeSummary) o;
+        return java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.expression, other.expression)
+                && java.util.Objects.equals(
+                        this.queryResultRowTypeSummaries, other.queryResultRowTypeSummaries)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryResultRowTypeSummaries == null
+                                ? 43
+                                : this.queryResultRowTypeSummaries.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

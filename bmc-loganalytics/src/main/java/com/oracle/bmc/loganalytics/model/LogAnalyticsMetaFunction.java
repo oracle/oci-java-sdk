@@ -15,16 +15,40 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsMetaFunction.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsMetaFunction {
+public final class LogAnalyticsMetaFunction {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "metaFunctionArgument",
+        "component",
+        "description",
+        "editVersion",
+        "metaFunctionId",
+        "javaClassName",
+        "name"
+    })
+    public LogAnalyticsMetaFunction(
+            java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument,
+            String component,
+            String description,
+            Long editVersion,
+            Long metaFunctionId,
+            String javaClassName,
+            String name) {
+        super();
+        this.metaFunctionArgument = metaFunctionArgument;
+        this.component = component;
+        this.description = description;
+        this.editVersion = editVersion;
+        this.metaFunctionId = metaFunctionId;
+        this.javaClassName = javaClassName;
+        this.name = name;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionArgument")
         private java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument;
@@ -130,48 +154,145 @@ public class LogAnalyticsMetaFunction {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An array of meta function arguments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionArgument")
-    java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument;
+    private final java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument;
+
+    public java.util.List<LogAnalyticsMetaFunctionArgument> getMetaFunctionArgument() {
+        return metaFunctionArgument;
+    }
 
     /**
      * The component.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("component")
-    String component;
+    private final String component;
+
+    public String getComponent() {
+        return component;
+    }
 
     /**
      * The description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
-    Long editVersion;
+    private final Long editVersion;
+
+    public Long getEditVersion() {
+        return editVersion;
+    }
 
     /**
      * The meta function unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionId")
-    Long metaFunctionId;
+    private final Long metaFunctionId;
+
+    public Long getMetaFunctionId() {
+        return metaFunctionId;
+    }
 
     /**
      * The java class name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("javaClassName")
-    String javaClassName;
+    private final String javaClassName;
+
+    public String getJavaClassName() {
+        return javaClassName;
+    }
 
     /**
      * The meta function name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsMetaFunction(");
+        sb.append("metaFunctionArgument=").append(String.valueOf(this.metaFunctionArgument));
+        sb.append(", component=").append(String.valueOf(this.component));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", editVersion=").append(String.valueOf(this.editVersion));
+        sb.append(", metaFunctionId=").append(String.valueOf(this.metaFunctionId));
+        sb.append(", javaClassName=").append(String.valueOf(this.javaClassName));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsMetaFunction)) {
+            return false;
+        }
+
+        LogAnalyticsMetaFunction other = (LogAnalyticsMetaFunction) o;
+        return java.util.Objects.equals(this.metaFunctionArgument, other.metaFunctionArgument)
+                && java.util.Objects.equals(this.component, other.component)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.editVersion, other.editVersion)
+                && java.util.Objects.equals(this.metaFunctionId, other.metaFunctionId)
+                && java.util.Objects.equals(this.javaClassName, other.javaClassName)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.metaFunctionArgument == null
+                                ? 43
+                                : this.metaFunctionArgument.hashCode());
+        result = (result * PRIME) + (this.component == null ? 43 : this.component.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.editVersion == null ? 43 : this.editVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metaFunctionId == null ? 43 : this.metaFunctionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.javaClassName == null ? 43 : this.javaClassName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

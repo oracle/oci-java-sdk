@@ -15,16 +15,31 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateTransferPackageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTransferPackageDetails {
+public final class UpdateTransferPackageDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "originalPackageDeliveryTrackingNumber",
+        "returnPackageDeliveryTrackingNumber",
+        "packageDeliveryVendor",
+        "lifecycleState"
+    })
+    public UpdateTransferPackageDetails(
+            String originalPackageDeliveryTrackingNumber,
+            String returnPackageDeliveryTrackingNumber,
+            String packageDeliveryVendor,
+            LifecycleState lifecycleState) {
+        super();
+        this.originalPackageDeliveryTrackingNumber = originalPackageDeliveryTrackingNumber;
+        this.returnPackageDeliveryTrackingNumber = returnPackageDeliveryTrackingNumber;
+        this.packageDeliveryVendor = packageDeliveryVendor;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("originalPackageDeliveryTrackingNumber")
         private String originalPackageDeliveryTrackingNumber;
@@ -100,14 +115,31 @@ public class UpdateTransferPackageDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("originalPackageDeliveryTrackingNumber")
-    String originalPackageDeliveryTrackingNumber;
+    private final String originalPackageDeliveryTrackingNumber;
+
+    public String getOriginalPackageDeliveryTrackingNumber() {
+        return originalPackageDeliveryTrackingNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("returnPackageDeliveryTrackingNumber")
-    String returnPackageDeliveryTrackingNumber;
+    private final String returnPackageDeliveryTrackingNumber;
+
+    public String getReturnPackageDeliveryTrackingNumber() {
+        return returnPackageDeliveryTrackingNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("packageDeliveryVendor")
-    String packageDeliveryVendor;
+    private final String packageDeliveryVendor;
+
+    public String getPackageDeliveryVendor() {
+        return packageDeliveryVendor;
+    }
+
     /**
      **/
     public enum LifecycleState {
@@ -144,8 +176,80 @@ public class UpdateTransferPackageDetails {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTransferPackageDetails(");
+        sb.append("originalPackageDeliveryTrackingNumber=")
+                .append(String.valueOf(this.originalPackageDeliveryTrackingNumber));
+        sb.append(", returnPackageDeliveryTrackingNumber=")
+                .append(String.valueOf(this.returnPackageDeliveryTrackingNumber));
+        sb.append(", packageDeliveryVendor=").append(String.valueOf(this.packageDeliveryVendor));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTransferPackageDetails)) {
+            return false;
+        }
+
+        UpdateTransferPackageDetails other = (UpdateTransferPackageDetails) o;
+        return java.util.Objects.equals(
+                        this.originalPackageDeliveryTrackingNumber,
+                        other.originalPackageDeliveryTrackingNumber)
+                && java.util.Objects.equals(
+                        this.returnPackageDeliveryTrackingNumber,
+                        other.returnPackageDeliveryTrackingNumber)
+                && java.util.Objects.equals(this.packageDeliveryVendor, other.packageDeliveryVendor)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.originalPackageDeliveryTrackingNumber == null
+                                ? 43
+                                : this.originalPackageDeliveryTrackingNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.returnPackageDeliveryTrackingNumber == null
+                                ? 43
+                                : this.returnPackageDeliveryTrackingNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageDeliveryVendor == null
+                                ? 43
+                                : this.packageDeliveryVendor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -24,14 +24,20 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MaskingFormat.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MaskingFormat {
+public final class MaskingFormat {
+    @Deprecated
+    @java.beans.ConstructorProperties({"condition", "description", "formatEntries"})
+    public MaskingFormat(
+            String condition, String description, java.util.List<FormatEntry> formatEntries) {
+        super();
+        this.condition = condition;
+        this.description = description;
+        this.formatEntries = formatEntries;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
@@ -88,6 +94,10 @@ public class MaskingFormat {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A condition that must be true for applying the masking format. It can be any valid
      * SQL construct that can be used in a SQL predicate. It enables you to do
@@ -97,13 +107,21 @@ public class MaskingFormat {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    String condition;
+    private final String condition;
+
+    public String getCondition() {
+        return condition;
+    }
 
     /**
      * The description of the masking format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * An array of format entries. The combined output of all the format entries is
@@ -111,8 +129,59 @@ public class MaskingFormat {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("formatEntries")
-    java.util.List<FormatEntry> formatEntries;
+    private final java.util.List<FormatEntry> formatEntries;
+
+    public java.util.List<FormatEntry> getFormatEntries() {
+        return formatEntries;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MaskingFormat(");
+        sb.append("condition=").append(String.valueOf(this.condition));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", formatEntries=").append(String.valueOf(this.formatEntries));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MaskingFormat)) {
+            return false;
+        }
+
+        MaskingFormat other = (MaskingFormat) o;
+        return java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.formatEntries, other.formatEntries)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.formatEntries == null ? 43 : this.formatEntries.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

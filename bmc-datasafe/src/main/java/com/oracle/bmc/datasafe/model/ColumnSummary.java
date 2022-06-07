@@ -15,14 +15,41 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ColumnSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ColumnSummary {
+public final class ColumnSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "columnName",
+        "dataType",
+        "length",
+        "precision",
+        "scale",
+        "characterLength",
+        "tableName",
+        "schemaName"
+    })
+    public ColumnSummary(
+            String columnName,
+            String dataType,
+            Long length,
+            Integer precision,
+            Integer scale,
+            Integer characterLength,
+            String tableName,
+            String schemaName) {
+        super();
+        this.columnName = columnName;
+        this.dataType = dataType;
+        this.length = length;
+        this.precision = precision;
+        this.scale = scale;
+        this.characterLength = characterLength;
+        this.tableName = tableName;
+        this.schemaName = schemaName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
@@ -138,54 +165,152 @@ public class ColumnSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
-    String columnName;
+    private final String columnName;
+
+    public String getColumnName() {
+        return columnName;
+    }
 
     /**
      * Data type of the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    String dataType;
+    private final String dataType;
+
+    public String getDataType() {
+        return dataType;
+    }
 
     /**
      * Length of the data represented by the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
-    Long length;
+    private final Long length;
+
+    public Long getLength() {
+        return length;
+    }
 
     /**
      * Precision of the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("precision")
-    Integer precision;
+    private final Integer precision;
+
+    public Integer getPrecision() {
+        return precision;
+    }
 
     /**
      * Scale of the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scale")
-    Integer scale;
+    private final Integer scale;
+
+    public Integer getScale() {
+        return scale;
+    }
 
     /**
      * Character length.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterLength")
-    Integer characterLength;
+    private final Integer characterLength;
+
+    public Integer getCharacterLength() {
+        return characterLength;
+    }
 
     /**
      * Name of the table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
-    String tableName;
+    private final String tableName;
+
+    public String getTableName() {
+        return tableName;
+    }
 
     /**
      * Name of the schema.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
-    String schemaName;
+    private final String schemaName;
+
+    public String getSchemaName() {
+        return schemaName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ColumnSummary(");
+        sb.append("columnName=").append(String.valueOf(this.columnName));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", length=").append(String.valueOf(this.length));
+        sb.append(", precision=").append(String.valueOf(this.precision));
+        sb.append(", scale=").append(String.valueOf(this.scale));
+        sb.append(", characterLength=").append(String.valueOf(this.characterLength));
+        sb.append(", tableName=").append(String.valueOf(this.tableName));
+        sb.append(", schemaName=").append(String.valueOf(this.schemaName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ColumnSummary)) {
+            return false;
+        }
+
+        ColumnSummary other = (ColumnSummary) o;
+        return java.util.Objects.equals(this.columnName, other.columnName)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.length, other.length)
+                && java.util.Objects.equals(this.precision, other.precision)
+                && java.util.Objects.equals(this.scale, other.scale)
+                && java.util.Objects.equals(this.characterLength, other.characterLength)
+                && java.util.Objects.equals(this.tableName, other.tableName)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
+        result = (result * PRIME) + (this.precision == null ? 43 : this.precision.hashCode());
+        result = (result * PRIME) + (this.scale == null ? 43 : this.scale.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.characterLength == null ? 43 : this.characterLength.hashCode());
+        result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

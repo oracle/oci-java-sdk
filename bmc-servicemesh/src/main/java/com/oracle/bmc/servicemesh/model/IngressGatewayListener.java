@@ -15,16 +15,21 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IngressGatewayListener.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IngressGatewayListener {
+public final class IngressGatewayListener {
+    @Deprecated
+    @java.beans.ConstructorProperties({"protocol", "port", "tls"})
+    public IngressGatewayListener(Protocol protocol, Integer port, IngressListenerTlsConfig tls) {
+        super();
+        this.protocol = protocol;
+        this.port = port;
+        this.tls = tls;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
@@ -78,10 +83,13 @@ public class IngressGatewayListener {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Type of protocol used.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Protocol {
         Http("HTTP"),
         TlsPassthrough("TLS_PASSTHROUGH"),
@@ -92,6 +100,9 @@ public class IngressGatewayListener {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Protocol.class);
 
         private final String value;
         private static java.util.Map<String, Protocol> map;
@@ -129,17 +140,74 @@ public class IngressGatewayListener {
      * Type of protocol used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    Protocol protocol;
+    private final Protocol protocol;
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
 
     /**
      * Port on which ingress gateway is listening.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("tls")
-    IngressListenerTlsConfig tls;
+    private final IngressListenerTlsConfig tls;
+
+    public IngressListenerTlsConfig getTls() {
+        return tls;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IngressGatewayListener(");
+        sb.append("protocol=").append(String.valueOf(this.protocol));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", tls=").append(String.valueOf(this.tls));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IngressGatewayListener)) {
+            return false;
+        }
+
+        IngressGatewayListener other = (IngressGatewayListener) o;
+        return java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.tls, other.tls)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.tls == null ? 43 : this.tls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,21 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AggregatedStackTrace.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AggregatedStackTrace {
+public final class AggregatedStackTrace {
+    @Deprecated
+    @java.beans.ConstructorProperties({"stackTraceElement", "children"})
+    public AggregatedStackTrace(
+            StackTraceElement stackTraceElement, java.util.List<AggregatedStackTrace> children) {
+        super();
+        this.stackTraceElement = stackTraceElement;
+        this.children = children;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("stackTraceElement")
         private StackTraceElement stackTraceElement;
@@ -72,16 +77,72 @@ public class AggregatedStackTrace {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("stackTraceElement")
-    StackTraceElement stackTraceElement;
+    private final StackTraceElement stackTraceElement;
+
+    public StackTraceElement getStackTraceElement() {
+        return stackTraceElement;
+    }
 
     /**
      * List of child aggregated stack trace to represent branches.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("children")
-    java.util.List<AggregatedStackTrace> children;
+    private final java.util.List<AggregatedStackTrace> children;
+
+    public java.util.List<AggregatedStackTrace> getChildren() {
+        return children;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AggregatedStackTrace(");
+        sb.append("stackTraceElement=").append(String.valueOf(this.stackTraceElement));
+        sb.append(", children=").append(String.valueOf(this.children));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AggregatedStackTrace)) {
+            return false;
+        }
+
+        AggregatedStackTrace other = (AggregatedStackTrace) o;
+        return java.util.Objects.equals(this.stackTraceElement, other.stackTraceElement)
+                && java.util.Objects.equals(this.children, other.children)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.stackTraceElement == null ? 43 : this.stackTraceElement.hashCode());
+        result = (result * PRIME) + (this.children == null ? 43 : this.children.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

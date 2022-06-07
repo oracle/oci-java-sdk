@@ -24,12 +24,6 @@ package com.oracle.bmc.autoscaling.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -48,25 +42,52 @@ package com.oracle.bmc.autoscaling.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AutoScalingPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"capacity", "id", "displayName", "timeCreated", "isEnabled"})
+    protected AutoScalingPolicy(
+            Capacity capacity,
+            String id,
+            String displayName,
+            java.util.Date timeCreated,
+            Boolean isEnabled) {
+        super();
+        this.capacity = capacity;
+        this.id = id;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.isEnabled = isEnabled;
+    }
 
     /**
      * The capacity requirements of the autoscaling policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
-    Capacity capacity;
+    private final Capacity capacity;
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
 
     /**
      * The ID of the autoscaling policy that is assigned after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time the autoscaling configuration was created, in the format defined by RFC3339.
@@ -75,11 +96,61 @@ public class AutoScalingPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Whether the autoscaling policy is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutoScalingPolicy(");
+        sb.append("capacity=").append(String.valueOf(this.capacity));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutoScalingPolicy)) {
+            return false;
+        }
+
+        AutoScalingPolicy other = (AutoScalingPolicy) o;
+        return java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        return result;
+    }
 }

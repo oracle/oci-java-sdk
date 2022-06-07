@@ -15,22 +15,18 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UnifiedAgentLoggingConfiguration.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "configurationType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UnifiedAgentLoggingConfiguration extends UnifiedAgentServiceConfigurationDetails {
+public final class UnifiedAgentLoggingConfiguration
+        extends UnifiedAgentServiceConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sources")
         private java.util.List<UnifiedAgentLoggingSource> sources;
@@ -76,6 +72,10 @@ public class UnifiedAgentLoggingConfiguration extends UnifiedAgentServiceConfigu
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UnifiedAgentLoggingConfiguration(
             java.util.List<UnifiedAgentLoggingSource> sources,
@@ -86,11 +86,63 @@ public class UnifiedAgentLoggingConfiguration extends UnifiedAgentServiceConfigu
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
-    java.util.List<UnifiedAgentLoggingSource> sources;
+    private final java.util.List<UnifiedAgentLoggingSource> sources;
+
+    public java.util.List<UnifiedAgentLoggingSource> getSources() {
+        return sources;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
-    UnifiedAgentLoggingDestination destination;
+    private final UnifiedAgentLoggingDestination destination;
+
+    public UnifiedAgentLoggingDestination getDestination() {
+        return destination;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UnifiedAgentLoggingConfiguration(");
+        sb.append("super=").append(super.toString());
+        sb.append(", sources=").append(String.valueOf(this.sources));
+        sb.append(", destination=").append(String.valueOf(this.destination));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UnifiedAgentLoggingConfiguration)) {
+            return false;
+        }
+
+        UnifiedAgentLoggingConfiguration other = (UnifiedAgentLoggingConfiguration) o;
+        return java.util.Objects.equals(this.sources, other.sources)
+                && java.util.Objects.equals(this.destination, other.destination)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.sources == null ? 43 : this.sources.hashCode());
+        result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

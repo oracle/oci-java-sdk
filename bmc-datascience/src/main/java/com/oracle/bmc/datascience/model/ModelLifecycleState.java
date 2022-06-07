@@ -8,7 +8,6 @@ package com.oracle.bmc.datascience.model;
  * The lifecycle state of a model.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.extern.slf4j.Slf4j
 public enum ModelLifecycleState {
     Active("ACTIVE"),
     Deleted("DELETED"),
@@ -20,6 +19,9 @@ public enum ModelLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ModelLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, ModelLifecycleState> map;

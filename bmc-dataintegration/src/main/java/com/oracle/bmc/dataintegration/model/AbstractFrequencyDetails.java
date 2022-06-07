@@ -15,12 +15,6 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -55,11 +49,16 @@ package com.oracle.bmc.dataintegration.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AbstractFrequencyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"frequency"})
+    protected AbstractFrequencyDetails(Frequency frequency) {
+        super();
+        this.frequency = frequency;
+    }
 
     /**
      * the frequency of the schedule.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Frequency {
         Hourly("HOURLY"),
         Daily("DAILY"),
@@ -72,6 +71,9 @@ public class AbstractFrequencyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Frequency.class);
 
         private final String value;
         private static java.util.Map<String, Frequency> map;
@@ -109,12 +111,45 @@ public class AbstractFrequencyDetails {
      * the frequency of the schedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("frequency")
-    Frequency frequency;
+    private final Frequency frequency;
+
+    public Frequency getFrequency() {
+        return frequency;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractFrequencyDetails(");
+        sb.append("frequency=").append(String.valueOf(this.frequency));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractFrequencyDetails)) {
+            return false;
+        }
+
+        AbstractFrequencyDetails other = (AbstractFrequencyDetails) o;
+        return java.util.Objects.equals(this.frequency, other.frequency);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.frequency == null ? 43 : this.frequency.hashCode());
+        return result;
+    }
 
     /**
      * The type of the model
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ModelType {
         Hourly("HOURLY"),
         Daily("DAILY"),
@@ -128,6 +163,9 @@ public class AbstractFrequencyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ModelType.class);
 
         private final String value;
         private static java.util.Map<String, ModelType> map;

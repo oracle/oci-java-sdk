@@ -15,16 +15,37 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateServiceGatewayDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateServiceGatewayDetails {
+public final class UpdateServiceGatewayDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "blockTraffic",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "routeTableId",
+        "services"
+    })
+    public UpdateServiceGatewayDetails(
+            Boolean blockTraffic,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String routeTableId,
+            java.util.List<ServiceIdRequestDetails> services) {
+        super();
+        this.blockTraffic = blockTraffic;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.routeTableId = routeTableId;
+        this.services = services;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("blockTraffic")
         private Boolean blockTraffic;
@@ -119,6 +140,10 @@ public class UpdateServiceGatewayDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Whether the service gateway blocks all traffic through it. The default is {@code false}. When
      * this is {@code true}, traffic is not routed to any services, regardless of route rules.
@@ -127,7 +152,11 @@ public class UpdateServiceGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockTraffic")
-    Boolean blockTraffic;
+    private final Boolean blockTraffic;
+
+    public Boolean getBlockTraffic() {
+        return blockTraffic;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -137,7 +166,11 @@ public class UpdateServiceGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -145,7 +178,11 @@ public class UpdateServiceGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -155,7 +192,11 @@ public class UpdateServiceGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
@@ -164,7 +205,11 @@ public class UpdateServiceGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    String routeTableId;
+    private final String routeTableId;
+
+    public String getRouteTableId() {
+        return routeTableId;
+    }
 
     /**
      * List of all the {@code Service} objects you want enabled on this service gateway. Sending an empty list
@@ -181,8 +226,66 @@ public class UpdateServiceGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
-    java.util.List<ServiceIdRequestDetails> services;
+    private final java.util.List<ServiceIdRequestDetails> services;
+
+    public java.util.List<ServiceIdRequestDetails> getServices() {
+        return services;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateServiceGatewayDetails(");
+        sb.append("blockTraffic=").append(String.valueOf(this.blockTraffic));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", services=").append(String.valueOf(this.services));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateServiceGatewayDetails)) {
+            return false;
+        }
+
+        UpdateServiceGatewayDetails other = (UpdateServiceGatewayDetails) o;
+        return java.util.Objects.equals(this.blockTraffic, other.blockTraffic)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.services, other.services)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.blockTraffic == null ? 43 : this.blockTraffic.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

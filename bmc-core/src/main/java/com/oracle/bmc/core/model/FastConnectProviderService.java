@@ -17,16 +17,55 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FastConnectProviderService.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FastConnectProviderService {
+public final class FastConnectProviderService {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "id",
+        "privatePeeringBgpManagement",
+        "providerName",
+        "providerServiceName",
+        "publicPeeringBgpManagement",
+        "supportedVirtualCircuitTypes",
+        "customerAsnManagement",
+        "providerServiceKeyManagement",
+        "bandwithShapeManagement",
+        "requiredTotalCrossConnects",
+        "type"
+    })
+    public FastConnectProviderService(
+            String description,
+            String id,
+            PrivatePeeringBgpManagement privatePeeringBgpManagement,
+            String providerName,
+            String providerServiceName,
+            PublicPeeringBgpManagement publicPeeringBgpManagement,
+            java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes,
+            CustomerAsnManagement customerAsnManagement,
+            ProviderServiceKeyManagement providerServiceKeyManagement,
+            BandwithShapeManagement bandwithShapeManagement,
+            Integer requiredTotalCrossConnects,
+            Type type) {
+        super();
+        this.description = description;
+        this.id = id;
+        this.privatePeeringBgpManagement = privatePeeringBgpManagement;
+        this.providerName = providerName;
+        this.providerServiceName = providerServiceName;
+        this.publicPeeringBgpManagement = publicPeeringBgpManagement;
+        this.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
+        this.customerAsnManagement = customerAsnManagement;
+        this.providerServiceKeyManagement = providerServiceKeyManagement;
+        this.bandwithShapeManagement = bandwithShapeManagement;
+        this.requiredTotalCrossConnects = requiredTotalCrossConnects;
+        this.type = type;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -190,6 +229,10 @@ public class FastConnectProviderService {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The location of the provider's website or portal. This portal is where you can get information
      * about the provider service, create a virtual circuit connection from the provider to Oracle
@@ -199,19 +242,27 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * Who is responsible for managing the private peering BGP information.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PrivatePeeringBgpManagement {
         CustomerManaged("CUSTOMER_MANAGED"),
         ProviderManaged("PROVIDER_MANAGED"),
@@ -222,6 +273,9 @@ public class FastConnectProviderService {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PrivatePeeringBgpManagement.class);
 
         private final String value;
         private static java.util.Map<String, PrivatePeeringBgpManagement> map;
@@ -260,26 +314,38 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privatePeeringBgpManagement")
-    PrivatePeeringBgpManagement privatePeeringBgpManagement;
+    private final PrivatePeeringBgpManagement privatePeeringBgpManagement;
+
+    public PrivatePeeringBgpManagement getPrivatePeeringBgpManagement() {
+        return privatePeeringBgpManagement;
+    }
 
     /**
      * The name of the provider.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
-    String providerName;
+    private final String providerName;
+
+    public String getProviderName() {
+        return providerName;
+    }
 
     /**
      * The name of the service offered by the provider.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
-    String providerServiceName;
+    private final String providerServiceName;
+
+    public String getProviderServiceName() {
+        return providerServiceName;
+    }
+
     /**
      * Who is responsible for managing the public peering BGP information.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PublicPeeringBgpManagement {
         CustomerManaged("CUSTOMER_MANAGED"),
         ProviderManaged("PROVIDER_MANAGED"),
@@ -290,6 +356,9 @@ public class FastConnectProviderService {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PublicPeeringBgpManagement.class);
 
         private final String value;
         private static java.util.Map<String, PublicPeeringBgpManagement> map;
@@ -328,10 +397,14 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicPeeringBgpManagement")
-    PublicPeeringBgpManagement publicPeeringBgpManagement;
+    private final PublicPeeringBgpManagement publicPeeringBgpManagement;
+
+    public PublicPeeringBgpManagement getPublicPeeringBgpManagement() {
+        return publicPeeringBgpManagement;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SupportedVirtualCircuitTypes {
         Public("PUBLIC"),
         Private("PRIVATE"),
@@ -341,6 +414,9 @@ public class FastConnectProviderService {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SupportedVirtualCircuitTypes.class);
 
         private final String value;
         private static java.util.Map<String, SupportedVirtualCircuitTypes> map;
@@ -379,13 +455,17 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedVirtualCircuitTypes")
-    java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes;
+    private final java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes;
+
+    public java.util.List<SupportedVirtualCircuitTypes> getSupportedVirtualCircuitTypes() {
+        return supportedVirtualCircuitTypes;
+    }
+
     /**
      * Who is responsible for managing the ASN information for the network at the other end
      * of the connection from Oracle.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CustomerAsnManagement {
         CustomerManaged("CUSTOMER_MANAGED"),
         ProviderManaged("PROVIDER_MANAGED"),
@@ -396,6 +476,9 @@ public class FastConnectProviderService {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CustomerAsnManagement.class);
 
         private final String value;
         private static java.util.Map<String, CustomerAsnManagement> map;
@@ -435,12 +518,16 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerAsnManagement")
-    CustomerAsnManagement customerAsnManagement;
+    private final CustomerAsnManagement customerAsnManagement;
+
+    public CustomerAsnManagement getCustomerAsnManagement() {
+        return customerAsnManagement;
+    }
+
     /**
      * Who is responsible for managing the provider service key.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ProviderServiceKeyManagement {
         CustomerManaged("CUSTOMER_MANAGED"),
         ProviderManaged("PROVIDER_MANAGED"),
@@ -451,6 +538,9 @@ public class FastConnectProviderService {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ProviderServiceKeyManagement.class);
 
         private final String value;
         private static java.util.Map<String, ProviderServiceKeyManagement> map;
@@ -489,12 +579,16 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyManagement")
-    ProviderServiceKeyManagement providerServiceKeyManagement;
+    private final ProviderServiceKeyManagement providerServiceKeyManagement;
+
+    public ProviderServiceKeyManagement getProviderServiceKeyManagement() {
+        return providerServiceKeyManagement;
+    }
+
     /**
      * Who is responsible for managing the virtual circuit bandwidth.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BandwithShapeManagement {
         CustomerManaged("CUSTOMER_MANAGED"),
         ProviderManaged("PROVIDER_MANAGED"),
@@ -505,6 +599,9 @@ public class FastConnectProviderService {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BandwithShapeManagement.class);
 
         private final String value;
         private static java.util.Map<String, BandwithShapeManagement> map;
@@ -543,19 +640,27 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bandwithShapeManagement")
-    BandwithShapeManagement bandwithShapeManagement;
+    private final BandwithShapeManagement bandwithShapeManagement;
+
+    public BandwithShapeManagement getBandwithShapeManagement() {
+        return bandwithShapeManagement;
+    }
 
     /**
      * Total number of cross-connect or cross-connect groups required for the virtual circuit.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requiredTotalCrossConnects")
-    Integer requiredTotalCrossConnects;
+    private final Integer requiredTotalCrossConnects;
+
+    public Integer getRequiredTotalCrossConnects() {
+        return requiredTotalCrossConnects;
+    }
+
     /**
      * Provider service type.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Layer2("LAYER2"),
         Layer3("LAYER3"),
@@ -565,6 +670,8 @@ public class FastConnectProviderService {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -602,8 +709,128 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FastConnectProviderService(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", privatePeeringBgpManagement=")
+                .append(String.valueOf(this.privatePeeringBgpManagement));
+        sb.append(", providerName=").append(String.valueOf(this.providerName));
+        sb.append(", providerServiceName=").append(String.valueOf(this.providerServiceName));
+        sb.append(", publicPeeringBgpManagement=")
+                .append(String.valueOf(this.publicPeeringBgpManagement));
+        sb.append(", supportedVirtualCircuitTypes=")
+                .append(String.valueOf(this.supportedVirtualCircuitTypes));
+        sb.append(", customerAsnManagement=").append(String.valueOf(this.customerAsnManagement));
+        sb.append(", providerServiceKeyManagement=")
+                .append(String.valueOf(this.providerServiceKeyManagement));
+        sb.append(", bandwithShapeManagement=")
+                .append(String.valueOf(this.bandwithShapeManagement));
+        sb.append(", requiredTotalCrossConnects=")
+                .append(String.valueOf(this.requiredTotalCrossConnects));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FastConnectProviderService)) {
+            return false;
+        }
+
+        FastConnectProviderService other = (FastConnectProviderService) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.privatePeeringBgpManagement, other.privatePeeringBgpManagement)
+                && java.util.Objects.equals(this.providerName, other.providerName)
+                && java.util.Objects.equals(this.providerServiceName, other.providerServiceName)
+                && java.util.Objects.equals(
+                        this.publicPeeringBgpManagement, other.publicPeeringBgpManagement)
+                && java.util.Objects.equals(
+                        this.supportedVirtualCircuitTypes, other.supportedVirtualCircuitTypes)
+                && java.util.Objects.equals(this.customerAsnManagement, other.customerAsnManagement)
+                && java.util.Objects.equals(
+                        this.providerServiceKeyManagement, other.providerServiceKeyManagement)
+                && java.util.Objects.equals(
+                        this.bandwithShapeManagement, other.bandwithShapeManagement)
+                && java.util.Objects.equals(
+                        this.requiredTotalCrossConnects, other.requiredTotalCrossConnects)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privatePeeringBgpManagement == null
+                                ? 43
+                                : this.privatePeeringBgpManagement.hashCode());
+        result = (result * PRIME) + (this.providerName == null ? 43 : this.providerName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerServiceName == null
+                                ? 43
+                                : this.providerServiceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicPeeringBgpManagement == null
+                                ? 43
+                                : this.publicPeeringBgpManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedVirtualCircuitTypes == null
+                                ? 43
+                                : this.supportedVirtualCircuitTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerAsnManagement == null
+                                ? 43
+                                : this.customerAsnManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerServiceKeyManagement == null
+                                ? 43
+                                : this.providerServiceKeyManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bandwithShapeManagement == null
+                                ? 43
+                                : this.bandwithShapeManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requiredTotalCrossConnects == null
+                                ? 43
+                                : this.requiredTotalCrossConnects.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

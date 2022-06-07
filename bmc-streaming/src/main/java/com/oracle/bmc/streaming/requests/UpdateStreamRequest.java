@@ -9,14 +9,6 @@ import com.oracle.bmc.streaming.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateStreamRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateStreamRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.streaming.model.UpdateStreamDetails> {
@@ -27,11 +19,17 @@ public class UpdateStreamRequest
      */
     private String streamId;
 
+    public String getStreamId() {
+        return streamId;
+    }
     /**
      * The stream is updated with the values provided.
      */
     private com.oracle.bmc.streaming.model.UpdateStreamDetails updateStreamDetails;
 
+    public com.oracle.bmc.streaming.model.UpdateStreamDetails getUpdateStreamDetails() {
+        return updateStreamDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -39,10 +37,17 @@ public class UpdateStreamRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -60,6 +65,54 @@ public class UpdateStreamRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String streamId = null;
+
+        /**
+         * The OCID of the stream.
+         *
+         * @return this builder instance
+         */
+        public Builder streamId(String streamId) {
+            this.streamId = streamId;
+            return this;
+        }
+
+        private com.oracle.bmc.streaming.model.UpdateStreamDetails updateStreamDetails = null;
+
+        /**
+         * The stream is updated with the values provided.
+         * @return this builder instance
+         */
+        public Builder updateStreamDetails(
+                com.oracle.bmc.streaming.model.UpdateStreamDetails updateStreamDetails) {
+            this.updateStreamDetails = updateStreamDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -125,5 +178,83 @@ public class UpdateStreamRequest
             updateStreamDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateStreamRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateStreamRequest
+         */
+        public UpdateStreamRequest buildWithoutInvocationCallback() {
+            UpdateStreamRequest request = new UpdateStreamRequest();
+            request.streamId = streamId;
+            request.updateStreamDetails = updateStreamDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateStreamRequest(streamId, updateStreamDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .streamId(streamId)
+                .updateStreamDetails(updateStreamDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",streamId=").append(String.valueOf(this.streamId));
+        sb.append(",updateStreamDetails=").append(String.valueOf(this.updateStreamDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateStreamRequest)) {
+            return false;
+        }
+
+        UpdateStreamRequest other = (UpdateStreamRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.streamId, other.streamId)
+                && java.util.Objects.equals(this.updateStreamDetails, other.updateStreamDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateStreamDetails == null
+                                ? 43
+                                : this.updateStreamDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

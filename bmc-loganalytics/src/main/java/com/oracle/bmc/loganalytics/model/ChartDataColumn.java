@@ -16,20 +16,15 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChartDataColumn.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChartDataColumn extends AbstractColumn {
+public final class ChartDataColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -200,6 +195,10 @@ public class ChartDataColumn extends AbstractColumn {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ChartDataColumn(
             String displayName,
@@ -236,15 +235,69 @@ public class ChartDataColumn extends AbstractColumn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataItems")
-    java.util.List<Object> dataItems;
+    private final java.util.List<Object> dataItems;
+
+    public java.util.List<Object> getDataItems() {
+        return dataItems;
+    }
 
     /**
      * Data points filtered by query string. May not contain data points for each timestamp due to filtering.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filteredDataItems")
-    java.util.List<Object> filteredDataItems;
+    private final java.util.List<Object> filteredDataItems;
+
+    public java.util.List<Object> getFilteredDataItems() {
+        return filteredDataItems;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChartDataColumn(");
+        sb.append("super=").append(super.toString());
+        sb.append(", dataItems=").append(String.valueOf(this.dataItems));
+        sb.append(", filteredDataItems=").append(String.valueOf(this.filteredDataItems));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChartDataColumn)) {
+            return false;
+        }
+
+        ChartDataColumn other = (ChartDataColumn) o;
+        return java.util.Objects.equals(this.dataItems, other.dataItems)
+                && java.util.Objects.equals(this.filteredDataItems, other.filteredDataItems)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dataItems == null ? 43 : this.dataItems.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filteredDataItems == null ? 43 : this.filteredDataItems.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

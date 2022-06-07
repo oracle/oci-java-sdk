@@ -86,6 +86,22 @@ public interface ResourceManager extends AutoCloseable {
                     ChangeConfigurationSourceProviderCompartmentRequest request);
 
     /**
+     * Moves a private endpoint to a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangePrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePrivateEndpointCompartment API.
+     */
+    ChangePrivateEndpointCompartmentResponse changePrivateEndpointCompartment(
+            ChangePrivateEndpointCompartmentRequest request);
+
+    /**
      * Moves a Stack and it's associated Jobs into a different compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -142,6 +158,19 @@ public interface ResourceManager extends AutoCloseable {
     CreateJobResponse createJob(CreateJobRequest request);
 
     /**
+     * Creates a a private endpoint in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateEndpoint API.
+     */
+    CreatePrivateEndpointResponse createPrivateEndpoint(CreatePrivateEndpointRequest request);
+
+    /**
      * Creates a stack in the specified compartment.
      * You can create a stack from a Terraform configuration.
      * The Terraform configuration can be directly uploaded or referenced from a source code control system.
@@ -185,6 +214,18 @@ public interface ResourceManager extends AutoCloseable {
      */
     DeleteConfigurationSourceProviderResponse deleteConfigurationSourceProvider(
             DeleteConfigurationSourceProviderRequest request);
+
+    /**
+     * Deletes the specified private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeletePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateEndpoint API.
+     */
+    DeletePrivateEndpointResponse deletePrivateEndpoint(DeletePrivateEndpointRequest request);
 
     /**
      * Deletes the specified stack object.
@@ -302,6 +343,21 @@ public interface ResourceManager extends AutoCloseable {
     GetJobTfConfigResponse getJobTfConfig(GetJobTfConfigRequest request);
 
     /**
+     * Returns the output of the specified Terraform plan job in binary or JSON format.
+     * For information about running Terraform plan jobs, see
+     * [To run a plan job](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#PlanJobRun).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobTfPlan API.
+     */
+    GetJobTfPlanResponse getJobTfPlan(GetJobTfPlanRequest request);
+
+    /**
      * Returns the Terraform state for the specified job.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -312,6 +368,31 @@ public interface ResourceManager extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfStateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobTfState API.
      */
     GetJobTfStateResponse getJobTfState(GetJobTfStateRequest request);
+
+    /**
+     * Gets the specified private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint API.
+     */
+    GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request);
+
+    /**
+     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetReachableIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReachableIp API.
+     */
+    GetReachableIpResponse getReachableIp(GetReachableIpRequest request);
 
     /**
      * Gets a stack using the stack ID.
@@ -435,6 +516,21 @@ public interface ResourceManager extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobs API.
      */
     ListJobsResponse listJobs(ListJobsRequest request);
+
+    /**
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateEndpoints API.
+     */
+    ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request);
 
     /**
      * Returns a list of supported services for Resource Discovery. For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
@@ -589,6 +685,18 @@ public interface ResourceManager extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
      */
     UpdateJobResponse updateJob(UpdateJobRequest request);
+
+    /**
+     * Updates the specified private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateEndpoint API.
+     */
+    UpdatePrivateEndpointResponse updatePrivateEndpoint(UpdatePrivateEndpointRequest request);
 
     /**
      * Updates the specified stack object.

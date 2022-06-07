@@ -17,16 +17,37 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConsoleConnectionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConsoleConnectionSummary {
+public final class ConsoleConnectionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "dbNodeId",
+        "connectionString",
+        "fingerprint",
+        "lifecycleState"
+    })
+    public ConsoleConnectionSummary(
+            String id,
+            String compartmentId,
+            String dbNodeId,
+            String connectionString,
+            String fingerprint,
+            LifecycleState lifecycleState) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.dbNodeId = dbNodeId;
+        this.connectionString = connectionString;
+        this.fingerprint = fingerprint;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -120,39 +141,63 @@ public class ConsoleConnectionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment to contain the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the database node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
-    String dbNodeId;
+    private final String dbNodeId;
+
+    public String getDbNodeId() {
+        return dbNodeId;
+    }
 
     /**
      * The SSH connection string for the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
-    String connectionString;
+    private final String connectionString;
+
+    public String getConnectionString() {
+        return connectionString;
+    }
 
     /**
      * The SSH public key fingerprint for the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
-    String fingerprint;
+    private final String fingerprint;
+
+    public String getFingerprint() {
+        return fingerprint;
+    }
+
     /**
      * The current state of the console connection.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
@@ -165,6 +210,9 @@ public class ConsoleConnectionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -202,8 +250,72 @@ public class ConsoleConnectionSummary {
      * The current state of the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConsoleConnectionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", dbNodeId=").append(String.valueOf(this.dbNodeId));
+        sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", fingerprint=").append(String.valueOf(this.fingerprint));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConsoleConnectionSummary)) {
+            return false;
+        }
+
+        ConsoleConnectionSummary other = (ConsoleConnectionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.dbNodeId, other.dbNodeId)
+                && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.fingerprint, other.fingerprint)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.dbNodeId == null ? 43 : this.dbNodeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result = (result * PRIME) + (this.fingerprint == null ? 43 : this.fingerprint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

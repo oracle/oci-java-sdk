@@ -12,7 +12,6 @@ package com.oracle.bmc.datacatalog.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.extern.slf4j.Slf4j
 public enum RecommendationStatus {
     Accepted("ACCEPTED"),
     Rejected("REJECTED"),
@@ -23,6 +22,9 @@ public enum RecommendationStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RecommendationStatus.class);
 
     private final String value;
     private static java.util.Map<String, RecommendationStatus> map;

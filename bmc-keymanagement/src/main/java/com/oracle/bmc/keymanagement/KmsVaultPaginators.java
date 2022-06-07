@@ -26,9 +26,12 @@ import com.oracle.bmc.keymanagement.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.RequiredArgsConstructor
 public class KmsVaultPaginators {
     private final KmsVault client;
+
+    public KmsVaultPaginators(KmsVault client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listVaultReplicas operation. This iterable

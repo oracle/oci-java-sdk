@@ -15,22 +15,17 @@ package com.oracle.bmc.bastion.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagedSshSessionTargetResourceDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "sessionType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagedSshSessionTargetResourceDetails extends TargetResourceDetails {
+public final class ManagedSshSessionTargetResourceDetails extends TargetResourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
         private Integer targetResourcePort;
@@ -115,6 +110,10 @@ public class ManagedSshSessionTargetResourceDetails extends TargetResourceDetail
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ManagedSshSessionTargetResourceDetails(
             Integer targetResourcePort,
@@ -133,26 +132,113 @@ public class ManagedSshSessionTargetResourceDetails extends TargetResourceDetail
      * The name of the user on the target resource operating system that the session uses for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceOperatingSystemUserName")
-    String targetResourceOperatingSystemUserName;
+    private final String targetResourceOperatingSystemUserName;
+
+    public String getTargetResourceOperatingSystemUserName() {
+        return targetResourceOperatingSystemUserName;
+    }
 
     /**
      * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
-    String targetResourceId;
+    private final String targetResourceId;
+
+    public String getTargetResourceId() {
+        return targetResourceId;
+    }
 
     /**
      * The private IP address of the target resource that the session connects to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
-    String targetResourcePrivateIpAddress;
+    private final String targetResourcePrivateIpAddress;
+
+    public String getTargetResourcePrivateIpAddress() {
+        return targetResourcePrivateIpAddress;
+    }
 
     /**
      * The display name of the target Compute instance that the session connects to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceDisplayName")
-    String targetResourceDisplayName;
+    private final String targetResourceDisplayName;
+
+    public String getTargetResourceDisplayName() {
+        return targetResourceDisplayName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagedSshSessionTargetResourceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", targetResourceOperatingSystemUserName=")
+                .append(String.valueOf(this.targetResourceOperatingSystemUserName));
+        sb.append(", targetResourceId=").append(String.valueOf(this.targetResourceId));
+        sb.append(", targetResourcePrivateIpAddress=")
+                .append(String.valueOf(this.targetResourcePrivateIpAddress));
+        sb.append(", targetResourceDisplayName=")
+                .append(String.valueOf(this.targetResourceDisplayName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagedSshSessionTargetResourceDetails)) {
+            return false;
+        }
+
+        ManagedSshSessionTargetResourceDetails other = (ManagedSshSessionTargetResourceDetails) o;
+        return java.util.Objects.equals(
+                        this.targetResourceOperatingSystemUserName,
+                        other.targetResourceOperatingSystemUserName)
+                && java.util.Objects.equals(this.targetResourceId, other.targetResourceId)
+                && java.util.Objects.equals(
+                        this.targetResourcePrivateIpAddress, other.targetResourcePrivateIpAddress)
+                && java.util.Objects.equals(
+                        this.targetResourceDisplayName, other.targetResourceDisplayName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.targetResourceOperatingSystemUserName == null
+                                ? 43
+                                : this.targetResourceOperatingSystemUserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourceId == null ? 43 : this.targetResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourcePrivateIpAddress == null
+                                ? 43
+                                : this.targetResourcePrivateIpAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourceDisplayName == null
+                                ? 43
+                                : this.targetResourceDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.optimizer.model;
  * Possible work request resource actions.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.extern.slf4j.Slf4j
 public enum WorkRequestActionType {
     Created("CREATED"),
     Updated("UPDATED"),
@@ -21,6 +20,9 @@ public enum WorkRequestActionType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WorkRequestActionType.class);
 
     private final String value;
     private static java.util.Map<String, WorkRequestActionType> map;

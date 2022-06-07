@@ -16,16 +16,40 @@ package com.oracle.bmc.licensemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TopUtilizedProductLicenseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TopUtilizedProductLicenseSummary {
+public final class TopUtilizedProductLicenseSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "productLicenseId",
+        "productType",
+        "unitType",
+        "totalUnitsConsumed",
+        "totalLicenseUnitCount",
+        "isUnlimited",
+        "status"
+    })
+    public TopUtilizedProductLicenseSummary(
+            String productLicenseId,
+            String productType,
+            LicenseUnit unitType,
+            Double totalUnitsConsumed,
+            Integer totalLicenseUnitCount,
+            Boolean isUnlimited,
+            Status status) {
+        super();
+        this.productLicenseId = productLicenseId;
+        this.productType = productType;
+        this.unitType = unitType;
+        this.totalUnitsConsumed = totalUnitsConsumed;
+        this.totalLicenseUnitCount = totalLicenseUnitCount;
+        this.isUnlimited = isUnlimited;
+        this.status = status;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("productLicenseId")
         private String productLicenseId;
@@ -130,48 +154,147 @@ public class TopUtilizedProductLicenseSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productLicenseId")
-    String productLicenseId;
+    private final String productLicenseId;
+
+    public String getProductLicenseId() {
+        return productLicenseId;
+    }
 
     /**
      * The product type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productType")
-    String productType;
+    private final String productType;
+
+    public String getProductType() {
+        return productType;
+    }
 
     /**
      * The product license unit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
-    LicenseUnit unitType;
+    private final LicenseUnit unitType;
+
+    public LicenseUnit getUnitType() {
+        return unitType;
+    }
 
     /**
      * Number of license units consumed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalUnitsConsumed")
-    Double totalUnitsConsumed;
+    private final Double totalUnitsConsumed;
+
+    public Double getTotalUnitsConsumed() {
+        return totalUnitsConsumed;
+    }
 
     /**
      * Total number of license units in the product license provided by the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseUnitCount")
-    Integer totalLicenseUnitCount;
+    private final Integer totalLicenseUnitCount;
+
+    public Integer getTotalLicenseUnitCount() {
+        return totalLicenseUnitCount;
+    }
 
     /**
      * Specifies if the license unit count is unlimited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
-    Boolean isUnlimited;
+    private final Boolean isUnlimited;
+
+    public Boolean getIsUnlimited() {
+        return isUnlimited;
+    }
 
     /**
      * The current product license status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TopUtilizedProductLicenseSummary(");
+        sb.append("productLicenseId=").append(String.valueOf(this.productLicenseId));
+        sb.append(", productType=").append(String.valueOf(this.productType));
+        sb.append(", unitType=").append(String.valueOf(this.unitType));
+        sb.append(", totalUnitsConsumed=").append(String.valueOf(this.totalUnitsConsumed));
+        sb.append(", totalLicenseUnitCount=").append(String.valueOf(this.totalLicenseUnitCount));
+        sb.append(", isUnlimited=").append(String.valueOf(this.isUnlimited));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TopUtilizedProductLicenseSummary)) {
+            return false;
+        }
+
+        TopUtilizedProductLicenseSummary other = (TopUtilizedProductLicenseSummary) o;
+        return java.util.Objects.equals(this.productLicenseId, other.productLicenseId)
+                && java.util.Objects.equals(this.productType, other.productType)
+                && java.util.Objects.equals(this.unitType, other.unitType)
+                && java.util.Objects.equals(this.totalUnitsConsumed, other.totalUnitsConsumed)
+                && java.util.Objects.equals(this.totalLicenseUnitCount, other.totalLicenseUnitCount)
+                && java.util.Objects.equals(this.isUnlimited, other.isUnlimited)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.productLicenseId == null ? 43 : this.productLicenseId.hashCode());
+        result = (result * PRIME) + (this.productType == null ? 43 : this.productType.hashCode());
+        result = (result * PRIME) + (this.unitType == null ? 43 : this.unitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalUnitsConsumed == null
+                                ? 43
+                                : this.totalUnitsConsumed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalLicenseUnitCount == null
+                                ? 43
+                                : this.totalLicenseUnitCount.hashCode());
+        result = (result * PRIME) + (this.isUnlimited == null ? 43 : this.isUnlimited.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

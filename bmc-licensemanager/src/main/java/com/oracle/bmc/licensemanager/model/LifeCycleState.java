@@ -8,7 +8,6 @@ package com.oracle.bmc.licensemanager.model;
  * The current license state.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.extern.slf4j.Slf4j
 public enum LifeCycleState {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
@@ -19,6 +18,9 @@ public enum LifeCycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LifeCycleState.class);
 
     private final String value;
     private static java.util.Map<String, LifeCycleState> map;

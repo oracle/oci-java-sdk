@@ -9,7 +9,6 @@ package com.oracle.bmc.certificatesmanagement.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.extern.slf4j.Slf4j
 public enum CertificateConfigType {
     IssuedByInternalCa("ISSUED_BY_INTERNAL_CA"),
     ManagedExternallyIssuedByInternalCa("MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA"),
@@ -20,6 +19,9 @@ public enum CertificateConfigType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CertificateConfigType.class);
 
     private final String value;
     private static java.util.Map<String, CertificateConfigType> map;

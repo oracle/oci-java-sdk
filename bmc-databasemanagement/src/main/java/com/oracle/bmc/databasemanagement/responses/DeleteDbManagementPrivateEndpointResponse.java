@@ -7,10 +7,6 @@ package com.oracle.bmc.databasemanagement.responses;
 import com.oracle.bmc.databasemanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteDbManagementPrivateEndpointResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -19,12 +15,20 @@ public class DeleteDbManagementPrivateEndpointResponse
      */
     private String opcWorkRequestId;
 
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeleteDbManagementPrivateEndpointResponse(
@@ -39,6 +43,20 @@ public class DeleteDbManagementPrivateEndpointResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -58,5 +76,47 @@ public class DeleteDbManagementPrivateEndpointResponse
             return new DeleteDbManagementPrivateEndpointResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteDbManagementPrivateEndpointResponse)) {
+            return false;
+        }
+
+        DeleteDbManagementPrivateEndpointResponse other =
+                (DeleteDbManagementPrivateEndpointResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

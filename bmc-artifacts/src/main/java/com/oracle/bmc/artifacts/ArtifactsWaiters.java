@@ -6,6 +6,7 @@ package com.oracle.bmc.artifacts;
 
 import com.oracle.bmc.artifacts.requests.*;
 import com.oracle.bmc.artifacts.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,15 @@ import com.oracle.bmc.artifacts.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.RequiredArgsConstructor
 public class ArtifactsWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Artifacts client;
+
+    public ArtifactsWaiters(
+            java.util.concurrent.ExecutorService executorService, Artifacts client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

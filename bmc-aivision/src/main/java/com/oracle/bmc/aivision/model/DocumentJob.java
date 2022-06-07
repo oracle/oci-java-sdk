@@ -15,14 +15,62 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentJob.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DocumentJob {
+public final class DocumentJob {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "features",
+        "language",
+        "documentType",
+        "inputLocation",
+        "timeAccepted",
+        "timeStarted",
+        "timeFinished",
+        "percentComplete",
+        "outputLocation",
+        "lifecycleState",
+        "isZipOutputEnabled",
+        "lifecycleDetails"
+    })
+    public DocumentJob(
+            String id,
+            String compartmentId,
+            String displayName,
+            java.util.List<DocumentFeature> features,
+            DocumentLanguage language,
+            DocumentType documentType,
+            InputLocation inputLocation,
+            java.util.Date timeAccepted,
+            java.util.Date timeStarted,
+            java.util.Date timeFinished,
+            Float percentComplete,
+            OutputLocation outputLocation,
+            LifecycleState lifecycleState,
+            Boolean isZipOutputEnabled,
+            LifecycleDetails lifecycleDetails) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.features = features;
+        this.language = language;
+        this.documentType = documentType;
+        this.inputLocation = inputLocation;
+        this.timeAccepted = timeAccepted;
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
+        this.percentComplete = percentComplete;
+        this.outputLocation = outputLocation;
+        this.lifecycleState = lifecycleState;
+        this.isZipOutputEnabled = isZipOutputEnabled;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -215,75 +263,127 @@ public class DocumentJob {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The job id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment that starts the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The document job display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The list of requested document analysis types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
-    java.util.List<DocumentFeature> features;
+    private final java.util.List<DocumentFeature> features;
+
+    public java.util.List<DocumentFeature> getFeatures() {
+        return features;
+    }
 
     /**
      * The document language, abbreviated according to ISO 639-2.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
-    DocumentLanguage language;
+    private final DocumentLanguage language;
+
+    public DocumentLanguage getLanguage() {
+        return language;
+    }
 
     /**
      * The type of document.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
-    DocumentType documentType;
+    private final DocumentType documentType;
+
+    public DocumentType getDocumentType() {
+        return documentType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
-    InputLocation inputLocation;
+    private final InputLocation inputLocation;
+
+    public InputLocation getInputLocation() {
+        return inputLocation;
+    }
 
     /**
      * The job acceptance time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
-    java.util.Date timeAccepted;
+    private final java.util.Date timeAccepted;
+
+    public java.util.Date getTimeAccepted() {
+        return timeAccepted;
+    }
 
     /**
      * The job start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The job finish time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
 
     /**
      * How much progress the operation has made, compared to the total amount of work to be performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
-    Float percentComplete;
+    private final Float percentComplete;
+
+    public Float getPercentComplete() {
+        return percentComplete;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("outputLocation")
-    OutputLocation outputLocation;
+    private final OutputLocation outputLocation;
+
+    public OutputLocation getOutputLocation() {
+        return outputLocation;
+    }
+
     /**
      * The current state of the batch document job.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
@@ -297,6 +397,9 @@ public class DocumentJob {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -334,17 +437,25 @@ public class DocumentJob {
      * The current state of the batch document job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Whether or not to generate a ZIP file containing the results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
-    Boolean isZipOutputEnabled;
+    private final Boolean isZipOutputEnabled;
+
+    public Boolean getIsZipOutputEnabled() {
+        return isZipOutputEnabled;
+    }
+
     /**
      * The detailed status of FAILED state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleDetails {
         PartiallySucceeded("PARTIALLY_SUCCEEDED"),
         CompletelyFailed("COMPLETELY_FAILED"),
@@ -354,6 +465,9 @@ public class DocumentJob {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleDetails.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleDetails> map;
@@ -391,8 +505,109 @@ public class DocumentJob {
      * The detailed status of FAILED state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    LifecycleDetails lifecycleDetails;
+    private final LifecycleDetails lifecycleDetails;
+
+    public LifecycleDetails getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DocumentJob(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", features=").append(String.valueOf(this.features));
+        sb.append(", language=").append(String.valueOf(this.language));
+        sb.append(", documentType=").append(String.valueOf(this.documentType));
+        sb.append(", inputLocation=").append(String.valueOf(this.inputLocation));
+        sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
+        sb.append(", outputLocation=").append(String.valueOf(this.outputLocation));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isZipOutputEnabled=").append(String.valueOf(this.isZipOutputEnabled));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DocumentJob)) {
+            return false;
+        }
+
+        DocumentJob other = (DocumentJob) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.features, other.features)
+                && java.util.Objects.equals(this.language, other.language)
+                && java.util.Objects.equals(this.documentType, other.documentType)
+                && java.util.Objects.equals(this.inputLocation, other.inputLocation)
+                && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.percentComplete, other.percentComplete)
+                && java.util.Objects.equals(this.outputLocation, other.outputLocation)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isZipOutputEnabled, other.isZipOutputEnabled)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
+        result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
+        result = (result * PRIME) + (this.documentType == null ? 43 : this.documentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inputLocation == null ? 43 : this.inputLocation.hashCode());
+        result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputLocation == null ? 43 : this.outputLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isZipOutputEnabled == null
+                                ? 43
+                                : this.isZipOutputEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

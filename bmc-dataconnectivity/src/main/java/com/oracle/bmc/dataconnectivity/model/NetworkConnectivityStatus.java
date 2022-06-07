@@ -15,16 +15,34 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = NetworkConnectivityStatus.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NetworkConnectivityStatus {
+public final class NetworkConnectivityStatus {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "dataAssetKey",
+        "privateEndPointKey",
+        "errorMessage",
+        "timeLastUpdated",
+        "networkValidationStatusEnum"
+    })
+    public NetworkConnectivityStatus(
+            String dataAssetKey,
+            String privateEndPointKey,
+            String errorMessage,
+            java.util.Date timeLastUpdated,
+            NetworkValidationStatusEnum networkValidationStatusEnum) {
+        super();
+        this.dataAssetKey = dataAssetKey;
+        this.privateEndPointKey = privateEndPointKey;
+        this.errorMessage = errorMessage;
+        this.timeLastUpdated = timeLastUpdated;
+        this.networkValidationStatusEnum = networkValidationStatusEnum;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
@@ -108,33 +126,53 @@ public class NetworkConnectivityStatus {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * DataAsset key to which the NetworkValidationStatus belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
-    String dataAssetKey;
+    private final String dataAssetKey;
+
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
 
     /**
      * PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointKey")
-    String privateEndPointKey;
+    private final String privateEndPointKey;
+
+    public String getPrivateEndPointKey() {
+        return privateEndPointKey;
+    }
 
     /**
      * Exception or error message encountered while testing network reachability for the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
-    java.util.Date timeLastUpdated;
+    private final java.util.Date timeLastUpdated;
+
+    public java.util.Date getTimeLastUpdated() {
+        return timeLastUpdated;
+    }
+
     /**
      * Exception or error message encountered while testing network reachability for the data asset.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum NetworkValidationStatusEnum {
         Reachable("REACHABLE"),
         NotReachable("NOT_REACHABLE"),
@@ -145,6 +183,9 @@ public class NetworkConnectivityStatus {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NetworkValidationStatusEnum.class);
 
         private final String value;
         private static java.util.Map<String, NetworkValidationStatusEnum> map;
@@ -182,8 +223,75 @@ public class NetworkConnectivityStatus {
      * Exception or error message encountered while testing network reachability for the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkValidationStatusEnum")
-    NetworkValidationStatusEnum networkValidationStatusEnum;
+    private final NetworkValidationStatusEnum networkValidationStatusEnum;
+
+    public NetworkValidationStatusEnum getNetworkValidationStatusEnum() {
+        return networkValidationStatusEnum;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NetworkConnectivityStatus(");
+        sb.append("dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(", privateEndPointKey=").append(String.valueOf(this.privateEndPointKey));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", timeLastUpdated=").append(String.valueOf(this.timeLastUpdated));
+        sb.append(", networkValidationStatusEnum=")
+                .append(String.valueOf(this.networkValidationStatusEnum));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NetworkConnectivityStatus)) {
+            return false;
+        }
+
+        NetworkConnectivityStatus other = (NetworkConnectivityStatus) o;
+        return java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.privateEndPointKey, other.privateEndPointKey)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.timeLastUpdated, other.timeLastUpdated)
+                && java.util.Objects.equals(
+                        this.networkValidationStatusEnum, other.networkValidationStatusEnum)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndPointKey == null
+                                ? 43
+                                : this.privateEndPointKey.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastUpdated == null ? 43 : this.timeLastUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkValidationStatusEnum == null
+                                ? 43
+                                : this.networkValidationStatusEnum.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

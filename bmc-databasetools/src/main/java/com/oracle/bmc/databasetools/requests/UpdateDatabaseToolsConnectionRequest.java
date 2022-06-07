@@ -9,14 +9,6 @@ import com.oracle.bmc.databasetools.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/UpdateDatabaseToolsConnectionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDatabaseToolsConnectionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateDatabaseToolsConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasetools.model.UpdateDatabaseToolsConnectionDetails> {
@@ -26,12 +18,19 @@ public class UpdateDatabaseToolsConnectionRequest
      */
     private String databaseToolsConnectionId;
 
+    public String getDatabaseToolsConnectionId() {
+        return databaseToolsConnectionId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.databasetools.model.UpdateDatabaseToolsConnectionDetails
             updateDatabaseToolsConnectionDetails;
 
+    public com.oracle.bmc.databasetools.model.UpdateDatabaseToolsConnectionDetails
+            getUpdateDatabaseToolsConnectionDetails() {
+        return updateDatabaseToolsConnectionDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -42,10 +41,17 @@ public class UpdateDatabaseToolsConnectionRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +70,58 @@ public class UpdateDatabaseToolsConnectionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String databaseToolsConnectionId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+         * @return this builder instance
+         */
+        public Builder databaseToolsConnectionId(String databaseToolsConnectionId) {
+            this.databaseToolsConnectionId = databaseToolsConnectionId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasetools.model.UpdateDatabaseToolsConnectionDetails
+                updateDatabaseToolsConnectionDetails = null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateDatabaseToolsConnectionDetails(
+                com.oracle.bmc.databasetools.model.UpdateDatabaseToolsConnectionDetails
+                        updateDatabaseToolsConnectionDetails) {
+            this.updateDatabaseToolsConnectionDetails = updateDatabaseToolsConnectionDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +188,93 @@ public class UpdateDatabaseToolsConnectionRequest
             updateDatabaseToolsConnectionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateDatabaseToolsConnectionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateDatabaseToolsConnectionRequest
+         */
+        public UpdateDatabaseToolsConnectionRequest buildWithoutInvocationCallback() {
+            UpdateDatabaseToolsConnectionRequest request =
+                    new UpdateDatabaseToolsConnectionRequest();
+            request.databaseToolsConnectionId = databaseToolsConnectionId;
+            request.updateDatabaseToolsConnectionDetails = updateDatabaseToolsConnectionDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateDatabaseToolsConnectionRequest(databaseToolsConnectionId, updateDatabaseToolsConnectionDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .databaseToolsConnectionId(databaseToolsConnectionId)
+                .updateDatabaseToolsConnectionDetails(updateDatabaseToolsConnectionDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",databaseToolsConnectionId=")
+                .append(String.valueOf(this.databaseToolsConnectionId));
+        sb.append(",updateDatabaseToolsConnectionDetails=")
+                .append(String.valueOf(this.updateDatabaseToolsConnectionDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDatabaseToolsConnectionRequest)) {
+            return false;
+        }
+
+        UpdateDatabaseToolsConnectionRequest other = (UpdateDatabaseToolsConnectionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.databaseToolsConnectionId, other.databaseToolsConnectionId)
+                && java.util.Objects.equals(
+                        this.updateDatabaseToolsConnectionDetails,
+                        other.updateDatabaseToolsConnectionDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.databaseToolsConnectionId == null
+                                ? 43
+                                : this.databaseToolsConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDatabaseToolsConnectionDetails == null
+                                ? 43
+                                : this.updateDatabaseToolsConnectionDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

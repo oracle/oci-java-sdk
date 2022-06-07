@@ -15,16 +15,26 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceRiskScoreAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceRiskScoreAggregation {
+public final class ResourceRiskScoreAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"tactics", "scoreTimestamp", "riskScore", "riskLevel"})
+    public ResourceRiskScoreAggregation(
+            java.util.List<String> tactics,
+            java.math.BigDecimal scoreTimestamp,
+            Double riskScore,
+            RiskLevel riskLevel) {
+        super();
+        this.tactics = tactics;
+        this.scoreTimestamp = scoreTimestamp;
+        this.riskScore = riskScore;
+        this.riskLevel = riskLevel;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tactics")
         private java.util.List<String> tactics;
@@ -92,30 +102,100 @@ public class ResourceRiskScoreAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Tactics used for evaluating the risk scrore
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tactics")
-    java.util.List<String> tactics;
+    private final java.util.List<String> tactics;
+
+    public java.util.List<String> getTactics() {
+        return tactics;
+    }
 
     /**
      * The date and time for which the score is calculated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scoreTimestamp")
-    java.math.BigDecimal scoreTimestamp;
+    private final java.math.BigDecimal scoreTimestamp;
+
+    public java.math.BigDecimal getScoreTimestamp() {
+        return scoreTimestamp;
+    }
 
     /**
      * Risk Score
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
-    Double riskScore;
+    private final Double riskScore;
+
+    public Double getRiskScore() {
+        return riskScore;
+    }
 
     /**
      * The Risk Level
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
-    RiskLevel riskLevel;
+    private final RiskLevel riskLevel;
+
+    public RiskLevel getRiskLevel() {
+        return riskLevel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceRiskScoreAggregation(");
+        sb.append("tactics=").append(String.valueOf(this.tactics));
+        sb.append(", scoreTimestamp=").append(String.valueOf(this.scoreTimestamp));
+        sb.append(", riskScore=").append(String.valueOf(this.riskScore));
+        sb.append(", riskLevel=").append(String.valueOf(this.riskLevel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceRiskScoreAggregation)) {
+            return false;
+        }
+
+        ResourceRiskScoreAggregation other = (ResourceRiskScoreAggregation) o;
+        return java.util.Objects.equals(this.tactics, other.tactics)
+                && java.util.Objects.equals(this.scoreTimestamp, other.scoreTimestamp)
+                && java.util.Objects.equals(this.riskScore, other.riskScore)
+                && java.util.Objects.equals(this.riskLevel, other.riskLevel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tactics == null ? 43 : this.tactics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scoreTimestamp == null ? 43 : this.scoreTimestamp.hashCode());
+        result = (result * PRIME) + (this.riskScore == null ? 43 : this.riskScore.hashCode());
+        result = (result * PRIME) + (this.riskLevel == null ? 43 : this.riskLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaskOperator.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TaskOperator extends Operator {
+public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -287,6 +282,10 @@ public class TaskOperator extends Operator {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public TaskOperator(
             String key,
@@ -338,11 +337,15 @@ public class TaskOperator extends Operator {
      * The number of retry attempts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryAttempts")
-    Integer retryAttempts;
+    private final Integer retryAttempts;
+
+    public Integer getRetryAttempts() {
+        return retryAttempts;
+    }
+
     /**
      * The unit for the retry delay.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RetryDelayUnit {
         Seconds("SECONDS"),
         Minutes("MINUTES"),
@@ -354,6 +357,9 @@ public class TaskOperator extends Operator {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RetryDelayUnit.class);
 
         private final String value;
         private static java.util.Map<String, RetryDelayUnit> map;
@@ -391,23 +397,35 @@ public class TaskOperator extends Operator {
      * The unit for the retry delay.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryDelayUnit")
-    RetryDelayUnit retryDelayUnit;
+    private final RetryDelayUnit retryDelayUnit;
+
+    public RetryDelayUnit getRetryDelayUnit() {
+        return retryDelayUnit;
+    }
 
     /**
      * The retry delay, the unit for measurement is in the property retry delay unit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryDelay")
-    Double retryDelay;
+    private final Double retryDelay;
+
+    public Double getRetryDelay() {
+        return retryDelay;
+    }
 
     /**
      * The expected duration for the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
-    Double expectedDuration;
+    private final Double expectedDuration;
+
+    public Double getExpectedDuration() {
+        return expectedDuration;
+    }
+
     /**
      * The expected duration unit of measure.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExpectedDurationUnit {
         Seconds("SECONDS"),
         Minutes("MINUTES"),
@@ -419,6 +437,9 @@ public class TaskOperator extends Operator {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExpectedDurationUnit.class);
 
         private final String value;
         private static java.util.Map<String, ExpectedDurationUnit> map;
@@ -456,11 +477,15 @@ public class TaskOperator extends Operator {
      * The expected duration unit of measure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
-    ExpectedDurationUnit expectedDurationUnit;
+    private final ExpectedDurationUnit expectedDurationUnit;
+
+    public ExpectedDurationUnit getExpectedDurationUnit() {
+        return expectedDurationUnit;
+    }
+
     /**
      * The type of the task referenced in the task property.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TaskType {
         PipelineTask("PIPELINE_TASK"),
         IntegrationTask("INTEGRATION_TASK"),
@@ -474,6 +499,9 @@ public class TaskOperator extends Operator {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TaskType.class);
 
         private final String value;
         private static java.util.Map<String, TaskType> map;
@@ -511,10 +539,19 @@ public class TaskOperator extends Operator {
      * The type of the task referenced in the task property.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
-    TaskType taskType;
+    private final TaskType taskType;
+
+    public TaskType getTaskType() {
+        return taskType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("task")
-    Task task;
+    private final Task task;
+
+    public Task getTask() {
+        return task;
+    }
+
     /**
      * The merge condition. The conditions are
      * ALL_SUCCESS - All the preceeding operators need to be successful.
@@ -522,7 +559,6 @@ public class TaskOperator extends Operator {
      * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TriggerRule {
         AllSuccess("ALL_SUCCESS"),
         AllFailed("ALL_FAILED"),
@@ -533,6 +569,9 @@ public class TaskOperator extends Operator {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TriggerRule.class);
 
         private final String value;
         private static java.util.Map<String, TriggerRule> map;
@@ -574,11 +613,99 @@ public class TaskOperator extends Operator {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerRule")
-    TriggerRule triggerRule;
+    private final TriggerRule triggerRule;
+
+    public TriggerRule getTriggerRule() {
+        return triggerRule;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configProviderDelegate")
-    ConfigProvider configProviderDelegate;
+    private final ConfigProvider configProviderDelegate;
+
+    public ConfigProvider getConfigProviderDelegate() {
+        return configProviderDelegate;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TaskOperator(");
+        sb.append("super=").append(super.toString());
+        sb.append(", retryAttempts=").append(String.valueOf(this.retryAttempts));
+        sb.append(", retryDelayUnit=").append(String.valueOf(this.retryDelayUnit));
+        sb.append(", retryDelay=").append(String.valueOf(this.retryDelay));
+        sb.append(", expectedDuration=").append(String.valueOf(this.expectedDuration));
+        sb.append(", expectedDurationUnit=").append(String.valueOf(this.expectedDurationUnit));
+        sb.append(", taskType=").append(String.valueOf(this.taskType));
+        sb.append(", task=").append(String.valueOf(this.task));
+        sb.append(", triggerRule=").append(String.valueOf(this.triggerRule));
+        sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TaskOperator)) {
+            return false;
+        }
+
+        TaskOperator other = (TaskOperator) o;
+        return java.util.Objects.equals(this.retryAttempts, other.retryAttempts)
+                && java.util.Objects.equals(this.retryDelayUnit, other.retryDelayUnit)
+                && java.util.Objects.equals(this.retryDelay, other.retryDelay)
+                && java.util.Objects.equals(this.expectedDuration, other.expectedDuration)
+                && java.util.Objects.equals(this.expectedDurationUnit, other.expectedDurationUnit)
+                && java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(this.task, other.task)
+                && java.util.Objects.equals(this.triggerRule, other.triggerRule)
+                && java.util.Objects.equals(
+                        this.configProviderDelegate, other.configProviderDelegate)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.retryAttempts == null ? 43 : this.retryAttempts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retryDelayUnit == null ? 43 : this.retryDelayUnit.hashCode());
+        result = (result * PRIME) + (this.retryDelay == null ? 43 : this.retryDelay.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedDuration == null ? 43 : this.expectedDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedDurationUnit == null
+                                ? 43
+                                : this.expectedDurationUnit.hashCode());
+        result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result = (result * PRIME) + (this.task == null ? 43 : this.task.hashCode());
+        result = (result * PRIME) + (this.triggerRule == null ? 43 : this.triggerRule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configProviderDelegate == null
+                                ? 43
+                                : this.configProviderDelegate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

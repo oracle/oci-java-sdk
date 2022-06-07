@@ -9,14 +9,6 @@ import com.oracle.bmc.visualbuilder.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/UpdateVbInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateVbInstanceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateVbInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.visualbuilder.model.UpdateVbInstanceDetails> {
@@ -26,11 +18,17 @@ public class UpdateVbInstanceRequest
      */
     private String vbInstanceId;
 
+    public String getVbInstanceId() {
+        return vbInstanceId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.visualbuilder.model.UpdateVbInstanceDetails updateVbInstanceDetails;
 
+    public com.oracle.bmc.visualbuilder.model.UpdateVbInstanceDetails getUpdateVbInstanceDetails() {
+        return updateVbInstanceDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -41,10 +39,17 @@ public class UpdateVbInstanceRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +68,58 @@ public class UpdateVbInstanceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String vbInstanceId = null;
+
+        /**
+         * Unique Vb Instance identifier.
+         * @return this builder instance
+         */
+        public Builder vbInstanceId(String vbInstanceId) {
+            this.vbInstanceId = vbInstanceId;
+            return this;
+        }
+
+        private com.oracle.bmc.visualbuilder.model.UpdateVbInstanceDetails updateVbInstanceDetails =
+                null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateVbInstanceDetails(
+                com.oracle.bmc.visualbuilder.model.UpdateVbInstanceDetails
+                        updateVbInstanceDetails) {
+            this.updateVbInstanceDetails = updateVbInstanceDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +185,84 @@ public class UpdateVbInstanceRequest
             updateVbInstanceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateVbInstanceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateVbInstanceRequest
+         */
+        public UpdateVbInstanceRequest buildWithoutInvocationCallback() {
+            UpdateVbInstanceRequest request = new UpdateVbInstanceRequest();
+            request.vbInstanceId = vbInstanceId;
+            request.updateVbInstanceDetails = updateVbInstanceDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateVbInstanceRequest(vbInstanceId, updateVbInstanceDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .vbInstanceId(vbInstanceId)
+                .updateVbInstanceDetails(updateVbInstanceDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",vbInstanceId=").append(String.valueOf(this.vbInstanceId));
+        sb.append(",updateVbInstanceDetails=").append(String.valueOf(this.updateVbInstanceDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateVbInstanceRequest)) {
+            return false;
+        }
+
+        UpdateVbInstanceRequest other = (UpdateVbInstanceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.vbInstanceId, other.vbInstanceId)
+                && java.util.Objects.equals(
+                        this.updateVbInstanceDetails, other.updateVbInstanceDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.vbInstanceId == null ? 43 : this.vbInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateVbInstanceDetails == null
+                                ? 43
+                                : this.updateVbInstanceDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -15,12 +15,6 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,6 +29,42 @@ package com.oracle.bmc.databasemanagement.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "description",
+        "compartmentId",
+        "managedDatabaseGroupId",
+        "managedDatabaseId",
+        "databaseSubType",
+        "scheduleType",
+        "timeout",
+        "resultLocation",
+        "scheduleDetails"
+    })
+    protected CreateJobDetails(
+            String name,
+            String description,
+            String compartmentId,
+            String managedDatabaseGroupId,
+            String managedDatabaseId,
+            DatabaseSubType databaseSubType,
+            Job.ScheduleType scheduleType,
+            String timeout,
+            JobExecutionResultLocation resultLocation,
+            JobScheduleDetails scheduleDetails) {
+        super();
+        this.name = name;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.managedDatabaseGroupId = managedDatabaseGroupId;
+        this.managedDatabaseId = managedDatabaseId;
+        this.databaseSubType = databaseSubType;
+        this.scheduleType = scheduleType;
+        this.timeout = timeout;
+        this.resultLocation = resultLocation;
+        this.scheduleDetails = scheduleDetails;
+    }
 
     /**
      * The name of the job. Valid characters are uppercase or lowercase letters,
@@ -43,53 +73,165 @@ public class CreateJobDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The description of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the job resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the job has to be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
-    String managedDatabaseGroupId;
+    private final String managedDatabaseGroupId;
+
+    public String getManagedDatabaseGroupId() {
+        return managedDatabaseGroupId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database where the job has to be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
-    String managedDatabaseId;
+    private final String managedDatabaseId;
+
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
 
     /**
      * The subtype of the Oracle Database where the job has to be executed. Only applicable when managedDatabaseGroupId is provided.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
-    DatabaseSubType databaseSubType;
+    private final DatabaseSubType databaseSubType;
+
+    public DatabaseSubType getDatabaseSubType() {
+        return databaseSubType;
+    }
 
     /**
      * The schedule type of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
-    Job.ScheduleType scheduleType;
+    private final Job.ScheduleType scheduleType;
+
+    public Job.ScheduleType getScheduleType() {
+        return scheduleType;
+    }
 
     /**
      * The job timeout duration, which is expressed like "1h 10m 15s".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
-    String timeout;
+    private final String timeout;
+
+    public String getTimeout() {
+        return timeout;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("resultLocation")
-    JobExecutionResultLocation resultLocation;
+    private final JobExecutionResultLocation resultLocation;
+
+    public JobExecutionResultLocation getResultLocation() {
+        return resultLocation;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
-    JobScheduleDetails scheduleDetails;
+    private final JobScheduleDetails scheduleDetails;
+
+    public JobScheduleDetails getScheduleDetails() {
+        return scheduleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateJobDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", managedDatabaseGroupId=").append(String.valueOf(this.managedDatabaseGroupId));
+        sb.append(", managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
+        sb.append(", scheduleType=").append(String.valueOf(this.scheduleType));
+        sb.append(", timeout=").append(String.valueOf(this.timeout));
+        sb.append(", resultLocation=").append(String.valueOf(this.resultLocation));
+        sb.append(", scheduleDetails=").append(String.valueOf(this.scheduleDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateJobDetails)) {
+            return false;
+        }
+
+        CreateJobDetails other = (CreateJobDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.managedDatabaseGroupId, other.managedDatabaseGroupId)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
+                && java.util.Objects.equals(this.scheduleType, other.scheduleType)
+                && java.util.Objects.equals(this.timeout, other.timeout)
+                && java.util.Objects.equals(this.resultLocation, other.resultLocation)
+                && java.util.Objects.equals(this.scheduleDetails, other.scheduleDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseGroupId == null
+                                ? 43
+                                : this.managedDatabaseGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSubType == null ? 43 : this.databaseSubType.hashCode());
+        result = (result * PRIME) + (this.scheduleType == null ? 43 : this.scheduleType.hashCode());
+        result = (result * PRIME) + (this.timeout == null ? 43 : this.timeout.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resultLocation == null ? 43 : this.resultLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduleDetails == null ? 43 : this.scheduleDetails.hashCode());
+        return result;
+    }
 }

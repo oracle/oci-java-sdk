@@ -16,14 +16,35 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VmNetworkDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VmNetworkDetails {
+public final class VmNetworkDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "vlanId",
+        "networkType",
+        "netmask",
+        "gateway",
+        "domainName",
+        "nodes"
+    })
+    public VmNetworkDetails(
+            String vlanId,
+            NetworkType networkType,
+            String netmask,
+            String gateway,
+            String domainName,
+            java.util.List<NodeDetails> nodes) {
+        super();
+        this.vlanId = vlanId;
+        this.networkType = networkType;
+        this.netmask = netmask;
+        this.gateway = gateway;
+        this.domainName = domainName;
+        this.nodes = nodes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
@@ -111,15 +132,23 @@ public class VmNetworkDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The network VLAN ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
-    String vlanId;
+    private final String vlanId;
+
+    public String getVlanId() {
+        return vlanId;
+    }
+
     /**
      * The network type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum NetworkType {
         Client("CLIENT"),
         Backup("BACKUP"),
@@ -129,6 +158,9 @@ public class VmNetworkDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NetworkType.class);
 
         private final String value;
         private static java.util.Map<String, NetworkType> map;
@@ -166,32 +198,106 @@ public class VmNetworkDetails {
      * The network type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")
-    NetworkType networkType;
+    private final NetworkType networkType;
+
+    public NetworkType getNetworkType() {
+        return networkType;
+    }
 
     /**
      * The network netmask.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netmask")
-    String netmask;
+    private final String netmask;
+
+    public String getNetmask() {
+        return netmask;
+    }
 
     /**
      * The network gateway.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gateway")
-    String gateway;
+    private final String gateway;
+
+    public String getGateway() {
+        return gateway;
+    }
 
     /**
      * The network domain name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
-    String domainName;
+    private final String domainName;
+
+    public String getDomainName() {
+        return domainName;
+    }
 
     /**
      * The list of node details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
-    java.util.List<NodeDetails> nodes;
+    private final java.util.List<NodeDetails> nodes;
+
+    public java.util.List<NodeDetails> getNodes() {
+        return nodes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VmNetworkDetails(");
+        sb.append("vlanId=").append(String.valueOf(this.vlanId));
+        sb.append(", networkType=").append(String.valueOf(this.networkType));
+        sb.append(", netmask=").append(String.valueOf(this.netmask));
+        sb.append(", gateway=").append(String.valueOf(this.gateway));
+        sb.append(", domainName=").append(String.valueOf(this.domainName));
+        sb.append(", nodes=").append(String.valueOf(this.nodes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VmNetworkDetails)) {
+            return false;
+        }
+
+        VmNetworkDetails other = (VmNetworkDetails) o;
+        return java.util.Objects.equals(this.vlanId, other.vlanId)
+                && java.util.Objects.equals(this.networkType, other.networkType)
+                && java.util.Objects.equals(this.netmask, other.netmask)
+                && java.util.Objects.equals(this.gateway, other.gateway)
+                && java.util.Objects.equals(this.domainName, other.domainName)
+                && java.util.Objects.equals(this.nodes, other.nodes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
+        result = (result * PRIME) + (this.networkType == null ? 43 : this.networkType.hashCode());
+        result = (result * PRIME) + (this.netmask == null ? 43 : this.netmask.hashCode());
+        result = (result * PRIME) + (this.gateway == null ? 43 : this.gateway.hashCode());
+        result = (result * PRIME) + (this.domainName == null ? 43 : this.domainName.hashCode());
+        result = (result * PRIME) + (this.nodes == null ? 43 : this.nodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

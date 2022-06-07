@@ -16,12 +16,6 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -40,17 +34,60 @@ package com.oracle.bmc.opsi.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CredentialDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"credentialSourceName"})
+    protected CredentialDetails(String credentialSourceName) {
+        super();
+        this.credentialSourceName = credentialSourceName;
+    }
 
     /**
      * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialSourceName")
-    String credentialSourceName;
+    private final String credentialSourceName;
+
+    public String getCredentialSourceName() {
+        return credentialSourceName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CredentialDetails(");
+        sb.append("credentialSourceName=").append(String.valueOf(this.credentialSourceName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CredentialDetails)) {
+            return false;
+        }
+
+        CredentialDetails other = (CredentialDetails) o;
+        return java.util.Objects.equals(this.credentialSourceName, other.credentialSourceName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.credentialSourceName == null
+                                ? 43
+                                : this.credentialSourceName.hashCode());
+        return result;
+    }
 
     /**
      * Credential type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CredentialType {
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),
         CredentialsByVault("CREDENTIALS_BY_VAULT"),
@@ -60,6 +97,9 @@ public class CredentialDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CredentialType.class);
 
         private final String value;
         private static java.util.Map<String, CredentialType> map;

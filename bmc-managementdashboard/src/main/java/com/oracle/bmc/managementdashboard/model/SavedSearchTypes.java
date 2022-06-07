@@ -8,7 +8,6 @@ package com.oracle.bmc.managementdashboard.model;
  * Determines how the saved search is displayed in a dashboard.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
-@lombok.extern.slf4j.Slf4j
 public enum SavedSearchTypes {
     SearchShowInDashboard("SEARCH_SHOW_IN_DASHBOARD"),
     SearchDontShowInDashboard("SEARCH_DONT_SHOW_IN_DASHBOARD"),
@@ -22,6 +21,9 @@ public enum SavedSearchTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(SavedSearchTypes.class);
 
     private final String value;
     private static java.util.Map<String, SavedSearchTypes> map;

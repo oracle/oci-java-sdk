@@ -15,16 +15,20 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GeographicalLocation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GeographicalLocation {
+public final class GeographicalLocation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"latitude", "longitude"})
+    public GeographicalLocation(Double latitude, Double longitude) {
+        super();
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("latitude")
         private Double latitude;
@@ -69,18 +73,72 @@ public class GeographicalLocation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Latitude
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
-    Double latitude;
+    private final Double latitude;
+
+    public Double getLatitude() {
+        return latitude;
+    }
 
     /**
      * Longitude
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longitude")
-    Double longitude;
+    private final Double longitude;
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GeographicalLocation(");
+        sb.append("latitude=").append(String.valueOf(this.latitude));
+        sb.append(", longitude=").append(String.valueOf(this.longitude));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GeographicalLocation)) {
+            return false;
+        }
+
+        GeographicalLocation other = (GeographicalLocation) o;
+        return java.util.Objects.equals(this.latitude, other.latitude)
+                && java.util.Objects.equals(this.longitude, other.longitude)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.latitude == null ? 43 : this.latitude.hashCode());
+        result = (result * PRIME) + (this.longitude == null ? 43 : this.longitude.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

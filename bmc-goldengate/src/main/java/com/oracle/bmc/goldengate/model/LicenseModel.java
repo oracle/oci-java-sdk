@@ -9,7 +9,6 @@ package com.oracle.bmc.goldengate.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.extern.slf4j.Slf4j
 public enum LicenseModel {
     LicenseIncluded("LICENSE_INCLUDED"),
     BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
@@ -19,6 +18,9 @@ public enum LicenseModel {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LicenseModel.class);
 
     private final String value;
     private static java.util.Map<String, LicenseModel> map;

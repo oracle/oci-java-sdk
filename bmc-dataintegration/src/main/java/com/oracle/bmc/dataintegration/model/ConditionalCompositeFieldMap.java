@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConditionalCompositeFieldMap.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConditionalCompositeFieldMap extends FieldMap {
+public final class ConditionalCompositeFieldMap extends FieldMap {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -146,6 +141,10 @@ public class ConditionalCompositeFieldMap extends FieldMap {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ConditionalCompositeFieldMap(
             String description,
@@ -170,38 +169,127 @@ public class ConditionalCompositeFieldMap extends FieldMap {
      * An array of projection rules.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldMapScope")
-    java.util.List<ProjectionRule> fieldMapScope;
+    private final java.util.List<ProjectionRule> fieldMapScope;
+
+    public java.util.List<ProjectionRule> getFieldMapScope() {
+        return fieldMapScope;
+    }
 
     /**
      * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configValues")
-    ConfigValues configValues;
+    private final ConfigValues configValues;
+
+    public ConfigValues getConfigValues() {
+        return configValues;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * An array of field maps.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldMaps")
-    java.util.List<FieldMap> fieldMaps;
+    private final java.util.List<FieldMap> fieldMaps;
+
+    public java.util.List<FieldMap> getFieldMaps() {
+        return fieldMaps;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConditionalCompositeFieldMap(");
+        sb.append("super=").append(super.toString());
+        sb.append(", fieldMapScope=").append(String.valueOf(this.fieldMapScope));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", configValues=").append(String.valueOf(this.configValues));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", fieldMaps=").append(String.valueOf(this.fieldMaps));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConditionalCompositeFieldMap)) {
+            return false;
+        }
+
+        ConditionalCompositeFieldMap other = (ConditionalCompositeFieldMap) o;
+        return java.util.Objects.equals(this.fieldMapScope, other.fieldMapScope)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.configValues, other.configValues)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.fieldMaps, other.fieldMaps)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.fieldMapScope == null ? 43 : this.fieldMapScope.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.fieldMaps == null ? 43 : this.fieldMaps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

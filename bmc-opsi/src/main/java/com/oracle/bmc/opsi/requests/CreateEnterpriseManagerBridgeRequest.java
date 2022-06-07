@@ -9,14 +9,6 @@ import com.oracle.bmc.opsi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateEnterpriseManagerBridgeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateEnterpriseManagerBridgeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateEnterpriseManagerBridgeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails> {
@@ -27,6 +19,10 @@ public class CreateEnterpriseManagerBridgeRequest
     private com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails
             createEnterpriseManagerBridgeDetails;
 
+    public com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails
+            getCreateEnterpriseManagerBridgeDetails() {
+        return createEnterpriseManagerBridgeDetails;
+    }
     /**
      * A token that uniquely identifies a request that can be retried in case of a timeout or
      * server error without risk of executing the same action again. Retry tokens expire after 24
@@ -38,12 +34,19 @@ public class CreateEnterpriseManagerBridgeRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -62,6 +65,50 @@ public class CreateEnterpriseManagerBridgeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails
+                createEnterpriseManagerBridgeDetails = null;
+
+        /**
+         * Details for the Enterprise Manager bridge to be created in Operations Insights.
+         * @return this builder instance
+         */
+        public Builder createEnterpriseManagerBridgeDetails(
+                com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails
+                        createEnterpriseManagerBridgeDetails) {
+            this.createEnterpriseManagerBridgeDetails = createEnterpriseManagerBridgeDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request that can be retried in case of a timeout or
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -126,5 +173,84 @@ public class CreateEnterpriseManagerBridgeRequest
             createEnterpriseManagerBridgeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateEnterpriseManagerBridgeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateEnterpriseManagerBridgeRequest
+         */
+        public CreateEnterpriseManagerBridgeRequest buildWithoutInvocationCallback() {
+            CreateEnterpriseManagerBridgeRequest request =
+                    new CreateEnterpriseManagerBridgeRequest();
+            request.createEnterpriseManagerBridgeDetails = createEnterpriseManagerBridgeDetails;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new CreateEnterpriseManagerBridgeRequest(createEnterpriseManagerBridgeDetails, opcRetryToken, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createEnterpriseManagerBridgeDetails(createEnterpriseManagerBridgeDetails)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createEnterpriseManagerBridgeDetails=")
+                .append(String.valueOf(this.createEnterpriseManagerBridgeDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateEnterpriseManagerBridgeRequest)) {
+            return false;
+        }
+
+        CreateEnterpriseManagerBridgeRequest other = (CreateEnterpriseManagerBridgeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createEnterpriseManagerBridgeDetails,
+                        other.createEnterpriseManagerBridgeDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createEnterpriseManagerBridgeDetails == null
+                                ? 43
+                                : this.createEnterpriseManagerBridgeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

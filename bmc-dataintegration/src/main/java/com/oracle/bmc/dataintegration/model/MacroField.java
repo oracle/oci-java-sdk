@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacroField.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MacroField extends TypedObject {
+public final class MacroField extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -188,6 +183,10 @@ public class MacroField extends TypedObject {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public MacroField(
             String key,
@@ -211,26 +210,101 @@ public class MacroField extends TypedObject {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("expr")
-    Expression expr;
+    private final Expression expr;
+
+    public Expression getExpr() {
+        return expr;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    BaseType type;
+    private final BaseType type;
+
+    public BaseType getType() {
+        return type;
+    }
 
     /**
      * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
-    Boolean isUseSourceType;
+    private final Boolean isUseSourceType;
+
+    public Boolean getIsUseSourceType() {
+        return isUseSourceType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("useType")
-    ConfiguredType useType;
+    private final ConfiguredType useType;
+
+    public ConfiguredType getUseType() {
+        return useType;
+    }
 
     /**
      * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
-    java.util.List<String> labels;
+    private final java.util.List<String> labels;
+
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MacroField(");
+        sb.append("super=").append(super.toString());
+        sb.append(", expr=").append(String.valueOf(this.expr));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", isUseSourceType=").append(String.valueOf(this.isUseSourceType));
+        sb.append(", useType=").append(String.valueOf(this.useType));
+        sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MacroField)) {
+            return false;
+        }
+
+        MacroField other = (MacroField) o;
+        return java.util.Objects.equals(this.expr, other.expr)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.isUseSourceType, other.isUseSourceType)
+                && java.util.Objects.equals(this.useType, other.useType)
+                && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.expr == null ? 43 : this.expr.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUseSourceType == null ? 43 : this.isUseSourceType.hashCode());
+        result = (result * PRIME) + (this.useType == null ? 43 : this.useType.hashCode());
+        result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

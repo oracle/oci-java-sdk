@@ -26,9 +26,12 @@ import com.oracle.bmc.aivision.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.RequiredArgsConstructor
 public class AIServiceVisionPaginators {
     private final AIServiceVision client;
+
+    public AIServiceVisionPaginators(AIServiceVision client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listModels operation. This iterable

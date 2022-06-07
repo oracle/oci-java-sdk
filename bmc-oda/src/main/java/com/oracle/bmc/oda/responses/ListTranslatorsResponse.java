@@ -7,10 +7,6 @@ package com.oracle.bmc.oda.responses;
 import com.oracle.bmc.oda.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListTranslatorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class ListTranslatorsResponse extends com.oracle.bmc.responses.BmcRespons
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * When you are paging through a list, if this header appears in the response,
@@ -27,16 +27,28 @@ public class ListTranslatorsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The total number of results that match the query.
      *
      */
     private Integer opcTotalItems;
 
+    public Integer getOpcTotalItems() {
+        return opcTotalItems;
+    }
+
     /**
      * The returned TranslatorCollection instance.
      */
     private com.oracle.bmc.oda.model.TranslatorCollection translatorCollection;
+
+    public com.oracle.bmc.oda.model.TranslatorCollection getTranslatorCollection() {
+        return translatorCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -66,6 +78,35 @@ public class ListTranslatorsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private Integer opcTotalItems;
+
+        public Builder opcTotalItems(Integer opcTotalItems) {
+            this.opcTotalItems = opcTotalItems;
+            return this;
+        }
+
+        private com.oracle.bmc.oda.model.TranslatorCollection translatorCollection;
+
+        public Builder translatorCollection(
+                com.oracle.bmc.oda.model.TranslatorCollection translatorCollection) {
+            this.translatorCollection = translatorCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -88,5 +129,56 @@ public class ListTranslatorsResponse extends com.oracle.bmc.responses.BmcRespons
                     opcTotalItems,
                     translatorCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcTotalItems=").append(String.valueOf(opcTotalItems));
+        sb.append(",translatorCollection=").append(String.valueOf(translatorCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListTranslatorsResponse)) {
+            return false;
+        }
+
+        ListTranslatorsResponse other = (ListTranslatorsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcTotalItems, other.opcTotalItems)
+                && java.util.Objects.equals(this.translatorCollection, other.translatorCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcTotalItems == null ? 43 : this.opcTotalItems.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.translatorCollection == null
+                                ? 43
+                                : this.translatorCollection.hashCode());
+        return result;
     }
 }

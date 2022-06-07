@@ -15,16 +15,26 @@ package com.oracle.bmc.filestorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateExportDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateExportDetails {
+public final class CreateExportDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"exportOptions", "exportSetId", "fileSystemId", "path"})
+    public CreateExportDetails(
+            java.util.List<ClientOptions> exportOptions,
+            String exportSetId,
+            String fileSystemId,
+            String path) {
+        super();
+        this.exportOptions = exportOptions;
+        this.exportSetId = exportSetId;
+        this.fileSystemId = fileSystemId;
+        this.path = path;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
         private java.util.List<ClientOptions> exportOptions;
@@ -92,6 +102,10 @@ public class CreateExportDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Export options for the new export. If left unspecified,
      * defaults to:
@@ -118,19 +132,31 @@ public class CreateExportDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
-    java.util.List<ClientOptions> exportOptions;
+    private final java.util.List<ClientOptions> exportOptions;
+
+    public java.util.List<ClientOptions> getExportOptions() {
+        return exportOptions;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
-    String exportSetId;
+    private final String exportSetId;
+
+    public String getExportSetId() {
+        return exportSetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
-    String fileSystemId;
+    private final String fileSystemId;
+
+    public String getFileSystemId() {
+        return fileSystemId;
+    }
 
     /**
      * Path used to access the associated file system.
@@ -141,8 +167,62 @@ public class CreateExportDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateExportDetails(");
+        sb.append("exportOptions=").append(String.valueOf(this.exportOptions));
+        sb.append(", exportSetId=").append(String.valueOf(this.exportSetId));
+        sb.append(", fileSystemId=").append(String.valueOf(this.fileSystemId));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateExportDetails)) {
+            return false;
+        }
+
+        CreateExportDetails other = (CreateExportDetails) o;
+        return java.util.Objects.equals(this.exportOptions, other.exportOptions)
+                && java.util.Objects.equals(this.exportSetId, other.exportSetId)
+                && java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.exportOptions == null ? 43 : this.exportOptions.hashCode());
+        result = (result * PRIME) + (this.exportSetId == null ? 43 : this.exportSetId.hashCode());
+        result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

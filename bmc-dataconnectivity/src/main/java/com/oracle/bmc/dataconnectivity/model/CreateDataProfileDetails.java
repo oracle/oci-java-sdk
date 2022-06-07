@@ -15,16 +15,37 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDataProfileDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDataProfileDetails {
+public final class CreateDataProfileDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "readOperationConfig",
+        "dataAsset",
+        "connection",
+        "schema",
+        "dataEntity",
+        "profileConfig"
+    })
+    public CreateDataProfileDetails(
+            ReadOperationConfig readOperationConfig,
+            DataAsset dataAsset,
+            Connection connection,
+            Schema schema,
+            DataEntity dataEntity,
+            ProfileConfig profileConfig) {
+        super();
+        this.readOperationConfig = readOperationConfig;
+        this.dataAsset = dataAsset;
+        this.connection = connection;
+        this.schema = schema;
+        this.dataEntity = dataEntity;
+        this.profileConfig = profileConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("readOperationConfig")
         private ReadOperationConfig readOperationConfig;
@@ -118,24 +139,112 @@ public class CreateDataProfileDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("readOperationConfig")
-    ReadOperationConfig readOperationConfig;
+    private final ReadOperationConfig readOperationConfig;
+
+    public ReadOperationConfig getReadOperationConfig() {
+        return readOperationConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataAsset")
-    DataAsset dataAsset;
+    private final DataAsset dataAsset;
+
+    public DataAsset getDataAsset() {
+        return dataAsset;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connection")
-    Connection connection;
+    private final Connection connection;
+
+    public Connection getConnection() {
+        return connection;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
-    Schema schema;
+    private final Schema schema;
+
+    public Schema getSchema() {
+        return schema;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataEntity")
-    DataEntity dataEntity;
+    private final DataEntity dataEntity;
+
+    public DataEntity getDataEntity() {
+        return dataEntity;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("profileConfig")
-    ProfileConfig profileConfig;
+    private final ProfileConfig profileConfig;
+
+    public ProfileConfig getProfileConfig() {
+        return profileConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDataProfileDetails(");
+        sb.append("readOperationConfig=").append(String.valueOf(this.readOperationConfig));
+        sb.append(", dataAsset=").append(String.valueOf(this.dataAsset));
+        sb.append(", connection=").append(String.valueOf(this.connection));
+        sb.append(", schema=").append(String.valueOf(this.schema));
+        sb.append(", dataEntity=").append(String.valueOf(this.dataEntity));
+        sb.append(", profileConfig=").append(String.valueOf(this.profileConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDataProfileDetails)) {
+            return false;
+        }
+
+        CreateDataProfileDetails other = (CreateDataProfileDetails) o;
+        return java.util.Objects.equals(this.readOperationConfig, other.readOperationConfig)
+                && java.util.Objects.equals(this.dataAsset, other.dataAsset)
+                && java.util.Objects.equals(this.connection, other.connection)
+                && java.util.Objects.equals(this.schema, other.schema)
+                && java.util.Objects.equals(this.dataEntity, other.dataEntity)
+                && java.util.Objects.equals(this.profileConfig, other.profileConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.readOperationConfig == null
+                                ? 43
+                                : this.readOperationConfig.hashCode());
+        result = (result * PRIME) + (this.dataAsset == null ? 43 : this.dataAsset.hashCode());
+        result = (result * PRIME) + (this.connection == null ? 43 : this.connection.hashCode());
+        result = (result * PRIME) + (this.schema == null ? 43 : this.schema.hashCode());
+        result = (result * PRIME) + (this.dataEntity == null ? 43 : this.dataEntity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.profileConfig == null ? 43 : this.profileConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

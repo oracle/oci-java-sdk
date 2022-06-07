@@ -15,16 +15,19 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DetachParentSoftwareSourceFromManagedInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DetachParentSoftwareSourceFromManagedInstanceDetails {
+public final class DetachParentSoftwareSourceFromManagedInstanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"softwareSourceId"})
+    public DetachParentSoftwareSourceFromManagedInstanceDetails(String softwareSourceId) {
+        super();
+        this.softwareSourceId = softwareSourceId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
@@ -61,12 +64,62 @@ public class DetachParentSoftwareSourceFromManagedInstanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID for the Software Source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
-    String softwareSourceId;
+    private final String softwareSourceId;
+
+    public String getSoftwareSourceId() {
+        return softwareSourceId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DetachParentSoftwareSourceFromManagedInstanceDetails(");
+        sb.append("softwareSourceId=").append(String.valueOf(this.softwareSourceId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetachParentSoftwareSourceFromManagedInstanceDetails)) {
+            return false;
+        }
+
+        DetachParentSoftwareSourceFromManagedInstanceDetails other =
+                (DetachParentSoftwareSourceFromManagedInstanceDetails) o;
+        return java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

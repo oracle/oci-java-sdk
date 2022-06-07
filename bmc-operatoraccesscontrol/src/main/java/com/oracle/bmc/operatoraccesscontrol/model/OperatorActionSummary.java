@@ -15,16 +15,40 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OperatorActionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperatorActionSummary {
+public final class OperatorActionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "component",
+        "compartmentId",
+        "resourceType",
+        "lifecycleState",
+        "description"
+    })
+    public OperatorActionSummary(
+            String id,
+            String name,
+            String component,
+            String compartmentId,
+            ResourceTypes resourceType,
+            OperatorActionLifecycleStates lifecycleState,
+            String description) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.component = component;
+        this.compartmentId = compartmentId;
+        this.resourceType = resourceType;
+        this.lifecycleState = lifecycleState;
+        this.description = description;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -129,41 +153,69 @@ public class OperatorActionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier assigned by Oracle to an operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Name of the operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Name of the component for which the operator action is applicable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("component")
-    String component;
+    private final String component;
+
+    public String getComponent() {
+        return component;
+    }
 
     /**
      * compartmentId for which the OperatorAction is applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * resourceType for which the OperatorAction is applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    ResourceTypes resourceType;
+    private final ResourceTypes resourceType;
+
+    public ResourceTypes getResourceType() {
+        return resourceType;
+    }
 
     /**
      * The current lifecycle state of the operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    OperatorActionLifecycleStates lifecycleState;
+    private final OperatorActionLifecycleStates lifecycleState;
+
+    public OperatorActionLifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made
@@ -171,8 +223,73 @@ public class OperatorActionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperatorActionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", component=").append(String.valueOf(this.component));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperatorActionSummary)) {
+            return false;
+        }
+
+        OperatorActionSummary other = (OperatorActionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.component, other.component)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.component == null ? 43 : this.component.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

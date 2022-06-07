@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Target.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Target extends Operator {
+public final class Target extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -320,6 +315,10 @@ public class Target extends Operator {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Target(
             String key,
@@ -374,47 +373,75 @@ public class Target extends Operator {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("entity")
-    DataEntity entity;
+    private final DataEntity entity;
+
+    public DataEntity getEntity() {
+        return entity;
+    }
 
     /**
      * Specifies the read access.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
-    Boolean isReadAccess;
+    private final Boolean isReadAccess;
+
+    public Boolean getIsReadAccess() {
+        return isReadAccess;
+    }
 
     /**
      * Specifies the copy fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
-    Boolean isCopyFields;
+    private final Boolean isCopyFields;
+
+    public Boolean getIsCopyFields() {
+        return isCopyFields;
+    }
 
     /**
      * Specifies if this uses a predefined shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
-    Boolean isPredefinedShape;
+    private final Boolean isPredefinedShape;
+
+    public Boolean getIsPredefinedShape() {
+        return isPredefinedShape;
+    }
 
     /**
      * Specifies if entity name is the same as source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSameSourceName")
-    Boolean isUseSameSourceName;
+    private final Boolean isUseSameSourceName;
+
+    public Boolean getIsUseSameSourceName() {
+        return isUseSameSourceName;
+    }
 
     /**
      * Prefix for the entity Name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNamePrefix")
-    String targetEntityNamePrefix;
+    private final String targetEntityNamePrefix;
+
+    public String getTargetEntityNamePrefix() {
+        return targetEntityNamePrefix;
+    }
 
     /**
      * Suffix for the entity Name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNameSuffix")
-    String targetEntityNameSuffix;
+    private final String targetEntityNameSuffix;
+
+    public String getTargetEntityNameSuffix() {
+        return targetEntityNameSuffix;
+    }
+
     /**
      * Specifies the data property.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DataProperty {
         Truncate("TRUNCATE"),
         Merge("MERGE"),
@@ -428,6 +455,9 @@ public class Target extends Operator {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataProperty.class);
 
         private final String value;
         private static java.util.Map<String, DataProperty> map;
@@ -465,23 +495,141 @@ public class Target extends Operator {
      * Specifies the data property.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
-    DataProperty dataProperty;
+    private final DataProperty dataProperty;
+
+    public DataProperty getDataProperty() {
+        return dataProperty;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("schemaDriftConfig")
-    SchemaDriftConfig schemaDriftConfig;
+    private final SchemaDriftConfig schemaDriftConfig;
+
+    public SchemaDriftConfig getSchemaDriftConfig() {
+        return schemaDriftConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fixedDataShape")
-    Shape fixedDataShape;
+    private final Shape fixedDataShape;
+
+    public Shape getFixedDataShape() {
+        return fixedDataShape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("writeOperationConfig")
-    WriteOperationConfig writeOperationConfig;
+    private final WriteOperationConfig writeOperationConfig;
+
+    public WriteOperationConfig getWriteOperationConfig() {
+        return writeOperationConfig;
+    }
 
     /**
      * A numeric loading order number for the target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadOrder")
-    Integer loadOrder;
+    private final Integer loadOrder;
+
+    public Integer getLoadOrder() {
+        return loadOrder;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Target(");
+        sb.append("super=").append(super.toString());
+        sb.append(", entity=").append(String.valueOf(this.entity));
+        sb.append(", isReadAccess=").append(String.valueOf(this.isReadAccess));
+        sb.append(", isCopyFields=").append(String.valueOf(this.isCopyFields));
+        sb.append(", isPredefinedShape=").append(String.valueOf(this.isPredefinedShape));
+        sb.append(", isUseSameSourceName=").append(String.valueOf(this.isUseSameSourceName));
+        sb.append(", targetEntityNamePrefix=").append(String.valueOf(this.targetEntityNamePrefix));
+        sb.append(", targetEntityNameSuffix=").append(String.valueOf(this.targetEntityNameSuffix));
+        sb.append(", dataProperty=").append(String.valueOf(this.dataProperty));
+        sb.append(", schemaDriftConfig=").append(String.valueOf(this.schemaDriftConfig));
+        sb.append(", fixedDataShape=").append(String.valueOf(this.fixedDataShape));
+        sb.append(", writeOperationConfig=").append(String.valueOf(this.writeOperationConfig));
+        sb.append(", loadOrder=").append(String.valueOf(this.loadOrder));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Target)) {
+            return false;
+        }
+
+        Target other = (Target) o;
+        return java.util.Objects.equals(this.entity, other.entity)
+                && java.util.Objects.equals(this.isReadAccess, other.isReadAccess)
+                && java.util.Objects.equals(this.isCopyFields, other.isCopyFields)
+                && java.util.Objects.equals(this.isPredefinedShape, other.isPredefinedShape)
+                && java.util.Objects.equals(this.isUseSameSourceName, other.isUseSameSourceName)
+                && java.util.Objects.equals(
+                        this.targetEntityNamePrefix, other.targetEntityNamePrefix)
+                && java.util.Objects.equals(
+                        this.targetEntityNameSuffix, other.targetEntityNameSuffix)
+                && java.util.Objects.equals(this.dataProperty, other.dataProperty)
+                && java.util.Objects.equals(this.schemaDriftConfig, other.schemaDriftConfig)
+                && java.util.Objects.equals(this.fixedDataShape, other.fixedDataShape)
+                && java.util.Objects.equals(this.writeOperationConfig, other.writeOperationConfig)
+                && java.util.Objects.equals(this.loadOrder, other.loadOrder)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.entity == null ? 43 : this.entity.hashCode());
+        result = (result * PRIME) + (this.isReadAccess == null ? 43 : this.isReadAccess.hashCode());
+        result = (result * PRIME) + (this.isCopyFields == null ? 43 : this.isCopyFields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPredefinedShape == null ? 43 : this.isPredefinedShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUseSameSourceName == null
+                                ? 43
+                                : this.isUseSameSourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetEntityNamePrefix == null
+                                ? 43
+                                : this.targetEntityNamePrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetEntityNameSuffix == null
+                                ? 43
+                                : this.targetEntityNameSuffix.hashCode());
+        result = (result * PRIME) + (this.dataProperty == null ? 43 : this.dataProperty.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.schemaDriftConfig == null ? 43 : this.schemaDriftConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fixedDataShape == null ? 43 : this.fixedDataShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.writeOperationConfig == null
+                                ? 43
+                                : this.writeOperationConfig.hashCode());
+        result = (result * PRIME) + (this.loadOrder == null ? 43 : this.loadOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,12 +16,6 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -36,6 +30,19 @@ package com.oracle.bmc.loganalytics.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateScheduledTaskDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"displayName", "freeformTags", "definedTags", "schedules"})
+    protected UpdateScheduledTaskDetails(
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<Schedule> schedules) {
+        super();
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.schedules = schedules;
+    }
 
     /**
      * A user-friendly name that is changeable and that does not have to be unique.
@@ -45,7 +52,11 @@ public class UpdateScheduledTaskDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -53,7 +64,11 @@ public class UpdateScheduledTaskDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -61,7 +76,11 @@ public class UpdateScheduledTaskDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Schedules may be updated for task types SAVED_SEARCH and PURGE.
@@ -69,7 +88,50 @@ public class UpdateScheduledTaskDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
-    java.util.List<Schedule> schedules;
+    private final java.util.List<Schedule> schedules;
+
+    public java.util.List<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateScheduledTaskDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", schedules=").append(String.valueOf(this.schedules));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateScheduledTaskDetails)) {
+            return false;
+        }
+
+        UpdateScheduledTaskDetails other = (UpdateScheduledTaskDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.schedules, other.schedules);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.schedules == null ? 43 : this.schedules.hashCode());
+        return result;
+    }
 
     /**
      * Discriminator.

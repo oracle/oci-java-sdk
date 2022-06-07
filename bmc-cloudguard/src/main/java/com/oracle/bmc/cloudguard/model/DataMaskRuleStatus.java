@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * The status of the dataMaskRule.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum DataMaskRuleStatus {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
@@ -18,6 +17,9 @@ public enum DataMaskRuleStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataMaskRuleStatus.class);
 
     private final String value;
     private static java.util.Map<String, DataMaskRuleStatus> map;

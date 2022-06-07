@@ -15,16 +15,22 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = EncryptionDomainConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EncryptionDomainConfig {
+public final class EncryptionDomainConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"oracleTrafficSelector", "cpeTrafficSelector"})
+    public EncryptionDomainConfig(
+            java.util.List<String> oracleTrafficSelector,
+            java.util.List<String> cpeTrafficSelector) {
+        super();
+        this.oracleTrafficSelector = oracleTrafficSelector;
+        this.cpeTrafficSelector = cpeTrafficSelector;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("oracleTrafficSelector")
         private java.util.List<String> oracleTrafficSelector;
@@ -72,18 +78,80 @@ public class EncryptionDomainConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleTrafficSelector")
-    java.util.List<String> oracleTrafficSelector;
+    private final java.util.List<String> oracleTrafficSelector;
+
+    public java.util.List<String> getOracleTrafficSelector() {
+        return oracleTrafficSelector;
+    }
 
     /**
      * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeTrafficSelector")
-    java.util.List<String> cpeTrafficSelector;
+    private final java.util.List<String> cpeTrafficSelector;
+
+    public java.util.List<String> getCpeTrafficSelector() {
+        return cpeTrafficSelector;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EncryptionDomainConfig(");
+        sb.append("oracleTrafficSelector=").append(String.valueOf(this.oracleTrafficSelector));
+        sb.append(", cpeTrafficSelector=").append(String.valueOf(this.cpeTrafficSelector));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EncryptionDomainConfig)) {
+            return false;
+        }
+
+        EncryptionDomainConfig other = (EncryptionDomainConfig) o;
+        return java.util.Objects.equals(this.oracleTrafficSelector, other.oracleTrafficSelector)
+                && java.util.Objects.equals(this.cpeTrafficSelector, other.cpeTrafficSelector)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.oracleTrafficSelector == null
+                                ? 43
+                                : this.oracleTrafficSelector.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpeTrafficSelector == null
+                                ? 43
+                                : this.cpeTrafficSelector.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

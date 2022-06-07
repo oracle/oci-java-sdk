@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PublishedObjectFromPipelineTask.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PublishedObjectFromPipelineTask extends PublishedObject {
+public final class PublishedObjectFromPipelineTask extends PublishedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -212,6 +207,10 @@ public class PublishedObjectFromPipelineTask extends PublishedObject {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public PublishedObjectFromPipelineTask(
             String key,
@@ -249,29 +248,116 @@ public class PublishedObjectFromPipelineTask extends PublishedObject {
      * An array of input ports.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
-    java.util.List<InputPort> inputPorts;
+    private final java.util.List<InputPort> inputPorts;
+
+    public java.util.List<InputPort> getInputPorts() {
+        return inputPorts;
+    }
 
     /**
      * An array of output ports.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
-    java.util.List<OutputPort> outputPorts;
+    private final java.util.List<OutputPort> outputPorts;
+
+    public java.util.List<OutputPort> getOutputPorts() {
+        return outputPorts;
+    }
 
     /**
      * An array of parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.List<Parameter> parameters;
+    private final java.util.List<Parameter> parameters;
+
+    public java.util.List<Parameter> getParameters() {
+        return parameters;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("opConfigValues")
-    ConfigValues opConfigValues;
+    private final ConfigValues opConfigValues;
+
+    public ConfigValues getOpConfigValues() {
+        return opConfigValues;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configProviderDelegate")
-    ConfigProvider configProviderDelegate;
+    private final ConfigProvider configProviderDelegate;
+
+    public ConfigProvider getConfigProviderDelegate() {
+        return configProviderDelegate;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("pipeline")
-    Pipeline pipeline;
+    private final Pipeline pipeline;
+
+    public Pipeline getPipeline() {
+        return pipeline;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PublishedObjectFromPipelineTask(");
+        sb.append("super=").append(super.toString());
+        sb.append(", inputPorts=").append(String.valueOf(this.inputPorts));
+        sb.append(", outputPorts=").append(String.valueOf(this.outputPorts));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", opConfigValues=").append(String.valueOf(this.opConfigValues));
+        sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
+        sb.append(", pipeline=").append(String.valueOf(this.pipeline));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PublishedObjectFromPipelineTask)) {
+            return false;
+        }
+
+        PublishedObjectFromPipelineTask other = (PublishedObjectFromPipelineTask) o;
+        return java.util.Objects.equals(this.inputPorts, other.inputPorts)
+                && java.util.Objects.equals(this.outputPorts, other.outputPorts)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.opConfigValues, other.opConfigValues)
+                && java.util.Objects.equals(
+                        this.configProviderDelegate, other.configProviderDelegate)
+                && java.util.Objects.equals(this.pipeline, other.pipeline)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.inputPorts == null ? 43 : this.inputPorts.hashCode());
+        result = (result * PRIME) + (this.outputPorts == null ? 43 : this.outputPorts.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opConfigValues == null ? 43 : this.opConfigValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configProviderDelegate == null
+                                ? 43
+                                : this.configProviderDelegate.hashCode());
+        result = (result * PRIME) + (this.pipeline == null ? 43 : this.pipeline.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

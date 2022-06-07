@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeDataSafePrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeDataSafePrivateEndpointCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeDataSafePrivateEndpointCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails> {
@@ -26,17 +18,27 @@ public class ChangeDataSafePrivateEndpointCompartmentRequest
      */
     private String dataSafePrivateEndpointId;
 
+    public String getDataSafePrivateEndpointId() {
+        return dataSafePrivateEndpointId;
+    }
     /**
      * The details used to change the compartment of a Data Safe private endpoint.
      */
     private com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails
             changeDataSafePrivateEndpointCompartmentDetails;
 
+    public com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails
+            getChangeDataSafePrivateEndpointCompartmentDetails() {
+        return changeDataSafePrivateEndpointCompartmentDetails;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the if-match parameter to the value of the
@@ -46,6 +48,10 @@ public class ChangeDataSafePrivateEndpointCompartmentRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +71,59 @@ public class ChangeDataSafePrivateEndpointCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String dataSafePrivateEndpointId = null;
+
+        /**
+         * The OCID of the private endpoint.
+         * @return this builder instance
+         */
+        public Builder dataSafePrivateEndpointId(String dataSafePrivateEndpointId) {
+            this.dataSafePrivateEndpointId = dataSafePrivateEndpointId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails
+                changeDataSafePrivateEndpointCompartmentDetails = null;
+
+        /**
+         * The details used to change the compartment of a Data Safe private endpoint.
+         * @return this builder instance
+         */
+        public Builder changeDataSafePrivateEndpointCompartmentDetails(
+                com.oracle.bmc.datasafe.model.ChangeDataSafePrivateEndpointCompartmentDetails
+                        changeDataSafePrivateEndpointCompartmentDetails) {
+            this.changeDataSafePrivateEndpointCompartmentDetails =
+                    changeDataSafePrivateEndpointCompartmentDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -134,5 +193,96 @@ public class ChangeDataSafePrivateEndpointCompartmentRequest
             changeDataSafePrivateEndpointCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeDataSafePrivateEndpointCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeDataSafePrivateEndpointCompartmentRequest
+         */
+        public ChangeDataSafePrivateEndpointCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeDataSafePrivateEndpointCompartmentRequest request =
+                    new ChangeDataSafePrivateEndpointCompartmentRequest();
+            request.dataSafePrivateEndpointId = dataSafePrivateEndpointId;
+            request.changeDataSafePrivateEndpointCompartmentDetails =
+                    changeDataSafePrivateEndpointCompartmentDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new ChangeDataSafePrivateEndpointCompartmentRequest(dataSafePrivateEndpointId, changeDataSafePrivateEndpointCompartmentDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .dataSafePrivateEndpointId(dataSafePrivateEndpointId)
+                .changeDataSafePrivateEndpointCompartmentDetails(
+                        changeDataSafePrivateEndpointCompartmentDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",dataSafePrivateEndpointId=")
+                .append(String.valueOf(this.dataSafePrivateEndpointId));
+        sb.append(",changeDataSafePrivateEndpointCompartmentDetails=")
+                .append(String.valueOf(this.changeDataSafePrivateEndpointCompartmentDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeDataSafePrivateEndpointCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeDataSafePrivateEndpointCompartmentRequest other =
+                (ChangeDataSafePrivateEndpointCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.dataSafePrivateEndpointId, other.dataSafePrivateEndpointId)
+                && java.util.Objects.equals(
+                        this.changeDataSafePrivateEndpointCompartmentDetails,
+                        other.changeDataSafePrivateEndpointCompartmentDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.dataSafePrivateEndpointId == null
+                                ? 43
+                                : this.dataSafePrivateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeDataSafePrivateEndpointCompartmentDetails == null
+                                ? 43
+                                : this.changeDataSafePrivateEndpointCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

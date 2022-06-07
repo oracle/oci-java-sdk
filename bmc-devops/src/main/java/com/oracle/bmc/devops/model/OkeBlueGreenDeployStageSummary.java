@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OkeBlueGreenDeployStageSummary.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OkeBlueGreenDeployStageSummary extends DeployStageSummary {
+public final class OkeBlueGreenDeployStageSummary extends DeployStageSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -250,6 +245,10 @@ public class OkeBlueGreenDeployStageSummary extends DeployStageSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public OkeBlueGreenDeployStageSummary(
             String id,
@@ -293,17 +292,91 @@ public class OkeBlueGreenDeployStageSummary extends DeployStageSummary {
      * Kubernetes cluster environment OCID for deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
-    String okeClusterDeployEnvironmentId;
+    private final String okeClusterDeployEnvironmentId;
+
+    public String getOkeClusterDeployEnvironmentId() {
+        return okeClusterDeployEnvironmentId;
+    }
 
     /**
      * List of Kubernetes manifest artifact OCIDs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
-    java.util.List<String> kubernetesManifestDeployArtifactIds;
+    private final java.util.List<String> kubernetesManifestDeployArtifactIds;
+
+    public java.util.List<String> getKubernetesManifestDeployArtifactIds() {
+        return kubernetesManifestDeployArtifactIds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("blueGreenStrategy")
-    OkeBlueGreenStrategy blueGreenStrategy;
+    private final OkeBlueGreenStrategy blueGreenStrategy;
+
+    public OkeBlueGreenStrategy getBlueGreenStrategy() {
+        return blueGreenStrategy;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OkeBlueGreenDeployStageSummary(");
+        sb.append("super=").append(super.toString());
+        sb.append(", okeClusterDeployEnvironmentId=")
+                .append(String.valueOf(this.okeClusterDeployEnvironmentId));
+        sb.append(", kubernetesManifestDeployArtifactIds=")
+                .append(String.valueOf(this.kubernetesManifestDeployArtifactIds));
+        sb.append(", blueGreenStrategy=").append(String.valueOf(this.blueGreenStrategy));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OkeBlueGreenDeployStageSummary)) {
+            return false;
+        }
+
+        OkeBlueGreenDeployStageSummary other = (OkeBlueGreenDeployStageSummary) o;
+        return java.util.Objects.equals(
+                        this.okeClusterDeployEnvironmentId, other.okeClusterDeployEnvironmentId)
+                && java.util.Objects.equals(
+                        this.kubernetesManifestDeployArtifactIds,
+                        other.kubernetesManifestDeployArtifactIds)
+                && java.util.Objects.equals(this.blueGreenStrategy, other.blueGreenStrategy)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.okeClusterDeployEnvironmentId == null
+                                ? 43
+                                : this.okeClusterDeployEnvironmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kubernetesManifestDeployArtifactIds == null
+                                ? 43
+                                : this.kubernetesManifestDeployArtifactIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blueGreenStrategy == null ? 43 : this.blueGreenStrategy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

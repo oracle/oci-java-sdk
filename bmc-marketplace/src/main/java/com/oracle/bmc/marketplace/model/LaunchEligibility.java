@@ -15,16 +15,31 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LaunchEligibility.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LaunchEligibility {
+public final class LaunchEligibility {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "imageId",
+        "isLaunchAllowed",
+        "meters",
+        "ineligibilityReason"
+    })
+    public LaunchEligibility(
+            String imageId,
+            Boolean isLaunchAllowed,
+            String meters,
+            IneligibilityReasonEnum ineligibilityReason) {
+        super();
+        this.imageId = imageId;
+        this.isLaunchAllowed = isLaunchAllowed;
+        this.meters = meters;
+        this.ineligibilityReason = ineligibilityReason;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
@@ -92,30 +107,104 @@ public class LaunchEligibility {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * PIC Image ID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
-    String imageId;
+    private final String imageId;
+
+    public String getImageId() {
+        return imageId;
+    }
 
     /**
      * Is the tenant permitted to launch the PIC image
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLaunchAllowed")
-    Boolean isLaunchAllowed;
+    private final Boolean isLaunchAllowed;
+
+    public Boolean getIsLaunchAllowed() {
+        return isLaunchAllowed;
+    }
 
     /**
      * related meters for the PIC image
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("meters")
-    String meters;
+    private final String meters;
+
+    public String getMeters() {
+        return meters;
+    }
 
     /**
      * Reason the account is ineligible to launch paid listings
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityReason")
-    IneligibilityReasonEnum ineligibilityReason;
+    private final IneligibilityReasonEnum ineligibilityReason;
+
+    public IneligibilityReasonEnum getIneligibilityReason() {
+        return ineligibilityReason;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LaunchEligibility(");
+        sb.append("imageId=").append(String.valueOf(this.imageId));
+        sb.append(", isLaunchAllowed=").append(String.valueOf(this.isLaunchAllowed));
+        sb.append(", meters=").append(String.valueOf(this.meters));
+        sb.append(", ineligibilityReason=").append(String.valueOf(this.ineligibilityReason));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LaunchEligibility)) {
+            return false;
+        }
+
+        LaunchEligibility other = (LaunchEligibility) o;
+        return java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.isLaunchAllowed, other.isLaunchAllowed)
+                && java.util.Objects.equals(this.meters, other.meters)
+                && java.util.Objects.equals(this.ineligibilityReason, other.ineligibilityReason)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLaunchAllowed == null ? 43 : this.isLaunchAllowed.hashCode());
+        result = (result * PRIME) + (this.meters == null ? 43 : this.meters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ineligibilityReason == null
+                                ? 43
+                                : this.ineligibilityReason.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

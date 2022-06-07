@@ -7,10 +7,6 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
@@ -18,10 +14,18 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The returned VolumeGroupBackup instance.
      */
     private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
+
+    public com.oracle.bmc.core.model.VolumeGroupBackup getVolumeGroupBackup() {
+        return volumeGroupBackup;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "volumeGroupBackup"})
     private UpdateVolumeGroupBackupResponse(
@@ -41,6 +45,21 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
+
+        public Builder volumeGroupBackup(
+                com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup) {
+            this.volumeGroupBackup = volumeGroupBackup;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -56,5 +75,46 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
         public UpdateVolumeGroupBackupResponse build() {
             return new UpdateVolumeGroupBackupResponse(__httpStatusCode__, etag, volumeGroupBackup);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",volumeGroupBackup=").append(String.valueOf(volumeGroupBackup));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateVolumeGroupBackupResponse)) {
+            return false;
+        }
+
+        UpdateVolumeGroupBackupResponse other = (UpdateVolumeGroupBackupResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.volumeGroupBackup, other.volumeGroupBackup);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.volumeGroupBackup == null ? 43 : this.volumeGroupBackup.hashCode());
+        return result;
     }
 }

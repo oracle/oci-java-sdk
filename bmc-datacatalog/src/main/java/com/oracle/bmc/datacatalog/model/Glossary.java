@@ -23,14 +23,68 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Glossary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Glossary {
+public final class Glossary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "displayName",
+        "description",
+        "catalogId",
+        "lifecycleState",
+        "timeCreated",
+        "timeUpdated",
+        "createdById",
+        "updatedById",
+        "owner",
+        "workflowStatus",
+        "customPropertyMembers",
+        "importJobDefinitionKey",
+        "importJobKey",
+        "latestImportJobExecutionKey",
+        "latestImportJobExecutionStatus",
+        "uri"
+    })
+    public Glossary(
+            String key,
+            String displayName,
+            String description,
+            String catalogId,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String createdById,
+            String updatedById,
+            String owner,
+            TermWorkflowStatus workflowStatus,
+            java.util.List<CustomPropertyGetUsage> customPropertyMembers,
+            String importJobDefinitionKey,
+            String importJobKey,
+            String latestImportJobExecutionKey,
+            String latestImportJobExecutionStatus,
+            String uri) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.description = description;
+        this.catalogId = catalogId;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.createdById = createdById;
+        this.updatedById = updatedById;
+        this.owner = owner;
+        this.workflowStatus = workflowStatus;
+        this.customPropertyMembers = customPropertyMembers;
+        this.importJobDefinitionKey = importJobDefinitionKey;
+        this.importJobKey = importJobKey;
+        this.latestImportJobExecutionKey = latestImportJobExecutionKey;
+        this.latestImportJobExecutionStatus = latestImportJobExecutionStatus;
+        this.uri = uri;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -246,11 +300,19 @@ public class Glossary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique glossary key that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -258,25 +320,41 @@ public class Glossary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Detailed description of the glossary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The data catalog's OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
-    String catalogId;
+    private final String catalogId;
+
+    public String getCatalogId() {
+        return catalogId;
+    }
 
     /**
      * The current state of the glossary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the glossary was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -284,62 +362,102 @@ public class Glossary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The last time that any change was made to the glossary. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * OCID of the user who created this metadata element.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
-    String createdById;
+    private final String createdById;
+
+    public String getCreatedById() {
+        return createdById;
+    }
 
     /**
      * OCID of the user who updated this metadata element.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
-    String updatedById;
+    private final String updatedById;
+
+    public String getUpdatedById() {
+        return updatedById;
+    }
 
     /**
      * OCID of the user who is the owner of the glossary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
-    String owner;
+    private final String owner;
+
+    public String getOwner() {
+        return owner;
+    }
 
     /**
      * Status of the approval process workflow for this business glossary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
-    TermWorkflowStatus workflowStatus;
+    private final TermWorkflowStatus workflowStatus;
+
+    public TermWorkflowStatus getWorkflowStatus() {
+        return workflowStatus;
+    }
 
     /**
      * The list of customized properties along with the values for this object
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
-    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+    private final java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+    public java.util.List<CustomPropertyGetUsage> getCustomPropertyMembers() {
+        return customPropertyMembers;
+    }
 
     /**
      * The unique key of the job definition resource that was used in the Glossary import.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("importJobDefinitionKey")
-    String importJobDefinitionKey;
+    private final String importJobDefinitionKey;
+
+    public String getImportJobDefinitionKey() {
+        return importJobDefinitionKey;
+    }
 
     /**
      * The unique key of the job policy for Glossary import.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("importJobKey")
-    String importJobKey;
+    private final String importJobKey;
+
+    public String getImportJobKey() {
+        return importJobKey;
+    }
 
     /**
      * The unique key of the parent job execution for which the log resource was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionKey")
-    String latestImportJobExecutionKey;
+    private final String latestImportJobExecutionKey;
+
+    public String getLatestImportJobExecutionKey() {
+        return latestImportJobExecutionKey;
+    }
 
     /**
      * Status of the latest glossary import job execution, such as running, paused, or completed.
@@ -347,14 +465,134 @@ public class Glossary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionStatus")
-    String latestImportJobExecutionStatus;
+    private final String latestImportJobExecutionStatus;
+
+    public String getLatestImportJobExecutionStatus() {
+        return latestImportJobExecutionStatus;
+    }
 
     /**
      * URI to the tag instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Glossary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", createdById=").append(String.valueOf(this.createdById));
+        sb.append(", updatedById=").append(String.valueOf(this.updatedById));
+        sb.append(", owner=").append(String.valueOf(this.owner));
+        sb.append(", workflowStatus=").append(String.valueOf(this.workflowStatus));
+        sb.append(", customPropertyMembers=").append(String.valueOf(this.customPropertyMembers));
+        sb.append(", importJobDefinitionKey=").append(String.valueOf(this.importJobDefinitionKey));
+        sb.append(", importJobKey=").append(String.valueOf(this.importJobKey));
+        sb.append(", latestImportJobExecutionKey=")
+                .append(String.valueOf(this.latestImportJobExecutionKey));
+        sb.append(", latestImportJobExecutionStatus=")
+                .append(String.valueOf(this.latestImportJobExecutionStatus));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Glossary)) {
+            return false;
+        }
+
+        Glossary other = (Glossary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.createdById, other.createdById)
+                && java.util.Objects.equals(this.updatedById, other.updatedById)
+                && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.workflowStatus, other.workflowStatus)
+                && java.util.Objects.equals(this.customPropertyMembers, other.customPropertyMembers)
+                && java.util.Objects.equals(
+                        this.importJobDefinitionKey, other.importJobDefinitionKey)
+                && java.util.Objects.equals(this.importJobKey, other.importJobKey)
+                && java.util.Objects.equals(
+                        this.latestImportJobExecutionKey, other.latestImportJobExecutionKey)
+                && java.util.Objects.equals(
+                        this.latestImportJobExecutionStatus, other.latestImportJobExecutionStatus)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.createdById == null ? 43 : this.createdById.hashCode());
+        result = (result * PRIME) + (this.updatedById == null ? 43 : this.updatedById.hashCode());
+        result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workflowStatus == null ? 43 : this.workflowStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customPropertyMembers == null
+                                ? 43
+                                : this.customPropertyMembers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importJobDefinitionKey == null
+                                ? 43
+                                : this.importJobDefinitionKey.hashCode());
+        result = (result * PRIME) + (this.importJobKey == null ? 43 : this.importJobKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.latestImportJobExecutionKey == null
+                                ? 43
+                                : this.latestImportJobExecutionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.latestImportJobExecutionStatus == null
+                                ? 43
+                                : this.latestImportJobExecutionStatus.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

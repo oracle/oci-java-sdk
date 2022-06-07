@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCpeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCpeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateCpeRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateCpeDetails> {
 
@@ -25,11 +17,17 @@ public class UpdateCpeRequest
      */
     private String cpeId;
 
+    public String getCpeId() {
+        return cpeId;
+    }
     /**
      * Details object for updating a CPE.
      */
     private com.oracle.bmc.core.model.UpdateCpeDetails updateCpeDetails;
 
+    public com.oracle.bmc.core.model.UpdateCpeDetails getUpdateCpeDetails() {
+        return updateCpeDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -37,6 +35,10 @@ public class UpdateCpeRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -54,6 +56,43 @@ public class UpdateCpeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String cpeId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+         * @return this builder instance
+         */
+        public Builder cpeId(String cpeId) {
+            this.cpeId = cpeId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateCpeDetails updateCpeDetails = null;
+
+        /**
+         * Details object for updating a CPE.
+         * @return this builder instance
+         */
+        public Builder updateCpeDetails(
+                com.oracle.bmc.core.model.UpdateCpeDetails updateCpeDetails) {
+            this.updateCpeDetails = updateCpeDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -118,5 +157,73 @@ public class UpdateCpeRequest
             updateCpeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateCpeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateCpeRequest
+         */
+        public UpdateCpeRequest buildWithoutInvocationCallback() {
+            UpdateCpeRequest request = new UpdateCpeRequest();
+            request.cpeId = cpeId;
+            request.updateCpeDetails = updateCpeDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateCpeRequest(cpeId, updateCpeDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().cpeId(cpeId).updateCpeDetails(updateCpeDetails).ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",cpeId=").append(String.valueOf(this.cpeId));
+        sb.append(",updateCpeDetails=").append(String.valueOf(this.updateCpeDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateCpeRequest)) {
+            return false;
+        }
+
+        UpdateCpeRequest other = (UpdateCpeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.cpeId, other.cpeId)
+                && java.util.Objects.equals(this.updateCpeDetails, other.updateCpeDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.cpeId == null ? 43 : this.cpeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateCpeDetails == null ? 43 : this.updateCpeDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

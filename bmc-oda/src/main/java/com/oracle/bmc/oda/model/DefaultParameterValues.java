@@ -15,16 +15,21 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DefaultParameterValues.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DefaultParameterValues {
+public final class DefaultParameterValues {
+    @Deprecated
+    @java.beans.ConstructorProperties({"resourceTypesDefaultParameterValues"})
+    public DefaultParameterValues(
+            java.util.List<ResourceTypeDefaultParameterValues>
+                    resourceTypesDefaultParameterValues) {
+        super();
+        this.resourceTypesDefaultParameterValues = resourceTypesDefaultParameterValues;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypesDefaultParameterValues")
         private java.util.List<ResourceTypeDefaultParameterValues>
@@ -65,12 +70,68 @@ public class DefaultParameterValues {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A list of resource type specific default parameter values, one set for each resource type listed in the package definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypesDefaultParameterValues")
-    java.util.List<ResourceTypeDefaultParameterValues> resourceTypesDefaultParameterValues;
+    private final java.util.List<ResourceTypeDefaultParameterValues>
+            resourceTypesDefaultParameterValues;
+
+    public java.util.List<ResourceTypeDefaultParameterValues>
+            getResourceTypesDefaultParameterValues() {
+        return resourceTypesDefaultParameterValues;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DefaultParameterValues(");
+        sb.append("resourceTypesDefaultParameterValues=")
+                .append(String.valueOf(this.resourceTypesDefaultParameterValues));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DefaultParameterValues)) {
+            return false;
+        }
+
+        DefaultParameterValues other = (DefaultParameterValues) o;
+        return java.util.Objects.equals(
+                        this.resourceTypesDefaultParameterValues,
+                        other.resourceTypesDefaultParameterValues)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.resourceTypesDefaultParameterValues == null
+                                ? 43
+                                : this.resourceTypesDefaultParameterValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

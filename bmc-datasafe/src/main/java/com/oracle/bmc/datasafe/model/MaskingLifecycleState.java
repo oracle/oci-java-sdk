@@ -8,7 +8,6 @@ package com.oracle.bmc.datasafe.model;
  * The current state of a masking resource such as masking policy or library masking format.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public enum MaskingLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
@@ -23,6 +22,9 @@ public enum MaskingLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MaskingLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, MaskingLifecycleState> map;

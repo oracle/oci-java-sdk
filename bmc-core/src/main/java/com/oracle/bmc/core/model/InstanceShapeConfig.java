@@ -17,16 +17,52 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceShapeConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceShapeConfig {
+public final class InstanceShapeConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "ocpus",
+        "memoryInGBs",
+        "baselineOcpuUtilization",
+        "processorDescription",
+        "networkingBandwidthInGbps",
+        "maxVnicAttachments",
+        "gpus",
+        "gpuDescription",
+        "localDisks",
+        "localDisksTotalSizeInGBs",
+        "localDiskDescription"
+    })
+    public InstanceShapeConfig(
+            Float ocpus,
+            Float memoryInGBs,
+            BaselineOcpuUtilization baselineOcpuUtilization,
+            String processorDescription,
+            Float networkingBandwidthInGbps,
+            Integer maxVnicAttachments,
+            Integer gpus,
+            String gpuDescription,
+            Integer localDisks,
+            Float localDisksTotalSizeInGBs,
+            String localDiskDescription) {
+        super();
+        this.ocpus = ocpus;
+        this.memoryInGBs = memoryInGBs;
+        this.baselineOcpuUtilization = baselineOcpuUtilization;
+        this.processorDescription = processorDescription;
+        this.networkingBandwidthInGbps = networkingBandwidthInGbps;
+        this.maxVnicAttachments = maxVnicAttachments;
+        this.gpus = gpus;
+        this.gpuDescription = gpuDescription;
+        this.localDisks = localDisks;
+        this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
+        this.localDiskDescription = localDiskDescription;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
@@ -175,19 +211,32 @@ public class InstanceShapeConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The total number of OCPUs available to the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
-    Float ocpus;
+    private final Float ocpus;
+
+    public Float getOcpus() {
+        return ocpus;
+    }
 
     /**
      * The total amount of memory available to the instance, in gigabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
-    Float memoryInGBs;
+    private final Float memoryInGBs;
+
+    public Float getMemoryInGBs() {
+        return memoryInGBs;
+    }
+
     /**
      * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
      * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
@@ -198,7 +247,6 @@ public class InstanceShapeConfig {
      * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BaselineOcpuUtilization {
         Baseline18("BASELINE_1_8"),
         Baseline12("BASELINE_1_2"),
@@ -209,6 +257,9 @@ public class InstanceShapeConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BaselineOcpuUtilization.class);
 
         private final String value;
         private static java.util.Map<String, BaselineOcpuUtilization> map;
@@ -253,35 +304,55 @@ public class InstanceShapeConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
-    BaselineOcpuUtilization baselineOcpuUtilization;
+    private final BaselineOcpuUtilization baselineOcpuUtilization;
+
+    public BaselineOcpuUtilization getBaselineOcpuUtilization() {
+        return baselineOcpuUtilization;
+    }
 
     /**
      * A short description of the instance's processor (CPU).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
-    String processorDescription;
+    private final String processorDescription;
+
+    public String getProcessorDescription() {
+        return processorDescription;
+    }
 
     /**
      * The networking bandwidth available to the instance, in gigabits per second.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
-    Float networkingBandwidthInGbps;
+    private final Float networkingBandwidthInGbps;
+
+    public Float getNetworkingBandwidthInGbps() {
+        return networkingBandwidthInGbps;
+    }
 
     /**
      * The maximum number of VNIC attachments for the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
-    Integer maxVnicAttachments;
+    private final Integer maxVnicAttachments;
+
+    public Integer getMaxVnicAttachments() {
+        return maxVnicAttachments;
+    }
 
     /**
      * The number of GPUs available to the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpus")
-    Integer gpus;
+    private final Integer gpus;
+
+    public Integer getGpus() {
+        return gpus;
+    }
 
     /**
      * A short description of the instance's graphics processing unit (GPU).
@@ -290,14 +361,22 @@ public class InstanceShapeConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
-    String gpuDescription;
+    private final String gpuDescription;
+
+    public String getGpuDescription() {
+        return gpuDescription;
+    }
 
     /**
      * The number of local disks available to the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
-    Integer localDisks;
+    private final Integer localDisks;
+
+    public Integer getLocalDisks() {
+        return localDisks;
+    }
 
     /**
      * The aggregate size of all local disks, in gigabytes.
@@ -306,7 +385,11 @@ public class InstanceShapeConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
-    Float localDisksTotalSizeInGBs;
+    private final Float localDisksTotalSizeInGBs;
+
+    public Float getLocalDisksTotalSizeInGBs() {
+        return localDisksTotalSizeInGBs;
+    }
 
     /**
      * A short description of the local disks available to this instance.
@@ -315,8 +398,113 @@ public class InstanceShapeConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
-    String localDiskDescription;
+    private final String localDiskDescription;
+
+    public String getLocalDiskDescription() {
+        return localDiskDescription;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceShapeConfig(");
+        sb.append("ocpus=").append(String.valueOf(this.ocpus));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", baselineOcpuUtilization=")
+                .append(String.valueOf(this.baselineOcpuUtilization));
+        sb.append(", processorDescription=").append(String.valueOf(this.processorDescription));
+        sb.append(", networkingBandwidthInGbps=")
+                .append(String.valueOf(this.networkingBandwidthInGbps));
+        sb.append(", maxVnicAttachments=").append(String.valueOf(this.maxVnicAttachments));
+        sb.append(", gpus=").append(String.valueOf(this.gpus));
+        sb.append(", gpuDescription=").append(String.valueOf(this.gpuDescription));
+        sb.append(", localDisks=").append(String.valueOf(this.localDisks));
+        sb.append(", localDisksTotalSizeInGBs=")
+                .append(String.valueOf(this.localDisksTotalSizeInGBs));
+        sb.append(", localDiskDescription=").append(String.valueOf(this.localDiskDescription));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceShapeConfig)) {
+            return false;
+        }
+
+        InstanceShapeConfig other = (InstanceShapeConfig) o;
+        return java.util.Objects.equals(this.ocpus, other.ocpus)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(
+                        this.baselineOcpuUtilization, other.baselineOcpuUtilization)
+                && java.util.Objects.equals(this.processorDescription, other.processorDescription)
+                && java.util.Objects.equals(
+                        this.networkingBandwidthInGbps, other.networkingBandwidthInGbps)
+                && java.util.Objects.equals(this.maxVnicAttachments, other.maxVnicAttachments)
+                && java.util.Objects.equals(this.gpus, other.gpus)
+                && java.util.Objects.equals(this.gpuDescription, other.gpuDescription)
+                && java.util.Objects.equals(this.localDisks, other.localDisks)
+                && java.util.Objects.equals(
+                        this.localDisksTotalSizeInGBs, other.localDisksTotalSizeInGBs)
+                && java.util.Objects.equals(this.localDiskDescription, other.localDiskDescription)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baselineOcpuUtilization == null
+                                ? 43
+                                : this.baselineOcpuUtilization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.processorDescription == null
+                                ? 43
+                                : this.processorDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkingBandwidthInGbps == null
+                                ? 43
+                                : this.networkingBandwidthInGbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxVnicAttachments == null
+                                ? 43
+                                : this.maxVnicAttachments.hashCode());
+        result = (result * PRIME) + (this.gpus == null ? 43 : this.gpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.gpuDescription == null ? 43 : this.gpuDescription.hashCode());
+        result = (result * PRIME) + (this.localDisks == null ? 43 : this.localDisks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localDisksTotalSizeInGBs == null
+                                ? 43
+                                : this.localDisksTotalSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localDiskDescription == null
+                                ? 43
+                                : this.localDiskDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,14 +16,19 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExternalMaster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExternalMaster {
+public final class ExternalMaster {
+    @Deprecated
+    @java.beans.ConstructorProperties({"address", "port", "tsigKeyId"})
+    public ExternalMaster(String address, Integer port, String tsigKeyId) {
+        super();
+        this.address = address;
+        this.port = port;
+        this.tsigKeyId = tsigKeyId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
@@ -78,11 +83,19 @@ public class ExternalMaster {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The server's IP address (IPv4 or IPv6).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("address")
-    String address;
+    private final String address;
+
+    public String getAddress() {
+        return address;
+    }
 
     /**
      * The server's port. Port value must be a value of 53, otherwise omit
@@ -90,14 +103,67 @@ public class ExternalMaster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The OCID of the TSIG key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tsigKeyId")
-    String tsigKeyId;
+    private final String tsigKeyId;
+
+    public String getTsigKeyId() {
+        return tsigKeyId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalMaster(");
+        sb.append("address=").append(String.valueOf(this.address));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", tsigKeyId=").append(String.valueOf(this.tsigKeyId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalMaster)) {
+            return false;
+        }
+
+        ExternalMaster other = (ExternalMaster) o;
+        return java.util.Objects.equals(this.address, other.address)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.tsigKeyId, other.tsigKeyId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.address == null ? 43 : this.address.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.tsigKeyId == null ? 43 : this.tsigKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

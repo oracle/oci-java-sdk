@@ -16,14 +16,18 @@ package com.oracle.bmc.ons.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PublishResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PublishResult {
+public final class PublishResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"messageId", "timeStamp"})
+    public PublishResult(String messageId, java.util.Date timeStamp) {
+        super();
+        this.messageId = messageId;
+        this.timeStamp = timeStamp;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("messageId")
         private String messageId;
@@ -68,18 +72,72 @@ public class PublishResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The UUID of the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageId")
-    String messageId;
+    private final String messageId;
+
+    public String getMessageId() {
+        return messageId;
+    }
 
     /**
      * The time that the service received the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
-    java.util.Date timeStamp;
+    private final java.util.Date timeStamp;
+
+    public java.util.Date getTimeStamp() {
+        return timeStamp;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PublishResult(");
+        sb.append("messageId=").append(String.valueOf(this.messageId));
+        sb.append(", timeStamp=").append(String.valueOf(this.timeStamp));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PublishResult)) {
+            return false;
+        }
+
+        PublishResult other = (PublishResult) o;
+        return java.util.Objects.equals(this.messageId, other.messageId)
+                && java.util.Objects.equals(this.timeStamp, other.timeStamp)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.messageId == null ? 43 : this.messageId.hashCode());
+        result = (result * PRIME) + (this.timeStamp == null ? 43 : this.timeStamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

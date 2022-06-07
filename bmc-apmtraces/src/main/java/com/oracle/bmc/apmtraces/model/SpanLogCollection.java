@@ -16,16 +16,20 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SpanLogCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SpanLogCollection {
+public final class SpanLogCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeCreated", "spanLogs"})
+    public SpanLogCollection(java.util.Date timeCreated, java.util.List<SpanLog> spanLogs) {
+        super();
+        this.timeCreated = timeCreated;
+        this.spanLogs = spanLogs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -70,20 +74,74 @@ public class SpanLogCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Timestamp at which the log is created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * List of logs associated with the span at the given timestamp.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("spanLogs")
-    java.util.List<SpanLog> spanLogs;
+    private final java.util.List<SpanLog> spanLogs;
+
+    public java.util.List<SpanLog> getSpanLogs() {
+        return spanLogs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SpanLogCollection(");
+        sb.append("timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", spanLogs=").append(String.valueOf(this.spanLogs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SpanLogCollection)) {
+            return false;
+        }
+
+        SpanLogCollection other = (SpanLogCollection) o;
+        return java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.spanLogs, other.spanLogs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.spanLogs == null ? 43 : this.spanLogs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

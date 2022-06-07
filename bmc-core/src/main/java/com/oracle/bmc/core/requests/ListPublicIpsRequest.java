@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPublicIpsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPublicIpsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -79,11 +71,18 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             throw new IllegalArgumentException("Invalid Scope: " + key);
         }
     };
+
+    public Scope getScope() {
+        return scope;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * "List" call. For important details about how pagination works, see
@@ -94,6 +93,9 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
@@ -102,6 +104,9 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The name of the availability domain.
      * <p>
@@ -110,6 +115,9 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String availabilityDomain;
 
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
     /**
      * A filter to return only public IPs that match given lifetime.
      *
@@ -152,11 +160,19 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             throw new IllegalArgumentException("Invalid Lifetime: " + key);
         }
     };
+
+    public Lifetime getLifetime() {
+        return lifetime;
+    }
     /**
      * A filter to return only resources that belong to the given public IP pool.
      *
      */
     private String publicIpPoolId;
+
+    public String getPublicIpPoolId() {
+        return publicIpPoolId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -164,6 +180,106 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private Scope scope = null;
+
+        /**
+         * Whether the public IP is regional or specific to a particular availability domain.
+         * <p>
+         * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+         * (such as a {@link NatGateway}), or can be assigned to a private IP
+         * in any availability domain in the region. Reserved public IPs have {@code scope} = {@code REGION}, as do
+         * ephemeral public IPs assigned to a regional entity.
+         * <p>
+         * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
+         * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
+         * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+         *
+         * @return this builder instance
+         */
+        public Builder scope(Scope scope) {
+            this.scope = scope;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String availabilityDomain = null;
+
+        /**
+         * The name of the availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @return this builder instance
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        private Lifetime lifetime = null;
+
+        /**
+         * A filter to return only public IPs that match given lifetime.
+         *
+         * @return this builder instance
+         */
+        public Builder lifetime(Lifetime lifetime) {
+            this.lifetime = lifetime;
+            return this;
+        }
+
+        private String publicIpPoolId = null;
+
+        /**
+         * A filter to return only resources that belong to the given public IP pool.
+         *
+         * @return this builder instance
+         */
+        public Builder publicIpPoolId(String publicIpPoolId) {
+            this.publicIpPoolId = publicIpPoolId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -221,5 +337,102 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListPublicIpsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListPublicIpsRequest
+         */
+        public ListPublicIpsRequest buildWithoutInvocationCallback() {
+            ListPublicIpsRequest request = new ListPublicIpsRequest();
+            request.scope = scope;
+            request.compartmentId = compartmentId;
+            request.limit = limit;
+            request.page = page;
+            request.availabilityDomain = availabilityDomain;
+            request.lifetime = lifetime;
+            request.publicIpPoolId = publicIpPoolId;
+            return request;
+            // new ListPublicIpsRequest(scope, compartmentId, limit, page, availabilityDomain, lifetime, publicIpPoolId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .scope(scope)
+                .compartmentId(compartmentId)
+                .limit(limit)
+                .page(page)
+                .availabilityDomain(availabilityDomain)
+                .lifetime(lifetime)
+                .publicIpPoolId(publicIpPoolId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",scope=").append(String.valueOf(this.scope));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(",lifetime=").append(String.valueOf(this.lifetime));
+        sb.append(",publicIpPoolId=").append(String.valueOf(this.publicIpPoolId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListPublicIpsRequest)) {
+            return false;
+        }
+
+        ListPublicIpsRequest other = (ListPublicIpsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
+                && java.util.Objects.equals(this.publicIpPoolId, other.publicIpPoolId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicIpPoolId == null ? 43 : this.publicIpPoolId.hashCode());
+        return result;
     }
 }

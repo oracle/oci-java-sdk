@@ -20,14 +20,35 @@ package com.oracle.bmc.filestorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClientOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClientOptions {
+public final class ClientOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "source",
+        "requirePrivilegedSourcePort",
+        "access",
+        "identitySquash",
+        "anonymousUid",
+        "anonymousGid"
+    })
+    public ClientOptions(
+            String source,
+            Boolean requirePrivilegedSourcePort,
+            Access access,
+            IdentitySquash identitySquash,
+            Long anonymousUid,
+            Long anonymousGid) {
+        super();
+        this.source = source;
+        this.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
+        this.access = access;
+        this.identitySquash = identitySquash;
+        this.anonymousUid = anonymousUid;
+        this.anonymousGid = anonymousGid;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
@@ -121,6 +142,10 @@ public class ClientOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Clients these options should apply to. Must be a either
      * single IPv4 address or single IPv4 CIDR block.
@@ -131,7 +156,11 @@ public class ClientOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    String source;
+    private final String source;
+
+    public String getSource() {
+        return source;
+    }
 
     /**
      * If {@code true}, clients accessing the file system through this
@@ -140,13 +169,17 @@ public class ClientOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requirePrivilegedSourcePort")
-    Boolean requirePrivilegedSourcePort;
+    private final Boolean requirePrivilegedSourcePort;
+
+    public Boolean getRequirePrivilegedSourcePort() {
+        return requirePrivilegedSourcePort;
+    }
+
     /**
      * Type of access to grant clients using the file system
      * through this export. If unspecified defaults to {@code READ_ONLY}.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Access {
         ReadWrite("READ_WRITE"),
         ReadOnly("READ_ONLY"),
@@ -156,6 +189,8 @@ public class ClientOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Access.class);
 
         private final String value;
         private static java.util.Map<String, Access> map;
@@ -195,7 +230,12 @@ public class ClientOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("access")
-    Access access;
+    private final Access access;
+
+    public Access getAccess() {
+        return access;
+    }
+
     /**
      * Used when clients accessing the file system through this export
      * have their UID and GID remapped to 'anonymousUid' and
@@ -205,7 +245,6 @@ public class ClientOptions {
      * defaults to {@code ROOT}.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum IdentitySquash {
         None("NONE"),
         Root("ROOT"),
@@ -216,6 +255,9 @@ public class ClientOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IdentitySquash.class);
 
         private final String value;
         private static java.util.Map<String, IdentitySquash> map;
@@ -259,7 +301,11 @@ public class ClientOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identitySquash")
-    IdentitySquash identitySquash;
+    private final IdentitySquash identitySquash;
+
+    public IdentitySquash getIdentitySquash() {
+        return identitySquash;
+    }
 
     /**
      * UID value to remap to when squashing a client UID (see
@@ -268,7 +314,11 @@ public class ClientOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("anonymousUid")
-    Long anonymousUid;
+    private final Long anonymousUid;
+
+    public Long getAnonymousUid() {
+        return anonymousUid;
+    }
 
     /**
      * GID value to remap to when squashing a client GID (see
@@ -277,8 +327,74 @@ public class ClientOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("anonymousGid")
-    Long anonymousGid;
+    private final Long anonymousGid;
+
+    public Long getAnonymousGid() {
+        return anonymousGid;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClientOptions(");
+        sb.append("source=").append(String.valueOf(this.source));
+        sb.append(", requirePrivilegedSourcePort=")
+                .append(String.valueOf(this.requirePrivilegedSourcePort));
+        sb.append(", access=").append(String.valueOf(this.access));
+        sb.append(", identitySquash=").append(String.valueOf(this.identitySquash));
+        sb.append(", anonymousUid=").append(String.valueOf(this.anonymousUid));
+        sb.append(", anonymousGid=").append(String.valueOf(this.anonymousGid));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClientOptions)) {
+            return false;
+        }
+
+        ClientOptions other = (ClientOptions) o;
+        return java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(
+                        this.requirePrivilegedSourcePort, other.requirePrivilegedSourcePort)
+                && java.util.Objects.equals(this.access, other.access)
+                && java.util.Objects.equals(this.identitySquash, other.identitySquash)
+                && java.util.Objects.equals(this.anonymousUid, other.anonymousUid)
+                && java.util.Objects.equals(this.anonymousGid, other.anonymousGid)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requirePrivilegedSourcePort == null
+                                ? 43
+                                : this.requirePrivilegedSourcePort.hashCode());
+        result = (result * PRIME) + (this.access == null ? 43 : this.access.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identitySquash == null ? 43 : this.identitySquash.hashCode());
+        result = (result * PRIME) + (this.anonymousUid == null ? 43 : this.anonymousUid.hashCode());
+        result = (result * PRIME) + (this.anonymousGid == null ? 43 : this.anonymousGid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

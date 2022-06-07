@@ -15,16 +15,22 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CredentialDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CredentialDetails {
+public final class CredentialDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"credentialName", "credentialType", "properties"})
+    public CredentialDetails(
+            String credentialName, String credentialType, PropertyDetails properties) {
+        super();
+        this.credentialName = credentialName;
+        this.credentialType = credentialType;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
         private String credentialName;
@@ -82,21 +88,86 @@ public class CredentialDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of Credential
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
-    String credentialName;
+    private final String credentialName;
+
+    public String getCredentialName() {
+        return credentialName;
+    }
 
     /**
      * Name of Credential Type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
-    String credentialType;
+    private final String credentialType;
+
+    public String getCredentialType() {
+        return credentialType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    PropertyDetails properties;
+    private final PropertyDetails properties;
+
+    public PropertyDetails getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CredentialDetails(");
+        sb.append("credentialName=").append(String.valueOf(this.credentialName));
+        sb.append(", credentialType=").append(String.valueOf(this.credentialType));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CredentialDetails)) {
+            return false;
+        }
+
+        CredentialDetails other = (CredentialDetails) o;
+        return java.util.Objects.equals(this.credentialName, other.credentialName)
+                && java.util.Objects.equals(this.credentialType, other.credentialType)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.credentialName == null ? 43 : this.credentialName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialType == null ? 43 : this.credentialType.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

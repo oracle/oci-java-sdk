@@ -16,16 +16,49 @@ package com.oracle.bmc.certificates.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CertificateBundleVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CertificateBundleVersionSummary {
+public final class CertificateBundleVersionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "certificateId",
+        "serialNumber",
+        "versionName",
+        "certificateName",
+        "versionNumber",
+        "timeCreated",
+        "validity",
+        "timeOfDeletion",
+        "stages",
+        "revocationStatus"
+    })
+    public CertificateBundleVersionSummary(
+            String certificateId,
+            String serialNumber,
+            String versionName,
+            String certificateName,
+            Long versionNumber,
+            java.util.Date timeCreated,
+            Validity validity,
+            java.util.Date timeOfDeletion,
+            java.util.List<VersionStage> stages,
+            RevocationStatus revocationStatus) {
+        super();
+        this.certificateId = certificateId;
+        this.serialNumber = serialNumber;
+        this.versionName = versionName;
+        this.certificateName = certificateName;
+        this.versionNumber = versionNumber;
+        this.timeCreated = timeCreated;
+        this.validity = validity;
+        this.timeOfDeletion = timeOfDeletion;
+        this.stages = stages;
+        this.revocationStatus = revocationStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
@@ -163,11 +196,19 @@ public class CertificateBundleVersionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the certificate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
-    String certificateId;
+    private final String certificateId;
+
+    public String getCertificateId() {
+        return certificateId;
+    }
 
     /**
      * A unique certificate identifier used in certificate revocation tracking, formatted as octets.
@@ -175,25 +216,41 @@ public class CertificateBundleVersionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
-    String serialNumber;
+    private final String serialNumber;
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 
     /**
      * The name of the certificate version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
-    String versionName;
+    private final String versionName;
+
+    public String getVersionName() {
+        return versionName;
+    }
 
     /**
      * The name of the certificate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
-    String certificateName;
+    private final String certificateName;
+
+    public String getCertificateName() {
+        return certificateName;
+    }
 
     /**
      * The version number of the certificate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
-    Long versionNumber;
+    private final Long versionNumber;
+
+    public Long getVersionNumber() {
+        return versionNumber;
+    }
 
     /**
      * An optional property indicating when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -201,10 +258,18 @@ public class CertificateBundleVersionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("validity")
-    Validity validity;
+    private final Validity validity;
+
+    public Validity getValidity() {
+        return validity;
+    }
 
     /**
      * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -212,17 +277,105 @@ public class CertificateBundleVersionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
 
     /**
      * A list of rotation states for this certificate bundle version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
-    java.util.List<VersionStage> stages;
+    private final java.util.List<VersionStage> stages;
+
+    public java.util.List<VersionStage> getStages() {
+        return stages;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("revocationStatus")
-    RevocationStatus revocationStatus;
+    private final RevocationStatus revocationStatus;
+
+    public RevocationStatus getRevocationStatus() {
+        return revocationStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateBundleVersionSummary(");
+        sb.append("certificateId=").append(String.valueOf(this.certificateId));
+        sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
+        sb.append(", versionName=").append(String.valueOf(this.versionName));
+        sb.append(", certificateName=").append(String.valueOf(this.certificateName));
+        sb.append(", versionNumber=").append(String.valueOf(this.versionNumber));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", validity=").append(String.valueOf(this.validity));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", stages=").append(String.valueOf(this.stages));
+        sb.append(", revocationStatus=").append(String.valueOf(this.revocationStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateBundleVersionSummary)) {
+            return false;
+        }
+
+        CertificateBundleVersionSummary other = (CertificateBundleVersionSummary) o;
+        return java.util.Objects.equals(this.certificateId, other.certificateId)
+                && java.util.Objects.equals(this.serialNumber, other.serialNumber)
+                && java.util.Objects.equals(this.versionName, other.versionName)
+                && java.util.Objects.equals(this.certificateName, other.certificateName)
+                && java.util.Objects.equals(this.versionNumber, other.versionNumber)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.validity, other.validity)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.stages, other.stages)
+                && java.util.Objects.equals(this.revocationStatus, other.revocationStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.certificateId == null ? 43 : this.certificateId.hashCode());
+        result = (result * PRIME) + (this.serialNumber == null ? 43 : this.serialNumber.hashCode());
+        result = (result * PRIME) + (this.versionName == null ? 43 : this.versionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateName == null ? 43 : this.certificateName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionNumber == null ? 43 : this.versionNumber.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.validity == null ? 43 : this.validity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result = (result * PRIME) + (this.stages == null ? 43 : this.stages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.revocationStatus == null ? 43 : this.revocationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

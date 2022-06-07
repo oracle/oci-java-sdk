@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVnicExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVnicRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetVnicRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,26 @@ public class GetVnicRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String vnicId;
 
+    public String getVnicId() {
+        return vnicId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetVnicRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String vnicId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         * @return this builder instance
+         */
+        public Builder vnicId(String vnicId) {
+            this.vnicId = vnicId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -80,5 +87,62 @@ public class GetVnicRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetVnicRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetVnicRequest
+         */
+        public GetVnicRequest buildWithoutInvocationCallback() {
+            GetVnicRequest request = new GetVnicRequest();
+            request.vnicId = vnicId;
+            return request;
+            // new GetVnicRequest(vnicId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().vnicId(vnicId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetVnicRequest)) {
+            return false;
+        }
+
+        GetVnicRequest other = (GetVnicRequest) o;
+        return super.equals(o) && java.util.Objects.equals(this.vnicId, other.vnicId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        return result;
     }
 }

@@ -16,16 +16,28 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TunnelRouteSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TunnelRouteSummary {
+public final class TunnelRouteSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"prefix", "age", "isBestPath", "asPath", "advertiser"})
+    public TunnelRouteSummary(
+            String prefix,
+            Long age,
+            Boolean isBestPath,
+            java.util.List<Integer> asPath,
+            Advertiser advertiser) {
+        super();
+        this.prefix = prefix;
+        this.age = age;
+        this.isBestPath = isBestPath;
+        this.asPath = asPath;
+        this.advertiser = advertiser;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
@@ -103,33 +115,53 @@ public class TunnelRouteSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The BGP network layer reachability information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
-    String prefix;
+    private final String prefix;
+
+    public String getPrefix() {
+        return prefix;
+    }
 
     /**
      * The age of the route.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("age")
-    Long age;
+    private final Long age;
+
+    public Long getAge() {
+        return age;
+    }
 
     /**
      * Indicates this is the best route.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBestPath")
-    Boolean isBestPath;
+    private final Boolean isBestPath;
+
+    public Boolean getIsBestPath() {
+        return isBestPath;
+    }
 
     /**
      * A list of ASNs in AS_Path.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("asPath")
-    java.util.List<Integer> asPath;
+    private final java.util.List<Integer> asPath;
+
+    public java.util.List<Integer> getAsPath() {
+        return asPath;
+    }
+
     /**
      * The source of the route advertisement.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Advertiser {
         Customer("CUSTOMER"),
         Oracle("ORACLE"),
@@ -139,6 +171,9 @@ public class TunnelRouteSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Advertiser.class);
 
         private final String value;
         private static java.util.Map<String, Advertiser> map;
@@ -176,8 +211,63 @@ public class TunnelRouteSummary {
      * The source of the route advertisement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("advertiser")
-    Advertiser advertiser;
+    private final Advertiser advertiser;
+
+    public Advertiser getAdvertiser() {
+        return advertiser;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TunnelRouteSummary(");
+        sb.append("prefix=").append(String.valueOf(this.prefix));
+        sb.append(", age=").append(String.valueOf(this.age));
+        sb.append(", isBestPath=").append(String.valueOf(this.isBestPath));
+        sb.append(", asPath=").append(String.valueOf(this.asPath));
+        sb.append(", advertiser=").append(String.valueOf(this.advertiser));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TunnelRouteSummary)) {
+            return false;
+        }
+
+        TunnelRouteSummary other = (TunnelRouteSummary) o;
+        return java.util.Objects.equals(this.prefix, other.prefix)
+                && java.util.Objects.equals(this.age, other.age)
+                && java.util.Objects.equals(this.isBestPath, other.isBestPath)
+                && java.util.Objects.equals(this.asPath, other.asPath)
+                && java.util.Objects.equals(this.advertiser, other.advertiser)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
+        result = (result * PRIME) + (this.age == null ? 43 : this.age.hashCode());
+        result = (result * PRIME) + (this.isBestPath == null ? 43 : this.isBestPath.hashCode());
+        result = (result * PRIME) + (this.asPath == null ? 43 : this.asPath.hashCode());
+        result = (result * PRIME) + (this.advertiser == null ? 43 : this.advertiser.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

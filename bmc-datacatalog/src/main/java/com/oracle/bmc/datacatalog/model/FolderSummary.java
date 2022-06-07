@@ -20,14 +20,62 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FolderSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FolderSummary {
+public final class FolderSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "displayName",
+        "businessName",
+        "description",
+        "dataAssetKey",
+        "parentFolderKey",
+        "typeKey",
+        "path",
+        "externalKey",
+        "timeExternal",
+        "timeCreated",
+        "timeUpdated",
+        "uri",
+        "objectStorageUrl",
+        "lifecycleState"
+    })
+    public FolderSummary(
+            String key,
+            String displayName,
+            String businessName,
+            String description,
+            String dataAssetKey,
+            String parentFolderKey,
+            String typeKey,
+            String path,
+            String externalKey,
+            java.util.Date timeExternal,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String uri,
+            String objectStorageUrl,
+            LifecycleState lifecycleState) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.businessName = businessName;
+        this.description = description;
+        this.dataAssetKey = dataAssetKey;
+        this.parentFolderKey = parentFolderKey;
+        this.typeKey = typeKey;
+        this.path = path;
+        this.externalKey = externalKey;
+        this.timeExternal = timeExternal;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.uri = uri;
+        this.objectStorageUrl = objectStorageUrl;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -220,11 +268,19 @@ public class FolderSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique folder key that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -232,55 +288,91 @@ public class FolderSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("businessName")
-    String businessName;
+    private final String businessName;
+
+    public String getBusinessName() {
+        return businessName;
+    }
 
     /**
      * Detailed description of a folder.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The unique key of the parent data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
-    String dataAssetKey;
+    private final String dataAssetKey;
+
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
 
     /**
      * The key of the containing folder or null if there is no parent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentFolderKey")
-    String parentFolderKey;
+    private final String parentFolderKey;
+
+    public String getParentFolderKey() {
+        return parentFolderKey;
+    }
 
     /**
      * The type of folder object. Type keys can be found via the '/types' endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
-    String typeKey;
+    private final String typeKey;
+
+    public String getTypeKey() {
+        return typeKey;
+    }
 
     /**
      * Full path of the folder.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * Unique external key of this object from the source systems.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
-    String externalKey;
+    private final String externalKey;
+
+    public String getExternalKey() {
+        return externalKey;
+    }
 
     /**
      * Last modified timestamp of this object in the external system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
-    java.util.Date timeExternal;
+    private final java.util.Date timeExternal;
+
+    public java.util.Date getTimeExternal() {
+        return timeExternal;
+    }
 
     /**
      * The date and time the folder was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -288,33 +380,140 @@ public class FolderSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the folder was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-03-25T21:10:29.600Z
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * URI of the folder resource within the data catalog API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
 
     /**
      * URL of the folder in the object store.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
-    String objectStorageUrl;
+    private final String objectStorageUrl;
+
+    public String getObjectStorageUrl() {
+        return objectStorageUrl;
+    }
 
     /**
      * State of the folder.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FolderSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", businessName=").append(String.valueOf(this.businessName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(", parentFolderKey=").append(String.valueOf(this.parentFolderKey));
+        sb.append(", typeKey=").append(String.valueOf(this.typeKey));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", externalKey=").append(String.valueOf(this.externalKey));
+        sb.append(", timeExternal=").append(String.valueOf(this.timeExternal));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append(", objectStorageUrl=").append(String.valueOf(this.objectStorageUrl));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FolderSummary)) {
+            return false;
+        }
+
+        FolderSummary other = (FolderSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.businessName, other.businessName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.parentFolderKey, other.parentFolderKey)
+                && java.util.Objects.equals(this.typeKey, other.typeKey)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.externalKey, other.externalKey)
+                && java.util.Objects.equals(this.timeExternal, other.timeExternal)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.objectStorageUrl, other.objectStorageUrl)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.businessName == null ? 43 : this.businessName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentFolderKey == null ? 43 : this.parentFolderKey.hashCode());
+        result = (result * PRIME) + (this.typeKey == null ? 43 : this.typeKey.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
+        result = (result * PRIME) + (this.timeExternal == null ? 43 : this.timeExternal.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectStorageUrl == null ? 43 : this.objectStorageUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

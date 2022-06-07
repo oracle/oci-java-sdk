@@ -15,16 +15,67 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsLookup.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsLookup {
+public final class LogAnalyticsLookup {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "activeEditVersion",
+        "canonicalLink",
+        "description",
+        "editVersion",
+        "fields",
+        "lookupReference",
+        "lookupReferenceString",
+        "type",
+        "name",
+        "isBuiltIn",
+        "isHidden",
+        "lookupDisplayName",
+        "referringSources",
+        "statusSummary",
+        "timeUpdated",
+        "categories"
+    })
+    public LogAnalyticsLookup(
+            Long activeEditVersion,
+            String canonicalLink,
+            String description,
+            Long editVersion,
+            java.util.List<LookupField> fields,
+            Long lookupReference,
+            String lookupReferenceString,
+            Type type,
+            String name,
+            Long isBuiltIn,
+            Boolean isHidden,
+            String lookupDisplayName,
+            AutoLookups referringSources,
+            StatusSummary statusSummary,
+            java.util.Date timeUpdated,
+            java.util.List<LogAnalyticsCategory> categories) {
+        super();
+        this.activeEditVersion = activeEditVersion;
+        this.canonicalLink = canonicalLink;
+        this.description = description;
+        this.editVersion = editVersion;
+        this.fields = fields;
+        this.lookupReference = lookupReference;
+        this.lookupReferenceString = lookupReferenceString;
+        this.type = type;
+        this.name = name;
+        this.isBuiltIn = isBuiltIn;
+        this.isHidden = isHidden;
+        this.lookupDisplayName = lookupDisplayName;
+        this.referringSources = referringSources;
+        this.statusSummary = statusSummary;
+        this.timeUpdated = timeUpdated;
+        this.categories = categories;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("activeEditVersion")
         private Long activeEditVersion;
@@ -228,51 +279,83 @@ public class LogAnalyticsLookup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The active edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeEditVersion")
-    Long activeEditVersion;
+    private final Long activeEditVersion;
+
+    public Long getActiveEditVersion() {
+        return activeEditVersion;
+    }
 
     /**
      * The canonical link.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canonicalLink")
-    String canonicalLink;
+    private final String canonicalLink;
+
+    public String getCanonicalLink() {
+        return canonicalLink;
+    }
 
     /**
      * The lookup description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
-    Long editVersion;
+    private final Long editVersion;
+
+    public Long getEditVersion() {
+        return editVersion;
+    }
 
     /**
      * The lookup fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
-    java.util.List<LookupField> fields;
+    private final java.util.List<LookupField> fields;
+
+    public java.util.List<LookupField> getFields() {
+        return fields;
+    }
 
     /**
      * The lookup reference as an integer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
-    Long lookupReference;
+    private final Long lookupReference;
+
+    public Long getLookupReference() {
+        return lookupReference;
+    }
 
     /**
      * The lookup reference as a string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
-    String lookupReferenceString;
+    private final String lookupReferenceString;
+
+    public String getLookupReferenceString() {
+        return lookupReferenceString;
+    }
+
     /**
      * The lookup type.  Valid values are LOOKUP or DICTIONARY.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Lookup("Lookup"),
         Dictionary("Dictionary"),
@@ -282,6 +365,8 @@ public class LogAnalyticsLookup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -318,13 +403,21 @@ public class LogAnalyticsLookup {
      * The lookup type.  Valid values are LOOKUP or DICTIONARY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The lookup name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A flag indicating if the lookup is custom (user-defined) or
@@ -332,7 +425,11 @@ public class LogAnalyticsLookup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBuiltIn")
-    Long isBuiltIn;
+    private final Long isBuiltIn;
+
+    public Long getIsBuiltIn() {
+        return isBuiltIn;
+    }
 
     /**
      * A flag indicating if the lookup is hidden or not.  A hidden lookup will
@@ -340,25 +437,45 @@ public class LogAnalyticsLookup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
-    Boolean isHidden;
+    private final Boolean isHidden;
+
+    public Boolean getIsHidden() {
+        return isHidden;
+    }
 
     /**
      * The lookup display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupDisplayName")
-    String lookupDisplayName;
+    private final String lookupDisplayName;
+
+    public String getLookupDisplayName() {
+        return lookupDisplayName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("referringSources")
-    AutoLookups referringSources;
+    private final AutoLookups referringSources;
+
+    public AutoLookups getReferringSources() {
+        return referringSources;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("statusSummary")
-    StatusSummary statusSummary;
+    private final StatusSummary statusSummary;
+
+    public StatusSummary getStatusSummary() {
+        return statusSummary;
+    }
 
     /**
      * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * An array of categories assigned to this lookup.
@@ -366,8 +483,112 @@ public class LogAnalyticsLookup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
-    java.util.List<LogAnalyticsCategory> categories;
+    private final java.util.List<LogAnalyticsCategory> categories;
+
+    public java.util.List<LogAnalyticsCategory> getCategories() {
+        return categories;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsLookup(");
+        sb.append("activeEditVersion=").append(String.valueOf(this.activeEditVersion));
+        sb.append(", canonicalLink=").append(String.valueOf(this.canonicalLink));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", editVersion=").append(String.valueOf(this.editVersion));
+        sb.append(", fields=").append(String.valueOf(this.fields));
+        sb.append(", lookupReference=").append(String.valueOf(this.lookupReference));
+        sb.append(", lookupReferenceString=").append(String.valueOf(this.lookupReferenceString));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", isBuiltIn=").append(String.valueOf(this.isBuiltIn));
+        sb.append(", isHidden=").append(String.valueOf(this.isHidden));
+        sb.append(", lookupDisplayName=").append(String.valueOf(this.lookupDisplayName));
+        sb.append(", referringSources=").append(String.valueOf(this.referringSources));
+        sb.append(", statusSummary=").append(String.valueOf(this.statusSummary));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsLookup)) {
+            return false;
+        }
+
+        LogAnalyticsLookup other = (LogAnalyticsLookup) o;
+        return java.util.Objects.equals(this.activeEditVersion, other.activeEditVersion)
+                && java.util.Objects.equals(this.canonicalLink, other.canonicalLink)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.editVersion, other.editVersion)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.lookupReference, other.lookupReference)
+                && java.util.Objects.equals(this.lookupReferenceString, other.lookupReferenceString)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isBuiltIn, other.isBuiltIn)
+                && java.util.Objects.equals(this.isHidden, other.isHidden)
+                && java.util.Objects.equals(this.lookupDisplayName, other.lookupDisplayName)
+                && java.util.Objects.equals(this.referringSources, other.referringSources)
+                && java.util.Objects.equals(this.statusSummary, other.statusSummary)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.activeEditVersion == null ? 43 : this.activeEditVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canonicalLink == null ? 43 : this.canonicalLink.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.editVersion == null ? 43 : this.editVersion.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lookupReference == null ? 43 : this.lookupReference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lookupReferenceString == null
+                                ? 43
+                                : this.lookupReferenceString.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.isBuiltIn == null ? 43 : this.isBuiltIn.hashCode());
+        result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lookupDisplayName == null ? 43 : this.lookupDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referringSources == null ? 43 : this.referringSources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusSummary == null ? 43 : this.statusSummary.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

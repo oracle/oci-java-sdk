@@ -1,0 +1,384 @@
+/**
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.opsi.model;
+
+/**
+ * Metadata of a column in a data object resultset.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = DataObjectColumnMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DataObjectColumnMetadata {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "category",
+        "dataTypeName",
+        "displayName",
+        "description",
+        "groupName",
+        "unitDetails"
+    })
+    public DataObjectColumnMetadata(
+            String name,
+            Category category,
+            DataTypeName dataTypeName,
+            String displayName,
+            String description,
+            String groupName,
+            DataObjectColumnUnit unitDetails) {
+        super();
+        this.name = name;
+        this.category = category;
+        this.dataTypeName = dataTypeName;
+        this.displayName = displayName;
+        this.description = description;
+        this.groupName = groupName;
+        this.unitDetails = unitDetails;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private Category category;
+
+        public Builder category(Category category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
+        private DataTypeName dataTypeName;
+
+        public Builder dataTypeName(DataTypeName dataTypeName) {
+            this.dataTypeName = dataTypeName;
+            this.__explicitlySet__.add("dataTypeName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupName")
+        private String groupName;
+
+        public Builder groupName(String groupName) {
+            this.groupName = groupName;
+            this.__explicitlySet__.add("groupName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("unitDetails")
+        private DataObjectColumnUnit unitDetails;
+
+        public Builder unitDetails(DataObjectColumnUnit unitDetails) {
+            this.unitDetails = unitDetails;
+            this.__explicitlySet__.add("unitDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public DataObjectColumnMetadata build() {
+            DataObjectColumnMetadata __instance__ =
+                    new DataObjectColumnMetadata(
+                            name,
+                            category,
+                            dataTypeName,
+                            displayName,
+                            description,
+                            groupName,
+                            unitDetails);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(DataObjectColumnMetadata o) {
+            Builder copiedBuilder =
+                    name(o.getName())
+                            .category(o.getCategory())
+                            .dataTypeName(o.getDataTypeName())
+                            .displayName(o.getDisplayName())
+                            .description(o.getDescription())
+                            .groupName(o.getGroupName())
+                            .unitDetails(o.getUnitDetails());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
+        }
+    }
+
+    /**
+     * Create a new builder.
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /**
+     * Name of the column.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Category of the column.
+     **/
+    public enum Category {
+        Dimension("DIMENSION"),
+        Metric("METRIC"),
+        TimeDimension("TIME_DIMENSION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Category.class);
+
+        private final String value;
+        private static java.util.Map<String, Category> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Category v : Category.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Category(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Category create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Category', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Category of the column.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    /**
+     * Type of a data object column.
+     **/
+    public enum DataTypeName {
+        Number("NUMBER"),
+        Timestamp("TIMESTAMP"),
+        Varchar2("VARCHAR2"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataTypeName.class);
+
+        private final String value;
+        private static java.util.Map<String, DataTypeName> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataTypeName v : DataTypeName.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataTypeName(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataTypeName create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataTypeName', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of a data object column.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
+    private final DataTypeName dataTypeName;
+
+    public DataTypeName getDataTypeName() {
+        return dataTypeName;
+    }
+
+    /**
+     * Display name of the column.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    /**
+     * Description of the column.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Group name of the column.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("groupName")
+    private final String groupName;
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("unitDetails")
+    private final DataObjectColumnUnit unitDetails;
+
+    public DataObjectColumnUnit getUnitDetails() {
+        return unitDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataObjectColumnMetadata(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", dataTypeName=").append(String.valueOf(this.dataTypeName));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", groupName=").append(String.valueOf(this.groupName));
+        sb.append(", unitDetails=").append(String.valueOf(this.unitDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataObjectColumnMetadata)) {
+            return false;
+        }
+
+        DataObjectColumnMetadata other = (DataObjectColumnMetadata) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.dataTypeName, other.dataTypeName)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.groupName, other.groupName)
+                && java.util.Objects.equals(this.unitDetails, other.unitDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.dataTypeName == null ? 43 : this.dataTypeName.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.groupName == null ? 43 : this.groupName.hashCode());
+        result = (result * PRIME) + (this.unitDetails == null ? 43 : this.unitDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
+}

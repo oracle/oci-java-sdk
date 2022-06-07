@@ -16,16 +16,46 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateMaintenanceRunDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateMaintenanceRunDetails {
+public final class UpdateMaintenanceRunDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isEnabled",
+        "timeScheduled",
+        "isPatchNowEnabled",
+        "patchId",
+        "patchingMode",
+        "isCustomActionTimeoutEnabled",
+        "customActionTimeoutInMins",
+        "currentCustomActionTimeoutInMins",
+        "isResumePatching"
+    })
+    public UpdateMaintenanceRunDetails(
+            Boolean isEnabled,
+            java.util.Date timeScheduled,
+            Boolean isPatchNowEnabled,
+            String patchId,
+            PatchingMode patchingMode,
+            Boolean isCustomActionTimeoutEnabled,
+            Integer customActionTimeoutInMins,
+            Integer currentCustomActionTimeoutInMins,
+            Boolean isResumePatching) {
+        super();
+        this.isEnabled = isEnabled;
+        this.timeScheduled = timeScheduled;
+        this.isPatchNowEnabled = isPatchNowEnabled;
+        this.patchId = patchId;
+        this.patchingMode = patchingMode;
+        this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+        this.customActionTimeoutInMins = customActionTimeoutInMins;
+        this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
+        this.isResumePatching = isResumePatching;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
@@ -153,29 +183,50 @@ public class UpdateMaintenanceRunDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * If {@code FALSE}, skips the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The scheduled date and time of the maintenance run to update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
-    java.util.Date timeScheduled;
+    private final java.util.Date timeScheduled;
+
+    public java.util.Date getTimeScheduled() {
+        return timeScheduled;
+    }
 
     /**
      * If set to {@code TRUE}, starts patching immediately.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPatchNowEnabled")
-    Boolean isPatchNowEnabled;
+    private final Boolean isPatchNowEnabled;
+
+    public Boolean getIsPatchNowEnabled() {
+        return isPatchNowEnabled;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
-    String patchId;
+    private final String patchId;
+
+    public String getPatchId() {
+        return patchId;
+    }
+
     /**
      * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      * <p>
@@ -221,13 +272,21 @@ public class UpdateMaintenanceRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
-    PatchingMode patchingMode;
+    private final PatchingMode patchingMode;
+
+    public PatchingMode getPatchingMode() {
+        return patchingMode;
+    }
 
     /**
      * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
-    Boolean isCustomActionTimeoutEnabled;
+    private final Boolean isCustomActionTimeoutEnabled;
+
+    public Boolean getIsCustomActionTimeoutEnabled() {
+        return isCustomActionTimeoutEnabled;
+    }
 
     /**
      * Determines the amount of time the system will wait before the start of each database server patching operation.
@@ -235,20 +294,120 @@ public class UpdateMaintenanceRunDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
-    Integer customActionTimeoutInMins;
+    private final Integer customActionTimeoutInMins;
+
+    public Integer getCustomActionTimeoutInMins() {
+        return customActionTimeoutInMins;
+    }
 
     /**
      * The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
-    Integer currentCustomActionTimeoutInMins;
+    private final Integer currentCustomActionTimeoutInMins;
+
+    public Integer getCurrentCustomActionTimeoutInMins() {
+        return currentCustomActionTimeoutInMins;
+    }
 
     /**
      * If true, then the patching is resumed and the next component will be patched immediately.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResumePatching")
-    Boolean isResumePatching;
+    private final Boolean isResumePatching;
+
+    public Boolean getIsResumePatching() {
+        return isResumePatching;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateMaintenanceRunDetails(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
+        sb.append(", isPatchNowEnabled=").append(String.valueOf(this.isPatchNowEnabled));
+        sb.append(", patchId=").append(String.valueOf(this.patchId));
+        sb.append(", patchingMode=").append(String.valueOf(this.patchingMode));
+        sb.append(", isCustomActionTimeoutEnabled=")
+                .append(String.valueOf(this.isCustomActionTimeoutEnabled));
+        sb.append(", customActionTimeoutInMins=")
+                .append(String.valueOf(this.customActionTimeoutInMins));
+        sb.append(", currentCustomActionTimeoutInMins=")
+                .append(String.valueOf(this.currentCustomActionTimeoutInMins));
+        sb.append(", isResumePatching=").append(String.valueOf(this.isResumePatching));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateMaintenanceRunDetails)) {
+            return false;
+        }
+
+        UpdateMaintenanceRunDetails other = (UpdateMaintenanceRunDetails) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
+                && java.util.Objects.equals(this.isPatchNowEnabled, other.isPatchNowEnabled)
+                && java.util.Objects.equals(this.patchId, other.patchId)
+                && java.util.Objects.equals(this.patchingMode, other.patchingMode)
+                && java.util.Objects.equals(
+                        this.isCustomActionTimeoutEnabled, other.isCustomActionTimeoutEnabled)
+                && java.util.Objects.equals(
+                        this.customActionTimeoutInMins, other.customActionTimeoutInMins)
+                && java.util.Objects.equals(
+                        this.currentCustomActionTimeoutInMins,
+                        other.currentCustomActionTimeoutInMins)
+                && java.util.Objects.equals(this.isResumePatching, other.isResumePatching)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduled == null ? 43 : this.timeScheduled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPatchNowEnabled == null ? 43 : this.isPatchNowEnabled.hashCode());
+        result = (result * PRIME) + (this.patchId == null ? 43 : this.patchId.hashCode());
+        result = (result * PRIME) + (this.patchingMode == null ? 43 : this.patchingMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCustomActionTimeoutEnabled == null
+                                ? 43
+                                : this.isCustomActionTimeoutEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customActionTimeoutInMins == null
+                                ? 43
+                                : this.customActionTimeoutInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentCustomActionTimeoutInMins == null
+                                ? 43
+                                : this.currentCustomActionTimeoutInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isResumePatching == null ? 43 : this.isResumePatching.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

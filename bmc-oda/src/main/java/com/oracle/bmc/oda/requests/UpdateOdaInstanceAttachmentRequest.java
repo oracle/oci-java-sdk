@@ -9,14 +9,6 @@ import com.oracle.bmc.oda.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateOdaInstanceAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateOdaInstanceAttachmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateOdaInstanceAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.oda.model.UpdateOdaInstanceAttachmentDetails> {
@@ -26,17 +18,27 @@ public class UpdateOdaInstanceAttachmentRequest
      */
     private String odaInstanceId;
 
+    public String getOdaInstanceId() {
+        return odaInstanceId;
+    }
     /**
      * Unique Digital Assistant instance attachment identifier.
      */
     private String attachmentId;
 
+    public String getAttachmentId() {
+        return attachmentId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.oda.model.UpdateOdaInstanceAttachmentDetails
             updateOdaInstanceAttachmentDetails;
 
+    public com.oracle.bmc.oda.model.UpdateOdaInstanceAttachmentDetails
+            getUpdateOdaInstanceAttachmentDetails() {
+        return updateOdaInstanceAttachmentDetails;
+    }
     /**
      * For optimistic concurrency control in a PUT or DELETE call for
      * a Digital Assistant instance, set the {@code if-match} query parameter
@@ -48,10 +50,17 @@ public class UpdateOdaInstanceAttachmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -70,6 +79,70 @@ public class UpdateOdaInstanceAttachmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String odaInstanceId = null;
+
+        /**
+         * Unique Digital Assistant instance identifier.
+         * @return this builder instance
+         */
+        public Builder odaInstanceId(String odaInstanceId) {
+            this.odaInstanceId = odaInstanceId;
+            return this;
+        }
+
+        private String attachmentId = null;
+
+        /**
+         * Unique Digital Assistant instance attachment identifier.
+         * @return this builder instance
+         */
+        public Builder attachmentId(String attachmentId) {
+            this.attachmentId = attachmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.oda.model.UpdateOdaInstanceAttachmentDetails
+                updateOdaInstanceAttachmentDetails = null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateOdaInstanceAttachmentDetails(
+                com.oracle.bmc.oda.model.UpdateOdaInstanceAttachmentDetails
+                        updateOdaInstanceAttachmentDetails) {
+            this.updateOdaInstanceAttachmentDetails = updateOdaInstanceAttachmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -136,5 +209,93 @@ public class UpdateOdaInstanceAttachmentRequest
             updateOdaInstanceAttachmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateOdaInstanceAttachmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateOdaInstanceAttachmentRequest
+         */
+        public UpdateOdaInstanceAttachmentRequest buildWithoutInvocationCallback() {
+            UpdateOdaInstanceAttachmentRequest request = new UpdateOdaInstanceAttachmentRequest();
+            request.odaInstanceId = odaInstanceId;
+            request.attachmentId = attachmentId;
+            request.updateOdaInstanceAttachmentDetails = updateOdaInstanceAttachmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateOdaInstanceAttachmentRequest(odaInstanceId, attachmentId, updateOdaInstanceAttachmentDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .odaInstanceId(odaInstanceId)
+                .attachmentId(attachmentId)
+                .updateOdaInstanceAttachmentDetails(updateOdaInstanceAttachmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",attachmentId=").append(String.valueOf(this.attachmentId));
+        sb.append(",updateOdaInstanceAttachmentDetails=")
+                .append(String.valueOf(this.updateOdaInstanceAttachmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateOdaInstanceAttachmentRequest)) {
+            return false;
+        }
+
+        UpdateOdaInstanceAttachmentRequest other = (UpdateOdaInstanceAttachmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.attachmentId, other.attachmentId)
+                && java.util.Objects.equals(
+                        this.updateOdaInstanceAttachmentDetails,
+                        other.updateOdaInstanceAttachmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result = (result * PRIME) + (this.attachmentId == null ? 43 : this.attachmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateOdaInstanceAttachmentDetails == null
+                                ? 43
+                                : this.updateOdaInstanceAttachmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,58 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TargetDetectorRecipeDetectorRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TargetDetectorRecipeDetectorRule {
+public final class TargetDetectorRecipeDetectorRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "detectorRuleId",
+        "displayName",
+        "description",
+        "recommendation",
+        "detector",
+        "serviceType",
+        "resourceType",
+        "details",
+        "managedListTypes",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleDetails"
+    })
+    public TargetDetectorRecipeDetectorRule(
+            String detectorRuleId,
+            String displayName,
+            String description,
+            String recommendation,
+            DetectorEnum detector,
+            String serviceType,
+            String resourceType,
+            TargetDetectorDetails details,
+            java.util.List<ManagedListTypes> managedListTypes,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleState lifecycleState,
+            String lifecycleDetails) {
+        super();
+        this.detectorRuleId = detectorRuleId;
+        this.displayName = displayName;
+        this.description = description;
+        this.recommendation = recommendation;
+        this.detector = detector;
+        this.serviceType = serviceType;
+        this.resourceType = resourceType;
+        this.details = details;
+        this.managedListTypes = managedListTypes;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
@@ -195,53 +237,89 @@ public class TargetDetectorRecipeDetectorRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier of the detector rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
-    String detectorRuleId;
+    private final String detectorRuleId;
+
+    public String getDetectorRuleId() {
+        return detectorRuleId;
+    }
 
     /**
      * Display name for TargetDetectorRecipeDetectorRule. information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description for TargetDetectorRecipeDetectorRule. information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Recommendation for TargetDetectorRecipeDetectorRule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
-    String recommendation;
+    private final String recommendation;
+
+    public String getRecommendation() {
+        return recommendation;
+    }
 
     /**
      * detector for the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
-    DetectorEnum detector;
+    private final DetectorEnum detector;
+
+    public DetectorEnum getDetector() {
+        return detector;
+    }
 
     /**
      * service type of the configuration to which the rule is applied
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
-    String serviceType;
+    private final String serviceType;
+
+    public String getServiceType() {
+        return serviceType;
+    }
 
     /**
      * resource type of the configuration to which the rule is applied
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("details")
-    TargetDetectorDetails details;
+    private final TargetDetectorDetails details;
+
+    public TargetDetectorDetails getDetails() {
+        return details;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ManagedListTypes {
         CidrBlock("CIDR_BLOCK"),
         Users("USERS"),
@@ -261,6 +339,9 @@ public class TargetDetectorRecipeDetectorRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagedListTypes.class);
 
         private final String value;
         private static java.util.Map<String, ManagedListTypes> map;
@@ -298,32 +379,137 @@ public class TargetDetectorRecipeDetectorRule {
      * List of cloudguard managed list types related to this rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
-    java.util.List<ManagedListTypes> managedListTypes;
+    private final java.util.List<ManagedListTypes> managedListTypes;
+
+    public java.util.List<ManagedListTypes> getManagedListTypes() {
+        return managedListTypes;
+    }
 
     /**
      * The date and time the target detector recipe rule was created. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the target detector recipe rule was updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the DetectorRule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TargetDetectorRecipeDetectorRule(");
+        sb.append("detectorRuleId=").append(String.valueOf(this.detectorRuleId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", recommendation=").append(String.valueOf(this.recommendation));
+        sb.append(", detector=").append(String.valueOf(this.detector));
+        sb.append(", serviceType=").append(String.valueOf(this.serviceType));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", details=").append(String.valueOf(this.details));
+        sb.append(", managedListTypes=").append(String.valueOf(this.managedListTypes));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TargetDetectorRecipeDetectorRule)) {
+            return false;
+        }
+
+        TargetDetectorRecipeDetectorRule other = (TargetDetectorRecipeDetectorRule) o;
+        return java.util.Objects.equals(this.detectorRuleId, other.detectorRuleId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.recommendation, other.recommendation)
+                && java.util.Objects.equals(this.detector, other.detector)
+                && java.util.Objects.equals(this.serviceType, other.serviceType)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.details, other.details)
+                && java.util.Objects.equals(this.managedListTypes, other.managedListTypes)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.detectorRuleId == null ? 43 : this.detectorRuleId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendation == null ? 43 : this.recommendation.hashCode());
+        result = (result * PRIME) + (this.detector == null ? 43 : this.detector.hashCode());
+        result = (result * PRIME) + (this.serviceType == null ? 43 : this.serviceType.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedListTypes == null ? 43 : this.managedListTypes.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

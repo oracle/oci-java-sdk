@@ -26,9 +26,12 @@ import com.oracle.bmc.keymanagement.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.RequiredArgsConstructor
 public class KmsManagementPaginators {
     private final KmsManagement client;
+
+    public KmsManagementPaginators(KmsManagement client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listKeyVersions operation. This iterable

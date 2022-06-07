@@ -15,16 +15,21 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateFullPushDownTaskDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateFullPushDownTaskDetails {
+public final class CreateFullPushDownTaskDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"modelType", "source", "target"})
+    public CreateFullPushDownTaskDetails(String modelType, Source source, Target target) {
+        super();
+        this.modelType = modelType;
+        this.source = source;
+        this.target = target;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
@@ -80,18 +85,79 @@ public class CreateFullPushDownTaskDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of of FullPushDownTask.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    Source source;
+    private final Source source;
+
+    public Source getSource() {
+        return source;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    Target target;
+    private final Target target;
+
+    public Target getTarget() {
+        return target;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateFullPushDownTaskDetails(");
+        sb.append("modelType=").append(String.valueOf(this.modelType));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateFullPushDownTaskDetails)) {
+            return false;
+        }
+
+        CreateFullPushDownTaskDetails other = (CreateFullPushDownTaskDetails) o;
+        return java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

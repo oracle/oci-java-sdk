@@ -15,14 +15,38 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Classifier.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Classifier {
+public final class Classifier {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "label",
+        "description",
+        "issueTypeList",
+        "scope",
+        "unit"
+    })
+    public Classifier(
+            String id,
+            String name,
+            String label,
+            String description,
+            java.util.List<IssueType> issueTypeList,
+            Scope scope,
+            Unit unit) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.label = label;
+        this.description = description;
+        this.issueTypeList = issueTypeList;
+        this.scope = scope;
+        this.unit = unit;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -120,39 +144,63 @@ public class Classifier {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier of the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The display name of the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The label associated with the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
-    String label;
+    private final String label;
+
+    public String getLabel() {
+        return label;
+    }
 
     /**
      * The description of the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The list of issues.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
-    java.util.List<IssueType> issueTypeList;
+    private final java.util.List<IssueType> issueTypeList;
+
+    public java.util.List<IssueType> getIssueTypeList() {
+        return issueTypeList;
+    }
+
     /**
      * The scope of the service category or resource.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Scope {
         Ad("AD"),
         Region("REGION"),
@@ -164,6 +212,8 @@ public class Classifier {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Scope.class);
 
         private final String value;
         private static java.util.Map<String, Scope> map;
@@ -201,11 +251,15 @@ public class Classifier {
      * The scope of the service category or resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    Scope scope;
+    private final Scope scope;
+
+    public Scope getScope() {
+        return scope;
+    }
+
     /**
      * The unit to use to measure the service category or resource.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Unit {
         Count("COUNT"),
         Gb("GB"),
@@ -216,6 +270,8 @@ public class Classifier {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Unit.class);
 
         private final String value;
         private static java.util.Map<String, Unit> map;
@@ -252,8 +308,71 @@ public class Classifier {
      * The unit to use to measure the service category or resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    Unit unit;
+    private final Unit unit;
+
+    public Unit getUnit() {
+        return unit;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Classifier(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", label=").append(String.valueOf(this.label));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", issueTypeList=").append(String.valueOf(this.issueTypeList));
+        sb.append(", scope=").append(String.valueOf(this.scope));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Classifier)) {
+            return false;
+        }
+
+        Classifier other = (Classifier) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.label, other.label)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.issueTypeList, other.issueTypeList)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.label == null ? 43 : this.label.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.issueTypeList == null ? 43 : this.issueTypeList.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

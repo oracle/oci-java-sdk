@@ -24,14 +24,62 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PublicIp.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PublicIp {
+public final class PublicIp {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "assignedEntityId",
+        "assignedEntityType",
+        "availabilityDomain",
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "ipAddress",
+        "lifecycleState",
+        "lifetime",
+        "privateIpId",
+        "scope",
+        "timeCreated",
+        "publicIpPoolId"
+    })
+    public PublicIp(
+            String assignedEntityId,
+            AssignedEntityType assignedEntityType,
+            String availabilityDomain,
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            String ipAddress,
+            LifecycleState lifecycleState,
+            Lifetime lifetime,
+            String privateIpId,
+            Scope scope,
+            java.util.Date timeCreated,
+            String publicIpPoolId) {
+        super();
+        this.assignedEntityId = assignedEntityId;
+        this.assignedEntityType = assignedEntityType;
+        this.availabilityDomain = availabilityDomain;
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.ipAddress = ipAddress;
+        this.lifecycleState = lifecycleState;
+        this.lifetime = lifetime;
+        this.privateIpId = privateIpId;
+        this.scope = scope;
+        this.timeCreated = timeCreated;
+        this.publicIpPoolId = publicIpPoolId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityId")
         private String assignedEntityId;
@@ -225,19 +273,27 @@ public class PublicIp {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
      * being assigned to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityId")
-    String assignedEntityId;
+    private final String assignedEntityId;
+
+    public String getAssignedEntityId() {
+        return assignedEntityId;
+    }
+
     /**
      * The type of entity the public IP is assigned to, or in the process of being
      * assigned to.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AssignedEntityType {
         PrivateIp("PRIVATE_IP"),
         NatGateway("NAT_GATEWAY"),
@@ -247,6 +303,9 @@ public class PublicIp {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AssignedEntityType.class);
 
         private final String value;
         private static java.util.Map<String, AssignedEntityType> map;
@@ -286,7 +345,11 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityType")
-    AssignedEntityType assignedEntityType;
+    private final AssignedEntityType assignedEntityType;
+
+    public AssignedEntityType getAssignedEntityType() {
+        return assignedEntityType;
+    }
 
     /**
      * The public IP's availability domain. This property is set only for ephemeral public IPs
@@ -297,7 +360,11 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
@@ -307,7 +374,11 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -317,7 +388,11 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -325,7 +400,11 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -335,13 +414,21 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The public IP address of the {@code publicIp} object.
@@ -350,11 +437,15 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
     /**
      * The public IP's current state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -370,6 +461,9 @@ public class PublicIp {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -407,7 +501,12 @@ public class PublicIp {
      * The public IP's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
      * <p>
@@ -425,7 +524,6 @@ public class PublicIp {
      * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Lifetime {
         Ephemeral("EPHEMERAL"),
         Reserved("RESERVED"),
@@ -435,6 +533,9 @@ public class PublicIp {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Lifetime.class);
 
         private final String value;
         private static java.util.Map<String, Lifetime> map;
@@ -486,7 +587,11 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
-    Lifetime lifetime;
+    private final Lifetime lifetime;
+
+    public Lifetime getLifetime() {
+        return lifetime;
+    }
 
     /**
      * Deprecated. Use {@code assignedEntityId} instead.
@@ -499,7 +604,12 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
-    String privateIpId;
+    private final String privateIpId;
+
+    public String getPrivateIpId() {
+        return privateIpId;
+    }
+
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
@@ -513,7 +623,6 @@ public class PublicIp {
      * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Scope {
         Region("REGION"),
         AvailabilityDomain("AVAILABILITY_DOMAIN"),
@@ -523,6 +632,8 @@ public class PublicIp {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Scope.class);
 
         private final String value;
         private static java.util.Map<String, Scope> map;
@@ -570,7 +681,11 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    Scope scope;
+    private final Scope scope;
+
+    public Scope getScope() {
+        return scope;
+    }
 
     /**
      * The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -579,14 +694,119 @@ public class PublicIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
-    String publicIpPoolId;
+    private final String publicIpPoolId;
+
+    public String getPublicIpPoolId() {
+        return publicIpPoolId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PublicIp(");
+        sb.append("assignedEntityId=").append(String.valueOf(this.assignedEntityId));
+        sb.append(", assignedEntityType=").append(String.valueOf(this.assignedEntityType));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifetime=").append(String.valueOf(this.lifetime));
+        sb.append(", privateIpId=").append(String.valueOf(this.privateIpId));
+        sb.append(", scope=").append(String.valueOf(this.scope));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", publicIpPoolId=").append(String.valueOf(this.publicIpPoolId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PublicIp)) {
+            return false;
+        }
+
+        PublicIp other = (PublicIp) o;
+        return java.util.Objects.equals(this.assignedEntityId, other.assignedEntityId)
+                && java.util.Objects.equals(this.assignedEntityType, other.assignedEntityType)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
+                && java.util.Objects.equals(this.privateIpId, other.privateIpId)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.publicIpPoolId, other.publicIpPoolId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.assignedEntityId == null ? 43 : this.assignedEntityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assignedEntityType == null
+                                ? 43
+                                : this.assignedEntityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
+        result = (result * PRIME) + (this.privateIpId == null ? 43 : this.privateIpId.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicIpPoolId == null ? 43 : this.publicIpPoolId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

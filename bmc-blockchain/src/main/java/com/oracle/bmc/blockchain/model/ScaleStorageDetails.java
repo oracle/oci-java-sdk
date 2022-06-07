@@ -15,16 +15,19 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScaleStorageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScaleStorageDetails {
+public final class ScaleStorageDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"storageSizeInTBs"})
+    public ScaleStorageDetails(Integer storageSizeInTBs) {
+        super();
+        this.storageSizeInTBs = storageSizeInTBs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
         private Integer storageSizeInTBs;
@@ -60,12 +63,61 @@ public class ScaleStorageDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Storage size in TBs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
-    Integer storageSizeInTBs;
+    private final Integer storageSizeInTBs;
+
+    public Integer getStorageSizeInTBs() {
+        return storageSizeInTBs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScaleStorageDetails(");
+        sb.append("storageSizeInTBs=").append(String.valueOf(this.storageSizeInTBs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScaleStorageDetails)) {
+            return false;
+        }
+
+        ScaleStorageDetails other = (ScaleStorageDetails) o;
+        return java.util.Objects.equals(this.storageSizeInTBs, other.storageSizeInTBs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.storageSizeInTBs == null ? 43 : this.storageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

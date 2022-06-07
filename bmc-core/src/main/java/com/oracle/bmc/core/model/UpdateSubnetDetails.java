@@ -15,16 +15,46 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateSubnetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateSubnetDetails {
+public final class UpdateSubnetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "definedTags",
+        "dhcpOptionsId",
+        "displayName",
+        "freeformTags",
+        "routeTableId",
+        "securityListIds",
+        "cidrBlock",
+        "ipv6CidrBlock",
+        "ipv6CidrBlocks"
+    })
+    public UpdateSubnetDetails(
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String dhcpOptionsId,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String routeTableId,
+            java.util.List<String> securityListIds,
+            String cidrBlock,
+            String ipv6CidrBlock,
+            java.util.List<String> ipv6CidrBlocks) {
+        super();
+        this.definedTags = definedTags;
+        this.dhcpOptionsId = dhcpOptionsId;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.routeTableId = routeTableId;
+        this.securityListIds = securityListIds;
+        this.cidrBlock = cidrBlock;
+        this.ipv6CidrBlock = ipv6CidrBlock;
+        this.ipv6CidrBlocks = ipv6CidrBlocks;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -152,6 +182,10 @@ public class UpdateSubnetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -160,14 +194,22 @@ public class UpdateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
-    String dhcpOptionsId;
+    private final String dhcpOptionsId;
+
+    public String getDhcpOptionsId() {
+        return dhcpOptionsId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -175,7 +217,11 @@ public class UpdateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -185,14 +231,22 @@ public class UpdateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    String routeTableId;
+    private final String routeTableId;
+
+    public String getRouteTableId() {
+        return routeTableId;
+    }
 
     /**
      * The OCIDs of the security list or lists the subnet will use. This
@@ -202,7 +256,11 @@ public class UpdateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
-    java.util.List<String> securityListIds;
+    private final java.util.List<String> securityListIds;
+
+    public java.util.List<String> getSecurityListIds() {
+        return securityListIds;
+    }
 
     /**
      * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
@@ -219,7 +277,11 @@ public class UpdateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    String cidrBlock;
+    private final String cidrBlock;
+
+    public String getCidrBlock() {
+        return cidrBlock;
+    }
 
     /**
      * This is the IPv6 CIDR block for the subnet's IP address space.
@@ -234,7 +296,11 @@ public class UpdateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
-    String ipv6CidrBlock;
+    private final String ipv6CidrBlock;
+
+    public String getIpv6CidrBlock() {
+        return ipv6CidrBlock;
+    }
 
     /**
      * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
@@ -244,8 +310,83 @@ public class UpdateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
-    java.util.List<String> ipv6CidrBlocks;
+    private final java.util.List<String> ipv6CidrBlocks;
+
+    public java.util.List<String> getIpv6CidrBlocks() {
+        return ipv6CidrBlocks;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateSubnetDetails(");
+        sb.append("definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dhcpOptionsId=").append(String.valueOf(this.dhcpOptionsId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", securityListIds=").append(String.valueOf(this.securityListIds));
+        sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
+        sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
+        sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSubnetDetails)) {
+            return false;
+        }
+
+        UpdateSubnetDetails other = (UpdateSubnetDetails) o;
+        return java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dhcpOptionsId, other.dhcpOptionsId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.securityListIds, other.securityListIds)
+                && java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
+                && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
+                && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dhcpOptionsId == null ? 43 : this.dhcpOptionsId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityListIds == null ? 43 : this.securityListIds.hashCode());
+        result = (result * PRIME) + (this.cidrBlock == null ? 43 : this.cidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlocks == null ? 43 : this.ipv6CidrBlocks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,52 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CloneMigrationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CloneMigrationDetails {
+public final class CloneMigrationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "agentId",
+        "sourceDatabaseConnectionId",
+        "sourceContainerDatabaseConnectionId",
+        "targetDatabaseConnectionId",
+        "excludeObjects",
+        "includeObjects",
+        "vaultDetails",
+        "freeformTags",
+        "definedTags"
+    })
+    public CloneMigrationDetails(
+            String displayName,
+            String compartmentId,
+            String agentId,
+            String sourceDatabaseConnectionId,
+            String sourceContainerDatabaseConnectionId,
+            String targetDatabaseConnectionId,
+            java.util.List<DatabaseObject> excludeObjects,
+            java.util.List<DatabaseObject> includeObjects,
+            CreateVaultDetails vaultDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.agentId = agentId;
+        this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
+        this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
+        this.targetDatabaseConnectionId = targetDatabaseConnectionId;
+        this.excludeObjects = excludeObjects;
+        this.includeObjects = includeObjects;
+        this.vaultDetails = vaultDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -177,33 +213,53 @@ public class CloneMigrationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Migration Display Name
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * OCID of the compartment
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Logical Migrations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
-    String agentId;
+    private final String agentId;
+
+    public String getAgentId() {
+        return agentId;
+    }
 
     /**
      * The OCID of the Source Database Connection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseConnectionId")
-    String sourceDatabaseConnectionId;
+    private final String sourceDatabaseConnectionId;
+
+    public String getSourceDatabaseConnectionId() {
+        return sourceDatabaseConnectionId;
+    }
 
     /**
      * The OCID of the Source Container Database Connection. Only used for Online migrations.
@@ -211,31 +267,51 @@ public class CloneMigrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
-    String sourceContainerDatabaseConnectionId;
+    private final String sourceContainerDatabaseConnectionId;
+
+    public String getSourceContainerDatabaseConnectionId() {
+        return sourceContainerDatabaseConnectionId;
+    }
 
     /**
      * The OCID of the Target Database Connection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseConnectionId")
-    String targetDatabaseConnectionId;
+    private final String targetDatabaseConnectionId;
+
+    public String getTargetDatabaseConnectionId() {
+        return targetDatabaseConnectionId;
+    }
 
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
-    java.util.List<DatabaseObject> excludeObjects;
+    private final java.util.List<DatabaseObject> excludeObjects;
+
+    public java.util.List<DatabaseObject> getExcludeObjects() {
+        return excludeObjects;
+    }
 
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
-    java.util.List<DatabaseObject> includeObjects;
+    private final java.util.List<DatabaseObject> includeObjects;
+
+    public java.util.List<DatabaseObject> getIncludeObjects() {
+        return includeObjects;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("vaultDetails")
-    CreateVaultDetails vaultDetails;
+    private final CreateVaultDetails vaultDetails;
+
+    public CreateVaultDetails getVaultDetails() {
+        return vaultDetails;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -243,7 +319,11 @@ public class CloneMigrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -251,8 +331,106 @@ public class CloneMigrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CloneMigrationDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", agentId=").append(String.valueOf(this.agentId));
+        sb.append(", sourceDatabaseConnectionId=")
+                .append(String.valueOf(this.sourceDatabaseConnectionId));
+        sb.append(", sourceContainerDatabaseConnectionId=")
+                .append(String.valueOf(this.sourceContainerDatabaseConnectionId));
+        sb.append(", targetDatabaseConnectionId=")
+                .append(String.valueOf(this.targetDatabaseConnectionId));
+        sb.append(", excludeObjects=").append(String.valueOf(this.excludeObjects));
+        sb.append(", includeObjects=").append(String.valueOf(this.includeObjects));
+        sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CloneMigrationDetails)) {
+            return false;
+        }
+
+        CloneMigrationDetails other = (CloneMigrationDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.agentId, other.agentId)
+                && java.util.Objects.equals(
+                        this.sourceDatabaseConnectionId, other.sourceDatabaseConnectionId)
+                && java.util.Objects.equals(
+                        this.sourceContainerDatabaseConnectionId,
+                        other.sourceContainerDatabaseConnectionId)
+                && java.util.Objects.equals(
+                        this.targetDatabaseConnectionId, other.targetDatabaseConnectionId)
+                && java.util.Objects.equals(this.excludeObjects, other.excludeObjects)
+                && java.util.Objects.equals(this.includeObjects, other.includeObjects)
+                && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDatabaseConnectionId == null
+                                ? 43
+                                : this.sourceDatabaseConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceContainerDatabaseConnectionId == null
+                                ? 43
+                                : this.sourceContainerDatabaseConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseConnectionId == null
+                                ? 43
+                                : this.targetDatabaseConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.excludeObjects == null ? 43 : this.excludeObjects.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeObjects == null ? 43 : this.includeObjects.hashCode());
+        result = (result * PRIME) + (this.vaultDetails == null ? 43 : this.vaultDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

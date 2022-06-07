@@ -16,14 +16,22 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ThreadSnapshot.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ThreadSnapshot {
+public final class ThreadSnapshot {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeStamp", "threadSnapshotDetails", "stackTrace"})
+    public ThreadSnapshot(
+            java.util.Date timeStamp,
+            java.util.List<SnapshotDetail> threadSnapshotDetails,
+            java.util.List<StackTraceElement> stackTrace) {
+        super();
+        this.timeStamp = timeStamp;
+        this.threadSnapshotDetails = threadSnapshotDetails;
+        this.stackTrace = stackTrace;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
         private java.util.Date timeStamp;
@@ -81,27 +89,92 @@ public class ThreadSnapshot {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Snapshot time.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
-    java.util.Date timeStamp;
+    private final java.util.Date timeStamp;
+
+    public java.util.Date getTimeStamp() {
+        return timeStamp;
+    }
 
     /**
      * Snapshot details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshotDetails")
-    java.util.List<SnapshotDetail> threadSnapshotDetails;
+    private final java.util.List<SnapshotDetail> threadSnapshotDetails;
+
+    public java.util.List<SnapshotDetail> getThreadSnapshotDetails() {
+        return threadSnapshotDetails;
+    }
 
     /**
      * Stack trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackTrace")
-    java.util.List<StackTraceElement> stackTrace;
+    private final java.util.List<StackTraceElement> stackTrace;
+
+    public java.util.List<StackTraceElement> getStackTrace() {
+        return stackTrace;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ThreadSnapshot(");
+        sb.append("timeStamp=").append(String.valueOf(this.timeStamp));
+        sb.append(", threadSnapshotDetails=").append(String.valueOf(this.threadSnapshotDetails));
+        sb.append(", stackTrace=").append(String.valueOf(this.stackTrace));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ThreadSnapshot)) {
+            return false;
+        }
+
+        ThreadSnapshot other = (ThreadSnapshot) o;
+        return java.util.Objects.equals(this.timeStamp, other.timeStamp)
+                && java.util.Objects.equals(this.threadSnapshotDetails, other.threadSnapshotDetails)
+                && java.util.Objects.equals(this.stackTrace, other.stackTrace)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeStamp == null ? 43 : this.timeStamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.threadSnapshotDetails == null
+                                ? 43
+                                : this.threadSnapshotDetails.hashCode());
+        result = (result * PRIME) + (this.stackTrace == null ? 43 : this.stackTrace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

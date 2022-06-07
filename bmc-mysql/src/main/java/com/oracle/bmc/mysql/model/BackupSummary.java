@@ -21,14 +21,62 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackupSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackupSummary {
+public final class BackupSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "timeCreated",
+        "lifecycleState",
+        "backupType",
+        "creationType",
+        "dbSystemId",
+        "dataStorageSizeInGBs",
+        "backupSizeInGBs",
+        "retentionInDays",
+        "mysqlVersion",
+        "shapeName",
+        "freeformTags",
+        "definedTags"
+    })
+    public BackupSummary(
+            String id,
+            String displayName,
+            String description,
+            java.util.Date timeCreated,
+            Backup.LifecycleState lifecycleState,
+            Backup.BackupType backupType,
+            Backup.CreationType creationType,
+            String dbSystemId,
+            Integer dataStorageSizeInGBs,
+            Integer backupSizeInGBs,
+            Integer retentionInDays,
+            String mysqlVersion,
+            String shapeName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+        this.backupType = backupType;
+        this.creationType = creationType;
+        this.dbSystemId = dbSystemId;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.backupSizeInGBs = backupSizeInGBs;
+        this.retentionInDays = retentionInDays;
+        this.mysqlVersion = mysqlVersion;
+        this.shapeName = shapeName;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -222,83 +270,139 @@ public class BackupSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID of the backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A user-supplied display name for the backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A user-supplied description of the backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The time the backup was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The state of the backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    Backup.LifecycleState lifecycleState;
+    private final Backup.LifecycleState lifecycleState;
+
+    public Backup.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The type of backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
-    Backup.BackupType backupType;
+    private final Backup.BackupType backupType;
+
+    public Backup.BackupType getBackupType() {
+        return backupType;
+    }
 
     /**
      * If the backup was created automatically, or by a manual request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("creationType")
-    Backup.CreationType creationType;
+    private final Backup.CreationType creationType;
+
+    public Backup.CreationType getCreationType() {
+        return creationType;
+    }
 
     /**
      * The OCID of the DB System the Backup is associated with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
+    private final String dbSystemId;
+
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
 
     /**
      * Size of the data volume in GiBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-    Integer dataStorageSizeInGBs;
+    private final Integer dataStorageSizeInGBs;
+
+    public Integer getDataStorageSizeInGBs() {
+        return dataStorageSizeInGBs;
+    }
 
     /**
      * The size of the backup in GiBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSizeInGBs")
-    Integer backupSizeInGBs;
+    private final Integer backupSizeInGBs;
+
+    public Integer getBackupSizeInGBs() {
+        return backupSizeInGBs;
+    }
 
     /**
      * Number of days to retain this backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
-    Integer retentionInDays;
+    private final Integer retentionInDays;
+
+    public Integer getRetentionInDays() {
+        return retentionInDays;
+    }
 
     /**
      * The version of the DB System used for backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
-    String mysqlVersion;
+    private final String mysqlVersion;
+
+    public String getMysqlVersion() {
+        return mysqlVersion;
+    }
 
     /**
      * The shape of the DB System instance used for backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    String shapeName;
+    private final String shapeName;
+
+    public String getShapeName() {
+        return shapeName;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -306,7 +410,11 @@ public class BackupSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -314,8 +422,103 @@ public class BackupSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackupSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", backupType=").append(String.valueOf(this.backupType));
+        sb.append(", creationType=").append(String.valueOf(this.creationType));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", backupSizeInGBs=").append(String.valueOf(this.backupSizeInGBs));
+        sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
+        sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackupSummary)) {
+            return false;
+        }
+
+        BackupSummary other = (BackupSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.backupType, other.backupType)
+                && java.util.Objects.equals(this.creationType, other.creationType)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.backupSizeInGBs, other.backupSizeInGBs)
+                && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
+                && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.backupType == null ? 43 : this.backupType.hashCode());
+        result = (result * PRIME) + (this.creationType == null ? 43 : this.creationType.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInGBs == null
+                                ? 43
+                                : this.dataStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSizeInGBs == null ? 43 : this.backupSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionInDays == null ? 43 : this.retentionInDays.hashCode());
+        result = (result * PRIME) + (this.mysqlVersion == null ? 43 : this.mysqlVersion.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

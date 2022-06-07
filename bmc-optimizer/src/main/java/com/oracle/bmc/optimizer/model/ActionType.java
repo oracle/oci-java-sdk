@@ -8,7 +8,6 @@ package com.oracle.bmc.optimizer.model;
  * Possible recommended actions.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.extern.slf4j.Slf4j
 public enum ActionType {
     KbArticle("KB_ARTICLE"),
 
@@ -17,6 +16,8 @@ public enum ActionType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(ActionType.class);
 
     private final String value;
     private static java.util.Map<String, ActionType> map;

@@ -16,14 +16,19 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OCPUs.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OCPUs {
+public final class OCPUs {
+    @Deprecated
+    @java.beans.ConstructorProperties({"totalCpu", "consumedCpu", "byWorkloadType"})
+    public OCPUs(Float totalCpu, Float consumedCpu, WorkloadType byWorkloadType) {
+        super();
+        this.totalCpu = totalCpu;
+        this.consumedCpu = consumedCpu;
+        this.byWorkloadType = byWorkloadType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("totalCpu")
         private Float totalCpu;
@@ -80,21 +85,84 @@ public class OCPUs {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpu")
-    Float totalCpu;
+    private final Float totalCpu;
+
+    public Float getTotalCpu() {
+        return totalCpu;
+    }
 
     /**
      * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumedCpu")
-    Float consumedCpu;
+    private final Float consumedCpu;
+
+    public Float getConsumedCpu() {
+        return consumedCpu;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("byWorkloadType")
-    WorkloadType byWorkloadType;
+    private final WorkloadType byWorkloadType;
+
+    public WorkloadType getByWorkloadType() {
+        return byWorkloadType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OCPUs(");
+        sb.append("totalCpu=").append(String.valueOf(this.totalCpu));
+        sb.append(", consumedCpu=").append(String.valueOf(this.consumedCpu));
+        sb.append(", byWorkloadType=").append(String.valueOf(this.byWorkloadType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OCPUs)) {
+            return false;
+        }
+
+        OCPUs other = (OCPUs) o;
+        return java.util.Objects.equals(this.totalCpu, other.totalCpu)
+                && java.util.Objects.equals(this.consumedCpu, other.consumedCpu)
+                && java.util.Objects.equals(this.byWorkloadType, other.byWorkloadType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.totalCpu == null ? 43 : this.totalCpu.hashCode());
+        result = (result * PRIME) + (this.consumedCpu == null ? 43 : this.consumedCpu.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byWorkloadType == null ? 43 : this.byWorkloadType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

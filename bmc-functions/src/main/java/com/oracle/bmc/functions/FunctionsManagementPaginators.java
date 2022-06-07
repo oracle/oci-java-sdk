@@ -26,9 +26,12 @@ import com.oracle.bmc.functions.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.RequiredArgsConstructor
 public class FunctionsManagementPaginators {
     private final FunctionsManagement client;
+
+    public FunctionsManagementPaginators(FunctionsManagement client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listApplications operation. This iterable

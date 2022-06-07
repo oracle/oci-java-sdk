@@ -15,16 +15,43 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SummarizeDatabaseInsightResourceForecastTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
+public final class SummarizeDatabaseInsightResourceForecastTrendAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeIntervalStart",
+        "timeIntervalEnd",
+        "resourceMetric",
+        "usageUnit",
+        "pattern",
+        "tablespaceName",
+        "historicalData",
+        "projectedData"
+    })
+    public SummarizeDatabaseInsightResourceForecastTrendAggregation(
+            java.util.Date timeIntervalStart,
+            java.util.Date timeIntervalEnd,
+            ResourceMetric resourceMetric,
+            UsageUnit usageUnit,
+            Pattern pattern,
+            String tablespaceName,
+            java.util.List<HistoricalDataItem> historicalData,
+            java.util.List<ProjectedDataItem> projectedData) {
+        super();
+        this.timeIntervalStart = timeIntervalStart;
+        this.timeIntervalEnd = timeIntervalEnd;
+        this.resourceMetric = resourceMetric;
+        this.usageUnit = usageUnit;
+        this.pattern = pattern;
+        this.tablespaceName = tablespaceName;
+        this.historicalData = historicalData;
+        this.projectedData = projectedData;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
@@ -140,22 +167,34 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The start timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
-    java.util.Date timeIntervalStart;
+    private final java.util.Date timeIntervalStart;
+
+    public java.util.Date getTimeIntervalStart() {
+        return timeIntervalStart;
+    }
 
     /**
      * The end timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
-    java.util.Date timeIntervalEnd;
+    private final java.util.Date timeIntervalEnd;
+
+    public java.util.Date getTimeIntervalEnd() {
+        return timeIntervalEnd;
+    }
+
     /**
      * Defines the type of resource metric (example: CPU, STORAGE)
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ResourceMetric {
         Cpu("CPU"),
         Storage("STORAGE"),
@@ -169,6 +208,9 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceMetric.class);
 
         private final String value;
         private static java.util.Map<String, ResourceMetric> map;
@@ -207,18 +249,26 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
-    ResourceMetric resourceMetric;
+    private final ResourceMetric resourceMetric;
+
+    public ResourceMetric getResourceMetric() {
+        return resourceMetric;
+    }
 
     /**
      * Displays usage unit ( CORES, GB)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
-    UsageUnit usageUnit;
+    private final UsageUnit usageUnit;
+
+    public UsageUnit getUsageUnit() {
+        return usageUnit;
+    }
+
     /**
      * Time series patterns used in the forecasting.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Pattern {
         Linear("LINEAR"),
         MonthlySeasons("MONTHLY_SEASONS"),
@@ -234,6 +284,9 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Pattern.class);
 
         private final String value;
         private static java.util.Map<String, Pattern> map;
@@ -271,26 +324,115 @@ public class SummarizeDatabaseInsightResourceForecastTrendAggregation {
      * Time series patterns used in the forecasting.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
-    Pattern pattern;
+    private final Pattern pattern;
+
+    public Pattern getPattern() {
+        return pattern;
+    }
 
     /**
      * The name of tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
-    String tablespaceName;
+    private final String tablespaceName;
+
+    public String getTablespaceName() {
+        return tablespaceName;
+    }
 
     /**
      * Time series data used for the forecast analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
-    java.util.List<HistoricalDataItem> historicalData;
+    private final java.util.List<HistoricalDataItem> historicalData;
+
+    public java.util.List<HistoricalDataItem> getHistoricalData() {
+        return historicalData;
+    }
 
     /**
      * Time series data result of the forecasting analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectedData")
-    java.util.List<ProjectedDataItem> projectedData;
+    private final java.util.List<ProjectedDataItem> projectedData;
+
+    public java.util.List<ProjectedDataItem> getProjectedData() {
+        return projectedData;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SummarizeDatabaseInsightResourceForecastTrendAggregation(");
+        sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
+        sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(", resourceMetric=").append(String.valueOf(this.resourceMetric));
+        sb.append(", usageUnit=").append(String.valueOf(this.usageUnit));
+        sb.append(", pattern=").append(String.valueOf(this.pattern));
+        sb.append(", tablespaceName=").append(String.valueOf(this.tablespaceName));
+        sb.append(", historicalData=").append(String.valueOf(this.historicalData));
+        sb.append(", projectedData=").append(String.valueOf(this.projectedData));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeDatabaseInsightResourceForecastTrendAggregation)) {
+            return false;
+        }
+
+        SummarizeDatabaseInsightResourceForecastTrendAggregation other =
+                (SummarizeDatabaseInsightResourceForecastTrendAggregation) o;
+        return java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
+                && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(this.resourceMetric, other.resourceMetric)
+                && java.util.Objects.equals(this.usageUnit, other.usageUnit)
+                && java.util.Objects.equals(this.pattern, other.pattern)
+                && java.util.Objects.equals(this.tablespaceName, other.tablespaceName)
+                && java.util.Objects.equals(this.historicalData, other.historicalData)
+                && java.util.Objects.equals(this.projectedData, other.projectedData)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalStart == null ? 43 : this.timeIntervalStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceMetric == null ? 43 : this.resourceMetric.hashCode());
+        result = (result * PRIME) + (this.usageUnit == null ? 43 : this.usageUnit.hashCode());
+        result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tablespaceName == null ? 43 : this.tablespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.historicalData == null ? 43 : this.historicalData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.projectedData == null ? 43 : this.projectedData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

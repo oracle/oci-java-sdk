@@ -15,16 +15,37 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningAdvisorTaskSummaryFindingCounts.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningAdvisorTaskSummaryFindingCounts {
+public final class SqlTuningAdvisorTaskSummaryFindingCounts {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "recommendedSqlProfile",
+        "implementedSqlProfile",
+        "index",
+        "restructure",
+        "statistics",
+        "alternatePlan"
+    })
+    public SqlTuningAdvisorTaskSummaryFindingCounts(
+            Integer recommendedSqlProfile,
+            Integer implementedSqlProfile,
+            Integer index,
+            Integer restructure,
+            Integer statistics,
+            Integer alternatePlan) {
+        super();
+        this.recommendedSqlProfile = recommendedSqlProfile;
+        this.implementedSqlProfile = implementedSqlProfile;
+        this.index = index;
+        this.restructure = restructure;
+        this.statistics = statistics;
+        this.alternatePlan = alternatePlan;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("recommendedSqlProfile")
         private Integer recommendedSqlProfile;
@@ -118,42 +139,135 @@ public class SqlTuningAdvisorTaskSummaryFindingCounts {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of distinct SQL statements with recommended SQL profiles.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedSqlProfile")
-    Integer recommendedSqlProfile;
+    private final Integer recommendedSqlProfile;
+
+    public Integer getRecommendedSqlProfile() {
+        return recommendedSqlProfile;
+    }
 
     /**
      * The number of distinct SQL statements with implemented SQL profiles.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("implementedSqlProfile")
-    Integer implementedSqlProfile;
+    private final Integer implementedSqlProfile;
+
+    public Integer getImplementedSqlProfile() {
+        return implementedSqlProfile;
+    }
 
     /**
      * The number of distinct SQL statements with index recommendations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("index")
-    Integer index;
+    private final Integer index;
+
+    public Integer getIndex() {
+        return index;
+    }
 
     /**
      * The number of distinct SQL statements with restructured SQL recommendations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restructure")
-    Integer restructure;
+    private final Integer restructure;
+
+    public Integer getRestructure() {
+        return restructure;
+    }
 
     /**
      * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
-    Integer statistics;
+    private final Integer statistics;
+
+    public Integer getStatistics() {
+        return statistics;
+    }
 
     /**
      * The number of distinct SQL statements with alternative plan recommendations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternatePlan")
-    Integer alternatePlan;
+    private final Integer alternatePlan;
+
+    public Integer getAlternatePlan() {
+        return alternatePlan;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningAdvisorTaskSummaryFindingCounts(");
+        sb.append("recommendedSqlProfile=").append(String.valueOf(this.recommendedSqlProfile));
+        sb.append(", implementedSqlProfile=").append(String.valueOf(this.implementedSqlProfile));
+        sb.append(", index=").append(String.valueOf(this.index));
+        sb.append(", restructure=").append(String.valueOf(this.restructure));
+        sb.append(", statistics=").append(String.valueOf(this.statistics));
+        sb.append(", alternatePlan=").append(String.valueOf(this.alternatePlan));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningAdvisorTaskSummaryFindingCounts)) {
+            return false;
+        }
+
+        SqlTuningAdvisorTaskSummaryFindingCounts other =
+                (SqlTuningAdvisorTaskSummaryFindingCounts) o;
+        return java.util.Objects.equals(this.recommendedSqlProfile, other.recommendedSqlProfile)
+                && java.util.Objects.equals(this.implementedSqlProfile, other.implementedSqlProfile)
+                && java.util.Objects.equals(this.index, other.index)
+                && java.util.Objects.equals(this.restructure, other.restructure)
+                && java.util.Objects.equals(this.statistics, other.statistics)
+                && java.util.Objects.equals(this.alternatePlan, other.alternatePlan)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.recommendedSqlProfile == null
+                                ? 43
+                                : this.recommendedSqlProfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.implementedSqlProfile == null
+                                ? 43
+                                : this.implementedSqlProfile.hashCode());
+        result = (result * PRIME) + (this.index == null ? 43 : this.index.hashCode());
+        result = (result * PRIME) + (this.restructure == null ? 43 : this.restructure.hashCode());
+        result = (result * PRIME) + (this.statistics == null ? 43 : this.statistics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.alternatePlan == null ? 43 : this.alternatePlan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

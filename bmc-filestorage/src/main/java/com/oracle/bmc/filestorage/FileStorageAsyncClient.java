@@ -7,6 +7,7 @@ package com.oracle.bmc.filestorage;
 import com.oracle.bmc.filestorage.internal.http.*;
 import com.oracle.bmc.filestorage.requests.*;
 import com.oracle.bmc.filestorage.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for FileStorage service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.filestorage.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.extern.slf4j.Slf4j
 public class FileStorageAsyncClient implements FileStorageAsync {
     /**
      * Service instance for FileStorage.
@@ -34,7 +34,9 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                     .serviceEndpointTemplate("https://filestorage.{region}.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(FileStorageAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class FileStorageAsyncClient implements FileStorageAsync {
          * @return the client
          */
         public FileStorageAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new FileStorageAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

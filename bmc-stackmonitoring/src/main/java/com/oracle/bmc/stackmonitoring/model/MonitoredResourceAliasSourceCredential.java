@@ -15,16 +15,21 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonitoredResourceAliasSourceCredential.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonitoredResourceAliasSourceCredential {
+public final class MonitoredResourceAliasSourceCredential {
+    @Deprecated
+    @java.beans.ConstructorProperties({"source", "name", "service"})
+    public MonitoredResourceAliasSourceCredential(String source, String name, String service) {
+        super();
+        this.source = source;
+        this.name = name;
+        this.service = service;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
@@ -79,24 +84,85 @@ public class MonitoredResourceAliasSourceCredential {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    String source;
+    private final String source;
+
+    public String getSource() {
+        return source;
+    }
 
     /**
      * The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute binded credential name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The name of the service owning the credential. Ex stack-monitoring or dbmgmt
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
-    String service;
+    private final String service;
+
+    public String getService() {
+        return service;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitoredResourceAliasSourceCredential(");
+        sb.append("source=").append(String.valueOf(this.source));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", service=").append(String.valueOf(this.service));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitoredResourceAliasSourceCredential)) {
+            return false;
+        }
+
+        MonitoredResourceAliasSourceCredential other = (MonitoredResourceAliasSourceCredential) o;
+        return java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.service, other.service)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

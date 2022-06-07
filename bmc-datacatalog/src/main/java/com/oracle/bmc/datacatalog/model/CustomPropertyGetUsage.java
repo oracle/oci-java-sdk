@@ -15,16 +15,61 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CustomPropertyGetUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CustomPropertyGetUsage {
+public final class CustomPropertyGetUsage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "displayName",
+        "description",
+        "value",
+        "dataType",
+        "namespaceName",
+        "namespaceKey",
+        "isMultiValued",
+        "isHidden",
+        "isEditable",
+        "isShownInList",
+        "isEventEnabled",
+        "isListType",
+        "allowedValues"
+    })
+    public CustomPropertyGetUsage(
+            String key,
+            String displayName,
+            String description,
+            String value,
+            CustomPropertyDataType dataType,
+            String namespaceName,
+            String namespaceKey,
+            Boolean isMultiValued,
+            Boolean isHidden,
+            Boolean isEditable,
+            Boolean isShownInList,
+            Boolean isEventEnabled,
+            Boolean isListType,
+            java.util.List<String> allowedValues) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.description = description;
+        this.value = value;
+        this.dataType = dataType;
+        this.namespaceName = namespaceName;
+        this.namespaceKey = namespaceKey;
+        this.isMultiValued = isMultiValued;
+        this.isHidden = isHidden;
+        this.isEditable = isEditable;
+        this.isShownInList = isShownInList;
+        this.isEventEnabled = isEventEnabled;
+        this.isListType = isListType;
+        this.allowedValues = allowedValues;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -206,90 +251,238 @@ public class CustomPropertyGetUsage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique Identifier of the attribute which is ID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Display name of the custom property
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the custom property
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The custom property value
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * The data type of the custom property
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    CustomPropertyDataType dataType;
+    private final CustomPropertyDataType dataType;
+
+    public CustomPropertyDataType getDataType() {
+        return dataType;
+    }
 
     /**
      * Namespace name of the custom property
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
-    String namespaceName;
+    private final String namespaceName;
+
+    public String getNamespaceName() {
+        return namespaceName;
+    }
 
     /**
      * Unique namespace key that is immutable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceKey")
-    String namespaceKey;
+    private final String namespaceKey;
+
+    public String getNamespaceKey() {
+        return namespaceKey;
+    }
 
     /**
      * If this field allows multiple values to be set
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
-    Boolean isMultiValued;
+    private final Boolean isMultiValued;
+
+    public Boolean getIsMultiValued() {
+        return isMultiValued;
+    }
 
     /**
      * If this field is a hidden field
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
-    Boolean isHidden;
+    private final Boolean isHidden;
+
+    public Boolean getIsHidden() {
+        return isHidden;
+    }
 
     /**
      * If this field is a editable field
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
-    Boolean isEditable;
+    private final Boolean isEditable;
+
+    public Boolean getIsEditable() {
+        return isEditable;
+    }
 
     /**
      * If this field is displayed in a list view of applicable objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
-    Boolean isShownInList;
+    private final Boolean isShownInList;
+
+    public Boolean getIsShownInList() {
+        return isShownInList;
+    }
 
     /**
      * If an OCI Event will be emitted when the custom property is modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
-    Boolean isEventEnabled;
+    private final Boolean isEventEnabled;
+
+    public Boolean getIsEventEnabled() {
+        return isEventEnabled;
+    }
 
     /**
      * Is this property allowed to have list of values
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isListType")
-    Boolean isListType;
+    private final Boolean isListType;
+
+    public Boolean getIsListType() {
+        return isListType;
+    }
 
     /**
      * Allowed values for the custom property if any
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
-    java.util.List<String> allowedValues;
+    private final java.util.List<String> allowedValues;
+
+    public java.util.List<String> getAllowedValues() {
+        return allowedValues;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CustomPropertyGetUsage(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(", namespaceKey=").append(String.valueOf(this.namespaceKey));
+        sb.append(", isMultiValued=").append(String.valueOf(this.isMultiValued));
+        sb.append(", isHidden=").append(String.valueOf(this.isHidden));
+        sb.append(", isEditable=").append(String.valueOf(this.isEditable));
+        sb.append(", isShownInList=").append(String.valueOf(this.isShownInList));
+        sb.append(", isEventEnabled=").append(String.valueOf(this.isEventEnabled));
+        sb.append(", isListType=").append(String.valueOf(this.isListType));
+        sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CustomPropertyGetUsage)) {
+            return false;
+        }
+
+        CustomPropertyGetUsage other = (CustomPropertyGetUsage) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.namespaceKey, other.namespaceKey)
+                && java.util.Objects.equals(this.isMultiValued, other.isMultiValued)
+                && java.util.Objects.equals(this.isHidden, other.isHidden)
+                && java.util.Objects.equals(this.isEditable, other.isEditable)
+                && java.util.Objects.equals(this.isShownInList, other.isShownInList)
+                && java.util.Objects.equals(this.isEventEnabled, other.isEventEnabled)
+                && java.util.Objects.equals(this.isListType, other.isListType)
+                && java.util.Objects.equals(this.allowedValues, other.allowedValues)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.namespaceKey == null ? 43 : this.namespaceKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultiValued == null ? 43 : this.isMultiValued.hashCode());
+        result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
+        result = (result * PRIME) + (this.isEditable == null ? 43 : this.isEditable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isShownInList == null ? 43 : this.isShownInList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEventEnabled == null ? 43 : this.isEventEnabled.hashCode());
+        result = (result * PRIME) + (this.isListType == null ? 43 : this.isListType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

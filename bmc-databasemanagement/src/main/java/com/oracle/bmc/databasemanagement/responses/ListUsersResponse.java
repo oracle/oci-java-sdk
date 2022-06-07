@@ -7,10 +7,6 @@ package com.oracle.bmc.databasemanagement.responses;
 import com.oracle.bmc.databasemanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -20,6 +16,10 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -27,10 +27,18 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned UserCollection instance.
      */
     private com.oracle.bmc.databasemanagement.model.UserCollection userCollection;
+
+    public com.oracle.bmc.databasemanagement.model.UserCollection getUserCollection() {
+        return userCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -57,6 +65,28 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.UserCollection userCollection;
+
+        public Builder userCollection(
+                com.oracle.bmc.databasemanagement.model.UserCollection userCollection) {
+            this.userCollection = userCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -74,5 +104,49 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
             return new ListUsersResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, userCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",userCollection=").append(String.valueOf(userCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListUsersResponse)) {
+            return false;
+        }
+
+        ListUsersResponse other = (ListUsersResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.userCollection, other.userCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userCollection == null ? 43 : this.userCollection.hashCode());
+        return result;
     }
 }

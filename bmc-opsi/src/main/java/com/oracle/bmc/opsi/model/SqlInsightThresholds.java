@@ -15,16 +15,40 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlInsightThresholds.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlInsightThresholds {
+public final class SqlInsightThresholds {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "degradationInPct",
+        "variability",
+        "inefficiencyInPct",
+        "increaseInIOInPct",
+        "increaseInCPUInPct",
+        "increaseInInefficientWaitInPct",
+        "improvedInPct"
+    })
+    public SqlInsightThresholds(
+            Integer degradationInPct,
+            Float variability,
+            Integer inefficiencyInPct,
+            Integer increaseInIOInPct,
+            Integer increaseInCPUInPct,
+            Integer increaseInInefficientWaitInPct,
+            Integer improvedInPct) {
+        super();
+        this.degradationInPct = degradationInPct;
+        this.variability = variability;
+        this.inefficiencyInPct = inefficiencyInPct;
+        this.increaseInIOInPct = increaseInIOInPct;
+        this.increaseInCPUInPct = increaseInCPUInPct;
+        this.increaseInInefficientWaitInPct = increaseInInefficientWaitInPct;
+        this.improvedInPct = improvedInPct;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("degradationInPct")
         private Integer degradationInPct;
@@ -129,26 +153,42 @@ public class SqlInsightThresholds {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Degradation Percent Threshold is used to derive degrading SQLs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("degradationInPct")
-    Integer degradationInPct;
+    private final Integer degradationInPct;
+
+    public Integer getDegradationInPct() {
+        return degradationInPct;
+    }
 
     /**
      * Variability Percent Threshold is used to derive variant SQLs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variability")
-    Float variability;
+    private final Float variability;
+
+    public Float getVariability() {
+        return variability;
+    }
 
     /**
      * Inefficiency Percent Threshold is used to derive inefficient SQLs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inefficiencyInPct")
-    Integer inefficiencyInPct;
+    private final Integer inefficiencyInPct;
+
+    public Integer getInefficiencyInPct() {
+        return inefficiencyInPct;
+    }
 
     /**
      * PctIncreaseInIO is used for deriving insights for SQLs which are degrading or
@@ -157,7 +197,11 @@ public class SqlInsightThresholds {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("increaseInIOInPct")
-    Integer increaseInIOInPct;
+    private final Integer increaseInIOInPct;
+
+    public Integer getIncreaseInIOInPct() {
+        return increaseInIOInPct;
+    }
 
     /**
      * PctIncreaseInCPU is used for deriving insights for SQLs which are degrading or
@@ -166,7 +210,11 @@ public class SqlInsightThresholds {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("increaseInCPUInPct")
-    Integer increaseInCPUInPct;
+    private final Integer increaseInCPUInPct;
+
+    public Integer getIncreaseInCPUInPct() {
+        return increaseInCPUInPct;
+    }
 
     /**
      * PctIncreaseInIO is used for deriving insights for SQLs which are degrading or
@@ -175,15 +223,98 @@ public class SqlInsightThresholds {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("increaseInInefficientWaitInPct")
-    Integer increaseInInefficientWaitInPct;
+    private final Integer increaseInInefficientWaitInPct;
+
+    public Integer getIncreaseInInefficientWaitInPct() {
+        return increaseInInefficientWaitInPct;
+    }
 
     /**
      * Improved Percent Threshold is used to derive improving SQLs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("improvedInPct")
-    Integer improvedInPct;
+    private final Integer improvedInPct;
+
+    public Integer getImprovedInPct() {
+        return improvedInPct;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlInsightThresholds(");
+        sb.append("degradationInPct=").append(String.valueOf(this.degradationInPct));
+        sb.append(", variability=").append(String.valueOf(this.variability));
+        sb.append(", inefficiencyInPct=").append(String.valueOf(this.inefficiencyInPct));
+        sb.append(", increaseInIOInPct=").append(String.valueOf(this.increaseInIOInPct));
+        sb.append(", increaseInCPUInPct=").append(String.valueOf(this.increaseInCPUInPct));
+        sb.append(", increaseInInefficientWaitInPct=")
+                .append(String.valueOf(this.increaseInInefficientWaitInPct));
+        sb.append(", improvedInPct=").append(String.valueOf(this.improvedInPct));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlInsightThresholds)) {
+            return false;
+        }
+
+        SqlInsightThresholds other = (SqlInsightThresholds) o;
+        return java.util.Objects.equals(this.degradationInPct, other.degradationInPct)
+                && java.util.Objects.equals(this.variability, other.variability)
+                && java.util.Objects.equals(this.inefficiencyInPct, other.inefficiencyInPct)
+                && java.util.Objects.equals(this.increaseInIOInPct, other.increaseInIOInPct)
+                && java.util.Objects.equals(this.increaseInCPUInPct, other.increaseInCPUInPct)
+                && java.util.Objects.equals(
+                        this.increaseInInefficientWaitInPct, other.increaseInInefficientWaitInPct)
+                && java.util.Objects.equals(this.improvedInPct, other.improvedInPct)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.degradationInPct == null ? 43 : this.degradationInPct.hashCode());
+        result = (result * PRIME) + (this.variability == null ? 43 : this.variability.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inefficiencyInPct == null ? 43 : this.inefficiencyInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.increaseInIOInPct == null ? 43 : this.increaseInIOInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.increaseInCPUInPct == null
+                                ? 43
+                                : this.increaseInCPUInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.increaseInInefficientWaitInPct == null
+                                ? 43
+                                : this.increaseInInefficientWaitInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.improvedInPct == null ? 43 : this.improvedInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

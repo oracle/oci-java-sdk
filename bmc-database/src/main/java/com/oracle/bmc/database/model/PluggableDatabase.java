@@ -19,16 +19,55 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PluggableDatabase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PluggableDatabase {
+public final class PluggableDatabase {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "containerDatabaseId",
+        "pdbName",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "connectionStrings",
+        "openMode",
+        "isRestricted",
+        "compartmentId",
+        "freeformTags",
+        "definedTags"
+    })
+    public PluggableDatabase(
+            String id,
+            String containerDatabaseId,
+            String pdbName,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            PluggableDatabaseConnectionStrings connectionStrings,
+            OpenMode openMode,
+            Boolean isRestricted,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.containerDatabaseId = containerDatabaseId;
+        this.pdbName = pdbName;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.connectionStrings = connectionStrings;
+        this.openMode = openMode;
+        this.isRestricted = isRestricted;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -189,27 +228,43 @@ public class PluggableDatabase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pluggable database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CDB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
-    String containerDatabaseId;
+    private final String containerDatabaseId;
+
+    public String getContainerDatabaseId() {
+        return containerDatabaseId;
+    }
 
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
-    String pdbName;
+    private final String pdbName;
+
+    public String getPdbName() {
+        return pdbName;
+    }
+
     /**
      * The current state of the pluggable database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -223,6 +278,9 @@ public class PluggableDatabase {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -260,27 +318,43 @@ public class PluggableDatabase {
      * The current state of the pluggable database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Detailed message for the lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time the pluggable database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
-    PluggableDatabaseConnectionStrings connectionStrings;
+    private final PluggableDatabaseConnectionStrings connectionStrings;
+
+    public PluggableDatabaseConnectionStrings getConnectionStrings() {
+        return connectionStrings;
+    }
+
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OpenMode {
         ReadOnly("READ_ONLY"),
         ReadWrite("READ_WRITE"),
@@ -292,6 +366,9 @@ public class PluggableDatabase {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OpenMode.class);
 
         private final String value;
         private static java.util.Map<String, OpenMode> map;
@@ -330,7 +407,11 @@ public class PluggableDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
-    OpenMode openMode;
+    private final OpenMode openMode;
+
+    public OpenMode getOpenMode() {
+        return openMode;
+    }
 
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode,
@@ -338,13 +419,21 @@ public class PluggableDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
-    Boolean isRestricted;
+    private final Boolean isRestricted;
+
+    public Boolean getIsRestricted() {
+        return isRestricted;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -354,7 +443,11 @@ public class PluggableDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -362,8 +455,96 @@ public class PluggableDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PluggableDatabase(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", containerDatabaseId=").append(String.valueOf(this.containerDatabaseId));
+        sb.append(", pdbName=").append(String.valueOf(this.pdbName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
+        sb.append(", openMode=").append(String.valueOf(this.openMode));
+        sb.append(", isRestricted=").append(String.valueOf(this.isRestricted));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PluggableDatabase)) {
+            return false;
+        }
+
+        PluggableDatabase other = (PluggableDatabase) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.containerDatabaseId, other.containerDatabaseId)
+                && java.util.Objects.equals(this.pdbName, other.pdbName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
+                && java.util.Objects.equals(this.openMode, other.openMode)
+                && java.util.Objects.equals(this.isRestricted, other.isRestricted)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containerDatabaseId == null
+                                ? 43
+                                : this.containerDatabaseId.hashCode());
+        result = (result * PRIME) + (this.pdbName == null ? 43 : this.pdbName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionStrings == null ? 43 : this.connectionStrings.hashCode());
+        result = (result * PRIME) + (this.openMode == null ? 43 : this.openMode.hashCode());
+        result = (result * PRIME) + (this.isRestricted == null ? 43 : this.isRestricted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

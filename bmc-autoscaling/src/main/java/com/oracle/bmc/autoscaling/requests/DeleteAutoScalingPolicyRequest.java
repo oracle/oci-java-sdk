@@ -9,14 +9,6 @@ import com.oracle.bmc.autoscaling.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/DeleteAutoScalingPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteAutoScalingPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteAutoScalingPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,17 @@ public class DeleteAutoScalingPolicyRequest
      */
     private String autoScalingConfigurationId;
 
+    public String getAutoScalingConfigurationId() {
+        return autoScalingConfigurationId;
+    }
     /**
      * The ID of the autoscaling policy.
      */
     private String autoScalingPolicyId;
 
+    public String getAutoScalingPolicyId() {
+        return autoScalingPolicyId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -38,10 +36,17 @@ public class DeleteAutoScalingPolicyRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -49,6 +54,53 @@ public class DeleteAutoScalingPolicyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String autoScalingConfigurationId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * @return this builder instance
+         */
+        public Builder autoScalingConfigurationId(String autoScalingConfigurationId) {
+            this.autoScalingConfigurationId = autoScalingConfigurationId;
+            return this;
+        }
+
+        private String autoScalingPolicyId = null;
+
+        /**
+         * The ID of the autoscaling policy.
+         * @return this builder instance
+         */
+        public Builder autoScalingPolicyId(String autoScalingPolicyId) {
+            this.autoScalingPolicyId = autoScalingPolicyId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -103,5 +155,89 @@ public class DeleteAutoScalingPolicyRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteAutoScalingPolicyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteAutoScalingPolicyRequest
+         */
+        public DeleteAutoScalingPolicyRequest buildWithoutInvocationCallback() {
+            DeleteAutoScalingPolicyRequest request = new DeleteAutoScalingPolicyRequest();
+            request.autoScalingConfigurationId = autoScalingConfigurationId;
+            request.autoScalingPolicyId = autoScalingPolicyId;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new DeleteAutoScalingPolicyRequest(autoScalingConfigurationId, autoScalingPolicyId, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .autoScalingConfigurationId(autoScalingConfigurationId)
+                .autoScalingPolicyId(autoScalingPolicyId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",autoScalingConfigurationId=")
+                .append(String.valueOf(this.autoScalingConfigurationId));
+        sb.append(",autoScalingPolicyId=").append(String.valueOf(this.autoScalingPolicyId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteAutoScalingPolicyRequest)) {
+            return false;
+        }
+
+        DeleteAutoScalingPolicyRequest other = (DeleteAutoScalingPolicyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.autoScalingConfigurationId, other.autoScalingConfigurationId)
+                && java.util.Objects.equals(this.autoScalingPolicyId, other.autoScalingPolicyId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.autoScalingConfigurationId == null
+                                ? 43
+                                : this.autoScalingConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoScalingPolicyId == null
+                                ? 43
+                                : this.autoScalingPolicyId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

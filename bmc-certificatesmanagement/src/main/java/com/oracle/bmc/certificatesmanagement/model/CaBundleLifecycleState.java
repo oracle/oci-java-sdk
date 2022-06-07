@@ -8,7 +8,6 @@ package com.oracle.bmc.certificatesmanagement.model;
  * The current lifecycle state of the CA bundle.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.extern.slf4j.Slf4j
 public enum CaBundleLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
@@ -22,6 +21,9 @@ public enum CaBundleLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CaBundleLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, CaBundleLifecycleState> map;

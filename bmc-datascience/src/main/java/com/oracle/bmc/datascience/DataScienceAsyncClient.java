@@ -7,6 +7,7 @@ package com.oracle.bmc.datascience;
 import com.oracle.bmc.datascience.internal.http.*;
 import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for DataScience service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.datascience.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.extern.slf4j.Slf4j
 public class DataScienceAsyncClient implements DataScienceAsync {
     /**
      * Service instance for DataScience.
@@ -34,7 +34,9 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                     .serviceEndpointTemplate("https://datascience.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataScienceAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class DataScienceAsyncClient implements DataScienceAsync {
          * @return the client
          */
         public DataScienceAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DataScienceAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

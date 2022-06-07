@@ -15,14 +15,158 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystem {
+public final class DbSystem {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "iormConfigCache",
+        "id",
+        "compartmentId",
+        "displayName",
+        "availabilityDomain",
+        "faultDomains",
+        "subnetId",
+        "backupSubnetId",
+        "nsgIds",
+        "backupNetworkNsgIds",
+        "memorySizeInGBs",
+        "storageVolumePerformanceMode",
+        "shape",
+        "dbSystemOptions",
+        "sshPublicKeys",
+        "timeZone",
+        "hostname",
+        "domain",
+        "kmsKeyId",
+        "version",
+        "cpuCoreCount",
+        "clusterName",
+        "dataStoragePercentage",
+        "databaseEdition",
+        "lastPatchHistoryEntryId",
+        "listenerPort",
+        "lifecycleState",
+        "timeCreated",
+        "lifecycleDetails",
+        "diskRedundancy",
+        "sparseDiskgroup",
+        "scanIpIds",
+        "vipIds",
+        "scanDnsRecordId",
+        "scanDnsName",
+        "zoneId",
+        "dataStorageSizeInGBs",
+        "recoStorageSizeInGB",
+        "nodeCount",
+        "licenseModel",
+        "maintenanceWindow",
+        "lastMaintenanceRunId",
+        "nextMaintenanceRunId",
+        "freeformTags",
+        "definedTags",
+        "sourceDbSystemId",
+        "pointInTimeDataDiskCloneTimestamp"
+    })
+    public DbSystem(
+            ExadataIormConfig iormConfigCache,
+            String id,
+            String compartmentId,
+            String displayName,
+            String availabilityDomain,
+            java.util.List<String> faultDomains,
+            String subnetId,
+            String backupSubnetId,
+            java.util.List<String> nsgIds,
+            java.util.List<String> backupNetworkNsgIds,
+            Integer memorySizeInGBs,
+            StorageVolumePerformanceMode storageVolumePerformanceMode,
+            String shape,
+            DbSystemOptions dbSystemOptions,
+            java.util.List<String> sshPublicKeys,
+            String timeZone,
+            String hostname,
+            String domain,
+            String kmsKeyId,
+            String version,
+            Integer cpuCoreCount,
+            String clusterName,
+            Integer dataStoragePercentage,
+            DatabaseEdition databaseEdition,
+            String lastPatchHistoryEntryId,
+            Integer listenerPort,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            String lifecycleDetails,
+            DiskRedundancy diskRedundancy,
+            Boolean sparseDiskgroup,
+            java.util.List<String> scanIpIds,
+            java.util.List<String> vipIds,
+            String scanDnsRecordId,
+            String scanDnsName,
+            String zoneId,
+            Integer dataStorageSizeInGBs,
+            Integer recoStorageSizeInGB,
+            Integer nodeCount,
+            LicenseModel licenseModel,
+            MaintenanceWindow maintenanceWindow,
+            String lastMaintenanceRunId,
+            String nextMaintenanceRunId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String sourceDbSystemId,
+            java.util.Date pointInTimeDataDiskCloneTimestamp) {
+        super();
+        this.iormConfigCache = iormConfigCache;
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomains = faultDomains;
+        this.subnetId = subnetId;
+        this.backupSubnetId = backupSubnetId;
+        this.nsgIds = nsgIds;
+        this.backupNetworkNsgIds = backupNetworkNsgIds;
+        this.memorySizeInGBs = memorySizeInGBs;
+        this.storageVolumePerformanceMode = storageVolumePerformanceMode;
+        this.shape = shape;
+        this.dbSystemOptions = dbSystemOptions;
+        this.sshPublicKeys = sshPublicKeys;
+        this.timeZone = timeZone;
+        this.hostname = hostname;
+        this.domain = domain;
+        this.kmsKeyId = kmsKeyId;
+        this.version = version;
+        this.cpuCoreCount = cpuCoreCount;
+        this.clusterName = clusterName;
+        this.dataStoragePercentage = dataStoragePercentage;
+        this.databaseEdition = databaseEdition;
+        this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+        this.listenerPort = listenerPort;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.lifecycleDetails = lifecycleDetails;
+        this.diskRedundancy = diskRedundancy;
+        this.sparseDiskgroup = sparseDiskgroup;
+        this.scanIpIds = scanIpIds;
+        this.vipIds = vipIds;
+        this.scanDnsRecordId = scanDnsRecordId;
+        this.scanDnsName = scanDnsName;
+        this.zoneId = zoneId;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.recoStorageSizeInGB = recoStorageSizeInGB;
+        this.nodeCount = nodeCount;
+        this.licenseModel = licenseModel;
+        this.maintenanceWindow = maintenanceWindow;
+        this.lastMaintenanceRunId = lastMaintenanceRunId;
+        this.nextMaintenanceRunId = nextMaintenanceRunId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.sourceDbSystemId = sourceDbSystemId;
+        this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("iormConfigCache")
         private ExadataIormConfig iormConfigCache;
@@ -571,38 +715,66 @@ public class DbSystem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("iormConfigCache")
-    ExadataIormConfig iormConfigCache;
+    private final ExadataIormConfig iormConfigCache;
+
+    public ExadataIormConfig getIormConfigCache() {
+        return iormConfigCache;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The name of the availability domain that the DB system is located in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * List of the Fault Domains in which this DB system is provisioned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
-    java.util.List<String> faultDomains;
+    private final java.util.List<String> faultDomains;
+
+    public java.util.List<String> getFaultDomains() {
+        return faultDomains;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
@@ -617,7 +789,11 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
@@ -626,34 +802,50 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
-    String backupSubnetId;
+    private final String backupSubnetId;
+
+    public String getBackupSubnetId() {
+        return backupSubnetId;
+    }
 
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
-    java.util.List<String> backupNetworkNsgIds;
+    private final java.util.List<String> backupNetworkNsgIds;
+
+    public java.util.List<String> getBackupNetworkNsgIds() {
+        return backupNetworkNsgIds;
+    }
 
     /**
      * Memory allocated to the DB system, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
-    Integer memorySizeInGBs;
+    private final Integer memorySizeInGBs;
+
+    public Integer getMemorySizeInGBs() {
+        return memorySizeInGBs;
+    }
+
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code HIGH_PERFORMANCE}. See [Block Volume Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum StorageVolumePerformanceMode {
         Balanced("BALANCED"),
         HighPerformance("HIGH_PERFORMANCE"),
@@ -663,6 +855,9 @@ public class DbSystem {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StorageVolumePerformanceMode.class);
 
         private final String value;
         private static java.util.Map<String, StorageVolumePerformanceMode> map;
@@ -701,7 +896,11 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
-    StorageVolumePerformanceMode storageVolumePerformanceMode;
+    private final StorageVolumePerformanceMode storageVolumePerformanceMode;
+
+    public StorageVolumePerformanceMode getStorageVolumePerformanceMode() {
+        return storageVolumePerformanceMode;
+    }
 
     /**
      * The shape of the DB system. The shape determines resources to allocate to the DB system.
@@ -710,59 +909,99 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemOptions")
-    DbSystemOptions dbSystemOptions;
+    private final DbSystemOptions dbSystemOptions;
+
+    public DbSystemOptions getDbSystemOptions() {
+        return dbSystemOptions;
+    }
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
-    java.util.List<String> sshPublicKeys;
+    private final java.util.List<String> sshPublicKeys;
+
+    public java.util.List<String> getSshPublicKeys() {
+        return sshPublicKeys;
+    }
 
     /**
      * The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    String timeZone;
+    private final String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
 
     /**
      * The hostname for the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * The domain name for the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
+    private final String domain;
+
+    public String getDomain() {
+        return domain;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The Oracle Database version of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The number of CPU cores enabled on the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
-    String clusterName;
+    private final String clusterName;
+
+    public String getClusterName() {
+        return clusterName;
+    }
 
     /**
      * The percentage assigned to DATA storage (user data and database files).
@@ -770,12 +1009,16 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
-    Integer dataStoragePercentage;
+    private final Integer dataStoragePercentage;
+
+    public Integer getDataStoragePercentage() {
+        return dataStoragePercentage;
+    }
+
     /**
      * The Oracle Database edition that applies to all the databases on the DB system.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DatabaseEdition {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
@@ -787,6 +1030,9 @@ public class DbSystem {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseEdition.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseEdition> map;
@@ -825,23 +1071,35 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-    DatabaseEdition databaseEdition;
+    private final DatabaseEdition databaseEdition;
+
+    public DatabaseEdition getDatabaseEdition() {
+        return databaseEdition;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
-    String lastPatchHistoryEntryId;
+    private final String lastPatchHistoryEntryId;
+
+    public String getLastPatchHistoryEntryId() {
+        return lastPatchHistoryEntryId;
+    }
 
     /**
      * The port number configured for the listener on the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
-    Integer listenerPort;
+    private final Integer listenerPort;
+
+    public Integer getListenerPort() {
+        return listenerPort;
+    }
+
     /**
      * The current state of the DB system.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -859,6 +1117,9 @@ public class DbSystem {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -896,26 +1157,38 @@ public class DbSystem {
      * The current state of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the DB system was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * The type of redundancy configured for the DB system.
      * NORMAL is 2-way redundancy.
      * HIGH is 3-way redundancy.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DiskRedundancy {
         High("HIGH"),
         Normal("NORMAL"),
@@ -925,6 +1198,9 @@ public class DbSystem {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DiskRedundancy.class);
 
         private final String value;
         private static java.util.Map<String, DiskRedundancy> map;
@@ -965,14 +1241,22 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
-    DiskRedundancy diskRedundancy;
+    private final DiskRedundancy diskRedundancy;
+
+    public DiskRedundancy getDiskRedundancy() {
+        return diskRedundancy;
+    }
 
     /**
      * True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
-    Boolean sparseDiskgroup;
+    private final Boolean sparseDiskgroup;
+
+    public Boolean getSparseDiskgroup() {
+        return sparseDiskgroup;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
@@ -983,7 +1267,11 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
-    java.util.List<String> scanIpIds;
+    private final java.util.List<String> scanIpIds;
+
+    public java.util.List<String> getScanIpIds() {
+        return scanIpIds;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system.
@@ -994,54 +1282,82 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vipIds")
-    java.util.List<String> vipIds;
+    private final java.util.List<String> vipIds;
+
+    public java.util.List<String> getVipIds() {
+        return vipIds;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
-    String scanDnsRecordId;
+    private final String scanDnsRecordId;
+
+    public String getScanDnsRecordId() {
+        return scanDnsRecordId;
+    }
 
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
-    String scanDnsName;
+    private final String scanDnsName;
+
+    public String getScanDnsName() {
+        return scanDnsName;
+    }
 
     /**
      * The OCID of the zone the DB system is associated with.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
-    String zoneId;
+    private final String zoneId;
+
+    public String getZoneId() {
+        return zoneId;
+    }
 
     /**
      * The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-    Integer dataStorageSizeInGBs;
+    private final Integer dataStorageSizeInGBs;
+
+    public Integer getDataStorageSizeInGBs() {
+        return dataStorageSizeInGBs;
+    }
 
     /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoStorageSizeInGB")
-    Integer recoStorageSizeInGB;
+    private final Integer recoStorageSizeInGB;
+
+    public Integer getRecoStorageSizeInGB() {
+        return recoStorageSizeInGB;
+    }
 
     /**
      * The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
-    Integer nodeCount;
+    private final Integer nodeCount;
+
+    public Integer getNodeCount() {
+        return nodeCount;
+    }
+
     /**
      * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
@@ -1051,6 +1367,9 @@ public class DbSystem {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LicenseModel.class);
 
         private final String value;
         private static java.util.Map<String, LicenseModel> map;
@@ -1089,22 +1408,38 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
-    MaintenanceWindow maintenanceWindow;
+    private final MaintenanceWindow maintenanceWindow;
+
+    public MaintenanceWindow getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
-    String lastMaintenanceRunId;
+    private final String lastMaintenanceRunId;
+
+    public String getLastMaintenanceRunId() {
+        return lastMaintenanceRunId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
-    String nextMaintenanceRunId;
+    private final String nextMaintenanceRunId;
+
+    public String getNextMaintenanceRunId() {
+        return nextMaintenanceRunId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -1114,7 +1449,11 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -1122,20 +1461,284 @@ public class DbSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
-    String sourceDbSystemId;
+    private final String sourceDbSystemId;
+
+    public String getSourceDbSystemId() {
+        return sourceDbSystemId;
+    }
 
     /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pointInTimeDataDiskCloneTimestamp")
-    java.util.Date pointInTimeDataDiskCloneTimestamp;
+    private final java.util.Date pointInTimeDataDiskCloneTimestamp;
+
+    public java.util.Date getPointInTimeDataDiskCloneTimestamp() {
+        return pointInTimeDataDiskCloneTimestamp;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystem(");
+        sb.append("iormConfigCache=").append(String.valueOf(this.iormConfigCache));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
+        sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", storageVolumePerformanceMode=")
+                .append(String.valueOf(this.storageVolumePerformanceMode));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", dbSystemOptions=").append(String.valueOf(this.dbSystemOptions));
+        sb.append(", sshPublicKeys=").append(String.valueOf(this.sshPublicKeys));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", domain=").append(String.valueOf(this.domain));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", clusterName=").append(String.valueOf(this.clusterName));
+        sb.append(", dataStoragePercentage=").append(String.valueOf(this.dataStoragePercentage));
+        sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append(", lastPatchHistoryEntryId=")
+                .append(String.valueOf(this.lastPatchHistoryEntryId));
+        sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", diskRedundancy=").append(String.valueOf(this.diskRedundancy));
+        sb.append(", sparseDiskgroup=").append(String.valueOf(this.sparseDiskgroup));
+        sb.append(", scanIpIds=").append(String.valueOf(this.scanIpIds));
+        sb.append(", vipIds=").append(String.valueOf(this.vipIds));
+        sb.append(", scanDnsRecordId=").append(String.valueOf(this.scanDnsRecordId));
+        sb.append(", scanDnsName=").append(String.valueOf(this.scanDnsName));
+        sb.append(", zoneId=").append(String.valueOf(this.zoneId));
+        sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", recoStorageSizeInGB=").append(String.valueOf(this.recoStorageSizeInGB));
+        sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
+        sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
+        sb.append(", pointInTimeDataDiskCloneTimestamp=")
+                .append(String.valueOf(this.pointInTimeDataDiskCloneTimestamp));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystem)) {
+            return false;
+        }
+
+        DbSystem other = (DbSystem) o;
+        return java.util.Objects.equals(this.iormConfigCache, other.iormConfigCache)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.faultDomains, other.faultDomains)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
+                && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(
+                        this.storageVolumePerformanceMode, other.storageVolumePerformanceMode)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.dbSystemOptions, other.dbSystemOptions)
+                && java.util.Objects.equals(this.sshPublicKeys, other.sshPublicKeys)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.clusterName, other.clusterName)
+                && java.util.Objects.equals(this.dataStoragePercentage, other.dataStoragePercentage)
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(
+                        this.lastPatchHistoryEntryId, other.lastPatchHistoryEntryId)
+                && java.util.Objects.equals(this.listenerPort, other.listenerPort)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.diskRedundancy, other.diskRedundancy)
+                && java.util.Objects.equals(this.sparseDiskgroup, other.sparseDiskgroup)
+                && java.util.Objects.equals(this.scanIpIds, other.scanIpIds)
+                && java.util.Objects.equals(this.vipIds, other.vipIds)
+                && java.util.Objects.equals(this.scanDnsRecordId, other.scanDnsRecordId)
+                && java.util.Objects.equals(this.scanDnsName, other.scanDnsName)
+                && java.util.Objects.equals(this.zoneId, other.zoneId)
+                && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.recoStorageSizeInGB, other.recoStorageSizeInGB)
+                && java.util.Objects.equals(this.nodeCount, other.nodeCount)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
+                && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.sourceDbSystemId, other.sourceDbSystemId)
+                && java.util.Objects.equals(
+                        this.pointInTimeDataDiskCloneTimestamp,
+                        other.pointInTimeDataDiskCloneTimestamp)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.iormConfigCache == null ? 43 : this.iormConfigCache.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.faultDomains == null ? 43 : this.faultDomains.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSubnetId == null ? 43 : this.backupSubnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupNetworkNsgIds == null
+                                ? 43
+                                : this.backupNetworkNsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageVolumePerformanceMode == null
+                                ? 43
+                                : this.storageVolumePerformanceMode.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSystemOptions == null ? 43 : this.dbSystemOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sshPublicKeys == null ? 43 : this.sshPublicKeys.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.clusterName == null ? 43 : this.clusterName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStoragePercentage == null
+                                ? 43
+                                : this.dataStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastPatchHistoryEntryId == null
+                                ? 43
+                                : this.lastPatchHistoryEntryId.hashCode());
+        result = (result * PRIME) + (this.listenerPort == null ? 43 : this.listenerPort.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diskRedundancy == null ? 43 : this.diskRedundancy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sparseDiskgroup == null ? 43 : this.sparseDiskgroup.hashCode());
+        result = (result * PRIME) + (this.scanIpIds == null ? 43 : this.scanIpIds.hashCode());
+        result = (result * PRIME) + (this.vipIds == null ? 43 : this.vipIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanDnsRecordId == null ? 43 : this.scanDnsRecordId.hashCode());
+        result = (result * PRIME) + (this.scanDnsName == null ? 43 : this.scanDnsName.hashCode());
+        result = (result * PRIME) + (this.zoneId == null ? 43 : this.zoneId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInGBs == null
+                                ? 43
+                                : this.dataStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recoStorageSizeInGB == null
+                                ? 43
+                                : this.recoStorageSizeInGB.hashCode());
+        result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastMaintenanceRunId == null
+                                ? 43
+                                : this.lastMaintenanceRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextMaintenanceRunId == null
+                                ? 43
+                                : this.nextMaintenanceRunId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDbSystemId == null ? 43 : this.sourceDbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pointInTimeDataDiskCloneTimestamp == null
+                                ? 43
+                                : this.pointInTimeDataDiskCloneTimestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

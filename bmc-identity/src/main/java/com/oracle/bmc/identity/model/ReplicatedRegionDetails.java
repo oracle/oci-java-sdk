@@ -15,16 +15,21 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ReplicatedRegionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReplicatedRegionDetails {
+public final class ReplicatedRegionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"region", "url", "state"})
+    public ReplicatedRegionDetails(String region, String url, State state) {
+        super();
+        this.region = region;
+        this.url = url;
+        this.state = state;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
@@ -78,6 +83,10 @@ public class ReplicatedRegionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A REPLICATION_ENABLED region, e.g. us-ashburn-1.
      * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
@@ -85,18 +94,26 @@ public class ReplicatedRegionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * Region-agnostic identity domain URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
+
     /**
      * The IDCS-replicated region state.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum State {
         EnablingReplication("ENABLING_REPLICATION"),
         ReplicationEnabled("REPLICATION_ENABLED"),
@@ -109,6 +126,8 @@ public class ReplicatedRegionDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(State.class);
 
         private final String value;
         private static java.util.Map<String, State> map;
@@ -147,8 +166,57 @@ public class ReplicatedRegionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    State state;
+    private final State state;
+
+    public State getState() {
+        return state;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReplicatedRegionDetails(");
+        sb.append("region=").append(String.valueOf(this.region));
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append(", state=").append(String.valueOf(this.state));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReplicatedRegionDetails)) {
+            return false;
+        }
+
+        ReplicatedRegionDetails other = (ReplicatedRegionDetails) o;
+        return java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(this.state, other.state)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

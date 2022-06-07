@@ -26,9 +26,12 @@ import com.oracle.bmc.usage.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.RequiredArgsConstructor
 public class RewardsPaginators {
     private final Rewards client;
+
+    public RewardsPaginators(Rewards client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listProducts operation. This iterable

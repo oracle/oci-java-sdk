@@ -15,16 +15,24 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IngressListenerTlsConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IngressListenerTlsConfig {
+public final class IngressListenerTlsConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"mode", "serverCertificate", "clientValidation"})
+    public IngressListenerTlsConfig(
+            Mode mode,
+            TlsCertificate serverCertificate,
+            IngressListenerClientValidationConfig clientValidation) {
+        super();
+        this.mode = mode;
+        this.serverCertificate = serverCertificate;
+        this.clientValidation = clientValidation;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
@@ -82,6 +90,10 @@ public class IngressListenerTlsConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * DISABLED: Connection can only be plaintext.
      * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
@@ -89,7 +101,6 @@ public class IngressListenerTlsConfig {
      * MUTUAL_TLS: Connection can only be MTLS.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Mode {
         Disabled("DISABLED"),
         Permissive("PERMISSIVE"),
@@ -101,6 +112,8 @@ public class IngressListenerTlsConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Mode.class);
 
         private final String value;
         private static java.util.Map<String, Mode> map;
@@ -141,14 +154,75 @@ public class IngressListenerTlsConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
-    Mode mode;
+    private final Mode mode;
+
+    public Mode getMode() {
+        return mode;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("serverCertificate")
-    TlsCertificate serverCertificate;
+    private final TlsCertificate serverCertificate;
+
+    public TlsCertificate getServerCertificate() {
+        return serverCertificate;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("clientValidation")
-    IngressListenerClientValidationConfig clientValidation;
+    private final IngressListenerClientValidationConfig clientValidation;
+
+    public IngressListenerClientValidationConfig getClientValidation() {
+        return clientValidation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IngressListenerTlsConfig(");
+        sb.append("mode=").append(String.valueOf(this.mode));
+        sb.append(", serverCertificate=").append(String.valueOf(this.serverCertificate));
+        sb.append(", clientValidation=").append(String.valueOf(this.clientValidation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IngressListenerTlsConfig)) {
+            return false;
+        }
+
+        IngressListenerTlsConfig other = (IngressListenerTlsConfig) o;
+        return java.util.Objects.equals(this.mode, other.mode)
+                && java.util.Objects.equals(this.serverCertificate, other.serverCertificate)
+                && java.util.Objects.equals(this.clientValidation, other.clientValidation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.mode == null ? 43 : this.mode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serverCertificate == null ? 43 : this.serverCertificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientValidation == null ? 43 : this.clientValidation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

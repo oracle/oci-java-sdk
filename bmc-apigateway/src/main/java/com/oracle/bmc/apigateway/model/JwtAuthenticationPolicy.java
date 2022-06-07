@@ -17,22 +17,17 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = JwtAuthenticationPolicy.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JwtAuthenticationPolicy extends AuthenticationPolicy {
+public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isAnonymousAccessAllowed")
         private Boolean isAnonymousAccessAllowed;
@@ -159,6 +154,10 @@ public class JwtAuthenticationPolicy extends AuthenticationPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public JwtAuthenticationPolicy(
             Boolean isAnonymousAccessAllowed,
@@ -185,13 +184,21 @@ public class JwtAuthenticationPolicy extends AuthenticationPolicy {
      * The name of the header containing the authentication token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tokenHeader")
-    String tokenHeader;
+    private final String tokenHeader;
+
+    public String getTokenHeader() {
+        return tokenHeader;
+    }
 
     /**
      * The name of the query parameter containing the authentication token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tokenQueryParam")
-    String tokenQueryParam;
+    private final String tokenQueryParam;
+
+    public String getTokenQueryParam() {
+        return tokenQueryParam;
+    }
 
     /**
      * The authentication scheme that is to be used when authenticating
@@ -199,25 +206,41 @@ public class JwtAuthenticationPolicy extends AuthenticationPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tokenAuthScheme")
-    String tokenAuthScheme;
+    private final String tokenAuthScheme;
+
+    public String getTokenAuthScheme() {
+        return tokenAuthScheme;
+    }
 
     /**
      * A list of parties that could have issued the token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("issuers")
-    java.util.List<String> issuers;
+    private final java.util.List<String> issuers;
+
+    public java.util.List<String> getIssuers() {
+        return issuers;
+    }
 
     /**
      * The list of intended recipients for the token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("audiences")
-    java.util.List<String> audiences;
+    private final java.util.List<String> audiences;
+
+    public java.util.List<String> getAudiences() {
+        return audiences;
+    }
 
     /**
      * A list of claims which should be validated to consider the token valid.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyClaims")
-    java.util.List<JsonWebTokenClaim> verifyClaims;
+    private final java.util.List<JsonWebTokenClaim> verifyClaims;
+
+    public java.util.List<JsonWebTokenClaim> getVerifyClaims() {
+        return verifyClaims;
+    }
 
     /**
      * The maximum expected time difference between the system clocks
@@ -225,11 +248,89 @@ public class JwtAuthenticationPolicy extends AuthenticationPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxClockSkewInSeconds")
-    Float maxClockSkewInSeconds;
+    private final Float maxClockSkewInSeconds;
+
+    public Float getMaxClockSkewInSeconds() {
+        return maxClockSkewInSeconds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("publicKeys")
-    PublicKeySet publicKeys;
+    private final PublicKeySet publicKeys;
+
+    public PublicKeySet getPublicKeys() {
+        return publicKeys;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JwtAuthenticationPolicy(");
+        sb.append("super=").append(super.toString());
+        sb.append(", tokenHeader=").append(String.valueOf(this.tokenHeader));
+        sb.append(", tokenQueryParam=").append(String.valueOf(this.tokenQueryParam));
+        sb.append(", tokenAuthScheme=").append(String.valueOf(this.tokenAuthScheme));
+        sb.append(", issuers=").append(String.valueOf(this.issuers));
+        sb.append(", audiences=").append(String.valueOf(this.audiences));
+        sb.append(", verifyClaims=").append(String.valueOf(this.verifyClaims));
+        sb.append(", maxClockSkewInSeconds=").append(String.valueOf(this.maxClockSkewInSeconds));
+        sb.append(", publicKeys=").append(String.valueOf(this.publicKeys));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JwtAuthenticationPolicy)) {
+            return false;
+        }
+
+        JwtAuthenticationPolicy other = (JwtAuthenticationPolicy) o;
+        return java.util.Objects.equals(this.tokenHeader, other.tokenHeader)
+                && java.util.Objects.equals(this.tokenQueryParam, other.tokenQueryParam)
+                && java.util.Objects.equals(this.tokenAuthScheme, other.tokenAuthScheme)
+                && java.util.Objects.equals(this.issuers, other.issuers)
+                && java.util.Objects.equals(this.audiences, other.audiences)
+                && java.util.Objects.equals(this.verifyClaims, other.verifyClaims)
+                && java.util.Objects.equals(this.maxClockSkewInSeconds, other.maxClockSkewInSeconds)
+                && java.util.Objects.equals(this.publicKeys, other.publicKeys)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.tokenHeader == null ? 43 : this.tokenHeader.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tokenQueryParam == null ? 43 : this.tokenQueryParam.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tokenAuthScheme == null ? 43 : this.tokenAuthScheme.hashCode());
+        result = (result * PRIME) + (this.issuers == null ? 43 : this.issuers.hashCode());
+        result = (result * PRIME) + (this.audiences == null ? 43 : this.audiences.hashCode());
+        result = (result * PRIME) + (this.verifyClaims == null ? 43 : this.verifyClaims.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxClockSkewInSeconds == null
+                                ? 43
+                                : this.maxClockSkewInSeconds.hashCode());
+        result = (result * PRIME) + (this.publicKeys == null ? 43 : this.publicKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

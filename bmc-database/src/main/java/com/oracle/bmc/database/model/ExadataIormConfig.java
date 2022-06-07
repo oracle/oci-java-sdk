@@ -16,16 +16,31 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExadataIormConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExadataIormConfig {
+public final class ExadataIormConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "lifecycleState",
+        "lifecycleDetails",
+        "objective",
+        "dbPlans"
+    })
+    public ExadataIormConfig(
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            Objective objective,
+            java.util.List<DbIormConfig> dbPlans) {
+        super();
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.objective = objective;
+        this.dbPlans = dbPlans;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -93,11 +108,14 @@ public class ExadataIormConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The current state of IORM configuration for the Exadata DB system.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Bootstrapping("BOOTSTRAPPING"),
         Enabled("ENABLED"),
@@ -110,6 +128,9 @@ public class ExadataIormConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -148,20 +169,28 @@ public class ExadataIormConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current {@code lifecycleState}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * The current value for the IORM objective.
      * The default is {@code AUTO}.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Objective {
         LowLatency("LOW_LATENCY"),
         HighThroughput("HIGH_THROUGHPUT"),
@@ -174,6 +203,9 @@ public class ExadataIormConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Objective.class);
 
         private final String value;
         private static java.util.Map<String, Objective> map;
@@ -213,7 +245,11 @@ public class ExadataIormConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objective")
-    Objective objective;
+    private final Objective objective;
+
+    public Objective getObjective() {
+        return objective;
+    }
 
     /**
      * An array of IORM settings for all the database in
@@ -221,8 +257,64 @@ public class ExadataIormConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")
-    java.util.List<DbIormConfig> dbPlans;
+    private final java.util.List<DbIormConfig> dbPlans;
+
+    public java.util.List<DbIormConfig> getDbPlans() {
+        return dbPlans;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExadataIormConfig(");
+        sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", objective=").append(String.valueOf(this.objective));
+        sb.append(", dbPlans=").append(String.valueOf(this.dbPlans));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExadataIormConfig)) {
+            return false;
+        }
+
+        ExadataIormConfig other = (ExadataIormConfig) o;
+        return java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.objective, other.objective)
+                && java.util.Objects.equals(this.dbPlans, other.dbPlans)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.objective == null ? 43 : this.objective.hashCode());
+        result = (result * PRIME) + (this.dbPlans == null ? 43 : this.dbPlans.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,34 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateIngressGatewayRouteTableDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateIngressGatewayRouteTableDetails {
+public final class UpdateIngressGatewayRouteTableDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "priority",
+        "routeRules",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateIngressGatewayRouteTableDetails(
+            String description,
+            Integer priority,
+            java.util.List<IngressGatewayTrafficRouteRule> routeRules,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.description = description;
+        this.priority = priority;
+        this.routeRules = routeRules;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -104,6 +122,10 @@ public class UpdateIngressGatewayRouteTableDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Description of the resource. It can be changed after creation.
      * Avoid entering confidential information.
@@ -112,19 +134,31 @@ public class UpdateIngressGatewayRouteTableDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
-    Integer priority;
+    private final Integer priority;
+
+    public Integer getPriority() {
+        return priority;
+    }
 
     /**
      * The route rules for the ingress gateway.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
-    java.util.List<IngressGatewayTrafficRouteRule> routeRules;
+    private final java.util.List<IngressGatewayTrafficRouteRule> routeRules;
+
+    public java.util.List<IngressGatewayTrafficRouteRule> getRouteRules() {
+        return routeRules;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -132,7 +166,11 @@ public class UpdateIngressGatewayRouteTableDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -140,8 +178,63 @@ public class UpdateIngressGatewayRouteTableDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateIngressGatewayRouteTableDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", priority=").append(String.valueOf(this.priority));
+        sb.append(", routeRules=").append(String.valueOf(this.routeRules));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateIngressGatewayRouteTableDetails)) {
+            return false;
+        }
+
+        UpdateIngressGatewayRouteTableDetails other = (UpdateIngressGatewayRouteTableDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.priority, other.priority)
+                && java.util.Objects.equals(this.routeRules, other.routeRules)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
+        result = (result * PRIME) + (this.routeRules == null ? 43 : this.routeRules.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

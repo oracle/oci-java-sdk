@@ -7,21 +7,26 @@ package com.oracle.bmc.resourcemanager.responses;
 import com.oracle.bmc.resourcemanager.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned TemplateCategorySummaryCollection instance.
      */
     private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
             templateCategorySummaryCollection;
+
+    public com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
+            getTemplateCategorySummaryCollection() {
+        return templateCategorySummaryCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -46,6 +51,23 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
+                templateCategorySummaryCollection;
+
+        public Builder templateCategorySummaryCollection(
+                com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
+                        templateCategorySummaryCollection) {
+            this.templateCategorySummaryCollection = templateCategorySummaryCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,5 +84,51 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
             return new ListTemplateCategoriesResponse(
                     __httpStatusCode__, opcRequestId, templateCategorySummaryCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",templateCategorySummaryCollection=")
+                .append(String.valueOf(templateCategorySummaryCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListTemplateCategoriesResponse)) {
+            return false;
+        }
+
+        ListTemplateCategoriesResponse other = (ListTemplateCategoriesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.templateCategorySummaryCollection,
+                        other.templateCategorySummaryCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.templateCategorySummaryCollection == null
+                                ? 43
+                                : this.templateCategorySummaryCollection.hashCode());
+        return result;
     }
 }

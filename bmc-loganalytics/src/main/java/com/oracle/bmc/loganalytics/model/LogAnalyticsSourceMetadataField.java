@@ -15,16 +15,24 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsSourceMetadataField.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsSourceMetadataField {
+public final class LogAnalyticsSourceMetadataField {
+    @Deprecated
+    @java.beans.ConstructorProperties({"fieldName", "isEnabled", "isSystem", "key", "sourceName"})
+    public LogAnalyticsSourceMetadataField(
+            String fieldName, Boolean isEnabled, Boolean isSystem, String key, String sourceName) {
+        super();
+        this.fieldName = fieldName;
+        this.isEnabled = isEnabled;
+        this.isSystem = isSystem;
+        this.key = key;
+        this.sourceName = sourceName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
@@ -103,18 +111,30 @@ public class LogAnalyticsSourceMetadataField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
-    String fieldName;
+    private final String fieldName;
+
+    public String getFieldName() {
+        return fieldName;
+    }
 
     /**
      * A flag inidcating whether or not the source metadata field is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -122,20 +142,83 @@ public class LogAnalyticsSourceMetadataField {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The source internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsSourceMetadataField(");
+        sb.append("fieldName=").append(String.valueOf(this.fieldName));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsSourceMetadataField)) {
+            return false;
+        }
+
+        LogAnalyticsSourceMetadataField other = (LogAnalyticsSourceMetadataField) o;
+        return java.util.Objects.equals(this.fieldName, other.fieldName)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

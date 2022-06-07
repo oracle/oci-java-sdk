@@ -11,11 +11,13 @@ import com.oracle.bmc.networkloadbalancer.responses.*;
 import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.extern.slf4j.Slf4j
 public class GetNetworkLoadBalancerHealthConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(GetNetworkLoadBalancerHealthConverter.class);
 
     public static com.oracle.bmc.networkloadbalancer.requests.GetNetworkLoadBalancerHealthRequest
             interceptRequest(

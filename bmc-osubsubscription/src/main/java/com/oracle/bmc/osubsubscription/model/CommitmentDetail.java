@@ -16,14 +16,38 @@ package com.oracle.bmc.osubsubscription.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CommitmentDetail.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CommitmentDetail {
+public final class CommitmentDetail {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "timeStart",
+        "timeEnd",
+        "quantity",
+        "usedAmount",
+        "availableAmount",
+        "fundedAllocationValue"
+    })
+    public CommitmentDetail(
+            String id,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            String quantity,
+            String usedAmount,
+            String availableAmount,
+            String fundedAllocationValue) {
+        super();
+        this.id = id;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.quantity = quantity;
+        this.usedAmount = usedAmount;
+        this.availableAmount = availableAmount;
+        this.fundedAllocationValue = fundedAllocationValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -128,47 +152,75 @@ public class CommitmentDetail {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * SPM internal Commitment ID
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Commitment start date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Commitment end date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * Commitment quantity
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
-    String quantity;
+    private final String quantity;
+
+    public String getQuantity() {
+        return quantity;
+    }
 
     /**
      * Commitment used amount
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedAmount")
-    String usedAmount;
+    private final String usedAmount;
+
+    public String getUsedAmount() {
+        return usedAmount;
+    }
 
     /**
      * Commitment available amount
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableAmount")
-    String availableAmount;
+    private final String availableAmount;
+
+    public String getAvailableAmount() {
+        return availableAmount;
+    }
 
     /**
      * Funded Allocation line value
@@ -176,8 +228,75 @@ public class CommitmentDetail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fundedAllocationValue")
-    String fundedAllocationValue;
+    private final String fundedAllocationValue;
+
+    public String getFundedAllocationValue() {
+        return fundedAllocationValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CommitmentDetail(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", quantity=").append(String.valueOf(this.quantity));
+        sb.append(", usedAmount=").append(String.valueOf(this.usedAmount));
+        sb.append(", availableAmount=").append(String.valueOf(this.availableAmount));
+        sb.append(", fundedAllocationValue=").append(String.valueOf(this.fundedAllocationValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CommitmentDetail)) {
+            return false;
+        }
+
+        CommitmentDetail other = (CommitmentDetail) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.usedAmount, other.usedAmount)
+                && java.util.Objects.equals(this.availableAmount, other.availableAmount)
+                && java.util.Objects.equals(this.fundedAllocationValue, other.fundedAllocationValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result = (result * PRIME) + (this.usedAmount == null ? 43 : this.usedAmount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableAmount == null ? 43 : this.availableAmount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fundedAllocationValue == null
+                                ? 43
+                                : this.fundedAllocationValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

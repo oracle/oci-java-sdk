@@ -18,22 +18,17 @@ package com.oracle.bmc.dashboardservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateV1DashboardDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "schemaVersion"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateV1DashboardDetails extends UpdateDashboardDetails {
+public final class UpdateV1DashboardDetails extends UpdateDashboardDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -123,6 +118,10 @@ public class UpdateV1DashboardDetails extends UpdateDashboardDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateV1DashboardDetails(
             String displayName,
@@ -140,14 +139,66 @@ public class UpdateV1DashboardDetails extends UpdateDashboardDetails {
      * The layout and widget placement for the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
-    Object config;
+    private final Object config;
+
+    public Object getConfig() {
+        return config;
+    }
 
     /**
      * The basic visualization building blocks of a dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("widgets")
-    java.util.List<Object> widgets;
+    private final java.util.List<Object> widgets;
+
+    public java.util.List<Object> getWidgets() {
+        return widgets;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateV1DashboardDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", config=").append(String.valueOf(this.config));
+        sb.append(", widgets=").append(String.valueOf(this.widgets));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateV1DashboardDetails)) {
+            return false;
+        }
+
+        UpdateV1DashboardDetails other = (UpdateV1DashboardDetails) o;
+        return java.util.Objects.equals(this.config, other.config)
+                && java.util.Objects.equals(this.widgets, other.widgets)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.config == null ? 43 : this.config.hashCode());
+        result = (result * PRIME) + (this.widgets == null ? 43 : this.widgets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

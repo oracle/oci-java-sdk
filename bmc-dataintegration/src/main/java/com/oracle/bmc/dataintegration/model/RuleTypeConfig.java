@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RuleTypeConfig.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RuleTypeConfig extends DynamicTypeHandler {
+public final class RuleTypeConfig extends DynamicTypeHandler {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -155,6 +150,10 @@ public class RuleTypeConfig extends DynamicTypeHandler {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public RuleTypeConfig(
             String key,
@@ -182,47 +181,154 @@ public class RuleTypeConfig extends DynamicTypeHandler {
      * The key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * Deprecated - Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject} definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    Object scope;
+    private final Object scope;
+
+    public Object getScope() {
+        return scope;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("scopeReference")
-    ScopeReference scopeReference;
+    private final ScopeReference scopeReference;
+
+    public ScopeReference getScopeReference() {
+        return scopeReference;
+    }
 
     /**
      * Specifies whether it is ordered by rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOrderByRule")
-    Boolean isOrderByRule;
+    private final Boolean isOrderByRule;
+
+    public Boolean getIsOrderByRule() {
+        return isOrderByRule;
+    }
 
     /**
      * The projection rules.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectionRules")
-    java.util.List<ProjectionRule> projectionRules;
+    private final java.util.List<ProjectionRule> projectionRules;
+
+    public java.util.List<ProjectionRule> getProjectionRules() {
+        return projectionRules;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configValues")
-    ConfigValues configValues;
+    private final ConfigValues configValues;
+
+    public ConfigValues getConfigValues() {
+        return configValues;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RuleTypeConfig(");
+        sb.append("super=").append(super.toString());
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", scope=").append(String.valueOf(this.scope));
+        sb.append(", scopeReference=").append(String.valueOf(this.scopeReference));
+        sb.append(", isOrderByRule=").append(String.valueOf(this.isOrderByRule));
+        sb.append(", projectionRules=").append(String.valueOf(this.projectionRules));
+        sb.append(", configValues=").append(String.valueOf(this.configValues));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RuleTypeConfig)) {
+            return false;
+        }
+
+        RuleTypeConfig other = (RuleTypeConfig) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.scopeReference, other.scopeReference)
+                && java.util.Objects.equals(this.isOrderByRule, other.isOrderByRule)
+                && java.util.Objects.equals(this.projectionRules, other.projectionRules)
+                && java.util.Objects.equals(this.configValues, other.configValues)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scopeReference == null ? 43 : this.scopeReference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOrderByRule == null ? 43 : this.isOrderByRule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.projectionRules == null ? 43 : this.projectionRules.hashCode());
+        result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

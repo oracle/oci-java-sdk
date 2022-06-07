@@ -7,10 +7,6 @@ package com.oracle.bmc.database.responses;
 import com.oracle.bmc.database.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeAutonomousContainerDatabaseCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -18,10 +14,18 @@ public class ChangeAutonomousContainerDatabaseCompartmentResponse
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * Unique Oracle-assigned identifier of the work request.
      */
     private String opcWorkRequestId;
+
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -29,6 +33,10 @@ public class ChangeAutonomousContainerDatabaseCompartmentResponse
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -52,6 +60,27 @@ public class ChangeAutonomousContainerDatabaseCompartmentResponse
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -69,5 +98,50 @@ public class ChangeAutonomousContainerDatabaseCompartmentResponse
             return new ChangeAutonomousContainerDatabaseCompartmentResponse(
                     __httpStatusCode__, etag, opcWorkRequestId, opcRequestId);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeAutonomousContainerDatabaseCompartmentResponse)) {
+            return false;
+        }
+
+        ChangeAutonomousContainerDatabaseCompartmentResponse other =
+                (ChangeAutonomousContainerDatabaseCompartmentResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

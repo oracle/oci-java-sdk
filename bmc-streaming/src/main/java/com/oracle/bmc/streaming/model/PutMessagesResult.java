@@ -17,16 +17,20 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PutMessagesResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PutMessagesResult {
+public final class PutMessagesResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"failures", "entries"})
+    public PutMessagesResult(Integer failures, java.util.List<PutMessagesResultEntry> entries) {
+        super();
+        this.failures = failures;
+        this.entries = entries;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("failures")
         private Integer failures;
@@ -71,11 +75,19 @@ public class PutMessagesResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of messages that failed to be added to the stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failures")
-    Integer failures;
+    private final Integer failures;
+
+    public Integer getFailures() {
+        return failures;
+    }
 
     /**
      * An array of items representing the result of each message.
@@ -85,8 +97,54 @@ public class PutMessagesResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
-    java.util.List<PutMessagesResultEntry> entries;
+    private final java.util.List<PutMessagesResultEntry> entries;
+
+    public java.util.List<PutMessagesResultEntry> getEntries() {
+        return entries;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PutMessagesResult(");
+        sb.append("failures=").append(String.valueOf(this.failures));
+        sb.append(", entries=").append(String.valueOf(this.entries));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PutMessagesResult)) {
+            return false;
+        }
+
+        PutMessagesResult other = (PutMessagesResult) o;
+        return java.util.Objects.equals(this.failures, other.failures)
+                && java.util.Objects.equals(this.entries, other.entries)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.failures == null ? 43 : this.failures.hashCode());
+        result = (result * PRIME) + (this.entries == null ? 43 : this.entries.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

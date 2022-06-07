@@ -15,16 +15,70 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateApplianceExportJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateApplianceExportJobDetails {
+public final class UpdateApplianceExportJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bucketName",
+        "prefix",
+        "rangeStart",
+        "rangeEnd",
+        "displayName",
+        "lifecycleState",
+        "lifecycleStateDetails",
+        "manifestFile",
+        "manifestMd5",
+        "numberOfObjects",
+        "totalSizeInBytes",
+        "firstObject",
+        "lastObject",
+        "nextObject",
+        "customerShippingAddress",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateApplianceExportJobDetails(
+            String bucketName,
+            String prefix,
+            String rangeStart,
+            String rangeEnd,
+            String displayName,
+            LifecycleState lifecycleState,
+            String lifecycleStateDetails,
+            String manifestFile,
+            String manifestMd5,
+            String numberOfObjects,
+            String totalSizeInBytes,
+            String firstObject,
+            String lastObject,
+            String nextObject,
+            ShippingAddress customerShippingAddress,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.bucketName = bucketName;
+        this.prefix = prefix;
+        this.rangeStart = rangeStart;
+        this.rangeEnd = rangeEnd;
+        this.displayName = displayName;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleStateDetails = lifecycleStateDetails;
+        this.manifestFile = manifestFile;
+        this.manifestMd5 = manifestMd5;
+        this.numberOfObjects = numberOfObjects;
+        this.totalSizeInBytes = totalSizeInBytes;
+        this.firstObject = firstObject;
+        this.lastObject = lastObject;
+        this.nextObject = nextObject;
+        this.customerShippingAddress = customerShippingAddress;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
@@ -240,29 +294,54 @@ public class UpdateApplianceExportJobDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     /**
      * List of objects with names matching this prefix would be part of this export job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
-    String prefix;
+    private final String prefix;
+
+    public String getPrefix() {
+        return prefix;
+    }
 
     /**
      * Object names returned by a list query must be greater or equal to this parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
-    String rangeStart;
+    private final String rangeStart;
+
+    public String getRangeStart() {
+        return rangeStart;
+    }
 
     /**
      * Object names returned by a list query must be strictly less than this parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
-    String rangeEnd;
+    private final String rangeEnd;
+
+    public String getRangeEnd() {
+        return rangeEnd;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      **/
     public enum LifecycleState {
@@ -304,58 +383,98 @@ public class UpdateApplianceExportJobDetails {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A property that can contain details on the lifecycle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
-    String lifecycleStateDetails;
+    private final String lifecycleStateDetails;
+
+    public String getLifecycleStateDetails() {
+        return lifecycleStateDetails;
+    }
 
     /**
      * Manifest File associated with this export job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("manifestFile")
-    String manifestFile;
+    private final String manifestFile;
+
+    public String getManifestFile() {
+        return manifestFile;
+    }
 
     /**
      * md5 digest of the manifest file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("manifestMd5")
-    String manifestMd5;
+    private final String manifestMd5;
+
+    public String getManifestMd5() {
+        return manifestMd5;
+    }
 
     /**
      * Total number of objects that are exported in this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfObjects")
-    String numberOfObjects;
+    private final String numberOfObjects;
+
+    public String getNumberOfObjects() {
+        return numberOfObjects;
+    }
 
     /**
      * Total size of objects in Bytes that are exported in this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSizeInBytes")
-    String totalSizeInBytes;
+    private final String totalSizeInBytes;
+
+    public String getTotalSizeInBytes() {
+        return totalSizeInBytes;
+    }
 
     /**
      * First object in the list of objects that are exported in this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstObject")
-    String firstObject;
+    private final String firstObject;
+
+    public String getFirstObject() {
+        return firstObject;
+    }
 
     /**
      * Last object in the list of objects that are exported in this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastObject")
-    String lastObject;
+    private final String lastObject;
+
+    public String getLastObject() {
+        return lastObject;
+    }
 
     /**
      * First object from which the next potential export job could start.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextObject")
-    String nextObject;
+    private final String nextObject;
+
+    public String getNextObject() {
+        return nextObject;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customerShippingAddress")
-    ShippingAddress customerShippingAddress;
+    private final ShippingAddress customerShippingAddress;
+
+    public ShippingAddress getCustomerShippingAddress() {
+        return customerShippingAddress;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -365,7 +484,11 @@ public class UpdateApplianceExportJobDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -375,8 +498,115 @@ public class UpdateApplianceExportJobDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateApplianceExportJobDetails(");
+        sb.append("bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", prefix=").append(String.valueOf(this.prefix));
+        sb.append(", rangeStart=").append(String.valueOf(this.rangeStart));
+        sb.append(", rangeEnd=").append(String.valueOf(this.rangeEnd));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", manifestFile=").append(String.valueOf(this.manifestFile));
+        sb.append(", manifestMd5=").append(String.valueOf(this.manifestMd5));
+        sb.append(", numberOfObjects=").append(String.valueOf(this.numberOfObjects));
+        sb.append(", totalSizeInBytes=").append(String.valueOf(this.totalSizeInBytes));
+        sb.append(", firstObject=").append(String.valueOf(this.firstObject));
+        sb.append(", lastObject=").append(String.valueOf(this.lastObject));
+        sb.append(", nextObject=").append(String.valueOf(this.nextObject));
+        sb.append(", customerShippingAddress=")
+                .append(String.valueOf(this.customerShippingAddress));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateApplianceExportJobDetails)) {
+            return false;
+        }
+
+        UpdateApplianceExportJobDetails other = (UpdateApplianceExportJobDetails) o;
+        return java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.prefix, other.prefix)
+                && java.util.Objects.equals(this.rangeStart, other.rangeStart)
+                && java.util.Objects.equals(this.rangeEnd, other.rangeEnd)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.manifestFile, other.manifestFile)
+                && java.util.Objects.equals(this.manifestMd5, other.manifestMd5)
+                && java.util.Objects.equals(this.numberOfObjects, other.numberOfObjects)
+                && java.util.Objects.equals(this.totalSizeInBytes, other.totalSizeInBytes)
+                && java.util.Objects.equals(this.firstObject, other.firstObject)
+                && java.util.Objects.equals(this.lastObject, other.lastObject)
+                && java.util.Objects.equals(this.nextObject, other.nextObject)
+                && java.util.Objects.equals(
+                        this.customerShippingAddress, other.customerShippingAddress)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
+        result = (result * PRIME) + (this.rangeStart == null ? 43 : this.rangeStart.hashCode());
+        result = (result * PRIME) + (this.rangeEnd == null ? 43 : this.rangeEnd.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateDetails == null
+                                ? 43
+                                : this.lifecycleStateDetails.hashCode());
+        result = (result * PRIME) + (this.manifestFile == null ? 43 : this.manifestFile.hashCode());
+        result = (result * PRIME) + (this.manifestMd5 == null ? 43 : this.manifestMd5.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfObjects == null ? 43 : this.numberOfObjects.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalSizeInBytes == null ? 43 : this.totalSizeInBytes.hashCode());
+        result = (result * PRIME) + (this.firstObject == null ? 43 : this.firstObject.hashCode());
+        result = (result * PRIME) + (this.lastObject == null ? 43 : this.lastObject.hashCode());
+        result = (result * PRIME) + (this.nextObject == null ? 43 : this.nextObject.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerShippingAddress == null
+                                ? 43
+                                : this.customerShippingAddress.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

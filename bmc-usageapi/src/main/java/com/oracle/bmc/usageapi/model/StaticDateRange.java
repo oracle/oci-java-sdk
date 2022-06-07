@@ -15,20 +15,15 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StaticDateRange.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "dateRangeType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StaticDateRange extends DateRange {
+public final class StaticDateRange extends DateRange {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
         private java.util.Date timeUsageStarted;
@@ -74,6 +69,10 @@ public class StaticDateRange extends DateRange {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public StaticDateRange(java.util.Date timeUsageStarted, java.util.Date timeUsageEnded) {
         super();
@@ -85,14 +84,70 @@ public class StaticDateRange extends DateRange {
      * The usage start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
-    java.util.Date timeUsageStarted;
+    private final java.util.Date timeUsageStarted;
+
+    public java.util.Date getTimeUsageStarted() {
+        return timeUsageStarted;
+    }
 
     /**
      * The usage end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
-    java.util.Date timeUsageEnded;
+    private final java.util.Date timeUsageEnded;
+
+    public java.util.Date getTimeUsageEnded() {
+        return timeUsageEnded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StaticDateRange(");
+        sb.append("super=").append(super.toString());
+        sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
+        sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StaticDateRange)) {
+            return false;
+        }
+
+        StaticDateRange other = (StaticDateRange) o;
+        return java.util.Objects.equals(this.timeUsageStarted, other.timeUsageStarted)
+                && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.timeUsageStarted == null ? 43 : this.timeUsageStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUsageEnded == null ? 43 : this.timeUsageEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

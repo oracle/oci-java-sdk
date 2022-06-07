@@ -8,7 +8,6 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * Possible operation types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.extern.slf4j.Slf4j
 public enum OperationType {
     CreateSenderInvitation("CREATE_SENDER_INVITATION"),
     AcceptRecipientInvitation("ACCEPT_RECIPIENT_INVITATION"),
@@ -32,6 +31,9 @@ public enum OperationType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OperationType.class);
 
     private final String value;
     private static java.util.Map<String, OperationType> map;

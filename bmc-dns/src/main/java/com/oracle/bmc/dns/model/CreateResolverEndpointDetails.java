@@ -18,12 +18,6 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -38,13 +32,38 @@ package com.oracle.bmc.dns.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateResolverEndpointDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "forwardingAddress",
+        "isForwarding",
+        "isListening",
+        "listeningAddress"
+    })
+    protected CreateResolverEndpointDetails(
+            String name,
+            String forwardingAddress,
+            Boolean isForwarding,
+            Boolean isListening,
+            String listeningAddress) {
+        super();
+        this.name = name;
+        this.forwardingAddress = forwardingAddress;
+        this.isForwarding = isForwarding;
+        this.isListening = isListening;
+        this.listeningAddress = listeningAddress;
+    }
 
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part
@@ -52,21 +71,33 @@ public class CreateResolverEndpointDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forwardingAddress")
-    String forwardingAddress;
+    private final String forwardingAddress;
+
+    public String getForwardingAddress() {
+        return forwardingAddress;
+    }
 
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForwarding")
-    Boolean isForwarding;
+    private final Boolean isForwarding;
+
+    public Boolean getIsForwarding() {
+        return isForwarding;
+    }
 
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for listening.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isListening")
-    Boolean isListening;
+    private final Boolean isListening;
+
+    public Boolean getIsListening() {
+        return isListening;
+    }
 
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the
@@ -74,7 +105,57 @@ public class CreateResolverEndpointDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listeningAddress")
-    String listeningAddress;
+    private final String listeningAddress;
+
+    public String getListeningAddress() {
+        return listeningAddress;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateResolverEndpointDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", forwardingAddress=").append(String.valueOf(this.forwardingAddress));
+        sb.append(", isForwarding=").append(String.valueOf(this.isForwarding));
+        sb.append(", isListening=").append(String.valueOf(this.isListening));
+        sb.append(", listeningAddress=").append(String.valueOf(this.listeningAddress));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateResolverEndpointDetails)) {
+            return false;
+        }
+
+        CreateResolverEndpointDetails other = (CreateResolverEndpointDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.forwardingAddress, other.forwardingAddress)
+                && java.util.Objects.equals(this.isForwarding, other.isForwarding)
+                && java.util.Objects.equals(this.isListening, other.isListening)
+                && java.util.Objects.equals(this.listeningAddress, other.listeningAddress);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.forwardingAddress == null ? 43 : this.forwardingAddress.hashCode());
+        result = (result * PRIME) + (this.isForwarding == null ? 43 : this.isForwarding.hashCode());
+        result = (result * PRIME) + (this.isListening == null ? 43 : this.isListening.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listeningAddress == null ? 43 : this.listeningAddress.hashCode());
+        return result;
+    }
 
     /**
      * The type of resolver endpoint. VNIC is currently the only supported type.

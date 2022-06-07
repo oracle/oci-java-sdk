@@ -15,14 +15,62 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Key.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Key {
+public final class Key {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "currentKeyVersion",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "keyShape",
+        "protectionMode",
+        "lifecycleState",
+        "timeCreated",
+        "timeOfDeletion",
+        "vaultId",
+        "restoredFromKeyId",
+        "replicaDetails",
+        "isPrimary"
+    })
+    public Key(
+            String compartmentId,
+            String currentKeyVersion,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            KeyShape keyShape,
+            ProtectionMode protectionMode,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeOfDeletion,
+            String vaultId,
+            String restoredFromKeyId,
+            KeyReplicaDetails replicaDetails,
+            Boolean isPrimary) {
+        super();
+        this.compartmentId = compartmentId;
+        this.currentKeyVersion = currentKeyVersion;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.keyShape = keyShape;
+        this.protectionMode = protectionMode;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeOfDeletion = timeOfDeletion;
+        this.vaultId = vaultId;
+        this.restoredFromKeyId = restoredFromKeyId;
+        this.replicaDetails = replicaDetails;
+        this.isPrimary = isPrimary;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -216,11 +264,19 @@ public class Key {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment that contains this master encryption key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the key version used in cryptographic operations. During key rotation, the service might be
@@ -229,7 +285,11 @@ public class Key {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyVersion")
-    String currentKeyVersion;
+    private final String currentKeyVersion;
+
+    public String getCurrentKeyVersion() {
+        return currentKeyVersion;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -238,7 +298,11 @@ public class Key {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name for the key. It does not have to be unique, and it is changeable.
@@ -246,7 +310,11 @@ public class Key {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -255,16 +323,29 @@ public class Key {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The OCID of the key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("keyShape")
-    KeyShape keyShape;
+    private final KeyShape keyShape;
+
+    public KeyShape getKeyShape() {
+        return keyShape;
+    }
+
     /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
      * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
@@ -273,7 +354,6 @@ public class Key {
      * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ProtectionMode {
         Hsm("HSM"),
         Software("SOFTWARE"),
@@ -283,6 +363,9 @@ public class Key {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ProtectionMode.class);
 
         private final String value;
         private static java.util.Map<String, ProtectionMode> map;
@@ -325,14 +408,18 @@ public class Key {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
-    ProtectionMode protectionMode;
+    private final ProtectionMode protectionMode;
+
+    public ProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
     /**
      * The key's current lifecycle state.
      * <p>
      * Example: {@code ENABLED}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Enabling("ENABLING"),
@@ -353,6 +440,9 @@ public class Key {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -393,7 +483,11 @@ public class Key {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -402,7 +496,11 @@ public class Key {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -410,26 +508,141 @@ public class Key {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
 
     /**
      * The OCID of the vault that contains this key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * The OCID of the key from which this key was restored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyId")
-    String restoredFromKeyId;
+    private final String restoredFromKeyId;
+
+    public String getRestoredFromKeyId() {
+        return restoredFromKeyId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
-    KeyReplicaDetails replicaDetails;
+    private final KeyReplicaDetails replicaDetails;
+
+    public KeyReplicaDetails getReplicaDetails() {
+        return replicaDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
-    Boolean isPrimary;
+    private final Boolean isPrimary;
+
+    public Boolean getIsPrimary() {
+        return isPrimary;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Key(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", currentKeyVersion=").append(String.valueOf(this.currentKeyVersion));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", keyShape=").append(String.valueOf(this.keyShape));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", restoredFromKeyId=").append(String.valueOf(this.restoredFromKeyId));
+        sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
+        sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Key)) {
+            return false;
+        }
+
+        Key other = (Key) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.currentKeyVersion, other.currentKeyVersion)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.keyShape, other.keyShape)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.restoredFromKeyId, other.restoredFromKeyId)
+                && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
+                && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentKeyVersion == null ? 43 : this.currentKeyVersion.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.keyShape == null ? 43 : this.keyShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restoredFromKeyId == null ? 43 : this.restoredFromKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
+        result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -17,16 +17,97 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OperatorControlAssignment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperatorControlAssignment {
+public final class OperatorControlAssignment {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "operatorControlId",
+        "resourceId",
+        "resourceName",
+        "resourceCompartmentId",
+        "compartmentId",
+        "resourceType",
+        "timeAssignmentFrom",
+        "timeAssignmentTo",
+        "isEnforcedAlways",
+        "lifecycleState",
+        "assignerId",
+        "timeOfAssignment",
+        "comment",
+        "unassignerId",
+        "timeOfDeletion",
+        "detachmentDescription",
+        "isLogForwarded",
+        "remoteSyslogServerAddress",
+        "remoteSyslogServerPort",
+        "remoteSyslogServerCACert",
+        "isAutoApproveDuringMaintenance",
+        "errorCode",
+        "errorMessage",
+        "freeformTags",
+        "definedTags"
+    })
+    public OperatorControlAssignment(
+            String id,
+            String operatorControlId,
+            String resourceId,
+            String resourceName,
+            String resourceCompartmentId,
+            String compartmentId,
+            ResourceTypes resourceType,
+            java.util.Date timeAssignmentFrom,
+            java.util.Date timeAssignmentTo,
+            Boolean isEnforcedAlways,
+            OperatorControlAssignmentLifecycleStates lifecycleState,
+            String assignerId,
+            java.util.Date timeOfAssignment,
+            String comment,
+            String unassignerId,
+            java.util.Date timeOfDeletion,
+            String detachmentDescription,
+            Boolean isLogForwarded,
+            String remoteSyslogServerAddress,
+            Integer remoteSyslogServerPort,
+            String remoteSyslogServerCACert,
+            Boolean isAutoApproveDuringMaintenance,
+            Integer errorCode,
+            String errorMessage,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.operatorControlId = operatorControlId;
+        this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.resourceCompartmentId = resourceCompartmentId;
+        this.compartmentId = compartmentId;
+        this.resourceType = resourceType;
+        this.timeAssignmentFrom = timeAssignmentFrom;
+        this.timeAssignmentTo = timeAssignmentTo;
+        this.isEnforcedAlways = isEnforcedAlways;
+        this.lifecycleState = lifecycleState;
+        this.assignerId = assignerId;
+        this.timeOfAssignment = timeOfAssignment;
+        this.comment = comment;
+        this.unassignerId = unassignerId;
+        this.timeOfDeletion = timeOfDeletion;
+        this.detachmentDescription = detachmentDescription;
+        this.isLogForwarded = isLogForwarded;
+        this.remoteSyslogServerAddress = remoteSyslogServerAddress;
+        this.remoteSyslogServerPort = remoteSyslogServerPort;
+        this.remoteSyslogServerCACert = remoteSyslogServerCACert;
+        this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -341,47 +422,79 @@ public class OperatorControlAssignment {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the operator control assignment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatorControlId")
-    String operatorControlId;
+    private final String operatorControlId;
+
+    public String getOperatorControlId() {
+        return operatorControlId;
+    }
 
     /**
      * The OCID of the target resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * Name of the target resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * The OCID of the compartment that contains the target resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
-    String resourceCompartmentId;
+    private final String resourceCompartmentId;
+
+    public String getResourceCompartmentId() {
+        return resourceCompartmentId;
+    }
 
     /**
      * The OCID of the comparment that contains the operator control assignment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * resourceType for which the OperatorControlAssignment is applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    ResourceTypes resourceType;
+    private final ResourceTypes resourceType;
+
+    public ResourceTypes getResourceType() {
+        return resourceType;
+    }
 
     /**
      * The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -389,7 +502,11 @@ public class OperatorControlAssignment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentFrom")
-    java.util.Date timeAssignmentFrom;
+    private final java.util.Date timeAssignmentFrom;
+
+    public java.util.Date getTimeAssignmentFrom() {
+        return timeAssignmentFrom;
+    }
 
     /**
      * The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -397,114 +514,351 @@ public class OperatorControlAssignment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentTo")
-    java.util.Date timeAssignmentTo;
+    private final java.util.Date timeAssignmentTo;
+
+    public java.util.Date getTimeAssignmentTo() {
+        return timeAssignmentTo;
+    }
 
     /**
      * If set, then the target resource is always governed by the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedAlways")
-    Boolean isEnforcedAlways;
+    private final Boolean isEnforcedAlways;
+
+    public Boolean getIsEnforcedAlways() {
+        return isEnforcedAlways;
+    }
 
     /**
      * The current lifcycle state of the OperatorControl.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    OperatorControlAssignmentLifecycleStates lifecycleState;
+    private final OperatorControlAssignmentLifecycleStates lifecycleState;
+
+    public OperatorControlAssignmentLifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The OCID of the user who created this operator control assignment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignerId")
-    String assignerId;
+    private final String assignerId;
+
+    public String getAssignerId() {
+        return assignerId;
+    }
 
     /**
      * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAssignment")
-    java.util.Date timeOfAssignment;
+    private final java.util.Date timeOfAssignment;
+
+    public java.util.Date getTimeOfAssignment() {
+        return timeOfAssignment;
+    }
 
     /**
      * Comment about the assignment of the operator control to this target resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
-    String comment;
+    private final String comment;
+
+    public String getComment() {
+        return comment;
+    }
 
     /**
      * User id who released the operatorControl.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unassignerId")
-    String unassignerId;
+    private final String unassignerId;
+
+    public String getUnassignerId() {
+        return unassignerId;
+    }
 
     /**
      * Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
 
     /**
      * description containing reason for releasing of OperatorControl.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detachmentDescription")
-    String detachmentDescription;
+    private final String detachmentDescription;
+
+    public String getDetachmentDescription() {
+        return detachmentDescription;
+    }
 
     /**
      * If set indicates that the audit logs are being forwarded to the relevant remote logging server
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
-    Boolean isLogForwarded;
+    private final Boolean isLogForwarded;
+
+    public Boolean getIsLogForwarded() {
+        return isLogForwarded;
+    }
 
     /**
      * The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
-    String remoteSyslogServerAddress;
+    private final String remoteSyslogServerAddress;
+
+    public String getRemoteSyslogServerAddress() {
+        return remoteSyslogServerAddress;
+    }
 
     /**
      * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
-    Integer remoteSyslogServerPort;
+    private final Integer remoteSyslogServerPort;
+
+    public Integer getRemoteSyslogServerPort() {
+        return remoteSyslogServerPort;
+    }
 
     /**
      * The CA certificate of the remote syslog server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerCACert")
-    String remoteSyslogServerCACert;
+    private final String remoteSyslogServerCACert;
+
+    public String getRemoteSyslogServerCACert() {
+        return remoteSyslogServerCACert;
+    }
 
     /**
      * The boolean if true would autoApprove during maintenance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
-    Boolean isAutoApproveDuringMaintenance;
+    private final Boolean isAutoApproveDuringMaintenance;
+
+    public Boolean getIsAutoApproveDuringMaintenance() {
+        return isAutoApproveDuringMaintenance;
+    }
 
     /**
      * The code identifying the error occurred during Assignment operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
-    Integer errorCode;
+    private final Integer errorCode;
+
+    public Integer getErrorCode() {
+        return errorCode;
+    }
 
     /**
      * The message describing the error occurred during Assignment operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperatorControlAssignment(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", operatorControlId=").append(String.valueOf(this.operatorControlId));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", resourceCompartmentId=").append(String.valueOf(this.resourceCompartmentId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", timeAssignmentFrom=").append(String.valueOf(this.timeAssignmentFrom));
+        sb.append(", timeAssignmentTo=").append(String.valueOf(this.timeAssignmentTo));
+        sb.append(", isEnforcedAlways=").append(String.valueOf(this.isEnforcedAlways));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", assignerId=").append(String.valueOf(this.assignerId));
+        sb.append(", timeOfAssignment=").append(String.valueOf(this.timeOfAssignment));
+        sb.append(", comment=").append(String.valueOf(this.comment));
+        sb.append(", unassignerId=").append(String.valueOf(this.unassignerId));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", detachmentDescription=").append(String.valueOf(this.detachmentDescription));
+        sb.append(", isLogForwarded=").append(String.valueOf(this.isLogForwarded));
+        sb.append(", remoteSyslogServerAddress=")
+                .append(String.valueOf(this.remoteSyslogServerAddress));
+        sb.append(", remoteSyslogServerPort=").append(String.valueOf(this.remoteSyslogServerPort));
+        sb.append(", remoteSyslogServerCACert=")
+                .append(String.valueOf(this.remoteSyslogServerCACert));
+        sb.append(", isAutoApproveDuringMaintenance=")
+                .append(String.valueOf(this.isAutoApproveDuringMaintenance));
+        sb.append(", errorCode=").append(String.valueOf(this.errorCode));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperatorControlAssignment)) {
+            return false;
+        }
+
+        OperatorControlAssignment other = (OperatorControlAssignment) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.operatorControlId, other.operatorControlId)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceCompartmentId, other.resourceCompartmentId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.timeAssignmentFrom, other.timeAssignmentFrom)
+                && java.util.Objects.equals(this.timeAssignmentTo, other.timeAssignmentTo)
+                && java.util.Objects.equals(this.isEnforcedAlways, other.isEnforcedAlways)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.assignerId, other.assignerId)
+                && java.util.Objects.equals(this.timeOfAssignment, other.timeOfAssignment)
+                && java.util.Objects.equals(this.comment, other.comment)
+                && java.util.Objects.equals(this.unassignerId, other.unassignerId)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.detachmentDescription, other.detachmentDescription)
+                && java.util.Objects.equals(this.isLogForwarded, other.isLogForwarded)
+                && java.util.Objects.equals(
+                        this.remoteSyslogServerAddress, other.remoteSyslogServerAddress)
+                && java.util.Objects.equals(
+                        this.remoteSyslogServerPort, other.remoteSyslogServerPort)
+                && java.util.Objects.equals(
+                        this.remoteSyslogServerCACert, other.remoteSyslogServerCACert)
+                && java.util.Objects.equals(
+                        this.isAutoApproveDuringMaintenance, other.isAutoApproveDuringMaintenance)
+                && java.util.Objects.equals(this.errorCode, other.errorCode)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatorControlId == null ? 43 : this.operatorControlId.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCompartmentId == null
+                                ? 43
+                                : this.resourceCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeAssignmentFrom == null
+                                ? 43
+                                : this.timeAssignmentFrom.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeAssignmentTo == null ? 43 : this.timeAssignmentTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEnforcedAlways == null ? 43 : this.isEnforcedAlways.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.assignerId == null ? 43 : this.assignerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfAssignment == null ? 43 : this.timeOfAssignment.hashCode());
+        result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
+        result = (result * PRIME) + (this.unassignerId == null ? 43 : this.unassignerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detachmentDescription == null
+                                ? 43
+                                : this.detachmentDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLogForwarded == null ? 43 : this.isLogForwarded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteSyslogServerAddress == null
+                                ? 43
+                                : this.remoteSyslogServerAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteSyslogServerPort == null
+                                ? 43
+                                : this.remoteSyslogServerPort.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteSyslogServerCACert == null
+                                ? 43
+                                : this.remoteSyslogServerCACert.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoApproveDuringMaintenance == null
+                                ? 43
+                                : this.isAutoApproveDuringMaintenance.hashCode());
+        result = (result * PRIME) + (this.errorCode == null ? 43 : this.errorCode.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

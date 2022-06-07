@@ -8,7 +8,6 @@ package com.oracle.bmc.marketplace.model;
  * Possible data types for an orchestration variable.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.extern.slf4j.Slf4j
 public enum OrchestrationVariableTypeEnum {
     String("STRING"),
     Integer("INTEGER"),
@@ -18,6 +17,9 @@ public enum OrchestrationVariableTypeEnum {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OrchestrationVariableTypeEnum.class);
 
     private final String value;
     private static java.util.Map<String, OrchestrationVariableTypeEnum> map;

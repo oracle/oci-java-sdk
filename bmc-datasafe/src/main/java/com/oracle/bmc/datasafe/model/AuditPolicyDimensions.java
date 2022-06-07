@@ -15,16 +15,20 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AuditPolicyDimensions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuditPolicyDimensions {
+public final class AuditPolicyDimensions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"auditPolicyCategory", "auditPolicyName"})
+    public AuditPolicyDimensions(AuditPolicyCategory auditPolicyCategory, String auditPolicyName) {
+        super();
+        this.auditPolicyCategory = auditPolicyCategory;
+        this.auditPolicyName = auditPolicyName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyCategory")
         private AuditPolicyCategory auditPolicyCategory;
@@ -72,19 +76,79 @@ public class AuditPolicyDimensions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The category to which the audit policy belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyCategory")
-    AuditPolicyCategory auditPolicyCategory;
+    private final AuditPolicyCategory auditPolicyCategory;
+
+    public AuditPolicyCategory getAuditPolicyCategory() {
+        return auditPolicyCategory;
+    }
 
     /**
      * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
-    String auditPolicyName;
+    private final String auditPolicyName;
+
+    public String getAuditPolicyName() {
+        return auditPolicyName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuditPolicyDimensions(");
+        sb.append("auditPolicyCategory=").append(String.valueOf(this.auditPolicyCategory));
+        sb.append(", auditPolicyName=").append(String.valueOf(this.auditPolicyName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuditPolicyDimensions)) {
+            return false;
+        }
+
+        AuditPolicyDimensions other = (AuditPolicyDimensions) o;
+        return java.util.Objects.equals(this.auditPolicyCategory, other.auditPolicyCategory)
+                && java.util.Objects.equals(this.auditPolicyName, other.auditPolicyName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.auditPolicyCategory == null
+                                ? 43
+                                : this.auditPolicyCategory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditPolicyName == null ? 43 : this.auditPolicyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

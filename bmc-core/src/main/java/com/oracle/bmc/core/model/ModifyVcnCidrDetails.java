@@ -16,16 +16,20 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ModifyVcnCidrDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModifyVcnCidrDetails {
+public final class ModifyVcnCidrDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"originalCidrBlock", "newCidrBlock"})
+    public ModifyVcnCidrDetails(String originalCidrBlock, String newCidrBlock) {
+        super();
+        this.originalCidrBlock = originalCidrBlock;
+        this.newCidrBlock = newCidrBlock;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("originalCidrBlock")
         private String originalCidrBlock;
@@ -72,20 +76,76 @@ public class ModifyVcnCidrDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The CIDR IP address to update.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalCidrBlock")
-    String originalCidrBlock;
+    private final String originalCidrBlock;
+
+    public String getOriginalCidrBlock() {
+        return originalCidrBlock;
+    }
 
     /**
      * The new CIDR IP address.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newCidrBlock")
-    String newCidrBlock;
+    private final String newCidrBlock;
+
+    public String getNewCidrBlock() {
+        return newCidrBlock;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModifyVcnCidrDetails(");
+        sb.append("originalCidrBlock=").append(String.valueOf(this.originalCidrBlock));
+        sb.append(", newCidrBlock=").append(String.valueOf(this.newCidrBlock));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModifyVcnCidrDetails)) {
+            return false;
+        }
+
+        ModifyVcnCidrDetails other = (ModifyVcnCidrDetails) o;
+        return java.util.Objects.equals(this.originalCidrBlock, other.originalCidrBlock)
+                && java.util.Objects.equals(this.newCidrBlock, other.newCidrBlock)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.originalCidrBlock == null ? 43 : this.originalCidrBlock.hashCode());
+        result = (result * PRIME) + (this.newCidrBlock == null ? 43 : this.newCidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

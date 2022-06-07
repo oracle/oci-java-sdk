@@ -15,16 +15,21 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TopProcessesUsageTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TopProcessesUsageTrendAggregation {
+public final class TopProcessesUsageTrendAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"command", "usageData"})
+    public TopProcessesUsageTrendAggregation(
+            String command, java.util.List<TopProcessesUsageTrend> usageData) {
+        super();
+        this.command = command;
+        this.usageData = usageData;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("command")
         private String command;
@@ -70,18 +75,72 @@ public class TopProcessesUsageTrendAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Command line and arguments used to launch process
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("command")
-    String command;
+    private final String command;
+
+    public String getCommand() {
+        return command;
+    }
 
     /**
      * List of usage data samples for a top process
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageData")
-    java.util.List<TopProcessesUsageTrend> usageData;
+    private final java.util.List<TopProcessesUsageTrend> usageData;
+
+    public java.util.List<TopProcessesUsageTrend> getUsageData() {
+        return usageData;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TopProcessesUsageTrendAggregation(");
+        sb.append("command=").append(String.valueOf(this.command));
+        sb.append(", usageData=").append(String.valueOf(this.usageData));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TopProcessesUsageTrendAggregation)) {
+            return false;
+        }
+
+        TopProcessesUsageTrendAggregation other = (TopProcessesUsageTrendAggregation) o;
+        return java.util.Objects.equals(this.command, other.command)
+                && java.util.Objects.equals(this.usageData, other.usageData)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.command == null ? 43 : this.command.hashCode());
+        result = (result * PRIME) + (this.usageData == null ? 43 : this.usageData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

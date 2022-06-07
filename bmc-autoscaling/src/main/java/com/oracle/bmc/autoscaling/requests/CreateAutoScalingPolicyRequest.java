@@ -9,14 +9,6 @@ import com.oracle.bmc.autoscaling.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/CreateAutoScalingPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateAutoScalingPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateAutoScalingPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails> {
@@ -26,17 +18,27 @@ public class CreateAutoScalingPolicyRequest
      */
     private String autoScalingConfigurationId;
 
+    public String getAutoScalingConfigurationId() {
+        return autoScalingConfigurationId;
+    }
     /**
      * Creation details for an autoscaling policy.
      */
     private com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails
             createAutoScalingPolicyDetails;
 
+    public com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails
+            getCreateAutoScalingPolicyDetails() {
+        return createAutoScalingPolicyDetails;
+    }
     /**
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -46,6 +48,10 @@ public class CreateAutoScalingPolicyRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +70,58 @@ public class CreateAutoScalingPolicyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String autoScalingConfigurationId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * @return this builder instance
+         */
+        public Builder autoScalingConfigurationId(String autoScalingConfigurationId) {
+            this.autoScalingConfigurationId = autoScalingConfigurationId;
+            return this;
+        }
+
+        private com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails
+                createAutoScalingPolicyDetails = null;
+
+        /**
+         * Creation details for an autoscaling policy.
+         * @return this builder instance
+         */
+        public Builder createAutoScalingPolicyDetails(
+                com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails
+                        createAutoScalingPolicyDetails) {
+            this.createAutoScalingPolicyDetails = createAutoScalingPolicyDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -129,5 +187,93 @@ public class CreateAutoScalingPolicyRequest
             createAutoScalingPolicyDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateAutoScalingPolicyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateAutoScalingPolicyRequest
+         */
+        public CreateAutoScalingPolicyRequest buildWithoutInvocationCallback() {
+            CreateAutoScalingPolicyRequest request = new CreateAutoScalingPolicyRequest();
+            request.autoScalingConfigurationId = autoScalingConfigurationId;
+            request.createAutoScalingPolicyDetails = createAutoScalingPolicyDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateAutoScalingPolicyRequest(autoScalingConfigurationId, createAutoScalingPolicyDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .autoScalingConfigurationId(autoScalingConfigurationId)
+                .createAutoScalingPolicyDetails(createAutoScalingPolicyDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",autoScalingConfigurationId=")
+                .append(String.valueOf(this.autoScalingConfigurationId));
+        sb.append(",createAutoScalingPolicyDetails=")
+                .append(String.valueOf(this.createAutoScalingPolicyDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAutoScalingPolicyRequest)) {
+            return false;
+        }
+
+        CreateAutoScalingPolicyRequest other = (CreateAutoScalingPolicyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.autoScalingConfigurationId, other.autoScalingConfigurationId)
+                && java.util.Objects.equals(
+                        this.createAutoScalingPolicyDetails, other.createAutoScalingPolicyDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.autoScalingConfigurationId == null
+                                ? 43
+                                : this.autoScalingConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createAutoScalingPolicyDetails == null
+                                ? 43
+                                : this.createAutoScalingPolicyDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

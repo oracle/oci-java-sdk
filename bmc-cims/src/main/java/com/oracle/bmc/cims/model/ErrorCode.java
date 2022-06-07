@@ -5,7 +5,6 @@
 package com.oracle.bmc.cims.model;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.extern.slf4j.Slf4j
 public enum ErrorCode {
     ContentEmpty("CONTENT_EMPTY"),
     ClientException("CLIENT_EXCEPTION"),
@@ -36,6 +35,8 @@ public enum ErrorCode {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(ErrorCode.class);
 
     private final String value;
     private static java.util.Map<String, ErrorCode> map;

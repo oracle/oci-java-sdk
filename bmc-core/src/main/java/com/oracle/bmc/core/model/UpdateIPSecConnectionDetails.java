@@ -15,16 +15,37 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateIPSecConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateIPSecConnectionDetails {
+public final class UpdateIPSecConnectionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "cpeLocalIdentifier",
+        "cpeLocalIdentifierType",
+        "staticRoutes"
+    })
+    public UpdateIPSecConnectionDetails(
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String cpeLocalIdentifier,
+            CpeLocalIdentifierType cpeLocalIdentifierType,
+            java.util.List<String> staticRoutes) {
+        super();
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.cpeLocalIdentifier = cpeLocalIdentifier;
+        this.cpeLocalIdentifierType = cpeLocalIdentifierType;
+        this.staticRoutes = staticRoutes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -119,6 +140,10 @@ public class UpdateIPSecConnectionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -127,7 +152,11 @@ public class UpdateIPSecConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -135,7 +164,11 @@ public class UpdateIPSecConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -145,7 +178,11 @@ public class UpdateIPSecConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the
@@ -161,7 +198,12 @@ public class UpdateIPSecConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
-    String cpeLocalIdentifier;
+    private final String cpeLocalIdentifier;
+
+    public String getCpeLocalIdentifier() {
+        return cpeLocalIdentifier;
+    }
+
     /**
      * The type of identifier for your CPE device. The value you provide here must correspond to the value
      * for {@code cpeLocalIdentifier}.
@@ -205,7 +247,11 @@ public class UpdateIPSecConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
-    CpeLocalIdentifierType cpeLocalIdentifierType;
+    private final CpeLocalIdentifierType cpeLocalIdentifierType;
+
+    public CpeLocalIdentifierType getCpeLocalIdentifierType() {
+        return cpeLocalIdentifierType;
+    }
 
     /**
      * Static routes to the CPE. If you provide this attribute, it replaces the entire current set of
@@ -220,8 +266,75 @@ public class UpdateIPSecConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
-    java.util.List<String> staticRoutes;
+    private final java.util.List<String> staticRoutes;
+
+    public java.util.List<String> getStaticRoutes() {
+        return staticRoutes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateIPSecConnectionDetails(");
+        sb.append("definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", cpeLocalIdentifier=").append(String.valueOf(this.cpeLocalIdentifier));
+        sb.append(", cpeLocalIdentifierType=").append(String.valueOf(this.cpeLocalIdentifierType));
+        sb.append(", staticRoutes=").append(String.valueOf(this.staticRoutes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateIPSecConnectionDetails)) {
+            return false;
+        }
+
+        UpdateIPSecConnectionDetails other = (UpdateIPSecConnectionDetails) o;
+        return java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.cpeLocalIdentifier, other.cpeLocalIdentifier)
+                && java.util.Objects.equals(
+                        this.cpeLocalIdentifierType, other.cpeLocalIdentifierType)
+                && java.util.Objects.equals(this.staticRoutes, other.staticRoutes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpeLocalIdentifier == null
+                                ? 43
+                                : this.cpeLocalIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpeLocalIdentifierType == null
+                                ? 43
+                                : this.cpeLocalIdentifierType.hashCode());
+        result = (result * PRIME) + (this.staticRoutes == null ? 43 : this.staticRoutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

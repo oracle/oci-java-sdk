@@ -7,10 +7,6 @@ package com.oracle.bmc.ospgateway.responses;
 import com.oracle.bmc.ospgateway.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -19,25 +15,45 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * Set content to download
      */
     private String contentDisposition;
+
+    public String getContentDisposition() {
+        return contentDisposition;
+    }
 
     /**
      * Set the content type to download
      */
     private String contentType;
 
+    public String getContentType() {
+        return contentType;
+    }
+
     /**
      * Set the content length to download
      */
     private Integer contentLength;
 
+    public Integer getContentLength() {
+        return contentLength;
+    }
+
     /**
      * The returned java.io.InputStream instance.
      */
     private java.io.InputStream inputStream;
+
+    public java.io.InputStream getInputStream() {
+        return inputStream;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -70,6 +86,41 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String contentDisposition;
+
+        public Builder contentDisposition(String contentDisposition) {
+            this.contentDisposition = contentDisposition;
+            return this;
+        }
+
+        private String contentType;
+
+        public Builder contentType(String contentType) {
+            this.contentType = contentType;
+            return this;
+        }
+
+        private Integer contentLength;
+
+        public Builder contentLength(Integer contentLength) {
+            this.contentLength = contentLength;
+            return this;
+        }
+
+        private java.io.InputStream inputStream;
+
+        public Builder inputStream(java.io.InputStream inputStream) {
+            this.inputStream = inputStream;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -94,5 +145,59 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
                     contentLength,
                     inputStream);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",contentDisposition=").append(String.valueOf(contentDisposition));
+        sb.append(",contentType=").append(String.valueOf(contentType));
+        sb.append(",contentLength=").append(String.valueOf(contentLength));
+        sb.append(",inputStream=").append(String.valueOf(inputStream));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DownloadPdfContentResponse)) {
+            return false;
+        }
+
+        DownloadPdfContentResponse other = (DownloadPdfContentResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.contentDisposition, other.contentDisposition)
+                && java.util.Objects.equals(this.contentType, other.contentType)
+                && java.util.Objects.equals(this.contentLength, other.contentLength)
+                && java.util.Objects.equals(this.inputStream, other.inputStream);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentDisposition == null
+                                ? 43
+                                : this.contentDisposition.hashCode());
+        result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentLength == null ? 43 : this.contentLength.hashCode());
+        result = (result * PRIME) + (this.inputStream == null ? 43 : this.inputStream.hashCode());
+        return result;
     }
 }

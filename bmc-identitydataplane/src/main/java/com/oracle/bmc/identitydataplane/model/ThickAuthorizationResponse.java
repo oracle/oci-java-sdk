@@ -15,16 +15,34 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ThickAuthorizationResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ThickAuthorizationResponse {
+public final class ThickAuthorizationResponse {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "policy",
+        "policyCacheDuration",
+        "groups",
+        "groupMembershipCacheDuration",
+        "flushAllCaches"
+    })
+    public ThickAuthorizationResponse(
+            String policy,
+            String policyCacheDuration,
+            java.util.List<String> groups,
+            String groupMembershipCacheDuration,
+            Boolean flushAllCaches) {
+        super();
+        this.policy = policy;
+        this.policyCacheDuration = policyCacheDuration;
+        this.groups = groups;
+        this.groupMembershipCacheDuration = groupMembershipCacheDuration;
+        this.flushAllCaches = flushAllCaches;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
@@ -107,11 +125,19 @@ public class ThickAuthorizationResponse {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The policy string related to the request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
-    String policy;
+    private final String policy;
+
+    public String getPolicy() {
+        return policy;
+    }
 
     /**
      * The duration of how long this policy should be cached. Note that the type is of type java.time.Duration, not
@@ -119,13 +145,21 @@ public class ThickAuthorizationResponse {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyCacheDuration")
-    String policyCacheDuration;
+    private final String policyCacheDuration;
+
+    public String getPolicyCacheDuration() {
+        return policyCacheDuration;
+    }
 
     /**
      * The policy string related to the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groups")
-    java.util.List<String> groups;
+    private final java.util.List<String> groups;
+
+    public java.util.List<String> getGroups() {
+        return groups;
+    }
 
     /**
      * The duration of how long the user's group membership should be cached. Note that the type is of type
@@ -133,14 +167,85 @@ public class ThickAuthorizationResponse {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipCacheDuration")
-    String groupMembershipCacheDuration;
+    private final String groupMembershipCacheDuration;
+
+    public String getGroupMembershipCacheDuration() {
+        return groupMembershipCacheDuration;
+    }
 
     /**
      * If set to true, the SDK should clear the caches.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("flushAllCaches")
-    Boolean flushAllCaches;
+    private final Boolean flushAllCaches;
+
+    public Boolean getFlushAllCaches() {
+        return flushAllCaches;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ThickAuthorizationResponse(");
+        sb.append("policy=").append(String.valueOf(this.policy));
+        sb.append(", policyCacheDuration=").append(String.valueOf(this.policyCacheDuration));
+        sb.append(", groups=").append(String.valueOf(this.groups));
+        sb.append(", groupMembershipCacheDuration=")
+                .append(String.valueOf(this.groupMembershipCacheDuration));
+        sb.append(", flushAllCaches=").append(String.valueOf(this.flushAllCaches));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ThickAuthorizationResponse)) {
+            return false;
+        }
+
+        ThickAuthorizationResponse other = (ThickAuthorizationResponse) o;
+        return java.util.Objects.equals(this.policy, other.policy)
+                && java.util.Objects.equals(this.policyCacheDuration, other.policyCacheDuration)
+                && java.util.Objects.equals(this.groups, other.groups)
+                && java.util.Objects.equals(
+                        this.groupMembershipCacheDuration, other.groupMembershipCacheDuration)
+                && java.util.Objects.equals(this.flushAllCaches, other.flushAllCaches)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.policyCacheDuration == null
+                                ? 43
+                                : this.policyCacheDuration.hashCode());
+        result = (result * PRIME) + (this.groups == null ? 43 : this.groups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupMembershipCacheDuration == null
+                                ? 43
+                                : this.groupMembershipCacheDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flushAllCaches == null ? 43 : this.flushAllCaches.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

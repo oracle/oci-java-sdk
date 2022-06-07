@@ -16,16 +16,100 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateAutonomousContainerDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateAutonomousContainerDatabaseDetails {
+public final class CreateAutonomousContainerDatabaseDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "dbUniqueName",
+        "serviceLevelAgreementType",
+        "autonomousExadataInfrastructureId",
+        "peerAutonomousExadataInfrastructureId",
+        "peerAutonomousContainerDatabaseDisplayName",
+        "protectionMode",
+        "isAutomaticFailoverEnabled",
+        "peerCloudAutonomousVmClusterId",
+        "peerAutonomousVmClusterId",
+        "peerAutonomousContainerDatabaseCompartmentId",
+        "peerAutonomousContainerDatabaseBackupConfig",
+        "peerDbUniqueName",
+        "autonomousVmClusterId",
+        "cloudAutonomousVmClusterId",
+        "compartmentId",
+        "patchModel",
+        "maintenanceWindowDetails",
+        "standbyMaintenanceBufferInDays",
+        "freeformTags",
+        "definedTags",
+        "backupConfig",
+        "kmsKeyId",
+        "kmsKeyVersionId",
+        "vaultId",
+        "keyStoreId"
+    })
+    public CreateAutonomousContainerDatabaseDetails(
+            String displayName,
+            String dbUniqueName,
+            ServiceLevelAgreementType serviceLevelAgreementType,
+            String autonomousExadataInfrastructureId,
+            String peerAutonomousExadataInfrastructureId,
+            String peerAutonomousContainerDatabaseDisplayName,
+            ProtectionMode protectionMode,
+            Boolean isAutomaticFailoverEnabled,
+            String peerCloudAutonomousVmClusterId,
+            String peerAutonomousVmClusterId,
+            String peerAutonomousContainerDatabaseCompartmentId,
+            PeerAutonomousContainerDatabaseBackupConfig peerAutonomousContainerDatabaseBackupConfig,
+            String peerDbUniqueName,
+            String autonomousVmClusterId,
+            String cloudAutonomousVmClusterId,
+            String compartmentId,
+            PatchModel patchModel,
+            MaintenanceWindow maintenanceWindowDetails,
+            Integer standbyMaintenanceBufferInDays,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            AutonomousContainerDatabaseBackupConfig backupConfig,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            String vaultId,
+            String keyStoreId) {
+        super();
+        this.displayName = displayName;
+        this.dbUniqueName = dbUniqueName;
+        this.serviceLevelAgreementType = serviceLevelAgreementType;
+        this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+        this.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
+        this.peerAutonomousContainerDatabaseDisplayName =
+                peerAutonomousContainerDatabaseDisplayName;
+        this.protectionMode = protectionMode;
+        this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+        this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+        this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
+        this.peerAutonomousContainerDatabaseCompartmentId =
+                peerAutonomousContainerDatabaseCompartmentId;
+        this.peerAutonomousContainerDatabaseBackupConfig =
+                peerAutonomousContainerDatabaseBackupConfig;
+        this.peerDbUniqueName = peerDbUniqueName;
+        this.autonomousVmClusterId = autonomousVmClusterId;
+        this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+        this.compartmentId = compartmentId;
+        this.patchModel = patchModel;
+        this.maintenanceWindowDetails = maintenanceWindowDetails;
+        this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.backupConfig = backupConfig;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.vaultId = vaultId;
+        this.keyStoreId = keyStoreId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -357,18 +441,31 @@ public class CreateAutonomousContainerDatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The display name for the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * **Deprecated.** The {@code DB_UNIQUE_NAME} value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    private final String dbUniqueName;
+
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
+
     /**
      * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      **/
@@ -408,27 +505,44 @@ public class CreateAutonomousContainerDatabaseDetails {
      * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLevelAgreementType")
-    ServiceLevelAgreementType serviceLevelAgreementType;
+    private final ServiceLevelAgreementType serviceLevelAgreementType;
+
+    public ServiceLevelAgreementType getServiceLevelAgreementType() {
+        return serviceLevelAgreementType;
+    }
 
     /**
      * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code cloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
-    String autonomousExadataInfrastructureId;
+    private final String autonomousExadataInfrastructureId;
+
+    public String getAutonomousExadataInfrastructureId() {
+        return autonomousExadataInfrastructureId;
+    }
 
     /**
      * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousExadataInfrastructureId")
-    String peerAutonomousExadataInfrastructureId;
+    private final String peerAutonomousExadataInfrastructureId;
+
+    public String getPeerAutonomousExadataInfrastructureId() {
+        return peerAutonomousExadataInfrastructureId;
+    }
 
     /**
      * The display name for the peer Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseDisplayName")
-    String peerAutonomousContainerDatabaseDisplayName;
+    private final String peerAutonomousContainerDatabaseDisplayName;
+
+    public String getPeerAutonomousContainerDatabaseDisplayName() {
+        return peerAutonomousContainerDatabaseDisplayName;
+    }
+
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
@@ -474,27 +588,43 @@ public class CreateAutonomousContainerDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
-    ProtectionMode protectionMode;
+    private final ProtectionMode protectionMode;
+
+    public ProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
 
     /**
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
-    Boolean isAutomaticFailoverEnabled;
+    private final Boolean isAutomaticFailoverEnabled;
+
+    public Boolean getIsAutomaticFailoverEnabled() {
+        return isAutomaticFailoverEnabled;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
-    String peerCloudAutonomousVmClusterId;
+    private final String peerCloudAutonomousVmClusterId;
+
+    public String getPeerCloudAutonomousVmClusterId() {
+        return peerCloudAutonomousVmClusterId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
-    String peerAutonomousVmClusterId;
+    private final String peerAutonomousVmClusterId;
+
+    public String getPeerAutonomousVmClusterId() {
+        return peerAutonomousVmClusterId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
@@ -502,35 +632,62 @@ public class CreateAutonomousContainerDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseCompartmentId")
-    String peerAutonomousContainerDatabaseCompartmentId;
+    private final String peerAutonomousContainerDatabaseCompartmentId;
+
+    public String getPeerAutonomousContainerDatabaseCompartmentId() {
+        return peerAutonomousContainerDatabaseCompartmentId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseBackupConfig")
-    PeerAutonomousContainerDatabaseBackupConfig peerAutonomousContainerDatabaseBackupConfig;
+    private final PeerAutonomousContainerDatabaseBackupConfig
+            peerAutonomousContainerDatabaseBackupConfig;
+
+    public PeerAutonomousContainerDatabaseBackupConfig
+            getPeerAutonomousContainerDatabaseBackupConfig() {
+        return peerAutonomousContainerDatabaseBackupConfig;
+    }
 
     /**
      * **Deprecated.** The {@code DB_UNIQUE_NAME} of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
-    String peerDbUniqueName;
+    private final String peerDbUniqueName;
+
+    public String getPeerDbUniqueName() {
+        return peerDbUniqueName;
+    }
 
     /**
      * The OCID of the Autonomous VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
-    String autonomousVmClusterId;
+    private final String autonomousVmClusterId;
+
+    public String getAutonomousVmClusterId() {
+        return autonomousVmClusterId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
-    String cloudAutonomousVmClusterId;
+    private final String cloudAutonomousVmClusterId;
+
+    public String getCloudAutonomousVmClusterId() {
+        return cloudAutonomousVmClusterId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * Database Patch model preference.
      **/
@@ -570,10 +727,18 @@ public class CreateAutonomousContainerDatabaseDetails {
      * Database Patch model preference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
-    PatchModel patchModel;
+    private final PatchModel patchModel;
+
+    public PatchModel getPatchModel() {
+        return patchModel;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
-    MaintenanceWindow maintenanceWindowDetails;
+    private final MaintenanceWindow maintenanceWindowDetails;
+
+    public MaintenanceWindow getMaintenanceWindowDetails() {
+        return maintenanceWindowDetails;
+    }
 
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
@@ -581,7 +746,11 @@ public class CreateAutonomousContainerDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
-    Integer standbyMaintenanceBufferInDays;
+    private final Integer standbyMaintenanceBufferInDays;
+
+    public Integer getStandbyMaintenanceBufferInDays() {
+        return standbyMaintenanceBufferInDays;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -591,7 +760,11 @@ public class CreateAutonomousContainerDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -599,36 +772,264 @@ public class CreateAutonomousContainerDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
-    AutonomousContainerDatabaseBackupConfig backupConfig;
+    private final AutonomousContainerDatabaseBackupConfig backupConfig;
+
+    public AutonomousContainerDatabaseBackupConfig getBackupConfig() {
+        return backupConfig;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
-    String kmsKeyVersionId;
+    private final String kmsKeyVersionId;
+
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
-    String keyStoreId;
+    private final String keyStoreId;
+
+    public String getKeyStoreId() {
+        return keyStoreId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateAutonomousContainerDatabaseDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", serviceLevelAgreementType=")
+                .append(String.valueOf(this.serviceLevelAgreementType));
+        sb.append(", autonomousExadataInfrastructureId=")
+                .append(String.valueOf(this.autonomousExadataInfrastructureId));
+        sb.append(", peerAutonomousExadataInfrastructureId=")
+                .append(String.valueOf(this.peerAutonomousExadataInfrastructureId));
+        sb.append(", peerAutonomousContainerDatabaseDisplayName=")
+                .append(String.valueOf(this.peerAutonomousContainerDatabaseDisplayName));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", isAutomaticFailoverEnabled=")
+                .append(String.valueOf(this.isAutomaticFailoverEnabled));
+        sb.append(", peerCloudAutonomousVmClusterId=")
+                .append(String.valueOf(this.peerCloudAutonomousVmClusterId));
+        sb.append(", peerAutonomousVmClusterId=")
+                .append(String.valueOf(this.peerAutonomousVmClusterId));
+        sb.append(", peerAutonomousContainerDatabaseCompartmentId=")
+                .append(String.valueOf(this.peerAutonomousContainerDatabaseCompartmentId));
+        sb.append(", peerAutonomousContainerDatabaseBackupConfig=")
+                .append(String.valueOf(this.peerAutonomousContainerDatabaseBackupConfig));
+        sb.append(", peerDbUniqueName=").append(String.valueOf(this.peerDbUniqueName));
+        sb.append(", autonomousVmClusterId=").append(String.valueOf(this.autonomousVmClusterId));
+        sb.append(", cloudAutonomousVmClusterId=")
+                .append(String.valueOf(this.cloudAutonomousVmClusterId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", patchModel=").append(String.valueOf(this.patchModel));
+        sb.append(", maintenanceWindowDetails=")
+                .append(String.valueOf(this.maintenanceWindowDetails));
+        sb.append(", standbyMaintenanceBufferInDays=")
+                .append(String.valueOf(this.standbyMaintenanceBufferInDays));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAutonomousContainerDatabaseDetails)) {
+            return false;
+        }
+
+        CreateAutonomousContainerDatabaseDetails other =
+                (CreateAutonomousContainerDatabaseDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(
+                        this.serviceLevelAgreementType, other.serviceLevelAgreementType)
+                && java.util.Objects.equals(
+                        this.autonomousExadataInfrastructureId,
+                        other.autonomousExadataInfrastructureId)
+                && java.util.Objects.equals(
+                        this.peerAutonomousExadataInfrastructureId,
+                        other.peerAutonomousExadataInfrastructureId)
+                && java.util.Objects.equals(
+                        this.peerAutonomousContainerDatabaseDisplayName,
+                        other.peerAutonomousContainerDatabaseDisplayName)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(
+                        this.isAutomaticFailoverEnabled, other.isAutomaticFailoverEnabled)
+                && java.util.Objects.equals(
+                        this.peerCloudAutonomousVmClusterId, other.peerCloudAutonomousVmClusterId)
+                && java.util.Objects.equals(
+                        this.peerAutonomousVmClusterId, other.peerAutonomousVmClusterId)
+                && java.util.Objects.equals(
+                        this.peerAutonomousContainerDatabaseCompartmentId,
+                        other.peerAutonomousContainerDatabaseCompartmentId)
+                && java.util.Objects.equals(
+                        this.peerAutonomousContainerDatabaseBackupConfig,
+                        other.peerAutonomousContainerDatabaseBackupConfig)
+                && java.util.Objects.equals(this.peerDbUniqueName, other.peerDbUniqueName)
+                && java.util.Objects.equals(this.autonomousVmClusterId, other.autonomousVmClusterId)
+                && java.util.Objects.equals(
+                        this.cloudAutonomousVmClusterId, other.cloudAutonomousVmClusterId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.patchModel, other.patchModel)
+                && java.util.Objects.equals(
+                        this.maintenanceWindowDetails, other.maintenanceWindowDetails)
+                && java.util.Objects.equals(
+                        this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.backupConfig, other.backupConfig)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceLevelAgreementType == null
+                                ? 43
+                                : this.serviceLevelAgreementType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousExadataInfrastructureId == null
+                                ? 43
+                                : this.autonomousExadataInfrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAutonomousExadataInfrastructureId == null
+                                ? 43
+                                : this.peerAutonomousExadataInfrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAutonomousContainerDatabaseDisplayName == null
+                                ? 43
+                                : this.peerAutonomousContainerDatabaseDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutomaticFailoverEnabled == null
+                                ? 43
+                                : this.isAutomaticFailoverEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerCloudAutonomousVmClusterId == null
+                                ? 43
+                                : this.peerCloudAutonomousVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAutonomousVmClusterId == null
+                                ? 43
+                                : this.peerAutonomousVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAutonomousContainerDatabaseCompartmentId == null
+                                ? 43
+                                : this.peerAutonomousContainerDatabaseCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAutonomousContainerDatabaseBackupConfig == null
+                                ? 43
+                                : this.peerAutonomousContainerDatabaseBackupConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerDbUniqueName == null ? 43 : this.peerDbUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousVmClusterId == null
+                                ? 43
+                                : this.autonomousVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutonomousVmClusterId == null
+                                ? 43
+                                : this.cloudAutonomousVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.patchModel == null ? 43 : this.patchModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindowDetails == null
+                                ? 43
+                                : this.maintenanceWindowDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standbyMaintenanceBufferInDays == null
+                                ? 43
+                                : this.standbyMaintenanceBufferInDays.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

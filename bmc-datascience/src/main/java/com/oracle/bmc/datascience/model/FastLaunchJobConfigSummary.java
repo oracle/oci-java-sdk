@@ -15,16 +15,37 @@ package com.oracle.bmc.datascience.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FastLaunchJobConfigSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FastLaunchJobConfigSummary {
+public final class FastLaunchJobConfigSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "shapeName",
+        "coreCount",
+        "memoryInGBs",
+        "shapeSeries",
+        "managedEgressSupport"
+    })
+    public FastLaunchJobConfigSummary(
+            String name,
+            String shapeName,
+            Integer coreCount,
+            Integer memoryInGBs,
+            ShapeSeries shapeSeries,
+            ManagedEgressSupport managedEgressSupport) {
+        super();
+        this.name = name;
+        this.shapeName = shapeName;
+        this.coreCount = coreCount;
+        this.memoryInGBs = memoryInGBs;
+        this.shapeSeries = shapeSeries;
+        this.managedEgressSupport = managedEgressSupport;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -118,38 +139,58 @@ public class FastLaunchJobConfigSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the fast launch job config
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The name of the fast launch job shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    String shapeName;
+    private final String shapeName;
+
+    public String getShapeName() {
+        return shapeName;
+    }
 
     /**
      * The number of cores associated with this fast launch job shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
-    Integer coreCount;
+    private final Integer coreCount;
+
+    public Integer getCoreCount() {
+        return coreCount;
+    }
 
     /**
      * The number of cores associated with this fast launch job shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
-    Integer memoryInGBs;
+    private final Integer memoryInGBs;
+
+    public Integer getMemoryInGBs() {
+        return memoryInGBs;
+    }
+
     /**
      * The family that the compute shape belongs to.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ShapeSeries {
         AmdRome("AMD_ROME"),
         IntelSkylake("INTEL_SKYLAKE"),
@@ -161,6 +202,9 @@ public class FastLaunchJobConfigSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ShapeSeries.class);
 
         private final String value;
         private static java.util.Map<String, ShapeSeries> map;
@@ -199,12 +243,16 @@ public class FastLaunchJobConfigSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
-    ShapeSeries shapeSeries;
+    private final ShapeSeries shapeSeries;
+
+    public ShapeSeries getShapeSeries() {
+        return shapeSeries;
+    }
+
     /**
      * The managed egress support
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ManagedEgressSupport {
         Required("REQUIRED"),
         Supported("SUPPORTED"),
@@ -215,6 +263,9 @@ public class FastLaunchJobConfigSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagedEgressSupport.class);
 
         private final String value;
         private static java.util.Map<String, ManagedEgressSupport> map;
@@ -253,8 +304,70 @@ public class FastLaunchJobConfigSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedEgressSupport")
-    ManagedEgressSupport managedEgressSupport;
+    private final ManagedEgressSupport managedEgressSupport;
+
+    public ManagedEgressSupport getManagedEgressSupport() {
+        return managedEgressSupport;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FastLaunchJobConfigSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", coreCount=").append(String.valueOf(this.coreCount));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", shapeSeries=").append(String.valueOf(this.shapeSeries));
+        sb.append(", managedEgressSupport=").append(String.valueOf(this.managedEgressSupport));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FastLaunchJobConfigSummary)) {
+            return false;
+        }
+
+        FastLaunchJobConfigSummary other = (FastLaunchJobConfigSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.coreCount, other.coreCount)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.shapeSeries, other.shapeSeries)
+                && java.util.Objects.equals(this.managedEgressSupport, other.managedEgressSupport)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.coreCount == null ? 43 : this.coreCount.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result = (result * PRIME) + (this.shapeSeries == null ? 43 : this.shapeSeries.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedEgressSupport == null
+                                ? 43
+                                : this.managedEgressSupport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

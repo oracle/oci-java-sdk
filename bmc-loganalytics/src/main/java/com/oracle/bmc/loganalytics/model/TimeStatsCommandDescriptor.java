@@ -16,22 +16,17 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TimeStatsCommandDescriptor.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "name"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TimeStatsCommandDescriptor extends AbstractCommandDescriptor {
+public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
@@ -158,6 +153,10 @@ public class TimeStatsCommandDescriptor extends AbstractCommandDescriptor {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public TimeStatsCommandDescriptor(
             String displayQueryString,
@@ -181,29 +180,97 @@ public class TimeStatsCommandDescriptor extends AbstractCommandDescriptor {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
-    AbstractField time;
+    private final AbstractField time;
+
+    public AbstractField getTime() {
+        return time;
+    }
 
     /**
      * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("span")
-    String span;
+    private final String span;
+
+    public String getSpan() {
+        return span;
+    }
 
     /**
      * Group by fields if specified in the query string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
-    java.util.List<AbstractField> groupByFields;
+    private final java.util.List<AbstractField> groupByFields;
+
+    public java.util.List<AbstractField> getGroupByFields() {
+        return groupByFields;
+    }
 
     /**
      * Statistical functions specified in the query string. Atleast 1 is required for a TIMESTATS command.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
-    java.util.List<FunctionField> functions;
+    private final java.util.List<FunctionField> functions;
+
+    public java.util.List<FunctionField> getFunctions() {
+        return functions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TimeStatsCommandDescriptor(");
+        sb.append("super=").append(super.toString());
+        sb.append(", time=").append(String.valueOf(this.time));
+        sb.append(", span=").append(String.valueOf(this.span));
+        sb.append(", groupByFields=").append(String.valueOf(this.groupByFields));
+        sb.append(", functions=").append(String.valueOf(this.functions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TimeStatsCommandDescriptor)) {
+            return false;
+        }
+
+        TimeStatsCommandDescriptor other = (TimeStatsCommandDescriptor) o;
+        return java.util.Objects.equals(this.time, other.time)
+                && java.util.Objects.equals(this.span, other.span)
+                && java.util.Objects.equals(this.groupByFields, other.groupByFields)
+                && java.util.Objects.equals(this.functions, other.functions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
+        result = (result * PRIME) + (this.span == null ? 43 : this.span.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupByFields == null ? 43 : this.groupByFields.hashCode());
+        result = (result * PRIME) + (this.functions == null ? 43 : this.functions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

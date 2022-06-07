@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateBulkProblemStatusExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBulkProblemStatusRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateBulkProblemStatusRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails> {
@@ -27,10 +19,18 @@ public class UpdateBulkProblemStatusRequest
     private com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails
             updateBulkProblemStatusDetails;
 
+    public com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails
+            getUpdateBulkProblemStatusDetails() {
+        return updateBulkProblemStatusDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -49,6 +49,31 @@ public class UpdateBulkProblemStatusRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails
+                updateBulkProblemStatusDetails = null;
+
+        /**
+         * A list of problem ids to be passed in to update the Problem status
+         * @return this builder instance
+         */
+        public Builder updateBulkProblemStatusDetails(
+                com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails
+                        updateBulkProblemStatusDetails) {
+            this.updateBulkProblemStatusDetails = updateBulkProblemStatusDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -112,5 +137,75 @@ public class UpdateBulkProblemStatusRequest
             updateBulkProblemStatusDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateBulkProblemStatusRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateBulkProblemStatusRequest
+         */
+        public UpdateBulkProblemStatusRequest buildWithoutInvocationCallback() {
+            UpdateBulkProblemStatusRequest request = new UpdateBulkProblemStatusRequest();
+            request.updateBulkProblemStatusDetails = updateBulkProblemStatusDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateBulkProblemStatusRequest(updateBulkProblemStatusDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .updateBulkProblemStatusDetails(updateBulkProblemStatusDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",updateBulkProblemStatusDetails=")
+                .append(String.valueOf(this.updateBulkProblemStatusDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBulkProblemStatusRequest)) {
+            return false;
+        }
+
+        UpdateBulkProblemStatusRequest other = (UpdateBulkProblemStatusRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.updateBulkProblemStatusDetails, other.updateBulkProblemStatusDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.updateBulkProblemStatusDetails == null
+                                ? 43
+                                : this.updateBulkProblemStatusDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

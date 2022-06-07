@@ -15,16 +15,21 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RequestSummarizedTrendResourceRiskScoresDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RequestSummarizedTrendResourceRiskScoresDetails {
+public final class RequestSummarizedTrendResourceRiskScoresDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"filter", "filterId"})
+    public RequestSummarizedTrendResourceRiskScoresDetails(
+            ResourceRiskScoreDimension filter, String filterId) {
+        super();
+        this.filter = filter;
+        this.filterId = filterId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("filter")
         private ResourceRiskScoreDimension filter;
@@ -70,18 +75,73 @@ public class RequestSummarizedTrendResourceRiskScoresDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The filter type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
-    ResourceRiskScoreDimension filter;
+    private final ResourceRiskScoreDimension filter;
+
+    public ResourceRiskScoreDimension getFilter() {
+        return filter;
+    }
 
     /**
      * Id to be passed in to filter the risk scores.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
-    String filterId;
+    private final String filterId;
+
+    public String getFilterId() {
+        return filterId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RequestSummarizedTrendResourceRiskScoresDetails(");
+        sb.append("filter=").append(String.valueOf(this.filter));
+        sb.append(", filterId=").append(String.valueOf(this.filterId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestSummarizedTrendResourceRiskScoresDetails)) {
+            return false;
+        }
+
+        RequestSummarizedTrendResourceRiskScoresDetails other =
+                (RequestSummarizedTrendResourceRiskScoresDetails) o;
+        return java.util.Objects.equals(this.filter, other.filter)
+                && java.util.Objects.equals(this.filterId, other.filterId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.filter == null ? 43 : this.filter.hashCode());
+        result = (result * PRIME) + (this.filterId == null ? 43 : this.filterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

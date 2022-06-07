@@ -15,16 +15,20 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ChangeTableCompartmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChangeTableCompartmentDetails {
+public final class ChangeTableCompartmentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"fromCompartmentId", "toCompartmentId"})
+    public ChangeTableCompartmentDetails(String fromCompartmentId, String toCompartmentId) {
+        super();
+        this.fromCompartmentId = fromCompartmentId;
+        this.toCompartmentId = toCompartmentId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fromCompartmentId")
         private String fromCompartmentId;
@@ -72,6 +76,10 @@ public class ChangeTableCompartmentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the table's current compartment.  Required
      * if the tableNameOrId path parameter is a table name.
@@ -81,14 +89,68 @@ public class ChangeTableCompartmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fromCompartmentId")
-    String fromCompartmentId;
+    private final String fromCompartmentId;
+
+    public String getFromCompartmentId() {
+        return fromCompartmentId;
+    }
 
     /**
      * The OCID of the table's new compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("toCompartmentId")
-    String toCompartmentId;
+    private final String toCompartmentId;
+
+    public String getToCompartmentId() {
+        return toCompartmentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChangeTableCompartmentDetails(");
+        sb.append("fromCompartmentId=").append(String.valueOf(this.fromCompartmentId));
+        sb.append(", toCompartmentId=").append(String.valueOf(this.toCompartmentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeTableCompartmentDetails)) {
+            return false;
+        }
+
+        ChangeTableCompartmentDetails other = (ChangeTableCompartmentDetails) o;
+        return java.util.Objects.equals(this.fromCompartmentId, other.fromCompartmentId)
+                && java.util.Objects.equals(this.toCompartmentId, other.toCompartmentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.fromCompartmentId == null ? 43 : this.fromCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.toCompartmentId == null ? 43 : this.toCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

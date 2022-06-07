@@ -15,14 +15,18 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SortClause.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SortClause {
+public final class SortClause {
+    @Deprecated
+    @java.beans.ConstructorProperties({"field", "order"})
+    public SortClause(ShapeField field, Order order) {
+        super();
+        this.field = field;
+        this.order = order;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private ShapeField field;
@@ -67,12 +71,20 @@ public class SortClause {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("field")
-    ShapeField field;
+    private final ShapeField field;
+
+    public ShapeField getField() {
+        return field;
+    }
+
     /**
      * The sort order.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Order {
         Asc("ASC"),
         Desc("DESC"),
@@ -82,6 +94,8 @@ public class SortClause {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Order.class);
 
         private final String value;
         private static java.util.Map<String, Order> map;
@@ -119,8 +133,54 @@ public class SortClause {
      * The sort order.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("order")
-    Order order;
+    private final Order order;
+
+    public Order getOrder() {
+        return order;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SortClause(");
+        sb.append("field=").append(String.valueOf(this.field));
+        sb.append(", order=").append(String.valueOf(this.order));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SortClause)) {
+            return false;
+        }
+
+        SortClause other = (SortClause) o;
+        return java.util.Objects.equals(this.field, other.field)
+                && java.util.Objects.equals(this.order, other.order)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.field == null ? 43 : this.field.hashCode());
+        result = (result * PRIME) + (this.order == null ? 43 : this.order.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

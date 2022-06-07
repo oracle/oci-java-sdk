@@ -15,16 +15,22 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ModelTrainingDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModelTrainingDetails {
+public final class ModelTrainingDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"targetFap", "trainingFraction", "dataAssetIds"})
+    public ModelTrainingDetails(
+            Float targetFap, Float trainingFraction, java.util.List<String> dataAssetIds) {
+        super();
+        this.targetFap = targetFap;
+        this.trainingFraction = trainingFraction;
+        this.dataAssetIds = dataAssetIds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetFap")
         private Float targetFap;
@@ -82,24 +88,87 @@ public class ModelTrainingDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A target model accuracy metric user provides as their requirement
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetFap")
-    Float targetFap;
+    private final Float targetFap;
+
+    public Float getTargetFap() {
+        return targetFap;
+    }
 
     /**
      * Fraction of total data that is used for training the model. The remaining is used for validation of the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trainingFraction")
-    Float trainingFraction;
+    private final Float trainingFraction;
+
+    public Float getTrainingFraction() {
+        return trainingFraction;
+    }
 
     /**
      * The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetIds")
-    java.util.List<String> dataAssetIds;
+    private final java.util.List<String> dataAssetIds;
+
+    public java.util.List<String> getDataAssetIds() {
+        return dataAssetIds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModelTrainingDetails(");
+        sb.append("targetFap=").append(String.valueOf(this.targetFap));
+        sb.append(", trainingFraction=").append(String.valueOf(this.trainingFraction));
+        sb.append(", dataAssetIds=").append(String.valueOf(this.dataAssetIds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModelTrainingDetails)) {
+            return false;
+        }
+
+        ModelTrainingDetails other = (ModelTrainingDetails) o;
+        return java.util.Objects.equals(this.targetFap, other.targetFap)
+                && java.util.Objects.equals(this.trainingFraction, other.trainingFraction)
+                && java.util.Objects.equals(this.dataAssetIds, other.dataAssetIds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.targetFap == null ? 43 : this.targetFap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trainingFraction == null ? 43 : this.trainingFraction.hashCode());
+        result = (result * PRIME) + (this.dataAssetIds == null ? 43 : this.dataAssetIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,47 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReferenceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReferenceSummary {
+public final class ReferenceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "name",
+        "identifier",
+        "identifierPath",
+        "description",
+        "type",
+        "targetObject",
+        "aggregatorKey",
+        "usedBy",
+        "childReferences"
+    })
+    public ReferenceSummary(
+            String key,
+            String name,
+            String identifier,
+            String identifierPath,
+            String description,
+            Type type,
+            Object targetObject,
+            String aggregatorKey,
+            java.util.List<ReferenceUsedBy> usedBy,
+            java.util.List<ChildReference> childReferences) {
+        super();
+        this.key = key;
+        this.name = name;
+        this.identifier = identifier;
+        this.identifierPath = identifierPath;
+        this.description = description;
+        this.type = type;
+        this.targetObject = targetObject;
+        this.aggregatorKey = aggregatorKey;
+        this.usedBy = usedBy;
+        this.childReferences = childReferences;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -160,39 +193,63 @@ public class ReferenceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The reference's key, key of the object that is being used by a published object or its dependents.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The name of reference object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The identifier of reference object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * The identifier path of reference object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
-    String identifierPath;
+    private final String identifierPath;
+
+    public String getIdentifierPath() {
+        return identifierPath;
+    }
 
     /**
      * The description of reference object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
     /**
      * The type of reference object.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         OracleDataAsset("ORACLE_DATA_ASSET"),
         OracleObjectStorageDataAsset("ORACLE_OBJECT_STORAGE_DATA_ASSET"),
@@ -215,6 +272,8 @@ public class ReferenceSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -251,32 +310,124 @@ public class ReferenceSummary {
      * The type of reference object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The target object referenced. References are made to data assets and child references are made to connections. The type defining this reference is mentioned in the property type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
-    Object targetObject;
+    private final Object targetObject;
+
+    public Object getTargetObject() {
+        return targetObject;
+    }
 
     /**
      * The aggregator of reference object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
-    String aggregatorKey;
+    private final String aggregatorKey;
+
+    public String getAggregatorKey() {
+        return aggregatorKey;
+    }
 
     /**
      * List of published objects where this is used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedBy")
-    java.util.List<ReferenceUsedBy> usedBy;
+    private final java.util.List<ReferenceUsedBy> usedBy;
+
+    public java.util.List<ReferenceUsedBy> getUsedBy() {
+        return usedBy;
+    }
 
     /**
      * List of references that are dependent on this reference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("childReferences")
-    java.util.List<ChildReference> childReferences;
+    private final java.util.List<ChildReference> childReferences;
+
+    public java.util.List<ChildReference> getChildReferences() {
+        return childReferences;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReferenceSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", identifierPath=").append(String.valueOf(this.identifierPath));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", targetObject=").append(String.valueOf(this.targetObject));
+        sb.append(", aggregatorKey=").append(String.valueOf(this.aggregatorKey));
+        sb.append(", usedBy=").append(String.valueOf(this.usedBy));
+        sb.append(", childReferences=").append(String.valueOf(this.childReferences));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReferenceSummary)) {
+            return false;
+        }
+
+        ReferenceSummary other = (ReferenceSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.identifierPath, other.identifierPath)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.targetObject, other.targetObject)
+                && java.util.Objects.equals(this.aggregatorKey, other.aggregatorKey)
+                && java.util.Objects.equals(this.usedBy, other.usedBy)
+                && java.util.Objects.equals(this.childReferences, other.childReferences)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identifierPath == null ? 43 : this.identifierPath.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.targetObject == null ? 43 : this.targetObject.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aggregatorKey == null ? 43 : this.aggregatorKey.hashCode());
+        result = (result * PRIME) + (this.usedBy == null ? 43 : this.usedBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.childReferences == null ? 43 : this.childReferences.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,85 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsObjectCollectionRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsObjectCollectionRule {
+public final class LogAnalyticsObjectCollectionRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "description",
+        "compartmentId",
+        "osNamespace",
+        "osBucketName",
+        "collectionType",
+        "pollSince",
+        "pollTill",
+        "logGroupId",
+        "logSourceName",
+        "entityId",
+        "charEncoding",
+        "overrides",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "timeUpdated",
+        "isEnabled",
+        "objectNameFilters",
+        "definedTags",
+        "freeformTags"
+    })
+    public LogAnalyticsObjectCollectionRule(
+            String id,
+            String name,
+            String description,
+            String compartmentId,
+            String osNamespace,
+            String osBucketName,
+            ObjectCollectionRuleCollectionTypes collectionType,
+            String pollSince,
+            String pollTill,
+            String logGroupId,
+            String logSourceName,
+            String entityId,
+            String charEncoding,
+            java.util.Map<String, java.util.List<PropertyOverride>> overrides,
+            ObjectCollectionRuleLifecycleStates lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            Boolean isEnabled,
+            java.util.List<String> objectNameFilters,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.osNamespace = osNamespace;
+        this.osBucketName = osBucketName;
+        this.collectionType = collectionType;
+        this.pollSince = pollSince;
+        this.pollTill = pollTill;
+        this.logGroupId = logGroupId;
+        this.logSourceName = logSourceName;
+        this.entityId = entityId;
+        this.charEncoding = charEncoding;
+        this.overrides = overrides;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.isEnabled = isEnabled;
+        this.objectNameFilters = objectNameFilters;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -297,17 +366,29 @@ public class LogAnalyticsObjectCollectionRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A string that describes the details of the rule. It does not have to be unique, and can be changed.
@@ -315,32 +396,52 @@ public class LogAnalyticsObjectCollectionRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Object Storage namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osNamespace")
-    String osNamespace;
+    private final String osNamespace;
+
+    public String getOsNamespace() {
+        return osNamespace;
+    }
 
     /**
      * Name of the Object Storage bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osBucketName")
-    String osBucketName;
+    private final String osBucketName;
+
+    public String getOsBucketName() {
+        return osBucketName;
+    }
 
     /**
      * The type of log collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectionType")
-    ObjectCollectionRuleCollectionTypes collectionType;
+    private final ObjectCollectionRuleCollectionTypes collectionType;
+
+    public ObjectCollectionRuleCollectionTypes getCollectionType() {
+        return collectionType;
+    }
 
     /**
      * The oldest time of the file in the bucket to consider for collection.
@@ -349,7 +450,11 @@ public class LogAnalyticsObjectCollectionRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pollSince")
-    String pollSince;
+    private final String pollSince;
+
+    public String getPollSince() {
+        return pollSince;
+    }
 
     /**
      * The newest time of the file in the bucket to consider for collection.
@@ -358,25 +463,41 @@ public class LogAnalyticsObjectCollectionRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pollTill")
-    String pollTill;
+    private final String pollTill;
+
+    public String getPollTill() {
+        return pollTill;
+    }
 
     /**
      * Logging Analytics Log group OCID to associate the processed logs with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
-    String logGroupId;
+    private final String logGroupId;
+
+    public String getLogGroupId() {
+        return logGroupId;
+    }
 
     /**
      * Name of the Logging Analytics Source to use for the processing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logSourceName")
-    String logSourceName;
+    private final String logSourceName;
+
+    public String getLogSourceName() {
+        return logSourceName;
+    }
 
     /**
      * Logging Analytics entity OCID to associate the processed logs with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
-    String entityId;
+    private final String entityId;
+
+    public String getEntityId() {
+        return entityId;
+    }
 
     /**
      * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
@@ -386,7 +507,11 @@ public class LogAnalyticsObjectCollectionRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("charEncoding")
-    String charEncoding;
+    private final String charEncoding;
+
+    public String getCharEncoding() {
+        return charEncoding;
+    }
 
     /**
      * Use this to override some property values which are defined at bucket level to the scope of object.
@@ -395,39 +520,63 @@ public class LogAnalyticsObjectCollectionRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overrides")
-    java.util.Map<String, java.util.List<PropertyOverride>> overrides;
+    private final java.util.Map<String, java.util.List<PropertyOverride>> overrides;
+
+    public java.util.Map<String, java.util.List<PropertyOverride>> getOverrides() {
+        return overrides;
+    }
 
     /**
      * The current state of the rule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ObjectCollectionRuleLifecycleStates lifecycleState;
+    private final ObjectCollectionRuleLifecycleStates lifecycleState;
+
+    public ObjectCollectionRuleLifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A detailed status of the life cycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The time when this rule was created. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time when this rule was last updated. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Whether or not this rule is currently enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * When the filters are provided, only the objects matching the filters are picked up for processing.
@@ -436,7 +585,11 @@ public class LogAnalyticsObjectCollectionRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilters")
-    java.util.List<String> objectNameFilters;
+    private final java.util.List<String> objectNameFilters;
+
+    public java.util.List<String> getObjectNameFilters() {
+        return objectNameFilters;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -444,7 +597,11 @@ public class LogAnalyticsObjectCollectionRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -452,8 +609,126 @@ public class LogAnalyticsObjectCollectionRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsObjectCollectionRule(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", osNamespace=").append(String.valueOf(this.osNamespace));
+        sb.append(", osBucketName=").append(String.valueOf(this.osBucketName));
+        sb.append(", collectionType=").append(String.valueOf(this.collectionType));
+        sb.append(", pollSince=").append(String.valueOf(this.pollSince));
+        sb.append(", pollTill=").append(String.valueOf(this.pollTill));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", logSourceName=").append(String.valueOf(this.logSourceName));
+        sb.append(", entityId=").append(String.valueOf(this.entityId));
+        sb.append(", charEncoding=").append(String.valueOf(this.charEncoding));
+        sb.append(", overrides=").append(String.valueOf(this.overrides));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", objectNameFilters=").append(String.valueOf(this.objectNameFilters));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsObjectCollectionRule)) {
+            return false;
+        }
+
+        LogAnalyticsObjectCollectionRule other = (LogAnalyticsObjectCollectionRule) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.osNamespace, other.osNamespace)
+                && java.util.Objects.equals(this.osBucketName, other.osBucketName)
+                && java.util.Objects.equals(this.collectionType, other.collectionType)
+                && java.util.Objects.equals(this.pollSince, other.pollSince)
+                && java.util.Objects.equals(this.pollTill, other.pollTill)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.logSourceName, other.logSourceName)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.charEncoding, other.charEncoding)
+                && java.util.Objects.equals(this.overrides, other.overrides)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.objectNameFilters, other.objectNameFilters)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.osNamespace == null ? 43 : this.osNamespace.hashCode());
+        result = (result * PRIME) + (this.osBucketName == null ? 43 : this.osBucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.collectionType == null ? 43 : this.collectionType.hashCode());
+        result = (result * PRIME) + (this.pollSince == null ? 43 : this.pollSince.hashCode());
+        result = (result * PRIME) + (this.pollTill == null ? 43 : this.pollTill.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logSourceName == null ? 43 : this.logSourceName.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.charEncoding == null ? 43 : this.charEncoding.hashCode());
+        result = (result * PRIME) + (this.overrides == null ? 43 : this.overrides.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectNameFilters == null ? 43 : this.objectNameFilters.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.loganalytics.responses;
 import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ExportQueryResultResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
@@ -18,10 +14,18 @@ public class ExportQueryResultResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned java.io.InputStream instance.
      */
     private java.io.InputStream inputStream;
+
+    public java.io.InputStream getInputStream() {
+        return inputStream;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "inputStream"})
     private ExportQueryResultResponse(
@@ -36,6 +40,20 @@ public class ExportQueryResultResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private java.io.InputStream inputStream;
+
+        public Builder inputStream(java.io.InputStream inputStream) {
+            this.inputStream = inputStream;
             return this;
         }
 
@@ -54,5 +72,44 @@ public class ExportQueryResultResponse extends com.oracle.bmc.responses.BmcRespo
         public ExportQueryResultResponse build() {
             return new ExportQueryResultResponse(__httpStatusCode__, opcRequestId, inputStream);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",inputStream=").append(String.valueOf(inputStream));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportQueryResultResponse)) {
+            return false;
+        }
+
+        ExportQueryResultResponse other = (ExportQueryResultResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.inputStream, other.inputStream);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.inputStream == null ? 43 : this.inputStream.hashCode());
+        return result;
     }
 }

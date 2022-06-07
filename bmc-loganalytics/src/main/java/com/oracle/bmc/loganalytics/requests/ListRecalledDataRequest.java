@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListRecalledDataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRecalledDataRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListRecalledDataRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,21 +17,33 @@ public class ListRecalledDataRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * This is the query parameter of which field to sort by. Only one sort order may be provided. Default order for timeDataStarted
      * is descending. If no value is specified timeDataStarted is default.
@@ -84,6 +88,10 @@ public class ListRecalledDataRequest extends com.oracle.bmc.requests.BmcRequest<
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -126,15 +134,26 @@ public class ListRecalledDataRequest extends com.oracle.bmc.requests.BmcRequest<
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * This is the start of the time range for recalled data
      */
     private java.util.Date timeDataStartedGreaterThanOrEqual;
 
+    public java.util.Date getTimeDataStartedGreaterThanOrEqual() {
+        return timeDataStartedGreaterThanOrEqual;
+    }
     /**
      * This is the end of the time range for recalled data
      */
     private java.util.Date timeDataEndedLessThan;
+
+    public java.util.Date getTimeDataEndedLessThan() {
+        return timeDataEndedLessThan;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -142,6 +161,99 @@ public class ListRecalledDataRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * This is the query parameter of which field to sort by. Only one sort order may be provided. Default order for timeDataStarted
+         * is descending. If no value is specified timeDataStarted is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private java.util.Date timeDataStartedGreaterThanOrEqual = null;
+
+        /**
+         * This is the start of the time range for recalled data
+         * @return this builder instance
+         */
+        public Builder timeDataStartedGreaterThanOrEqual(
+                java.util.Date timeDataStartedGreaterThanOrEqual) {
+            this.timeDataStartedGreaterThanOrEqual = timeDataStartedGreaterThanOrEqual;
+            return this;
+        }
+
+        private java.util.Date timeDataEndedLessThan = null;
+
+        /**
+         * This is the end of the time range for recalled data
+         * @return this builder instance
+         */
+        public Builder timeDataEndedLessThan(java.util.Date timeDataEndedLessThan) {
+            this.timeDataEndedLessThan = timeDataEndedLessThan;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -200,5 +312,113 @@ public class ListRecalledDataRequest extends com.oracle.bmc.requests.BmcRequest<
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListRecalledDataRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListRecalledDataRequest
+         */
+        public ListRecalledDataRequest buildWithoutInvocationCallback() {
+            ListRecalledDataRequest request = new ListRecalledDataRequest();
+            request.namespaceName = namespaceName;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.timeDataStartedGreaterThanOrEqual = timeDataStartedGreaterThanOrEqual;
+            request.timeDataEndedLessThan = timeDataEndedLessThan;
+            return request;
+            // new ListRecalledDataRequest(namespaceName, opcRequestId, limit, page, sortBy, sortOrder, timeDataStartedGreaterThanOrEqual, timeDataEndedLessThan);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .timeDataStartedGreaterThanOrEqual(timeDataStartedGreaterThanOrEqual)
+                .timeDataEndedLessThan(timeDataEndedLessThan);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",timeDataStartedGreaterThanOrEqual=")
+                .append(String.valueOf(this.timeDataStartedGreaterThanOrEqual));
+        sb.append(",timeDataEndedLessThan=").append(String.valueOf(this.timeDataEndedLessThan));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListRecalledDataRequest)) {
+            return false;
+        }
+
+        ListRecalledDataRequest other = (ListRecalledDataRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(
+                        this.timeDataStartedGreaterThanOrEqual,
+                        other.timeDataStartedGreaterThanOrEqual)
+                && java.util.Objects.equals(
+                        this.timeDataEndedLessThan, other.timeDataEndedLessThan);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataStartedGreaterThanOrEqual == null
+                                ? 43
+                                : this.timeDataStartedGreaterThanOrEqual.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataEndedLessThan == null
+                                ? 43
+                                : this.timeDataEndedLessThan.hashCode());
+        return result;
     }
 }

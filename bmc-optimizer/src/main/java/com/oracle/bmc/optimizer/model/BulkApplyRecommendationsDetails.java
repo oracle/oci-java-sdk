@@ -15,16 +15,26 @@ package com.oracle.bmc.optimizer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BulkApplyRecommendationsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BulkApplyRecommendationsDetails {
+public final class BulkApplyRecommendationsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"resourceActionIds", "actions", "status", "timeStatusEnd"})
+    public BulkApplyRecommendationsDetails(
+            java.util.List<String> resourceActionIds,
+            java.util.List<BulkApplyResourceAction> actions,
+            Status status,
+            java.util.Date timeStatusEnd) {
+        super();
+        this.resourceActionIds = resourceActionIds;
+        this.actions = actions;
+        this.status = status;
+        this.timeStatusEnd = timeStatusEnd;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceActionIds")
         private java.util.List<String> resourceActionIds;
@@ -93,6 +103,10 @@ public class BulkApplyRecommendationsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique OCIDs of the resource actions that recommendations are applied to.
      * <p>
@@ -100,19 +114,31 @@ public class BulkApplyRecommendationsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceActionIds")
-    java.util.List<String> resourceActionIds;
+    private final java.util.List<String> resourceActionIds;
+
+    public java.util.List<String> getResourceActionIds() {
+        return resourceActionIds;
+    }
 
     /**
      * The unique resource actions that recommendations are applied to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
-    java.util.List<BulkApplyResourceAction> actions;
+    private final java.util.List<BulkApplyResourceAction> actions;
+
+    public java.util.List<BulkApplyResourceAction> getActions() {
+        return actions;
+    }
 
     /**
      * The current status of the recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
@@ -122,8 +148,64 @@ public class BulkApplyRecommendationsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
-    java.util.Date timeStatusEnd;
+    private final java.util.Date timeStatusEnd;
+
+    public java.util.Date getTimeStatusEnd() {
+        return timeStatusEnd;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BulkApplyRecommendationsDetails(");
+        sb.append("resourceActionIds=").append(String.valueOf(this.resourceActionIds));
+        sb.append(", actions=").append(String.valueOf(this.actions));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeStatusEnd=").append(String.valueOf(this.timeStatusEnd));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BulkApplyRecommendationsDetails)) {
+            return false;
+        }
+
+        BulkApplyRecommendationsDetails other = (BulkApplyRecommendationsDetails) o;
+        return java.util.Objects.equals(this.resourceActionIds, other.resourceActionIds)
+                && java.util.Objects.equals(this.actions, other.actions)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeStatusEnd, other.timeStatusEnd)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.resourceActionIds == null ? 43 : this.resourceActionIds.hashCode());
+        result = (result * PRIME) + (this.actions == null ? 43 : this.actions.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeStatusEnd == null ? 43 : this.timeStatusEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

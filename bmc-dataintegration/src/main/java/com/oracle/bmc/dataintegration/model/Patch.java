@@ -15,14 +15,71 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Patch.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Patch {
+public final class Patch {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelType",
+        "modelVersion",
+        "name",
+        "description",
+        "objectVersion",
+        "objectStatus",
+        "identifier",
+        "timePatched",
+        "errorMessages",
+        "applicationVersion",
+        "patchType",
+        "patchStatus",
+        "dependentObjectMetadata",
+        "patchObjectMetadata",
+        "parentRef",
+        "metadata",
+        "keyMap"
+    })
+    public Patch(
+            String key,
+            String modelType,
+            String modelVersion,
+            String name,
+            String description,
+            Integer objectVersion,
+            Integer objectStatus,
+            String identifier,
+            java.util.Date timePatched,
+            java.util.Map<String, String> errorMessages,
+            Integer applicationVersion,
+            PatchType patchType,
+            PatchStatus patchStatus,
+            java.util.List<PatchObjectMetadata> dependentObjectMetadata,
+            java.util.List<PatchObjectMetadata> patchObjectMetadata,
+            ParentReference parentRef,
+            ObjectMetadata metadata,
+            java.util.Map<String, String> keyMap) {
+        super();
+        this.key = key;
+        this.modelType = modelType;
+        this.modelVersion = modelVersion;
+        this.name = name;
+        this.description = description;
+        this.objectVersion = objectVersion;
+        this.objectStatus = objectStatus;
+        this.identifier = identifier;
+        this.timePatched = timePatched;
+        this.errorMessages = errorMessages;
+        this.applicationVersion = applicationVersion;
+        this.patchType = patchType;
+        this.patchStatus = patchStatus;
+        this.dependentObjectMetadata = dependentObjectMetadata;
+        this.patchObjectMetadata = patchObjectMetadata;
+        this.parentRef = parentRef;
+        this.metadata = metadata;
+        this.keyMap = keyMap;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -250,75 +307,123 @@ public class Patch {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The object type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     /**
      * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The version of the object that is used to track changes in the object instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePatched")
-    java.util.Date timePatched;
+    private final java.util.Date timePatched;
+
+    public java.util.Date getTimePatched() {
+        return timePatched;
+    }
 
     /**
      * The errors encountered while applying the patch, if any.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessages")
-    java.util.Map<String, String> errorMessages;
+    private final java.util.Map<String, String> errorMessages;
+
+    public java.util.Map<String, String> getErrorMessages() {
+        return errorMessages;
+    }
 
     /**
      * The application version of the patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationVersion")
-    Integer applicationVersion;
+    private final Integer applicationVersion;
+
+    public Integer getApplicationVersion() {
+        return applicationVersion;
+    }
+
     /**
      * The type of the patch applied or being applied on the application.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PatchType {
         Publish("PUBLISH"),
         Refresh("REFRESH"),
@@ -329,6 +434,9 @@ public class Patch {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchType.class);
 
         private final String value;
         private static java.util.Map<String, PatchType> map;
@@ -366,11 +474,15 @@ public class Patch {
      * The type of the patch applied or being applied on the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchType")
-    PatchType patchType;
+    private final PatchType patchType;
+
+    public PatchType getPatchType() {
+        return patchType;
+    }
+
     /**
      * Status of the patch applied or being applied on the application
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PatchStatus {
         Queued("QUEUED"),
         Successful("SUCCESSFUL"),
@@ -382,6 +494,9 @@ public class Patch {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchStatus.class);
 
         private final String value;
         private static java.util.Map<String, PatchStatus> map;
@@ -419,32 +534,164 @@ public class Patch {
      * Status of the patch applied or being applied on the application
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchStatus")
-    PatchStatus patchStatus;
+    private final PatchStatus patchStatus;
+
+    public PatchStatus getPatchStatus() {
+        return patchStatus;
+    }
 
     /**
      * List of dependent objects in this patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependentObjectMetadata")
-    java.util.List<PatchObjectMetadata> dependentObjectMetadata;
+    private final java.util.List<PatchObjectMetadata> dependentObjectMetadata;
+
+    public java.util.List<PatchObjectMetadata> getDependentObjectMetadata() {
+        return dependentObjectMetadata;
+    }
 
     /**
      * List of objects that are published or unpublished in this patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchObjectMetadata")
-    java.util.List<PatchObjectMetadata> patchObjectMetadata;
+    private final java.util.List<PatchObjectMetadata> patchObjectMetadata;
+
+    public java.util.List<PatchObjectMetadata> getPatchObjectMetadata() {
+        return patchObjectMetadata;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    ObjectMetadata metadata;
+    private final ObjectMetadata metadata;
+
+    public ObjectMetadata getMetadata() {
+        return metadata;
+    }
 
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
-    java.util.Map<String, String> keyMap;
+    private final java.util.Map<String, String> keyMap;
+
+    public java.util.Map<String, String> getKeyMap() {
+        return keyMap;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Patch(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", timePatched=").append(String.valueOf(this.timePatched));
+        sb.append(", errorMessages=").append(String.valueOf(this.errorMessages));
+        sb.append(", applicationVersion=").append(String.valueOf(this.applicationVersion));
+        sb.append(", patchType=").append(String.valueOf(this.patchType));
+        sb.append(", patchStatus=").append(String.valueOf(this.patchStatus));
+        sb.append(", dependentObjectMetadata=")
+                .append(String.valueOf(this.dependentObjectMetadata));
+        sb.append(", patchObjectMetadata=").append(String.valueOf(this.patchObjectMetadata));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", keyMap=").append(String.valueOf(this.keyMap));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Patch)) {
+            return false;
+        }
+
+        Patch other = (Patch) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.timePatched, other.timePatched)
+                && java.util.Objects.equals(this.errorMessages, other.errorMessages)
+                && java.util.Objects.equals(this.applicationVersion, other.applicationVersion)
+                && java.util.Objects.equals(this.patchType, other.patchType)
+                && java.util.Objects.equals(this.patchStatus, other.patchStatus)
+                && java.util.Objects.equals(
+                        this.dependentObjectMetadata, other.dependentObjectMetadata)
+                && java.util.Objects.equals(this.patchObjectMetadata, other.patchObjectMetadata)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.keyMap, other.keyMap)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.timePatched == null ? 43 : this.timePatched.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.errorMessages == null ? 43 : this.errorMessages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationVersion == null
+                                ? 43
+                                : this.applicationVersion.hashCode());
+        result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
+        result = (result * PRIME) + (this.patchStatus == null ? 43 : this.patchStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dependentObjectMetadata == null
+                                ? 43
+                                : this.dependentObjectMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchObjectMetadata == null
+                                ? 43
+                                : this.patchObjectMetadata.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

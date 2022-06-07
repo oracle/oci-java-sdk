@@ -15,14 +15,19 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Time.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Time {
+public final class Time {
+    @Deprecated
+    @java.beans.ConstructorProperties({"hour", "minute", "second"})
+    public Time(Integer hour, Integer minute, Integer second) {
+        super();
+        this.hour = hour;
+        this.minute = minute;
+        this.second = second;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hour")
         private Integer hour;
@@ -76,24 +81,85 @@ public class Time {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The hour value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hour")
-    Integer hour;
+    private final Integer hour;
+
+    public Integer getHour() {
+        return hour;
+    }
 
     /**
      * The minute value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minute")
-    Integer minute;
+    private final Integer minute;
+
+    public Integer getMinute() {
+        return minute;
+    }
 
     /**
      * The second value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("second")
-    Integer second;
+    private final Integer second;
+
+    public Integer getSecond() {
+        return second;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Time(");
+        sb.append("hour=").append(String.valueOf(this.hour));
+        sb.append(", minute=").append(String.valueOf(this.minute));
+        sb.append(", second=").append(String.valueOf(this.second));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Time)) {
+            return false;
+        }
+
+        Time other = (Time) o;
+        return java.util.Objects.equals(this.hour, other.hour)
+                && java.util.Objects.equals(this.minute, other.minute)
+                && java.util.Objects.equals(this.second, other.second)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hour == null ? 43 : this.hour.hashCode());
+        result = (result * PRIME) + (this.minute == null ? 43 : this.minute.hashCode());
+        result = (result * PRIME) + (this.second == null ? 43 : this.second.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

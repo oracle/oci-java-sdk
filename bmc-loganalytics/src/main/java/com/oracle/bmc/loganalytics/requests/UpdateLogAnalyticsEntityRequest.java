@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsEntityExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateLogAnalyticsEntityRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateLogAnalyticsEntityRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityDetails> {
@@ -27,18 +19,28 @@ public class UpdateLogAnalyticsEntityRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The log analytics entity OCID.
      *
      */
     private String logAnalyticsEntityId;
 
+    public String getLogAnalyticsEntityId() {
+        return logAnalyticsEntityId;
+    }
     /**
      * Log analytics entity information to be updated.
      */
     private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityDetails
             updateLogAnalyticsEntityDetails;
 
+    public com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityDetails
+            getUpdateLogAnalyticsEntityDetails() {
+        return updateLogAnalyticsEntityDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -49,10 +51,17 @@ public class UpdateLogAnalyticsEntityRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -76,6 +85,71 @@ public class UpdateLogAnalyticsEntityRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String logAnalyticsEntityId = null;
+
+        /**
+         * The log analytics entity OCID.
+         *
+         * @return this builder instance
+         */
+        public Builder logAnalyticsEntityId(String logAnalyticsEntityId) {
+            this.logAnalyticsEntityId = logAnalyticsEntityId;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityDetails
+                updateLogAnalyticsEntityDetails = null;
+
+        /**
+         * Log analytics entity information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateLogAnalyticsEntityDetails(
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityDetails
+                        updateLogAnalyticsEntityDetails) {
+            this.updateLogAnalyticsEntityDetails = updateLogAnalyticsEntityDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -143,5 +217,96 @@ public class UpdateLogAnalyticsEntityRequest
             updateLogAnalyticsEntityDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateLogAnalyticsEntityRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateLogAnalyticsEntityRequest
+         */
+        public UpdateLogAnalyticsEntityRequest buildWithoutInvocationCallback() {
+            UpdateLogAnalyticsEntityRequest request = new UpdateLogAnalyticsEntityRequest();
+            request.namespaceName = namespaceName;
+            request.logAnalyticsEntityId = logAnalyticsEntityId;
+            request.updateLogAnalyticsEntityDetails = updateLogAnalyticsEntityDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateLogAnalyticsEntityRequest(namespaceName, logAnalyticsEntityId, updateLogAnalyticsEntityDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .logAnalyticsEntityId(logAnalyticsEntityId)
+                .updateLogAnalyticsEntityDetails(updateLogAnalyticsEntityDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",logAnalyticsEntityId=").append(String.valueOf(this.logAnalyticsEntityId));
+        sb.append(",updateLogAnalyticsEntityDetails=")
+                .append(String.valueOf(this.updateLogAnalyticsEntityDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLogAnalyticsEntityRequest)) {
+            return false;
+        }
+
+        UpdateLogAnalyticsEntityRequest other = (UpdateLogAnalyticsEntityRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.logAnalyticsEntityId, other.logAnalyticsEntityId)
+                && java.util.Objects.equals(
+                        this.updateLogAnalyticsEntityDetails, other.updateLogAnalyticsEntityDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logAnalyticsEntityId == null
+                                ? 43
+                                : this.logAnalyticsEntityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateLogAnalyticsEntityDetails == null
+                                ? 43
+                                : this.updateLogAnalyticsEntityDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

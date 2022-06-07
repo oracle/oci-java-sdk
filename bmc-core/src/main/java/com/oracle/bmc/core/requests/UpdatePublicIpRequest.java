@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePublicIpExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdatePublicIpRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdatePublicIpRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdatePublicIpDetails> {
@@ -26,11 +18,17 @@ public class UpdatePublicIpRequest
      */
     private String publicIpId;
 
+    public String getPublicIpId() {
+        return publicIpId;
+    }
     /**
      * Public IP details.
      */
     private com.oracle.bmc.core.model.UpdatePublicIpDetails updatePublicIpDetails;
 
+    public com.oracle.bmc.core.model.UpdatePublicIpDetails getUpdatePublicIpDetails() {
+        return updatePublicIpDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -38,6 +36,10 @@ public class UpdatePublicIpRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -55,6 +57,43 @@ public class UpdatePublicIpRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String publicIpId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP.
+         * @return this builder instance
+         */
+        public Builder publicIpId(String publicIpId) {
+            this.publicIpId = publicIpId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdatePublicIpDetails updatePublicIpDetails = null;
+
+        /**
+         * Public IP details.
+         * @return this builder instance
+         */
+        public Builder updatePublicIpDetails(
+                com.oracle.bmc.core.model.UpdatePublicIpDetails updatePublicIpDetails) {
+            this.updatePublicIpDetails = updatePublicIpDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -119,5 +158,78 @@ public class UpdatePublicIpRequest
             updatePublicIpDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdatePublicIpRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdatePublicIpRequest
+         */
+        public UpdatePublicIpRequest buildWithoutInvocationCallback() {
+            UpdatePublicIpRequest request = new UpdatePublicIpRequest();
+            request.publicIpId = publicIpId;
+            request.updatePublicIpDetails = updatePublicIpDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdatePublicIpRequest(publicIpId, updatePublicIpDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .publicIpId(publicIpId)
+                .updatePublicIpDetails(updatePublicIpDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",publicIpId=").append(String.valueOf(this.publicIpId));
+        sb.append(",updatePublicIpDetails=").append(String.valueOf(this.updatePublicIpDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdatePublicIpRequest)) {
+            return false;
+        }
+
+        UpdatePublicIpRequest other = (UpdatePublicIpRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.publicIpId, other.publicIpId)
+                && java.util.Objects.equals(this.updatePublicIpDetails, other.updatePublicIpDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.publicIpId == null ? 43 : this.publicIpId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updatePublicIpDetails == null
+                                ? 43
+                                : this.updatePublicIpDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

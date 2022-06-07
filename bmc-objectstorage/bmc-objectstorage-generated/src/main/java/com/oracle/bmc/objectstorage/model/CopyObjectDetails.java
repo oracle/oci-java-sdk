@@ -20,16 +20,52 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CopyObjectDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CopyObjectDetails {
+public final class CopyObjectDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sourceObjectName",
+        "sourceObjectIfMatchETag",
+        "sourceVersionId",
+        "destinationRegion",
+        "destinationNamespace",
+        "destinationBucket",
+        "destinationObjectName",
+        "destinationObjectIfMatchETag",
+        "destinationObjectIfNoneMatchETag",
+        "destinationObjectMetadata",
+        "destinationObjectStorageTier"
+    })
+    public CopyObjectDetails(
+            String sourceObjectName,
+            String sourceObjectIfMatchETag,
+            String sourceVersionId,
+            String destinationRegion,
+            String destinationNamespace,
+            String destinationBucket,
+            String destinationObjectName,
+            String destinationObjectIfMatchETag,
+            String destinationObjectIfNoneMatchETag,
+            java.util.Map<String, String> destinationObjectMetadata,
+            StorageTier destinationObjectStorageTier) {
+        super();
+        this.sourceObjectName = sourceObjectName;
+        this.sourceObjectIfMatchETag = sourceObjectIfMatchETag;
+        this.sourceVersionId = sourceVersionId;
+        this.destinationRegion = destinationRegion;
+        this.destinationNamespace = destinationNamespace;
+        this.destinationBucket = destinationBucket;
+        this.destinationObjectName = destinationObjectName;
+        this.destinationObjectIfMatchETag = destinationObjectIfMatchETag;
+        this.destinationObjectIfNoneMatchETag = destinationObjectIfNoneMatchETag;
+        this.destinationObjectMetadata = destinationObjectMetadata;
+        this.destinationObjectStorageTier = destinationObjectStorageTier;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectName")
         private String sourceObjectName;
@@ -180,11 +216,19 @@ public class CopyObjectDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the object to be copied.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectName")
-    String sourceObjectName;
+    private final String sourceObjectName;
+
+    public String getSourceObjectName() {
+        return sourceObjectName;
+    }
 
     /**
      * The entity tag (ETag) to match against that of the source object. Used to confirm that the source object
@@ -192,37 +236,61 @@ public class CopyObjectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectIfMatchETag")
-    String sourceObjectIfMatchETag;
+    private final String sourceObjectIfMatchETag;
+
+    public String getSourceObjectIfMatchETag() {
+        return sourceObjectIfMatchETag;
+    }
 
     /**
      * VersionId of the object to copy. If not provided then current version is copied by default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVersionId")
-    String sourceVersionId;
+    private final String sourceVersionId;
+
+    public String getSourceVersionId() {
+        return sourceVersionId;
+    }
 
     /**
      * The destination region the object will be copied to, for example "us-ashburn-1".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
-    String destinationRegion;
+    private final String destinationRegion;
+
+    public String getDestinationRegion() {
+        return destinationRegion;
+    }
 
     /**
      * The destination Object Storage namespace the object will be copied to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationNamespace")
-    String destinationNamespace;
+    private final String destinationNamespace;
+
+    public String getDestinationNamespace() {
+        return destinationNamespace;
+    }
 
     /**
      * The destination bucket the object will be copied to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucket")
-    String destinationBucket;
+    private final String destinationBucket;
+
+    public String getDestinationBucket() {
+        return destinationBucket;
+    }
 
     /**
      * The name of the destination object resulting from the copy operation. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectName")
-    String destinationObjectName;
+    private final String destinationObjectName;
+
+    public String getDestinationObjectName() {
+        return destinationObjectName;
+    }
 
     /**
      * The entity tag (ETag) to match against that of the destination object (an object intended to be overwritten).
@@ -231,7 +299,11 @@ public class CopyObjectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectIfMatchETag")
-    String destinationObjectIfMatchETag;
+    private final String destinationObjectIfMatchETag;
+
+    public String getDestinationObjectIfMatchETag() {
+        return destinationObjectIfMatchETag;
+    }
 
     /**
      * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail
@@ -239,7 +311,11 @@ public class CopyObjectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectIfNoneMatchETag")
-    String destinationObjectIfNoneMatchETag;
+    private final String destinationObjectIfNoneMatchETag;
+
+    public String getDestinationObjectIfNoneMatchETag() {
+        return destinationObjectIfNoneMatchETag;
+    }
 
     /**
      * Arbitrary string keys and values for the user-defined metadata for the object. Keys must be in
@@ -249,7 +325,11 @@ public class CopyObjectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectMetadata")
-    java.util.Map<String, String> destinationObjectMetadata;
+    private final java.util.Map<String, String> destinationObjectMetadata;
+
+    public java.util.Map<String, String> getDestinationObjectMetadata() {
+        return destinationObjectMetadata;
+    }
 
     /**
      * The storage tier that the object should be stored in. If not specified, the object will be stored in
@@ -257,8 +337,128 @@ public class CopyObjectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectStorageTier")
-    StorageTier destinationObjectStorageTier;
+    private final StorageTier destinationObjectStorageTier;
+
+    public StorageTier getDestinationObjectStorageTier() {
+        return destinationObjectStorageTier;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CopyObjectDetails(");
+        sb.append("sourceObjectName=").append(String.valueOf(this.sourceObjectName));
+        sb.append(", sourceObjectIfMatchETag=")
+                .append(String.valueOf(this.sourceObjectIfMatchETag));
+        sb.append(", sourceVersionId=").append(String.valueOf(this.sourceVersionId));
+        sb.append(", destinationRegion=").append(String.valueOf(this.destinationRegion));
+        sb.append(", destinationNamespace=").append(String.valueOf(this.destinationNamespace));
+        sb.append(", destinationBucket=").append(String.valueOf(this.destinationBucket));
+        sb.append(", destinationObjectName=").append(String.valueOf(this.destinationObjectName));
+        sb.append(", destinationObjectIfMatchETag=")
+                .append(String.valueOf(this.destinationObjectIfMatchETag));
+        sb.append(", destinationObjectIfNoneMatchETag=")
+                .append(String.valueOf(this.destinationObjectIfNoneMatchETag));
+        sb.append(", destinationObjectMetadata=")
+                .append(String.valueOf(this.destinationObjectMetadata));
+        sb.append(", destinationObjectStorageTier=")
+                .append(String.valueOf(this.destinationObjectStorageTier));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CopyObjectDetails)) {
+            return false;
+        }
+
+        CopyObjectDetails other = (CopyObjectDetails) o;
+        return java.util.Objects.equals(this.sourceObjectName, other.sourceObjectName)
+                && java.util.Objects.equals(
+                        this.sourceObjectIfMatchETag, other.sourceObjectIfMatchETag)
+                && java.util.Objects.equals(this.sourceVersionId, other.sourceVersionId)
+                && java.util.Objects.equals(this.destinationRegion, other.destinationRegion)
+                && java.util.Objects.equals(this.destinationNamespace, other.destinationNamespace)
+                && java.util.Objects.equals(this.destinationBucket, other.destinationBucket)
+                && java.util.Objects.equals(this.destinationObjectName, other.destinationObjectName)
+                && java.util.Objects.equals(
+                        this.destinationObjectIfMatchETag, other.destinationObjectIfMatchETag)
+                && java.util.Objects.equals(
+                        this.destinationObjectIfNoneMatchETag,
+                        other.destinationObjectIfNoneMatchETag)
+                && java.util.Objects.equals(
+                        this.destinationObjectMetadata, other.destinationObjectMetadata)
+                && java.util.Objects.equals(
+                        this.destinationObjectStorageTier, other.destinationObjectStorageTier)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sourceObjectName == null ? 43 : this.sourceObjectName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceObjectIfMatchETag == null
+                                ? 43
+                                : this.sourceObjectIfMatchETag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceVersionId == null ? 43 : this.sourceVersionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationRegion == null ? 43 : this.destinationRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationNamespace == null
+                                ? 43
+                                : this.destinationNamespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationBucket == null ? 43 : this.destinationBucket.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationObjectName == null
+                                ? 43
+                                : this.destinationObjectName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationObjectIfMatchETag == null
+                                ? 43
+                                : this.destinationObjectIfMatchETag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationObjectIfNoneMatchETag == null
+                                ? 43
+                                : this.destinationObjectIfNoneMatchETag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationObjectMetadata == null
+                                ? 43
+                                : this.destinationObjectMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationObjectStorageTier == null
+                                ? 43
+                                : this.destinationObjectStorageTier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,20 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BulkAddVirtualCircuitPublicPrefixesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BulkAddVirtualCircuitPublicPrefixesDetails {
+public final class BulkAddVirtualCircuitPublicPrefixesDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"publicPrefixes"})
+    public BulkAddVirtualCircuitPublicPrefixesDetails(
+            java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes) {
+        super();
+        this.publicPrefixes = publicPrefixes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
         private java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
@@ -62,12 +66,62 @@ public class BulkAddVirtualCircuitPublicPrefixesDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The public IP prefixes (CIDRs) to add to the public virtual circuit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
-    java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
+    private final java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
+
+    public java.util.List<CreateVirtualCircuitPublicPrefixDetails> getPublicPrefixes() {
+        return publicPrefixes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BulkAddVirtualCircuitPublicPrefixesDetails(");
+        sb.append("publicPrefixes=").append(String.valueOf(this.publicPrefixes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BulkAddVirtualCircuitPublicPrefixesDetails)) {
+            return false;
+        }
+
+        BulkAddVirtualCircuitPublicPrefixesDetails other =
+                (BulkAddVirtualCircuitPublicPrefixesDetails) o;
+        return java.util.Objects.equals(this.publicPrefixes, other.publicPrefixes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.publicPrefixes == null ? 43 : this.publicPrefixes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

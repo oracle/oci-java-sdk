@@ -17,14 +17,41 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HealthChecker.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HealthChecker {
+public final class HealthChecker {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "protocol",
+        "urlPath",
+        "port",
+        "returnCode",
+        "retries",
+        "timeoutInMillis",
+        "intervalInMillis",
+        "responseBodyRegex"
+    })
+    public HealthChecker(
+            String protocol,
+            String urlPath,
+            Integer port,
+            Integer returnCode,
+            Integer retries,
+            Integer timeoutInMillis,
+            Integer intervalInMillis,
+            String responseBodyRegex) {
+        super();
+        this.protocol = protocol;
+        this.urlPath = urlPath;
+        this.port = port;
+        this.returnCode = returnCode;
+        this.retries = retries;
+        this.timeoutInMillis = timeoutInMillis;
+        this.intervalInMillis = intervalInMillis;
+        this.responseBodyRegex = responseBodyRegex;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
@@ -140,6 +167,10 @@ public class HealthChecker {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The protocol the health check must use; either HTTP or TCP.
      * <p>
@@ -147,7 +178,11 @@ public class HealthChecker {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
+    private final String protocol;
+
+    public String getProtocol() {
+        return protocol;
+    }
 
     /**
      * The path against which to run the health check.
@@ -156,7 +191,11 @@ public class HealthChecker {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
-    String urlPath;
+    private final String urlPath;
+
+    public String getUrlPath() {
+        return urlPath;
+    }
 
     /**
      * The backend server port against which to run the health check. If the port is not specified, the load balancer uses the
@@ -166,7 +205,11 @@ public class HealthChecker {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol,
@@ -176,7 +219,11 @@ public class HealthChecker {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
-    Integer returnCode;
+    private final Integer returnCode;
+
+    public Integer getReturnCode() {
+        return returnCode;
+    }
 
     /**
      * The number of retries to attempt before a backend server is considered "unhealthy". This number also applies
@@ -186,7 +233,11 @@ public class HealthChecker {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retries")
-    Integer retries;
+    private final Integer retries;
+
+    public Integer getRetries() {
+        return retries;
+    }
 
     /**
      * The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
@@ -196,7 +247,11 @@ public class HealthChecker {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
-    Integer timeoutInMillis;
+    private final Integer timeoutInMillis;
+
+    public Integer getTimeoutInMillis() {
+        return timeoutInMillis;
+    }
 
     /**
      * The interval between health checks, in milliseconds. The default is 10000 (10 seconds).
@@ -205,7 +260,11 @@ public class HealthChecker {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
-    Integer intervalInMillis;
+    private final Integer intervalInMillis;
+
+    public Integer getIntervalInMillis() {
+        return intervalInMillis;
+    }
 
     /**
      * A regular expression for parsing the response body from the backend server.
@@ -214,8 +273,78 @@ public class HealthChecker {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
-    String responseBodyRegex;
+    private final String responseBodyRegex;
+
+    public String getResponseBodyRegex() {
+        return responseBodyRegex;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HealthChecker(");
+        sb.append("protocol=").append(String.valueOf(this.protocol));
+        sb.append(", urlPath=").append(String.valueOf(this.urlPath));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", returnCode=").append(String.valueOf(this.returnCode));
+        sb.append(", retries=").append(String.valueOf(this.retries));
+        sb.append(", timeoutInMillis=").append(String.valueOf(this.timeoutInMillis));
+        sb.append(", intervalInMillis=").append(String.valueOf(this.intervalInMillis));
+        sb.append(", responseBodyRegex=").append(String.valueOf(this.responseBodyRegex));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HealthChecker)) {
+            return false;
+        }
+
+        HealthChecker other = (HealthChecker) o;
+        return java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.urlPath, other.urlPath)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.returnCode, other.returnCode)
+                && java.util.Objects.equals(this.retries, other.retries)
+                && java.util.Objects.equals(this.timeoutInMillis, other.timeoutInMillis)
+                && java.util.Objects.equals(this.intervalInMillis, other.intervalInMillis)
+                && java.util.Objects.equals(this.responseBodyRegex, other.responseBodyRegex)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.urlPath == null ? 43 : this.urlPath.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.returnCode == null ? 43 : this.returnCode.hashCode());
+        result = (result * PRIME) + (this.retries == null ? 43 : this.retries.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeoutInMillis == null ? 43 : this.timeoutInMillis.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.intervalInMillis == null ? 43 : this.intervalInMillis.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responseBodyRegex == null ? 43 : this.responseBodyRegex.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

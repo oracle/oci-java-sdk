@@ -15,22 +15,17 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutomatedMountDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "mountType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutomatedMountDetails extends MountTypeDetails {
+public final class AutomatedMountDetails extends MountTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
         private java.util.List<String> nfsServer;
@@ -77,6 +72,10 @@ public class AutomatedMountDetails extends MountTypeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public AutomatedMountDetails(java.util.List<String> nfsServer, String nfsServerExport) {
         super();
@@ -88,14 +87,68 @@ public class AutomatedMountDetails extends MountTypeDetails {
      * IP addresses for NFS Auto mount.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
-    java.util.List<String> nfsServer;
+    private final java.util.List<String> nfsServer;
+
+    public java.util.List<String> getNfsServer() {
+        return nfsServer;
+    }
 
     /**
      * Specifies the directory on which to mount the file system
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
-    String nfsServerExport;
+    private final String nfsServerExport;
+
+    public String getNfsServerExport() {
+        return nfsServerExport;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutomatedMountDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", nfsServer=").append(String.valueOf(this.nfsServer));
+        sb.append(", nfsServerExport=").append(String.valueOf(this.nfsServerExport));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutomatedMountDetails)) {
+            return false;
+        }
+
+        AutomatedMountDetails other = (AutomatedMountDetails) o;
+        return java.util.Objects.equals(this.nfsServer, other.nfsServer)
+                && java.util.Objects.equals(this.nfsServerExport, other.nfsServerExport)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.nfsServer == null ? 43 : this.nfsServer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nfsServerExport == null ? 43 : this.nfsServerExport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateIdpGroupMappingExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateIdpGroupMappingRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateIdpGroupMappingRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails> {
@@ -26,16 +18,26 @@ public class UpdateIdpGroupMappingRequest
      */
     private String identityProviderId;
 
+    public String getIdentityProviderId() {
+        return identityProviderId;
+    }
     /**
      * The OCID of the group mapping.
      */
     private String mappingId;
 
+    public String getMappingId() {
+        return mappingId;
+    }
     /**
      * Request object for updating an identity provider group mapping
      */
     private com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails updateIdpGroupMappingDetails;
 
+    public com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails
+            getUpdateIdpGroupMappingDetails() {
+        return updateIdpGroupMappingDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -43,6 +45,10 @@ public class UpdateIdpGroupMappingRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -61,6 +67,56 @@ public class UpdateIdpGroupMappingRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String identityProviderId = null;
+
+        /**
+         * The OCID of the identity provider.
+         * @return this builder instance
+         */
+        public Builder identityProviderId(String identityProviderId) {
+            this.identityProviderId = identityProviderId;
+            return this;
+        }
+
+        private String mappingId = null;
+
+        /**
+         * The OCID of the group mapping.
+         * @return this builder instance
+         */
+        public Builder mappingId(String mappingId) {
+            this.mappingId = mappingId;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails
+                updateIdpGroupMappingDetails = null;
+
+        /**
+         * Request object for updating an identity provider group mapping
+         * @return this builder instance
+         */
+        public Builder updateIdpGroupMappingDetails(
+                com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails
+                        updateIdpGroupMappingDetails) {
+            this.updateIdpGroupMappingDetails = updateIdpGroupMappingDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -126,5 +182,89 @@ public class UpdateIdpGroupMappingRequest
             updateIdpGroupMappingDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateIdpGroupMappingRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateIdpGroupMappingRequest
+         */
+        public UpdateIdpGroupMappingRequest buildWithoutInvocationCallback() {
+            UpdateIdpGroupMappingRequest request = new UpdateIdpGroupMappingRequest();
+            request.identityProviderId = identityProviderId;
+            request.mappingId = mappingId;
+            request.updateIdpGroupMappingDetails = updateIdpGroupMappingDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateIdpGroupMappingRequest(identityProviderId, mappingId, updateIdpGroupMappingDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .identityProviderId(identityProviderId)
+                .mappingId(mappingId)
+                .updateIdpGroupMappingDetails(updateIdpGroupMappingDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",identityProviderId=").append(String.valueOf(this.identityProviderId));
+        sb.append(",mappingId=").append(String.valueOf(this.mappingId));
+        sb.append(",updateIdpGroupMappingDetails=")
+                .append(String.valueOf(this.updateIdpGroupMappingDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateIdpGroupMappingRequest)) {
+            return false;
+        }
+
+        UpdateIdpGroupMappingRequest other = (UpdateIdpGroupMappingRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.identityProviderId, other.identityProviderId)
+                && java.util.Objects.equals(this.mappingId, other.mappingId)
+                && java.util.Objects.equals(
+                        this.updateIdpGroupMappingDetails, other.updateIdpGroupMappingDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.identityProviderId == null
+                                ? 43
+                                : this.identityProviderId.hashCode());
+        result = (result * PRIME) + (this.mappingId == null ? 43 : this.mappingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateIdpGroupMappingDetails == null
+                                ? 43
+                                : this.updateIdpGroupMappingDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

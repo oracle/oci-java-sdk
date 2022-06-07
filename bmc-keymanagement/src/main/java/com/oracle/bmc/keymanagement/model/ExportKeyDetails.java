@@ -15,14 +15,32 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportKeyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExportKeyDetails {
+public final class ExportKeyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "keyId",
+        "keyVersionId",
+        "algorithm",
+        "publicKey",
+        "loggingContext"
+    })
+    public ExportKeyDetails(
+            String keyId,
+            String keyVersionId,
+            Algorithm algorithm,
+            String publicKey,
+            java.util.Map<String, String> loggingContext) {
+        super();
+        this.keyId = keyId;
+        this.keyVersionId = keyVersionId;
+        this.algorithm = algorithm;
+        this.publicKey = publicKey;
+        this.loggingContext = loggingContext;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
@@ -100,18 +118,31 @@ public class ExportKeyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the master encryption key associated with the key version you want to export.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * The OCID of the specific key version to export. If not specified, the service exports the current key version.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
-    String keyVersionId;
+    private final String keyVersionId;
+
+    public String getKeyVersionId() {
+        return keyVersionId;
+    }
+
     /**
      * The encryption algorithm to use to encrypt exportable key material from a software-backed key. Specifying {@code RSA_OAEP_AES_SHA256}
      * invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped by the RSA public
@@ -163,14 +194,22 @@ public class ExportKeyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
-    Algorithm algorithm;
+    private final Algorithm algorithm;
+
+    public Algorithm getAlgorithm() {
+        return algorithm;
+    }
 
     /**
      * The PEM format of the 2048-bit, 3072-bit, or 4096-bit RSA wrapping key in your possession that you want to use to encrypt the key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
-    String publicKey;
+    private final String publicKey;
+
+    public String getPublicKey() {
+        return publicKey;
+    }
 
     /**
      * Information that provides context for audit logging. You can provide this additional
@@ -178,8 +217,65 @@ public class ExportKeyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
-    java.util.Map<String, String> loggingContext;
+    private final java.util.Map<String, String> loggingContext;
+
+    public java.util.Map<String, String> getLoggingContext() {
+        return loggingContext;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExportKeyDetails(");
+        sb.append("keyId=").append(String.valueOf(this.keyId));
+        sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
+        sb.append(", algorithm=").append(String.valueOf(this.algorithm));
+        sb.append(", publicKey=").append(String.valueOf(this.publicKey));
+        sb.append(", loggingContext=").append(String.valueOf(this.loggingContext));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportKeyDetails)) {
+            return false;
+        }
+
+        ExportKeyDetails other = (ExportKeyDetails) o;
+        return java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
+                && java.util.Objects.equals(this.algorithm, other.algorithm)
+                && java.util.Objects.equals(this.publicKey, other.publicKey)
+                && java.util.Objects.equals(this.loggingContext, other.loggingContext)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.keyVersionId == null ? 43 : this.keyVersionId.hashCode());
+        result = (result * PRIME) + (this.algorithm == null ? 43 : this.algorithm.hashCode());
+        result = (result * PRIME) + (this.publicKey == null ? 43 : this.publicKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loggingContext == null ? 43 : this.loggingContext.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

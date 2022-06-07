@@ -15,16 +15,28 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RowReductionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RowReductionDetails {
+public final class RowReductionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isReductionEnabled",
+        "reductionPercentage",
+        "reductionMethod"
+    })
+    public RowReductionDetails(
+            Boolean isReductionEnabled,
+            Double reductionPercentage,
+            ReductionMethod reductionMethod) {
+        super();
+        this.isReductionEnabled = isReductionEnabled;
+        this.reductionPercentage = reductionPercentage;
+        this.reductionMethod = reductionMethod;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isReductionEnabled")
         private Boolean isReductionEnabled;
@@ -83,24 +95,36 @@ public class RowReductionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A boolean value to indicate if row reduction is applied
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReductionEnabled")
-    Boolean isReductionEnabled;
+    private final Boolean isReductionEnabled;
+
+    public Boolean getIsReductionEnabled() {
+        return isReductionEnabled;
+    }
 
     /**
      * A percentage to reduce data size down to on top of original data
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reductionPercentage")
-    Double reductionPercentage;
+    private final Double reductionPercentage;
+
+    public Double getReductionPercentage() {
+        return reductionPercentage;
+    }
+
     /**
      * Method for row reduction:
      *   * DELETE_ROW - delete rows with equal intervals
      *   * AVERAGE_ROW - average multiple rows to one row
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ReductionMethod {
         DeleteRow("DELETE_ROW"),
         AverageRow("AVERAGE_ROW"),
@@ -110,6 +134,9 @@ public class RowReductionDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ReductionMethod.class);
 
         private final String value;
         private static java.util.Map<String, ReductionMethod> map;
@@ -150,8 +177,67 @@ public class RowReductionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reductionMethod")
-    ReductionMethod reductionMethod;
+    private final ReductionMethod reductionMethod;
+
+    public ReductionMethod getReductionMethod() {
+        return reductionMethod;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RowReductionDetails(");
+        sb.append("isReductionEnabled=").append(String.valueOf(this.isReductionEnabled));
+        sb.append(", reductionPercentage=").append(String.valueOf(this.reductionPercentage));
+        sb.append(", reductionMethod=").append(String.valueOf(this.reductionMethod));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RowReductionDetails)) {
+            return false;
+        }
+
+        RowReductionDetails other = (RowReductionDetails) o;
+        return java.util.Objects.equals(this.isReductionEnabled, other.isReductionEnabled)
+                && java.util.Objects.equals(this.reductionPercentage, other.reductionPercentage)
+                && java.util.Objects.equals(this.reductionMethod, other.reductionMethod)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isReductionEnabled == null
+                                ? 43
+                                : this.isReductionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reductionPercentage == null
+                                ? 43
+                                : this.reductionPercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reductionMethod == null ? 43 : this.reductionMethod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

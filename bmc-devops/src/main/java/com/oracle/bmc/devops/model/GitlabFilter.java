@@ -15,20 +15,15 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GitlabFilter.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "triggerSource"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GitlabFilter extends Filter {
+public final class GitlabFilter extends Filter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("events")
         private java.util.List<Events> events;
@@ -73,6 +68,10 @@ public class GitlabFilter extends Filter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public GitlabFilter(java.util.List<Events> events, GitlabFilterAttributes include) {
         super();
@@ -82,7 +81,6 @@ public class GitlabFilter extends Filter {
 
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Events {
         Push("PUSH"),
         PullRequestCreated("PULL_REQUEST_CREATED"),
@@ -95,6 +93,8 @@ public class GitlabFilter extends Filter {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Events.class);
 
         private final String value;
         private static java.util.Map<String, Events> map;
@@ -132,11 +132,63 @@ public class GitlabFilter extends Filter {
      * The events, for example, PUSH, PULL_REQUEST_MERGE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("events")
-    java.util.List<Events> events;
+    private final java.util.List<Events> events;
+
+    public java.util.List<Events> getEvents() {
+        return events;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("include")
-    GitlabFilterAttributes include;
+    private final GitlabFilterAttributes include;
+
+    public GitlabFilterAttributes getInclude() {
+        return include;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GitlabFilter(");
+        sb.append("super=").append(super.toString());
+        sb.append(", events=").append(String.valueOf(this.events));
+        sb.append(", include=").append(String.valueOf(this.include));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GitlabFilter)) {
+            return false;
+        }
+
+        GitlabFilter other = (GitlabFilter) o;
+        return java.util.Objects.equals(this.events, other.events)
+                && java.util.Objects.equals(this.include, other.include)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.events == null ? 43 : this.events.hashCode());
+        result = (result * PRIME) + (this.include == null ? 43 : this.include.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

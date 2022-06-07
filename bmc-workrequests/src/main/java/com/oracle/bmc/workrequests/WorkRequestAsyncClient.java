@@ -7,6 +7,7 @@ package com.oracle.bmc.workrequests;
 import com.oracle.bmc.workrequests.internal.http.*;
 import com.oracle.bmc.workrequests.requests.*;
 import com.oracle.bmc.workrequests.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for WorkRequest service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.workrequests.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.extern.slf4j.Slf4j
 public class WorkRequestAsyncClient implements WorkRequestAsync {
     /**
      * Service instance for WorkRequest.
@@ -34,7 +34,9 @@ public class WorkRequestAsyncClient implements WorkRequestAsync {
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WorkRequestAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class WorkRequestAsyncClient implements WorkRequestAsync {
          * @return the client
          */
         public WorkRequestAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new WorkRequestAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class WorkRequestAsyncClient implements WorkRequestAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

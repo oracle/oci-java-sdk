@@ -7,10 +7,6 @@ package com.oracle.bmc.aispeech.responses;
 import com.oracle.bmc.aispeech.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeTranscriptionJobCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -19,6 +15,10 @@ public class ChangeTranscriptionJobCompartmentResponse
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeTranscriptionJobCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
@@ -31,6 +31,13 @@ public class ChangeTranscriptionJobCompartmentResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -48,5 +55,41 @@ public class ChangeTranscriptionJobCompartmentResponse
         public ChangeTranscriptionJobCompartmentResponse build() {
             return new ChangeTranscriptionJobCompartmentResponse(__httpStatusCode__, opcRequestId);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeTranscriptionJobCompartmentResponse)) {
+            return false;
+        }
+
+        ChangeTranscriptionJobCompartmentResponse other =
+                (ChangeTranscriptionJobCompartmentResponse) o;
+        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

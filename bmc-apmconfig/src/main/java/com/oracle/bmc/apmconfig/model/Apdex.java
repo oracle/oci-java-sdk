@@ -31,14 +31,38 @@ package com.oracle.bmc.apmconfig.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Apdex.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Apdex {
+public final class Apdex {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "filterText",
+        "priority",
+        "isEnabled",
+        "satisfiedResponseTime",
+        "toleratingResponseTime",
+        "isApplyToErrorSpans",
+        "displayName"
+    })
+    public Apdex(
+            String filterText,
+            Integer priority,
+            Boolean isEnabled,
+            Integer satisfiedResponseTime,
+            Integer toleratingResponseTime,
+            Boolean isApplyToErrorSpans,
+            String displayName) {
+        super();
+        this.filterText = filterText;
+        this.priority = priority;
+        this.isEnabled = isEnabled;
+        this.satisfiedResponseTime = satisfiedResponseTime;
+        this.toleratingResponseTime = toleratingResponseTime;
+        this.isApplyToErrorSpans = isApplyToErrorSpans;
+        this.displayName = displayName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("filterText")
         private String filterText;
@@ -143,12 +167,20 @@ public class Apdex {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The string that defines the Span Filter expression.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterText")
-    String filterText;
+    private final String filterText;
+
+    public String getFilterText() {
+        return filterText;
+    }
 
     /**
      * The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher
@@ -157,7 +189,11 @@ public class Apdex {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
-    Integer priority;
+    private final Integer priority;
+
+    public Integer getPriority() {
+        return priority;
+    }
 
     /**
      * Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable
@@ -165,14 +201,22 @@ public class Apdex {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The maximum response time in milliseconds that is considered "satisfactory" for the end user.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("satisfiedResponseTime")
-    Integer satisfiedResponseTime;
+    private final Integer satisfiedResponseTime;
+
+    public Integer getSatisfiedResponseTime() {
+        return satisfiedResponseTime;
+    }
 
     /**
      * The maximum response time in milliseconds that is considered "tolerable" for the end user. A response
@@ -181,7 +225,11 @@ public class Apdex {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("toleratingResponseTime")
-    Integer toleratingResponseTime;
+    private final Integer toleratingResponseTime;
+
+    public Integer getToleratingResponseTime() {
+        return toleratingResponseTime;
+    }
 
     /**
      * Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex
@@ -190,14 +238,92 @@ public class Apdex {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isApplyToErrorSpans")
-    Boolean isApplyToErrorSpans;
+    private final Boolean isApplyToErrorSpans;
+
+    public Boolean getIsApplyToErrorSpans() {
+        return isApplyToErrorSpans;
+    }
 
     /**
      * A user-friendly name that provides a short description of this rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Apdex(");
+        sb.append("filterText=").append(String.valueOf(this.filterText));
+        sb.append(", priority=").append(String.valueOf(this.priority));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", satisfiedResponseTime=").append(String.valueOf(this.satisfiedResponseTime));
+        sb.append(", toleratingResponseTime=").append(String.valueOf(this.toleratingResponseTime));
+        sb.append(", isApplyToErrorSpans=").append(String.valueOf(this.isApplyToErrorSpans));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Apdex)) {
+            return false;
+        }
+
+        Apdex other = (Apdex) o;
+        return java.util.Objects.equals(this.filterText, other.filterText)
+                && java.util.Objects.equals(this.priority, other.priority)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.satisfiedResponseTime, other.satisfiedResponseTime)
+                && java.util.Objects.equals(
+                        this.toleratingResponseTime, other.toleratingResponseTime)
+                && java.util.Objects.equals(this.isApplyToErrorSpans, other.isApplyToErrorSpans)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.filterText == null ? 43 : this.filterText.hashCode());
+        result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.satisfiedResponseTime == null
+                                ? 43
+                                : this.satisfiedResponseTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.toleratingResponseTime == null
+                                ? 43
+                                : this.toleratingResponseTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isApplyToErrorSpans == null
+                                ? 43
+                                : this.isApplyToErrorSpans.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

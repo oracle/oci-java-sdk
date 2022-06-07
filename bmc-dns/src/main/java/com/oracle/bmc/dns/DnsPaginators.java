@@ -26,9 +26,12 @@ import com.oracle.bmc.dns.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.RequiredArgsConstructor
 public class DnsPaginators {
     private final Dns client;
+
+    public DnsPaginators(Dns client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the getDomainRecords operation. This iterable

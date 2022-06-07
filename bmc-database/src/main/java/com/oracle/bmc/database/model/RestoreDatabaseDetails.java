@@ -15,16 +15,21 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RestoreDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RestoreDatabaseDetails {
+public final class RestoreDatabaseDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"databaseSCN", "timestamp", "latest"})
+    public RestoreDatabaseDetails(String databaseSCN, java.util.Date timestamp, Boolean latest) {
+        super();
+        this.databaseSCN = databaseSCN;
+        this.timestamp = timestamp;
+        this.latest = latest;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
         private String databaseSCN;
@@ -82,27 +87,88 @@ public class RestoreDatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Restores using the backup with the System Change Number (SCN) specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
-    String databaseSCN;
+    private final String databaseSCN;
+
+    public String getDatabaseSCN() {
+        return databaseSCN;
+    }
 
     /**
      * Restores to the timestamp specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * Restores to the last known good state with the least possible data loss.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("latest")
-    Boolean latest;
+    private final Boolean latest;
+
+    public Boolean getLatest() {
+        return latest;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RestoreDatabaseDetails(");
+        sb.append("databaseSCN=").append(String.valueOf(this.databaseSCN));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", latest=").append(String.valueOf(this.latest));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RestoreDatabaseDetails)) {
+            return false;
+        }
+
+        RestoreDatabaseDetails other = (RestoreDatabaseDetails) o;
+        return java.util.Objects.equals(this.databaseSCN, other.databaseSCN)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.latest, other.latest)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.databaseSCN == null ? 43 : this.databaseSCN.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.latest == null ? 43 : this.latest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

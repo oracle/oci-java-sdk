@@ -18,16 +18,49 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = NetworkSourcesSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NetworkSourcesSummary {
+public final class NetworkSourcesSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "name",
+        "description",
+        "publicSourceList",
+        "virtualSourceList",
+        "services",
+        "timeCreated",
+        "freeformTags",
+        "definedTags"
+    })
+    public NetworkSourcesSummary(
+            String id,
+            String compartmentId,
+            String name,
+            String description,
+            java.util.List<String> publicSourceList,
+            java.util.List<NetworkSources_virtualSourceList> virtualSourceList,
+            java.util.List<String> services,
+            java.util.Date timeCreated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.description = description;
+        this.publicSourceList = publicSourceList;
+        this.virtualSourceList = virtualSourceList;
+        this.services = services;
+        this.timeCreated = timeCreated;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -167,17 +200,29 @@ public class NetworkSourcesSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the network source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the tenancy (root compartment) containing the network source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name you assign to the network source during creation. The name must be unique across
@@ -185,20 +230,32 @@ public class NetworkSourcesSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The description you assign to the network source. Does not have to be unique, and it's changeable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A list of allowed public IP addresses and CIDR ranges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicSourceList")
-    java.util.List<String> publicSourceList;
+    private final java.util.List<String> publicSourceList;
+
+    public java.util.List<String> getPublicSourceList() {
+        return publicSourceList;
+    }
 
     /**
      * A list of allowed VCN OCID and IP range pairs.
@@ -206,7 +263,11 @@ public class NetworkSourcesSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualSourceList")
-    java.util.List<NetworkSources_virtualSourceList> virtualSourceList;
+    private final java.util.List<NetworkSources_virtualSourceList> virtualSourceList;
+
+    public java.util.List<NetworkSources_virtualSourceList> getVirtualSourceList() {
+        return virtualSourceList;
+    }
 
     /**
      * A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than
@@ -214,7 +275,11 @@ public class NetworkSourcesSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
-    java.util.List<String> services;
+    private final java.util.List<String> services;
+
+    public java.util.List<String> getServices() {
+        return services;
+    }
 
     /**
      * Date and time the group was created, in the format defined by RFC3339.
@@ -223,7 +288,11 @@ public class NetworkSourcesSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -232,7 +301,11 @@ public class NetworkSourcesSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -241,8 +314,84 @@ public class NetworkSourcesSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NetworkSourcesSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", publicSourceList=").append(String.valueOf(this.publicSourceList));
+        sb.append(", virtualSourceList=").append(String.valueOf(this.virtualSourceList));
+        sb.append(", services=").append(String.valueOf(this.services));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NetworkSourcesSummary)) {
+            return false;
+        }
+
+        NetworkSourcesSummary other = (NetworkSourcesSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.publicSourceList, other.publicSourceList)
+                && java.util.Objects.equals(this.virtualSourceList, other.virtualSourceList)
+                && java.util.Objects.equals(this.services, other.services)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicSourceList == null ? 43 : this.publicSourceList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualSourceList == null ? 43 : this.virtualSourceList.hashCode());
+        result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

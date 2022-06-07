@@ -7,10 +7,6 @@ package com.oracle.bmc.dts.responses;
 import com.oracle.bmc.dts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateTransferApplianceAdminCredentialsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -18,15 +14,27 @@ public class CreateTransferApplianceAdminCredentialsResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      *
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The returned TransferApplianceCertificate instance.
      */
     private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
+
+    public com.oracle.bmc.dts.model.TransferApplianceCertificate getTransferApplianceCertificate() {
+        return transferApplianceCertificate;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -53,6 +61,29 @@ public class CreateTransferApplianceAdminCredentialsResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
+
+        public Builder transferApplianceCertificate(
+                com.oracle.bmc.dts.model.TransferApplianceCertificate
+                        transferApplianceCertificate) {
+            this.transferApplianceCertificate = transferApplianceCertificate;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -70,5 +101,54 @@ public class CreateTransferApplianceAdminCredentialsResponse
             return new CreateTransferApplianceAdminCredentialsResponse(
                     __httpStatusCode__, opcRequestId, etag, transferApplianceCertificate);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",transferApplianceCertificate=")
+                .append(String.valueOf(transferApplianceCertificate));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTransferApplianceAdminCredentialsResponse)) {
+            return false;
+        }
+
+        CreateTransferApplianceAdminCredentialsResponse other =
+                (CreateTransferApplianceAdminCredentialsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(
+                        this.transferApplianceCertificate, other.transferApplianceCertificate);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transferApplianceCertificate == null
+                                ? 43
+                                : this.transferApplianceCertificate.hashCode());
+        return result;
     }
 }

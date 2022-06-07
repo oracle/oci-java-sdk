@@ -16,16 +16,64 @@ package com.oracle.bmc.goldengate.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDeploymentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDeploymentDetails {
+public final class CreateDeploymentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "licenseModel",
+        "description",
+        "compartmentId",
+        "freeformTags",
+        "definedTags",
+        "deploymentBackupId",
+        "subnetId",
+        "fqdn",
+        "nsgIds",
+        "isPublic",
+        "cpuCoreCount",
+        "isAutoScalingEnabled",
+        "deploymentType",
+        "oggData"
+    })
+    public CreateDeploymentDetails(
+            String displayName,
+            LicenseModel licenseModel,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String deploymentBackupId,
+            String subnetId,
+            String fqdn,
+            java.util.List<String> nsgIds,
+            Boolean isPublic,
+            Integer cpuCoreCount,
+            Boolean isAutoScalingEnabled,
+            DeploymentType deploymentType,
+            CreateOggDeploymentDetails oggData) {
+        super();
+        this.displayName = displayName;
+        this.licenseModel = licenseModel;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.deploymentBackupId = deploymentBackupId;
+        this.subnetId = subnetId;
+        this.fqdn = fqdn;
+        this.nsgIds = nsgIds;
+        this.isPublic = isPublic;
+        this.cpuCoreCount = cpuCoreCount;
+        this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.deploymentType = deploymentType;
+        this.oggData = oggData;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -219,33 +267,53 @@ public class CreateDeploymentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An object's Display Name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The Oracle license model that applies to a Deployment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * Metadata about this specific object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
@@ -253,7 +321,11 @@ public class CreateDeploymentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
@@ -261,67 +333,200 @@ public class CreateDeploymentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentBackupId")
-    String deploymentBackupId;
+    private final String deploymentBackupId;
+
+    public String getDeploymentBackupId() {
+        return deploymentBackupId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
-    String fqdn;
+    private final String fqdn;
+
+    public String getFqdn() {
+        return fqdn;
+    }
 
     /**
      * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * True if this object is publicly available.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
-    Boolean isPublic;
+    private final Boolean isPublic;
+
+    public Boolean getIsPublic() {
+        return isPublic;
+    }
 
     /**
      * The Minimum number of OCPUs to be made available for this Deployment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
-    Boolean isAutoScalingEnabled;
+    private final Boolean isAutoScalingEnabled;
+
+    public Boolean getIsAutoScalingEnabled() {
+        return isAutoScalingEnabled;
+    }
 
     /**
      * The deployment type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
-    DeploymentType deploymentType;
+    private final DeploymentType deploymentType;
+
+    public DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("oggData")
-    CreateOggDeploymentDetails oggData;
+    private final CreateOggDeploymentDetails oggData;
+
+    public CreateOggDeploymentDetails getOggData() {
+        return oggData;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDeploymentDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", deploymentBackupId=").append(String.valueOf(this.deploymentBackupId));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", fqdn=").append(String.valueOf(this.fqdn));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", isPublic=").append(String.valueOf(this.isPublic));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(", oggData=").append(String.valueOf(this.oggData));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDeploymentDetails)) {
+            return false;
+        }
+
+        CreateDeploymentDetails other = (CreateDeploymentDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.deploymentBackupId, other.deploymentBackupId)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.fqdn, other.fqdn)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.isPublic, other.isPublic)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(this.oggData, other.oggData)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentBackupId == null
+                                ? 43
+                                : this.deploymentBackupId.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoScalingEnabled == null
+                                ? 43
+                                : this.isAutoScalingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

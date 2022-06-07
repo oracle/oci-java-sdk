@@ -15,22 +15,17 @@ package com.oracle.bmc.applicationmigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ImportSourceDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ImportSourceDetails extends SourceDetails {
+public final class ImportSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("manifest")
         private ImportManifest manifest;
@@ -98,6 +93,10 @@ public class ImportSourceDetails extends SourceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ImportSourceDetails(
             ImportManifest manifest, String namespace, String bucket, String objectName) {
@@ -109,26 +108,92 @@ public class ImportSourceDetails extends SourceDetails {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("manifest")
-    ImportManifest manifest;
+    private final ImportManifest manifest;
+
+    public ImportManifest getManifest() {
+        return manifest;
+    }
 
     /**
      * the object storage namespace where the bucket and uploaded object resides
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * the bucket wherein the export archive exists in object storage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
-    String bucket;
+    private final String bucket;
+
+    public String getBucket() {
+        return bucket;
+    }
 
     /**
      * the name of the archive as it exists in object storage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImportSourceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", manifest=").append(String.valueOf(this.manifest));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", bucket=").append(String.valueOf(this.bucket));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImportSourceDetails)) {
+            return false;
+        }
+
+        ImportSourceDetails other = (ImportSourceDetails) o;
+        return java.util.Objects.equals(this.manifest, other.manifest)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.bucket, other.bucket)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.manifest == null ? 43 : this.manifest.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.bucket == null ? 43 : this.bucket.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

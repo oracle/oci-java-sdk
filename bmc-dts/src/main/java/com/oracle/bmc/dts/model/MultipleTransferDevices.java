@@ -15,16 +15,19 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MultipleTransferDevices.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MultipleTransferDevices {
+public final class MultipleTransferDevices {
+    @Deprecated
+    @java.beans.ConstructorProperties({"transferDeviceObjects"})
+    public MultipleTransferDevices(java.util.List<TransferDeviceSummary> transferDeviceObjects) {
+        super();
+        this.transferDeviceObjects = transferDeviceObjects;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("transferDeviceObjects")
         private java.util.List<TransferDeviceSummary> transferDeviceObjects;
@@ -62,12 +65,63 @@ public class MultipleTransferDevices {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of TransferDeviceObject's
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transferDeviceObjects")
-    java.util.List<TransferDeviceSummary> transferDeviceObjects;
+    private final java.util.List<TransferDeviceSummary> transferDeviceObjects;
+
+    public java.util.List<TransferDeviceSummary> getTransferDeviceObjects() {
+        return transferDeviceObjects;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MultipleTransferDevices(");
+        sb.append("transferDeviceObjects=").append(String.valueOf(this.transferDeviceObjects));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MultipleTransferDevices)) {
+            return false;
+        }
+
+        MultipleTransferDevices other = (MultipleTransferDevices) o;
+        return java.util.Objects.equals(this.transferDeviceObjects, other.transferDeviceObjects)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.transferDeviceObjects == null
+                                ? 43
+                                : this.transferDeviceObjects.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

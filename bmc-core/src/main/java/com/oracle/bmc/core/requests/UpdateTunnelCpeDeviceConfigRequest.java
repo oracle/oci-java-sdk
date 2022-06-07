@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateTunnelCpeDeviceConfigExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTunnelCpeDeviceConfigRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateTunnelCpeDeviceConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails> {
@@ -26,17 +18,27 @@ public class UpdateTunnelCpeDeviceConfigRequest
      */
     private String ipscId;
 
+    public String getIpscId() {
+        return ipscId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
      */
     private String tunnelId;
 
+    public String getTunnelId() {
+        return tunnelId;
+    }
     /**
      * Request to input the tunnel's cpe configuration parameters
      */
     private com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails
             updateTunnelCpeDeviceConfigDetails;
 
+    public com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails
+            getUpdateTunnelCpeDeviceConfigDetails() {
+        return updateTunnelCpeDeviceConfigDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -45,6 +47,9 @@ public class UpdateTunnelCpeDeviceConfigRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -55,12 +60,19 @@ public class UpdateTunnelCpeDeviceConfigRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -79,6 +91,85 @@ public class UpdateTunnelCpeDeviceConfigRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String ipscId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+         * @return this builder instance
+         */
+        public Builder ipscId(String ipscId) {
+            this.ipscId = ipscId;
+            return this;
+        }
+
+        private String tunnelId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+         * @return this builder instance
+         */
+        public Builder tunnelId(String tunnelId) {
+            this.tunnelId = tunnelId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails
+                updateTunnelCpeDeviceConfigDetails = null;
+
+        /**
+         * Request to input the tunnel's cpe configuration parameters
+         * @return this builder instance
+         */
+        public Builder updateTunnelCpeDeviceConfigDetails(
+                com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails
+                        updateTunnelCpeDeviceConfigDetails) {
+            this.updateTunnelCpeDeviceConfigDetails = updateTunnelCpeDeviceConfigDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -146,5 +237,98 @@ public class UpdateTunnelCpeDeviceConfigRequest
             updateTunnelCpeDeviceConfigDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateTunnelCpeDeviceConfigRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateTunnelCpeDeviceConfigRequest
+         */
+        public UpdateTunnelCpeDeviceConfigRequest buildWithoutInvocationCallback() {
+            UpdateTunnelCpeDeviceConfigRequest request = new UpdateTunnelCpeDeviceConfigRequest();
+            request.ipscId = ipscId;
+            request.tunnelId = tunnelId;
+            request.updateTunnelCpeDeviceConfigDetails = updateTunnelCpeDeviceConfigDetails;
+            request.ifMatch = ifMatch;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateTunnelCpeDeviceConfigRequest(ipscId, tunnelId, updateTunnelCpeDeviceConfigDetails, ifMatch, opcRetryToken, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .ipscId(ipscId)
+                .tunnelId(tunnelId)
+                .updateTunnelCpeDeviceConfigDetails(updateTunnelCpeDeviceConfigDetails)
+                .ifMatch(ifMatch)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",ipscId=").append(String.valueOf(this.ipscId));
+        sb.append(",tunnelId=").append(String.valueOf(this.tunnelId));
+        sb.append(",updateTunnelCpeDeviceConfigDetails=")
+                .append(String.valueOf(this.updateTunnelCpeDeviceConfigDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTunnelCpeDeviceConfigRequest)) {
+            return false;
+        }
+
+        UpdateTunnelCpeDeviceConfigRequest other = (UpdateTunnelCpeDeviceConfigRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.ipscId, other.ipscId)
+                && java.util.Objects.equals(this.tunnelId, other.tunnelId)
+                && java.util.Objects.equals(
+                        this.updateTunnelCpeDeviceConfigDetails,
+                        other.updateTunnelCpeDeviceConfigDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.ipscId == null ? 43 : this.ipscId.hashCode());
+        result = (result * PRIME) + (this.tunnelId == null ? 43 : this.tunnelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateTunnelCpeDeviceConfigDetails == null
+                                ? 43
+                                : this.updateTunnelCpeDeviceConfigDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.servicemanagerproxy.model;
  * Service Entitlement registration status
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
-@lombok.extern.slf4j.Slf4j
 public enum ServiceEntitlementRegistrationStatus {
     Initialized("INITIALIZED"),
     BeginActivation("BEGIN_ACTIVATION"),
@@ -44,6 +43,9 @@ public enum ServiceEntitlementRegistrationStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ServiceEntitlementRegistrationStatus.class);
 
     private final String value;
     private static java.util.Map<String, ServiceEntitlementRegistrationStatus> map;

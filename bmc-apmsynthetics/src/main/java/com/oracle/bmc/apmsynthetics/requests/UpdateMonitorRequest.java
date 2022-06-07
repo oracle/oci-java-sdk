@@ -9,14 +9,6 @@ import com.oracle.bmc.apmsynthetics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateMonitorExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMonitorRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateMonitorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails> {
@@ -27,16 +19,25 @@ public class UpdateMonitorRequest
      */
     private String apmDomainId;
 
+    public String getApmDomainId() {
+        return apmDomainId;
+    }
     /**
      * The OCID of the monitor.
      */
     private String monitorId;
 
+    public String getMonitorId() {
+        return monitorId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails updateMonitorDetails;
 
+    public com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails getUpdateMonitorDetails() {
+        return updateMonitorDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -47,12 +48,19 @@ public class UpdateMonitorRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -70,6 +78,70 @@ public class UpdateMonitorRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String apmDomainId = null;
+
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         * @return this builder instance
+         */
+        public Builder apmDomainId(String apmDomainId) {
+            this.apmDomainId = apmDomainId;
+            return this;
+        }
+
+        private String monitorId = null;
+
+        /**
+         * The OCID of the monitor.
+         * @return this builder instance
+         */
+        public Builder monitorId(String monitorId) {
+            this.monitorId = monitorId;
+            return this;
+        }
+
+        private com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails updateMonitorDetails = null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateMonitorDetails(
+                com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails updateMonitorDetails) {
+            this.updateMonitorDetails = updateMonitorDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -136,5 +208,88 @@ public class UpdateMonitorRequest
             updateMonitorDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateMonitorRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateMonitorRequest
+         */
+        public UpdateMonitorRequest buildWithoutInvocationCallback() {
+            UpdateMonitorRequest request = new UpdateMonitorRequest();
+            request.apmDomainId = apmDomainId;
+            request.monitorId = monitorId;
+            request.updateMonitorDetails = updateMonitorDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateMonitorRequest(apmDomainId, monitorId, updateMonitorDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .apmDomainId(apmDomainId)
+                .monitorId(monitorId)
+                .updateMonitorDetails(updateMonitorDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
+        sb.append(",monitorId=").append(String.valueOf(this.monitorId));
+        sb.append(",updateMonitorDetails=").append(String.valueOf(this.updateMonitorDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateMonitorRequest)) {
+            return false;
+        }
+
+        UpdateMonitorRequest other = (UpdateMonitorRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
+                && java.util.Objects.equals(this.monitorId, other.monitorId)
+                && java.util.Objects.equals(this.updateMonitorDetails, other.updateMonitorDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
+        result = (result * PRIME) + (this.monitorId == null ? 43 : this.monitorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateMonitorDetails == null
+                                ? 43
+                                : this.updateMonitorDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

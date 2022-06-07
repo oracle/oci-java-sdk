@@ -15,14 +15,22 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportContent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExportContent {
+public final class ExportContent {
+    @Deprecated
+    @java.beans.ConstructorProperties({"fieldNames", "parserNames", "sourceNames"})
+    public ExportContent(
+            java.util.List<String> fieldNames,
+            java.util.List<String> parserNames,
+            java.util.List<String> sourceNames) {
+        super();
+        this.fieldNames = fieldNames;
+        this.parserNames = parserNames;
+        this.sourceNames = sourceNames;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
         private java.util.List<String> fieldNames;
@@ -79,24 +87,85 @@ public class ExportContent {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The field names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
-    java.util.List<String> fieldNames;
+    private final java.util.List<String> fieldNames;
+
+    public java.util.List<String> getFieldNames() {
+        return fieldNames;
+    }
 
     /**
      * The parser names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserNames")
-    java.util.List<String> parserNames;
+    private final java.util.List<String> parserNames;
+
+    public java.util.List<String> getParserNames() {
+        return parserNames;
+    }
 
     /**
      * The source names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceNames")
-    java.util.List<String> sourceNames;
+    private final java.util.List<String> sourceNames;
+
+    public java.util.List<String> getSourceNames() {
+        return sourceNames;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExportContent(");
+        sb.append("fieldNames=").append(String.valueOf(this.fieldNames));
+        sb.append(", parserNames=").append(String.valueOf(this.parserNames));
+        sb.append(", sourceNames=").append(String.valueOf(this.sourceNames));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportContent)) {
+            return false;
+        }
+
+        ExportContent other = (ExportContent) o;
+        return java.util.Objects.equals(this.fieldNames, other.fieldNames)
+                && java.util.Objects.equals(this.parserNames, other.parserNames)
+                && java.util.Objects.equals(this.sourceNames, other.sourceNames)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fieldNames == null ? 43 : this.fieldNames.hashCode());
+        result = (result * PRIME) + (this.parserNames == null ? 43 : this.parserNames.hashCode());
+        result = (result * PRIME) + (this.sourceNames == null ? 43 : this.sourceNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

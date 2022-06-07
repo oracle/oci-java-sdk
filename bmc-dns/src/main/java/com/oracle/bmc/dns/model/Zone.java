@@ -18,14 +18,68 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Zone.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Zone {
+public final class Zone {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "zoneType",
+        "compartmentId",
+        "viewId",
+        "scope",
+        "freeformTags",
+        "definedTags",
+        "externalMasters",
+        "self",
+        "id",
+        "timeCreated",
+        "version",
+        "serial",
+        "lifecycleState",
+        "isProtected",
+        "nameservers",
+        "zoneTransferServers"
+    })
+    public Zone(
+            String name,
+            ZoneType zoneType,
+            String compartmentId,
+            String viewId,
+            Scope scope,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ExternalMaster> externalMasters,
+            String self,
+            String id,
+            java.util.Date timeCreated,
+            String version,
+            Long serial,
+            LifecycleState lifecycleState,
+            Boolean isProtected,
+            java.util.List<Nameserver> nameservers,
+            java.util.List<ZoneTransferServer> zoneTransferServers) {
+        super();
+        this.name = name;
+        this.zoneType = zoneType;
+        this.compartmentId = compartmentId;
+        this.viewId = viewId;
+        this.scope = scope;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.externalMasters = externalMasters;
+        this.self = self;
+        this.id = id;
+        this.timeCreated = timeCreated;
+        this.version = version;
+        this.serial = serial;
+        this.lifecycleState = lifecycleState;
+        this.isProtected = isProtected;
+        this.nameservers = nameservers;
+        this.zoneTransferServers = zoneTransferServers;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -241,16 +295,24 @@ public class Zone {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ZoneType {
         Primary("PRIMARY"),
         Secondary("SECONDARY"),
@@ -260,6 +322,9 @@ public class Zone {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ZoneType.class);
 
         private final String value;
         private static java.util.Map<String, ZoneType> map;
@@ -298,13 +363,21 @@ public class Zone {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
-    ZoneType zoneType;
+    private final ZoneType zoneType;
+
+    public ZoneType getZoneType() {
+        return zoneType;
+    }
 
     /**
      * The OCID of the compartment containing the zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the private view containing the zone. This value will
@@ -313,13 +386,21 @@ public class Zone {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("viewId")
-    String viewId;
+    private final String viewId;
+
+    public String getViewId() {
+        return viewId;
+    }
 
     /**
      * The scope of the zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    Scope scope;
+    private final Scope scope;
+
+    public Scope getScope() {
+        return scope;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -330,7 +411,11 @@ public class Zone {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -341,7 +426,11 @@ public class Zone {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * External master servers for the zone. {@code externalMasters} becomes a
@@ -349,19 +438,31 @@ public class Zone {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
-    java.util.List<ExternalMaster> externalMasters;
+    private final java.util.List<ExternalMaster> externalMasters;
+
+    public java.util.List<ExternalMaster> getExternalMasters() {
+        return externalMasters;
+    }
 
     /**
      * The canonical absolute URL of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("self")
-    String self;
+    private final String self;
+
+    public String getSelf() {
+        return self;
+    }
 
     /**
      * The OCID of the zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
@@ -371,7 +472,11 @@ public class Zone {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Version is the never-repeating, totally-orderable, version of the
@@ -380,18 +485,26 @@ public class Zone {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The current serial of the zone. As seen in the zone's SOA record.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serial")
-    Long serial;
+    private final Long serial;
+
+    public Long getSerial() {
+        return serial;
+    }
+
     /**
      * The current state of the zone resource.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
@@ -405,6 +518,9 @@ public class Zone {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -442,28 +558,141 @@ public class Zone {
      * The current state of the zone resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
-    Boolean isProtected;
+    private final Boolean isProtected;
+
+    public Boolean getIsProtected() {
+        return isProtected;
+    }
 
     /**
      * The authoritative nameservers for the zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
-    java.util.List<Nameserver> nameservers;
+    private final java.util.List<Nameserver> nameservers;
+
+    public java.util.List<Nameserver> getNameservers() {
+        return nameservers;
+    }
 
     /**
      * The OCI nameservers that transfer the zone data with external nameservers.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneTransferServers")
-    java.util.List<ZoneTransferServer> zoneTransferServers;
+    private final java.util.List<ZoneTransferServer> zoneTransferServers;
+
+    public java.util.List<ZoneTransferServer> getZoneTransferServers() {
+        return zoneTransferServers;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Zone(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", zoneType=").append(String.valueOf(this.zoneType));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", viewId=").append(String.valueOf(this.viewId));
+        sb.append(", scope=").append(String.valueOf(this.scope));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", externalMasters=").append(String.valueOf(this.externalMasters));
+        sb.append(", self=").append(String.valueOf(this.self));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", serial=").append(String.valueOf(this.serial));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isProtected=").append(String.valueOf(this.isProtected));
+        sb.append(", nameservers=").append(String.valueOf(this.nameservers));
+        sb.append(", zoneTransferServers=").append(String.valueOf(this.zoneTransferServers));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Zone)) {
+            return false;
+        }
+
+        Zone other = (Zone) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.zoneType, other.zoneType)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.viewId, other.viewId)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.externalMasters, other.externalMasters)
+                && java.util.Objects.equals(this.self, other.self)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.serial, other.serial)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isProtected, other.isProtected)
+                && java.util.Objects.equals(this.nameservers, other.nameservers)
+                && java.util.Objects.equals(this.zoneTransferServers, other.zoneTransferServers)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.zoneType == null ? 43 : this.zoneType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.viewId == null ? 43 : this.viewId.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalMasters == null ? 43 : this.externalMasters.hashCode());
+        result = (result * PRIME) + (this.self == null ? 43 : this.self.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.serial == null ? 43 : this.serial.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.isProtected == null ? 43 : this.isProtected.hashCode());
+        result = (result * PRIME) + (this.nameservers == null ? 43 : this.nameservers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.zoneTransferServers == null
+                                ? 43
+                                : this.zoneTransferServers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

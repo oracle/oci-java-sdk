@@ -8,7 +8,6 @@ package com.oracle.bmc.datascience.model;
  * The type of model deployment.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.extern.slf4j.Slf4j
 public enum ModelDeploymentType {
     SingleModel("SINGLE_MODEL"),
 
@@ -17,6 +16,9 @@ public enum ModelDeploymentType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ModelDeploymentType.class);
 
     private final String value;
     private static java.util.Map<String, ModelDeploymentType> map;

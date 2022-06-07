@@ -9,14 +9,6 @@ import com.oracle.bmc.dts.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferApplianceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateTransferApplianceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateTransferApplianceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.CreateTransferApplianceDetails> {
@@ -26,15 +18,26 @@ public class CreateTransferApplianceRequest
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      *
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * Creates a New Transfer Appliance
      */
     private com.oracle.bmc.dts.model.CreateTransferApplianceDetails createTransferApplianceDetails;
+
+    public com.oracle.bmc.dts.model.CreateTransferApplianceDetails
+            getCreateTransferApplianceDetails() {
+        return createTransferApplianceDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -53,6 +56,42 @@ public class CreateTransferApplianceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String id = null;
+
+        /**
+         * ID of the Transfer Job
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private com.oracle.bmc.dts.model.CreateTransferApplianceDetails
+                createTransferApplianceDetails = null;
+
+        /**
+         * Creates a New Transfer Appliance
+         * @return this builder instance
+         */
+        public Builder createTransferApplianceDetails(
+                com.oracle.bmc.dts.model.CreateTransferApplianceDetails
+                        createTransferApplianceDetails) {
+            this.createTransferApplianceDetails = createTransferApplianceDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -117,5 +156,82 @@ public class CreateTransferApplianceRequest
             createTransferApplianceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateTransferApplianceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateTransferApplianceRequest
+         */
+        public CreateTransferApplianceRequest buildWithoutInvocationCallback() {
+            CreateTransferApplianceRequest request = new CreateTransferApplianceRequest();
+            request.id = id;
+            request.opcRetryToken = opcRetryToken;
+            request.createTransferApplianceDetails = createTransferApplianceDetails;
+            return request;
+            // new CreateTransferApplianceRequest(id, opcRetryToken, createTransferApplianceDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .id(id)
+                .opcRetryToken(opcRetryToken)
+                .createTransferApplianceDetails(createTransferApplianceDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",createTransferApplianceDetails=")
+                .append(String.valueOf(this.createTransferApplianceDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTransferApplianceRequest)) {
+            return false;
+        }
+
+        CreateTransferApplianceRequest other = (CreateTransferApplianceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(
+                        this.createTransferApplianceDetails, other.createTransferApplianceDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createTransferApplianceDetails == null
+                                ? 43
+                                : this.createTransferApplianceDetails.hashCode());
+        return result;
     }
 }

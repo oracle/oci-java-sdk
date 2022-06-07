@@ -15,16 +15,31 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceProfileRiskScoreAggregationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceProfileRiskScoreAggregationSummary {
+public final class ResourceProfileRiskScoreAggregationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "resourceProfileId",
+        "resourceProfileDisplayName",
+        "riskThreshold",
+        "items"
+    })
+    public ResourceProfileRiskScoreAggregationSummary(
+            String resourceProfileId,
+            String resourceProfileDisplayName,
+            Integer riskThreshold,
+            java.util.List<ResourceRiskScoreAggregation> items) {
+        super();
+        this.resourceProfileId = resourceProfileId;
+        this.resourceProfileDisplayName = resourceProfileDisplayName;
+        this.riskThreshold = riskThreshold;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
         private String resourceProfileId;
@@ -93,30 +108,109 @@ public class ResourceProfileRiskScoreAggregationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID for the resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
-    String resourceProfileId;
+    private final String resourceProfileId;
+
+    public String getResourceProfileId() {
+        return resourceProfileId;
+    }
 
     /**
      * Display name for the resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileDisplayName")
-    String resourceProfileDisplayName;
+    private final String resourceProfileDisplayName;
+
+    public String getResourceProfileDisplayName() {
+        return resourceProfileDisplayName;
+    }
 
     /**
      * Risk threshold
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
-    Integer riskThreshold;
+    private final Integer riskThreshold;
+
+    public Integer getRiskThreshold() {
+        return riskThreshold;
+    }
 
     /**
      * List of ResourceRiskScoreAggregation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<ResourceRiskScoreAggregation> items;
+    private final java.util.List<ResourceRiskScoreAggregation> items;
+
+    public java.util.List<ResourceRiskScoreAggregation> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceProfileRiskScoreAggregationSummary(");
+        sb.append("resourceProfileId=").append(String.valueOf(this.resourceProfileId));
+        sb.append(", resourceProfileDisplayName=")
+                .append(String.valueOf(this.resourceProfileDisplayName));
+        sb.append(", riskThreshold=").append(String.valueOf(this.riskThreshold));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceProfileRiskScoreAggregationSummary)) {
+            return false;
+        }
+
+        ResourceProfileRiskScoreAggregationSummary other =
+                (ResourceProfileRiskScoreAggregationSummary) o;
+        return java.util.Objects.equals(this.resourceProfileId, other.resourceProfileId)
+                && java.util.Objects.equals(
+                        this.resourceProfileDisplayName, other.resourceProfileDisplayName)
+                && java.util.Objects.equals(this.riskThreshold, other.riskThreshold)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.resourceProfileId == null ? 43 : this.resourceProfileId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceProfileDisplayName == null
+                                ? 43
+                                : this.resourceProfileDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.riskThreshold == null ? 43 : this.riskThreshold.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

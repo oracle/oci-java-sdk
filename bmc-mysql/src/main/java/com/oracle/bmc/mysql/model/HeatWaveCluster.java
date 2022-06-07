@@ -16,14 +16,41 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HeatWaveCluster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HeatWaveCluster {
+public final class HeatWaveCluster {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "dbSystemId",
+        "shapeName",
+        "clusterSize",
+        "clusterNodes",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public HeatWaveCluster(
+            String dbSystemId,
+            String shapeName,
+            Integer clusterSize,
+            java.util.List<HeatWaveNode> clusterNodes,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.dbSystemId = dbSystemId;
+        this.shapeName = shapeName;
+        this.clusterSize = clusterSize;
+        this.clusterNodes = clusterNodes;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
@@ -139,11 +166,19 @@ public class HeatWaveCluster {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the parent DB System this HeatWave cluster is attached to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
+    private final String dbSystemId;
+
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
 
     /**
      * The shape determines resources to allocate to the HeatWave
@@ -151,7 +186,11 @@ public class HeatWaveCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    String shapeName;
+    private final String shapeName;
+
+    public String getShapeName() {
+        return shapeName;
+    }
 
     /**
      * The number of analytics-processing compute instances, of the
@@ -159,17 +198,25 @@ public class HeatWaveCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
-    Integer clusterSize;
+    private final Integer clusterSize;
+
+    public Integer getClusterSize() {
+        return clusterSize;
+    }
 
     /**
      * A HeatWave node is a compute host that is part of a HeatWave cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterNodes")
-    java.util.List<HeatWaveNode> clusterNodes;
+    private final java.util.List<HeatWaveNode> clusterNodes;
+
+    public java.util.List<HeatWaveNode> getClusterNodes() {
+        return clusterNodes;
+    }
+
     /**
      * The current state of the HeatWave cluster.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -184,6 +231,9 @@ public class HeatWaveCluster {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -221,13 +271,21 @@ public class HeatWaveCluster {
      * The current state of the HeatWave cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycleState.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time the HeatWave cluster was created,
@@ -235,7 +293,11 @@ public class HeatWaveCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the HeatWave cluster was last updated,
@@ -243,8 +305,76 @@ public class HeatWaveCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HeatWaveCluster(");
+        sb.append("dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
+        sb.append(", clusterNodes=").append(String.valueOf(this.clusterNodes));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HeatWaveCluster)) {
+            return false;
+        }
+
+        HeatWaveCluster other = (HeatWaveCluster) o;
+        return java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.clusterSize, other.clusterSize)
+                && java.util.Objects.equals(this.clusterNodes, other.clusterNodes)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
+        result = (result * PRIME) + (this.clusterNodes == null ? 43 : this.clusterNodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,31 @@ package com.oracle.bmc.datalabelingservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SnapshotDatasetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SnapshotDatasetDetails {
+public final class SnapshotDatasetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "areAnnotationsIncluded",
+        "areUnannotatedRecordsIncluded",
+        "exportDetails",
+        "exportFormat"
+    })
+    public SnapshotDatasetDetails(
+            Boolean areAnnotationsIncluded,
+            Boolean areUnannotatedRecordsIncluded,
+            ObjectStorageSnapshotExportDetails exportDetails,
+            ExportFormat exportFormat) {
+        super();
+        this.areAnnotationsIncluded = areAnnotationsIncluded;
+        this.areUnannotatedRecordsIncluded = areUnannotatedRecordsIncluded;
+        this.exportDetails = exportDetails;
+        this.exportFormat = exportFormat;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("areAnnotationsIncluded")
         private Boolean areAnnotationsIncluded;
@@ -96,24 +111,104 @@ public class SnapshotDatasetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Whether annotations are to be included in the export dataset digest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areAnnotationsIncluded")
-    Boolean areAnnotationsIncluded;
+    private final Boolean areAnnotationsIncluded;
+
+    public Boolean getAreAnnotationsIncluded() {
+        return areAnnotationsIncluded;
+    }
 
     /**
      * Whether to include records that have yet to be annotated in the export dataset digest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areUnannotatedRecordsIncluded")
-    Boolean areUnannotatedRecordsIncluded;
+    private final Boolean areUnannotatedRecordsIncluded;
+
+    public Boolean getAreUnannotatedRecordsIncluded() {
+        return areUnannotatedRecordsIncluded;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("exportDetails")
-    ObjectStorageSnapshotExportDetails exportDetails;
+    private final ObjectStorageSnapshotExportDetails exportDetails;
+
+    public ObjectStorageSnapshotExportDetails getExportDetails() {
+        return exportDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
-    ExportFormat exportFormat;
+    private final ExportFormat exportFormat;
+
+    public ExportFormat getExportFormat() {
+        return exportFormat;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SnapshotDatasetDetails(");
+        sb.append("areAnnotationsIncluded=").append(String.valueOf(this.areAnnotationsIncluded));
+        sb.append(", areUnannotatedRecordsIncluded=")
+                .append(String.valueOf(this.areUnannotatedRecordsIncluded));
+        sb.append(", exportDetails=").append(String.valueOf(this.exportDetails));
+        sb.append(", exportFormat=").append(String.valueOf(this.exportFormat));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SnapshotDatasetDetails)) {
+            return false;
+        }
+
+        SnapshotDatasetDetails other = (SnapshotDatasetDetails) o;
+        return java.util.Objects.equals(this.areAnnotationsIncluded, other.areAnnotationsIncluded)
+                && java.util.Objects.equals(
+                        this.areUnannotatedRecordsIncluded, other.areUnannotatedRecordsIncluded)
+                && java.util.Objects.equals(this.exportDetails, other.exportDetails)
+                && java.util.Objects.equals(this.exportFormat, other.exportFormat)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.areAnnotationsIncluded == null
+                                ? 43
+                                : this.areAnnotationsIncluded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areUnannotatedRecordsIncluded == null
+                                ? 43
+                                : this.areUnannotatedRecordsIncluded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportDetails == null ? 43 : this.exportDetails.hashCode());
+        result = (result * PRIME) + (this.exportFormat == null ? 43 : this.exportFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

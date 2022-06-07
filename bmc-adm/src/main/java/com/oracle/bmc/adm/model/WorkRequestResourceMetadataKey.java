@@ -8,7 +8,6 @@ package com.oracle.bmc.adm.model;
  * Possible Metadata keys for workRequest resource metadata
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-@lombok.extern.slf4j.Slf4j
 public enum WorkRequestResourceMetadataKey {
     IsDryRun("IS_DRY_RUN"),
 
@@ -17,6 +16,9 @@ public enum WorkRequestResourceMetadataKey {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WorkRequestResourceMetadataKey.class);
 
     private final String value;
     private static java.util.Map<String, WorkRequestResourceMetadataKey> map;

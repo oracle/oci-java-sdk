@@ -8,7 +8,6 @@ package com.oracle.bmc.optimizer.model;
  * Possible strategy types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.extern.slf4j.Slf4j
 public enum StrategyParameterType {
     String("STRING"),
     Boolean("BOOLEAN"),
@@ -20,6 +19,9 @@ public enum StrategyParameterType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(StrategyParameterType.class);
 
     private final String value;
     private static java.util.Map<String, StrategyParameterType> map;

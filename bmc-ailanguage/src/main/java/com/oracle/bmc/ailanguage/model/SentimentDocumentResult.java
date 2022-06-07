@@ -15,16 +15,37 @@ package com.oracle.bmc.ailanguage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SentimentDocumentResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SentimentDocumentResult {
+public final class SentimentDocumentResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "documentSentiment",
+        "documentScores",
+        "aspects",
+        "sentences",
+        "languageCode"
+    })
+    public SentimentDocumentResult(
+            String key,
+            String documentSentiment,
+            java.util.Map<String, Double> documentScores,
+            java.util.List<SentimentAspect> aspects,
+            java.util.List<SentimentSentence> sentences,
+            String languageCode) {
+        super();
+        this.key = key;
+        this.documentSentiment = documentSentiment;
+        this.documentScores = documentScores;
+        this.aspects = aspects;
+        this.sentences = sentences;
+        this.languageCode = languageCode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -118,17 +139,29 @@ public class SentimentDocumentResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Document Unique Identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Document level sentiment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentSentiment")
-    String documentSentiment;
+    private final String documentSentiment;
+
+    public String getDocumentSentiment() {
+        return documentSentiment;
+    }
 
     /**
      * Scores for each sentiment.
@@ -136,26 +169,100 @@ public class SentimentDocumentResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentScores")
-    java.util.Map<String, Double> documentScores;
+    private final java.util.Map<String, Double> documentScores;
+
+    public java.util.Map<String, Double> getDocumentScores() {
+        return documentScores;
+    }
 
     /**
      * List of detected aspects sentiment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aspects")
-    java.util.List<SentimentAspect> aspects;
+    private final java.util.List<SentimentAspect> aspects;
+
+    public java.util.List<SentimentAspect> getAspects() {
+        return aspects;
+    }
 
     /**
      * List of detected sentences sentiment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sentences")
-    java.util.List<SentimentSentence> sentences;
+    private final java.util.List<SentimentSentence> sentences;
+
+    public java.util.List<SentimentSentence> getSentences() {
+        return sentences;
+    }
 
     /**
      * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
-    String languageCode;
+    private final String languageCode;
+
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SentimentDocumentResult(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", documentSentiment=").append(String.valueOf(this.documentSentiment));
+        sb.append(", documentScores=").append(String.valueOf(this.documentScores));
+        sb.append(", aspects=").append(String.valueOf(this.aspects));
+        sb.append(", sentences=").append(String.valueOf(this.sentences));
+        sb.append(", languageCode=").append(String.valueOf(this.languageCode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SentimentDocumentResult)) {
+            return false;
+        }
+
+        SentimentDocumentResult other = (SentimentDocumentResult) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.documentSentiment, other.documentSentiment)
+                && java.util.Objects.equals(this.documentScores, other.documentScores)
+                && java.util.Objects.equals(this.aspects, other.aspects)
+                && java.util.Objects.equals(this.sentences, other.sentences)
+                && java.util.Objects.equals(this.languageCode, other.languageCode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.documentSentiment == null ? 43 : this.documentSentiment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.documentScores == null ? 43 : this.documentScores.hashCode());
+        result = (result * PRIME) + (this.aspects == null ? 43 : this.aspects.hashCode());
+        result = (result * PRIME) + (this.sentences == null ? 43 : this.sentences.hashCode());
+        result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

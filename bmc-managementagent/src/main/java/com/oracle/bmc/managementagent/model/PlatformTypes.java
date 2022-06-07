@@ -8,7 +8,6 @@ package com.oracle.bmc.managementagent.model;
  * Supported platform types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.extern.slf4j.Slf4j
 public enum PlatformTypes {
     Linux("LINUX"),
     Windows("WINDOWS"),
@@ -19,6 +18,9 @@ public enum PlatformTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PlatformTypes.class);
 
     private final String value;
     private static java.util.Map<String, PlatformTypes> map;

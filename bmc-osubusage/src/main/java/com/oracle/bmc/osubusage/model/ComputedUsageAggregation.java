@@ -16,16 +16,43 @@ package com.oracle.bmc.osubusage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ComputedUsageAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ComputedUsageAggregation {
+public final class ComputedUsageAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "quantity",
+        "product",
+        "dataCenter",
+        "timeMeteredOn",
+        "netUnitPrice",
+        "costUnrounded",
+        "cost",
+        "type"
+    })
+    public ComputedUsageAggregation(
+            String quantity,
+            Product product,
+            String dataCenter,
+            java.util.Date timeMeteredOn,
+            String netUnitPrice,
+            String costUnrounded,
+            String cost,
+            Type type) {
+        super();
+        this.quantity = quantity;
+        this.product = product;
+        this.dataCenter = dataCenter;
+        this.timeMeteredOn = timeMeteredOn;
+        this.netUnitPrice = netUnitPrice;
+        this.costUnrounded = costUnrounded;
+        this.cost = cost;
+        this.type = type;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
@@ -141,55 +168,87 @@ public class ComputedUsageAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Total Quantity that was used for computation
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
-    String quantity;
+    private final String quantity;
+
+    public String getQuantity() {
+        return quantity;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("product")
-    Product product;
+    private final Product product;
+
+    public Product getProduct() {
+        return product;
+    }
 
     /**
      * Data Center Attribute as sent by MQS to SPM.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
-    String dataCenter;
+    private final String dataCenter;
+
+    public String getDataCenter() {
+        return dataCenter;
+    }
 
     /**
      * Metered Service date , expressed in RFC 3339 timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
-    java.util.Date timeMeteredOn;
+    private final java.util.Date timeMeteredOn;
+
+    public java.util.Date getTimeMeteredOn() {
+        return timeMeteredOn;
+    }
 
     /**
      * Net Unit Price for the product in consideration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
-    String netUnitPrice;
+    private final String netUnitPrice;
+
+    public String getNetUnitPrice() {
+        return netUnitPrice;
+    }
 
     /**
      * Sum of Computed Line Amount unrounded
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("costUnrounded")
-    String costUnrounded;
+    private final String costUnrounded;
+
+    public String getCostUnrounded() {
+        return costUnrounded;
+    }
 
     /**
      * Sum of Computed Line Amount rounded
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
-    String cost;
+    private final String cost;
+
+    public String getCost() {
+        return cost;
+    }
+
     /**
      * Usage compute type in SPM.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Promotion("PROMOTION"),
         DoNotBill("DO_NOT_BILL"),
@@ -212,6 +271,8 @@ public class ComputedUsageAggregation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -249,8 +310,76 @@ public class ComputedUsageAggregation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputedUsageAggregation(");
+        sb.append("quantity=").append(String.valueOf(this.quantity));
+        sb.append(", product=").append(String.valueOf(this.product));
+        sb.append(", dataCenter=").append(String.valueOf(this.dataCenter));
+        sb.append(", timeMeteredOn=").append(String.valueOf(this.timeMeteredOn));
+        sb.append(", netUnitPrice=").append(String.valueOf(this.netUnitPrice));
+        sb.append(", costUnrounded=").append(String.valueOf(this.costUnrounded));
+        sb.append(", cost=").append(String.valueOf(this.cost));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputedUsageAggregation)) {
+            return false;
+        }
+
+        ComputedUsageAggregation other = (ComputedUsageAggregation) o;
+        return java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.product, other.product)
+                && java.util.Objects.equals(this.dataCenter, other.dataCenter)
+                && java.util.Objects.equals(this.timeMeteredOn, other.timeMeteredOn)
+                && java.util.Objects.equals(this.netUnitPrice, other.netUnitPrice)
+                && java.util.Objects.equals(this.costUnrounded, other.costUnrounded)
+                && java.util.Objects.equals(this.cost, other.cost)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
+        result = (result * PRIME) + (this.dataCenter == null ? 43 : this.dataCenter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMeteredOn == null ? 43 : this.timeMeteredOn.hashCode());
+        result = (result * PRIME) + (this.netUnitPrice == null ? 43 : this.netUnitPrice.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.costUnrounded == null ? 43 : this.costUnrounded.hashCode());
+        result = (result * PRIME) + (this.cost == null ? 43 : this.cost.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

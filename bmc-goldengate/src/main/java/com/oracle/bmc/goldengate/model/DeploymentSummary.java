@@ -16,16 +16,97 @@ package com.oracle.bmc.goldengate.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeploymentSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeploymentSummary {
+public final class DeploymentSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "compartmentId",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleSubState",
+        "lifecycleDetails",
+        "freeformTags",
+        "definedTags",
+        "subnetId",
+        "licenseModel",
+        "fqdn",
+        "cpuCoreCount",
+        "isAutoScalingEnabled",
+        "isPublic",
+        "publicIpAddress",
+        "privateIpAddress",
+        "deploymentUrl",
+        "systemTags",
+        "isLatestVersion",
+        "timeUpgradeRequired",
+        "deploymentType",
+        "storageUtilizationInBytes",
+        "isStorageUtilizationLimitExceeded"
+    })
+    public DeploymentSummary(
+            String id,
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleState lifecycleState,
+            LifecycleSubState lifecycleSubState,
+            String lifecycleDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String subnetId,
+            LicenseModel licenseModel,
+            String fqdn,
+            Integer cpuCoreCount,
+            Boolean isAutoScalingEnabled,
+            Boolean isPublic,
+            String publicIpAddress,
+            String privateIpAddress,
+            String deploymentUrl,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            Boolean isLatestVersion,
+            java.util.Date timeUpgradeRequired,
+            DeploymentType deploymentType,
+            Long storageUtilizationInBytes,
+            Boolean isStorageUtilizationLimitExceeded) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleSubState = lifecycleSubState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.subnetId = subnetId;
+        this.licenseModel = licenseModel;
+        this.fqdn = fqdn;
+        this.cpuCoreCount = cpuCoreCount;
+        this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.isPublic = isPublic;
+        this.publicIpAddress = publicIpAddress;
+        this.privateIpAddress = privateIpAddress;
+        this.deploymentUrl = deploymentUrl;
+        this.systemTags = systemTags;
+        this.isLatestVersion = isLatestVersion;
+        this.timeUpgradeRequired = timeUpgradeRequired;
+        this.deploymentType = deploymentType;
+        this.storageUtilizationInBytes = storageUtilizationInBytes;
+        this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -342,68 +423,108 @@ public class DeploymentSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * An object's Display Name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Metadata about this specific object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Possible lifecycle states.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Possible GGS lifecycle sub-states.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
-    LifecycleSubState lifecycleSubState;
+    private final LifecycleSubState lifecycleSubState;
+
+    public LifecycleSubState getLifecycleSubState() {
+        return lifecycleSubState;
+    }
 
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
@@ -411,7 +532,11 @@ public class DeploymentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
@@ -419,70 +544,110 @@ public class DeploymentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The Oracle license model that applies to a Deployment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
-    String fqdn;
+    private final String fqdn;
+
+    public String getFqdn() {
+        return fqdn;
+    }
 
     /**
      * The Minimum number of OCPUs to be made available for this Deployment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
-    Boolean isAutoScalingEnabled;
+    private final Boolean isAutoScalingEnabled;
+
+    public Boolean getIsAutoScalingEnabled() {
+        return isAutoScalingEnabled;
+    }
 
     /**
      * True if this object is publicly available.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
-    Boolean isPublic;
+    private final Boolean isPublic;
+
+    public Boolean getIsPublic() {
+        return isPublic;
+    }
 
     /**
      * The public IP address representing the access point for the Deployment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpAddress")
-    String publicIpAddress;
+    private final String publicIpAddress;
+
+    public String getPublicIpAddress() {
+        return publicIpAddress;
+    }
 
     /**
      * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpAddress")
-    String privateIpAddress;
+    private final String privateIpAddress;
+
+    public String getPrivateIpAddress() {
+        return privateIpAddress;
+    }
 
     /**
      * The URL of a resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentUrl")
-    String deploymentUrl;
+    private final String deploymentUrl;
+
+    public String getDeploymentUrl() {
+        return deploymentUrl;
+    }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -490,43 +655,220 @@ public class DeploymentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
 
     /**
      * Indicates if the resource is the the latest available version.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
-    Boolean isLatestVersion;
+    private final Boolean isLatestVersion;
+
+    public Boolean getIsLatestVersion() {
+        return isLatestVersion;
+    }
 
     /**
      * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
-    java.util.Date timeUpgradeRequired;
+    private final java.util.Date timeUpgradeRequired;
+
+    public java.util.Date getTimeUpgradeRequired() {
+        return timeUpgradeRequired;
+    }
 
     /**
      * The deployment type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
-    DeploymentType deploymentType;
+    private final DeploymentType deploymentType;
+
+    public DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
 
     /**
      * The amount of storage being utilized (in bytes)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
-    Long storageUtilizationInBytes;
+    private final Long storageUtilizationInBytes;
+
+    public Long getStorageUtilizationInBytes() {
+        return storageUtilizationInBytes;
+    }
 
     /**
      * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
-    Boolean isStorageUtilizationLimitExceeded;
+    private final Boolean isStorageUtilizationLimitExceeded;
+
+    public Boolean getIsStorageUtilizationLimitExceeded() {
+        return isStorageUtilizationLimitExceeded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeploymentSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", fqdn=").append(String.valueOf(this.fqdn));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", isPublic=").append(String.valueOf(this.isPublic));
+        sb.append(", publicIpAddress=").append(String.valueOf(this.publicIpAddress));
+        sb.append(", privateIpAddress=").append(String.valueOf(this.privateIpAddress));
+        sb.append(", deploymentUrl=").append(String.valueOf(this.deploymentUrl));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", isLatestVersion=").append(String.valueOf(this.isLatestVersion));
+        sb.append(", timeUpgradeRequired=").append(String.valueOf(this.timeUpgradeRequired));
+        sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(", storageUtilizationInBytes=")
+                .append(String.valueOf(this.storageUtilizationInBytes));
+        sb.append(", isStorageUtilizationLimitExceeded=")
+                .append(String.valueOf(this.isStorageUtilizationLimitExceeded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeploymentSummary)) {
+            return false;
+        }
+
+        DeploymentSummary other = (DeploymentSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.fqdn, other.fqdn)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.isPublic, other.isPublic)
+                && java.util.Objects.equals(this.publicIpAddress, other.publicIpAddress)
+                && java.util.Objects.equals(this.privateIpAddress, other.privateIpAddress)
+                && java.util.Objects.equals(this.deploymentUrl, other.deploymentUrl)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.isLatestVersion, other.isLatestVersion)
+                && java.util.Objects.equals(this.timeUpgradeRequired, other.timeUpgradeRequired)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(
+                        this.storageUtilizationInBytes, other.storageUtilizationInBytes)
+                && java.util.Objects.equals(
+                        this.isStorageUtilizationLimitExceeded,
+                        other.isStorageUtilizationLimitExceeded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleSubState == null ? 43 : this.lifecycleSubState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoScalingEnabled == null
+                                ? 43
+                                : this.isAutoScalingEnabled.hashCode());
+        result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicIpAddress == null ? 43 : this.publicIpAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateIpAddress == null ? 43 : this.privateIpAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentUrl == null ? 43 : this.deploymentUrl.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLatestVersion == null ? 43 : this.isLatestVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUpgradeRequired == null
+                                ? 43
+                                : this.timeUpgradeRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageUtilizationInBytes == null
+                                ? 43
+                                : this.storageUtilizationInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isStorageUtilizationLimitExceeded == null
+                                ? 43
+                                : this.isStorageUtilizationLimitExceeded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

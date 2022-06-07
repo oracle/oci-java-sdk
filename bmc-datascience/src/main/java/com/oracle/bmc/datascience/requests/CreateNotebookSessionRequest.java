@@ -9,14 +9,6 @@ import com.oracle.bmc.datascience.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateNotebookSessionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateNotebookSessionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateNotebookSessionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datascience.model.CreateNotebookSessionDetails> {
@@ -27,17 +19,28 @@ public class CreateNotebookSessionRequest
     private com.oracle.bmc.datascience.model.CreateNotebookSessionDetails
             createNotebookSessionDetails;
 
+    public com.oracle.bmc.datascience.model.CreateNotebookSessionDetails
+            getCreateNotebookSessionDetails() {
+        return createNotebookSessionDetails;
+    }
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +59,44 @@ public class CreateNotebookSessionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.datascience.model.CreateNotebookSessionDetails
+                createNotebookSessionDetails = null;
+
+        /**
+         * Details for creating a new notebook session.
+         * @return this builder instance
+         */
+        public Builder createNotebookSessionDetails(
+                com.oracle.bmc.datascience.model.CreateNotebookSessionDetails
+                        createNotebookSessionDetails) {
+            this.createNotebookSessionDetails = createNotebookSessionDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +161,82 @@ public class CreateNotebookSessionRequest
             createNotebookSessionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateNotebookSessionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateNotebookSessionRequest
+         */
+        public CreateNotebookSessionRequest buildWithoutInvocationCallback() {
+            CreateNotebookSessionRequest request = new CreateNotebookSessionRequest();
+            request.createNotebookSessionDetails = createNotebookSessionDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateNotebookSessionRequest(createNotebookSessionDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createNotebookSessionDetails(createNotebookSessionDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createNotebookSessionDetails=")
+                .append(String.valueOf(this.createNotebookSessionDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateNotebookSessionRequest)) {
+            return false;
+        }
+
+        CreateNotebookSessionRequest other = (CreateNotebookSessionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createNotebookSessionDetails, other.createNotebookSessionDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createNotebookSessionDetails == null
+                                ? 43
+                                : this.createNotebookSessionDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

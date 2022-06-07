@@ -15,22 +15,17 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CertificateRenewalRule.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "ruleType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CertificateRenewalRule extends CertificateRule {
+public final class CertificateRenewalRule extends CertificateRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("renewalInterval")
         private String renewalInterval;
@@ -78,6 +73,10 @@ public class CertificateRenewalRule extends CertificateRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CertificateRenewalRule(String renewalInterval, String advanceRenewalPeriod) {
         super();
@@ -91,7 +90,11 @@ public class CertificateRenewalRule extends CertificateRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("renewalInterval")
-    String renewalInterval;
+    private final String renewalInterval;
+
+    public String getRenewalInterval() {
+        return renewalInterval;
+    }
 
     /**
      * A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur.
@@ -99,8 +102,62 @@ public class CertificateRenewalRule extends CertificateRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("advanceRenewalPeriod")
-    String advanceRenewalPeriod;
+    private final String advanceRenewalPeriod;
+
+    public String getAdvanceRenewalPeriod() {
+        return advanceRenewalPeriod;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateRenewalRule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", renewalInterval=").append(String.valueOf(this.renewalInterval));
+        sb.append(", advanceRenewalPeriod=").append(String.valueOf(this.advanceRenewalPeriod));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateRenewalRule)) {
+            return false;
+        }
+
+        CertificateRenewalRule other = (CertificateRenewalRule) o;
+        return java.util.Objects.equals(this.renewalInterval, other.renewalInterval)
+                && java.util.Objects.equals(this.advanceRenewalPeriod, other.advanceRenewalPeriod)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.renewalInterval == null ? 43 : this.renewalInterval.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.advanceRenewalPeriod == null
+                                ? 43
+                                : this.advanceRenewalPeriod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

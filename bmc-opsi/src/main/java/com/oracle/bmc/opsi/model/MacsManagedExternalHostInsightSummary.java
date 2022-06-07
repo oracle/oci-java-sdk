@@ -15,22 +15,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MacsManagedExternalHostInsightSummary.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "entitySource"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
+public final class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -235,6 +230,10 @@ public class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public MacsManagedExternalHostInsightSummary(
             String id,
@@ -276,14 +275,18 @@ public class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
-    String managementAgentId;
+    private final String managementAgentId;
+
+    public String getManagementAgentId() {
+        return managementAgentId;
+    }
+
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PlatformType {
         Linux("LINUX"),
         Solaris("SOLARIS"),
@@ -295,6 +298,9 @@ public class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlatformType.class);
 
         private final String value;
         private static java.util.Map<String, PlatformType> map;
@@ -335,8 +341,58 @@ public class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
-    PlatformType platformType;
+    private final PlatformType platformType;
+
+    public PlatformType getPlatformType() {
+        return platformType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MacsManagedExternalHostInsightSummary(");
+        sb.append("super=").append(super.toString());
+        sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
+        sb.append(", platformType=").append(String.valueOf(this.platformType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MacsManagedExternalHostInsightSummary)) {
+            return false;
+        }
+
+        MacsManagedExternalHostInsightSummary other = (MacsManagedExternalHostInsightSummary) o;
+        return java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
+                && java.util.Objects.equals(this.platformType, other.platformType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());
+        result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

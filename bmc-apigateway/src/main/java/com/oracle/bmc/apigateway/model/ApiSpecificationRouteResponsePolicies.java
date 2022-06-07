@@ -16,16 +16,22 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApiSpecificationRouteResponsePolicies.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApiSpecificationRouteResponsePolicies {
+public final class ApiSpecificationRouteResponsePolicies {
+    @Deprecated
+    @java.beans.ConstructorProperties({"headerTransformations", "responseCacheStore"})
+    public ApiSpecificationRouteResponsePolicies(
+            HeaderTransformationPolicy headerTransformations,
+            ResponseCacheStorePolicy responseCacheStore) {
+        super();
+        this.headerTransformations = headerTransformations;
+        this.responseCacheStore = responseCacheStore;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("headerTransformations")
         private HeaderTransformationPolicy headerTransformations;
@@ -74,12 +80,74 @@ public class ApiSpecificationRouteResponsePolicies {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("headerTransformations")
-    HeaderTransformationPolicy headerTransformations;
+    private final HeaderTransformationPolicy headerTransformations;
+
+    public HeaderTransformationPolicy getHeaderTransformations() {
+        return headerTransformations;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("responseCacheStore")
-    ResponseCacheStorePolicy responseCacheStore;
+    private final ResponseCacheStorePolicy responseCacheStore;
+
+    public ResponseCacheStorePolicy getResponseCacheStore() {
+        return responseCacheStore;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApiSpecificationRouteResponsePolicies(");
+        sb.append("headerTransformations=").append(String.valueOf(this.headerTransformations));
+        sb.append(", responseCacheStore=").append(String.valueOf(this.responseCacheStore));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApiSpecificationRouteResponsePolicies)) {
+            return false;
+        }
+
+        ApiSpecificationRouteResponsePolicies other = (ApiSpecificationRouteResponsePolicies) o;
+        return java.util.Objects.equals(this.headerTransformations, other.headerTransformations)
+                && java.util.Objects.equals(this.responseCacheStore, other.responseCacheStore)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.headerTransformations == null
+                                ? 43
+                                : this.headerTransformations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responseCacheStore == null
+                                ? 43
+                                : this.responseCacheStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

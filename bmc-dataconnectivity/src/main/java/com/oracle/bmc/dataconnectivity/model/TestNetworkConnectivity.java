@@ -15,16 +15,26 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TestNetworkConnectivity.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TestNetworkConnectivity {
+public final class TestNetworkConnectivity {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "networkValidationOutput",
+        "isReachable",
+        "exceptionMessage"
+    })
+    public TestNetworkConnectivity(
+            String networkValidationOutput, Boolean isReachable, String exceptionMessage) {
+        super();
+        this.networkValidationOutput = networkValidationOutput;
+        this.isReachable = isReachable;
+        this.exceptionMessage = exceptionMessage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("networkValidationOutput")
         private String networkValidationOutput;
@@ -83,24 +93,91 @@ public class TestNetworkConnectivity {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Last line from network validation command execution output.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkValidationOutput")
-    String networkValidationOutput;
+    private final String networkValidationOutput;
+
+    public String getNetworkValidationOutput() {
+        return networkValidationOutput;
+    }
 
     /**
      * True if the data asset is has a valid network path.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReachable")
-    Boolean isReachable;
+    private final Boolean isReachable;
+
+    public Boolean getIsReachable() {
+        return isReachable;
+    }
 
     /**
      * Exception or error message encountered while testing network reachability for the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exceptionMessage")
-    String exceptionMessage;
+    private final String exceptionMessage;
+
+    public String getExceptionMessage() {
+        return exceptionMessage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TestNetworkConnectivity(");
+        sb.append("networkValidationOutput=").append(String.valueOf(this.networkValidationOutput));
+        sb.append(", isReachable=").append(String.valueOf(this.isReachable));
+        sb.append(", exceptionMessage=").append(String.valueOf(this.exceptionMessage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TestNetworkConnectivity)) {
+            return false;
+        }
+
+        TestNetworkConnectivity other = (TestNetworkConnectivity) o;
+        return java.util.Objects.equals(this.networkValidationOutput, other.networkValidationOutput)
+                && java.util.Objects.equals(this.isReachable, other.isReachable)
+                && java.util.Objects.equals(this.exceptionMessage, other.exceptionMessage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.networkValidationOutput == null
+                                ? 43
+                                : this.networkValidationOutput.hashCode());
+        result = (result * PRIME) + (this.isReachable == null ? 43 : this.isReachable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exceptionMessage == null ? 43 : this.exceptionMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

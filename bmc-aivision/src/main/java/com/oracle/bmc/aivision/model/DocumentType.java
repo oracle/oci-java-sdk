@@ -8,7 +8,6 @@ package com.oracle.bmc.aivision.model;
  * The type of document.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.extern.slf4j.Slf4j
 public enum DocumentType {
     Invoice("INVOICE"),
     Receipt("RECEIPT"),
@@ -26,6 +25,9 @@ public enum DocumentType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DocumentType.class);
 
     private final String value;
     private static java.util.Map<String, DocumentType> map;

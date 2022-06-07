@@ -15,14 +15,22 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Forecast.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Forecast {
+public final class Forecast {
+    @Deprecated
+    @java.beans.ConstructorProperties({"forecastType", "timeForecastStarted", "timeForecastEnded"})
+    public Forecast(
+            ForecastType forecastType,
+            java.util.Date timeForecastStarted,
+            java.util.Date timeForecastEnded) {
+        super();
+        this.forecastType = forecastType;
+        this.timeForecastStarted = timeForecastStarted;
+        this.timeForecastEnded = timeForecastEnded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
         private ForecastType forecastType;
@@ -80,10 +88,13 @@ public class Forecast {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ForecastType {
         Basic("BASIC"),
 
@@ -92,6 +103,9 @@ public class Forecast {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ForecastType.class);
 
         private final String value;
         private static java.util.Map<String, ForecastType> map;
@@ -129,20 +143,83 @@ public class Forecast {
      * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
-    ForecastType forecastType;
+    private final ForecastType forecastType;
+
+    public ForecastType getForecastType() {
+        return forecastType;
+    }
 
     /**
      * The forecast start time. Defaults to UTC-1 if not specified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeForecastStarted")
-    java.util.Date timeForecastStarted;
+    private final java.util.Date timeForecastStarted;
+
+    public java.util.Date getTimeForecastStarted() {
+        return timeForecastStarted;
+    }
 
     /**
      * The forecast end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeForecastEnded")
-    java.util.Date timeForecastEnded;
+    private final java.util.Date timeForecastEnded;
+
+    public java.util.Date getTimeForecastEnded() {
+        return timeForecastEnded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Forecast(");
+        sb.append("forecastType=").append(String.valueOf(this.forecastType));
+        sb.append(", timeForecastStarted=").append(String.valueOf(this.timeForecastStarted));
+        sb.append(", timeForecastEnded=").append(String.valueOf(this.timeForecastEnded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Forecast)) {
+            return false;
+        }
+
+        Forecast other = (Forecast) o;
+        return java.util.Objects.equals(this.forecastType, other.forecastType)
+                && java.util.Objects.equals(this.timeForecastStarted, other.timeForecastStarted)
+                && java.util.Objects.equals(this.timeForecastEnded, other.timeForecastEnded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.forecastType == null ? 43 : this.forecastType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeForecastStarted == null
+                                ? 43
+                                : this.timeForecastStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeForecastEnded == null ? 43 : this.timeForecastEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

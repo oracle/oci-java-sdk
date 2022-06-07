@@ -15,16 +15,40 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RepositoryMirrorRecordSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RepositoryMirrorRecordSummary {
+public final class RepositoryMirrorRecordSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "mirrorStatus",
+        "workRequestId",
+        "timeEnqueued",
+        "timeStarted",
+        "timeCompleted",
+        "freeformTags",
+        "definedTags"
+    })
+    public RepositoryMirrorRecordSummary(
+            MirrorStatus mirrorStatus,
+            String workRequestId,
+            java.util.Date timeEnqueued,
+            java.util.Date timeStarted,
+            java.util.Date timeCompleted,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.mirrorStatus = mirrorStatus;
+        this.workRequestId = workRequestId;
+        this.timeEnqueued = timeEnqueued;
+        this.timeStarted = timeStarted;
+        this.timeCompleted = timeCompleted;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
         private MirrorStatus mirrorStatus;
@@ -130,6 +154,10 @@ public class RepositoryMirrorRecordSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Mirror status of current mirror entry.
      * QUEUED - Mirroring Queued
@@ -138,7 +166,6 @@ public class RepositoryMirrorRecordSummary {
      * FAILED - Mirroring Failed
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MirrorStatus {
         None("NONE"),
         Queued("QUEUED"),
@@ -151,6 +178,9 @@ public class RepositoryMirrorRecordSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MirrorStatus.class);
 
         private final String value;
         private static java.util.Map<String, MirrorStatus> map;
@@ -193,44 +223,133 @@ public class RepositoryMirrorRecordSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
-    MirrorStatus mirrorStatus;
+    private final MirrorStatus mirrorStatus;
+
+    public MirrorStatus getMirrorStatus() {
+        return mirrorStatus;
+    }
 
     /**
      * Workrequest ID to track current mirror operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
-    String workRequestId;
+    private final String workRequestId;
+
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
 
     /**
      * The time to enqueue a mirror operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnqueued")
-    java.util.Date timeEnqueued;
+    private final java.util.Date timeEnqueued;
+
+    public java.util.Date getTimeEnqueued() {
+        return timeEnqueued;
+    }
 
     /**
      * The time to start a mirror operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The time to complete a mirror operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
-    java.util.Date timeCompleted;
+    private final java.util.Date timeCompleted;
+
+    public java.util.Date getTimeCompleted() {
+        return timeCompleted;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RepositoryMirrorRecordSummary(");
+        sb.append("mirrorStatus=").append(String.valueOf(this.mirrorStatus));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
+        sb.append(", timeEnqueued=").append(String.valueOf(this.timeEnqueued));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeCompleted=").append(String.valueOf(this.timeCompleted));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RepositoryMirrorRecordSummary)) {
+            return false;
+        }
+
+        RepositoryMirrorRecordSummary other = (RepositoryMirrorRecordSummary) o;
+        return java.util.Objects.equals(this.mirrorStatus, other.mirrorStatus)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
+                && java.util.Objects.equals(this.timeEnqueued, other.timeEnqueued)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeCompleted, other.timeCompleted)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.mirrorStatus == null ? 43 : this.mirrorStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
+        result = (result * PRIME) + (this.timeEnqueued == null ? 43 : this.timeEnqueued.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCompleted == null ? 43 : this.timeCompleted.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

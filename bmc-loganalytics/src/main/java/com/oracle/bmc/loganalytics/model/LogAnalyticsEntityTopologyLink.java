@@ -16,16 +16,20 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsEntityTopologyLink.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsEntityTopologyLink {
+public final class LogAnalyticsEntityTopologyLink {
+    @Deprecated
+    @java.beans.ConstructorProperties({"sourceEntityId", "destinationEntityId"})
+    public LogAnalyticsEntityTopologyLink(String sourceEntityId, String destinationEntityId) {
+        super();
+        this.sourceEntityId = sourceEntityId;
+        this.destinationEntityId = destinationEntityId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sourceEntityId")
         private String sourceEntityId;
@@ -73,13 +77,21 @@ public class LogAnalyticsEntityTopologyLink {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
      * a resource that is provisioned and managed by the customer on their premises or on the cloud.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceEntityId")
-    String sourceEntityId;
+    private final String sourceEntityId;
+
+    public String getSourceEntityId() {
+        return sourceEntityId;
+    }
 
     /**
      * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
@@ -87,8 +99,60 @@ public class LogAnalyticsEntityTopologyLink {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationEntityId")
-    String destinationEntityId;
+    private final String destinationEntityId;
+
+    public String getDestinationEntityId() {
+        return destinationEntityId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsEntityTopologyLink(");
+        sb.append("sourceEntityId=").append(String.valueOf(this.sourceEntityId));
+        sb.append(", destinationEntityId=").append(String.valueOf(this.destinationEntityId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsEntityTopologyLink)) {
+            return false;
+        }
+
+        LogAnalyticsEntityTopologyLink other = (LogAnalyticsEntityTopologyLink) o;
+        return java.util.Objects.equals(this.sourceEntityId, other.sourceEntityId)
+                && java.util.Objects.equals(this.destinationEntityId, other.destinationEntityId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sourceEntityId == null ? 43 : this.sourceEntityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationEntityId == null
+                                ? 43
+                                : this.destinationEntityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

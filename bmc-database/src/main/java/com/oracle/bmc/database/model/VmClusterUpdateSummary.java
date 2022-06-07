@@ -20,16 +20,46 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = VmClusterUpdateSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VmClusterUpdateSummary {
+public final class VmClusterUpdateSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "description",
+        "lastAction",
+        "availableActions",
+        "updateType",
+        "lifecycleDetails",
+        "lifecycleState",
+        "timeReleased",
+        "version"
+    })
+    public VmClusterUpdateSummary(
+            String id,
+            String description,
+            LastAction lastAction,
+            java.util.List<AvailableActions> availableActions,
+            UpdateType updateType,
+            String lifecycleDetails,
+            LifecycleState lifecycleState,
+            java.util.Date timeReleased,
+            String version) {
+        super();
+        this.id = id;
+        this.description = description;
+        this.lastAction = lastAction;
+        this.availableActions = availableActions;
+        this.updateType = updateType;
+        this.lifecycleDetails = lifecycleDetails;
+        this.lifecycleState = lifecycleState;
+        this.timeReleased = timeReleased;
+        this.version = version;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -156,21 +186,33 @@ public class VmClusterUpdateSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Details of the maintenance update package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
     /**
      * The update action performed most recently using this maintenance update.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LastAction {
         RollingApply("ROLLING_APPLY"),
         Precheck("PRECHECK"),
@@ -181,6 +223,9 @@ public class VmClusterUpdateSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LastAction.class);
 
         private final String value;
         private static java.util.Map<String, LastAction> map;
@@ -218,10 +263,14 @@ public class VmClusterUpdateSummary {
      * The update action performed most recently using this maintenance update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
-    LastAction lastAction;
+    private final LastAction lastAction;
+
+    public LastAction getLastAction() {
+        return lastAction;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AvailableActions {
         RollingApply("ROLLING_APPLY"),
         Precheck("PRECHECK"),
@@ -232,6 +281,9 @@ public class VmClusterUpdateSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AvailableActions.class);
 
         private final String value;
         private static java.util.Map<String, AvailableActions> map;
@@ -269,11 +321,15 @@ public class VmClusterUpdateSummary {
      * The possible actions that can be performed using this maintenance update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
-    java.util.List<AvailableActions> availableActions;
+    private final java.util.List<AvailableActions> availableActions;
+
+    public java.util.List<AvailableActions> getAvailableActions() {
+        return availableActions;
+    }
+
     /**
      * The type of VM cluster maintenance update.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum UpdateType {
         GiUpgrade("GI_UPGRADE"),
         GiPatch("GI_PATCH"),
@@ -284,6 +340,9 @@ public class VmClusterUpdateSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UpdateType.class);
 
         private final String value;
         private static java.util.Map<String, UpdateType> map;
@@ -321,18 +380,26 @@ public class VmClusterUpdateSummary {
      * The type of VM cluster maintenance update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
-    UpdateType updateType;
+    private final UpdateType updateType;
+
+    public UpdateType getUpdateType() {
+        return updateType;
+    }
 
     /**
      * Descriptive text providing additional details about the lifecycle state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * The current state of the maintenance update. Dependent on value of {@code lastAction}.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Available("AVAILABLE"),
         Success("SUCCESS"),
@@ -344,6 +411,9 @@ public class VmClusterUpdateSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -381,20 +451,101 @@ public class VmClusterUpdateSummary {
      * The current state of the maintenance update. Dependent on value of {@code lastAction}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the maintenance update was released.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
-    java.util.Date timeReleased;
+    private final java.util.Date timeReleased;
+
+    public java.util.Date getTimeReleased() {
+        return timeReleased;
+    }
 
     /**
      * The version of the maintenance update package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VmClusterUpdateSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", lastAction=").append(String.valueOf(this.lastAction));
+        sb.append(", availableActions=").append(String.valueOf(this.availableActions));
+        sb.append(", updateType=").append(String.valueOf(this.updateType));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VmClusterUpdateSummary)) {
+            return false;
+        }
+
+        VmClusterUpdateSummary other = (VmClusterUpdateSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.lastAction, other.lastAction)
+                && java.util.Objects.equals(this.availableActions, other.availableActions)
+                && java.util.Objects.equals(this.updateType, other.updateType)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeReleased, other.timeReleased)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.lastAction == null ? 43 : this.lastAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableActions == null ? 43 : this.availableActions.hashCode());
+        result = (result * PRIME) + (this.updateType == null ? 43 : this.updateType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeReleased == null ? 43 : this.timeReleased.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

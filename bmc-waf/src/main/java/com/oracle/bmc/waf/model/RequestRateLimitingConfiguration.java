@@ -15,16 +15,26 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RequestRateLimitingConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RequestRateLimitingConfiguration {
+public final class RequestRateLimitingConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "periodInSeconds",
+        "requestsLimit",
+        "actionDurationInSeconds"
+    })
+    public RequestRateLimitingConfiguration(
+            Integer periodInSeconds, Integer requestsLimit, Integer actionDurationInSeconds) {
+        super();
+        this.periodInSeconds = periodInSeconds;
+        this.requestsLimit = requestsLimit;
+        this.actionDurationInSeconds = actionDurationInSeconds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("periodInSeconds")
         private Integer periodInSeconds;
@@ -83,24 +93,95 @@ public class RequestRateLimitingConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Evaluation period in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("periodInSeconds")
-    Integer periodInSeconds;
+    private final Integer periodInSeconds;
+
+    public Integer getPeriodInSeconds() {
+        return periodInSeconds;
+    }
 
     /**
      * Requests allowed per evaluation period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestsLimit")
-    Integer requestsLimit;
+    private final Integer requestsLimit;
+
+    public Integer getRequestsLimit() {
+        return requestsLimit;
+    }
 
     /**
      * Duration of block action application in seconds when {@code requestsLimit} is reached. Optional and can be 0 (no block duration).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionDurationInSeconds")
-    Integer actionDurationInSeconds;
+    private final Integer actionDurationInSeconds;
+
+    public Integer getActionDurationInSeconds() {
+        return actionDurationInSeconds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RequestRateLimitingConfiguration(");
+        sb.append("periodInSeconds=").append(String.valueOf(this.periodInSeconds));
+        sb.append(", requestsLimit=").append(String.valueOf(this.requestsLimit));
+        sb.append(", actionDurationInSeconds=")
+                .append(String.valueOf(this.actionDurationInSeconds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestRateLimitingConfiguration)) {
+            return false;
+        }
+
+        RequestRateLimitingConfiguration other = (RequestRateLimitingConfiguration) o;
+        return java.util.Objects.equals(this.periodInSeconds, other.periodInSeconds)
+                && java.util.Objects.equals(this.requestsLimit, other.requestsLimit)
+                && java.util.Objects.equals(
+                        this.actionDurationInSeconds, other.actionDurationInSeconds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.periodInSeconds == null ? 43 : this.periodInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestsLimit == null ? 43 : this.requestsLimit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actionDurationInSeconds == null
+                                ? 43
+                                : this.actionDurationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

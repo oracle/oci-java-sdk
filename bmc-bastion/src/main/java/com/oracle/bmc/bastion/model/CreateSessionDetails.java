@@ -15,16 +15,37 @@ package com.oracle.bmc.bastion.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSessionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSessionDetails {
+public final class CreateSessionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "bastionId",
+        "targetResourceDetails",
+        "keyType",
+        "keyDetails",
+        "sessionTtlInSeconds"
+    })
+    public CreateSessionDetails(
+            String displayName,
+            String bastionId,
+            CreateSessionTargetResourceDetails targetResourceDetails,
+            KeyType keyType,
+            PublicKeyDetails keyDetails,
+            Integer sessionTtlInSeconds) {
+        super();
+        this.displayName = displayName;
+        this.bastionId = bastionId;
+        this.targetResourceDetails = targetResourceDetails;
+        this.keyType = keyType;
+        this.keyDetails = keyDetails;
+        this.sessionTtlInSeconds = sessionTtlInSeconds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -119,20 +140,37 @@ public class CreateSessionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The unique identifier (OCID) of the bastion on which to create this session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
-    String bastionId;
+    private final String bastionId;
+
+    public String getBastionId() {
+        return bastionId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceDetails")
-    CreateSessionTargetResourceDetails targetResourceDetails;
+    private final CreateSessionTargetResourceDetails targetResourceDetails;
+
+    public CreateSessionTargetResourceDetails getTargetResourceDetails() {
+        return targetResourceDetails;
+    }
+
     /**
      * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      **/
@@ -171,17 +209,91 @@ public class CreateSessionDetails {
      * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyType")
-    KeyType keyType;
+    private final KeyType keyType;
+
+    public KeyType getKeyType() {
+        return keyType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("keyDetails")
-    PublicKeyDetails keyDetails;
+    private final PublicKeyDetails keyDetails;
+
+    public PublicKeyDetails getKeyDetails() {
+        return keyDetails;
+    }
 
     /**
      * The amount of time the session can remain active.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
-    Integer sessionTtlInSeconds;
+    private final Integer sessionTtlInSeconds;
+
+    public Integer getSessionTtlInSeconds() {
+        return sessionTtlInSeconds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSessionDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", bastionId=").append(String.valueOf(this.bastionId));
+        sb.append(", targetResourceDetails=").append(String.valueOf(this.targetResourceDetails));
+        sb.append(", keyType=").append(String.valueOf(this.keyType));
+        sb.append(", keyDetails=").append(String.valueOf(this.keyDetails));
+        sb.append(", sessionTtlInSeconds=").append(String.valueOf(this.sessionTtlInSeconds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSessionDetails)) {
+            return false;
+        }
+
+        CreateSessionDetails other = (CreateSessionDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.bastionId, other.bastionId)
+                && java.util.Objects.equals(this.targetResourceDetails, other.targetResourceDetails)
+                && java.util.Objects.equals(this.keyType, other.keyType)
+                && java.util.Objects.equals(this.keyDetails, other.keyDetails)
+                && java.util.Objects.equals(this.sessionTtlInSeconds, other.sessionTtlInSeconds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.bastionId == null ? 43 : this.bastionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourceDetails == null
+                                ? 43
+                                : this.targetResourceDetails.hashCode());
+        result = (result * PRIME) + (this.keyType == null ? 43 : this.keyType.hashCode());
+        result = (result * PRIME) + (this.keyDetails == null ? 43 : this.keyDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sessionTtlInSeconds == null
+                                ? 43
+                                : this.sessionTtlInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

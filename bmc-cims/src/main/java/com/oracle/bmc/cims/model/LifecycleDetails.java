@@ -8,7 +8,6 @@ package com.oracle.bmc.cims.model;
  * Information about the current status of the ticket.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.extern.slf4j.Slf4j
 public enum LifecycleDetails {
     PendingWithOracle("PENDING_WITH_ORACLE"),
     PendingWithCustomer("PENDING_WITH_CUSTOMER"),
@@ -20,6 +19,9 @@ public enum LifecycleDetails {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LifecycleDetails.class);
 
     private final String value;
     private static java.util.Map<String, LifecycleDetails> map;

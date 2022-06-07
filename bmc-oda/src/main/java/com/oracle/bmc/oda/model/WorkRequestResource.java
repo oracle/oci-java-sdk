@@ -15,16 +15,37 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestResource {
+public final class WorkRequestResource {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "resourceAction",
+        "resourceType",
+        "resourceId",
+        "status",
+        "statusMessage",
+        "resourceUri"
+    })
+    public WorkRequestResource(
+            ResourceAction resourceAction,
+            String resourceType,
+            String resourceId,
+            Status status,
+            String statusMessage,
+            String resourceUri) {
+        super();
+        this.resourceAction = resourceAction;
+        this.resourceType = resourceType;
+        this.resourceId = resourceId;
+        this.status = status;
+        this.statusMessage = statusMessage;
+        this.resourceUri = resourceUri;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
         private ResourceAction resourceAction;
@@ -118,10 +139,13 @@ public class WorkRequestResource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The action to take against the Digital Assistant instance.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ResourceAction {
         Create("CREATE"),
         Delete("DELETE"),
@@ -148,6 +172,9 @@ public class WorkRequestResource {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceAction.class);
 
         private final String value;
         private static java.util.Map<String, ResourceAction> map;
@@ -185,25 +212,37 @@ public class WorkRequestResource {
      * The action to take against the Digital Assistant instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
-    ResourceAction resourceAction;
+    private final ResourceAction resourceAction;
+
+    public ResourceAction getResourceAction() {
+        return resourceAction;
+    }
 
     /**
      * The resource type that the work request affects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * The identifier of the Digital Assistant instance that is the subject of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
+
     /**
      * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
      * correspond to the action being performed.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -217,6 +256,8 @@ public class WorkRequestResource {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -256,7 +297,11 @@ public class WorkRequestResource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * Short message providing more detail for the current status. For example, if an operation fails
@@ -264,14 +309,80 @@ public class WorkRequestResource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
-    String statusMessage;
+    private final String statusMessage;
+
+    public String getStatusMessage() {
+        return statusMessage;
+    }
 
     /**
      * The URI path that the user can do a GET on to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
-    String resourceUri;
+    private final String resourceUri;
+
+    public String getResourceUri() {
+        return resourceUri;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestResource(");
+        sb.append("resourceAction=").append(String.valueOf(this.resourceAction));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", statusMessage=").append(String.valueOf(this.statusMessage));
+        sb.append(", resourceUri=").append(String.valueOf(this.resourceUri));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestResource)) {
+            return false;
+        }
+
+        WorkRequestResource other = (WorkRequestResource) o;
+        return java.util.Objects.equals(this.resourceAction, other.resourceAction)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.statusMessage, other.statusMessage)
+                && java.util.Objects.equals(this.resourceUri, other.resourceUri)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.resourceAction == null ? 43 : this.resourceAction.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusMessage == null ? 43 : this.statusMessage.hashCode());
+        result = (result * PRIME) + (this.resourceUri == null ? 43 : this.resourceUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

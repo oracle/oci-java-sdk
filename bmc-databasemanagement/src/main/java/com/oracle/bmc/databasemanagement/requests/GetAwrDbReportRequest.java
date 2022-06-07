@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetAwrDbReportExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAwrDbReportRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String managedDatabaseId;
 
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
     /**
      * The parameter to filter the database by internal ID.
      * Note that the internal ID of the database can be retrieved from the following endpoint:
@@ -32,31 +27,49 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String awrDbId;
 
+    public String getAwrDbId() {
+        return awrDbId;
+    }
     /**
      * The optional multiple value query parameter to filter the database instance numbers.
      */
     private java.util.List<Integer> instNums;
 
+    public java.util.List<Integer> getInstNums() {
+        return instNums;
+    }
     /**
      * The optional greater than or equal to filter on the snapshot ID.
      */
     private Integer beginSnIdGreaterThanOrEqualTo;
 
+    public Integer getBeginSnIdGreaterThanOrEqualTo() {
+        return beginSnIdGreaterThanOrEqualTo;
+    }
     /**
      * The optional less than or equal to query parameter to filter the snapshot ID.
      */
     private Integer endSnIdLessThanOrEqualTo;
 
+    public Integer getEndSnIdLessThanOrEqualTo() {
+        return endSnIdLessThanOrEqualTo;
+    }
     /**
      * The optional greater than or equal to query parameter to filter the timestamp.
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeGreaterThanOrEqualTo() {
+        return timeGreaterThanOrEqualTo;
+    }
     /**
      * The optional less than or equal to query parameter to filter the timestamp.
      */
     private java.util.Date timeLessThanOrEqualTo;
 
+    public java.util.Date getTimeLessThanOrEqualTo() {
+        return timeLessThanOrEqualTo;
+    }
     /**
      * The query parameter to filter the AWR report types.
      */
@@ -97,6 +110,10 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
             throw new IllegalArgumentException("Invalid ReportType: " + key);
         }
     };
+
+    public ReportType getReportType() {
+        return reportType;
+    }
     /**
      * The optional query parameter to filter the database container by an exact ID value.
      * Note that the database container ID can be retrieved from the following endpoint:
@@ -105,6 +122,9 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer containerId;
 
+    public Integer getContainerId() {
+        return containerId;
+    }
     /**
      * The format of the AWR report.
      */
@@ -145,11 +165,18 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
             throw new IllegalArgumentException("Invalid ReportFormat: " + key);
         }
     };
+
+    public ReportFormat getReportFormat() {
+        return reportFormat;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -160,12 +187,41 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetAwrDbReportRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedDatabaseId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @return this builder instance
+         */
+        public Builder managedDatabaseId(String managedDatabaseId) {
+            this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        private String awrDbId = null;
+
+        /**
+         * The parameter to filter the database by internal ID.
+         * Note that the internal ID of the database can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs
+         *
+         * @return this builder instance
+         */
+        public Builder awrDbId(String awrDbId) {
+            this.awrDbId = awrDbId;
+            return this;
+        }
 
         private java.util.List<Integer> instNums = null;
 
@@ -184,6 +240,113 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
          */
         public Builder instNums(Integer singularValue) {
             return this.instNums(java.util.Arrays.asList(singularValue));
+        }
+
+        private Integer beginSnIdGreaterThanOrEqualTo = null;
+
+        /**
+         * The optional greater than or equal to filter on the snapshot ID.
+         * @return this builder instance
+         */
+        public Builder beginSnIdGreaterThanOrEqualTo(Integer beginSnIdGreaterThanOrEqualTo) {
+            this.beginSnIdGreaterThanOrEqualTo = beginSnIdGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private Integer endSnIdLessThanOrEqualTo = null;
+
+        /**
+         * The optional less than or equal to query parameter to filter the snapshot ID.
+         * @return this builder instance
+         */
+        public Builder endSnIdLessThanOrEqualTo(Integer endSnIdLessThanOrEqualTo) {
+            this.endSnIdLessThanOrEqualTo = endSnIdLessThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeGreaterThanOrEqualTo = null;
+
+        /**
+         * The optional greater than or equal to query parameter to filter the timestamp.
+         * @return this builder instance
+         */
+        public Builder timeGreaterThanOrEqualTo(java.util.Date timeGreaterThanOrEqualTo) {
+            this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeLessThanOrEqualTo = null;
+
+        /**
+         * The optional less than or equal to query parameter to filter the timestamp.
+         * @return this builder instance
+         */
+        public Builder timeLessThanOrEqualTo(java.util.Date timeLessThanOrEqualTo) {
+            this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return this;
+        }
+
+        private ReportType reportType = null;
+
+        /**
+         * The query parameter to filter the AWR report types.
+         * @return this builder instance
+         */
+        public Builder reportType(ReportType reportType) {
+            this.reportType = reportType;
+            return this;
+        }
+
+        private Integer containerId = null;
+
+        /**
+         * The optional query parameter to filter the database container by an exact ID value.
+         * Note that the database container ID can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+         *
+         * @return this builder instance
+         */
+        public Builder containerId(Integer containerId) {
+            this.containerId = containerId;
+            return this;
+        }
+
+        private ReportFormat reportFormat = null;
+
+        /**
+         * The format of the AWR report.
+         * @return this builder instance
+         */
+        public Builder reportFormat(ReportFormat reportFormat) {
+            this.reportFormat = reportFormat;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
         }
 
         /**
@@ -247,5 +410,145 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetAwrDbReportRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetAwrDbReportRequest
+         */
+        public GetAwrDbReportRequest buildWithoutInvocationCallback() {
+            GetAwrDbReportRequest request = new GetAwrDbReportRequest();
+            request.managedDatabaseId = managedDatabaseId;
+            request.awrDbId = awrDbId;
+            request.instNums = instNums;
+            request.beginSnIdGreaterThanOrEqualTo = beginSnIdGreaterThanOrEqualTo;
+            request.endSnIdLessThanOrEqualTo = endSnIdLessThanOrEqualTo;
+            request.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            request.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            request.reportType = reportType;
+            request.containerId = containerId;
+            request.reportFormat = reportFormat;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new GetAwrDbReportRequest(managedDatabaseId, awrDbId, instNums, beginSnIdGreaterThanOrEqualTo, endSnIdLessThanOrEqualTo, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, reportType, containerId, reportFormat, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedDatabaseId(managedDatabaseId)
+                .awrDbId(awrDbId)
+                .instNums(instNums)
+                .beginSnIdGreaterThanOrEqualTo(beginSnIdGreaterThanOrEqualTo)
+                .endSnIdLessThanOrEqualTo(endSnIdLessThanOrEqualTo)
+                .timeGreaterThanOrEqualTo(timeGreaterThanOrEqualTo)
+                .timeLessThanOrEqualTo(timeLessThanOrEqualTo)
+                .reportType(reportType)
+                .containerId(containerId)
+                .reportFormat(reportFormat)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(",awrDbId=").append(String.valueOf(this.awrDbId));
+        sb.append(",instNums=").append(String.valueOf(this.instNums));
+        sb.append(",beginSnIdGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.beginSnIdGreaterThanOrEqualTo));
+        sb.append(",endSnIdLessThanOrEqualTo=")
+                .append(String.valueOf(this.endSnIdLessThanOrEqualTo));
+        sb.append(",timeGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeGreaterThanOrEqualTo));
+        sb.append(",timeLessThanOrEqualTo=").append(String.valueOf(this.timeLessThanOrEqualTo));
+        sb.append(",reportType=").append(String.valueOf(this.reportType));
+        sb.append(",containerId=").append(String.valueOf(this.containerId));
+        sb.append(",reportFormat=").append(String.valueOf(this.reportFormat));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetAwrDbReportRequest)) {
+            return false;
+        }
+
+        GetAwrDbReportRequest other = (GetAwrDbReportRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(this.awrDbId, other.awrDbId)
+                && java.util.Objects.equals(this.instNums, other.instNums)
+                && java.util.Objects.equals(
+                        this.beginSnIdGreaterThanOrEqualTo, other.beginSnIdGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.endSnIdLessThanOrEqualTo, other.endSnIdLessThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeGreaterThanOrEqualTo, other.timeGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeLessThanOrEqualTo, other.timeLessThanOrEqualTo)
+                && java.util.Objects.equals(this.reportType, other.reportType)
+                && java.util.Objects.equals(this.containerId, other.containerId)
+                && java.util.Objects.equals(this.reportFormat, other.reportFormat)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result = (result * PRIME) + (this.awrDbId == null ? 43 : this.awrDbId.hashCode());
+        result = (result * PRIME) + (this.instNums == null ? 43 : this.instNums.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.beginSnIdGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.beginSnIdGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.endSnIdLessThanOrEqualTo == null
+                                ? 43
+                                : this.endSnIdLessThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLessThanOrEqualTo == null
+                                ? 43
+                                : this.timeLessThanOrEqualTo.hashCode());
+        result = (result * PRIME) + (this.reportType == null ? 43 : this.reportType.hashCode());
+        result = (result * PRIME) + (this.containerId == null ? 43 : this.containerId.hashCode());
+        result = (result * PRIME) + (this.reportFormat == null ? 43 : this.reportFormat.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

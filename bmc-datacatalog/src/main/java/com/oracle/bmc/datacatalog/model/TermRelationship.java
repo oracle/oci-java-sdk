@@ -16,14 +16,65 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TermRelationship.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TermRelationship {
+public final class TermRelationship {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "displayName",
+        "description",
+        "relatedTermKey",
+        "relatedTermDisplayName",
+        "relatedTermDescription",
+        "relatedTermPath",
+        "relatedTermGlossaryKey",
+        "uri",
+        "parentTermKey",
+        "parentTermDisplayName",
+        "parentTermDescription",
+        "parentTermPath",
+        "parentTermGlossaryKey",
+        "timeCreated",
+        "lifecycleState"
+    })
+    public TermRelationship(
+            String key,
+            String displayName,
+            String description,
+            String relatedTermKey,
+            String relatedTermDisplayName,
+            String relatedTermDescription,
+            String relatedTermPath,
+            String relatedTermGlossaryKey,
+            String uri,
+            String parentTermKey,
+            String parentTermDisplayName,
+            String parentTermDescription,
+            String parentTermPath,
+            String parentTermGlossaryKey,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.description = description;
+        this.relatedTermKey = relatedTermKey;
+        this.relatedTermDisplayName = relatedTermDisplayName;
+        this.relatedTermDescription = relatedTermDescription;
+        this.relatedTermPath = relatedTermPath;
+        this.relatedTermGlossaryKey = relatedTermGlossaryKey;
+        this.uri = uri;
+        this.parentTermKey = parentTermKey;
+        this.parentTermDisplayName = parentTermDisplayName;
+        this.parentTermDescription = parentTermDescription;
+        this.parentTermPath = parentTermPath;
+        this.parentTermGlossaryKey = parentTermGlossaryKey;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -227,11 +278,19 @@ public class TermRelationship {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique term relationship key that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -239,79 +298,131 @@ public class TermRelationship {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Detailed description of the term relationship usually defined at the time of creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Unique id of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermKey")
-    String relatedTermKey;
+    private final String relatedTermKey;
+
+    public String getRelatedTermKey() {
+        return relatedTermKey;
+    }
 
     /**
      * Name of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermDisplayName")
-    String relatedTermDisplayName;
+    private final String relatedTermDisplayName;
+
+    public String getRelatedTermDisplayName() {
+        return relatedTermDisplayName;
+    }
 
     /**
      * Description of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermDescription")
-    String relatedTermDescription;
+    private final String relatedTermDescription;
+
+    public String getRelatedTermDescription() {
+        return relatedTermDescription;
+    }
 
     /**
      * Full path of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermPath")
-    String relatedTermPath;
+    private final String relatedTermPath;
+
+    public String getRelatedTermPath() {
+        return relatedTermPath;
+    }
 
     /**
      * Glossary key of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermGlossaryKey")
-    String relatedTermGlossaryKey;
+    private final String relatedTermGlossaryKey;
+
+    public String getRelatedTermGlossaryKey() {
+        return relatedTermGlossaryKey;
+    }
 
     /**
      * URI to the term relationship instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
 
     /**
      * This relationships parent term key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
-    String parentTermKey;
+    private final String parentTermKey;
+
+    public String getParentTermKey() {
+        return parentTermKey;
+    }
 
     /**
      * Name of the parent term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermDisplayName")
-    String parentTermDisplayName;
+    private final String parentTermDisplayName;
+
+    public String getParentTermDisplayName() {
+        return parentTermDisplayName;
+    }
 
     /**
      * Description of the parent term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermDescription")
-    String parentTermDescription;
+    private final String parentTermDescription;
+
+    public String getParentTermDescription() {
+        return parentTermDescription;
+    }
 
     /**
      * Full path of the parent term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermPath")
-    String parentTermPath;
+    private final String parentTermPath;
+
+    public String getParentTermPath() {
+        return parentTermPath;
+    }
 
     /**
      * Glossary key of the parent term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermGlossaryKey")
-    String parentTermGlossaryKey;
+    private final String parentTermGlossaryKey;
+
+    public String getParentTermGlossaryKey() {
+        return parentTermGlossaryKey;
+    }
 
     /**
      * The date and time the term relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -319,14 +430,143 @@ public class TermRelationship {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * State of the term relationship.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TermRelationship(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", relatedTermKey=").append(String.valueOf(this.relatedTermKey));
+        sb.append(", relatedTermDisplayName=").append(String.valueOf(this.relatedTermDisplayName));
+        sb.append(", relatedTermDescription=").append(String.valueOf(this.relatedTermDescription));
+        sb.append(", relatedTermPath=").append(String.valueOf(this.relatedTermPath));
+        sb.append(", relatedTermGlossaryKey=").append(String.valueOf(this.relatedTermGlossaryKey));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append(", parentTermKey=").append(String.valueOf(this.parentTermKey));
+        sb.append(", parentTermDisplayName=").append(String.valueOf(this.parentTermDisplayName));
+        sb.append(", parentTermDescription=").append(String.valueOf(this.parentTermDescription));
+        sb.append(", parentTermPath=").append(String.valueOf(this.parentTermPath));
+        sb.append(", parentTermGlossaryKey=").append(String.valueOf(this.parentTermGlossaryKey));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TermRelationship)) {
+            return false;
+        }
+
+        TermRelationship other = (TermRelationship) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.relatedTermKey, other.relatedTermKey)
+                && java.util.Objects.equals(
+                        this.relatedTermDisplayName, other.relatedTermDisplayName)
+                && java.util.Objects.equals(
+                        this.relatedTermDescription, other.relatedTermDescription)
+                && java.util.Objects.equals(this.relatedTermPath, other.relatedTermPath)
+                && java.util.Objects.equals(
+                        this.relatedTermGlossaryKey, other.relatedTermGlossaryKey)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.parentTermKey, other.parentTermKey)
+                && java.util.Objects.equals(this.parentTermDisplayName, other.parentTermDisplayName)
+                && java.util.Objects.equals(this.parentTermDescription, other.parentTermDescription)
+                && java.util.Objects.equals(this.parentTermPath, other.parentTermPath)
+                && java.util.Objects.equals(this.parentTermGlossaryKey, other.parentTermGlossaryKey)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relatedTermKey == null ? 43 : this.relatedTermKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relatedTermDisplayName == null
+                                ? 43
+                                : this.relatedTermDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relatedTermDescription == null
+                                ? 43
+                                : this.relatedTermDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relatedTermPath == null ? 43 : this.relatedTermPath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relatedTermGlossaryKey == null
+                                ? 43
+                                : this.relatedTermGlossaryKey.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTermKey == null ? 43 : this.parentTermKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTermDisplayName == null
+                                ? 43
+                                : this.parentTermDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTermDescription == null
+                                ? 43
+                                : this.parentTermDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTermPath == null ? 43 : this.parentTermPath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTermGlossaryKey == null
+                                ? 43
+                                : this.parentTermGlossaryKey.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Union.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Union extends Operator {
+public final class Union extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -210,6 +205,10 @@ public class Union extends Operator {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Union(
             String key,
@@ -246,7 +245,6 @@ public class Union extends Operator {
     /**
      * unionType
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum UnionType {
         Name("NAME"),
         Position("POSITION"),
@@ -256,6 +254,9 @@ public class Union extends Operator {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UnionType.class);
 
         private final String value;
         private static java.util.Map<String, UnionType> map;
@@ -293,14 +294,66 @@ public class Union extends Operator {
      * unionType
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unionType")
-    UnionType unionType;
+    private final UnionType unionType;
+
+    public UnionType getUnionType() {
+        return unionType;
+    }
 
     /**
      * The information about the union all.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAll")
-    Boolean isAll;
+    private final Boolean isAll;
+
+    public Boolean getIsAll() {
+        return isAll;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Union(");
+        sb.append("super=").append(super.toString());
+        sb.append(", unionType=").append(String.valueOf(this.unionType));
+        sb.append(", isAll=").append(String.valueOf(this.isAll));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Union)) {
+            return false;
+        }
+
+        Union other = (Union) o;
+        return java.util.Objects.equals(this.unionType, other.unionType)
+                && java.util.Objects.equals(this.isAll, other.isAll)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.unionType == null ? 43 : this.unionType.hashCode());
+        result = (result * PRIME) + (this.isAll == null ? 43 : this.isAll.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

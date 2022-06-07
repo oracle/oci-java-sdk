@@ -9,14 +9,6 @@ import com.oracle.bmc.aivision.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/GetImageJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetImageJobRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetImageJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,10 +16,17 @@ public class GetImageJobRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String imageJobId;
 
+    public String getImageJobId() {
+        return imageJobId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -35,6 +34,28 @@ public class GetImageJobRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String imageJobId = null;
+
+        /**
+         * Image job id.
+         * @return this builder instance
+         */
+        public Builder imageJobId(String imageJobId) {
+            this.imageJobId = imageJobId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -87,5 +108,67 @@ public class GetImageJobRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetImageJobRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetImageJobRequest
+         */
+        public GetImageJobRequest buildWithoutInvocationCallback() {
+            GetImageJobRequest request = new GetImageJobRequest();
+            request.imageJobId = imageJobId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetImageJobRequest(imageJobId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().imageJobId(imageJobId).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",imageJobId=").append(String.valueOf(this.imageJobId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetImageJobRequest)) {
+            return false;
+        }
+
+        GetImageJobRequest other = (GetImageJobRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.imageJobId, other.imageJobId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.imageJobId == null ? 43 : this.imageJobId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -16,16 +16,46 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DbSystemUpgradeHistoryEntrySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystemUpgradeHistoryEntrySummary {
+public final class DbSystemUpgradeHistoryEntrySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "action",
+        "newGiVersion",
+        "oldGiVersion",
+        "snapshotRetentionPeriodInDays",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeStarted",
+        "timeEnded"
+    })
+    public DbSystemUpgradeHistoryEntrySummary(
+            String id,
+            Action action,
+            String newGiVersion,
+            String oldGiVersion,
+            Integer snapshotRetentionPeriodInDays,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded) {
+        super();
+        this.id = id;
+        this.action = action;
+        this.newGiVersion = newGiVersion;
+        this.oldGiVersion = oldGiVersion;
+        this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -152,15 +182,23 @@ public class DbSystemUpgradeHistoryEntrySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The operating system upgrade action.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Precheck("PRECHECK"),
         Rollback("ROLLBACK"),
@@ -172,6 +210,8 @@ public class DbSystemUpgradeHistoryEntrySummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -209,29 +249,45 @@ public class DbSystemUpgradeHistoryEntrySummary {
      * The operating system upgrade action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newGiVersion")
-    String newGiVersion;
+    private final String newGiVersion;
+
+    public String getNewGiVersion() {
+        return newGiVersion;
+    }
 
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldGiVersion")
-    String oldGiVersion;
+    private final String oldGiVersion;
+
+    public String getOldGiVersion() {
+        return oldGiVersion;
+    }
 
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotRetentionPeriodInDays")
-    Integer snapshotRetentionPeriodInDays;
+    private final Integer snapshotRetentionPeriodInDays;
+
+    public Integer getSnapshotRetentionPeriodInDays() {
+        return snapshotRetentionPeriodInDays;
+    }
+
     /**
      * The current state of the action.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -243,6 +299,9 @@ public class DbSystemUpgradeHistoryEntrySummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -280,7 +339,11 @@ public class DbSystemUpgradeHistoryEntrySummary {
      * The current state of the action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A descriptive text associated with the lifecycleState.
@@ -288,20 +351,105 @@ public class DbSystemUpgradeHistoryEntrySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time when the upgrade action started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time when the upgrade action completed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystemUpgradeHistoryEntrySummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", newGiVersion=").append(String.valueOf(this.newGiVersion));
+        sb.append(", oldGiVersion=").append(String.valueOf(this.oldGiVersion));
+        sb.append(", snapshotRetentionPeriodInDays=")
+                .append(String.valueOf(this.snapshotRetentionPeriodInDays));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystemUpgradeHistoryEntrySummary)) {
+            return false;
+        }
+
+        DbSystemUpgradeHistoryEntrySummary other = (DbSystemUpgradeHistoryEntrySummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.newGiVersion, other.newGiVersion)
+                && java.util.Objects.equals(this.oldGiVersion, other.oldGiVersion)
+                && java.util.Objects.equals(
+                        this.snapshotRetentionPeriodInDays, other.snapshotRetentionPeriodInDays)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.newGiVersion == null ? 43 : this.newGiVersion.hashCode());
+        result = (result * PRIME) + (this.oldGiVersion == null ? 43 : this.oldGiVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.snapshotRetentionPeriodInDays == null
+                                ? 43
+                                : this.snapshotRetentionPeriodInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.loganalytics.responses;
 import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
@@ -18,10 +14,19 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned AssociationSummaryReport instance.
      */
     private com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport;
+
+    public com.oracle.bmc.loganalytics.model.AssociationSummaryReport
+            getAssociationSummaryReport() {
+        return associationSummaryReport;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -45,6 +50,22 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport;
+
+        public Builder associationSummaryReport(
+                com.oracle.bmc.loganalytics.model.AssociationSummaryReport
+                        associationSummaryReport) {
+            this.associationSummaryReport = associationSummaryReport;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -61,5 +82,49 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
             return new GetAssociationSummaryResponse(
                     __httpStatusCode__, opcRequestId, associationSummaryReport);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",associationSummaryReport=").append(String.valueOf(associationSummaryReport));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetAssociationSummaryResponse)) {
+            return false;
+        }
+
+        GetAssociationSummaryResponse other = (GetAssociationSummaryResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.associationSummaryReport, other.associationSummaryReport);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationSummaryReport == null
+                                ? 43
+                                : this.associationSummaryReport.hashCode());
+        return result;
     }
 }

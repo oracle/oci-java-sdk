@@ -26,9 +26,12 @@ import com.oracle.bmc.apmtraces.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.RequiredArgsConstructor
 public class QueryPaginators {
     private final Query client;
+
+    public QueryPaginators(Query client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listQuickPicks operation. This iterable

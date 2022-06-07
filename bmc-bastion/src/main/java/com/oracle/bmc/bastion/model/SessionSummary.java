@@ -15,14 +15,47 @@ package com.oracle.bmc.bastion.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SessionSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SessionSummary {
+public final class SessionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "bastionName",
+        "bastionId",
+        "targetResourceDetails",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleDetails",
+        "sessionTtlInSeconds"
+    })
+    public SessionSummary(
+            String id,
+            String displayName,
+            String bastionName,
+            String bastionId,
+            TargetResourceDetails targetResourceDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            SessionLifecycleState lifecycleState,
+            String lifecycleDetails,
+            Integer sessionTtlInSeconds) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.bastionName = bastionName;
+        this.bastionId = bastionId;
+        this.targetResourceDetails = targetResourceDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.sessionTtlInSeconds = sessionTtlInSeconds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -160,32 +193,56 @@ public class SessionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier (OCID) of the session, which can't be changed after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The name of the bastion that is hosting this session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionName")
-    String bastionName;
+    private final String bastionName;
+
+    public String getBastionName() {
+        return bastionName;
+    }
 
     /**
      * The unique identifier (OCID) of the bastion that is hosting this session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
-    String bastionId;
+    private final String bastionId;
+
+    public String getBastionId() {
+        return bastionId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceDetails")
-    TargetResourceDetails targetResourceDetails;
+    private final TargetResourceDetails targetResourceDetails;
+
+    public TargetResourceDetails getTargetResourceDetails() {
+        return targetResourceDetails;
+    }
 
     /**
      * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -193,7 +250,11 @@ public class SessionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -201,26 +262,120 @@ public class SessionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    SessionLifecycleState lifecycleState;
+    private final SessionLifecycleState lifecycleState;
+
+    public SessionLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current session state in more detail.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The amount of time the session can remain active.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
-    Integer sessionTtlInSeconds;
+    private final Integer sessionTtlInSeconds;
+
+    public Integer getSessionTtlInSeconds() {
+        return sessionTtlInSeconds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SessionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", bastionName=").append(String.valueOf(this.bastionName));
+        sb.append(", bastionId=").append(String.valueOf(this.bastionId));
+        sb.append(", targetResourceDetails=").append(String.valueOf(this.targetResourceDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", sessionTtlInSeconds=").append(String.valueOf(this.sessionTtlInSeconds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SessionSummary)) {
+            return false;
+        }
+
+        SessionSummary other = (SessionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.bastionName, other.bastionName)
+                && java.util.Objects.equals(this.bastionId, other.bastionId)
+                && java.util.Objects.equals(this.targetResourceDetails, other.targetResourceDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.sessionTtlInSeconds, other.sessionTtlInSeconds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.bastionName == null ? 43 : this.bastionName.hashCode());
+        result = (result * PRIME) + (this.bastionId == null ? 43 : this.bastionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourceDetails == null
+                                ? 43
+                                : this.targetResourceDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sessionTtlInSeconds == null
+                                ? 43
+                                : this.sessionTtlInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

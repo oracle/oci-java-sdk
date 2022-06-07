@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TypeListRule.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TypeListRule extends ProjectionRule {
+public final class TypeListRule extends ProjectionRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -210,6 +205,10 @@ public class TypeListRule extends ProjectionRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public TypeListRule(
             String key,
@@ -247,23 +246,35 @@ public class TypeListRule extends ProjectionRule {
      * Specifies whether to skip remaining rules when a match is found.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
-    Boolean isSkipRemainingRulesOnMatch;
+    private final Boolean isSkipRemainingRulesOnMatch;
+
+    public Boolean getIsSkipRemainingRulesOnMatch() {
+        return isSkipRemainingRulesOnMatch;
+    }
 
     /**
      * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    Object scope;
+    private final Object scope;
+
+    public Object getScope() {
+        return scope;
+    }
 
     /**
      * Specifies whether to cascade or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCascade")
-    Boolean isCascade;
+    private final Boolean isCascade;
+
+    public Boolean getIsCascade() {
+        return isCascade;
+    }
+
     /**
      * The pattern matching strategy.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MatchingStrategy {
         NameOrTags("NAME_OR_TAGS"),
         TagsOnly("TAGS_ONLY"),
@@ -274,6 +285,9 @@ public class TypeListRule extends ProjectionRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MatchingStrategy.class);
 
         private final String value;
         private static java.util.Map<String, MatchingStrategy> map;
@@ -311,17 +325,25 @@ public class TypeListRule extends ProjectionRule {
      * The pattern matching strategy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingStrategy")
-    MatchingStrategy matchingStrategy;
+    private final MatchingStrategy matchingStrategy;
+
+    public MatchingStrategy getMatchingStrategy() {
+        return matchingStrategy;
+    }
 
     /**
      * Specifies if the rule is case sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
-    Boolean isCaseSensitive;
+    private final Boolean isCaseSensitive;
+
+    public Boolean getIsCaseSensitive() {
+        return isCaseSensitive;
+    }
+
     /**
      * The rule type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RuleType {
         Include("INCLUDE"),
         Exclude("EXCLUDE"),
@@ -331,6 +353,9 @@ public class TypeListRule extends ProjectionRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RuleType.class);
 
         private final String value;
         private static java.util.Map<String, RuleType> map;
@@ -368,14 +393,91 @@ public class TypeListRule extends ProjectionRule {
      * The rule type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
-    RuleType ruleType;
+    private final RuleType ruleType;
+
+    public RuleType getRuleType() {
+        return ruleType;
+    }
 
     /**
      * An arry of types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("types")
-    java.util.List<Object> types;
+    private final java.util.List<Object> types;
+
+    public java.util.List<Object> getTypes() {
+        return types;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TypeListRule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", isSkipRemainingRulesOnMatch=")
+                .append(String.valueOf(this.isSkipRemainingRulesOnMatch));
+        sb.append(", scope=").append(String.valueOf(this.scope));
+        sb.append(", isCascade=").append(String.valueOf(this.isCascade));
+        sb.append(", matchingStrategy=").append(String.valueOf(this.matchingStrategy));
+        sb.append(", isCaseSensitive=").append(String.valueOf(this.isCaseSensitive));
+        sb.append(", ruleType=").append(String.valueOf(this.ruleType));
+        sb.append(", types=").append(String.valueOf(this.types));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TypeListRule)) {
+            return false;
+        }
+
+        TypeListRule other = (TypeListRule) o;
+        return java.util.Objects.equals(
+                        this.isSkipRemainingRulesOnMatch, other.isSkipRemainingRulesOnMatch)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.isCascade, other.isCascade)
+                && java.util.Objects.equals(this.matchingStrategy, other.matchingStrategy)
+                && java.util.Objects.equals(this.isCaseSensitive, other.isCaseSensitive)
+                && java.util.Objects.equals(this.ruleType, other.ruleType)
+                && java.util.Objects.equals(this.types, other.types)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.isSkipRemainingRulesOnMatch == null
+                                ? 43
+                                : this.isSkipRemainingRulesOnMatch.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result = (result * PRIME) + (this.isCascade == null ? 43 : this.isCascade.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.matchingStrategy == null ? 43 : this.matchingStrategy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCaseSensitive == null ? 43 : this.isCaseSensitive.hashCode());
+        result = (result * PRIME) + (this.ruleType == null ? 43 : this.ruleType.hashCode());
+        result = (result * PRIME) + (this.types == null ? 43 : this.types.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

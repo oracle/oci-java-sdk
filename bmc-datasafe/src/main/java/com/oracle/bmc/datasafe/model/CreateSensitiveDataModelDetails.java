@@ -22,16 +22,58 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSensitiveDataModelDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSensitiveDataModelDetails {
+public final class CreateSensitiveDataModelDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "targetId",
+        "appSuiteName",
+        "description",
+        "schemasForDiscovery",
+        "sensitiveTypeIdsForDiscovery",
+        "isSampleDataCollectionEnabled",
+        "isAppDefinedRelationDiscoveryEnabled",
+        "isIncludeAllSchemas",
+        "isIncludeAllSensitiveTypes",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateSensitiveDataModelDetails(
+            String displayName,
+            String compartmentId,
+            String targetId,
+            String appSuiteName,
+            String description,
+            java.util.List<String> schemasForDiscovery,
+            java.util.List<String> sensitiveTypeIdsForDiscovery,
+            Boolean isSampleDataCollectionEnabled,
+            Boolean isAppDefinedRelationDiscoveryEnabled,
+            Boolean isIncludeAllSchemas,
+            Boolean isIncludeAllSensitiveTypes,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.targetId = targetId;
+        this.appSuiteName = appSuiteName;
+        this.description = description;
+        this.schemasForDiscovery = schemasForDiscovery;
+        this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
+        this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
+        this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
+        this.isIncludeAllSchemas = isIncludeAllSchemas;
+        this.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -206,17 +248,29 @@ public class CreateSensitiveDataModelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The display name of the sensitive data model. The name does not have to be unique, and it's changeable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the compartment where the sensitive data model should be created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the reference target database to be associated with the sensitive data model. All operations such
@@ -224,25 +278,41 @@ public class CreateSensitiveDataModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("appSuiteName")
-    String appSuiteName;
+    private final String appSuiteName;
+
+    public String getAppSuiteName() {
+        return appSuiteName;
+    }
 
     /**
      * The description of the sensitive data model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The schemas to be scanned by data discovery jobs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemasForDiscovery")
-    java.util.List<String> schemasForDiscovery;
+    private final java.util.List<String> schemasForDiscovery;
+
+    public java.util.List<String> getSchemasForDiscovery() {
+        return schemasForDiscovery;
+    }
 
     /**
      * The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided,
@@ -250,7 +320,11 @@ public class CreateSensitiveDataModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
-    java.util.List<String> sensitiveTypeIdsForDiscovery;
+    private final java.util.List<String> sensitiveTypeIdsForDiscovery;
+
+    public java.util.List<String> getSensitiveTypeIdsForDiscovery() {
+        return sensitiveTypeIdsForDiscovery;
+    }
 
     /**
      * Indicates if data discovery jobs should collect and store sample data values for the discovered columns.
@@ -261,7 +335,11 @@ public class CreateSensitiveDataModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataCollectionEnabled")
-    Boolean isSampleDataCollectionEnabled;
+    private final Boolean isSampleDataCollectionEnabled;
+
+    public Boolean getIsSampleDataCollectionEnabled() {
+        return isSampleDataCollectionEnabled;
+    }
 
     /**
      * Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships
@@ -272,7 +350,11 @@ public class CreateSensitiveDataModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAppDefinedRelationDiscoveryEnabled")
-    Boolean isAppDefinedRelationDiscoveryEnabled;
+    private final Boolean isAppDefinedRelationDiscoveryEnabled;
+
+    public Boolean getIsAppDefinedRelationDiscoveryEnabled() {
+        return isAppDefinedRelationDiscoveryEnabled;
+    }
 
     /**
      * Indicates if all the schemas in the associated target database should be scanned by data discovery jobs.
@@ -280,7 +362,11 @@ public class CreateSensitiveDataModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
-    Boolean isIncludeAllSchemas;
+    private final Boolean isIncludeAllSchemas;
+
+    public Boolean getIsIncludeAllSchemas() {
+        return isIncludeAllSchemas;
+    }
 
     /**
      * Indicates if all the existing sensitive types should be used by data discovery jobs. If it's set to true,
@@ -288,7 +374,11 @@ public class CreateSensitiveDataModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSensitiveTypes")
-    Boolean isIncludeAllSensitiveTypes;
+    private final Boolean isIncludeAllSensitiveTypes;
+
+    public Boolean getIsIncludeAllSensitiveTypes() {
+        return isIncludeAllSensitiveTypes;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -297,7 +387,11 @@ public class CreateSensitiveDataModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -306,8 +400,122 @@ public class CreateSensitiveDataModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSensitiveDataModelDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", appSuiteName=").append(String.valueOf(this.appSuiteName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", schemasForDiscovery=").append(String.valueOf(this.schemasForDiscovery));
+        sb.append(", sensitiveTypeIdsForDiscovery=")
+                .append(String.valueOf(this.sensitiveTypeIdsForDiscovery));
+        sb.append(", isSampleDataCollectionEnabled=")
+                .append(String.valueOf(this.isSampleDataCollectionEnabled));
+        sb.append(", isAppDefinedRelationDiscoveryEnabled=")
+                .append(String.valueOf(this.isAppDefinedRelationDiscoveryEnabled));
+        sb.append(", isIncludeAllSchemas=").append(String.valueOf(this.isIncludeAllSchemas));
+        sb.append(", isIncludeAllSensitiveTypes=")
+                .append(String.valueOf(this.isIncludeAllSensitiveTypes));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSensitiveDataModelDetails)) {
+            return false;
+        }
+
+        CreateSensitiveDataModelDetails other = (CreateSensitiveDataModelDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.appSuiteName, other.appSuiteName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.schemasForDiscovery, other.schemasForDiscovery)
+                && java.util.Objects.equals(
+                        this.sensitiveTypeIdsForDiscovery, other.sensitiveTypeIdsForDiscovery)
+                && java.util.Objects.equals(
+                        this.isSampleDataCollectionEnabled, other.isSampleDataCollectionEnabled)
+                && java.util.Objects.equals(
+                        this.isAppDefinedRelationDiscoveryEnabled,
+                        other.isAppDefinedRelationDiscoveryEnabled)
+                && java.util.Objects.equals(this.isIncludeAllSchemas, other.isIncludeAllSchemas)
+                && java.util.Objects.equals(
+                        this.isIncludeAllSensitiveTypes, other.isIncludeAllSensitiveTypes)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.appSuiteName == null ? 43 : this.appSuiteName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.schemasForDiscovery == null
+                                ? 43
+                                : this.schemasForDiscovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeIdsForDiscovery == null
+                                ? 43
+                                : this.sensitiveTypeIdsForDiscovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSampleDataCollectionEnabled == null
+                                ? 43
+                                : this.isSampleDataCollectionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAppDefinedRelationDiscoveryEnabled == null
+                                ? 43
+                                : this.isAppDefinedRelationDiscoveryEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncludeAllSchemas == null
+                                ? 43
+                                : this.isIncludeAllSchemas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncludeAllSensitiveTypes == null
+                                ? 43
+                                : this.isIncludeAllSensitiveTypes.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

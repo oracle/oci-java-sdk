@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RecommendationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RecommendationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,30 +16,50 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * A filter used to return only recommendations of the specified type.
      */
     private java.util.List<com.oracle.bmc.datacatalog.model.RecommendationType> recommendationType;
 
+    public java.util.List<com.oracle.bmc.datacatalog.model.RecommendationType>
+            getRecommendationType() {
+        return recommendationType;
+    }
     /**
      * A filter used to provide the unique identifier of the source object, for which a list of recommendations will be returned for review.
      */
     private String sourceObjectKey;
 
+    public String getSourceObjectKey() {
+        return sourceObjectKey;
+    }
     /**
      * A filter used to provide the type of the source object, for which a list of recommendations will be returned for review.
      */
     private com.oracle.bmc.datacatalog.model.RecommendationResourceType sourceObjectType;
 
+    public com.oracle.bmc.datacatalog.model.RecommendationResourceType getSourceObjectType() {
+        return sourceObjectType;
+    }
     /**
      * A filter used to return only recommendations having the requested status.
      */
     private com.oracle.bmc.datacatalog.model.RecommendationStatus recommendationStatus;
 
+    public com.oracle.bmc.datacatalog.model.RecommendationStatus getRecommendationStatus() {
+        return recommendationStatus;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -55,6 +67,17 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
 
         private java.util.List<com.oracle.bmc.datacatalog.model.RecommendationType>
                 recommendationType = null;
@@ -76,6 +99,52 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
          */
         public Builder recommendationType(RecommendationType singularValue) {
             return this.recommendationType(java.util.Arrays.asList(singularValue));
+        }
+
+        private String sourceObjectKey = null;
+
+        /**
+         * A filter used to provide the unique identifier of the source object, for which a list of recommendations will be returned for review.
+         * @return this builder instance
+         */
+        public Builder sourceObjectKey(String sourceObjectKey) {
+            this.sourceObjectKey = sourceObjectKey;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.RecommendationResourceType sourceObjectType = null;
+
+        /**
+         * A filter used to provide the type of the source object, for which a list of recommendations will be returned for review.
+         * @return this builder instance
+         */
+        public Builder sourceObjectType(
+                com.oracle.bmc.datacatalog.model.RecommendationResourceType sourceObjectType) {
+            this.sourceObjectType = sourceObjectType;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.RecommendationStatus recommendationStatus = null;
+
+        /**
+         * A filter used to return only recommendations having the requested status.
+         * @return this builder instance
+         */
+        public Builder recommendationStatus(
+                com.oracle.bmc.datacatalog.model.RecommendationStatus recommendationStatus) {
+            this.recommendationStatus = recommendationStatus;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -133,5 +202,101 @@ public class RecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of RecommendationsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of RecommendationsRequest
+         */
+        public RecommendationsRequest buildWithoutInvocationCallback() {
+            RecommendationsRequest request = new RecommendationsRequest();
+            request.catalogId = catalogId;
+            request.recommendationType = recommendationType;
+            request.sourceObjectKey = sourceObjectKey;
+            request.sourceObjectType = sourceObjectType;
+            request.recommendationStatus = recommendationStatus;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new RecommendationsRequest(catalogId, recommendationType, sourceObjectKey, sourceObjectType, recommendationStatus, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .recommendationType(recommendationType)
+                .sourceObjectKey(sourceObjectKey)
+                .sourceObjectType(sourceObjectType)
+                .recommendationStatus(recommendationStatus)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",recommendationType=").append(String.valueOf(this.recommendationType));
+        sb.append(",sourceObjectKey=").append(String.valueOf(this.sourceObjectKey));
+        sb.append(",sourceObjectType=").append(String.valueOf(this.sourceObjectType));
+        sb.append(",recommendationStatus=").append(String.valueOf(this.recommendationStatus));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RecommendationsRequest)) {
+            return false;
+        }
+
+        RecommendationsRequest other = (RecommendationsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.recommendationType, other.recommendationType)
+                && java.util.Objects.equals(this.sourceObjectKey, other.sourceObjectKey)
+                && java.util.Objects.equals(this.sourceObjectType, other.sourceObjectType)
+                && java.util.Objects.equals(this.recommendationStatus, other.recommendationStatus)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendationType == null
+                                ? 43
+                                : this.recommendationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceObjectKey == null ? 43 : this.sourceObjectKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceObjectType == null ? 43 : this.sourceObjectType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendationStatus == null
+                                ? 43
+                                : this.recommendationStatus.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

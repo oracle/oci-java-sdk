@@ -15,16 +15,34 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GenerateKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GenerateKeyDetails {
+public final class GenerateKeyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "associatedData",
+        "includePlaintextKey",
+        "keyId",
+        "keyShape",
+        "loggingContext"
+    })
+    public GenerateKeyDetails(
+            java.util.Map<String, String> associatedData,
+            Boolean includePlaintextKey,
+            String keyId,
+            KeyShape keyShape,
+            java.util.Map<String, String> loggingContext) {
+        super();
+        this.associatedData = associatedData;
+        this.includePlaintextKey = includePlaintextKey;
+        this.keyId = keyId;
+        this.keyShape = keyShape;
+        this.loggingContext = loggingContext;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
         private java.util.Map<String, String> associatedData;
@@ -103,6 +121,10 @@ public class GenerateKeyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Information that can be used to provide an encryption context for the encrypted data.
      * The length of the string representation of the associated data must be fewer than 4096
@@ -110,22 +132,38 @@ public class GenerateKeyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
-    java.util.Map<String, String> associatedData;
+    private final java.util.Map<String, String> associatedData;
+
+    public java.util.Map<String, String> getAssociatedData() {
+        return associatedData;
+    }
 
     /**
      * If true, the generated key is also returned unencrypted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("includePlaintextKey")
-    Boolean includePlaintextKey;
+    private final Boolean includePlaintextKey;
+
+    public Boolean getIncludePlaintextKey() {
+        return includePlaintextKey;
+    }
 
     /**
      * The OCID of the master encryption key to encrypt the generated data encryption key with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("keyShape")
-    KeyShape keyShape;
+    private final KeyShape keyShape;
+
+    public KeyShape getKeyShape() {
+        return keyShape;
+    }
 
     /**
      * Information that provides context for audit logging. You can provide this additional
@@ -133,8 +171,71 @@ public class GenerateKeyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
-    java.util.Map<String, String> loggingContext;
+    private final java.util.Map<String, String> loggingContext;
+
+    public java.util.Map<String, String> getLoggingContext() {
+        return loggingContext;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GenerateKeyDetails(");
+        sb.append("associatedData=").append(String.valueOf(this.associatedData));
+        sb.append(", includePlaintextKey=").append(String.valueOf(this.includePlaintextKey));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", keyShape=").append(String.valueOf(this.keyShape));
+        sb.append(", loggingContext=").append(String.valueOf(this.loggingContext));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateKeyDetails)) {
+            return false;
+        }
+
+        GenerateKeyDetails other = (GenerateKeyDetails) o;
+        return java.util.Objects.equals(this.associatedData, other.associatedData)
+                && java.util.Objects.equals(this.includePlaintextKey, other.includePlaintextKey)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.keyShape, other.keyShape)
+                && java.util.Objects.equals(this.loggingContext, other.loggingContext)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.associatedData == null ? 43 : this.associatedData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includePlaintextKey == null
+                                ? 43
+                                : this.includePlaintextKey.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.keyShape == null ? 43 : this.keyShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loggingContext == null ? 43 : this.loggingContext.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

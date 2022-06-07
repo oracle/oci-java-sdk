@@ -15,22 +15,17 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ImageObjectDetectionFeature.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "featureType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ImageObjectDetectionFeature extends ImageFeature {
+public final class ImageObjectDetectionFeature extends ImageFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
         private Integer maxResults;
@@ -76,6 +71,10 @@ public class ImageObjectDetectionFeature extends ImageFeature {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ImageObjectDetectionFeature(Integer maxResults, String modelId) {
         super();
@@ -87,14 +86,66 @@ public class ImageObjectDetectionFeature extends ImageFeature {
      * The maximum number of results to return.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
-    Integer maxResults;
+    private final Integer maxResults;
+
+    public Integer getMaxResults() {
+        return maxResults;
+    }
 
     /**
      * The custom model ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
-    String modelId;
+    private final String modelId;
+
+    public String getModelId() {
+        return modelId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImageObjectDetectionFeature(");
+        sb.append("super=").append(super.toString());
+        sb.append(", maxResults=").append(String.valueOf(this.maxResults));
+        sb.append(", modelId=").append(String.valueOf(this.modelId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImageObjectDetectionFeature)) {
+            return false;
+        }
+
+        ImageObjectDetectionFeature other = (ImageObjectDetectionFeature) o;
+        return java.util.Objects.equals(this.maxResults, other.maxResults)
+                && java.util.Objects.equals(this.modelId, other.modelId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.maxResults == null ? 43 : this.maxResults.hashCode());
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

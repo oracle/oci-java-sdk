@@ -9,14 +9,6 @@ import com.oracle.bmc.opsi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestHostMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use IngestHostMetricsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class IngestHostMetricsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.IngestHostMetricsDetails> {
@@ -27,11 +19,17 @@ public class IngestHostMetricsRequest
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * Payload for one or more host performance metrics for a particular host.
      */
     private com.oracle.bmc.opsi.model.IngestHostMetricsDetails ingestHostMetricsDetails;
 
+    public com.oracle.bmc.opsi.model.IngestHostMetricsDetails getIngestHostMetricsDetails() {
+        return ingestHostMetricsDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -39,6 +37,9 @@ public class IngestHostMetricsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
@@ -47,6 +48,9 @@ public class IngestHostMetricsRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * A token that uniquely identifies a request that can be retried in case of a timeout or
      * server error without risk of executing the same action again. Retry tokens expire after 24
@@ -57,6 +61,10 @@ public class IngestHostMetricsRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -74,6 +82,74 @@ public class IngestHostMetricsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String id = null;
+
+        /**
+         * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+         *
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private com.oracle.bmc.opsi.model.IngestHostMetricsDetails ingestHostMetricsDetails = null;
+
+        /**
+         * Payload for one or more host performance metrics for a particular host.
+         * @return this builder instance
+         */
+        public Builder ingestHostMetricsDetails(
+                com.oracle.bmc.opsi.model.IngestHostMetricsDetails ingestHostMetricsDetails) {
+            this.ingestHostMetricsDetails = ingestHostMetricsDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request that can be retried in case of a timeout or
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -140,5 +216,92 @@ public class IngestHostMetricsRequest
             ingestHostMetricsDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of IngestHostMetricsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of IngestHostMetricsRequest
+         */
+        public IngestHostMetricsRequest buildWithoutInvocationCallback() {
+            IngestHostMetricsRequest request = new IngestHostMetricsRequest();
+            request.id = id;
+            request.ingestHostMetricsDetails = ingestHostMetricsDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new IngestHostMetricsRequest(id, ingestHostMetricsDetails, opcRequestId, ifMatch, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .id(id)
+                .ingestHostMetricsDetails(ingestHostMetricsDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",ingestHostMetricsDetails=")
+                .append(String.valueOf(this.ingestHostMetricsDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IngestHostMetricsRequest)) {
+            return false;
+        }
+
+        IngestHostMetricsRequest other = (IngestHostMetricsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.ingestHostMetricsDetails, other.ingestHostMetricsDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ingestHostMetricsDetails == null
+                                ? 43
+                                : this.ingestHostMetricsDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

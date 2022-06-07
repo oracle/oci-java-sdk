@@ -15,16 +15,40 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OrganizationTenancy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OrganizationTenancy {
+public final class OrganizationTenancy {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tenancyId",
+        "name",
+        "lifecycleState",
+        "role",
+        "timeJoined",
+        "timeLeft",
+        "isApprovedForTransfer"
+    })
+    public OrganizationTenancy(
+            String tenancyId,
+            String name,
+            OrganizationTenancyLifecycleState lifecycleState,
+            OrganizationTenancyRole role,
+            java.util.Date timeJoined,
+            java.util.Date timeLeft,
+            Boolean isApprovedForTransfer) {
+        super();
+        this.tenancyId = tenancyId;
+        this.name = name;
+        this.lifecycleState = lifecycleState;
+        this.role = role;
+        this.timeJoined = timeJoined;
+        this.timeLeft = timeLeft;
+        this.isApprovedForTransfer = isApprovedForTransfer;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
@@ -129,48 +153,143 @@ public class OrganizationTenancy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    String tenancyId;
+    private final String tenancyId;
+
+    public String getTenancyId() {
+        return tenancyId;
+    }
 
     /**
      * Name of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Lifecycle state of the OrganizationTenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    OrganizationTenancyLifecycleState lifecycleState;
+    private final OrganizationTenancyLifecycleState lifecycleState;
+
+    public OrganizationTenancyLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Role of the OrganizationTenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    OrganizationTenancyRole role;
+    private final OrganizationTenancyRole role;
+
+    public OrganizationTenancyRole getRole() {
+        return role;
+    }
 
     /**
      * Date-time when this tenancy joined the organization.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeJoined")
-    java.util.Date timeJoined;
+    private final java.util.Date timeJoined;
+
+    public java.util.Date getTimeJoined() {
+        return timeJoined;
+    }
 
     /**
      * Date-time when this tenancy left the organization.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLeft")
-    java.util.Date timeLeft;
+    private final java.util.Date timeLeft;
+
+    public java.util.Date getTimeLeft() {
+        return timeLeft;
+    }
 
     /**
      * Flag to indicate the tenancy is approved for transfer to another organization.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isApprovedForTransfer")
-    Boolean isApprovedForTransfer;
+    private final Boolean isApprovedForTransfer;
+
+    public Boolean getIsApprovedForTransfer() {
+        return isApprovedForTransfer;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OrganizationTenancy(");
+        sb.append("tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(", timeJoined=").append(String.valueOf(this.timeJoined));
+        sb.append(", timeLeft=").append(String.valueOf(this.timeLeft));
+        sb.append(", isApprovedForTransfer=").append(String.valueOf(this.isApprovedForTransfer));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OrganizationTenancy)) {
+            return false;
+        }
+
+        OrganizationTenancy other = (OrganizationTenancy) o;
+        return java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.timeJoined, other.timeJoined)
+                && java.util.Objects.equals(this.timeLeft, other.timeLeft)
+                && java.util.Objects.equals(this.isApprovedForTransfer, other.isApprovedForTransfer)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result = (result * PRIME) + (this.timeJoined == null ? 43 : this.timeJoined.hashCode());
+        result = (result * PRIME) + (this.timeLeft == null ? 43 : this.timeLeft.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isApprovedForTransfer == null
+                                ? 43
+                                : this.isApprovedForTransfer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetConsoleHistoryContentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetConsoleHistoryContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,15 +17,25 @@ public class GetConsoleHistoryContentRequest
      */
     private String instanceConsoleHistoryId;
 
+    public String getInstanceConsoleHistoryId() {
+        return instanceConsoleHistoryId;
+    }
     /**
      * Offset of the snapshot data to retrieve.
      */
     private Integer offset;
 
+    public Integer getOffset() {
+        return offset;
+    }
     /**
      * Length of the snapshot data to retrieve.
      */
     private Integer length;
+
+    public Integer getLength() {
+        return length;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -41,6 +43,39 @@ public class GetConsoleHistoryContentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String instanceConsoleHistoryId = null;
+
+        /**
+         * The OCID of the console history.
+         * @return this builder instance
+         */
+        public Builder instanceConsoleHistoryId(String instanceConsoleHistoryId) {
+            this.instanceConsoleHistoryId = instanceConsoleHistoryId;
+            return this;
+        }
+
+        private Integer offset = null;
+
+        /**
+         * Offset of the snapshot data to retrieve.
+         * @return this builder instance
+         */
+        public Builder offset(Integer offset) {
+            this.offset = offset;
+            return this;
+        }
+
+        private Integer length = null;
+
+        /**
+         * Length of the snapshot data to retrieve.
+         * @return this builder instance
+         */
+        public Builder length(Integer length) {
+            this.length = length;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -94,5 +129,80 @@ public class GetConsoleHistoryContentRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetConsoleHistoryContentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetConsoleHistoryContentRequest
+         */
+        public GetConsoleHistoryContentRequest buildWithoutInvocationCallback() {
+            GetConsoleHistoryContentRequest request = new GetConsoleHistoryContentRequest();
+            request.instanceConsoleHistoryId = instanceConsoleHistoryId;
+            request.offset = offset;
+            request.length = length;
+            return request;
+            // new GetConsoleHistoryContentRequest(instanceConsoleHistoryId, offset, length);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .instanceConsoleHistoryId(instanceConsoleHistoryId)
+                .offset(offset)
+                .length(length);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",instanceConsoleHistoryId=")
+                .append(String.valueOf(this.instanceConsoleHistoryId));
+        sb.append(",offset=").append(String.valueOf(this.offset));
+        sb.append(",length=").append(String.valueOf(this.length));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetConsoleHistoryContentRequest)) {
+            return false;
+        }
+
+        GetConsoleHistoryContentRequest other = (GetConsoleHistoryContentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.instanceConsoleHistoryId, other.instanceConsoleHistoryId)
+                && java.util.Objects.equals(this.offset, other.offset)
+                && java.util.Objects.equals(this.length, other.length);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.instanceConsoleHistoryId == null
+                                ? 43
+                                : this.instanceConsoleHistoryId.hashCode());
+        result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
+        result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
+        return result;
     }
 }

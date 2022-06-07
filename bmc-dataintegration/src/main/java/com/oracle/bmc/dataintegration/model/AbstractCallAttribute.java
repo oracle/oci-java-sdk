@@ -15,12 +15,6 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,12 +29,52 @@ package com.oracle.bmc.dataintegration.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AbstractCallAttribute {
+    @Deprecated
+    @java.beans.ConstructorProperties({"fetchSize"})
+    protected AbstractCallAttribute(Integer fetchSize) {
+        super();
+        this.fetchSize = fetchSize;
+    }
 
     /**
      * The fetch size for reading.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
-    Integer fetchSize;
+    private final Integer fetchSize;
+
+    public Integer getFetchSize() {
+        return fetchSize;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractCallAttribute(");
+        sb.append("fetchSize=").append(String.valueOf(this.fetchSize));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractCallAttribute)) {
+            return false;
+        }
+
+        AbstractCallAttribute other = (AbstractCallAttribute) o;
+        return java.util.Objects.equals(this.fetchSize, other.fetchSize);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fetchSize == null ? 43 : this.fetchSize.hashCode());
+        return result;
+    }
 
     /**
      * The type of the abstract call attribute.

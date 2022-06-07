@@ -15,22 +15,18 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateComputeInstanceGroupCanaryDeployStageDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateComputeInstanceGroupCanaryDeployStageDetails extends UpdateDeployStageDetails {
+public final class UpdateComputeInstanceGroupCanaryDeployStageDetails
+        extends UpdateDeployStageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -160,6 +156,10 @@ public class UpdateComputeInstanceGroupCanaryDeployStageDetails extends UpdateDe
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateComputeInstanceGroupCanaryDeployStageDetails(
             String description,
@@ -187,20 +187,102 @@ public class UpdateComputeInstanceGroupCanaryDeployStageDetails extends UpdateDe
      * The OCID of the artifact that contains the deployment specification.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
-    String deploymentSpecDeployArtifactId;
+    private final String deploymentSpecDeployArtifactId;
+
+    public String getDeploymentSpecDeployArtifactId() {
+        return deploymentSpecDeployArtifactId;
+    }
 
     /**
      * The list of file artifact OCIDs to deploy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
-    java.util.List<String> deployArtifactIds;
+    private final java.util.List<String> deployArtifactIds;
+
+    public java.util.List<String> getDeployArtifactIds() {
+        return deployArtifactIds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("rolloutPolicy")
-    ComputeInstanceGroupRolloutPolicy rolloutPolicy;
+    private final ComputeInstanceGroupRolloutPolicy rolloutPolicy;
+
+    public ComputeInstanceGroupRolloutPolicy getRolloutPolicy() {
+        return rolloutPolicy;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("testLoadBalancerConfig")
-    LoadBalancerConfig testLoadBalancerConfig;
+    private final LoadBalancerConfig testLoadBalancerConfig;
+
+    public LoadBalancerConfig getTestLoadBalancerConfig() {
+        return testLoadBalancerConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateComputeInstanceGroupCanaryDeployStageDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", deploymentSpecDeployArtifactId=")
+                .append(String.valueOf(this.deploymentSpecDeployArtifactId));
+        sb.append(", deployArtifactIds=").append(String.valueOf(this.deployArtifactIds));
+        sb.append(", rolloutPolicy=").append(String.valueOf(this.rolloutPolicy));
+        sb.append(", testLoadBalancerConfig=").append(String.valueOf(this.testLoadBalancerConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateComputeInstanceGroupCanaryDeployStageDetails)) {
+            return false;
+        }
+
+        UpdateComputeInstanceGroupCanaryDeployStageDetails other =
+                (UpdateComputeInstanceGroupCanaryDeployStageDetails) o;
+        return java.util.Objects.equals(
+                        this.deploymentSpecDeployArtifactId, other.deploymentSpecDeployArtifactId)
+                && java.util.Objects.equals(this.deployArtifactIds, other.deployArtifactIds)
+                && java.util.Objects.equals(this.rolloutPolicy, other.rolloutPolicy)
+                && java.util.Objects.equals(
+                        this.testLoadBalancerConfig, other.testLoadBalancerConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.deploymentSpecDeployArtifactId == null
+                                ? 43
+                                : this.deploymentSpecDeployArtifactId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployArtifactIds == null ? 43 : this.deployArtifactIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rolloutPolicy == null ? 43 : this.rolloutPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.testLoadBalancerConfig == null
+                                ? 43
+                                : this.testLoadBalancerConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

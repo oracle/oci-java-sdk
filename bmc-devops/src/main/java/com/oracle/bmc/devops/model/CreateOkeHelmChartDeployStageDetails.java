@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOkeHelmChartDeployStageDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOkeHelmChartDeployStageDetails extends CreateDeployStageDetails {
+public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -204,6 +199,10 @@ public class CreateOkeHelmChartDeployStageDetails extends CreateDeployStageDetai
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateOkeHelmChartDeployStageDetails(
             String description,
@@ -239,41 +238,146 @@ public class CreateOkeHelmChartDeployStageDetails extends CreateDeployStageDetai
      * Kubernetes cluster environment OCID for deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
-    String okeClusterDeployEnvironmentId;
+    private final String okeClusterDeployEnvironmentId;
+
+    public String getOkeClusterDeployEnvironmentId() {
+        return okeClusterDeployEnvironmentId;
+    }
 
     /**
      * Helm chart artifact OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("helmChartDeployArtifactId")
-    String helmChartDeployArtifactId;
+    private final String helmChartDeployArtifactId;
+
+    public String getHelmChartDeployArtifactId() {
+        return helmChartDeployArtifactId;
+    }
 
     /**
      * List of values.yaml file artifact OCIDs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("valuesArtifactIds")
-    java.util.List<String> valuesArtifactIds;
+    private final java.util.List<String> valuesArtifactIds;
+
+    public java.util.List<String> getValuesArtifactIds() {
+        return valuesArtifactIds;
+    }
 
     /**
      * Default name of the chart instance. Must be unique within a Kubernetes namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseName")
-    String releaseName;
+    private final String releaseName;
+
+    public String getReleaseName() {
+        return releaseName;
+    }
 
     /**
      * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Time to wait for execution of a helm stage. Defaults to 300 seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
-    Integer timeoutInSeconds;
+    private final Integer timeoutInSeconds;
+
+    public Integer getTimeoutInSeconds() {
+        return timeoutInSeconds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("rollbackPolicy")
-    DeployStageRollbackPolicy rollbackPolicy;
+    private final DeployStageRollbackPolicy rollbackPolicy;
+
+    public DeployStageRollbackPolicy getRollbackPolicy() {
+        return rollbackPolicy;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOkeHelmChartDeployStageDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", okeClusterDeployEnvironmentId=")
+                .append(String.valueOf(this.okeClusterDeployEnvironmentId));
+        sb.append(", helmChartDeployArtifactId=")
+                .append(String.valueOf(this.helmChartDeployArtifactId));
+        sb.append(", valuesArtifactIds=").append(String.valueOf(this.valuesArtifactIds));
+        sb.append(", releaseName=").append(String.valueOf(this.releaseName));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
+        sb.append(", rollbackPolicy=").append(String.valueOf(this.rollbackPolicy));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOkeHelmChartDeployStageDetails)) {
+            return false;
+        }
+
+        CreateOkeHelmChartDeployStageDetails other = (CreateOkeHelmChartDeployStageDetails) o;
+        return java.util.Objects.equals(
+                        this.okeClusterDeployEnvironmentId, other.okeClusterDeployEnvironmentId)
+                && java.util.Objects.equals(
+                        this.helmChartDeployArtifactId, other.helmChartDeployArtifactId)
+                && java.util.Objects.equals(this.valuesArtifactIds, other.valuesArtifactIds)
+                && java.util.Objects.equals(this.releaseName, other.releaseName)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
+                && java.util.Objects.equals(this.rollbackPolicy, other.rollbackPolicy)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.okeClusterDeployEnvironmentId == null
+                                ? 43
+                                : this.okeClusterDeployEnvironmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.helmChartDeployArtifactId == null
+                                ? 43
+                                : this.helmChartDeployArtifactId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.valuesArtifactIds == null ? 43 : this.valuesArtifactIds.hashCode());
+        result = (result * PRIME) + (this.releaseName == null ? 43 : this.releaseName.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rollbackPolicy == null ? 43 : this.rollbackPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAttributeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,26 +16,41 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * Unique data asset key.
      */
     private String dataAssetKey;
 
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
     /**
      * Unique entity key.
      */
     private String entityKey;
 
+    public String getEntityKey() {
+        return entityKey;
+    }
     /**
      * Unique attribute key.
      */
     private String attributeKey;
 
+    public String getAttributeKey() {
+        return attributeKey;
+    }
     /**
      * Indicates whether the list of objects and their relationships to this object will be provided in the response.
      */
     private Boolean isIncludeObjectRelationships;
 
+    public Boolean getIsIncludeObjectRelationships() {
+        return isIncludeObjectRelationships;
+    }
     /**
      * Specifies the fields to return in an entity attribute response.
      *
@@ -112,10 +119,18 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid Fields: " + key);
         }
     };
+
+    public java.util.List<Fields> getFields() {
+        return fields;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -123,6 +138,61 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
+
+        private String dataAssetKey = null;
+
+        /**
+         * Unique data asset key.
+         * @return this builder instance
+         */
+        public Builder dataAssetKey(String dataAssetKey) {
+            this.dataAssetKey = dataAssetKey;
+            return this;
+        }
+
+        private String entityKey = null;
+
+        /**
+         * Unique entity key.
+         * @return this builder instance
+         */
+        public Builder entityKey(String entityKey) {
+            this.entityKey = entityKey;
+            return this;
+        }
+
+        private String attributeKey = null;
+
+        /**
+         * Unique attribute key.
+         * @return this builder instance
+         */
+        public Builder attributeKey(String attributeKey) {
+            this.attributeKey = attributeKey;
+            return this;
+        }
+
+        private Boolean isIncludeObjectRelationships = null;
+
+        /**
+         * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+         * @return this builder instance
+         */
+        public Builder isIncludeObjectRelationships(Boolean isIncludeObjectRelationships) {
+            this.isIncludeObjectRelationships = isIncludeObjectRelationships;
+            return this;
+        }
 
         private java.util.List<Fields> fields = null;
 
@@ -143,6 +213,17 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -201,5 +282,100 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetAttributeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetAttributeRequest
+         */
+        public GetAttributeRequest buildWithoutInvocationCallback() {
+            GetAttributeRequest request = new GetAttributeRequest();
+            request.catalogId = catalogId;
+            request.dataAssetKey = dataAssetKey;
+            request.entityKey = entityKey;
+            request.attributeKey = attributeKey;
+            request.isIncludeObjectRelationships = isIncludeObjectRelationships;
+            request.fields = fields;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetAttributeRequest(catalogId, dataAssetKey, entityKey, attributeKey, isIncludeObjectRelationships, fields, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .dataAssetKey(dataAssetKey)
+                .entityKey(entityKey)
+                .attributeKey(attributeKey)
+                .isIncludeObjectRelationships(isIncludeObjectRelationships)
+                .fields(fields)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(",entityKey=").append(String.valueOf(this.entityKey));
+        sb.append(",attributeKey=").append(String.valueOf(this.attributeKey));
+        sb.append(",isIncludeObjectRelationships=")
+                .append(String.valueOf(this.isIncludeObjectRelationships));
+        sb.append(",fields=").append(String.valueOf(this.fields));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetAttributeRequest)) {
+            return false;
+        }
+
+        GetAttributeRequest other = (GetAttributeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.entityKey, other.entityKey)
+                && java.util.Objects.equals(this.attributeKey, other.attributeKey)
+                && java.util.Objects.equals(
+                        this.isIncludeObjectRelationships, other.isIncludeObjectRelationships)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.entityKey == null ? 43 : this.entityKey.hashCode());
+        result = (result * PRIME) + (this.attributeKey == null ? 43 : this.attributeKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncludeObjectRelationships == null
+                                ? 43
+                                : this.isIncludeObjectRelationships.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,20 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CustomEncryptionKey.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CustomEncryptionKey {
+public final class CustomEncryptionKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({"kmsKeyId", "keyState"})
+    public CustomEncryptionKey(String kmsKeyId, KeyState keyState) {
+        super();
+        this.kmsKeyId = kmsKeyId;
+        this.keyState = keyState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
@@ -69,15 +73,23 @@ public class CustomEncryptionKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Custom Encryption Key (Master Key) ocid.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     /**
      * Life cycle State of the custom key
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum KeyState {
         Active("ACTIVE"),
         Creating("CREATING"),
@@ -91,6 +103,9 @@ public class CustomEncryptionKey {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(KeyState.class);
 
         private final String value;
         private static java.util.Map<String, KeyState> map;
@@ -128,8 +143,54 @@ public class CustomEncryptionKey {
      * Life cycle State of the custom key
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyState")
-    KeyState keyState;
+    private final KeyState keyState;
+
+    public KeyState getKeyState() {
+        return keyState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CustomEncryptionKey(");
+        sb.append("kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", keyState=").append(String.valueOf(this.keyState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CustomEncryptionKey)) {
+            return false;
+        }
+
+        CustomEncryptionKey other = (CustomEncryptionKey) o;
+        return java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.keyState, other.keyState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.keyState == null ? 43 : this.keyState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

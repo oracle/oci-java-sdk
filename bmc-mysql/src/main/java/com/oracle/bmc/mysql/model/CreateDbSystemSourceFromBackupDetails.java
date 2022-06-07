@@ -16,22 +16,17 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDbSystemSourceFromBackupDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "sourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemSourceDetails {
+public final class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
@@ -68,6 +63,10 @@ public class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemSourceD
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateDbSystemSourceFromBackupDetails(String backupId) {
         super();
@@ -79,8 +78,53 @@ public class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemSourceD
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
-    String backupId;
+    private final String backupId;
+
+    public String getBackupId() {
+        return backupId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDbSystemSourceFromBackupDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", backupId=").append(String.valueOf(this.backupId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDbSystemSourceFromBackupDetails)) {
+            return false;
+        }
+
+        CreateDbSystemSourceFromBackupDetails other = (CreateDbSystemSourceFromBackupDetails) o;
+        return java.util.Objects.equals(this.backupId, other.backupId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.backupId == null ? 43 : this.backupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

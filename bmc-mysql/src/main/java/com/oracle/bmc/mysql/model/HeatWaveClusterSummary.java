@@ -16,16 +16,34 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HeatWaveClusterSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HeatWaveClusterSummary {
+public final class HeatWaveClusterSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "shapeName",
+        "clusterSize",
+        "lifecycleState",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public HeatWaveClusterSummary(
+            String shapeName,
+            Integer clusterSize,
+            HeatWaveCluster.LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.shapeName = shapeName;
+        this.clusterSize = clusterSize;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
@@ -104,13 +122,21 @@ public class HeatWaveClusterSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The shape determines resources to allocate to the HeatWave
      * nodes - CPU cores, memory.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    String shapeName;
+    private final String shapeName;
+
+    public String getShapeName() {
+        return shapeName;
+    }
 
     /**
      * The number of analytics-processing compute instances, of the
@@ -118,13 +144,21 @@ public class HeatWaveClusterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
-    Integer clusterSize;
+    private final Integer clusterSize;
+
+    public Integer getClusterSize() {
+        return clusterSize;
+    }
 
     /**
      * The current state of the MySQL HeatWave cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    HeatWaveCluster.LifecycleState lifecycleState;
+    private final HeatWaveCluster.LifecycleState lifecycleState;
+
+    public HeatWaveCluster.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the HeatWave cluster was created,
@@ -132,7 +166,11 @@ public class HeatWaveClusterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the HeatWave cluster was last updated,
@@ -140,8 +178,65 @@ public class HeatWaveClusterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HeatWaveClusterSummary(");
+        sb.append("shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HeatWaveClusterSummary)) {
+            return false;
+        }
+
+        HeatWaveClusterSummary other = (HeatWaveClusterSummary) o;
+        return java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.clusterSize, other.clusterSize)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

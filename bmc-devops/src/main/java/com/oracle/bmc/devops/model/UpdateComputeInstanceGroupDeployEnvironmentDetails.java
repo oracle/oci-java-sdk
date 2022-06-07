@@ -15,23 +15,18 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateComputeInstanceGroupDeployEnvironmentDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployEnvironmentType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateComputeInstanceGroupDeployEnvironmentDetails
+public final class UpdateComputeInstanceGroupDeployEnvironmentDetails
         extends UpdateDeployEnvironmentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -116,6 +111,10 @@ public class UpdateComputeInstanceGroupDeployEnvironmentDetails
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateComputeInstanceGroupDeployEnvironmentDetails(
             String description,
@@ -128,8 +127,60 @@ public class UpdateComputeInstanceGroupDeployEnvironmentDetails
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupSelectors")
-    ComputeInstanceGroupSelectorCollection computeInstanceGroupSelectors;
+    private final ComputeInstanceGroupSelectorCollection computeInstanceGroupSelectors;
+
+    public ComputeInstanceGroupSelectorCollection getComputeInstanceGroupSelectors() {
+        return computeInstanceGroupSelectors;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateComputeInstanceGroupDeployEnvironmentDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", computeInstanceGroupSelectors=")
+                .append(String.valueOf(this.computeInstanceGroupSelectors));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateComputeInstanceGroupDeployEnvironmentDetails)) {
+            return false;
+        }
+
+        UpdateComputeInstanceGroupDeployEnvironmentDetails other =
+                (UpdateComputeInstanceGroupDeployEnvironmentDetails) o;
+        return java.util.Objects.equals(
+                        this.computeInstanceGroupSelectors, other.computeInstanceGroupSelectors)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.computeInstanceGroupSelectors == null
+                                ? 43
+                                : this.computeInstanceGroupSelectors.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

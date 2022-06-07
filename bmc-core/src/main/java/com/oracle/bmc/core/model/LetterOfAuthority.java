@@ -17,16 +17,40 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LetterOfAuthority.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LetterOfAuthority {
+public final class LetterOfAuthority {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "authorizedEntityName",
+        "circuitType",
+        "crossConnectId",
+        "facilityLocation",
+        "portName",
+        "timeExpires",
+        "timeIssued"
+    })
+    public LetterOfAuthority(
+            String authorizedEntityName,
+            CircuitType circuitType,
+            String crossConnectId,
+            String facilityLocation,
+            String portName,
+            java.util.Date timeExpires,
+            java.util.Date timeIssued) {
+        super();
+        this.authorizedEntityName = authorizedEntityName;
+        this.circuitType = circuitType;
+        this.crossConnectId = crossConnectId;
+        this.facilityLocation = facilityLocation;
+        this.portName = portName;
+        this.timeExpires = timeExpires;
+        this.timeIssued = timeIssued;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("authorizedEntityName")
         private String authorizedEntityName;
@@ -131,15 +155,23 @@ public class LetterOfAuthority {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the entity authorized by this Letter of Authority.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorizedEntityName")
-    String authorizedEntityName;
+    private final String authorizedEntityName;
+
+    public String getAuthorizedEntityName() {
+        return authorizedEntityName;
+    }
+
     /**
      * The type of cross-connect fiber, termination, and optical specification.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CircuitType {
         SingleModeLc("Single_mode_LC"),
         SingleModeSc("Single_mode_SC"),
@@ -149,6 +181,9 @@ public class LetterOfAuthority {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CircuitType.class);
 
         private final String value;
         private static java.util.Map<String, CircuitType> map;
@@ -186,32 +221,52 @@ public class LetterOfAuthority {
      * The type of cross-connect fiber, termination, and optical specification.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("circuitType")
-    CircuitType circuitType;
+    private final CircuitType circuitType;
+
+    public CircuitType getCircuitType() {
+        return circuitType;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
-    String crossConnectId;
+    private final String crossConnectId;
+
+    public String getCrossConnectId() {
+        return crossConnectId;
+    }
 
     /**
      * The address of the FastConnect location.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("facilityLocation")
-    String facilityLocation;
+    private final String facilityLocation;
+
+    public String getFacilityLocation() {
+        return facilityLocation;
+    }
 
     /**
      * The meet-me room port for this cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portName")
-    String portName;
+    private final String portName;
+
+    public String getPortName() {
+        return portName;
+    }
 
     /**
      * The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
-    java.util.Date timeExpires;
+    private final java.util.Date timeExpires;
+
+    public java.util.Date getTimeExpires() {
+        return timeExpires;
+    }
 
     /**
      * The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -220,8 +275,77 @@ public class LetterOfAuthority {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
-    java.util.Date timeIssued;
+    private final java.util.Date timeIssued;
+
+    public java.util.Date getTimeIssued() {
+        return timeIssued;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LetterOfAuthority(");
+        sb.append("authorizedEntityName=").append(String.valueOf(this.authorizedEntityName));
+        sb.append(", circuitType=").append(String.valueOf(this.circuitType));
+        sb.append(", crossConnectId=").append(String.valueOf(this.crossConnectId));
+        sb.append(", facilityLocation=").append(String.valueOf(this.facilityLocation));
+        sb.append(", portName=").append(String.valueOf(this.portName));
+        sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
+        sb.append(", timeIssued=").append(String.valueOf(this.timeIssued));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LetterOfAuthority)) {
+            return false;
+        }
+
+        LetterOfAuthority other = (LetterOfAuthority) o;
+        return java.util.Objects.equals(this.authorizedEntityName, other.authorizedEntityName)
+                && java.util.Objects.equals(this.circuitType, other.circuitType)
+                && java.util.Objects.equals(this.crossConnectId, other.crossConnectId)
+                && java.util.Objects.equals(this.facilityLocation, other.facilityLocation)
+                && java.util.Objects.equals(this.portName, other.portName)
+                && java.util.Objects.equals(this.timeExpires, other.timeExpires)
+                && java.util.Objects.equals(this.timeIssued, other.timeIssued)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.authorizedEntityName == null
+                                ? 43
+                                : this.authorizedEntityName.hashCode());
+        result = (result * PRIME) + (this.circuitType == null ? 43 : this.circuitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.crossConnectId == null ? 43 : this.crossConnectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.facilityLocation == null ? 43 : this.facilityLocation.hashCode());
+        result = (result * PRIME) + (this.portName == null ? 43 : this.portName.hashCode());
+        result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
+        result = (result * PRIME) + (this.timeIssued == null ? 43 : this.timeIssued.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

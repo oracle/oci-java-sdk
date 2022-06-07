@@ -15,16 +15,26 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreatePeerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreatePeerDetails {
+public final class CreatePeerDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"role", "alias", "ocpuAllocationParam", "ad"})
+    public CreatePeerDetails(
+            PeerRole.Role role,
+            String alias,
+            OcpuAllocationNumberParam ocpuAllocationParam,
+            AvailabilityDomain.Ads ad) {
+        super();
+        this.role = role;
+        this.alias = alias;
+        this.ocpuAllocationParam = ocpuAllocationParam;
+        this.ad = ad;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private PeerRole.Role role;
@@ -92,27 +102,99 @@ public class CreatePeerDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Peer role
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    PeerRole.Role role;
+    private final PeerRole.Role role;
+
+    public PeerRole.Role getRole() {
+        return role;
+    }
 
     /**
      * peer alias
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
-    String alias;
+    private final String alias;
+
+    public String getAlias() {
+        return alias;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuAllocationParam")
-    OcpuAllocationNumberParam ocpuAllocationParam;
+    private final OcpuAllocationNumberParam ocpuAllocationParam;
+
+    public OcpuAllocationNumberParam getOcpuAllocationParam() {
+        return ocpuAllocationParam;
+    }
 
     /**
      * Availability Domain to place new peer
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
-    AvailabilityDomain.Ads ad;
+    private final AvailabilityDomain.Ads ad;
+
+    public AvailabilityDomain.Ads getAd() {
+        return ad;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreatePeerDetails(");
+        sb.append("role=").append(String.valueOf(this.role));
+        sb.append(", alias=").append(String.valueOf(this.alias));
+        sb.append(", ocpuAllocationParam=").append(String.valueOf(this.ocpuAllocationParam));
+        sb.append(", ad=").append(String.valueOf(this.ad));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreatePeerDetails)) {
+            return false;
+        }
+
+        CreatePeerDetails other = (CreatePeerDetails) o;
+        return java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.ocpuAllocationParam, other.ocpuAllocationParam)
+                && java.util.Objects.equals(this.ad, other.ad)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ocpuAllocationParam == null
+                                ? 43
+                                : this.ocpuAllocationParam.hashCode());
+        result = (result * PRIME) + (this.ad == null ? 43 : this.ad.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

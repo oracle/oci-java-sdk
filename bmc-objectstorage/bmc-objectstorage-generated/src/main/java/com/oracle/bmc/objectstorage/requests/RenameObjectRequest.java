@@ -9,14 +9,6 @@ import com.oracle.bmc.objectstorage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RenameObjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RenameObjectRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RenameObjectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.objectstorage.model.RenameObjectDetails> {
@@ -26,6 +18,9 @@ public class RenameObjectRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The name of the bucket. Avoid entering confidential information.
      * Example: {@code my-new-bucket1}
@@ -33,15 +28,25 @@ public class RenameObjectRequest
      */
     private String bucketName;
 
+    public String getBucketName() {
+        return bucketName;
+    }
     /**
      * The sourceName and newName of rename operation. Avoid entering confidential information.
      */
     private com.oracle.bmc.objectstorage.model.RenameObjectDetails renameObjectDetails;
 
+    public com.oracle.bmc.objectstorage.model.RenameObjectDetails getRenameObjectDetails() {
+        return renameObjectDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcClientRequestId;
+
+    public String getOpcClientRequestId() {
+        return opcClientRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -59,6 +64,53 @@ public class RenameObjectRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Object Storage namespace used for the request.
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String bucketName = null;
+
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         * @return this builder instance
+         */
+        public Builder bucketName(String bucketName) {
+            this.bucketName = bucketName;
+            return this;
+        }
+
+        private com.oracle.bmc.objectstorage.model.RenameObjectDetails renameObjectDetails = null;
+
+        /**
+         * The sourceName and newName of rename operation. Avoid entering confidential information.
+         * @return this builder instance
+         */
+        public Builder renameObjectDetails(
+                com.oracle.bmc.objectstorage.model.RenameObjectDetails renameObjectDetails) {
+            this.renameObjectDetails = renameObjectDetails;
+            return this;
+        }
+
+        private String opcClientRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcClientRequestId(String opcClientRequestId) {
+            this.opcClientRequestId = opcClientRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -124,5 +176,89 @@ public class RenameObjectRequest
             renameObjectDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of RenameObjectRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of RenameObjectRequest
+         */
+        public RenameObjectRequest buildWithoutInvocationCallback() {
+            RenameObjectRequest request = new RenameObjectRequest();
+            request.namespaceName = namespaceName;
+            request.bucketName = bucketName;
+            request.renameObjectDetails = renameObjectDetails;
+            request.opcClientRequestId = opcClientRequestId;
+            return request;
+            // new RenameObjectRequest(namespaceName, bucketName, renameObjectDetails, opcClientRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .bucketName(bucketName)
+                .renameObjectDetails(renameObjectDetails)
+                .opcClientRequestId(opcClientRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(",renameObjectDetails=").append(String.valueOf(this.renameObjectDetails));
+        sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RenameObjectRequest)) {
+            return false;
+        }
+
+        RenameObjectRequest other = (RenameObjectRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.renameObjectDetails, other.renameObjectDetails)
+                && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.renameObjectDetails == null
+                                ? 43
+                                : this.renameObjectDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcClientRequestId == null
+                                ? 43
+                                : this.opcClientRequestId.hashCode());
+        return result;
     }
 }

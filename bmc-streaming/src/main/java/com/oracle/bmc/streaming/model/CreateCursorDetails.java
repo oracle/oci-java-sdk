@@ -15,16 +15,22 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateCursorDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateCursorDetails {
+public final class CreateCursorDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"partition", "type", "offset", "time"})
+    public CreateCursorDetails(String partition, Type type, Long offset, java.util.Date time) {
+        super();
+        this.partition = partition;
+        this.type = type;
+        this.offset = offset;
+        this.time = time;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private String partition;
@@ -92,11 +98,20 @@ public class CreateCursorDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The partition to get messages from.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
-    String partition;
+    private final String partition;
+
+    public String getPartition() {
+        return partition;
+    }
+
     /**
      * The type of cursor, which determines the starting point from which the stream will be consumed:
      * <p>
@@ -153,21 +168,81 @@ public class CreateCursorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The offset to consume from if the cursor type is {@code AT_OFFSET} or {@code AFTER_OFFSET}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
-    Long offset;
+    private final Long offset;
+
+    public Long getOffset() {
+        return offset;
+    }
 
     /**
      * The time to consume from if the cursor type is {@code AT_TIME}, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
-    java.util.Date time;
+    private final java.util.Date time;
+
+    public java.util.Date getTime() {
+        return time;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateCursorDetails(");
+        sb.append("partition=").append(String.valueOf(this.partition));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", offset=").append(String.valueOf(this.offset));
+        sb.append(", time=").append(String.valueOf(this.time));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateCursorDetails)) {
+            return false;
+        }
+
+        CreateCursorDetails other = (CreateCursorDetails) o;
+        return java.util.Objects.equals(this.partition, other.partition)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.offset, other.offset)
+                && java.util.Objects.equals(this.time, other.time)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.partition == null ? 43 : this.partition.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
+        result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

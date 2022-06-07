@@ -15,14 +15,24 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodePoolOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NodePoolOptions {
+public final class NodePoolOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"kubernetesVersions", "shapes", "images", "sources"})
+    public NodePoolOptions(
+            java.util.List<String> kubernetesVersions,
+            java.util.List<String> shapes,
+            java.util.List<String> images,
+            java.util.List<NodeSourceOption> sources) {
+        super();
+        this.kubernetesVersions = kubernetesVersions;
+        this.shapes = shapes;
+        this.images = images;
+        this.sources = sources;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersions")
         private java.util.List<String> kubernetesVersions;
@@ -90,17 +100,29 @@ public class NodePoolOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Available Kubernetes versions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersions")
-    java.util.List<String> kubernetesVersions;
+    private final java.util.List<String> kubernetesVersions;
+
+    public java.util.List<String> getKubernetesVersions() {
+        return kubernetesVersions;
+    }
 
     /**
      * Available shapes for nodes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapes")
-    java.util.List<String> shapes;
+    private final java.util.List<String> shapes;
+
+    public java.util.List<String> getShapes() {
+        return shapes;
+    }
 
     /**
      * Deprecated. See sources.
@@ -109,14 +131,74 @@ public class NodePoolOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("images")
-    java.util.List<String> images;
+    private final java.util.List<String> images;
+
+    public java.util.List<String> getImages() {
+        return images;
+    }
 
     /**
      * Available source of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
-    java.util.List<NodeSourceOption> sources;
+    private final java.util.List<NodeSourceOption> sources;
+
+    public java.util.List<NodeSourceOption> getSources() {
+        return sources;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NodePoolOptions(");
+        sb.append("kubernetesVersions=").append(String.valueOf(this.kubernetesVersions));
+        sb.append(", shapes=").append(String.valueOf(this.shapes));
+        sb.append(", images=").append(String.valueOf(this.images));
+        sb.append(", sources=").append(String.valueOf(this.sources));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NodePoolOptions)) {
+            return false;
+        }
+
+        NodePoolOptions other = (NodePoolOptions) o;
+        return java.util.Objects.equals(this.kubernetesVersions, other.kubernetesVersions)
+                && java.util.Objects.equals(this.shapes, other.shapes)
+                && java.util.Objects.equals(this.images, other.images)
+                && java.util.Objects.equals(this.sources, other.sources)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.kubernetesVersions == null
+                                ? 43
+                                : this.kubernetesVersions.hashCode());
+        result = (result * PRIME) + (this.shapes == null ? 43 : this.shapes.hashCode());
+        result = (result * PRIME) + (this.images == null ? 43 : this.images.hashCode());
+        result = (result * PRIME) + (this.sources == null ? 43 : this.sources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

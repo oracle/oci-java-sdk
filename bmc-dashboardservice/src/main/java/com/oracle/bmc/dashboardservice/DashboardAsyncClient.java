@@ -7,6 +7,7 @@ package com.oracle.bmc.dashboardservice;
 import com.oracle.bmc.dashboardservice.internal.http.*;
 import com.oracle.bmc.dashboardservice.requests.*;
 import com.oracle.bmc.dashboardservice.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Dashboard service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.dashboardservice.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
-@lombok.extern.slf4j.Slf4j
 public class DashboardAsyncClient implements DashboardAsync {
     /**
      * Service instance for Dashboard.
@@ -34,7 +34,9 @@ public class DashboardAsyncClient implements DashboardAsync {
                     .serviceEndpointTemplate("https://dashboard.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DashboardAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class DashboardAsyncClient implements DashboardAsync {
          * @return the client
          */
         public DashboardAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DashboardAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class DashboardAsyncClient implements DashboardAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

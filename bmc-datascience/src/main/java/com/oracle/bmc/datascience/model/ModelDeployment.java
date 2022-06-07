@@ -16,14 +16,59 @@ package com.oracle.bmc.datascience.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ModelDeployment.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModelDeployment {
+public final class ModelDeployment {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "timeCreated",
+        "displayName",
+        "description",
+        "projectId",
+        "createdBy",
+        "compartmentId",
+        "modelDeploymentConfigurationDetails",
+        "categoryLogDetails",
+        "modelDeploymentUrl",
+        "lifecycleState",
+        "lifecycleDetails",
+        "freeformTags",
+        "definedTags"
+    })
+    public ModelDeployment(
+            String id,
+            java.util.Date timeCreated,
+            String displayName,
+            String description,
+            String projectId,
+            String createdBy,
+            String compartmentId,
+            ModelDeploymentConfigurationDetails modelDeploymentConfigurationDetails,
+            CategoryLogDetails categoryLogDetails,
+            String modelDeploymentUrl,
+            ModelDeploymentLifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.timeCreated = timeCreated;
+        this.displayName = displayName;
+        this.description = description;
+        this.projectId = projectId;
+        this.createdBy = createdBy;
+        this.compartmentId = compartmentId;
+        this.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
+        this.categoryLogDetails = categoryLogDetails;
+        this.modelDeploymentUrl = modelDeploymentUrl;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -208,11 +253,19 @@ public class ModelDeployment {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -220,7 +273,11 @@ public class ModelDeployment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -228,55 +285,95 @@ public class ModelDeployment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A short description of the model deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
-    String projectId;
+    private final String projectId;
+
+    public String getProjectId() {
+        return projectId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    String createdBy;
+    private final String createdBy;
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment's compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("modelDeploymentConfigurationDetails")
-    ModelDeploymentConfigurationDetails modelDeploymentConfigurationDetails;
+    private final ModelDeploymentConfigurationDetails modelDeploymentConfigurationDetails;
+
+    public ModelDeploymentConfigurationDetails getModelDeploymentConfigurationDetails() {
+        return modelDeploymentConfigurationDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("categoryLogDetails")
-    CategoryLogDetails categoryLogDetails;
+    private final CategoryLogDetails categoryLogDetails;
+
+    public CategoryLogDetails getCategoryLogDetails() {
+        return categoryLogDetails;
+    }
 
     /**
      * The URL to interact with the model deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelDeploymentUrl")
-    String modelDeploymentUrl;
+    private final String modelDeploymentUrl;
+
+    public String getModelDeploymentUrl() {
+        return modelDeploymentUrl;
+    }
 
     /**
      * The state of the model deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ModelDeploymentLifecycleState lifecycleState;
+    private final ModelDeploymentLifecycleState lifecycleState;
+
+    public ModelDeploymentLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Details about the state of the model deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -284,7 +381,11 @@ public class ModelDeployment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -292,8 +393,111 @@ public class ModelDeployment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModelDeployment(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", projectId=").append(String.valueOf(this.projectId));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", modelDeploymentConfigurationDetails=")
+                .append(String.valueOf(this.modelDeploymentConfigurationDetails));
+        sb.append(", categoryLogDetails=").append(String.valueOf(this.categoryLogDetails));
+        sb.append(", modelDeploymentUrl=").append(String.valueOf(this.modelDeploymentUrl));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModelDeployment)) {
+            return false;
+        }
+
+        ModelDeployment other = (ModelDeployment) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.projectId, other.projectId)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.modelDeploymentConfigurationDetails,
+                        other.modelDeploymentConfigurationDetails)
+                && java.util.Objects.equals(this.categoryLogDetails, other.categoryLogDetails)
+                && java.util.Objects.equals(this.modelDeploymentUrl, other.modelDeploymentUrl)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeploymentConfigurationDetails == null
+                                ? 43
+                                : this.modelDeploymentConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.categoryLogDetails == null
+                                ? 43
+                                : this.categoryLogDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeploymentUrl == null
+                                ? 43
+                                : this.modelDeploymentUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

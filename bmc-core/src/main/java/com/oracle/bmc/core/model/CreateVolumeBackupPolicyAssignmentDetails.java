@@ -15,16 +15,20 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVolumeBackupPolicyAssignmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateVolumeBackupPolicyAssignmentDetails {
+public final class CreateVolumeBackupPolicyAssignmentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"assetId", "policyId"})
+    public CreateVolumeBackupPolicyAssignmentDetails(String assetId, String policyId) {
+        super();
+        this.assetId = assetId;
+        this.policyId = policyId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("assetId")
         private String assetId;
@@ -70,18 +74,73 @@ public class CreateVolumeBackupPolicyAssignmentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the volume to assign the policy to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetId")
-    String assetId;
+    private final String assetId;
+
+    public String getAssetId() {
+        return assetId;
+    }
 
     /**
      * The OCID of the volume backup policy to assign to the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
-    String policyId;
+    private final String policyId;
+
+    public String getPolicyId() {
+        return policyId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateVolumeBackupPolicyAssignmentDetails(");
+        sb.append("assetId=").append(String.valueOf(this.assetId));
+        sb.append(", policyId=").append(String.valueOf(this.policyId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateVolumeBackupPolicyAssignmentDetails)) {
+            return false;
+        }
+
+        CreateVolumeBackupPolicyAssignmentDetails other =
+                (CreateVolumeBackupPolicyAssignmentDetails) o;
+        return java.util.Objects.equals(this.assetId, other.assetId)
+                && java.util.Objects.equals(this.policyId, other.policyId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.assetId == null ? 43 : this.assetId.hashCode());
+        result = (result * PRIME) + (this.policyId == null ? 43 : this.policyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

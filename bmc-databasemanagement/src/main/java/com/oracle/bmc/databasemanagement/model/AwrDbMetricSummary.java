@@ -15,16 +15,28 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AwrDbMetricSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AwrDbMetricSummary {
+public final class AwrDbMetricSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "timestamp", "avgValue", "minValue", "maxValue"})
+    public AwrDbMetricSummary(
+            String name,
+            java.util.Date timestamp,
+            Double avgValue,
+            Double minValue,
+            Double maxValue) {
+        super();
+        this.name = name;
+        this.timestamp = timestamp;
+        this.avgValue = avgValue;
+        this.minValue = minValue;
+        this.maxValue = maxValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -102,36 +114,111 @@ public class AwrDbMetricSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The time of the sampling.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * The average value of the sampling period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
-    Double avgValue;
+    private final Double avgValue;
+
+    public Double getAvgValue() {
+        return avgValue;
+    }
 
     /**
      * The minimum value of the sampling period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minValue")
-    Double minValue;
+    private final Double minValue;
+
+    public Double getMinValue() {
+        return minValue;
+    }
 
     /**
      * The maximum value of the sampling period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
-    Double maxValue;
+    private final Double maxValue;
+
+    public Double getMaxValue() {
+        return maxValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AwrDbMetricSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", avgValue=").append(String.valueOf(this.avgValue));
+        sb.append(", minValue=").append(String.valueOf(this.minValue));
+        sb.append(", maxValue=").append(String.valueOf(this.maxValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AwrDbMetricSummary)) {
+            return false;
+        }
+
+        AwrDbMetricSummary other = (AwrDbMetricSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.avgValue, other.avgValue)
+                && java.util.Objects.equals(this.minValue, other.minValue)
+                && java.util.Objects.equals(this.maxValue, other.maxValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.avgValue == null ? 43 : this.avgValue.hashCode());
+        result = (result * PRIME) + (this.minValue == null ? 43 : this.minValue.hashCode());
+        result = (result * PRIME) + (this.maxValue == null ? 43 : this.maxValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

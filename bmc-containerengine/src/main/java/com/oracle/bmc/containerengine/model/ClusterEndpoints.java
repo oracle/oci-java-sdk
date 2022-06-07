@@ -15,14 +15,29 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterEndpoints.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClusterEndpoints {
+public final class ClusterEndpoints {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "kubernetes",
+        "publicEndpoint",
+        "privateEndpoint",
+        "vcnHostnameEndpoint"
+    })
+    public ClusterEndpoints(
+            String kubernetes,
+            String publicEndpoint,
+            String privateEndpoint,
+            String vcnHostnameEndpoint) {
+        super();
+        this.kubernetes = kubernetes;
+        this.publicEndpoint = publicEndpoint;
+        this.privateEndpoint = privateEndpoint;
+        this.vcnHostnameEndpoint = vcnHostnameEndpoint;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetes")
         private String kubernetes;
@@ -91,23 +106,39 @@ public class ClusterEndpoints {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The non-native networking Kubernetes API server endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetes")
-    String kubernetes;
+    private final String kubernetes;
+
+    public String getKubernetes() {
+        return kubernetes;
+    }
 
     /**
      * The public native networking Kubernetes API server endpoint, if one was requested.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
-    String publicEndpoint;
+    private final String publicEndpoint;
+
+    public String getPublicEndpoint() {
+        return publicEndpoint;
+    }
 
     /**
      * The private native networking Kubernetes API server endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
-    String privateEndpoint;
+    private final String privateEndpoint;
+
+    public String getPrivateEndpoint() {
+        return privateEndpoint;
+    }
 
     /**
      * The FQDN assigned to the Kubernetes API private endpoint.
@@ -115,8 +146,68 @@ public class ClusterEndpoints {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnHostnameEndpoint")
-    String vcnHostnameEndpoint;
+    private final String vcnHostnameEndpoint;
+
+    public String getVcnHostnameEndpoint() {
+        return vcnHostnameEndpoint;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClusterEndpoints(");
+        sb.append("kubernetes=").append(String.valueOf(this.kubernetes));
+        sb.append(", publicEndpoint=").append(String.valueOf(this.publicEndpoint));
+        sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
+        sb.append(", vcnHostnameEndpoint=").append(String.valueOf(this.vcnHostnameEndpoint));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClusterEndpoints)) {
+            return false;
+        }
+
+        ClusterEndpoints other = (ClusterEndpoints) o;
+        return java.util.Objects.equals(this.kubernetes, other.kubernetes)
+                && java.util.Objects.equals(this.publicEndpoint, other.publicEndpoint)
+                && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
+                && java.util.Objects.equals(this.vcnHostnameEndpoint, other.vcnHostnameEndpoint)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.kubernetes == null ? 43 : this.kubernetes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicEndpoint == null ? 43 : this.publicEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpoint == null ? 43 : this.privateEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vcnHostnameEndpoint == null
+                                ? 43
+                                : this.vcnHostnameEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

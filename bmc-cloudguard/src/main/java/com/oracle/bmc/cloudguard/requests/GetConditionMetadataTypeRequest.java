@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetConditionMetadataTypeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetConditionMetadataTypeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetConditionMetadataTypeRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,20 +17,33 @@ public class GetConditionMetadataTypeRequest
      */
     private com.oracle.bmc.cloudguard.model.ConditionTypeEnum conditionMetadataTypeId;
 
+    public com.oracle.bmc.cloudguard.model.ConditionTypeEnum getConditionMetadataTypeId() {
+        return conditionMetadataTypeId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * ServiceType filter for the condition meta data.
      */
     private String serviceType;
 
+    public String getServiceType() {
+        return serviceType;
+    }
     /**
      * Resource filter for the condition meta data.
      */
     private String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -46,6 +51,51 @@ public class GetConditionMetadataTypeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.cloudguard.model.ConditionTypeEnum conditionMetadataTypeId = null;
+
+        /**
+         * The type of the condition meta data.
+         * @return this builder instance
+         */
+        public Builder conditionMetadataTypeId(
+                com.oracle.bmc.cloudguard.model.ConditionTypeEnum conditionMetadataTypeId) {
+            this.conditionMetadataTypeId = conditionMetadataTypeId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String serviceType = null;
+
+        /**
+         * ServiceType filter for the condition meta data.
+         * @return this builder instance
+         */
+        public Builder serviceType(String serviceType) {
+            this.serviceType = serviceType;
+            return this;
+        }
+
+        private String resourceType = null;
+
+        /**
+         * Resource filter for the condition meta data.
+         * @return this builder instance
+         */
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -100,5 +150,84 @@ public class GetConditionMetadataTypeRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetConditionMetadataTypeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetConditionMetadataTypeRequest
+         */
+        public GetConditionMetadataTypeRequest buildWithoutInvocationCallback() {
+            GetConditionMetadataTypeRequest request = new GetConditionMetadataTypeRequest();
+            request.conditionMetadataTypeId = conditionMetadataTypeId;
+            request.opcRequestId = opcRequestId;
+            request.serviceType = serviceType;
+            request.resourceType = resourceType;
+            return request;
+            // new GetConditionMetadataTypeRequest(conditionMetadataTypeId, opcRequestId, serviceType, resourceType);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .conditionMetadataTypeId(conditionMetadataTypeId)
+                .opcRequestId(opcRequestId)
+                .serviceType(serviceType)
+                .resourceType(resourceType);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",conditionMetadataTypeId=").append(String.valueOf(this.conditionMetadataTypeId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",serviceType=").append(String.valueOf(this.serviceType));
+        sb.append(",resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetConditionMetadataTypeRequest)) {
+            return false;
+        }
+
+        GetConditionMetadataTypeRequest other = (GetConditionMetadataTypeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.conditionMetadataTypeId, other.conditionMetadataTypeId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.serviceType, other.serviceType)
+                && java.util.Objects.equals(this.resourceType, other.resourceType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.conditionMetadataTypeId == null
+                                ? 43
+                                : this.conditionMetadataTypeId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.serviceType == null ? 43 : this.serviceType.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        return result;
     }
 }

@@ -7,6 +7,7 @@ package com.oracle.bmc.keymanagement;
 import com.oracle.bmc.keymanagement.internal.http.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for KmsManagement service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.keymanagement.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.extern.slf4j.Slf4j
 public class KmsManagementAsyncClient implements KmsManagementAsync {
     /**
      * Service instance for KmsManagement.
@@ -34,7 +34,9 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                     .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(KmsManagementAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -282,6 +284,10 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
      */
     public static com.oracle.bmc.keymanagement.KmsManagementAsyncClientBuilder builder() {
         return new com.oracle.bmc.keymanagement.KmsManagementAsyncClientBuilder(SERVICE);
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

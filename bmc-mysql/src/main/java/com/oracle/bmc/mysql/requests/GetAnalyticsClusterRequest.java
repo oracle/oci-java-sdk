@@ -9,14 +9,6 @@ import com.oracle.bmc.mysql.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAnalyticsClusterRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetAnalyticsClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetAnalyticsClusterRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String dbSystemId;
 
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
     /**
      * Customer-defined unique identifier for the request. If you need to
      * contact Oracle about a specific request, please provide the request
@@ -32,6 +27,9 @@ public class GetAnalyticsClusterRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For conditional requests. In the GET call for a resource, set the
      * {@code If-None-Match} header to the value of the ETag from a previous GET (or
@@ -42,12 +40,57 @@ public class GetAnalyticsClusterRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String ifNoneMatch;
 
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetAnalyticsClusterRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String dbSystemId = null;
+
+        /**
+         * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifNoneMatch = null;
+
+        /**
+         * For conditional requests. In the GET call for a resource, set the
+         * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+         * POST or PUT) response for that resource. The server will return with
+         * either a 304 Not Modified response if the resource has not changed, or a
+         * 200 OK response with the updated representation.
+         *
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -101,5 +144,74 @@ public class GetAnalyticsClusterRequest extends com.oracle.bmc.requests.BmcReque
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetAnalyticsClusterRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetAnalyticsClusterRequest
+         */
+        public GetAnalyticsClusterRequest buildWithoutInvocationCallback() {
+            GetAnalyticsClusterRequest request = new GetAnalyticsClusterRequest();
+            request.dbSystemId = dbSystemId;
+            request.opcRequestId = opcRequestId;
+            request.ifNoneMatch = ifNoneMatch;
+            return request;
+            // new GetAnalyticsClusterRequest(dbSystemId, opcRequestId, ifNoneMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .dbSystemId(dbSystemId)
+                .opcRequestId(opcRequestId)
+                .ifNoneMatch(ifNoneMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetAnalyticsClusterRequest)) {
+            return false;
+        }
+
+        GetAnalyticsClusterRequest other = (GetAnalyticsClusterRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
+        return result;
     }
 }

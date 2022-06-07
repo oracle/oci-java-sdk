@@ -15,16 +15,49 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagementAgentImage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagementAgentImage {
+public final class ManagementAgentImage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "platformType",
+        "platformName",
+        "packageType",
+        "packageArchitectureType",
+        "version",
+        "size",
+        "checksum",
+        "objectUrl",
+        "lifecycleState"
+    })
+    public ManagementAgentImage(
+            String id,
+            PlatformTypes platformType,
+            String platformName,
+            PackageTypes packageType,
+            ArchitectureTypes packageArchitectureType,
+            String version,
+            java.math.BigDecimal size,
+            String checksum,
+            String objectUrl,
+            LifecycleStates lifecycleState) {
+        super();
+        this.id = id;
+        this.platformType = platformType;
+        this.platformName = platformName;
+        this.packageType = packageType;
+        this.packageArchitectureType = packageArchitectureType;
+        this.version = version;
+        this.size = size;
+        this.checksum = checksum;
+        this.objectUrl = objectUrl;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -162,66 +195,184 @@ public class ManagementAgentImage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Agent image resource id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Agent image platform type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
-    PlatformTypes platformType;
+    private final PlatformTypes platformType;
+
+    public PlatformTypes getPlatformType() {
+        return platformType;
+    }
 
     /**
      * Agent image platform display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
-    String platformName;
+    private final String platformName;
+
+    public String getPlatformName() {
+        return platformName;
+    }
 
     /**
      * The installation package type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
-    PackageTypes packageType;
+    private final PackageTypes packageType;
+
+    public PackageTypes getPackageType() {
+        return packageType;
+    }
 
     /**
      * The installation package target architecture type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageArchitectureType")
-    ArchitectureTypes packageArchitectureType;
+    private final ArchitectureTypes packageArchitectureType;
+
+    public ArchitectureTypes getPackageArchitectureType() {
+        return packageArchitectureType;
+    }
 
     /**
      * Agent image version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * Agent image size in bytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
-    java.math.BigDecimal size;
+    private final java.math.BigDecimal size;
+
+    public java.math.BigDecimal getSize() {
+        return size;
+    }
 
     /**
      * Agent image content SHA256 Hash
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
-    String checksum;
+    private final String checksum;
+
+    public String getChecksum() {
+        return checksum;
+    }
 
     /**
      * Object storage URL for download
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectUrl")
-    String objectUrl;
+    private final String objectUrl;
+
+    public String getObjectUrl() {
+        return objectUrl;
+    }
 
     /**
      * The current state of Management Agent Image
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagementAgentImage(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", platformType=").append(String.valueOf(this.platformType));
+        sb.append(", platformName=").append(String.valueOf(this.platformName));
+        sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", packageArchitectureType=")
+                .append(String.valueOf(this.packageArchitectureType));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", size=").append(String.valueOf(this.size));
+        sb.append(", checksum=").append(String.valueOf(this.checksum));
+        sb.append(", objectUrl=").append(String.valueOf(this.objectUrl));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagementAgentImage)) {
+            return false;
+        }
+
+        ManagementAgentImage other = (ManagementAgentImage) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.platformType, other.platformType)
+                && java.util.Objects.equals(this.platformName, other.platformName)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(
+                        this.packageArchitectureType, other.packageArchitectureType)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(this.checksum, other.checksum)
+                && java.util.Objects.equals(this.objectUrl, other.objectUrl)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result = (result * PRIME) + (this.platformName == null ? 43 : this.platformName.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageArchitectureType == null
+                                ? 43
+                                : this.packageArchitectureType.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result = (result * PRIME) + (this.checksum == null ? 43 : this.checksum.hashCode());
+        result = (result * PRIME) + (this.objectUrl == null ? 43 : this.objectUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

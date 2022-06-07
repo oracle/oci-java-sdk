@@ -15,16 +15,43 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IngressSecurityRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IngressSecurityRule {
+public final class IngressSecurityRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "icmpOptions",
+        "isStateless",
+        "protocol",
+        "source",
+        "sourceType",
+        "tcpOptions",
+        "udpOptions",
+        "description"
+    })
+    public IngressSecurityRule(
+            IcmpOptions icmpOptions,
+            Boolean isStateless,
+            String protocol,
+            String source,
+            SourceType sourceType,
+            TcpOptions tcpOptions,
+            UdpOptions udpOptions,
+            String description) {
+        super();
+        this.icmpOptions = icmpOptions;
+        this.isStateless = isStateless;
+        this.protocol = protocol;
+        this.source = source;
+        this.sourceType = sourceType;
+        this.tcpOptions = tcpOptions;
+        this.udpOptions = udpOptions;
+        this.description = description;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
         private IcmpOptions icmpOptions;
@@ -140,8 +167,16 @@ public class IngressSecurityRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
-    IcmpOptions icmpOptions;
+    private final IcmpOptions icmpOptions;
+
+    public IcmpOptions getIcmpOptions() {
+        return icmpOptions;
+    }
 
     /**
      * A stateless rule allows traffic in one direction. Remember to add a corresponding
@@ -152,7 +187,11 @@ public class IngressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
-    Boolean isStateless;
+    private final Boolean isStateless;
+
+    public Boolean getIsStateless() {
+        return isStateless;
+    }
 
     /**
      * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
@@ -162,7 +201,11 @@ public class IngressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
+    private final String protocol;
+
+    public String getProtocol() {
+        return protocol;
+    }
 
     /**
      * Conceptually, this is the range of IP addresses that a packet coming into the instance
@@ -180,7 +223,12 @@ public class IngressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    String source;
+    private final String source;
+
+    public String getSource() {
+        return source;
+    }
+
     /**
      * Type of source for the rule. The default is {@code CIDR_BLOCK}.
      * <p>
@@ -191,7 +239,6 @@ public class IngressSecurityRule {
      *     particular {@code Service} through a service gateway).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SourceType {
         CidrBlock("CIDR_BLOCK"),
         ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
@@ -201,6 +248,9 @@ public class IngressSecurityRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SourceType.class);
 
         private final String value;
         private static java.util.Map<String, SourceType> map;
@@ -245,21 +295,97 @@ public class IngressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
-    SourceType sourceType;
+    private final SourceType sourceType;
+
+    public SourceType getSourceType() {
+        return sourceType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("tcpOptions")
-    TcpOptions tcpOptions;
+    private final TcpOptions tcpOptions;
+
+    public TcpOptions getTcpOptions() {
+        return tcpOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("udpOptions")
-    UdpOptions udpOptions;
+    private final UdpOptions udpOptions;
+
+    public UdpOptions getUdpOptions() {
+        return udpOptions;
+    }
 
     /**
      * An optional description of your choice for the rule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IngressSecurityRule(");
+        sb.append("icmpOptions=").append(String.valueOf(this.icmpOptions));
+        sb.append(", isStateless=").append(String.valueOf(this.isStateless));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
+        sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IngressSecurityRule)) {
+            return false;
+        }
+
+        IngressSecurityRule other = (IngressSecurityRule) o;
+        return java.util.Objects.equals(this.icmpOptions, other.icmpOptions)
+                && java.util.Objects.equals(this.isStateless, other.isStateless)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
+                && java.util.Objects.equals(this.udpOptions, other.udpOptions)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.icmpOptions == null ? 43 : this.icmpOptions.hashCode());
+        result = (result * PRIME) + (this.isStateless == null ? 43 : this.isStateless.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
+        result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

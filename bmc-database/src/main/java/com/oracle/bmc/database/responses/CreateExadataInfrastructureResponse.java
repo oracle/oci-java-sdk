@@ -7,10 +7,6 @@ package com.oracle.bmc.database.responses;
 import com.oracle.bmc.database.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateExadataInfrastructureResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
@@ -18,10 +14,18 @@ public class CreateExadataInfrastructureResponse extends com.oracle.bmc.response
      */
     private String opcWorkRequestId;
 
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -30,10 +34,18 @@ public class CreateExadataInfrastructureResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned ExadataInfrastructure instance.
      */
     private com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure;
+
+    public com.oracle.bmc.database.model.ExadataInfrastructure getExadataInfrastructure() {
+        return exadataInfrastructure;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -63,6 +75,35 @@ public class CreateExadataInfrastructureResponse extends com.oracle.bmc.response
             return this;
         }
 
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure;
+
+        public Builder exadataInfrastructure(
+                com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure) {
+            this.exadataInfrastructure = exadataInfrastructure;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -85,5 +126,57 @@ public class CreateExadataInfrastructureResponse extends com.oracle.bmc.response
                     opcRequestId,
                     exadataInfrastructure);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",exadataInfrastructure=").append(String.valueOf(exadataInfrastructure));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateExadataInfrastructureResponse)) {
+            return false;
+        }
+
+        CreateExadataInfrastructureResponse other = (CreateExadataInfrastructureResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.exadataInfrastructure, other.exadataInfrastructure);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfrastructure == null
+                                ? 43
+                                : this.exadataInfrastructure.hashCode());
+        return result;
     }
 }

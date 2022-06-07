@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectRemotePeeringConnectionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ConnectRemotePeeringConnectionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ConnectRemotePeeringConnectionsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails> {
@@ -26,12 +18,20 @@ public class ConnectRemotePeeringConnectionsRequest
      */
     private String remotePeeringConnectionId;
 
+    public String getRemotePeeringConnectionId() {
+        return remotePeeringConnectionId;
+    }
     /**
      * Details to connect peering connection with peering connection from remote region
      *
      */
     private com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails
             connectRemotePeeringConnectionsDetails;
+
+    public com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails
+            getConnectRemotePeeringConnectionsDetails() {
+        return connectRemotePeeringConnectionsDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -50,6 +50,32 @@ public class ConnectRemotePeeringConnectionsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String remotePeeringConnectionId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
+         * @return this builder instance
+         */
+        public Builder remotePeeringConnectionId(String remotePeeringConnectionId) {
+            this.remotePeeringConnectionId = remotePeeringConnectionId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails
+                connectRemotePeeringConnectionsDetails = null;
+
+        /**
+         * Details to connect peering connection with peering connection from remote region
+         *
+         * @return this builder instance
+         */
+        public Builder connectRemotePeeringConnectionsDetails(
+                com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails
+                        connectRemotePeeringConnectionsDetails) {
+            this.connectRemotePeeringConnectionsDetails = connectRemotePeeringConnectionsDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -114,5 +140,83 @@ public class ConnectRemotePeeringConnectionsRequest
             connectRemotePeeringConnectionsDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ConnectRemotePeeringConnectionsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ConnectRemotePeeringConnectionsRequest
+         */
+        public ConnectRemotePeeringConnectionsRequest buildWithoutInvocationCallback() {
+            ConnectRemotePeeringConnectionsRequest request =
+                    new ConnectRemotePeeringConnectionsRequest();
+            request.remotePeeringConnectionId = remotePeeringConnectionId;
+            request.connectRemotePeeringConnectionsDetails = connectRemotePeeringConnectionsDetails;
+            return request;
+            // new ConnectRemotePeeringConnectionsRequest(remotePeeringConnectionId, connectRemotePeeringConnectionsDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .remotePeeringConnectionId(remotePeeringConnectionId)
+                .connectRemotePeeringConnectionsDetails(connectRemotePeeringConnectionsDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",remotePeeringConnectionId=")
+                .append(String.valueOf(this.remotePeeringConnectionId));
+        sb.append(",connectRemotePeeringConnectionsDetails=")
+                .append(String.valueOf(this.connectRemotePeeringConnectionsDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConnectRemotePeeringConnectionsRequest)) {
+            return false;
+        }
+
+        ConnectRemotePeeringConnectionsRequest other = (ConnectRemotePeeringConnectionsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.remotePeeringConnectionId, other.remotePeeringConnectionId)
+                && java.util.Objects.equals(
+                        this.connectRemotePeeringConnectionsDetails,
+                        other.connectRemotePeeringConnectionsDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.remotePeeringConnectionId == null
+                                ? 43
+                                : this.remotePeeringConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectRemotePeeringConnectionsDetails == null
+                                ? 43
+                                : this.connectRemotePeeringConnectionsDetails.hashCode());
+        return result;
     }
 }

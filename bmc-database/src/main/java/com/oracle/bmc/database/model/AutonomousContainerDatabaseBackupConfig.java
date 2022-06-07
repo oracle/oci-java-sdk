@@ -16,16 +16,22 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousContainerDatabaseBackupConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousContainerDatabaseBackupConfig {
+public final class AutonomousContainerDatabaseBackupConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"backupDestinationDetails", "recoveryWindowInDays"})
+    public AutonomousContainerDatabaseBackupConfig(
+            java.util.List<BackupDestinationDetails> backupDestinationDetails,
+            Integer recoveryWindowInDays) {
+        super();
+        this.backupDestinationDetails = backupDestinationDetails;
+        this.recoveryWindowInDays = recoveryWindowInDays;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
         private java.util.List<BackupDestinationDetails> backupDestinationDetails;
@@ -75,11 +81,19 @@ public class AutonomousContainerDatabaseBackupConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Backup destination details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
-    java.util.List<BackupDestinationDetails> backupDestinationDetails;
+    private final java.util.List<BackupDestinationDetails> backupDestinationDetails;
+
+    public java.util.List<BackupDestinationDetails> getBackupDestinationDetails() {
+        return backupDestinationDetails;
+    }
 
     /**
      * Number of days between the current and the earliest point of recoverability covered by automatic backups.
@@ -88,8 +102,64 @@ public class AutonomousContainerDatabaseBackupConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
-    Integer recoveryWindowInDays;
+    private final Integer recoveryWindowInDays;
+
+    public Integer getRecoveryWindowInDays() {
+        return recoveryWindowInDays;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousContainerDatabaseBackupConfig(");
+        sb.append("backupDestinationDetails=")
+                .append(String.valueOf(this.backupDestinationDetails));
+        sb.append(", recoveryWindowInDays=").append(String.valueOf(this.recoveryWindowInDays));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousContainerDatabaseBackupConfig)) {
+            return false;
+        }
+
+        AutonomousContainerDatabaseBackupConfig other = (AutonomousContainerDatabaseBackupConfig) o;
+        return java.util.Objects.equals(
+                        this.backupDestinationDetails, other.backupDestinationDetails)
+                && java.util.Objects.equals(this.recoveryWindowInDays, other.recoveryWindowInDays)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationDetails == null
+                                ? 43
+                                : this.backupDestinationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recoveryWindowInDays == null
+                                ? 43
+                                : this.recoveryWindowInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

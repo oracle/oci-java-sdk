@@ -6,6 +6,7 @@ package com.oracle.bmc.core;
 
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -15,21 +16,27 @@ import com.oracle.bmc.core.responses.*;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ComputeManagementWaiters {
-    @lombok.NonNull private final java.util.concurrent.ExecutorService executorService;
-    @lombok.NonNull private final ComputeManagement client;
+    @Nonnull private final java.util.concurrent.ExecutorService executorService;
+    @Nonnull private final ComputeManagement client;
     private final com.oracle.bmc.workrequests.WorkRequest workRequestClient;
 
     @Deprecated
     public ComputeManagementWaiters(
-            @lombok.NonNull java.util.concurrent.ExecutorService executorService,
-            @lombok.NonNull ComputeManagement client) {
+            @Nonnull java.util.concurrent.ExecutorService executorService,
+            @Nonnull ComputeManagement client) {
         this(executorService, client, null);
     }
 
     public ComputeManagementWaiters(
-            @lombok.NonNull java.util.concurrent.ExecutorService executorService,
-            @lombok.NonNull ComputeManagement client,
+            @Nonnull java.util.concurrent.ExecutorService executorService,
+            @Nonnull ComputeManagement client,
             com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
+        if (executorService == null) {
+            throw new NullPointerException("executorService is marked non-null but is null");
+        }
+        if (client == null) {
+            throw new NullPointerException("client is marked non-null but is null");
+        }
         this.executorService = executorService;
         this.client = client;
         this.workRequestClient = workRequestClient;

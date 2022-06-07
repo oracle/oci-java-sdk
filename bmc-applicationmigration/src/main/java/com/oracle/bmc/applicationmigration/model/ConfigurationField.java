@@ -18,16 +18,43 @@ package com.oracle.bmc.applicationmigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConfigurationField.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConfigurationField {
+public final class ConfigurationField {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "group",
+        "type",
+        "value",
+        "description",
+        "resourceList",
+        "isRequired",
+        "isMutable"
+    })
+    public ConfigurationField(
+            String name,
+            String group,
+            String type,
+            String value,
+            String description,
+            java.util.List<ResourceField> resourceList,
+            Boolean isRequired,
+            Boolean isMutable) {
+        super();
+        this.name = name;
+        this.group = group;
+        this.type = type;
+        this.value = value;
+        this.description = description;
+        this.resourceList = resourceList;
+        this.isRequired = isRequired;
+        this.isMutable = isMutable;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -143,57 +170,153 @@ public class ConfigurationField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the configuration field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The name of the group to which this field belongs, if any.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("group")
-    String group;
+    private final String group;
+
+    public String getGroup() {
+        return group;
+    }
 
     /**
      * The type of the configuration field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * The value of the field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * Help text to guide the user in setting the configuration value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A list of resources associated with a specific configuration object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
-    java.util.List<ResourceField> resourceList;
+    private final java.util.List<ResourceField> resourceList;
+
+    public java.util.List<ResourceField> getResourceList() {
+        return resourceList;
+    }
 
     /**
      * Indicates whether or not the field is required (defaults to {@code true}).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
-    Boolean isRequired;
+    private final Boolean isRequired;
+
+    public Boolean getIsRequired() {
+        return isRequired;
+    }
 
     /**
      * Indicates whether or not the field may be modified (defaults to {@code true}).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMutable")
-    Boolean isMutable;
+    private final Boolean isMutable;
+
+    public Boolean getIsMutable() {
+        return isMutable;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConfigurationField(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", group=").append(String.valueOf(this.group));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", resourceList=").append(String.valueOf(this.resourceList));
+        sb.append(", isRequired=").append(String.valueOf(this.isRequired));
+        sb.append(", isMutable=").append(String.valueOf(this.isMutable));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConfigurationField)) {
+            return false;
+        }
+
+        ConfigurationField other = (ConfigurationField) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.group, other.group)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.resourceList, other.resourceList)
+                && java.util.Objects.equals(this.isRequired, other.isRequired)
+                && java.util.Objects.equals(this.isMutable, other.isMutable)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.group == null ? 43 : this.group.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.resourceList == null ? 43 : this.resourceList.hashCode());
+        result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
+        result = (result * PRIME) + (this.isMutable == null ? 43 : this.isMutable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

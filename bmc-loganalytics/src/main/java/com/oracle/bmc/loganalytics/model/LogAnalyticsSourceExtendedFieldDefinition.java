@@ -15,16 +15,67 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsSourceExtendedFieldDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsSourceExtendedFieldDefinition {
+public final class LogAnalyticsSourceExtendedFieldDefinition {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "field",
+        "displayRegularExpression",
+        "extendedFields",
+        "baseFieldName",
+        "baseFieldLogText",
+        "conditionDataType",
+        "conditionField",
+        "conditionOperator",
+        "conditionValue",
+        "convertedRegularExpression",
+        "isEnabled",
+        "extendedFieldDefinitionId",
+        "isSystem",
+        "regularExpression",
+        "sourceId",
+        "timeUpdated"
+    })
+    public LogAnalyticsSourceExtendedFieldDefinition(
+            LogAnalyticsField field,
+            String displayRegularExpression,
+            java.util.List<LogAnalyticsExtendedField> extendedFields,
+            String baseFieldName,
+            String baseFieldLogText,
+            String conditionDataType,
+            String conditionField,
+            String conditionOperator,
+            String conditionValue,
+            String convertedRegularExpression,
+            Boolean isEnabled,
+            Long extendedFieldDefinitionId,
+            Boolean isSystem,
+            String regularExpression,
+            Long sourceId,
+            java.util.Date timeUpdated) {
+        super();
+        this.field = field;
+        this.displayRegularExpression = displayRegularExpression;
+        this.extendedFields = extendedFields;
+        this.baseFieldName = baseFieldName;
+        this.baseFieldLogText = baseFieldLogText;
+        this.conditionDataType = conditionDataType;
+        this.conditionField = conditionField;
+        this.conditionOperator = conditionOperator;
+        this.conditionValue = conditionValue;
+        this.convertedRegularExpression = convertedRegularExpression;
+        this.isEnabled = isEnabled;
+        this.extendedFieldDefinitionId = extendedFieldDefinitionId;
+        this.isSystem = isSystem;
+        this.regularExpression = regularExpression;
+        this.sourceId = sourceId;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private LogAnalyticsField field;
@@ -228,75 +279,127 @@ public class LogAnalyticsSourceExtendedFieldDefinition {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("field")
-    LogAnalyticsField field;
+    private final LogAnalyticsField field;
+
+    public LogAnalyticsField getField() {
+        return field;
+    }
 
     /**
      * The regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayRegularExpression")
-    String displayRegularExpression;
+    private final String displayRegularExpression;
+
+    public String getDisplayRegularExpression() {
+        return displayRegularExpression;
+    }
 
     /**
      * An array of extended fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFields")
-    java.util.List<LogAnalyticsExtendedField> extendedFields;
+    private final java.util.List<LogAnalyticsExtendedField> extendedFields;
+
+    public java.util.List<LogAnalyticsExtendedField> getExtendedFields() {
+        return extendedFields;
+    }
 
     /**
      * The base field internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
-    String baseFieldName;
+    private final String baseFieldName;
+
+    public String getBaseFieldName() {
+        return baseFieldName;
+    }
 
     /**
      * The base field log text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldLogText")
-    String baseFieldLogText;
+    private final String baseFieldLogText;
+
+    public String getBaseFieldLogText() {
+        return baseFieldLogText;
+    }
 
     /**
      * The conditional data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionDataType")
-    String conditionDataType;
+    private final String conditionDataType;
+
+    public String getConditionDataType() {
+        return conditionDataType;
+    }
 
     /**
      * The onditional field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionField")
-    String conditionField;
+    private final String conditionField;
+
+    public String getConditionField() {
+        return conditionField;
+    }
 
     /**
      * The conditional operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionOperator")
-    String conditionOperator;
+    private final String conditionOperator;
+
+    public String getConditionOperator() {
+        return conditionOperator;
+    }
 
     /**
      * The conditional value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionValue")
-    String conditionValue;
+    private final String conditionValue;
+
+    public String getConditionValue() {
+        return conditionValue;
+    }
 
     /**
      * The converted regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("convertedRegularExpression")
-    String convertedRegularExpression;
+    private final String convertedRegularExpression;
+
+    public String getConvertedRegularExpression() {
+        return convertedRegularExpression;
+    }
 
     /**
      * A flag inidcating whether or not the extended definition is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The extended field definition unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
-    Long extendedFieldDefinitionId;
+    private final Long extendedFieldDefinitionId;
+
+    public Long getExtendedFieldDefinitionId() {
+        return extendedFieldDefinitionId;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -304,26 +407,161 @@ public class LogAnalyticsSourceExtendedFieldDefinition {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
-    String regularExpression;
+    private final String regularExpression;
+
+    public String getRegularExpression() {
+        return regularExpression;
+    }
 
     /**
      * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    Long sourceId;
+    private final Long sourceId;
+
+    public Long getSourceId() {
+        return sourceId;
+    }
 
     /**
      * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsSourceExtendedFieldDefinition(");
+        sb.append("field=").append(String.valueOf(this.field));
+        sb.append(", displayRegularExpression=")
+                .append(String.valueOf(this.displayRegularExpression));
+        sb.append(", extendedFields=").append(String.valueOf(this.extendedFields));
+        sb.append(", baseFieldName=").append(String.valueOf(this.baseFieldName));
+        sb.append(", baseFieldLogText=").append(String.valueOf(this.baseFieldLogText));
+        sb.append(", conditionDataType=").append(String.valueOf(this.conditionDataType));
+        sb.append(", conditionField=").append(String.valueOf(this.conditionField));
+        sb.append(", conditionOperator=").append(String.valueOf(this.conditionOperator));
+        sb.append(", conditionValue=").append(String.valueOf(this.conditionValue));
+        sb.append(", convertedRegularExpression=")
+                .append(String.valueOf(this.convertedRegularExpression));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", extendedFieldDefinitionId=")
+                .append(String.valueOf(this.extendedFieldDefinitionId));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", regularExpression=").append(String.valueOf(this.regularExpression));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsSourceExtendedFieldDefinition)) {
+            return false;
+        }
+
+        LogAnalyticsSourceExtendedFieldDefinition other =
+                (LogAnalyticsSourceExtendedFieldDefinition) o;
+        return java.util.Objects.equals(this.field, other.field)
+                && java.util.Objects.equals(
+                        this.displayRegularExpression, other.displayRegularExpression)
+                && java.util.Objects.equals(this.extendedFields, other.extendedFields)
+                && java.util.Objects.equals(this.baseFieldName, other.baseFieldName)
+                && java.util.Objects.equals(this.baseFieldLogText, other.baseFieldLogText)
+                && java.util.Objects.equals(this.conditionDataType, other.conditionDataType)
+                && java.util.Objects.equals(this.conditionField, other.conditionField)
+                && java.util.Objects.equals(this.conditionOperator, other.conditionOperator)
+                && java.util.Objects.equals(this.conditionValue, other.conditionValue)
+                && java.util.Objects.equals(
+                        this.convertedRegularExpression, other.convertedRegularExpression)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(
+                        this.extendedFieldDefinitionId, other.extendedFieldDefinitionId)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.regularExpression, other.regularExpression)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.field == null ? 43 : this.field.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.displayRegularExpression == null
+                                ? 43
+                                : this.displayRegularExpression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedFields == null ? 43 : this.extendedFields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baseFieldName == null ? 43 : this.baseFieldName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baseFieldLogText == null ? 43 : this.baseFieldLogText.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionDataType == null ? 43 : this.conditionDataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionField == null ? 43 : this.conditionField.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionOperator == null ? 43 : this.conditionOperator.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionValue == null ? 43 : this.conditionValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.convertedRegularExpression == null
+                                ? 43
+                                : this.convertedRegularExpression.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedFieldDefinitionId == null
+                                ? 43
+                                : this.extendedFieldDefinitionId.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.regularExpression == null ? 43 : this.regularExpression.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

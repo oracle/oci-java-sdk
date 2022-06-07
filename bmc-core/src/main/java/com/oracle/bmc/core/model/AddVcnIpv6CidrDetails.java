@@ -15,16 +15,28 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AddVcnIpv6CidrDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AddVcnIpv6CidrDetails {
+public final class AddVcnIpv6CidrDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "ipv6PrivateCidrBlock",
+        "isOracleGuaAllocationEnabled",
+        "byoipv6CidrDetail"
+    })
+    public AddVcnIpv6CidrDetails(
+            String ipv6PrivateCidrBlock,
+            Boolean isOracleGuaAllocationEnabled,
+            Byoipv6CidrDetails byoipv6CidrDetail) {
+        super();
+        this.ipv6PrivateCidrBlock = ipv6PrivateCidrBlock;
+        this.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
+        this.byoipv6CidrDetail = byoipv6CidrDetail;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlock")
         private String ipv6PrivateCidrBlock;
@@ -83,6 +95,10 @@ public class AddVcnIpv6CidrDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This field is not required and should only be specified if a ULA or private IPv6 prefix is desired for VCN's private IP address space.
      * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -91,18 +107,87 @@ public class AddVcnIpv6CidrDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlock")
-    String ipv6PrivateCidrBlock;
+    private final String ipv6PrivateCidrBlock;
+
+    public String getIpv6PrivateCidrBlock() {
+        return ipv6PrivateCidrBlock;
+    }
 
     /**
      * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be allocated by Oracle as a GUA.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOracleGuaAllocationEnabled")
-    Boolean isOracleGuaAllocationEnabled;
+    private final Boolean isOracleGuaAllocationEnabled;
+
+    public Boolean getIsOracleGuaAllocationEnabled() {
+        return isOracleGuaAllocationEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrDetail")
-    Byoipv6CidrDetails byoipv6CidrDetail;
+    private final Byoipv6CidrDetails byoipv6CidrDetail;
+
+    public Byoipv6CidrDetails getByoipv6CidrDetail() {
+        return byoipv6CidrDetail;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AddVcnIpv6CidrDetails(");
+        sb.append("ipv6PrivateCidrBlock=").append(String.valueOf(this.ipv6PrivateCidrBlock));
+        sb.append(", isOracleGuaAllocationEnabled=")
+                .append(String.valueOf(this.isOracleGuaAllocationEnabled));
+        sb.append(", byoipv6CidrDetail=").append(String.valueOf(this.byoipv6CidrDetail));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddVcnIpv6CidrDetails)) {
+            return false;
+        }
+
+        AddVcnIpv6CidrDetails other = (AddVcnIpv6CidrDetails) o;
+        return java.util.Objects.equals(this.ipv6PrivateCidrBlock, other.ipv6PrivateCidrBlock)
+                && java.util.Objects.equals(
+                        this.isOracleGuaAllocationEnabled, other.isOracleGuaAllocationEnabled)
+                && java.util.Objects.equals(this.byoipv6CidrDetail, other.byoipv6CidrDetail)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.ipv6PrivateCidrBlock == null
+                                ? 43
+                                : this.ipv6PrivateCidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOracleGuaAllocationEnabled == null
+                                ? 43
+                                : this.isOracleGuaAllocationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byoipv6CidrDetail == null ? 43 : this.byoipv6CidrDetail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -17,16 +17,20 @@ package com.oracle.bmc.ons.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BackoffRetryPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackoffRetryPolicy {
+public final class BackoffRetryPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"maxRetryDuration", "policyType"})
+    public BackoffRetryPolicy(Integer maxRetryDuration, PolicyType policyType) {
+        super();
+        this.maxRetryDuration = maxRetryDuration;
+        this.policyType = policyType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("maxRetryDuration")
         private Integer maxRetryDuration;
@@ -72,16 +76,24 @@ public class BackoffRetryPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxRetryDuration")
-    Integer maxRetryDuration;
+    private final Integer maxRetryDuration;
+
+    public Integer getMaxRetryDuration() {
+        return maxRetryDuration;
+    }
+
     /**
      * The type of delivery policy.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PolicyType {
         Exponential("EXPONENTIAL"),
 
@@ -90,6 +102,9 @@ public class BackoffRetryPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PolicyType.class);
 
         private final String value;
         private static java.util.Map<String, PolicyType> map;
@@ -128,8 +143,56 @@ public class BackoffRetryPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
-    PolicyType policyType;
+    private final PolicyType policyType;
+
+    public PolicyType getPolicyType() {
+        return policyType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackoffRetryPolicy(");
+        sb.append("maxRetryDuration=").append(String.valueOf(this.maxRetryDuration));
+        sb.append(", policyType=").append(String.valueOf(this.policyType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackoffRetryPolicy)) {
+            return false;
+        }
+
+        BackoffRetryPolicy other = (BackoffRetryPolicy) o;
+        return java.util.Objects.equals(this.maxRetryDuration, other.maxRetryDuration)
+                && java.util.Objects.equals(this.policyType, other.policyType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.maxRetryDuration == null ? 43 : this.maxRetryDuration.hashCode());
+        result = (result * PRIME) + (this.policyType == null ? 43 : this.policyType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

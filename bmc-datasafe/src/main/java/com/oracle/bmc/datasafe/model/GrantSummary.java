@@ -15,14 +15,32 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GrantSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GrantSummary {
+public final class GrantSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "grantName",
+        "privilegeType",
+        "privilegeCategory",
+        "depthLevel"
+    })
+    public GrantSummary(
+            String key,
+            String grantName,
+            PrivilegeType privilegeType,
+            PrivilegeCategory privilegeCategory,
+            Integer depthLevel) {
+        super();
+        this.key = key;
+        this.grantName = grantName;
+        this.privilegeType = privilegeType;
+        this.privilegeCategory = privilegeCategory;
+        this.depthLevel = depthLevel;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -100,21 +118,33 @@ public class GrantSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key of a user grant.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The name of a user grant.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantName")
-    String grantName;
+    private final String grantName;
+
+    public String getGrantName() {
+        return grantName;
+    }
+
     /**
      * The type of a user grant.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PrivilegeType {
         SystemPrivilege("SYSTEM_PRIVILEGE"),
         ObjectPrivilege("OBJECT_PRIVILEGE"),
@@ -126,6 +156,9 @@ public class GrantSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PrivilegeType.class);
 
         private final String value;
         private static java.util.Map<String, PrivilegeType> map;
@@ -163,11 +196,15 @@ public class GrantSummary {
      * The type of a user grant.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeType")
-    PrivilegeType privilegeType;
+    private final PrivilegeType privilegeType;
+
+    public PrivilegeType getPrivilegeType() {
+        return privilegeType;
+    }
+
     /**
      * The privilege category.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PrivilegeCategory {
         Critical("CRITICAL"),
         High("HIGH"),
@@ -179,6 +216,9 @@ public class GrantSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PrivilegeCategory.class);
 
         private final String value;
         private static java.util.Map<String, PrivilegeCategory> map;
@@ -216,7 +256,11 @@ public class GrantSummary {
      * The privilege category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeCategory")
-    PrivilegeCategory privilegeCategory;
+    private final PrivilegeCategory privilegeCategory;
+
+    public PrivilegeCategory getPrivilegeCategory() {
+        return privilegeCategory;
+    }
 
     /**
      * The grant depth level of the indirect grant.
@@ -225,8 +269,67 @@ public class GrantSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("depthLevel")
-    Integer depthLevel;
+    private final Integer depthLevel;
+
+    public Integer getDepthLevel() {
+        return depthLevel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GrantSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", grantName=").append(String.valueOf(this.grantName));
+        sb.append(", privilegeType=").append(String.valueOf(this.privilegeType));
+        sb.append(", privilegeCategory=").append(String.valueOf(this.privilegeCategory));
+        sb.append(", depthLevel=").append(String.valueOf(this.depthLevel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GrantSummary)) {
+            return false;
+        }
+
+        GrantSummary other = (GrantSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.grantName, other.grantName)
+                && java.util.Objects.equals(this.privilegeType, other.privilegeType)
+                && java.util.Objects.equals(this.privilegeCategory, other.privilegeCategory)
+                && java.util.Objects.equals(this.depthLevel, other.depthLevel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.grantName == null ? 43 : this.grantName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privilegeType == null ? 43 : this.privilegeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privilegeCategory == null ? 43 : this.privilegeCategory.hashCode());
+        result = (result * PRIME) + (this.depthLevel == null ? 43 : this.depthLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

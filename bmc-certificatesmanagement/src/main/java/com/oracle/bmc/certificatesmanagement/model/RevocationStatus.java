@@ -15,14 +15,18 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RevocationStatus.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RevocationStatus {
+public final class RevocationStatus {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeOfRevocation", "revocationReason"})
+    public RevocationStatus(java.util.Date timeOfRevocation, RevocationReason revocationReason) {
+        super();
+        this.timeOfRevocation = timeOfRevocation;
+        this.revocationReason = revocationReason;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfRevocation")
         private java.util.Date timeOfRevocation;
@@ -70,20 +74,78 @@ public class RevocationStatus {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * Example: {@code 2019-04-03T21:10:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfRevocation")
-    java.util.Date timeOfRevocation;
+    private final java.util.Date timeOfRevocation;
+
+    public java.util.Date getTimeOfRevocation() {
+        return timeOfRevocation;
+    }
 
     /**
      * The reason the certificate or certificate authority (CA) was revoked.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
-    RevocationReason revocationReason;
+    private final RevocationReason revocationReason;
+
+    public RevocationReason getRevocationReason() {
+        return revocationReason;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RevocationStatus(");
+        sb.append("timeOfRevocation=").append(String.valueOf(this.timeOfRevocation));
+        sb.append(", revocationReason=").append(String.valueOf(this.revocationReason));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RevocationStatus)) {
+            return false;
+        }
+
+        RevocationStatus other = (RevocationStatus) o;
+        return java.util.Objects.equals(this.timeOfRevocation, other.timeOfRevocation)
+                && java.util.Objects.equals(this.revocationReason, other.revocationReason)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeOfRevocation == null ? 43 : this.timeOfRevocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.revocationReason == null ? 43 : this.revocationReason.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

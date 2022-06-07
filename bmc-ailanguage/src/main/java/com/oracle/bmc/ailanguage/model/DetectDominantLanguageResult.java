@@ -15,16 +15,19 @@ package com.oracle.bmc.ailanguage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DetectDominantLanguageResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DetectDominantLanguageResult {
+public final class DetectDominantLanguageResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"languages"})
+    public DetectDominantLanguageResult(java.util.List<DetectedLanguage> languages) {
+        super();
+        this.languages = languages;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("languages")
         private java.util.List<DetectedLanguage> languages;
@@ -60,13 +63,60 @@ public class DetectDominantLanguageResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of detected languages with results sorted in descending order of the scores. Most likely language is on top.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languages")
-    java.util.List<DetectedLanguage> languages;
+    private final java.util.List<DetectedLanguage> languages;
+
+    public java.util.List<DetectedLanguage> getLanguages() {
+        return languages;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DetectDominantLanguageResult(");
+        sb.append("languages=").append(String.valueOf(this.languages));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetectDominantLanguageResult)) {
+            return false;
+        }
+
+        DetectDominantLanguageResult other = (DetectDominantLanguageResult) o;
+        return java.util.Objects.equals(this.languages, other.languages)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.languages == null ? 43 : this.languages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

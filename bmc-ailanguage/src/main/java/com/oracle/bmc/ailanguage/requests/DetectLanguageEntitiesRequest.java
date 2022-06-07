@@ -9,14 +9,6 @@ import com.oracle.bmc.ailanguage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageEntitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DetectLanguageEntitiesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DetectLanguageEntitiesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails> {
@@ -28,22 +20,36 @@ public class DetectLanguageEntitiesRequest
     private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails
             detectLanguageEntitiesDetails;
 
+    public com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails
+            getDetectLanguageEntitiesDetails() {
+        return detectLanguageEntitiesDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Named Entity Recognition model versions. By default user will get output from V2.1 implementation.
      */
     private com.oracle.bmc.ailanguage.model.NerModelVersion modelVersion;
 
+    public com.oracle.bmc.ailanguage.model.NerModelVersion getModelVersion() {
+        return modelVersion;
+    }
     /**
      * If this parameter is set to true, you only get PII (Personally identifiable information) entities
      * like PhoneNumber, Email, Person, and so on. Default value is false.
      *
      */
     private Boolean isPii;
+
+    public Boolean getIsPii() {
+        return isPii;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -62,6 +68,56 @@ public class DetectLanguageEntitiesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails
+                detectLanguageEntitiesDetails = null;
+
+        /**
+         * The details to make a Entity detect call.
+         *
+         * @return this builder instance
+         */
+        public Builder detectLanguageEntitiesDetails(
+                com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails
+                        detectLanguageEntitiesDetails) {
+            this.detectLanguageEntitiesDetails = detectLanguageEntitiesDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.ailanguage.model.NerModelVersion modelVersion = null;
+
+        /**
+         * Named Entity Recognition model versions. By default user will get output from V2.1 implementation.
+         * @return this builder instance
+         */
+        public Builder modelVersion(com.oracle.bmc.ailanguage.model.NerModelVersion modelVersion) {
+            this.modelVersion = modelVersion;
+            return this;
+        }
+
+        private Boolean isPii = null;
+
+        /**
+         * If this parameter is set to true, you only get PII (Personally identifiable information) entities
+         * like PhoneNumber, Email, Person, and so on. Default value is false.
+         *
+         * @return this builder instance
+         */
+        public Builder isPii(Boolean isPii) {
+            this.isPii = isPii;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -127,5 +183,85 @@ public class DetectLanguageEntitiesRequest
             detectLanguageEntitiesDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of DetectLanguageEntitiesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DetectLanguageEntitiesRequest
+         */
+        public DetectLanguageEntitiesRequest buildWithoutInvocationCallback() {
+            DetectLanguageEntitiesRequest request = new DetectLanguageEntitiesRequest();
+            request.detectLanguageEntitiesDetails = detectLanguageEntitiesDetails;
+            request.opcRequestId = opcRequestId;
+            request.modelVersion = modelVersion;
+            request.isPii = isPii;
+            return request;
+            // new DetectLanguageEntitiesRequest(detectLanguageEntitiesDetails, opcRequestId, modelVersion, isPii);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .detectLanguageEntitiesDetails(detectLanguageEntitiesDetails)
+                .opcRequestId(opcRequestId)
+                .modelVersion(modelVersion)
+                .isPii(isPii);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",detectLanguageEntitiesDetails=")
+                .append(String.valueOf(this.detectLanguageEntitiesDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(",isPii=").append(String.valueOf(this.isPii));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetectLanguageEntitiesRequest)) {
+            return false;
+        }
+
+        DetectLanguageEntitiesRequest other = (DetectLanguageEntitiesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.detectLanguageEntitiesDetails, other.detectLanguageEntitiesDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.isPii, other.isPii);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.detectLanguageEntitiesDetails == null
+                                ? 43
+                                : this.detectLanguageEntitiesDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.isPii == null ? 43 : this.isPii.hashCode());
+        return result;
     }
 }

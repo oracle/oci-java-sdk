@@ -8,7 +8,6 @@ package com.oracle.bmc.threatintelligence.model;
  * The set of supported indicator types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
-@lombok.extern.slf4j.Slf4j
 public enum IndicatorType {
     DomainName("DOMAIN_NAME"),
     FileName("FILE_NAME"),
@@ -23,6 +22,9 @@ public enum IndicatorType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(IndicatorType.class);
 
     private final String value;
     private static java.util.Map<String, IndicatorType> map;

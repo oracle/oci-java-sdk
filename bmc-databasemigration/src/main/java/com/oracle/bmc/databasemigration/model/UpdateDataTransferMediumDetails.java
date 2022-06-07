@@ -19,16 +19,28 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDataTransferMediumDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDataTransferMediumDetails {
+public final class UpdateDataTransferMediumDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "databaseLinkDetails",
+        "objectStorageDetails",
+        "awsS3Details"
+    })
+    public UpdateDataTransferMediumDetails(
+            UpdateDatabaseLinkDetails databaseLinkDetails,
+            UpdateObjectStoreBucket objectStorageDetails,
+            UpdateAwsS3Details awsS3Details) {
+        super();
+        this.databaseLinkDetails = databaseLinkDetails;
+        this.objectStorageDetails = objectStorageDetails;
+        this.awsS3Details = awsS3Details;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("databaseLinkDetails")
         private UpdateDatabaseLinkDetails databaseLinkDetails;
@@ -87,15 +99,84 @@ public class UpdateDataTransferMediumDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("databaseLinkDetails")
-    UpdateDatabaseLinkDetails databaseLinkDetails;
+    private final UpdateDatabaseLinkDetails databaseLinkDetails;
+
+    public UpdateDatabaseLinkDetails getDatabaseLinkDetails() {
+        return databaseLinkDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageDetails")
-    UpdateObjectStoreBucket objectStorageDetails;
+    private final UpdateObjectStoreBucket objectStorageDetails;
+
+    public UpdateObjectStoreBucket getObjectStorageDetails() {
+        return objectStorageDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("awsS3Details")
-    UpdateAwsS3Details awsS3Details;
+    private final UpdateAwsS3Details awsS3Details;
+
+    public UpdateAwsS3Details getAwsS3Details() {
+        return awsS3Details;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDataTransferMediumDetails(");
+        sb.append("databaseLinkDetails=").append(String.valueOf(this.databaseLinkDetails));
+        sb.append(", objectStorageDetails=").append(String.valueOf(this.objectStorageDetails));
+        sb.append(", awsS3Details=").append(String.valueOf(this.awsS3Details));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDataTransferMediumDetails)) {
+            return false;
+        }
+
+        UpdateDataTransferMediumDetails other = (UpdateDataTransferMediumDetails) o;
+        return java.util.Objects.equals(this.databaseLinkDetails, other.databaseLinkDetails)
+                && java.util.Objects.equals(this.objectStorageDetails, other.objectStorageDetails)
+                && java.util.Objects.equals(this.awsS3Details, other.awsS3Details)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.databaseLinkDetails == null
+                                ? 43
+                                : this.databaseLinkDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectStorageDetails == null
+                                ? 43
+                                : this.objectStorageDetails.hashCode());
+        result = (result * PRIME) + (this.awsS3Details == null ? 43 : this.awsS3Details.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

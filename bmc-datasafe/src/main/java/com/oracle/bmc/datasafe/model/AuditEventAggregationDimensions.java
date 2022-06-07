@@ -15,16 +15,52 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AuditEventAggregationDimensions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuditEventAggregationDimensions {
+public final class AuditEventAggregationDimensions {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "auditEventTime",
+        "dbUserName",
+        "targetId",
+        "targetName",
+        "targetClass",
+        "objectType",
+        "clientHostname",
+        "clientProgram",
+        "clientId",
+        "auditType",
+        "eventName"
+    })
+    public AuditEventAggregationDimensions(
+            java.util.List<java.util.Date> auditEventTime,
+            java.util.List<String> dbUserName,
+            java.util.List<String> targetId,
+            java.util.List<String> targetName,
+            java.util.List<TargetClass> targetClass,
+            java.util.List<String> objectType,
+            java.util.List<String> clientHostname,
+            java.util.List<String> clientProgram,
+            java.util.List<String> clientId,
+            java.util.List<AuditType> auditType,
+            java.util.List<String> eventName) {
+        super();
+        this.auditEventTime = auditEventTime;
+        this.dbUserName = dbUserName;
+        this.targetId = targetId;
+        this.targetName = targetName;
+        this.targetClass = targetClass;
+        this.objectType = objectType;
+        this.clientHostname = clientHostname;
+        this.clientProgram = clientProgram;
+        this.clientId = clientId;
+        this.auditType = auditType;
+        this.eventName = eventName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
         private java.util.List<java.util.Date> auditEventTime;
@@ -173,32 +209,52 @@ public class AuditEventAggregationDimensions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Time of audit event occurrence in the target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
-    java.util.List<java.util.Date> auditEventTime;
+    private final java.util.List<java.util.Date> auditEventTime;
+
+    public java.util.List<java.util.Date> getAuditEventTime() {
+        return auditEventTime;
+    }
 
     /**
      * Name of the database user whose actions were audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
-    java.util.List<String> dbUserName;
+    private final java.util.List<String> dbUserName;
+
+    public java.util.List<String> getDbUserName() {
+        return dbUserName;
+    }
 
     /**
      * The OCID of the target database that was audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    java.util.List<String> targetId;
+    private final java.util.List<String> targetId;
+
+    public java.util.List<String> getTargetId() {
+        return targetId;
+    }
 
     /**
      * The name of the target database that was audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetName")
-    java.util.List<String> targetName;
+    private final java.util.List<String> targetName;
+
+    public java.util.List<String> getTargetName() {
+        return targetName;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TargetClass {
         Database("DATABASE"),
 
@@ -207,6 +263,9 @@ public class AuditEventAggregationDimensions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TargetClass.class);
 
         private final String value;
         private static java.util.Map<String, TargetClass> map;
@@ -244,34 +303,54 @@ public class AuditEventAggregationDimensions {
      * Class of the target that was audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetClass")
-    java.util.List<TargetClass> targetClass;
+    private final java.util.List<TargetClass> targetClass;
+
+    public java.util.List<TargetClass> getTargetClass() {
+        return targetClass;
+    }
 
     /**
      * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    java.util.List<String> objectType;
+    private final java.util.List<String> objectType;
+
+    public java.util.List<String> getObjectType() {
+        return objectType;
+    }
 
     /**
      * Name of the host machine from which the session was spawned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientHostname")
-    java.util.List<String> clientHostname;
+    private final java.util.List<String> clientHostname;
+
+    public java.util.List<String> getClientHostname() {
+        return clientHostname;
+    }
 
     /**
      * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
-    java.util.List<String> clientProgram;
+    private final java.util.List<String> clientProgram;
+
+    public java.util.List<String> getClientProgram() {
+        return clientProgram;
+    }
 
     /**
      * The client identifier in each Oracle session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
-    java.util.List<String> clientId;
+    private final java.util.List<String> clientId;
+
+    public java.util.List<String> getClientId() {
+        return clientId;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AuditType {
         Standard("STANDARD"),
         FineGrained("FINE_GRAINED"),
@@ -287,6 +366,9 @@ public class AuditEventAggregationDimensions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AuditType.class);
 
         private final String value;
         private static java.util.Map<String, AuditType> map;
@@ -324,14 +406,97 @@ public class AuditEventAggregationDimensions {
      * Type of auditing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditType")
-    java.util.List<AuditType> auditType;
+    private final java.util.List<AuditType> auditType;
+
+    public java.util.List<AuditType> getAuditType() {
+        return auditType;
+    }
 
     /**
      * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
-    java.util.List<String> eventName;
+    private final java.util.List<String> eventName;
+
+    public java.util.List<String> getEventName() {
+        return eventName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuditEventAggregationDimensions(");
+        sb.append("auditEventTime=").append(String.valueOf(this.auditEventTime));
+        sb.append(", dbUserName=").append(String.valueOf(this.dbUserName));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", targetName=").append(String.valueOf(this.targetName));
+        sb.append(", targetClass=").append(String.valueOf(this.targetClass));
+        sb.append(", objectType=").append(String.valueOf(this.objectType));
+        sb.append(", clientHostname=").append(String.valueOf(this.clientHostname));
+        sb.append(", clientProgram=").append(String.valueOf(this.clientProgram));
+        sb.append(", clientId=").append(String.valueOf(this.clientId));
+        sb.append(", auditType=").append(String.valueOf(this.auditType));
+        sb.append(", eventName=").append(String.valueOf(this.eventName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuditEventAggregationDimensions)) {
+            return false;
+        }
+
+        AuditEventAggregationDimensions other = (AuditEventAggregationDimensions) o;
+        return java.util.Objects.equals(this.auditEventTime, other.auditEventTime)
+                && java.util.Objects.equals(this.dbUserName, other.dbUserName)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetName, other.targetName)
+                && java.util.Objects.equals(this.targetClass, other.targetClass)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.clientHostname, other.clientHostname)
+                && java.util.Objects.equals(this.clientProgram, other.clientProgram)
+                && java.util.Objects.equals(this.clientId, other.clientId)
+                && java.util.Objects.equals(this.auditType, other.auditType)
+                && java.util.Objects.equals(this.eventName, other.eventName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.auditEventTime == null ? 43 : this.auditEventTime.hashCode());
+        result = (result * PRIME) + (this.dbUserName == null ? 43 : this.dbUserName.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetName == null ? 43 : this.targetName.hashCode());
+        result = (result * PRIME) + (this.targetClass == null ? 43 : this.targetClass.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientHostname == null ? 43 : this.clientHostname.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientProgram == null ? 43 : this.clientProgram.hashCode());
+        result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
+        result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
+        result = (result * PRIME) + (this.eventName == null ? 43 : this.eventName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

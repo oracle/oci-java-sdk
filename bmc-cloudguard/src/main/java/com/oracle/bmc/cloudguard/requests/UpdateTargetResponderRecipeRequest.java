@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTargetResponderRecipeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateTargetResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails> {
@@ -26,17 +18,27 @@ public class UpdateTargetResponderRecipeRequest
      */
     private String targetId;
 
+    public String getTargetId() {
+        return targetId;
+    }
     /**
      * OCID of TargetResponderRecipe
      */
     private String targetResponderRecipeId;
 
+    public String getTargetResponderRecipeId() {
+        return targetResponderRecipeId;
+    }
     /**
      * The details to be updated.
      */
     private com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails
             updateTargetResponderRecipeDetails;
 
+    public com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails
+            getUpdateTargetResponderRecipeDetails() {
+        return updateTargetResponderRecipeDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -47,10 +49,17 @@ public class UpdateTargetResponderRecipeRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -69,6 +78,69 @@ public class UpdateTargetResponderRecipeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String targetId = null;
+
+        /**
+         * OCID of target
+         * @return this builder instance
+         */
+        public Builder targetId(String targetId) {
+            this.targetId = targetId;
+            return this;
+        }
+
+        private String targetResponderRecipeId = null;
+
+        /**
+         * OCID of TargetResponderRecipe
+         * @return this builder instance
+         */
+        public Builder targetResponderRecipeId(String targetResponderRecipeId) {
+            this.targetResponderRecipeId = targetResponderRecipeId;
+            return this;
+        }
+
+        private com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails
+                updateTargetResponderRecipeDetails = null;
+
+        /**
+         * The details to be updated.
+         * @return this builder instance
+         */
+        public Builder updateTargetResponderRecipeDetails(
+                com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails
+                        updateTargetResponderRecipeDetails) {
+            this.updateTargetResponderRecipeDetails = updateTargetResponderRecipeDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -136,5 +208,96 @@ public class UpdateTargetResponderRecipeRequest
             updateTargetResponderRecipeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateTargetResponderRecipeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateTargetResponderRecipeRequest
+         */
+        public UpdateTargetResponderRecipeRequest buildWithoutInvocationCallback() {
+            UpdateTargetResponderRecipeRequest request = new UpdateTargetResponderRecipeRequest();
+            request.targetId = targetId;
+            request.targetResponderRecipeId = targetResponderRecipeId;
+            request.updateTargetResponderRecipeDetails = updateTargetResponderRecipeDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateTargetResponderRecipeRequest(targetId, targetResponderRecipeId, updateTargetResponderRecipeDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .targetId(targetId)
+                .targetResponderRecipeId(targetResponderRecipeId)
+                .updateTargetResponderRecipeDetails(updateTargetResponderRecipeDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetResponderRecipeId=").append(String.valueOf(this.targetResponderRecipeId));
+        sb.append(",updateTargetResponderRecipeDetails=")
+                .append(String.valueOf(this.updateTargetResponderRecipeDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTargetResponderRecipeRequest)) {
+            return false;
+        }
+
+        UpdateTargetResponderRecipeRequest other = (UpdateTargetResponderRecipeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(
+                        this.targetResponderRecipeId, other.targetResponderRecipeId)
+                && java.util.Objects.equals(
+                        this.updateTargetResponderRecipeDetails,
+                        other.updateTargetResponderRecipeDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResponderRecipeId == null
+                                ? 43
+                                : this.targetResponderRecipeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateTargetResponderRecipeDetails == null
+                                ? 43
+                                : this.updateTargetResponderRecipeDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

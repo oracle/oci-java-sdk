@@ -15,14 +15,24 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Schema.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Schema {
+public final class Schema {
+    @Deprecated
+    @java.beans.ConstructorProperties({"columns", "primaryKey", "shardKey", "ttl"})
+    public Schema(
+            java.util.List<Column> columns,
+            java.util.List<String> primaryKey,
+            java.util.List<String> shardKey,
+            Integer ttl) {
+        super();
+        this.columns = columns;
+        this.primaryKey = primaryKey;
+        this.shardKey = shardKey;
+        this.ttl = ttl;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<Column> columns;
@@ -89,30 +99,98 @@ public class Schema {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The columns of a table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
-    java.util.List<Column> columns;
+    private final java.util.List<Column> columns;
+
+    public java.util.List<Column> getColumns() {
+        return columns;
+    }
 
     /**
      * A list of column names that make up a key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryKey")
-    java.util.List<String> primaryKey;
+    private final java.util.List<String> primaryKey;
+
+    public java.util.List<String> getPrimaryKey() {
+        return primaryKey;
+    }
 
     /**
      * A list of column names that make up a key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shardKey")
-    java.util.List<String> shardKey;
+    private final java.util.List<String> shardKey;
+
+    public java.util.List<String> getShardKey() {
+        return shardKey;
+    }
 
     /**
      * The default Time-to-Live for the table, in days.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
-    Integer ttl;
+    private final Integer ttl;
+
+    public Integer getTtl() {
+        return ttl;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Schema(");
+        sb.append("columns=").append(String.valueOf(this.columns));
+        sb.append(", primaryKey=").append(String.valueOf(this.primaryKey));
+        sb.append(", shardKey=").append(String.valueOf(this.shardKey));
+        sb.append(", ttl=").append(String.valueOf(this.ttl));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Schema)) {
+            return false;
+        }
+
+        Schema other = (Schema) o;
+        return java.util.Objects.equals(this.columns, other.columns)
+                && java.util.Objects.equals(this.primaryKey, other.primaryKey)
+                && java.util.Objects.equals(this.shardKey, other.shardKey)
+                && java.util.Objects.equals(this.ttl, other.ttl)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.columns == null ? 43 : this.columns.hashCode());
+        result = (result * PRIME) + (this.primaryKey == null ? 43 : this.primaryKey.hashCode());
+        result = (result * PRIME) + (this.shardKey == null ? 43 : this.shardKey.hashCode());
+        result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

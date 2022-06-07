@@ -15,16 +15,37 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AwrDbWaitEventSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AwrDbWaitEventSummary {
+public final class AwrDbWaitEventSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "timeBegin",
+        "timeEnd",
+        "waitsPerSec",
+        "avgWaitTimePerSec",
+        "snapshotId"
+    })
+    public AwrDbWaitEventSummary(
+            String name,
+            java.util.Date timeBegin,
+            java.util.Date timeEnd,
+            Double waitsPerSec,
+            Double avgWaitTimePerSec,
+            Integer snapshotId) {
+        super();
+        this.name = name;
+        this.timeBegin = timeBegin;
+        this.timeEnd = timeEnd;
+        this.waitsPerSec = waitsPerSec;
+        this.avgWaitTimePerSec = avgWaitTimePerSec;
+        this.snapshotId = snapshotId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -113,35 +134,59 @@ public class AwrDbWaitEventSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The begin time of the wait event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
-    java.util.Date timeBegin;
+    private final java.util.Date timeBegin;
+
+    public java.util.Date getTimeBegin() {
+        return timeBegin;
+    }
 
     /**
      * The end time of the wait event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * The wait count per second.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("waitsPerSec")
-    Double waitsPerSec;
+    private final Double waitsPerSec;
+
+    public Double getWaitsPerSec() {
+        return waitsPerSec;
+    }
 
     /**
      * The average wait time per second.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("avgWaitTimePerSec")
-    Double avgWaitTimePerSec;
+    private final Double avgWaitTimePerSec;
+
+    public Double getAvgWaitTimePerSec() {
+        return avgWaitTimePerSec;
+    }
 
     /**
      * The ID of the snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -150,8 +195,68 @@ public class AwrDbWaitEventSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotId")
-    Integer snapshotId;
+    private final Integer snapshotId;
+
+    public Integer getSnapshotId() {
+        return snapshotId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AwrDbWaitEventSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", timeBegin=").append(String.valueOf(this.timeBegin));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", waitsPerSec=").append(String.valueOf(this.waitsPerSec));
+        sb.append(", avgWaitTimePerSec=").append(String.valueOf(this.avgWaitTimePerSec));
+        sb.append(", snapshotId=").append(String.valueOf(this.snapshotId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AwrDbWaitEventSummary)) {
+            return false;
+        }
+
+        AwrDbWaitEventSummary other = (AwrDbWaitEventSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.timeBegin, other.timeBegin)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.waitsPerSec, other.waitsPerSec)
+                && java.util.Objects.equals(this.avgWaitTimePerSec, other.avgWaitTimePerSec)
+                && java.util.Objects.equals(this.snapshotId, other.snapshotId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.timeBegin == null ? 43 : this.timeBegin.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.waitsPerSec == null ? 43 : this.waitsPerSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.avgWaitTimePerSec == null ? 43 : this.avgWaitTimePerSec.hashCode());
+        result = (result * PRIME) + (this.snapshotId == null ? 43 : this.snapshotId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

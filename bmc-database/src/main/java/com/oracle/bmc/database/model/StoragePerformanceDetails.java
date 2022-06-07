@@ -16,16 +16,28 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StoragePerformanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StoragePerformanceDetails {
+public final class StoragePerformanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sizeInGBs",
+        "balancedDiskPerformance",
+        "highDiskPerformance"
+    })
+    public StoragePerformanceDetails(
+            Integer sizeInGBs,
+            DiskPerformanceDetails balancedDiskPerformance,
+            DiskPerformanceDetails highDiskPerformance) {
+        super();
+        this.sizeInGBs = sizeInGBs;
+        this.balancedDiskPerformance = balancedDiskPerformance;
+        this.highDiskPerformance = highDiskPerformance;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Integer sizeInGBs;
@@ -84,18 +96,89 @@ public class StoragePerformanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Size in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
-    Integer sizeInGBs;
+    private final Integer sizeInGBs;
+
+    public Integer getSizeInGBs() {
+        return sizeInGBs;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("balancedDiskPerformance")
-    DiskPerformanceDetails balancedDiskPerformance;
+    private final DiskPerformanceDetails balancedDiskPerformance;
+
+    public DiskPerformanceDetails getBalancedDiskPerformance() {
+        return balancedDiskPerformance;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("highDiskPerformance")
-    DiskPerformanceDetails highDiskPerformance;
+    private final DiskPerformanceDetails highDiskPerformance;
+
+    public DiskPerformanceDetails getHighDiskPerformance() {
+        return highDiskPerformance;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StoragePerformanceDetails(");
+        sb.append("sizeInGBs=").append(String.valueOf(this.sizeInGBs));
+        sb.append(", balancedDiskPerformance=")
+                .append(String.valueOf(this.balancedDiskPerformance));
+        sb.append(", highDiskPerformance=").append(String.valueOf(this.highDiskPerformance));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StoragePerformanceDetails)) {
+            return false;
+        }
+
+        StoragePerformanceDetails other = (StoragePerformanceDetails) o;
+        return java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
+                && java.util.Objects.equals(
+                        this.balancedDiskPerformance, other.balancedDiskPerformance)
+                && java.util.Objects.equals(this.highDiskPerformance, other.highDiskPerformance)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.balancedDiskPerformance == null
+                                ? 43
+                                : this.balancedDiskPerformance.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.highDiskPerformance == null
+                                ? 43
+                                : this.highDiskPerformance.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

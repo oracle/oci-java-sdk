@@ -15,16 +15,43 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateInstancePoolDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateInstancePoolDetails {
+public final class CreateInstancePoolDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "instanceConfigurationId",
+        "placementConfigurations",
+        "size",
+        "loadBalancers"
+    })
+    public CreateInstancePoolDetails(
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String instanceConfigurationId,
+            java.util.List<CreateInstancePoolPlacementConfigurationDetails> placementConfigurations,
+            Integer size,
+            java.util.List<AttachLoadBalancerDetails> loadBalancers) {
+        super();
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.instanceConfigurationId = instanceConfigurationId;
+        this.placementConfigurations = placementConfigurations;
+        this.size = size;
+        this.loadBalancers = loadBalancers;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -144,12 +171,20 @@ public class CreateInstancePoolDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -159,7 +194,11 @@ public class CreateInstancePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -167,7 +206,11 @@ public class CreateInstancePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -177,7 +220,11 @@ public class CreateInstancePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated
@@ -185,7 +232,11 @@ public class CreateInstancePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
-    String instanceConfigurationId;
+    private final String instanceConfigurationId;
+
+    public String getInstanceConfigurationId() {
+        return instanceConfigurationId;
+    }
 
     /**
      * The placement configurations for the instance pool. Provide one placement configuration for
@@ -197,21 +248,111 @@ public class CreateInstancePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("placementConfigurations")
-    java.util.List<CreateInstancePoolPlacementConfigurationDetails> placementConfigurations;
+    private final java.util.List<CreateInstancePoolPlacementConfigurationDetails>
+            placementConfigurations;
+
+    public java.util.List<CreateInstancePoolPlacementConfigurationDetails>
+            getPlacementConfigurations() {
+        return placementConfigurations;
+    }
 
     /**
      * The number of instances that should be in the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
-    Integer size;
+    private final Integer size;
+
+    public Integer getSize() {
+        return size;
+    }
 
     /**
      * The load balancers to attach to the instance pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancers")
-    java.util.List<AttachLoadBalancerDetails> loadBalancers;
+    private final java.util.List<AttachLoadBalancerDetails> loadBalancers;
+
+    public java.util.List<AttachLoadBalancerDetails> getLoadBalancers() {
+        return loadBalancers;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateInstancePoolDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", instanceConfigurationId=")
+                .append(String.valueOf(this.instanceConfigurationId));
+        sb.append(", placementConfigurations=")
+                .append(String.valueOf(this.placementConfigurations));
+        sb.append(", size=").append(String.valueOf(this.size));
+        sb.append(", loadBalancers=").append(String.valueOf(this.loadBalancers));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateInstancePoolDetails)) {
+            return false;
+        }
+
+        CreateInstancePoolDetails other = (CreateInstancePoolDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(
+                        this.placementConfigurations, other.placementConfigurations)
+                && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(this.loadBalancers, other.loadBalancers)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceConfigurationId == null
+                                ? 43
+                                : this.instanceConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConfigurations == null
+                                ? 43
+                                : this.placementConfigurations.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancers == null ? 43 : this.loadBalancers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

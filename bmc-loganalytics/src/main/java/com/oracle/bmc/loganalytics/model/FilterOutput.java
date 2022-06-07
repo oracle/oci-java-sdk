@@ -16,14 +16,24 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FilterOutput.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FilterOutput {
+public final class FilterOutput {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayQueryString",
+        "internalQueryString",
+        "responseTimeInMs"
+    })
+    public FilterOutput(
+            String displayQueryString, String internalQueryString, Long responseTimeInMs) {
+        super();
+        this.displayQueryString = displayQueryString;
+        this.internalQueryString = internalQueryString;
+        this.responseTimeInMs = responseTimeInMs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
@@ -81,27 +91,98 @@ public class FilterOutput {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Modified user visible query string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
-    String displayQueryString;
+    private final String displayQueryString;
+
+    public String getDisplayQueryString() {
+        return displayQueryString;
+    }
 
     /**
      * Modified localization agnostic query string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
-    String internalQueryString;
+    private final String internalQueryString;
+
+    public String getInternalQueryString() {
+        return internalQueryString;
+    }
 
     /**
      * Operation response time.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
-    Long responseTimeInMs;
+    private final Long responseTimeInMs;
+
+    public Long getResponseTimeInMs() {
+        return responseTimeInMs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FilterOutput(");
+        sb.append("displayQueryString=").append(String.valueOf(this.displayQueryString));
+        sb.append(", internalQueryString=").append(String.valueOf(this.internalQueryString));
+        sb.append(", responseTimeInMs=").append(String.valueOf(this.responseTimeInMs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FilterOutput)) {
+            return false;
+        }
+
+        FilterOutput other = (FilterOutput) o;
+        return java.util.Objects.equals(this.displayQueryString, other.displayQueryString)
+                && java.util.Objects.equals(this.internalQueryString, other.internalQueryString)
+                && java.util.Objects.equals(this.responseTimeInMs, other.responseTimeInMs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.displayQueryString == null
+                                ? 43
+                                : this.displayQueryString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.internalQueryString == null
+                                ? 43
+                                : this.internalQueryString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responseTimeInMs == null ? 43 : this.responseTimeInMs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

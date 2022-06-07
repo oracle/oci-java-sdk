@@ -15,14 +15,83 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SoftwareSource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SoftwareSource {
+public final class SoftwareSource {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "description",
+        "repoType",
+        "archType",
+        "url",
+        "parentId",
+        "parentName",
+        "checksumType",
+        "maintainerName",
+        "maintainerEmail",
+        "maintainerPhone",
+        "gpgKeyUrl",
+        "gpgKeyId",
+        "gpgKeyFingerprint",
+        "status",
+        "lifecycleState",
+        "packages",
+        "associatedManagedInstances",
+        "freeformTags",
+        "definedTags"
+    })
+    public SoftwareSource(
+            String id,
+            String compartmentId,
+            String displayName,
+            String description,
+            String repoType,
+            ArchTypes archType,
+            String url,
+            String parentId,
+            String parentName,
+            ChecksumTypes checksumType,
+            String maintainerName,
+            String maintainerEmail,
+            String maintainerPhone,
+            String gpgKeyUrl,
+            String gpgKeyId,
+            String gpgKeyFingerprint,
+            Status status,
+            LifecycleStates lifecycleState,
+            Integer packages,
+            java.util.List<Id> associatedManagedInstances,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.description = description;
+        this.repoType = repoType;
+        this.archType = archType;
+        this.url = url;
+        this.parentId = parentId;
+        this.parentName = parentName;
+        this.checksumType = checksumType;
+        this.maintainerName = maintainerName;
+        this.maintainerEmail = maintainerEmail;
+        this.maintainerPhone = maintainerPhone;
+        this.gpgKeyUrl = gpgKeyUrl;
+        this.gpgKeyId = gpgKeyId;
+        this.gpgKeyFingerprint = gpgKeyFingerprint;
+        this.status = status;
+        this.lifecycleState = lifecycleState;
+        this.packages = packages;
+        this.associatedManagedInstances = associatedManagedInstances;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -293,105 +362,173 @@ public class SoftwareSource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID for the Software Source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * OCID for the Compartment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * User friendly name for the software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Information specified by the user about the software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Type of the Software Source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repoType")
-    String repoType;
+    private final String repoType;
+
+    public String getRepoType() {
+        return repoType;
+    }
 
     /**
      * The architecture type supported by the Software Source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
-    ArchTypes archType;
+    private final ArchTypes archType;
+
+    public ArchTypes getArchType() {
+        return archType;
+    }
 
     /**
      * URL for the repostiory
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
 
     /**
      * OCID for the parent software source, if there is one
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
-    String parentId;
+    private final String parentId;
+
+    public String getParentId() {
+        return parentId;
+    }
 
     /**
      * Display name the parent software source, if there is one
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentName")
-    String parentName;
+    private final String parentName;
+
+    public String getParentName() {
+        return parentName;
+    }
 
     /**
      * The yum repository checksum type used by this software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
-    ChecksumTypes checksumType;
+    private final ChecksumTypes checksumType;
+
+    public ChecksumTypes getChecksumType() {
+        return checksumType;
+    }
 
     /**
      * Name of the person maintaining this software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerName")
-    String maintainerName;
+    private final String maintainerName;
+
+    public String getMaintainerName() {
+        return maintainerName;
+    }
 
     /**
      * Email address of the person maintaining this software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerEmail")
-    String maintainerEmail;
+    private final String maintainerEmail;
+
+    public String getMaintainerEmail() {
+        return maintainerEmail;
+    }
 
     /**
      * Phone number of the person maintaining this software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerPhone")
-    String maintainerPhone;
+    private final String maintainerPhone;
+
+    public String getMaintainerPhone() {
+        return maintainerPhone;
+    }
 
     /**
      * URL of the GPG key for this software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyUrl")
-    String gpgKeyUrl;
+    private final String gpgKeyUrl;
+
+    public String getGpgKeyUrl() {
+        return gpgKeyUrl;
+    }
 
     /**
      * ID of the GPG key for this software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyId")
-    String gpgKeyId;
+    private final String gpgKeyId;
+
+    public String getGpgKeyId() {
+        return gpgKeyId;
+    }
 
     /**
      * Fingerprint of the GPG key for this software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyFingerprint")
-    String gpgKeyFingerprint;
+    private final String gpgKeyFingerprint;
+
+    public String getGpgKeyFingerprint() {
+        return gpgKeyFingerprint;
+    }
+
     /**
      * status of the software source.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Normal("NORMAL"),
         Unreachable("UNREACHABLE"),
@@ -403,6 +540,8 @@ public class SoftwareSource {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -440,25 +579,41 @@ public class SoftwareSource {
      * status of the software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The current state of the Software Source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Number of packages
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
-    Integer packages;
+    private final Integer packages;
+
+    public Integer getPackages() {
+        return packages;
+    }
 
     /**
      * list of the Managed Instances associated with this Software Sources
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedManagedInstances")
-    java.util.List<Id> associatedManagedInstances;
+    private final java.util.List<Id> associatedManagedInstances;
+
+    public java.util.List<Id> getAssociatedManagedInstances() {
+        return associatedManagedInstances;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -466,7 +621,11 @@ public class SoftwareSource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -474,8 +633,132 @@ public class SoftwareSource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SoftwareSource(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", repoType=").append(String.valueOf(this.repoType));
+        sb.append(", archType=").append(String.valueOf(this.archType));
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append(", parentId=").append(String.valueOf(this.parentId));
+        sb.append(", parentName=").append(String.valueOf(this.parentName));
+        sb.append(", checksumType=").append(String.valueOf(this.checksumType));
+        sb.append(", maintainerName=").append(String.valueOf(this.maintainerName));
+        sb.append(", maintainerEmail=").append(String.valueOf(this.maintainerEmail));
+        sb.append(", maintainerPhone=").append(String.valueOf(this.maintainerPhone));
+        sb.append(", gpgKeyUrl=").append(String.valueOf(this.gpgKeyUrl));
+        sb.append(", gpgKeyId=").append(String.valueOf(this.gpgKeyId));
+        sb.append(", gpgKeyFingerprint=").append(String.valueOf(this.gpgKeyFingerprint));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", packages=").append(String.valueOf(this.packages));
+        sb.append(", associatedManagedInstances=")
+                .append(String.valueOf(this.associatedManagedInstances));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SoftwareSource)) {
+            return false;
+        }
+
+        SoftwareSource other = (SoftwareSource) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.repoType, other.repoType)
+                && java.util.Objects.equals(this.archType, other.archType)
+                && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(this.parentId, other.parentId)
+                && java.util.Objects.equals(this.parentName, other.parentName)
+                && java.util.Objects.equals(this.checksumType, other.checksumType)
+                && java.util.Objects.equals(this.maintainerName, other.maintainerName)
+                && java.util.Objects.equals(this.maintainerEmail, other.maintainerEmail)
+                && java.util.Objects.equals(this.maintainerPhone, other.maintainerPhone)
+                && java.util.Objects.equals(this.gpgKeyUrl, other.gpgKeyUrl)
+                && java.util.Objects.equals(this.gpgKeyId, other.gpgKeyId)
+                && java.util.Objects.equals(this.gpgKeyFingerprint, other.gpgKeyFingerprint)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.packages, other.packages)
+                && java.util.Objects.equals(
+                        this.associatedManagedInstances, other.associatedManagedInstances)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.repoType == null ? 43 : this.repoType.hashCode());
+        result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
+        result = (result * PRIME) + (this.parentName == null ? 43 : this.parentName.hashCode());
+        result = (result * PRIME) + (this.checksumType == null ? 43 : this.checksumType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintainerName == null ? 43 : this.maintainerName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintainerEmail == null ? 43 : this.maintainerEmail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintainerPhone == null ? 43 : this.maintainerPhone.hashCode());
+        result = (result * PRIME) + (this.gpgKeyUrl == null ? 43 : this.gpgKeyUrl.hashCode());
+        result = (result * PRIME) + (this.gpgKeyId == null ? 43 : this.gpgKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.gpgKeyFingerprint == null ? 43 : this.gpgKeyFingerprint.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedManagedInstances == null
+                                ? 43
+                                : this.associatedManagedInstances.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

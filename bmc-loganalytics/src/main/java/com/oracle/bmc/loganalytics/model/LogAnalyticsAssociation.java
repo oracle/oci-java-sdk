@@ -15,16 +15,70 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsAssociation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsAssociation {
+public final class LogAnalyticsAssociation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "failureMessage",
+        "agentId",
+        "timeLastAttempted",
+        "retryCount",
+        "sourceName",
+        "sourceDisplayName",
+        "sourceTypeName",
+        "lifeCycleState",
+        "entityId",
+        "entityName",
+        "entityTypeName",
+        "host",
+        "agentEntityName",
+        "entityTypeDisplayName",
+        "logGroupId",
+        "logGroupName",
+        "logGroupCompartment"
+    })
+    public LogAnalyticsAssociation(
+            String failureMessage,
+            String agentId,
+            java.util.Date timeLastAttempted,
+            Long retryCount,
+            String sourceName,
+            String sourceDisplayName,
+            String sourceTypeName,
+            LifeCycleState lifeCycleState,
+            String entityId,
+            String entityName,
+            String entityTypeName,
+            String host,
+            String agentEntityName,
+            String entityTypeDisplayName,
+            String logGroupId,
+            String logGroupName,
+            String logGroupCompartment) {
+        super();
+        this.failureMessage = failureMessage;
+        this.agentId = agentId;
+        this.timeLastAttempted = timeLastAttempted;
+        this.retryCount = retryCount;
+        this.sourceName = sourceName;
+        this.sourceDisplayName = sourceDisplayName;
+        this.sourceTypeName = sourceTypeName;
+        this.lifeCycleState = lifeCycleState;
+        this.entityId = entityId;
+        this.entityName = entityName;
+        this.entityTypeName = entityTypeName;
+        this.host = host;
+        this.agentEntityName = agentEntityName;
+        this.entityTypeDisplayName = entityTypeDisplayName;
+        this.logGroupId = logGroupId;
+        this.logGroupName = logGroupName;
+        this.logGroupCompartment = logGroupCompartment;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
         private String failureMessage;
@@ -239,23 +293,39 @@ public class LogAnalyticsAssociation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The failure message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
-    String failureMessage;
+    private final String failureMessage;
+
+    public String getFailureMessage() {
+        return failureMessage;
+    }
 
     /**
      * The agent unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
-    String agentId;
+    private final String agentId;
+
+    public String getAgentId() {
+        return agentId;
+    }
 
     /**
      * The last attempt date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastAttempted")
-    java.util.Date timeLastAttempted;
+    private final java.util.Date timeLastAttempted;
+
+    public java.util.Date getTimeLastAttempted() {
+        return timeLastAttempted;
+    }
 
     /**
      * The number of times the association will be attempted
@@ -263,31 +333,47 @@ public class LogAnalyticsAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryCount")
-    Long retryCount;
+    private final Long retryCount;
+
+    public Long getRetryCount() {
+        return retryCount;
+    }
 
     /**
      * The source name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
 
     /**
      * The source display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
-    String sourceDisplayName;
+    private final String sourceDisplayName;
+
+    public String getSourceDisplayName() {
+        return sourceDisplayName;
+    }
 
     /**
      * The source type internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
-    String sourceTypeName;
+    private final String sourceTypeName;
+
+    public String getSourceTypeName() {
+        return sourceTypeName;
+    }
+
     /**
      * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
      * or FAILED.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifeCycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -299,6 +385,9 @@ public class LogAnalyticsAssociation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifeCycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifeCycleState> map;
@@ -338,62 +427,211 @@ public class LogAnalyticsAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleState")
-    LifeCycleState lifeCycleState;
+    private final LifeCycleState lifeCycleState;
+
+    public LifeCycleState getLifeCycleState() {
+        return lifeCycleState;
+    }
 
     /**
      * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
-    String entityId;
+    private final String entityId;
+
+    public String getEntityId() {
+        return entityId;
+    }
 
     /**
      * The entity name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
-    String entityName;
+    private final String entityName;
+
+    public String getEntityName() {
+        return entityName;
+    }
 
     /**
      * The entity type internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
-    String entityTypeName;
+    private final String entityTypeName;
+
+    public String getEntityTypeName() {
+        return entityTypeName;
+    }
 
     /**
      * The host name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * The name of the entity which contains the agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentEntityName")
-    String agentEntityName;
+    private final String agentEntityName;
+
+    public String getAgentEntityName() {
+        return agentEntityName;
+    }
 
     /**
      * The entity type display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
-    String entityTypeDisplayName;
+    private final String entityTypeDisplayName;
+
+    public String getEntityTypeDisplayName() {
+        return entityTypeDisplayName;
+    }
 
     /**
      * The log group unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
-    String logGroupId;
+    private final String logGroupId;
+
+    public String getLogGroupId() {
+        return logGroupId;
+    }
 
     /**
      * The log group name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupName")
-    String logGroupName;
+    private final String logGroupName;
+
+    public String getLogGroupName() {
+        return logGroupName;
+    }
 
     /**
      * The log group compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupCompartment")
-    String logGroupCompartment;
+    private final String logGroupCompartment;
+
+    public String getLogGroupCompartment() {
+        return logGroupCompartment;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsAssociation(");
+        sb.append("failureMessage=").append(String.valueOf(this.failureMessage));
+        sb.append(", agentId=").append(String.valueOf(this.agentId));
+        sb.append(", timeLastAttempted=").append(String.valueOf(this.timeLastAttempted));
+        sb.append(", retryCount=").append(String.valueOf(this.retryCount));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", sourceDisplayName=").append(String.valueOf(this.sourceDisplayName));
+        sb.append(", sourceTypeName=").append(String.valueOf(this.sourceTypeName));
+        sb.append(", lifeCycleState=").append(String.valueOf(this.lifeCycleState));
+        sb.append(", entityId=").append(String.valueOf(this.entityId));
+        sb.append(", entityName=").append(String.valueOf(this.entityName));
+        sb.append(", entityTypeName=").append(String.valueOf(this.entityTypeName));
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", agentEntityName=").append(String.valueOf(this.agentEntityName));
+        sb.append(", entityTypeDisplayName=").append(String.valueOf(this.entityTypeDisplayName));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", logGroupName=").append(String.valueOf(this.logGroupName));
+        sb.append(", logGroupCompartment=").append(String.valueOf(this.logGroupCompartment));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsAssociation)) {
+            return false;
+        }
+
+        LogAnalyticsAssociation other = (LogAnalyticsAssociation) o;
+        return java.util.Objects.equals(this.failureMessage, other.failureMessage)
+                && java.util.Objects.equals(this.agentId, other.agentId)
+                && java.util.Objects.equals(this.timeLastAttempted, other.timeLastAttempted)
+                && java.util.Objects.equals(this.retryCount, other.retryCount)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.sourceDisplayName, other.sourceDisplayName)
+                && java.util.Objects.equals(this.sourceTypeName, other.sourceTypeName)
+                && java.util.Objects.equals(this.lifeCycleState, other.lifeCycleState)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.entityName, other.entityName)
+                && java.util.Objects.equals(this.entityTypeName, other.entityTypeName)
+                && java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.agentEntityName, other.agentEntityName)
+                && java.util.Objects.equals(this.entityTypeDisplayName, other.entityTypeDisplayName)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.logGroupName, other.logGroupName)
+                && java.util.Objects.equals(this.logGroupCompartment, other.logGroupCompartment)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.failureMessage == null ? 43 : this.failureMessage.hashCode());
+        result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastAttempted == null ? 43 : this.timeLastAttempted.hashCode());
+        result = (result * PRIME) + (this.retryCount == null ? 43 : this.retryCount.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDisplayName == null ? 43 : this.sourceDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceTypeName == null ? 43 : this.sourceTypeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifeCycleState == null ? 43 : this.lifeCycleState.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityTypeName == null ? 43 : this.entityTypeName.hashCode());
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.agentEntityName == null ? 43 : this.agentEntityName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityTypeDisplayName == null
+                                ? 43
+                                : this.entityTypeDisplayName.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result = (result * PRIME) + (this.logGroupName == null ? 43 : this.logGroupName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logGroupCompartment == null
+                                ? 43
+                                : this.logGroupCompartment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -26,9 +26,12 @@ import com.oracle.bmc.optimizer.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.RequiredArgsConstructor
 public class OptimizerPaginators {
     private final Optimizer client;
+
+    public OptimizerPaginators(Optimizer client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listCategories operation. This iterable

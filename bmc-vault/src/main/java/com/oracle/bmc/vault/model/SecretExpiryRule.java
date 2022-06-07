@@ -15,20 +15,15 @@ package com.oracle.bmc.vault.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SecretExpiryRule.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "ruleType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SecretExpiryRule extends SecretRule {
+public final class SecretExpiryRule extends SecretRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("secretVersionExpiryInterval")
         private String secretVersionExpiryInterval;
@@ -91,6 +86,10 @@ public class SecretExpiryRule extends SecretRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public SecretExpiryRule(
             String secretVersionExpiryInterval,
@@ -112,7 +111,11 @@ public class SecretExpiryRule extends SecretRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretVersionExpiryInterval")
-    String secretVersionExpiryInterval;
+    private final String secretVersionExpiryInterval;
+
+    public String getSecretVersionExpiryInterval() {
+        return secretVersionExpiryInterval;
+    }
 
     /**
      * An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -121,7 +124,11 @@ public class SecretExpiryRule extends SecretRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAbsoluteExpiry")
-    java.util.Date timeOfAbsoluteExpiry;
+    private final java.util.Date timeOfAbsoluteExpiry;
+
+    public java.util.Date getTimeOfAbsoluteExpiry() {
+        return timeOfAbsoluteExpiry;
+    }
 
     /**
      * A property indicating whether to block retrieval of the secret content, on expiry. The default is false.
@@ -130,8 +137,76 @@ public class SecretExpiryRule extends SecretRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecretContentRetrievalBlockedOnExpiry")
-    Boolean isSecretContentRetrievalBlockedOnExpiry;
+    private final Boolean isSecretContentRetrievalBlockedOnExpiry;
+
+    public Boolean getIsSecretContentRetrievalBlockedOnExpiry() {
+        return isSecretContentRetrievalBlockedOnExpiry;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecretExpiryRule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", secretVersionExpiryInterval=")
+                .append(String.valueOf(this.secretVersionExpiryInterval));
+        sb.append(", timeOfAbsoluteExpiry=").append(String.valueOf(this.timeOfAbsoluteExpiry));
+        sb.append(", isSecretContentRetrievalBlockedOnExpiry=")
+                .append(String.valueOf(this.isSecretContentRetrievalBlockedOnExpiry));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecretExpiryRule)) {
+            return false;
+        }
+
+        SecretExpiryRule other = (SecretExpiryRule) o;
+        return java.util.Objects.equals(
+                        this.secretVersionExpiryInterval, other.secretVersionExpiryInterval)
+                && java.util.Objects.equals(this.timeOfAbsoluteExpiry, other.timeOfAbsoluteExpiry)
+                && java.util.Objects.equals(
+                        this.isSecretContentRetrievalBlockedOnExpiry,
+                        other.isSecretContentRetrievalBlockedOnExpiry)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.secretVersionExpiryInterval == null
+                                ? 43
+                                : this.secretVersionExpiryInterval.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfAbsoluteExpiry == null
+                                ? 43
+                                : this.timeOfAbsoluteExpiry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSecretContentRetrievalBlockedOnExpiry == null
+                                ? 43
+                                : this.isSecretContentRetrievalBlockedOnExpiry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

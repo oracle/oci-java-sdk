@@ -16,22 +16,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HostResourceAllocation.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HostResourceAllocation extends HostConfigurationMetricGroup {
+public final class HostResourceAllocation extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -89,6 +84,10 @@ public class HostResourceAllocation extends HostConfigurationMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HostResourceAllocation(
             java.util.Date timeCollected, Integer totalCpus, Double totalMemoryInGB) {
@@ -101,14 +100,68 @@ public class HostResourceAllocation extends HostConfigurationMetricGroup {
      * Total number of CPUs available
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
-    Integer totalCpus;
+    private final Integer totalCpus;
+
+    public Integer getTotalCpus() {
+        return totalCpus;
+    }
 
     /**
      * Total amount of usable physical memory in gibabytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGB")
-    Double totalMemoryInGB;
+    private final Double totalMemoryInGB;
+
+    public Double getTotalMemoryInGB() {
+        return totalMemoryInGB;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostResourceAllocation(");
+        sb.append("super=").append(super.toString());
+        sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
+        sb.append(", totalMemoryInGB=").append(String.valueOf(this.totalMemoryInGB));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostResourceAllocation)) {
+            return false;
+        }
+
+        HostResourceAllocation other = (HostResourceAllocation) o;
+        return java.util.Objects.equals(this.totalCpus, other.totalCpus)
+                && java.util.Objects.equals(this.totalMemoryInGB, other.totalMemoryInGB)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.totalCpus == null ? 43 : this.totalCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMemoryInGB == null ? 43 : this.totalMemoryInGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

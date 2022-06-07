@@ -15,16 +15,37 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsParserMetaPluginParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsParserMetaPluginParameter {
+public final class LogAnalyticsParserMetaPluginParameter {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "name",
+        "isMandatory",
+        "isRepeatable",
+        "pluginName",
+        "type"
+    })
+    public LogAnalyticsParserMetaPluginParameter(
+            String description,
+            String name,
+            Boolean isMandatory,
+            Boolean isRepeatable,
+            String pluginName,
+            String type) {
+        super();
+        this.description = description;
+        this.name = name;
+        this.isMandatory = isMandatory;
+        this.isRepeatable = isRepeatable;
+        this.pluginName = pluginName;
+        this.type = type;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -113,44 +134,126 @@ public class LogAnalyticsParserMetaPluginParameter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The parameter description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The parameter internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A flag indicating whether or not the parameter is mandatory.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
-    Boolean isMandatory;
+    private final Boolean isMandatory;
+
+    public Boolean getIsMandatory() {
+        return isMandatory;
+    }
 
     /**
      * A flag indicating whether or not the parameter is repeatable.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRepeatable")
-    Boolean isRepeatable;
+    private final Boolean isRepeatable;
+
+    public Boolean getIsRepeatable() {
+        return isRepeatable;
+    }
 
     /**
      * The plugin internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
-    String pluginName;
+    private final String pluginName;
+
+    public String getPluginName() {
+        return pluginName;
+    }
 
     /**
      * The parameter type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsParserMetaPluginParameter(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", isMandatory=").append(String.valueOf(this.isMandatory));
+        sb.append(", isRepeatable=").append(String.valueOf(this.isRepeatable));
+        sb.append(", pluginName=").append(String.valueOf(this.pluginName));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsParserMetaPluginParameter)) {
+            return false;
+        }
+
+        LogAnalyticsParserMetaPluginParameter other = (LogAnalyticsParserMetaPluginParameter) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isMandatory, other.isMandatory)
+                && java.util.Objects.equals(this.isRepeatable, other.isRepeatable)
+                && java.util.Objects.equals(this.pluginName, other.pluginName)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.isMandatory == null ? 43 : this.isMandatory.hashCode());
+        result = (result * PRIME) + (this.isRepeatable == null ? 43 : this.isRepeatable.hashCode());
+        result = (result * PRIME) + (this.pluginName == null ? 43 : this.pluginName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

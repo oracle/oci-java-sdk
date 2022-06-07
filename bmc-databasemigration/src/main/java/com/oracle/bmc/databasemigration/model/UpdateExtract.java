@@ -17,14 +17,18 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateExtract.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateExtract {
+public final class UpdateExtract {
+    @Deprecated
+    @java.beans.ConstructorProperties({"performanceProfile", "longTransDuration"})
+    public UpdateExtract(ExtractPerformanceProfile performanceProfile, Integer longTransDuration) {
+        super();
+        this.performanceProfile = performanceProfile;
+        this.longTransDuration = longTransDuration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("performanceProfile")
         private ExtractPerformanceProfile performanceProfile;
@@ -71,12 +75,20 @@ public class UpdateExtract {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Extract performance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("performanceProfile")
-    ExtractPerformanceProfile performanceProfile;
+    private final ExtractPerformanceProfile performanceProfile;
+
+    public ExtractPerformanceProfile getPerformanceProfile() {
+        return performanceProfile;
+    }
 
     /**
      * Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running.
@@ -84,8 +96,60 @@ public class UpdateExtract {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longTransDuration")
-    Integer longTransDuration;
+    private final Integer longTransDuration;
+
+    public Integer getLongTransDuration() {
+        return longTransDuration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateExtract(");
+        sb.append("performanceProfile=").append(String.valueOf(this.performanceProfile));
+        sb.append(", longTransDuration=").append(String.valueOf(this.longTransDuration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateExtract)) {
+            return false;
+        }
+
+        UpdateExtract other = (UpdateExtract) o;
+        return java.util.Objects.equals(this.performanceProfile, other.performanceProfile)
+                && java.util.Objects.equals(this.longTransDuration, other.longTransDuration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.performanceProfile == null
+                                ? 43
+                                : this.performanceProfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.longTransDuration == null ? 43 : this.longTransDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

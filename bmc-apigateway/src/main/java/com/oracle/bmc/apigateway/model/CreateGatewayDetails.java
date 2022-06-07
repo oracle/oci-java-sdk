@@ -15,16 +15,49 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateGatewayDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateGatewayDetails {
+public final class CreateGatewayDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "endpointType",
+        "subnetId",
+        "networkSecurityGroupIds",
+        "certificateId",
+        "responseCacheDetails",
+        "freeformTags",
+        "definedTags",
+        "caBundles"
+    })
+    public CreateGatewayDetails(
+            String displayName,
+            String compartmentId,
+            Gateway.EndpointType endpointType,
+            String subnetId,
+            java.util.List<String> networkSecurityGroupIds,
+            String certificateId,
+            ResponseCacheDetails responseCacheDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<CaBundle> caBundles) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.endpointType = endpointType;
+        this.subnetId = subnetId;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
+        this.certificateId = certificateId;
+        this.responseCacheDetails = responseCacheDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.caBundles = caBundles;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -163,6 +196,10 @@ public class CreateGatewayDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
@@ -171,7 +208,11 @@ public class CreateGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
@@ -179,7 +220,11 @@ public class CreateGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Gateway endpoint type. {@code PUBLIC} will have a public ip address assigned to it, while {@code PRIVATE} will only be
@@ -189,7 +234,11 @@ public class CreateGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointType")
-    Gateway.EndpointType endpointType;
+    private final Gateway.EndpointType endpointType;
+
+    public Gateway.EndpointType getEndpointType() {
+        return endpointType;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet in which
@@ -197,24 +246,40 @@ public class CreateGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * An array of Network Security Groups OCIDs associated with this API Gateway.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
-    java.util.List<String> networkSecurityGroupIds;
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
-    String certificateId;
+    private final String certificateId;
+
+    public String getCertificateId() {
+        return certificateId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("responseCacheDetails")
-    ResponseCacheDetails responseCacheDetails;
+    private final ResponseCacheDetails responseCacheDetails;
+
+    public ResponseCacheDetails getResponseCacheDetails() {
+        return responseCacheDetails;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
@@ -225,7 +290,11 @@ public class CreateGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -236,14 +305,102 @@ public class CreateGatewayDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * An array of CA bundles that should be used on the Gateway for TLS validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caBundles")
-    java.util.List<CaBundle> caBundles;
+    private final java.util.List<CaBundle> caBundles;
+
+    public java.util.List<CaBundle> getCaBundles() {
+        return caBundles;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateGatewayDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", endpointType=").append(String.valueOf(this.endpointType));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
+        sb.append(", certificateId=").append(String.valueOf(this.certificateId));
+        sb.append(", responseCacheDetails=").append(String.valueOf(this.responseCacheDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", caBundles=").append(String.valueOf(this.caBundles));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateGatewayDetails)) {
+            return false;
+        }
+
+        CreateGatewayDetails other = (CreateGatewayDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.endpointType, other.endpointType)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
+                && java.util.Objects.equals(this.certificateId, other.certificateId)
+                && java.util.Objects.equals(this.responseCacheDetails, other.responseCacheDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.caBundles, other.caBundles)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.endpointType == null ? 43 : this.endpointType.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateId == null ? 43 : this.certificateId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responseCacheDetails == null
+                                ? 43
+                                : this.responseCacheDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.caBundles == null ? 43 : this.caBundles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

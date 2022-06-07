@@ -15,14 +15,19 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MultipathDevice.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MultipathDevice {
+public final class MultipathDevice {
+    @Deprecated
+    @java.beans.ConstructorProperties({"ipv4", "iqn", "port"})
+    public MultipathDevice(String ipv4, String iqn, Integer port) {
+        super();
+        this.ipv4 = ipv4;
+        this.iqn = iqn;
+        this.port = port;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
         private String ipv4;
@@ -76,6 +81,10 @@ public class MultipathDevice {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The volume's iSCSI IP address.
      * <p>
@@ -83,7 +92,11 @@ public class MultipathDevice {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
-    String ipv4;
+    private final String ipv4;
+
+    public String getIpv4() {
+        return ipv4;
+    }
 
     /**
      * The target volume's iSCSI Qualified Name in the format defined
@@ -93,7 +106,11 @@ public class MultipathDevice {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iqn")
-    String iqn;
+    private final String iqn;
+
+    public String getIqn() {
+        return iqn;
+    }
 
     /**
      * The volume's iSCSI port, usually port 860 or 3260.
@@ -102,8 +119,57 @@ public class MultipathDevice {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MultipathDevice(");
+        sb.append("ipv4=").append(String.valueOf(this.ipv4));
+        sb.append(", iqn=").append(String.valueOf(this.iqn));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MultipathDevice)) {
+            return false;
+        }
+
+        MultipathDevice other = (MultipathDevice) o;
+        return java.util.Objects.equals(this.ipv4, other.ipv4)
+                && java.util.Objects.equals(this.iqn, other.iqn)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ipv4 == null ? 43 : this.ipv4.hashCode());
+        result = (result * PRIME) + (this.iqn == null ? 43 : this.iqn.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

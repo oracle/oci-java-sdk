@@ -15,14 +15,38 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IncidentSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IncidentSummary {
+public final class IncidentSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "compartmentId",
+        "contactList",
+        "tenancyInformation",
+        "ticket",
+        "incidentType",
+        "problemType"
+    })
+    public IncidentSummary(
+            String key,
+            String compartmentId,
+            ContactList contactList,
+            TenancyInformation tenancyInformation,
+            Ticket ticket,
+            IncidentResourceType incidentType,
+            ProblemType problemType) {
+        super();
+        this.key = key;
+        this.compartmentId = compartmentId;
+        this.contactList = contactList;
+        this.tenancyInformation = tenancyInformation;
+        this.ticket = ticket;
+        this.incidentType = incidentType;
+        this.problemType = problemType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -127,36 +151,131 @@ public class IncidentSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier of the incident.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The OCID of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("contactList")
-    ContactList contactList;
+    private final ContactList contactList;
+
+    public ContactList getContactList() {
+        return contactList;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyInformation")
-    TenancyInformation tenancyInformation;
+    private final TenancyInformation tenancyInformation;
+
+    public TenancyInformation getTenancyInformation() {
+        return tenancyInformation;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ticket")
-    Ticket ticket;
+    private final Ticket ticket;
+
+    public Ticket getTicket() {
+        return ticket;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("incidentType")
-    IncidentResourceType incidentType;
+    private final IncidentResourceType incidentType;
+
+    public IncidentResourceType getIncidentType() {
+        return incidentType;
+    }
 
     /**
      * The kind of support ticket, such as a technical support request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
-    ProblemType problemType;
+    private final ProblemType problemType;
+
+    public ProblemType getProblemType() {
+        return problemType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IncidentSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", contactList=").append(String.valueOf(this.contactList));
+        sb.append(", tenancyInformation=").append(String.valueOf(this.tenancyInformation));
+        sb.append(", ticket=").append(String.valueOf(this.ticket));
+        sb.append(", incidentType=").append(String.valueOf(this.incidentType));
+        sb.append(", problemType=").append(String.valueOf(this.problemType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IncidentSummary)) {
+            return false;
+        }
+
+        IncidentSummary other = (IncidentSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.contactList, other.contactList)
+                && java.util.Objects.equals(this.tenancyInformation, other.tenancyInformation)
+                && java.util.Objects.equals(this.ticket, other.ticket)
+                && java.util.Objects.equals(this.incidentType, other.incidentType)
+                && java.util.Objects.equals(this.problemType, other.problemType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.contactList == null ? 43 : this.contactList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tenancyInformation == null
+                                ? 43
+                                : this.tenancyInformation.hashCode());
+        result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
+        result = (result * PRIME) + (this.incidentType == null ? 43 : this.incidentType.hashCode());
+        result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

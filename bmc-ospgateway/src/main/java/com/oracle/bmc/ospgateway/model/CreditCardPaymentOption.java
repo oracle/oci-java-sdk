@@ -15,22 +15,17 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreditCardPaymentOption.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "paymentMethod"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreditCardPaymentOption extends PaymentOption {
+public final class CreditCardPaymentOption extends PaymentOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("walletInstrumentId")
         private String walletInstrumentId;
@@ -124,6 +119,10 @@ public class CreditCardPaymentOption extends PaymentOption {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreditCardPaymentOption(
             String walletInstrumentId,
@@ -143,26 +142,96 @@ public class CreditCardPaymentOption extends PaymentOption {
      * Credit card type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
-    CreditCardType creditCardType;
+    private final CreditCardType creditCardType;
+
+    public CreditCardType getCreditCardType() {
+        return creditCardType;
+    }
 
     /**
      * Last four digits of the card.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
-    String lastDigits;
+    private final String lastDigits;
+
+    public String getLastDigits() {
+        return lastDigits;
+    }
 
     /**
      * Name on the credit card.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
-    String nameOnCard;
+    private final String nameOnCard;
+
+    public String getNameOnCard() {
+        return nameOnCard;
+    }
 
     /**
      * Expired date of the credit card.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
-    java.util.Date timeExpiration;
+    private final java.util.Date timeExpiration;
+
+    public java.util.Date getTimeExpiration() {
+        return timeExpiration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreditCardPaymentOption(");
+        sb.append("super=").append(super.toString());
+        sb.append(", creditCardType=").append(String.valueOf(this.creditCardType));
+        sb.append(", lastDigits=").append(String.valueOf(this.lastDigits));
+        sb.append(", nameOnCard=").append(String.valueOf(this.nameOnCard));
+        sb.append(", timeExpiration=").append(String.valueOf(this.timeExpiration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreditCardPaymentOption)) {
+            return false;
+        }
+
+        CreditCardPaymentOption other = (CreditCardPaymentOption) o;
+        return java.util.Objects.equals(this.creditCardType, other.creditCardType)
+                && java.util.Objects.equals(this.lastDigits, other.lastDigits)
+                && java.util.Objects.equals(this.nameOnCard, other.nameOnCard)
+                && java.util.Objects.equals(this.timeExpiration, other.timeExpiration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.creditCardType == null ? 43 : this.creditCardType.hashCode());
+        result = (result * PRIME) + (this.lastDigits == null ? 43 : this.lastDigits.hashCode());
+        result = (result * PRIME) + (this.nameOnCard == null ? 43 : this.nameOnCard.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeExpiration == null ? 43 : this.timeExpiration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

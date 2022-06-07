@@ -9,14 +9,6 @@ import com.oracle.bmc.usage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usage/ListProductsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProductsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,31 +16,49 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String tenancyId;
 
+    public String getTenancyId() {
+        return tenancyId;
+    }
     /**
      * The subscription ID for which rewards information is requested for.
      */
     private String subscriptionId;
 
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
     /**
      * The SPM Identifier for the usage period.
      */
     private String usagePeriodKey;
 
+    public String getUsagePeriodKey() {
+        return usagePeriodKey;
+    }
     /**
      * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The value of the 'opc-next-page' response header from the previous call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of items to return in the paginated response.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The sort order to use, which can be ascending (ASC) or descending (DESC).
      */
@@ -89,6 +99,10 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Supports one sort order.
      */
@@ -129,6 +143,10 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The field to specify the type of product.
      */
@@ -171,12 +189,115 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    public Producttype getProducttype() {
+        return producttype;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListProductsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String tenancyId = null;
+
+        /**
+         * The OCID of the tenancy.
+         * @return this builder instance
+         */
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = tenancyId;
+            return this;
+        }
+
+        private String subscriptionId = null;
+
+        /**
+         * The subscription ID for which rewards information is requested for.
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        private String usagePeriodKey = null;
+
+        /**
+         * The SPM Identifier for the usage period.
+         * @return this builder instance
+         */
+        public Builder usagePeriodKey(String usagePeriodKey) {
+            this.usagePeriodKey = usagePeriodKey;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the 'opc-next-page' response header from the previous call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in the paginated response.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, which can be ascending (ASC) or descending (DESC).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Supports one sort order.
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private Producttype producttype = null;
+
+        /**
+         * The field to specify the type of product.
+         * @return this builder instance
+         */
+        public Builder producttype(Producttype producttype) {
+            this.producttype = producttype;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -236,5 +357,108 @@ public class ListProductsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListProductsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListProductsRequest
+         */
+        public ListProductsRequest buildWithoutInvocationCallback() {
+            ListProductsRequest request = new ListProductsRequest();
+            request.tenancyId = tenancyId;
+            request.subscriptionId = subscriptionId;
+            request.usagePeriodKey = usagePeriodKey;
+            request.opcRequestId = opcRequestId;
+            request.page = page;
+            request.limit = limit;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.producttype = producttype;
+            return request;
+            // new ListProductsRequest(tenancyId, subscriptionId, usagePeriodKey, opcRequestId, page, limit, sortOrder, sortBy, producttype);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .tenancyId(tenancyId)
+                .subscriptionId(subscriptionId)
+                .usagePeriodKey(usagePeriodKey)
+                .opcRequestId(opcRequestId)
+                .page(page)
+                .limit(limit)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .producttype(producttype);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(",usagePeriodKey=").append(String.valueOf(this.usagePeriodKey));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",producttype=").append(String.valueOf(this.producttype));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListProductsRequest)) {
+            return false;
+        }
+
+        ListProductsRequest other = (ListProductsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.usagePeriodKey, other.usagePeriodKey)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.producttype, other.producttype);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usagePeriodKey == null ? 43 : this.usagePeriodKey.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.producttype == null ? 43 : this.producttype.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,25 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProvisionAuditPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProvisionAuditPolicyDetails {
+public final class ProvisionAuditPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isDataSafeServiceAccountExcluded",
+        "provisionAuditConditions"
+    })
+    public ProvisionAuditPolicyDetails(
+            Boolean isDataSafeServiceAccountExcluded,
+            java.util.List<ProvisionAuditConditions> provisionAuditConditions) {
+        super();
+        this.isDataSafeServiceAccountExcluded = isDataSafeServiceAccountExcluded;
+        this.provisionAuditConditions = provisionAuditConditions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isDataSafeServiceAccountExcluded")
         private Boolean isDataSafeServiceAccountExcluded;
@@ -74,18 +83,85 @@ public class ProvisionAuditPolicyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataSafeServiceAccountExcluded")
-    Boolean isDataSafeServiceAccountExcluded;
+    private final Boolean isDataSafeServiceAccountExcluded;
+
+    public Boolean getIsDataSafeServiceAccountExcluded() {
+        return isDataSafeServiceAccountExcluded;
+    }
 
     /**
      * The audit policy details for provisioning.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionAuditConditions")
-    java.util.List<ProvisionAuditConditions> provisionAuditConditions;
+    private final java.util.List<ProvisionAuditConditions> provisionAuditConditions;
+
+    public java.util.List<ProvisionAuditConditions> getProvisionAuditConditions() {
+        return provisionAuditConditions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProvisionAuditPolicyDetails(");
+        sb.append("isDataSafeServiceAccountExcluded=")
+                .append(String.valueOf(this.isDataSafeServiceAccountExcluded));
+        sb.append(", provisionAuditConditions=")
+                .append(String.valueOf(this.provisionAuditConditions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProvisionAuditPolicyDetails)) {
+            return false;
+        }
+
+        ProvisionAuditPolicyDetails other = (ProvisionAuditPolicyDetails) o;
+        return java.util.Objects.equals(
+                        this.isDataSafeServiceAccountExcluded,
+                        other.isDataSafeServiceAccountExcluded)
+                && java.util.Objects.equals(
+                        this.provisionAuditConditions, other.provisionAuditConditions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isDataSafeServiceAccountExcluded == null
+                                ? 43
+                                : this.isDataSafeServiceAccountExcluded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionAuditConditions == null
+                                ? 43
+                                : this.provisionAuditConditions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

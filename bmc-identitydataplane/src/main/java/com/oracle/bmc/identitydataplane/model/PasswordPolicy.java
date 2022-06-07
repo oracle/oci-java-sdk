@@ -16,14 +16,35 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PasswordPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PasswordPolicy {
+public final class PasswordPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "minimumPasswordLength",
+        "isUppercaseCharactersRequired",
+        "isLowercaseCharactersRequired",
+        "isNumericCharactersRequired",
+        "isSpecialCharactersRequired",
+        "isUsernameContainmentAllowed"
+    })
+    public PasswordPolicy(
+            Integer minimumPasswordLength,
+            Boolean isUppercaseCharactersRequired,
+            Boolean isLowercaseCharactersRequired,
+            Boolean isNumericCharactersRequired,
+            Boolean isSpecialCharactersRequired,
+            Boolean isUsernameContainmentAllowed) {
+        super();
+        this.minimumPasswordLength = minimumPasswordLength;
+        this.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
+        this.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
+        this.isNumericCharactersRequired = isNumericCharactersRequired;
+        this.isSpecialCharactersRequired = isSpecialCharactersRequired;
+        this.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("minimumPasswordLength")
         private Integer minimumPasswordLength;
@@ -117,42 +138,158 @@ public class PasswordPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Minimum password length required.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumPasswordLength")
-    Integer minimumPasswordLength;
+    private final Integer minimumPasswordLength;
+
+    public Integer getMinimumPasswordLength() {
+        return minimumPasswordLength;
+    }
 
     /**
      * At least one uppercase character required.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUppercaseCharactersRequired")
-    Boolean isUppercaseCharactersRequired;
+    private final Boolean isUppercaseCharactersRequired;
+
+    public Boolean getIsUppercaseCharactersRequired() {
+        return isUppercaseCharactersRequired;
+    }
 
     /**
      * At least one lower case character required.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLowercaseCharactersRequired")
-    Boolean isLowercaseCharactersRequired;
+    private final Boolean isLowercaseCharactersRequired;
+
+    public Boolean getIsLowercaseCharactersRequired() {
+        return isLowercaseCharactersRequired;
+    }
 
     /**
      * At least one numeric character required.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNumericCharactersRequired")
-    Boolean isNumericCharactersRequired;
+    private final Boolean isNumericCharactersRequired;
+
+    public Boolean getIsNumericCharactersRequired() {
+        return isNumericCharactersRequired;
+    }
 
     /**
      * At least one special character required.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSpecialCharactersRequired")
-    Boolean isSpecialCharactersRequired;
+    private final Boolean isSpecialCharactersRequired;
+
+    public Boolean getIsSpecialCharactersRequired() {
+        return isSpecialCharactersRequired;
+    }
 
     /**
      * User name is allowed to be part of the password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUsernameContainmentAllowed")
-    Boolean isUsernameContainmentAllowed;
+    private final Boolean isUsernameContainmentAllowed;
+
+    public Boolean getIsUsernameContainmentAllowed() {
+        return isUsernameContainmentAllowed;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PasswordPolicy(");
+        sb.append("minimumPasswordLength=").append(String.valueOf(this.minimumPasswordLength));
+        sb.append(", isUppercaseCharactersRequired=")
+                .append(String.valueOf(this.isUppercaseCharactersRequired));
+        sb.append(", isLowercaseCharactersRequired=")
+                .append(String.valueOf(this.isLowercaseCharactersRequired));
+        sb.append(", isNumericCharactersRequired=")
+                .append(String.valueOf(this.isNumericCharactersRequired));
+        sb.append(", isSpecialCharactersRequired=")
+                .append(String.valueOf(this.isSpecialCharactersRequired));
+        sb.append(", isUsernameContainmentAllowed=")
+                .append(String.valueOf(this.isUsernameContainmentAllowed));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PasswordPolicy)) {
+            return false;
+        }
+
+        PasswordPolicy other = (PasswordPolicy) o;
+        return java.util.Objects.equals(this.minimumPasswordLength, other.minimumPasswordLength)
+                && java.util.Objects.equals(
+                        this.isUppercaseCharactersRequired, other.isUppercaseCharactersRequired)
+                && java.util.Objects.equals(
+                        this.isLowercaseCharactersRequired, other.isLowercaseCharactersRequired)
+                && java.util.Objects.equals(
+                        this.isNumericCharactersRequired, other.isNumericCharactersRequired)
+                && java.util.Objects.equals(
+                        this.isSpecialCharactersRequired, other.isSpecialCharactersRequired)
+                && java.util.Objects.equals(
+                        this.isUsernameContainmentAllowed, other.isUsernameContainmentAllowed)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.minimumPasswordLength == null
+                                ? 43
+                                : this.minimumPasswordLength.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUppercaseCharactersRequired == null
+                                ? 43
+                                : this.isUppercaseCharactersRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLowercaseCharactersRequired == null
+                                ? 43
+                                : this.isLowercaseCharactersRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isNumericCharactersRequired == null
+                                ? 43
+                                : this.isNumericCharactersRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSpecialCharactersRequired == null
+                                ? 43
+                                : this.isSpecialCharactersRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUsernameContainmentAllowed == null
+                                ? 43
+                                : this.isUsernameContainmentAllowed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

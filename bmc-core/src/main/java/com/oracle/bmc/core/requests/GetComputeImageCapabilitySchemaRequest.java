@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputeImageCapabilitySchemaRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetComputeImageCapabilitySchemaRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,18 @@ public class GetComputeImageCapabilitySchemaRequest
      */
     private String computeImageCapabilitySchemaId;
 
+    public String getComputeImageCapabilitySchemaId() {
+        return computeImageCapabilitySchemaId;
+    }
     /**
      * Merge the image capability schema with the global image capability schema
      *
      */
     private Boolean isMergeEnabled;
+
+    public Boolean getIsMergeEnabled() {
+        return isMergeEnabled;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -37,6 +36,29 @@ public class GetComputeImageCapabilitySchemaRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String computeImageCapabilitySchemaId = null;
+
+        /**
+         * The id of the compute image capability schema or the image ocid
+         * @return this builder instance
+         */
+        public Builder computeImageCapabilitySchemaId(String computeImageCapabilitySchemaId) {
+            this.computeImageCapabilitySchemaId = computeImageCapabilitySchemaId;
+            return this;
+        }
+
+        private Boolean isMergeEnabled = null;
+
+        /**
+         * Merge the image capability schema with the global image capability schema
+         *
+         * @return this builder instance
+         */
+        public Builder isMergeEnabled(Boolean isMergeEnabled) {
+            this.isMergeEnabled = isMergeEnabled;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -89,5 +111,78 @@ public class GetComputeImageCapabilitySchemaRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetComputeImageCapabilitySchemaRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetComputeImageCapabilitySchemaRequest
+         */
+        public GetComputeImageCapabilitySchemaRequest buildWithoutInvocationCallback() {
+            GetComputeImageCapabilitySchemaRequest request =
+                    new GetComputeImageCapabilitySchemaRequest();
+            request.computeImageCapabilitySchemaId = computeImageCapabilitySchemaId;
+            request.isMergeEnabled = isMergeEnabled;
+            return request;
+            // new GetComputeImageCapabilitySchemaRequest(computeImageCapabilitySchemaId, isMergeEnabled);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .computeImageCapabilitySchemaId(computeImageCapabilitySchemaId)
+                .isMergeEnabled(isMergeEnabled);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",computeImageCapabilitySchemaId=")
+                .append(String.valueOf(this.computeImageCapabilitySchemaId));
+        sb.append(",isMergeEnabled=").append(String.valueOf(this.isMergeEnabled));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetComputeImageCapabilitySchemaRequest)) {
+            return false;
+        }
+
+        GetComputeImageCapabilitySchemaRequest other = (GetComputeImageCapabilitySchemaRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.computeImageCapabilitySchemaId, other.computeImageCapabilitySchemaId)
+                && java.util.Objects.equals(this.isMergeEnabled, other.isMergeEnabled);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.computeImageCapabilitySchemaId == null
+                                ? 43
+                                : this.computeImageCapabilitySchemaId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMergeEnabled == null ? 43 : this.isMergeEnabled.hashCode());
+        return result;
     }
 }

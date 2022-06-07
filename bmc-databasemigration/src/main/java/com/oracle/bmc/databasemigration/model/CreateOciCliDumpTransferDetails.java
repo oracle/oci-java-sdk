@@ -16,22 +16,17 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOciCliDumpTransferDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "kind"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOciCliDumpTransferDetails extends CreateHostDumpTransferDetails {
+public final class CreateOciCliDumpTransferDetails extends CreateHostDumpTransferDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ociHome")
         private String ociHome;
@@ -68,6 +63,10 @@ public class CreateOciCliDumpTransferDetails extends CreateHostDumpTransferDetai
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateOciCliDumpTransferDetails(String ociHome) {
         super();
@@ -79,8 +78,53 @@ public class CreateOciCliDumpTransferDetails extends CreateHostDumpTransferDetai
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ociHome")
-    String ociHome;
+    private final String ociHome;
+
+    public String getOciHome() {
+        return ociHome;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOciCliDumpTransferDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", ociHome=").append(String.valueOf(this.ociHome));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOciCliDumpTransferDetails)) {
+            return false;
+        }
+
+        CreateOciCliDumpTransferDetails other = (CreateOciCliDumpTransferDetails) o;
+        return java.util.Objects.equals(this.ociHome, other.ociHome)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.ociHome == null ? 43 : this.ociHome.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

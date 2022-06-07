@@ -15,16 +15,37 @@ package com.oracle.bmc.appmgmtcontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonitoredInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonitoredInstanceSummary {
+public final class MonitoredInstanceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "instanceId",
+        "compartmentId",
+        "displayName",
+        "managementAgentId",
+        "lifecycleState",
+        "monitoringState"
+    })
+    public MonitoredInstanceSummary(
+            String instanceId,
+            String compartmentId,
+            String displayName,
+            String managementAgentId,
+            MonitoredInstance.LifecycleState lifecycleState,
+            MonitoredInstance.MonitoringState monitoringState) {
+        super();
+        this.instanceId = instanceId;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.managementAgentId = managementAgentId;
+        this.lifecycleState = lifecycleState;
+        this.monitoringState = monitoringState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
@@ -118,17 +139,29 @@ public class MonitoredInstanceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
 
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
@@ -136,26 +169,104 @@ public class MonitoredInstanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
-    String managementAgentId;
+    private final String managementAgentId;
+
+    public String getManagementAgentId() {
+        return managementAgentId;
+    }
 
     /**
      * The current state of the monitored instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    MonitoredInstance.LifecycleState lifecycleState;
+    private final MonitoredInstance.LifecycleState lifecycleState;
+
+    public MonitoredInstance.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Monitoring status. Can be either enabled or disabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("monitoringState")
-    MonitoredInstance.MonitoringState monitoringState;
+    private final MonitoredInstance.MonitoringState monitoringState;
+
+    public MonitoredInstance.MonitoringState getMonitoringState() {
+        return monitoringState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitoredInstanceSummary(");
+        sb.append("instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", monitoringState=").append(String.valueOf(this.monitoringState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitoredInstanceSummary)) {
+            return false;
+        }
+
+        MonitoredInstanceSummary other = (MonitoredInstanceSummary) o;
+        return java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.monitoringState, other.monitoringState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.monitoringState == null ? 43 : this.monitoringState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

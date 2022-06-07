@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateFunctionDeployStageDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateFunctionDeployStageDetails extends CreateDeployStageDetails {
+public final class CreateFunctionDeployStageDetails extends CreateDeployStageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -182,6 +177,10 @@ public class CreateFunctionDeployStageDetails extends CreateDeployStageDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateFunctionDeployStageDetails(
             String description,
@@ -213,32 +212,125 @@ public class CreateFunctionDeployStageDetails extends CreateDeployStageDetails {
      * Function environment OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
-    String functionDeployEnvironmentId;
+    private final String functionDeployEnvironmentId;
+
+    public String getFunctionDeployEnvironmentId() {
+        return functionDeployEnvironmentId;
+    }
 
     /**
      * A Docker image artifact OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dockerImageDeployArtifactId")
-    String dockerImageDeployArtifactId;
+    private final String dockerImageDeployArtifactId;
+
+    public String getDockerImageDeployArtifactId() {
+        return dockerImageDeployArtifactId;
+    }
 
     /**
      * User provided key and value pair configuration, which is assigned through constants or parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
-    java.util.Map<String, String> config;
+    private final java.util.Map<String, String> config;
+
+    public java.util.Map<String, String> getConfig() {
+        return config;
+    }
 
     /**
      * Maximum usable memory for the Function (in MB).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInMBs")
-    Long maxMemoryInMBs;
+    private final Long maxMemoryInMBs;
+
+    public Long getMaxMemoryInMBs() {
+        return maxMemoryInMBs;
+    }
 
     /**
      * Timeout for execution of the Function. Value in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionTimeoutInSeconds")
-    Integer functionTimeoutInSeconds;
+    private final Integer functionTimeoutInSeconds;
+
+    public Integer getFunctionTimeoutInSeconds() {
+        return functionTimeoutInSeconds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateFunctionDeployStageDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", functionDeployEnvironmentId=")
+                .append(String.valueOf(this.functionDeployEnvironmentId));
+        sb.append(", dockerImageDeployArtifactId=")
+                .append(String.valueOf(this.dockerImageDeployArtifactId));
+        sb.append(", config=").append(String.valueOf(this.config));
+        sb.append(", maxMemoryInMBs=").append(String.valueOf(this.maxMemoryInMBs));
+        sb.append(", functionTimeoutInSeconds=")
+                .append(String.valueOf(this.functionTimeoutInSeconds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateFunctionDeployStageDetails)) {
+            return false;
+        }
+
+        CreateFunctionDeployStageDetails other = (CreateFunctionDeployStageDetails) o;
+        return java.util.Objects.equals(
+                        this.functionDeployEnvironmentId, other.functionDeployEnvironmentId)
+                && java.util.Objects.equals(
+                        this.dockerImageDeployArtifactId, other.dockerImageDeployArtifactId)
+                && java.util.Objects.equals(this.config, other.config)
+                && java.util.Objects.equals(this.maxMemoryInMBs, other.maxMemoryInMBs)
+                && java.util.Objects.equals(
+                        this.functionTimeoutInSeconds, other.functionTimeoutInSeconds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.functionDeployEnvironmentId == null
+                                ? 43
+                                : this.functionDeployEnvironmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dockerImageDeployArtifactId == null
+                                ? 43
+                                : this.dockerImageDeployArtifactId.hashCode());
+        result = (result * PRIME) + (this.config == null ? 43 : this.config.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxMemoryInMBs == null ? 43 : this.maxMemoryInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.functionTimeoutInSeconds == null
+                                ? 43
+                                : this.functionTimeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

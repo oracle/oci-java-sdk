@@ -15,14 +15,20 @@ package com.oracle.bmc.healthchecks.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Routing.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Routing {
+public final class Routing {
+    @Deprecated
+    @java.beans.ConstructorProperties({"asLabel", "asn", "prefix", "weight"})
+    public Routing(String asLabel, Integer asn, String prefix, Integer weight) {
+        super();
+        this.asLabel = asLabel;
+        this.asn = asn;
+        this.prefix = prefix;
+        this.weight = weight;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("asLabel")
         private String asLabel;
@@ -89,13 +95,21 @@ public class Routing {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The registry label for {@code asn}, usually the name of the organization that
      * owns the ASN. May be omitted or null.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("asLabel")
-    String asLabel;
+    private final String asLabel;
+
+    public String getAsLabel() {
+        return asLabel;
+    }
 
     /**
      * The Autonomous System Number (ASN) identifying the organization
@@ -103,7 +117,11 @@ public class Routing {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("asn")
-    Integer asn;
+    private final Integer asn;
+
+    public Integer getAsn() {
+        return asn;
+    }
 
     /**
      * An IP prefix (CIDR syntax) that is less specific than
@@ -111,7 +129,11 @@ public class Routing {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
-    String prefix;
+    private final String prefix;
+
+    public String getPrefix() {
+        return prefix;
+    }
 
     /**
      * An integer between 0 and 100 used to select between multiple
@@ -120,8 +142,60 @@ public class Routing {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    Integer weight;
+    private final Integer weight;
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Routing(");
+        sb.append("asLabel=").append(String.valueOf(this.asLabel));
+        sb.append(", asn=").append(String.valueOf(this.asn));
+        sb.append(", prefix=").append(String.valueOf(this.prefix));
+        sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Routing)) {
+            return false;
+        }
+
+        Routing other = (Routing) o;
+        return java.util.Objects.equals(this.asLabel, other.asLabel)
+                && java.util.Objects.equals(this.asn, other.asn)
+                && java.util.Objects.equals(this.prefix, other.prefix)
+                && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.asLabel == null ? 43 : this.asLabel.hashCode());
+        result = (result * PRIME) + (this.asn == null ? 43 : this.asn.hashCode());
+        result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
+        result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

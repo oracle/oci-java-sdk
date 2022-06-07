@@ -8,7 +8,6 @@ package com.oracle.bmc.budget.model;
  * The type of target on which the budget is applied. Valid values are COMPARTMENT or TAG.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.extern.slf4j.Slf4j
 public enum TargetType {
     Compartment("COMPARTMENT"),
     Tag("TAG"),
@@ -18,6 +17,8 @@ public enum TargetType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(TargetType.class);
 
     private final String value;
     private static java.util.Map<String, TargetType> map;

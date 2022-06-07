@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListDatabaseParametersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDatabaseParametersRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListDatabaseParametersRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,17 @@ public class ListDatabaseParametersRequest
      */
     private String managedDatabaseId;
 
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The source used to list database parameters. {@code CURRENT} is used to get the
      * database parameters that are currently in effect for the database
@@ -78,18 +76,28 @@ public class ListDatabaseParametersRequest
             throw new IllegalArgumentException("Invalid Source: " + key);
         }
     };
+
+    public Source getSource() {
+        return source;
+    }
     /**
      * A filter to return all parameters that have the text given in their names.
      *
      */
     private String name;
 
+    public String getName() {
+        return name;
+    }
     /**
      * When true, results include a list of valid values for parameters (if applicable).
      *
      */
     private Boolean isAllowedValuesIncluded;
 
+    public Boolean getIsAllowedValuesIncluded() {
+        return isAllowedValuesIncluded;
+    }
     /**
      * The field to sort information by. Only one sortOrder can be used. The
      * default sort order for {@code NAME} is ascending and it is case-sensitive.
@@ -133,10 +141,18 @@ public class ListDatabaseParametersRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
+
+    public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -144,6 +160,91 @@ public class ListDatabaseParametersRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedDatabaseId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @return this builder instance
+         */
+        public Builder managedDatabaseId(String managedDatabaseId) {
+            this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Source source = null;
+
+        /**
+         * The source used to list database parameters. {@code CURRENT} is used to get the
+         * database parameters that are currently in effect for the database
+         * instance. {@code SPFILE} is used to list parameters from the server parameter
+         * file. Default is {@code CURRENT}.
+         *
+         * @return this builder instance
+         */
+        public Builder source(Source source) {
+            this.source = source;
+            return this;
+        }
+
+        private String name = null;
+
+        /**
+         * A filter to return all parameters that have the text given in their names.
+         *
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        private Boolean isAllowedValuesIncluded = null;
+
+        /**
+         * When true, results include a list of valid values for parameters (if applicable).
+         *
+         * @return this builder instance
+         */
+        public Builder isAllowedValuesIncluded(Boolean isAllowedValuesIncluded) {
+            this.isAllowedValuesIncluded = isAllowedValuesIncluded;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort information by. Only one sortOrder can be used. The
+         * default sort order for {@code NAME} is ascending and it is case-sensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
+
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -201,5 +302,101 @@ public class ListDatabaseParametersRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListDatabaseParametersRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListDatabaseParametersRequest
+         */
+        public ListDatabaseParametersRequest buildWithoutInvocationCallback() {
+            ListDatabaseParametersRequest request = new ListDatabaseParametersRequest();
+            request.managedDatabaseId = managedDatabaseId;
+            request.opcRequestId = opcRequestId;
+            request.source = source;
+            request.name = name;
+            request.isAllowedValuesIncluded = isAllowedValuesIncluded;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            return request;
+            // new ListDatabaseParametersRequest(managedDatabaseId, opcRequestId, source, name, isAllowedValuesIncluded, sortBy, sortOrder);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedDatabaseId(managedDatabaseId)
+                .opcRequestId(opcRequestId)
+                .source(source)
+                .name(name)
+                .isAllowedValuesIncluded(isAllowedValuesIncluded)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",source=").append(String.valueOf(this.source));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",isAllowedValuesIncluded=").append(String.valueOf(this.isAllowedValuesIncluded));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListDatabaseParametersRequest)) {
+            return false;
+        }
+
+        ListDatabaseParametersRequest other = (ListDatabaseParametersRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(
+                        this.isAllowedValuesIncluded, other.isAllowedValuesIncluded)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAllowedValuesIncluded == null
+                                ? 43
+                                : this.isAllowedValuesIncluded.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        return result;
     }
 }

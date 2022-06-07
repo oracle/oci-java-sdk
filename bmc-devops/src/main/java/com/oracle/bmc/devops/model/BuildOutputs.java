@@ -15,14 +15,29 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BuildOutputs.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BuildOutputs {
+public final class BuildOutputs {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "exportedVariables",
+        "deliveredArtifacts",
+        "artifactOverrideParameters",
+        "vulnerabilityAuditSummaryCollection"
+    })
+    public BuildOutputs(
+            ExportedVariableCollection exportedVariables,
+            DeliveredArtifactCollection deliveredArtifacts,
+            DeployArtifactOverrideArgumentCollection artifactOverrideParameters,
+            VulnerabilityAuditSummaryCollection vulnerabilityAuditSummaryCollection) {
+        super();
+        this.exportedVariables = exportedVariables;
+        this.deliveredArtifacts = deliveredArtifacts;
+        this.artifactOverrideParameters = artifactOverrideParameters;
+        this.vulnerabilityAuditSummaryCollection = vulnerabilityAuditSummaryCollection;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("exportedVariables")
         private ExportedVariableCollection exportedVariables;
@@ -97,18 +112,105 @@ public class BuildOutputs {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("exportedVariables")
-    ExportedVariableCollection exportedVariables;
+    private final ExportedVariableCollection exportedVariables;
+
+    public ExportedVariableCollection getExportedVariables() {
+        return exportedVariables;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deliveredArtifacts")
-    DeliveredArtifactCollection deliveredArtifacts;
+    private final DeliveredArtifactCollection deliveredArtifacts;
+
+    public DeliveredArtifactCollection getDeliveredArtifacts() {
+        return deliveredArtifacts;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("artifactOverrideParameters")
-    DeployArtifactOverrideArgumentCollection artifactOverrideParameters;
+    private final DeployArtifactOverrideArgumentCollection artifactOverrideParameters;
+
+    public DeployArtifactOverrideArgumentCollection getArtifactOverrideParameters() {
+        return artifactOverrideParameters;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("vulnerabilityAuditSummaryCollection")
-    VulnerabilityAuditSummaryCollection vulnerabilityAuditSummaryCollection;
+    private final VulnerabilityAuditSummaryCollection vulnerabilityAuditSummaryCollection;
+
+    public VulnerabilityAuditSummaryCollection getVulnerabilityAuditSummaryCollection() {
+        return vulnerabilityAuditSummaryCollection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BuildOutputs(");
+        sb.append("exportedVariables=").append(String.valueOf(this.exportedVariables));
+        sb.append(", deliveredArtifacts=").append(String.valueOf(this.deliveredArtifacts));
+        sb.append(", artifactOverrideParameters=")
+                .append(String.valueOf(this.artifactOverrideParameters));
+        sb.append(", vulnerabilityAuditSummaryCollection=")
+                .append(String.valueOf(this.vulnerabilityAuditSummaryCollection));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BuildOutputs)) {
+            return false;
+        }
+
+        BuildOutputs other = (BuildOutputs) o;
+        return java.util.Objects.equals(this.exportedVariables, other.exportedVariables)
+                && java.util.Objects.equals(this.deliveredArtifacts, other.deliveredArtifacts)
+                && java.util.Objects.equals(
+                        this.artifactOverrideParameters, other.artifactOverrideParameters)
+                && java.util.Objects.equals(
+                        this.vulnerabilityAuditSummaryCollection,
+                        other.vulnerabilityAuditSummaryCollection)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.exportedVariables == null ? 43 : this.exportedVariables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deliveredArtifacts == null
+                                ? 43
+                                : this.deliveredArtifacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.artifactOverrideParameters == null
+                                ? 43
+                                : this.artifactOverrideParameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vulnerabilityAuditSummaryCollection == null
+                                ? 43
+                                : this.vulnerabilityAuditSummaryCollection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

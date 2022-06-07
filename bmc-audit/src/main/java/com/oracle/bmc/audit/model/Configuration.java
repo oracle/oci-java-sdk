@@ -17,14 +17,17 @@ package com.oracle.bmc.audit.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Configuration.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Configuration {
+public final class Configuration {
+    @Deprecated
+    @java.beans.ConstructorProperties({"retentionPeriodDays"})
+    public Configuration(Integer retentionPeriodDays) {
+        super();
+        this.retentionPeriodDays = retentionPeriodDays;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodDays")
         private Integer retentionPeriodDays;
@@ -60,6 +63,10 @@ public class Configuration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The retention period setting, specified in days. The minimum is 90, the maximum 365.
      * <p>
@@ -67,8 +74,55 @@ public class Configuration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodDays")
-    Integer retentionPeriodDays;
+    private final Integer retentionPeriodDays;
+
+    public Integer getRetentionPeriodDays() {
+        return retentionPeriodDays;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Configuration(");
+        sb.append("retentionPeriodDays=").append(String.valueOf(this.retentionPeriodDays));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Configuration)) {
+            return false;
+        }
+
+        Configuration other = (Configuration) o;
+        return java.util.Objects.equals(this.retentionPeriodDays, other.retentionPeriodDays)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriodDays == null
+                                ? 43
+                                : this.retentionPeriodDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

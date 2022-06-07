@@ -15,16 +15,40 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOdaInstanceAttachmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOdaInstanceAttachmentDetails {
+public final class CreateOdaInstanceAttachmentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "attachToId",
+        "attachmentType",
+        "attachmentMetadata",
+        "restrictedOperations",
+        "owner",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateOdaInstanceAttachmentDetails(
+            String attachToId,
+            AttachmentType attachmentType,
+            String attachmentMetadata,
+            java.util.List<String> restrictedOperations,
+            OdaInstanceAttachmentOwner owner,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.attachToId = attachToId;
+        this.attachmentType = attachmentType;
+        this.attachmentMetadata = attachmentMetadata;
+        this.restrictedOperations = restrictedOperations;
+        this.owner = owner;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("attachToId")
         private String attachToId;
@@ -130,11 +154,20 @@ public class CreateOdaInstanceAttachmentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which this ODA instance is being attached.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachToId")
-    String attachToId;
+    private final String attachToId;
+
+    public String getAttachToId() {
+        return attachToId;
+    }
+
     /**
      * The type of target instance which this ODA instance is being attached.
      **/
@@ -173,22 +206,38 @@ public class CreateOdaInstanceAttachmentDetails {
      * The type of target instance which this ODA instance is being attached.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
-    AttachmentType attachmentType;
+    private final AttachmentType attachmentType;
+
+    public AttachmentType getAttachmentType() {
+        return attachmentType;
+    }
 
     /**
      * Attachment specific metadata. Defined by the target service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentMetadata")
-    String attachmentMetadata;
+    private final String attachmentMetadata;
+
+    public String getAttachmentMetadata() {
+        return attachmentMetadata;
+    }
 
     /**
      * List of operations that are restricted while this instance is attached.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
-    java.util.List<String> restrictedOperations;
+    private final java.util.List<String> restrictedOperations;
+
+    public java.util.List<String> getRestrictedOperations() {
+        return restrictedOperations;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
-    OdaInstanceAttachmentOwner owner;
+    private final OdaInstanceAttachmentOwner owner;
+
+    public OdaInstanceAttachmentOwner getOwner() {
+        return owner;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
@@ -196,7 +245,11 @@ public class CreateOdaInstanceAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -204,8 +257,79 @@ public class CreateOdaInstanceAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOdaInstanceAttachmentDetails(");
+        sb.append("attachToId=").append(String.valueOf(this.attachToId));
+        sb.append(", attachmentType=").append(String.valueOf(this.attachmentType));
+        sb.append(", attachmentMetadata=").append(String.valueOf(this.attachmentMetadata));
+        sb.append(", restrictedOperations=").append(String.valueOf(this.restrictedOperations));
+        sb.append(", owner=").append(String.valueOf(this.owner));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOdaInstanceAttachmentDetails)) {
+            return false;
+        }
+
+        CreateOdaInstanceAttachmentDetails other = (CreateOdaInstanceAttachmentDetails) o;
+        return java.util.Objects.equals(this.attachToId, other.attachToId)
+                && java.util.Objects.equals(this.attachmentType, other.attachmentType)
+                && java.util.Objects.equals(this.attachmentMetadata, other.attachmentMetadata)
+                && java.util.Objects.equals(this.restrictedOperations, other.restrictedOperations)
+                && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.attachToId == null ? 43 : this.attachToId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachmentType == null ? 43 : this.attachmentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachmentMetadata == null
+                                ? 43
+                                : this.attachmentMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restrictedOperations == null
+                                ? 43
+                                : this.restrictedOperations.hashCode());
+        result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,35 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportedKeyData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExportedKeyData {
+public final class ExportedKeyData {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "keyVersionId",
+        "keyId",
+        "timeCreated",
+        "vaultId",
+        "encryptedKey",
+        "algorithm"
+    })
+    public ExportedKeyData(
+            String keyVersionId,
+            String keyId,
+            java.util.Date timeCreated,
+            String vaultId,
+            String encryptedKey,
+            Algorithm algorithm) {
+        super();
+        this.keyVersionId = keyVersionId;
+        this.keyId = keyId;
+        this.timeCreated = timeCreated;
+        this.vaultId = vaultId;
+        this.encryptedKey = encryptedKey;
+        this.algorithm = algorithm;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
         private String keyVersionId;
@@ -111,37 +132,62 @@ public class ExportedKeyData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the key version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
-    String keyVersionId;
+    private final String keyVersionId;
+
+    public String getKeyVersionId() {
+        return keyVersionId;
+    }
 
     /**
      * The OCID of the master encryption key associated with this key version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The OCID of the vault that contains this key version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * The base64-encoded exported key material, which is encrypted by using the public RSA wrapping key specified in the export request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptedKey")
-    String encryptedKey;
+    private final String encryptedKey;
+
+    public String getEncryptedKey() {
+        return encryptedKey;
+    }
+
     /**
      * The encryption algorithm to use to encrypt exportable key material from a key that persists on the server (as opposed to a key that
      * persists on a hardware security module and, therefore, cannot be exported). Specifying RSA_OAEP_AES_SHA256 invokes the RSA AES key
@@ -152,7 +198,6 @@ public class ExportedKeyData {
      * along with the request.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Algorithm {
         RsaOaepAesSha256("RSA_OAEP_AES_SHA256"),
         RsaOaepSha256("RSA_OAEP_SHA256"),
@@ -162,6 +207,9 @@ public class ExportedKeyData {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Algorithm.class);
 
         private final String value;
         private static java.util.Map<String, Algorithm> map;
@@ -206,8 +254,66 @@ public class ExportedKeyData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
-    Algorithm algorithm;
+    private final Algorithm algorithm;
+
+    public Algorithm getAlgorithm() {
+        return algorithm;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExportedKeyData(");
+        sb.append("keyVersionId=").append(String.valueOf(this.keyVersionId));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", encryptedKey=").append(String.valueOf(this.encryptedKey));
+        sb.append(", algorithm=").append(String.valueOf(this.algorithm));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportedKeyData)) {
+            return false;
+        }
+
+        ExportedKeyData other = (ExportedKeyData) o;
+        return java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.encryptedKey, other.encryptedKey)
+                && java.util.Objects.equals(this.algorithm, other.algorithm)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.keyVersionId == null ? 43 : this.keyVersionId.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result = (result * PRIME) + (this.encryptedKey == null ? 43 : this.encryptedKey.hashCode());
+        result = (result * PRIME) + (this.algorithm == null ? 43 : this.algorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

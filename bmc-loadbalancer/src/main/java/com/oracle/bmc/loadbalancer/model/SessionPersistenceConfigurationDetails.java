@@ -35,16 +35,20 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SessionPersistenceConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SessionPersistenceConfigurationDetails {
+public final class SessionPersistenceConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"cookieName", "disableFallback"})
+    public SessionPersistenceConfigurationDetails(String cookieName, Boolean disableFallback) {
+        super();
+        this.cookieName = cookieName;
+        this.disableFallback = disableFallback;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
         private String cookieName;
@@ -91,6 +95,10 @@ public class SessionPersistenceConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify
      * that any cookie set by the backend causes the session to persist.
@@ -99,7 +107,11 @@ public class SessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
-    String cookieName;
+    private final String cookieName;
+
+    public String getCookieName() {
+        return cookieName;
+    }
 
     /**
      * Whether the load balancer is prevented from directing traffic from a persistent session client to
@@ -109,8 +121,56 @@ public class SessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")
-    Boolean disableFallback;
+    private final Boolean disableFallback;
+
+    public Boolean getDisableFallback() {
+        return disableFallback;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SessionPersistenceConfigurationDetails(");
+        sb.append("cookieName=").append(String.valueOf(this.cookieName));
+        sb.append(", disableFallback=").append(String.valueOf(this.disableFallback));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SessionPersistenceConfigurationDetails)) {
+            return false;
+        }
+
+        SessionPersistenceConfigurationDetails other = (SessionPersistenceConfigurationDetails) o;
+        return java.util.Objects.equals(this.cookieName, other.cookieName)
+                && java.util.Objects.equals(this.disableFallback, other.disableFallback)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cookieName == null ? 43 : this.cookieName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.disableFallback == null ? 43 : this.disableFallback.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

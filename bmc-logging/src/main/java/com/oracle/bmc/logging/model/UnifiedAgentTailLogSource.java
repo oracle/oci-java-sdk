@@ -15,22 +15,17 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UnifiedAgentTailLogSource.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "sourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
+public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -85,6 +80,10 @@ public class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UnifiedAgentTailLogSource(
             String name, java.util.List<String> paths, UnifiedAgentParser parser) {
@@ -94,11 +93,63 @@ public class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("paths")
-    java.util.List<String> paths;
+    private final java.util.List<String> paths;
+
+    public java.util.List<String> getPaths() {
+        return paths;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parser")
-    UnifiedAgentParser parser;
+    private final UnifiedAgentParser parser;
+
+    public UnifiedAgentParser getParser() {
+        return parser;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UnifiedAgentTailLogSource(");
+        sb.append("super=").append(super.toString());
+        sb.append(", paths=").append(String.valueOf(this.paths));
+        sb.append(", parser=").append(String.valueOf(this.parser));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UnifiedAgentTailLogSource)) {
+            return false;
+        }
+
+        UnifiedAgentTailLogSource other = (UnifiedAgentTailLogSource) o;
+        return java.util.Objects.equals(this.paths, other.paths)
+                && java.util.Objects.equals(this.parser, other.parser)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.paths == null ? 43 : this.paths.hashCode());
+        result = (result * PRIME) + (this.parser == null ? 43 : this.parser.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

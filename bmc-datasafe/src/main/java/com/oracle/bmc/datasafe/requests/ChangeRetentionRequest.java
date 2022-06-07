@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeRetentionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeRetentionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeRetentionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.ChangeRetentionDetails> {
@@ -26,11 +18,17 @@ public class ChangeRetentionRequest
      */
     private String auditProfileId;
 
+    public String getAuditProfileId() {
+        return auditProfileId;
+    }
     /**
      * Details for the audit retention months to be modified.
      */
     private com.oracle.bmc.datasafe.model.ChangeRetentionDetails changeRetentionDetails;
 
+    public com.oracle.bmc.datasafe.model.ChangeRetentionDetails getChangeRetentionDetails() {
+        return changeRetentionDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the if-match parameter to the value of the
@@ -41,11 +39,17 @@ public class ChangeRetentionRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -54,6 +58,10 @@ public class ChangeRetentionRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -71,6 +79,71 @@ public class ChangeRetentionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String auditProfileId = null;
+
+        /**
+         * The OCID of the audit.
+         * @return this builder instance
+         */
+        public Builder auditProfileId(String auditProfileId) {
+            this.auditProfileId = auditProfileId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.ChangeRetentionDetails changeRetentionDetails = null;
+
+        /**
+         * Details for the audit retention months to be modified.
+         * @return this builder instance
+         */
+        public Builder changeRetentionDetails(
+                com.oracle.bmc.datasafe.model.ChangeRetentionDetails changeRetentionDetails) {
+            this.changeRetentionDetails = changeRetentionDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -137,5 +210,93 @@ public class ChangeRetentionRequest
             changeRetentionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeRetentionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeRetentionRequest
+         */
+        public ChangeRetentionRequest buildWithoutInvocationCallback() {
+            ChangeRetentionRequest request = new ChangeRetentionRequest();
+            request.auditProfileId = auditProfileId;
+            request.changeRetentionDetails = changeRetentionDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new ChangeRetentionRequest(auditProfileId, changeRetentionDetails, ifMatch, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .auditProfileId(auditProfileId)
+                .changeRetentionDetails(changeRetentionDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",auditProfileId=").append(String.valueOf(this.auditProfileId));
+        sb.append(",changeRetentionDetails=").append(String.valueOf(this.changeRetentionDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeRetentionRequest)) {
+            return false;
+        }
+
+        ChangeRetentionRequest other = (ChangeRetentionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.auditProfileId, other.auditProfileId)
+                && java.util.Objects.equals(
+                        this.changeRetentionDetails, other.changeRetentionDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.auditProfileId == null ? 43 : this.auditProfileId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeRetentionDetails == null
+                                ? 43
+                                : this.changeRetentionDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

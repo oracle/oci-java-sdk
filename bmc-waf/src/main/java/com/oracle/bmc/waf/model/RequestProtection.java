@@ -15,16 +15,28 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RequestProtection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RequestProtection {
+public final class RequestProtection {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "rules",
+        "bodyInspectionSizeLimitInBytes",
+        "bodyInspectionSizeLimitExceededActionName"
+    })
+    public RequestProtection(
+            java.util.List<ProtectionRule> rules,
+            Integer bodyInspectionSizeLimitInBytes,
+            String bodyInspectionSizeLimitExceededActionName) {
+        super();
+        this.rules = rules;
+        this.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
+        this.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<ProtectionRule> rules;
@@ -88,13 +100,21 @@ public class RequestProtection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
      * ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
-    java.util.List<ProtectionRule> rules;
+    private final java.util.List<ProtectionRule> rules;
+
+    public java.util.List<ProtectionRule> getRules() {
+        return rules;
+    }
 
     /**
      * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
@@ -103,7 +123,11 @@ public class RequestProtection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitInBytes")
-    Integer bodyInspectionSizeLimitInBytes;
+    private final Integer bodyInspectionSizeLimitInBytes;
+
+    public Integer getBodyInspectionSizeLimitInBytes() {
+        return bodyInspectionSizeLimitInBytes;
+    }
 
     /**
      * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message
@@ -117,8 +141,70 @@ public class RequestProtection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitExceededActionName")
-    String bodyInspectionSizeLimitExceededActionName;
+    private final String bodyInspectionSizeLimitExceededActionName;
+
+    public String getBodyInspectionSizeLimitExceededActionName() {
+        return bodyInspectionSizeLimitExceededActionName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RequestProtection(");
+        sb.append("rules=").append(String.valueOf(this.rules));
+        sb.append(", bodyInspectionSizeLimitInBytes=")
+                .append(String.valueOf(this.bodyInspectionSizeLimitInBytes));
+        sb.append(", bodyInspectionSizeLimitExceededActionName=")
+                .append(String.valueOf(this.bodyInspectionSizeLimitExceededActionName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestProtection)) {
+            return false;
+        }
+
+        RequestProtection other = (RequestProtection) o;
+        return java.util.Objects.equals(this.rules, other.rules)
+                && java.util.Objects.equals(
+                        this.bodyInspectionSizeLimitInBytes, other.bodyInspectionSizeLimitInBytes)
+                && java.util.Objects.equals(
+                        this.bodyInspectionSizeLimitExceededActionName,
+                        other.bodyInspectionSizeLimitExceededActionName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bodyInspectionSizeLimitInBytes == null
+                                ? 43
+                                : this.bodyInspectionSizeLimitInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bodyInspectionSizeLimitExceededActionName == null
+                                ? 43
+                                : this.bodyInspectionSizeLimitExceededActionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

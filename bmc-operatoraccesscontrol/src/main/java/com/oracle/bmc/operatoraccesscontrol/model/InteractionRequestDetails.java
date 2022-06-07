@@ -15,16 +15,19 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InteractionRequestDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InteractionRequestDetails {
+public final class InteractionRequestDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"moreInfoDetails"})
+    public InteractionRequestDetails(String moreInfoDetails) {
+        super();
+        this.moreInfoDetails = moreInfoDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("moreInfoDetails")
         private String moreInfoDetails;
@@ -60,12 +63,61 @@ public class InteractionRequestDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * questions for asking to provide more information to operators.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("moreInfoDetails")
-    String moreInfoDetails;
+    private final String moreInfoDetails;
+
+    public String getMoreInfoDetails() {
+        return moreInfoDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InteractionRequestDetails(");
+        sb.append("moreInfoDetails=").append(String.valueOf(this.moreInfoDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InteractionRequestDetails)) {
+            return false;
+        }
+
+        InteractionRequestDetails other = (InteractionRequestDetails) o;
+        return java.util.Objects.equals(this.moreInfoDetails, other.moreInfoDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.moreInfoDetails == null ? 43 : this.moreInfoDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

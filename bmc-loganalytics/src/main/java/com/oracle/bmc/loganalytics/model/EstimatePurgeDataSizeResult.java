@@ -16,16 +16,19 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = EstimatePurgeDataSizeResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EstimatePurgeDataSizeResult {
+public final class EstimatePurgeDataSizeResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"purgeDataSizeInBytes"})
+    public EstimatePurgeDataSizeResult(Long purgeDataSizeInBytes) {
+        super();
+        this.purgeDataSizeInBytes = purgeDataSizeInBytes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("purgeDataSizeInBytes")
         private Long purgeDataSizeInBytes;
@@ -62,12 +65,63 @@ public class EstimatePurgeDataSizeResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This is the size of data to be purged in bytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeDataSizeInBytes")
-    Long purgeDataSizeInBytes;
+    private final Long purgeDataSizeInBytes;
+
+    public Long getPurgeDataSizeInBytes() {
+        return purgeDataSizeInBytes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EstimatePurgeDataSizeResult(");
+        sb.append("purgeDataSizeInBytes=").append(String.valueOf(this.purgeDataSizeInBytes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EstimatePurgeDataSizeResult)) {
+            return false;
+        }
+
+        EstimatePurgeDataSizeResult other = (EstimatePurgeDataSizeResult) o;
+        return java.util.Objects.equals(this.purgeDataSizeInBytes, other.purgeDataSizeInBytes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.purgeDataSizeInBytes == null
+                                ? 43
+                                : this.purgeDataSizeInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

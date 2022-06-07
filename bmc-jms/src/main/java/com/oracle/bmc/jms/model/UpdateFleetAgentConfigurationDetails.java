@@ -15,16 +15,32 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateFleetAgentConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateFleetAgentConfigurationDetails {
+public final class UpdateFleetAgentConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "jreScanFrequencyInMinutes",
+        "javaUsageTrackerProcessingFrequencyInMinutes",
+        "linuxConfiguration",
+        "windowsConfiguration"
+    })
+    public UpdateFleetAgentConfigurationDetails(
+            Integer jreScanFrequencyInMinutes,
+            Integer javaUsageTrackerProcessingFrequencyInMinutes,
+            FleetAgentOsConfiguration linuxConfiguration,
+            FleetAgentOsConfiguration windowsConfiguration) {
+        super();
+        this.jreScanFrequencyInMinutes = jreScanFrequencyInMinutes;
+        this.javaUsageTrackerProcessingFrequencyInMinutes =
+                javaUsageTrackerProcessingFrequencyInMinutes;
+        this.linuxConfiguration = linuxConfiguration;
+        this.windowsConfiguration = windowsConfiguration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("jreScanFrequencyInMinutes")
         private Integer jreScanFrequencyInMinutes;
@@ -100,26 +116,115 @@ public class UpdateFleetAgentConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jreScanFrequencyInMinutes")
-    Integer jreScanFrequencyInMinutes;
+    private final Integer jreScanFrequencyInMinutes;
+
+    public Integer getJreScanFrequencyInMinutes() {
+        return jreScanFrequencyInMinutes;
+    }
 
     /**
      * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("javaUsageTrackerProcessingFrequencyInMinutes")
-    Integer javaUsageTrackerProcessingFrequencyInMinutes;
+    private final Integer javaUsageTrackerProcessingFrequencyInMinutes;
+
+    public Integer getJavaUsageTrackerProcessingFrequencyInMinutes() {
+        return javaUsageTrackerProcessingFrequencyInMinutes;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("linuxConfiguration")
-    FleetAgentOsConfiguration linuxConfiguration;
+    private final FleetAgentOsConfiguration linuxConfiguration;
+
+    public FleetAgentOsConfiguration getLinuxConfiguration() {
+        return linuxConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("windowsConfiguration")
-    FleetAgentOsConfiguration windowsConfiguration;
+    private final FleetAgentOsConfiguration windowsConfiguration;
+
+    public FleetAgentOsConfiguration getWindowsConfiguration() {
+        return windowsConfiguration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateFleetAgentConfigurationDetails(");
+        sb.append("jreScanFrequencyInMinutes=")
+                .append(String.valueOf(this.jreScanFrequencyInMinutes));
+        sb.append(", javaUsageTrackerProcessingFrequencyInMinutes=")
+                .append(String.valueOf(this.javaUsageTrackerProcessingFrequencyInMinutes));
+        sb.append(", linuxConfiguration=").append(String.valueOf(this.linuxConfiguration));
+        sb.append(", windowsConfiguration=").append(String.valueOf(this.windowsConfiguration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateFleetAgentConfigurationDetails)) {
+            return false;
+        }
+
+        UpdateFleetAgentConfigurationDetails other = (UpdateFleetAgentConfigurationDetails) o;
+        return java.util.Objects.equals(
+                        this.jreScanFrequencyInMinutes, other.jreScanFrequencyInMinutes)
+                && java.util.Objects.equals(
+                        this.javaUsageTrackerProcessingFrequencyInMinutes,
+                        other.javaUsageTrackerProcessingFrequencyInMinutes)
+                && java.util.Objects.equals(this.linuxConfiguration, other.linuxConfiguration)
+                && java.util.Objects.equals(this.windowsConfiguration, other.windowsConfiguration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.jreScanFrequencyInMinutes == null
+                                ? 43
+                                : this.jreScanFrequencyInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.javaUsageTrackerProcessingFrequencyInMinutes == null
+                                ? 43
+                                : this.javaUsageTrackerProcessingFrequencyInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.linuxConfiguration == null
+                                ? 43
+                                : this.linuxConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.windowsConfiguration == null
+                                ? 43
+                                : this.windowsConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

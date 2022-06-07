@@ -15,16 +15,31 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TimeAndVerticalScalingConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TimeAndVerticalScalingConfig {
+public final class TimeAndVerticalScalingConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeRecurrence",
+        "targetShape",
+        "targetOcpusPerNode",
+        "targetMemoryPerNode"
+    })
+    public TimeAndVerticalScalingConfig(
+            String timeRecurrence,
+            String targetShape,
+            Integer targetOcpusPerNode,
+            Integer targetMemoryPerNode) {
+        super();
+        this.timeRecurrence = timeRecurrence;
+        this.targetShape = targetShape;
+        this.targetOcpusPerNode = targetOcpusPerNode;
+        this.targetMemoryPerNode = targetMemoryPerNode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeRecurrence")
         private String timeRecurrence;
@@ -93,34 +108,112 @@ public class TimeAndVerticalScalingConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRecurrence")
-    String timeRecurrence;
+    private final String timeRecurrence;
+
+    public String getTimeRecurrence() {
+        return timeRecurrence;
+    }
 
     /**
      * For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetShape")
-    String targetShape;
+    private final String targetShape;
+
+    public String getTargetShape() {
+        return targetShape;
+    }
 
     /**
      * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetOcpusPerNode")
-    Integer targetOcpusPerNode;
+    private final Integer targetOcpusPerNode;
+
+    public Integer getTargetOcpusPerNode() {
+        return targetOcpusPerNode;
+    }
 
     /**
      * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetMemoryPerNode")
-    Integer targetMemoryPerNode;
+    private final Integer targetMemoryPerNode;
+
+    public Integer getTargetMemoryPerNode() {
+        return targetMemoryPerNode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TimeAndVerticalScalingConfig(");
+        sb.append("timeRecurrence=").append(String.valueOf(this.timeRecurrence));
+        sb.append(", targetShape=").append(String.valueOf(this.targetShape));
+        sb.append(", targetOcpusPerNode=").append(String.valueOf(this.targetOcpusPerNode));
+        sb.append(", targetMemoryPerNode=").append(String.valueOf(this.targetMemoryPerNode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TimeAndVerticalScalingConfig)) {
+            return false;
+        }
+
+        TimeAndVerticalScalingConfig other = (TimeAndVerticalScalingConfig) o;
+        return java.util.Objects.equals(this.timeRecurrence, other.timeRecurrence)
+                && java.util.Objects.equals(this.targetShape, other.targetShape)
+                && java.util.Objects.equals(this.targetOcpusPerNode, other.targetOcpusPerNode)
+                && java.util.Objects.equals(this.targetMemoryPerNode, other.targetMemoryPerNode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeRecurrence == null ? 43 : this.timeRecurrence.hashCode());
+        result = (result * PRIME) + (this.targetShape == null ? 43 : this.targetShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetOcpusPerNode == null
+                                ? 43
+                                : this.targetOcpusPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetMemoryPerNode == null
+                                ? 43
+                                : this.targetMemoryPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

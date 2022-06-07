@@ -15,14 +15,47 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EntityTag.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EntityTag {
+public final class EntityTag {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "entityKey",
+        "key",
+        "name",
+        "termKey",
+        "termPath",
+        "termDescription",
+        "lifecycleState",
+        "timeCreated",
+        "createdById",
+        "uri"
+    })
+    public EntityTag(
+            String entityKey,
+            String key,
+            String name,
+            String termKey,
+            String termPath,
+            String termDescription,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            String createdById,
+            String uri) {
+        super();
+        this.entityKey = entityKey;
+        this.key = key;
+        this.name = name;
+        this.termKey = termKey;
+        this.termPath = termPath;
+        this.termDescription = termDescription;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.createdById = createdById;
+        this.uri = uri;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("entityKey")
         private String entityKey;
@@ -160,47 +193,79 @@ public class EntityTag {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key of the parent entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityKey")
-    String entityKey;
+    private final String entityKey;
+
+    public String getEntityKey() {
+        return entityKey;
+    }
 
     /**
      * Unique tag key that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Name of the tag which matches the term name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Unique key of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("termKey")
-    String termKey;
+    private final String termKey;
+
+    public String getTermKey() {
+        return termKey;
+    }
 
     /**
      * Path of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("termPath")
-    String termPath;
+    private final String termPath;
+
+    public String getTermPath() {
+        return termPath;
+    }
 
     /**
      * Description of the related term.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("termDescription")
-    String termDescription;
+    private final String termDescription;
+
+    public String getTermDescription() {
+        return termDescription;
+    }
 
     /**
      * The current state of the tag.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the tag was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -208,20 +273,102 @@ public class EntityTag {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * OCID of the user who created the tag.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
-    String createdById;
+    private final String createdById;
+
+    public String getCreatedById() {
+        return createdById;
+    }
 
     /**
      * URI to the tag instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EntityTag(");
+        sb.append("entityKey=").append(String.valueOf(this.entityKey));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", termKey=").append(String.valueOf(this.termKey));
+        sb.append(", termPath=").append(String.valueOf(this.termPath));
+        sb.append(", termDescription=").append(String.valueOf(this.termDescription));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", createdById=").append(String.valueOf(this.createdById));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EntityTag)) {
+            return false;
+        }
+
+        EntityTag other = (EntityTag) o;
+        return java.util.Objects.equals(this.entityKey, other.entityKey)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.termKey, other.termKey)
+                && java.util.Objects.equals(this.termPath, other.termPath)
+                && java.util.Objects.equals(this.termDescription, other.termDescription)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.createdById, other.createdById)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.entityKey == null ? 43 : this.entityKey.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.termKey == null ? 43 : this.termKey.hashCode());
+        result = (result * PRIME) + (this.termPath == null ? 43 : this.termPath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.termDescription == null ? 43 : this.termDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.createdById == null ? 43 : this.createdById.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

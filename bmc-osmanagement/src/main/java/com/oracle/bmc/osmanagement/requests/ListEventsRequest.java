@@ -9,14 +9,6 @@ import com.oracle.bmc.osmanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListEventsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEventsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,26 +16,41 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String managedInstanceId;
 
+    public String getManagedInstanceId() {
+        return managedInstanceId;
+    }
     /**
      * The ID of the compartment in which to list resources.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Unique event identifier (OCID)
      */
     private String eventId;
 
+    public String getEventId() {
+        return eventId;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
@@ -84,6 +91,10 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
      *
@@ -126,16 +137,26 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A filter to return only event of given type.
      */
     private com.oracle.bmc.osmanagement.model.EventType eventType;
 
+    public com.oracle.bmc.osmanagement.model.EventType getEventType() {
+        return eventType;
+    }
     /**
      * filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format
      * Example: 2017-07-14T02:40:00.000Z
@@ -143,6 +164,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date latestTimestampLessThan;
 
+    public java.util.Date getLatestTimestampLessThan() {
+        return latestTimestampLessThan;
+    }
     /**
      * filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format
      * Example: 2017-07-14T02:40:00.000Z
@@ -150,12 +174,143 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date latestTimestampGreaterThanOrEqualTo;
 
+    public java.util.Date getLatestTimestampGreaterThanOrEqualTo() {
+        return latestTimestampGreaterThanOrEqualTo;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListEventsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedInstanceId = null;
+
+        /**
+         * Instance Oracle Cloud identifier (ocid)
+         * @return this builder instance
+         */
+        public Builder managedInstanceId(String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String eventId = null;
+
+        /**
+         * Unique event identifier (OCID)
+         * @return this builder instance
+         */
+        public Builder eventId(String eventId) {
+            this.eventId = eventId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.EventType eventType = null;
+
+        /**
+         * A filter to return only event of given type.
+         * @return this builder instance
+         */
+        public Builder eventType(com.oracle.bmc.osmanagement.model.EventType eventType) {
+            this.eventType = eventType;
+            return this;
+        }
+
+        private java.util.Date latestTimestampLessThan = null;
+
+        /**
+         * filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         * @return this builder instance
+         */
+        public Builder latestTimestampLessThan(java.util.Date latestTimestampLessThan) {
+            this.latestTimestampLessThan = latestTimestampLessThan;
+            return this;
+        }
+
+        private java.util.Date latestTimestampGreaterThanOrEqualTo = null;
+
+        /**
+         * filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         * @return this builder instance
+         */
+        public Builder latestTimestampGreaterThanOrEqualTo(
+                java.util.Date latestTimestampGreaterThanOrEqualTo) {
+            this.latestTimestampGreaterThanOrEqualTo = latestTimestampGreaterThanOrEqualTo;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -217,5 +372,130 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListEventsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListEventsRequest
+         */
+        public ListEventsRequest buildWithoutInvocationCallback() {
+            ListEventsRequest request = new ListEventsRequest();
+            request.managedInstanceId = managedInstanceId;
+            request.compartmentId = compartmentId;
+            request.eventId = eventId;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            request.eventType = eventType;
+            request.latestTimestampLessThan = latestTimestampLessThan;
+            request.latestTimestampGreaterThanOrEqualTo = latestTimestampGreaterThanOrEqualTo;
+            return request;
+            // new ListEventsRequest(managedInstanceId, compartmentId, eventId, limit, page, sortOrder, sortBy, opcRequestId, eventType, latestTimestampLessThan, latestTimestampGreaterThanOrEqualTo);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedInstanceId(managedInstanceId)
+                .compartmentId(compartmentId)
+                .eventId(eventId)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId)
+                .eventType(eventType)
+                .latestTimestampLessThan(latestTimestampLessThan)
+                .latestTimestampGreaterThanOrEqualTo(latestTimestampGreaterThanOrEqualTo);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",eventId=").append(String.valueOf(this.eventId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",eventType=").append(String.valueOf(this.eventType));
+        sb.append(",latestTimestampLessThan=").append(String.valueOf(this.latestTimestampLessThan));
+        sb.append(",latestTimestampGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.latestTimestampGreaterThanOrEqualTo));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListEventsRequest)) {
+            return false;
+        }
+
+        ListEventsRequest other = (ListEventsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.eventId, other.eventId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.eventType, other.eventType)
+                && java.util.Objects.equals(
+                        this.latestTimestampLessThan, other.latestTimestampLessThan)
+                && java.util.Objects.equals(
+                        this.latestTimestampGreaterThanOrEqualTo,
+                        other.latestTimestampGreaterThanOrEqualTo);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.eventId == null ? 43 : this.eventId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.eventType == null ? 43 : this.eventType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.latestTimestampLessThan == null
+                                ? 43
+                                : this.latestTimestampLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.latestTimestampGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.latestTimestampGreaterThanOrEqualTo.hashCode());
+        return result;
     }
 }

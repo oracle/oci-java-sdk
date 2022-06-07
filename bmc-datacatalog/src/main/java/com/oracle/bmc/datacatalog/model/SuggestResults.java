@@ -17,14 +17,24 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SuggestResults.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SuggestResults {
+public final class SuggestResults {
+    @Deprecated
+    @java.beans.ConstructorProperties({"totalCount", "searchLatencyInMs", "inputText", "items"})
+    public SuggestResults(
+            Integer totalCount,
+            Integer searchLatencyInMs,
+            String inputText,
+            java.util.List<SuggestListItem> items) {
+        super();
+        this.totalCount = totalCount;
+        this.searchLatencyInMs = searchLatencyInMs;
+        this.inputText = inputText;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Integer totalCount;
@@ -92,30 +102,100 @@ public class SuggestResults {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Total number of items returned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
-    Integer totalCount;
+    private final Integer totalCount;
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
 
     /**
      * Time taken to compute the result, in milliseconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchLatencyInMs")
-    Integer searchLatencyInMs;
+    private final Integer searchLatencyInMs;
+
+    public Integer getSearchLatencyInMs() {
+        return searchLatencyInMs;
+    }
 
     /**
      * Input string for which the potential matches are computed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputText")
-    String inputText;
+    private final String inputText;
+
+    public String getInputText() {
+        return inputText;
+    }
 
     /**
      * List of suggestions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<SuggestListItem> items;
+    private final java.util.List<SuggestListItem> items;
+
+    public java.util.List<SuggestListItem> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SuggestResults(");
+        sb.append("totalCount=").append(String.valueOf(this.totalCount));
+        sb.append(", searchLatencyInMs=").append(String.valueOf(this.searchLatencyInMs));
+        sb.append(", inputText=").append(String.valueOf(this.inputText));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SuggestResults)) {
+            return false;
+        }
+
+        SuggestResults other = (SuggestResults) o;
+        return java.util.Objects.equals(this.totalCount, other.totalCount)
+                && java.util.Objects.equals(this.searchLatencyInMs, other.searchLatencyInMs)
+                && java.util.Objects.equals(this.inputText, other.inputText)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.totalCount == null ? 43 : this.totalCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.searchLatencyInMs == null ? 43 : this.searchLatencyInMs.hashCode());
+        result = (result * PRIME) + (this.inputText == null ? 43 : this.inputText.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

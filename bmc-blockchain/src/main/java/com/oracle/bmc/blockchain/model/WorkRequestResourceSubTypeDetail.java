@@ -15,16 +15,22 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestResourceSubTypeDetail.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestResourceSubTypeDetail {
+public final class WorkRequestResourceSubTypeDetail {
+    @Deprecated
+    @java.beans.ConstructorProperties({"subType", "subTypeKey", "subTypeStatus"})
+    public WorkRequestResourceSubTypeDetail(
+            String subType, String subTypeKey, SubTypeStatus subTypeStatus) {
+        super();
+        this.subType = subType;
+        this.subTypeKey = subTypeKey;
+        this.subTypeStatus = subTypeStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("subType")
         private String subType;
@@ -82,24 +88,36 @@ public class WorkRequestResourceSubTypeDetail {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Subtype of the work request resource like osn or peer.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
-    String subType;
+    private final String subType;
+
+    public String getSubType() {
+        return subType;
+    }
 
     /**
      * The identifier of the resource subType.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subTypeKey")
-    String subTypeKey;
+    private final String subTypeKey;
+
+    public String getSubTypeKey() {
+        return subTypeKey;
+    }
+
     /**
      * Status of the resource subType, as a result of the work tracked in this work request.
      * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SubTypeStatus {
         Created("CREATED"),
         Updated("UPDATED"),
@@ -110,6 +128,9 @@ public class WorkRequestResourceSubTypeDetail {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SubTypeStatus.class);
 
         private final String value;
         private static java.util.Map<String, SubTypeStatus> map;
@@ -149,8 +170,59 @@ public class WorkRequestResourceSubTypeDetail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subTypeStatus")
-    SubTypeStatus subTypeStatus;
+    private final SubTypeStatus subTypeStatus;
+
+    public SubTypeStatus getSubTypeStatus() {
+        return subTypeStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestResourceSubTypeDetail(");
+        sb.append("subType=").append(String.valueOf(this.subType));
+        sb.append(", subTypeKey=").append(String.valueOf(this.subTypeKey));
+        sb.append(", subTypeStatus=").append(String.valueOf(this.subTypeStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestResourceSubTypeDetail)) {
+            return false;
+        }
+
+        WorkRequestResourceSubTypeDetail other = (WorkRequestResourceSubTypeDetail) o;
+        return java.util.Objects.equals(this.subType, other.subType)
+                && java.util.Objects.equals(this.subTypeKey, other.subTypeKey)
+                && java.util.Objects.equals(this.subTypeStatus, other.subTypeStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.subType == null ? 43 : this.subType.hashCode());
+        result = (result * PRIME) + (this.subTypeKey == null ? 43 : this.subTypeKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subTypeStatus == null ? 43 : this.subTypeStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

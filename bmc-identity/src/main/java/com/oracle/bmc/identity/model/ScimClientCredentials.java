@@ -16,16 +16,20 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScimClientCredentials.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScimClientCredentials {
+public final class ScimClientCredentials {
+    @Deprecated
+    @java.beans.ConstructorProperties({"clientId", "clientSecret"})
+    public ScimClientCredentials(String clientId, String clientSecret) {
+        super();
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
@@ -70,18 +74,72 @@ public class ScimClientCredentials {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The client identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
-    String clientId;
+    private final String clientId;
+
+    public String getClientId() {
+        return clientId;
+    }
 
     /**
      * The client secret.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    String clientSecret;
+    private final String clientSecret;
+
+    public String getClientSecret() {
+        return clientSecret;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScimClientCredentials(");
+        sb.append("clientId=").append(String.valueOf(this.clientId));
+        sb.append(", clientSecret=").append(String.valueOf(this.clientSecret));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScimClientCredentials)) {
+            return false;
+        }
+
+        ScimClientCredentials other = (ScimClientCredentials) o;
+        return java.util.Objects.equals(this.clientId, other.clientId)
+                && java.util.Objects.equals(this.clientSecret, other.clientSecret)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
+        result = (result * PRIME) + (this.clientSecret == null ? 43 : this.clientSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

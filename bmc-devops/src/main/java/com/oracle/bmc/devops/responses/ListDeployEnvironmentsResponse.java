@@ -7,25 +7,34 @@ package com.oracle.bmc.devops.responses;
 import com.oracle.bmc.devops.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned DeployEnvironmentCollection instance.
      */
     private com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection;
+
+    public com.oracle.bmc.devops.model.DeployEnvironmentCollection
+            getDeployEnvironmentCollection() {
+        return deployEnvironmentCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -52,6 +61,29 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection;
+
+        public Builder deployEnvironmentCollection(
+                com.oracle.bmc.devops.model.DeployEnvironmentCollection
+                        deployEnvironmentCollection) {
+            this.deployEnvironmentCollection = deployEnvironmentCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -69,5 +101,53 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
             return new ListDeployEnvironmentsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, deployEnvironmentCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",deployEnvironmentCollection=")
+                .append(String.valueOf(deployEnvironmentCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListDeployEnvironmentsResponse)) {
+            return false;
+        }
+
+        ListDeployEnvironmentsResponse other = (ListDeployEnvironmentsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.deployEnvironmentCollection, other.deployEnvironmentCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployEnvironmentCollection == null
+                                ? 43
+                                : this.deployEnvironmentCollection.hashCode());
+        return result;
     }
 }

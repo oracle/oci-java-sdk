@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EstimateRecallDataSizeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use EstimateRecallDataSizeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class EstimateRecallDataSizeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails> {
@@ -27,16 +19,27 @@ public class EstimateRecallDataSizeRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * This is the input to estimate the size of data to be recalled.
      */
     private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
             estimateRecallDataSizeDetails;
 
+    public com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
+            getEstimateRecallDataSizeDetails() {
+        return estimateRecallDataSizeDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -60,6 +63,43 @@ public class EstimateRecallDataSizeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
+                estimateRecallDataSizeDetails = null;
+
+        /**
+         * This is the input to estimate the size of data to be recalled.
+         * @return this builder instance
+         */
+        public Builder estimateRecallDataSizeDetails(
+                com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
+                        estimateRecallDataSizeDetails) {
+            this.estimateRecallDataSizeDetails = estimateRecallDataSizeDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -124,5 +164,82 @@ public class EstimateRecallDataSizeRequest
             estimateRecallDataSizeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of EstimateRecallDataSizeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of EstimateRecallDataSizeRequest
+         */
+        public EstimateRecallDataSizeRequest buildWithoutInvocationCallback() {
+            EstimateRecallDataSizeRequest request = new EstimateRecallDataSizeRequest();
+            request.namespaceName = namespaceName;
+            request.estimateRecallDataSizeDetails = estimateRecallDataSizeDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new EstimateRecallDataSizeRequest(namespaceName, estimateRecallDataSizeDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .estimateRecallDataSizeDetails(estimateRecallDataSizeDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",estimateRecallDataSizeDetails=")
+                .append(String.valueOf(this.estimateRecallDataSizeDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EstimateRecallDataSizeRequest)) {
+            return false;
+        }
+
+        EstimateRecallDataSizeRequest other = (EstimateRecallDataSizeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(
+                        this.estimateRecallDataSizeDetails, other.estimateRecallDataSizeDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.estimateRecallDataSizeDetails == null
+                                ? 43
+                                : this.estimateRecallDataSizeDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

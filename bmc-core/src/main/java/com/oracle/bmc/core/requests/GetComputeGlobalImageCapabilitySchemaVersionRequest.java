@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaVersionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputeGlobalImageCapabilitySchemaVersionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetComputeGlobalImageCapabilitySchemaVersionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,10 +17,17 @@ public class GetComputeGlobalImageCapabilitySchemaVersionRequest
      */
     private String computeGlobalImageCapabilitySchemaId;
 
+    public String getComputeGlobalImageCapabilitySchemaId() {
+        return computeGlobalImageCapabilitySchemaId;
+    }
     /**
      * The name of the compute global image capability schema version
      */
     private String computeGlobalImageCapabilitySchemaVersionName;
+
+    public String getComputeGlobalImageCapabilitySchemaVersionName() {
+        return computeGlobalImageCapabilitySchemaVersionName;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -36,6 +35,31 @@ public class GetComputeGlobalImageCapabilitySchemaVersionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String computeGlobalImageCapabilitySchemaId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
+         * @return this builder instance
+         */
+        public Builder computeGlobalImageCapabilitySchemaId(
+                String computeGlobalImageCapabilitySchemaId) {
+            this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+            return this;
+        }
+
+        private String computeGlobalImageCapabilitySchemaVersionName = null;
+
+        /**
+         * The name of the compute global image capability schema version
+         * @return this builder instance
+         */
+        public Builder computeGlobalImageCapabilitySchemaVersionName(
+                String computeGlobalImageCapabilitySchemaVersionName) {
+            this.computeGlobalImageCapabilitySchemaVersionName =
+                    computeGlobalImageCapabilitySchemaVersionName;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -90,5 +114,88 @@ public class GetComputeGlobalImageCapabilitySchemaVersionRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetComputeGlobalImageCapabilitySchemaVersionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetComputeGlobalImageCapabilitySchemaVersionRequest
+         */
+        public GetComputeGlobalImageCapabilitySchemaVersionRequest
+                buildWithoutInvocationCallback() {
+            GetComputeGlobalImageCapabilitySchemaVersionRequest request =
+                    new GetComputeGlobalImageCapabilitySchemaVersionRequest();
+            request.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+            request.computeGlobalImageCapabilitySchemaVersionName =
+                    computeGlobalImageCapabilitySchemaVersionName;
+            return request;
+            // new GetComputeGlobalImageCapabilitySchemaVersionRequest(computeGlobalImageCapabilitySchemaId, computeGlobalImageCapabilitySchemaVersionName);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .computeGlobalImageCapabilitySchemaId(computeGlobalImageCapabilitySchemaId)
+                .computeGlobalImageCapabilitySchemaVersionName(
+                        computeGlobalImageCapabilitySchemaVersionName);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",computeGlobalImageCapabilitySchemaId=")
+                .append(String.valueOf(this.computeGlobalImageCapabilitySchemaId));
+        sb.append(",computeGlobalImageCapabilitySchemaVersionName=")
+                .append(String.valueOf(this.computeGlobalImageCapabilitySchemaVersionName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetComputeGlobalImageCapabilitySchemaVersionRequest)) {
+            return false;
+        }
+
+        GetComputeGlobalImageCapabilitySchemaVersionRequest other =
+                (GetComputeGlobalImageCapabilitySchemaVersionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.computeGlobalImageCapabilitySchemaId,
+                        other.computeGlobalImageCapabilitySchemaId)
+                && java.util.Objects.equals(
+                        this.computeGlobalImageCapabilitySchemaVersionName,
+                        other.computeGlobalImageCapabilitySchemaVersionName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.computeGlobalImageCapabilitySchemaId == null
+                                ? 43
+                                : this.computeGlobalImageCapabilitySchemaId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeGlobalImageCapabilitySchemaVersionName == null
+                                ? 43
+                                : this.computeGlobalImageCapabilitySchemaVersionName.hashCode());
+        return result;
     }
 }

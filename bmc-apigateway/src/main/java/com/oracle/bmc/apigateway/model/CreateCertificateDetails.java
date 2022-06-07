@@ -15,16 +15,40 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateCertificateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateCertificateDetails {
+public final class CreateCertificateDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "privateKey",
+        "certificate",
+        "intermediateCertificates",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateCertificateDetails(
+            String displayName,
+            String compartmentId,
+            String privateKey,
+            String certificate,
+            String intermediateCertificates,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.privateKey = privateKey;
+        this.certificate = certificate;
+        this.intermediateCertificates = intermediateCertificates;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -130,6 +154,10 @@ public class CreateCertificateDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
@@ -138,7 +166,11 @@ public class CreateCertificateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
@@ -146,25 +178,41 @@ public class CreateCertificateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The private key associated with the certificate in pem format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
-    String privateKey;
+    private final String privateKey;
+
+    public String getPrivateKey() {
+        return privateKey;
+    }
 
     /**
      * The data of the leaf certificate in pem format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
-    String certificate;
+    private final String certificate;
+
+    public String getCertificate() {
+        return certificate;
+    }
 
     /**
      * The intermediate certificate data associated with the certificate in pem format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intermediateCertificates")
-    String intermediateCertificates;
+    private final String intermediateCertificates;
+
+    public String getIntermediateCertificates() {
+        return intermediateCertificates;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
@@ -175,7 +223,11 @@ public class CreateCertificateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -186,8 +238,77 @@ public class CreateCertificateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateCertificateDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", privateKey=").append(String.valueOf(this.privateKey));
+        sb.append(", certificate=").append(String.valueOf(this.certificate));
+        sb.append(", intermediateCertificates=")
+                .append(String.valueOf(this.intermediateCertificates));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateCertificateDetails)) {
+            return false;
+        }
+
+        CreateCertificateDetails other = (CreateCertificateDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.privateKey, other.privateKey)
+                && java.util.Objects.equals(this.certificate, other.certificate)
+                && java.util.Objects.equals(
+                        this.intermediateCertificates, other.intermediateCertificates)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.privateKey == null ? 43 : this.privateKey.hashCode());
+        result = (result * PRIME) + (this.certificate == null ? 43 : this.certificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.intermediateCertificates == null
+                                ? 43
+                                : this.intermediateCertificates.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

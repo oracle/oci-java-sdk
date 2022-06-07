@@ -15,16 +15,21 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = Certificate_publicKeyInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Certificate_publicKeyInfo {
+public final class Certificate_publicKeyInfo {
+    @Deprecated
+    @java.beans.ConstructorProperties({"algorithm", "exponent", "keySize"})
+    public Certificate_publicKeyInfo(String algorithm, Integer exponent, Integer keySize) {
+        super();
+        this.algorithm = algorithm;
+        this.exponent = exponent;
+        this.keySize = keySize;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private String algorithm;
@@ -80,24 +85,85 @@ public class Certificate_publicKeyInfo {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The algorithm identifier and parameters for the public key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
-    String algorithm;
+    private final String algorithm;
+
+    public String getAlgorithm() {
+        return algorithm;
+    }
 
     /**
      * The private key exponent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exponent")
-    Integer exponent;
+    private final Integer exponent;
+
+    public Integer getExponent() {
+        return exponent;
+    }
 
     /**
      * The number of bits in a key used by a cryptographic algorithm.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keySize")
-    Integer keySize;
+    private final Integer keySize;
+
+    public Integer getKeySize() {
+        return keySize;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Certificate_publicKeyInfo(");
+        sb.append("algorithm=").append(String.valueOf(this.algorithm));
+        sb.append(", exponent=").append(String.valueOf(this.exponent));
+        sb.append(", keySize=").append(String.valueOf(this.keySize));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Certificate_publicKeyInfo)) {
+            return false;
+        }
+
+        Certificate_publicKeyInfo other = (Certificate_publicKeyInfo) o;
+        return java.util.Objects.equals(this.algorithm, other.algorithm)
+                && java.util.Objects.equals(this.exponent, other.exponent)
+                && java.util.Objects.equals(this.keySize, other.keySize)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.algorithm == null ? 43 : this.algorithm.hashCode());
+        result = (result * PRIME) + (this.exponent == null ? 43 : this.exponent.hashCode());
+        result = (result * PRIME) + (this.keySize == null ? 43 : this.keySize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

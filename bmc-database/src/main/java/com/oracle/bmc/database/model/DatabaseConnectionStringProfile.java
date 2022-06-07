@@ -16,16 +16,43 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseConnectionStringProfile.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseConnectionStringProfile {
+public final class DatabaseConnectionStringProfile {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "value",
+        "consumerGroup",
+        "protocol",
+        "tlsAuthentication",
+        "hostFormat",
+        "sessionMode",
+        "syntaxFormat"
+    })
+    public DatabaseConnectionStringProfile(
+            String displayName,
+            String value,
+            ConsumerGroup consumerGroup,
+            Protocol protocol,
+            TlsAuthentication tlsAuthentication,
+            HostFormat hostFormat,
+            SessionMode sessionMode,
+            SyntaxFormat syntaxFormat) {
+        super();
+        this.displayName = displayName;
+        this.value = value;
+        this.consumerGroup = consumerGroup;
+        this.protocol = protocol;
+        this.tlsAuthentication = tlsAuthentication;
+        this.hostFormat = hostFormat;
+        this.sessionMode = sessionMode;
+        this.syntaxFormat = syntaxFormat;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -141,21 +168,33 @@ public class DatabaseConnectionStringProfile {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Connection string value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
+
     /**
      * Consumer group used by the connection.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ConsumerGroup {
         High("HIGH"),
         Medium("MEDIUM"),
@@ -168,6 +207,9 @@ public class DatabaseConnectionStringProfile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConsumerGroup.class);
 
         private final String value;
         private static java.util.Map<String, ConsumerGroup> map;
@@ -205,11 +247,15 @@ public class DatabaseConnectionStringProfile {
      * Consumer group used by the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumerGroup")
-    ConsumerGroup consumerGroup;
+    private final ConsumerGroup consumerGroup;
+
+    public ConsumerGroup getConsumerGroup() {
+        return consumerGroup;
+    }
+
     /**
      * Protocol used by the connection.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Protocol {
         Tcp("TCP"),
         Tcps("TCPS"),
@@ -219,6 +265,9 @@ public class DatabaseConnectionStringProfile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Protocol.class);
 
         private final String value;
         private static java.util.Map<String, Protocol> map;
@@ -256,11 +305,15 @@ public class DatabaseConnectionStringProfile {
      * Protocol used by the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    Protocol protocol;
+    private final Protocol protocol;
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
+
     /**
      * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TlsAuthentication {
         Server("SERVER"),
         Mutual("MUTUAL"),
@@ -270,6 +323,9 @@ public class DatabaseConnectionStringProfile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TlsAuthentication.class);
 
         private final String value;
         private static java.util.Map<String, TlsAuthentication> map;
@@ -307,11 +363,15 @@ public class DatabaseConnectionStringProfile {
      * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsAuthentication")
-    TlsAuthentication tlsAuthentication;
+    private final TlsAuthentication tlsAuthentication;
+
+    public TlsAuthentication getTlsAuthentication() {
+        return tlsAuthentication;
+    }
+
     /**
      * Host format used in connection string.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum HostFormat {
         Fqdn("FQDN"),
         Ip("IP"),
@@ -321,6 +381,9 @@ public class DatabaseConnectionStringProfile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(HostFormat.class);
 
         private final String value;
         private static java.util.Map<String, HostFormat> map;
@@ -358,11 +421,15 @@ public class DatabaseConnectionStringProfile {
      * Host format used in connection string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostFormat")
-    HostFormat hostFormat;
+    private final HostFormat hostFormat;
+
+    public HostFormat getHostFormat() {
+        return hostFormat;
+    }
+
     /**
      * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SessionMode {
         Direct("DIRECT"),
         Redirect("REDIRECT"),
@@ -372,6 +439,9 @@ public class DatabaseConnectionStringProfile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SessionMode.class);
 
         private final String value;
         private static java.util.Map<String, SessionMode> map;
@@ -409,13 +479,17 @@ public class DatabaseConnectionStringProfile {
      * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
-    SessionMode sessionMode;
+    private final SessionMode sessionMode;
+
+    public SessionMode getSessionMode() {
+        return sessionMode;
+    }
+
     /**
      * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
      * Autonomous Databases on shared Exadata infrastructure always use the long format.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SyntaxFormat {
         Long("LONG"),
         Ezconnect("EZCONNECT"),
@@ -426,6 +500,9 @@ public class DatabaseConnectionStringProfile {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SyntaxFormat.class);
 
         private final String value;
         private static java.util.Map<String, SyntaxFormat> map;
@@ -465,8 +542,76 @@ public class DatabaseConnectionStringProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
-    SyntaxFormat syntaxFormat;
+    private final SyntaxFormat syntaxFormat;
+
+    public SyntaxFormat getSyntaxFormat() {
+        return syntaxFormat;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseConnectionStringProfile(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", consumerGroup=").append(String.valueOf(this.consumerGroup));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", tlsAuthentication=").append(String.valueOf(this.tlsAuthentication));
+        sb.append(", hostFormat=").append(String.valueOf(this.hostFormat));
+        sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
+        sb.append(", syntaxFormat=").append(String.valueOf(this.syntaxFormat));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseConnectionStringProfile)) {
+            return false;
+        }
+
+        DatabaseConnectionStringProfile other = (DatabaseConnectionStringProfile) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.consumerGroup, other.consumerGroup)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.tlsAuthentication, other.tlsAuthentication)
+                && java.util.Objects.equals(this.hostFormat, other.hostFormat)
+                && java.util.Objects.equals(this.sessionMode, other.sessionMode)
+                && java.util.Objects.equals(this.syntaxFormat, other.syntaxFormat)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroup == null ? 43 : this.consumerGroup.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tlsAuthentication == null ? 43 : this.tlsAuthentication.hashCode());
+        result = (result * PRIME) + (this.hostFormat == null ? 43 : this.hostFormat.hashCode());
+        result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
+        result = (result * PRIME) + (this.syntaxFormat == null ? 43 : this.syntaxFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDataAssetFromAmazonS3.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDataAssetFromAmazonS3 extends CreateDataAssetDetails {
+public final class CreateDataAssetFromAmazonS3 extends CreateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -179,6 +174,10 @@ public class CreateDataAssetFromAmazonS3 extends CreateDataAssetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateDataAssetFromAmazonS3(
             String key,
@@ -210,11 +209,65 @@ public class CreateDataAssetFromAmazonS3 extends CreateDataAssetDetails {
      * The region for Amazon s3
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-    CreateConnectionFromAmazonS3 defaultConnection;
+    private final CreateConnectionFromAmazonS3 defaultConnection;
+
+    public CreateConnectionFromAmazonS3 getDefaultConnection() {
+        return defaultConnection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDataAssetFromAmazonS3(");
+        sb.append("super=").append(super.toString());
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDataAssetFromAmazonS3)) {
+            return false;
+        }
+
+        CreateDataAssetFromAmazonS3 other = (CreateDataAssetFromAmazonS3) o;
+        return java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

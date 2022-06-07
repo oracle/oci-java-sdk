@@ -9,14 +9,6 @@ import com.oracle.bmc.dashboardservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/GetDashboardGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDashboardGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDashboardGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,17 @@ public class GetDashboardGroupRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String dashboardGroupId;
 
+    public String getDashboardGroupId() {
+        return dashboardGroupId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * To identify if the call is cross-regional. In CRUD calls for a resource, to
      * identify that the call originates from different region, set the
@@ -39,12 +37,54 @@ public class GetDashboardGroupRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcCrossRegion;
 
+    public String getOpcCrossRegion() {
+        return opcCrossRegion;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDashboardGroupRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String dashboardGroupId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.
+         * @return this builder instance
+         */
+        public Builder dashboardGroupId(String dashboardGroupId) {
+            this.dashboardGroupId = dashboardGroupId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcCrossRegion = null;
+
+        /**
+         * To identify if the call is cross-regional. In CRUD calls for a resource, to
+         * identify that the call originates from different region, set the
+         * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
+         * The call will be served from a Replicated bucket.
+         * For same-region calls, the value is unassigned.
+         *
+         * @return this builder instance
+         */
+        public Builder opcCrossRegion(String opcCrossRegion) {
+            this.opcCrossRegion = opcCrossRegion;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -98,5 +138,78 @@ public class GetDashboardGroupRequest extends com.oracle.bmc.requests.BmcRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetDashboardGroupRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetDashboardGroupRequest
+         */
+        public GetDashboardGroupRequest buildWithoutInvocationCallback() {
+            GetDashboardGroupRequest request = new GetDashboardGroupRequest();
+            request.dashboardGroupId = dashboardGroupId;
+            request.opcRequestId = opcRequestId;
+            request.opcCrossRegion = opcCrossRegion;
+            return request;
+            // new GetDashboardGroupRequest(dashboardGroupId, opcRequestId, opcCrossRegion);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .dashboardGroupId(dashboardGroupId)
+                .opcRequestId(opcRequestId)
+                .opcCrossRegion(opcCrossRegion);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",dashboardGroupId=").append(String.valueOf(this.dashboardGroupId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcCrossRegion=").append(String.valueOf(this.opcCrossRegion));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDashboardGroupRequest)) {
+            return false;
+        }
+
+        GetDashboardGroupRequest other = (GetDashboardGroupRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.dashboardGroupId, other.dashboardGroupId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcCrossRegion, other.opcCrossRegion);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.dashboardGroupId == null ? 43 : this.dashboardGroupId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcCrossRegion == null ? 43 : this.opcCrossRegion.hashCode());
+        return result;
     }
 }

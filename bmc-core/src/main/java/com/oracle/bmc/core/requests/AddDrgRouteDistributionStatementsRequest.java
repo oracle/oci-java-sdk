@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddDrgRouteDistributionStatementsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AddDrgRouteDistributionStatementsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails> {
@@ -26,11 +18,19 @@ public class AddDrgRouteDistributionStatementsRequest
      */
     private String drgRouteDistributionId;
 
+    public String getDrgRouteDistributionId() {
+        return drgRouteDistributionId;
+    }
     /**
      * Request with one or more route distribution statements to be inserted into the route distribution.
      */
     private com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails
             addDrgRouteDistributionStatementsDetails;
+
+    public com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails
+            getAddDrgRouteDistributionStatementsDetails() {
+        return addDrgRouteDistributionStatementsDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -49,6 +49,32 @@ public class AddDrgRouteDistributionStatementsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String drgRouteDistributionId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         * @return this builder instance
+         */
+        public Builder drgRouteDistributionId(String drgRouteDistributionId) {
+            this.drgRouteDistributionId = drgRouteDistributionId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails
+                addDrgRouteDistributionStatementsDetails = null;
+
+        /**
+         * Request with one or more route distribution statements to be inserted into the route distribution.
+         * @return this builder instance
+         */
+        public Builder addDrgRouteDistributionStatementsDetails(
+                com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails
+                        addDrgRouteDistributionStatementsDetails) {
+            this.addDrgRouteDistributionStatementsDetails =
+                    addDrgRouteDistributionStatementsDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -114,5 +140,84 @@ public class AddDrgRouteDistributionStatementsRequest
             addDrgRouteDistributionStatementsDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AddDrgRouteDistributionStatementsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AddDrgRouteDistributionStatementsRequest
+         */
+        public AddDrgRouteDistributionStatementsRequest buildWithoutInvocationCallback() {
+            AddDrgRouteDistributionStatementsRequest request =
+                    new AddDrgRouteDistributionStatementsRequest();
+            request.drgRouteDistributionId = drgRouteDistributionId;
+            request.addDrgRouteDistributionStatementsDetails =
+                    addDrgRouteDistributionStatementsDetails;
+            return request;
+            // new AddDrgRouteDistributionStatementsRequest(drgRouteDistributionId, addDrgRouteDistributionStatementsDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .drgRouteDistributionId(drgRouteDistributionId)
+                .addDrgRouteDistributionStatementsDetails(addDrgRouteDistributionStatementsDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",drgRouteDistributionId=").append(String.valueOf(this.drgRouteDistributionId));
+        sb.append(",addDrgRouteDistributionStatementsDetails=")
+                .append(String.valueOf(this.addDrgRouteDistributionStatementsDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddDrgRouteDistributionStatementsRequest)) {
+            return false;
+        }
+
+        AddDrgRouteDistributionStatementsRequest other =
+                (AddDrgRouteDistributionStatementsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.drgRouteDistributionId, other.drgRouteDistributionId)
+                && java.util.Objects.equals(
+                        this.addDrgRouteDistributionStatementsDetails,
+                        other.addDrgRouteDistributionStatementsDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.drgRouteDistributionId == null
+                                ? 43
+                                : this.drgRouteDistributionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addDrgRouteDistributionStatementsDetails == null
+                                ? 43
+                                : this.addDrgRouteDistributionStatementsDetails.hashCode());
+        return result;
     }
 }

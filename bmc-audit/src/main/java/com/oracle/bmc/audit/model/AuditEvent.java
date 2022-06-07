@@ -16,14 +16,41 @@ package com.oracle.bmc.audit.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditEvent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuditEvent {
+public final class AuditEvent {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "eventType",
+        "cloudEventsVersion",
+        "eventTypeVersion",
+        "source",
+        "eventId",
+        "eventTime",
+        "contentType",
+        "data"
+    })
+    public AuditEvent(
+            String eventType,
+            String cloudEventsVersion,
+            String eventTypeVersion,
+            String source,
+            String eventId,
+            java.util.Date eventTime,
+            String contentType,
+            Data data) {
+        super();
+        this.eventType = eventType;
+        this.cloudEventsVersion = cloudEventsVersion;
+        this.eventTypeVersion = eventTypeVersion;
+        this.source = source;
+        this.eventId = eventId;
+        this.eventTime = eventTime;
+        this.contentType = contentType;
+        this.data = data;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("eventType")
         private String eventType;
@@ -139,6 +166,10 @@ public class AuditEvent {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of event that happened.
      * <p>
@@ -150,7 +181,11 @@ public class AuditEvent {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventType")
-    String eventType;
+    private final String eventType;
+
+    public String getEventType() {
+        return eventType;
+    }
 
     /**
      * The version of the CloudEvents specification. The structure of the envelope follows the
@@ -163,7 +198,11 @@ public class AuditEvent {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudEventsVersion")
-    String cloudEventsVersion;
+    private final String cloudEventsVersion;
+
+    public String getCloudEventsVersion() {
+        return cloudEventsVersion;
+    }
 
     /**
      * The version of the event type. This version applies to the payload of the event, not the envelope.
@@ -173,7 +212,11 @@ public class AuditEvent {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypeVersion")
-    String eventTypeVersion;
+    private final String eventTypeVersion;
+
+    public String getEventTypeVersion() {
+        return eventTypeVersion;
+    }
 
     /**
      * The source of the event.
@@ -182,14 +225,22 @@ public class AuditEvent {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    String source;
+    private final String source;
+
+    public String getSource() {
+        return source;
+    }
 
     /**
      * The GUID of the event.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventId")
-    String eventId;
+    private final String eventId;
+
+    public String getEventId() {
+        return eventId;
+    }
 
     /**
      * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -198,7 +249,11 @@ public class AuditEvent {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
-    java.util.Date eventTime;
+    private final java.util.Date eventTime;
+
+    public java.util.Date getEventTime() {
+        return eventTime;
+    }
 
     /**
      * The content type of the data contained in {@code data}.
@@ -207,11 +262,85 @@ public class AuditEvent {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
-    String contentType;
+    private final String contentType;
+
+    public String getContentType() {
+        return contentType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("data")
-    Data data;
+    private final Data data;
+
+    public Data getData() {
+        return data;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuditEvent(");
+        sb.append("eventType=").append(String.valueOf(this.eventType));
+        sb.append(", cloudEventsVersion=").append(String.valueOf(this.cloudEventsVersion));
+        sb.append(", eventTypeVersion=").append(String.valueOf(this.eventTypeVersion));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", eventId=").append(String.valueOf(this.eventId));
+        sb.append(", eventTime=").append(String.valueOf(this.eventTime));
+        sb.append(", contentType=").append(String.valueOf(this.contentType));
+        sb.append(", data=").append(String.valueOf(this.data));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuditEvent)) {
+            return false;
+        }
+
+        AuditEvent other = (AuditEvent) o;
+        return java.util.Objects.equals(this.eventType, other.eventType)
+                && java.util.Objects.equals(this.cloudEventsVersion, other.cloudEventsVersion)
+                && java.util.Objects.equals(this.eventTypeVersion, other.eventTypeVersion)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.eventId, other.eventId)
+                && java.util.Objects.equals(this.eventTime, other.eventTime)
+                && java.util.Objects.equals(this.contentType, other.contentType)
+                && java.util.Objects.equals(this.data, other.data)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.eventType == null ? 43 : this.eventType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudEventsVersion == null
+                                ? 43
+                                : this.cloudEventsVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.eventTypeVersion == null ? 43 : this.eventTypeVersion.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.eventId == null ? 43 : this.eventId.hashCode());
+        result = (result * PRIME) + (this.eventTime == null ? 43 : this.eventTime.hashCode());
+        result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
+        result = (result * PRIME) + (this.data == null ? 43 : this.data.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

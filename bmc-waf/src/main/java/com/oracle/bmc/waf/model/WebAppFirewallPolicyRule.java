@@ -15,12 +15,6 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -43,12 +37,27 @@ package com.oracle.bmc.waf.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class WebAppFirewallPolicyRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "conditionLanguage", "condition", "actionName"})
+    protected WebAppFirewallPolicyRule(
+            String name, ConditionLanguage conditionLanguage, String condition, String actionName) {
+        super();
+        this.name = name;
+        this.conditionLanguage = conditionLanguage;
+        this.condition = condition;
+        this.actionName = actionName;
+    }
 
     /**
      * Rule name. Must be unique within the module.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The language used to parse condition from field {@code condition}. Available languages:
      * <p>
@@ -93,20 +102,73 @@ public class WebAppFirewallPolicyRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguage")
-    ConditionLanguage conditionLanguage;
+    private final ConditionLanguage conditionLanguage;
+
+    public ConditionLanguage getConditionLanguage() {
+        return conditionLanguage;
+    }
 
     /**
      * An expression that determines whether or not the rule action should be executed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    String condition;
+    private final String condition;
+
+    public String getCondition() {
+        return condition;
+    }
 
     /**
      * References action by name from actions defined in WebAppFirewallPolicy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionName")
-    String actionName;
+    private final String actionName;
+
+    public String getActionName() {
+        return actionName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WebAppFirewallPolicyRule(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", conditionLanguage=").append(String.valueOf(this.conditionLanguage));
+        sb.append(", condition=").append(String.valueOf(this.condition));
+        sb.append(", actionName=").append(String.valueOf(this.actionName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WebAppFirewallPolicyRule)) {
+            return false;
+        }
+
+        WebAppFirewallPolicyRule other = (WebAppFirewallPolicyRule) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.conditionLanguage, other.conditionLanguage)
+                && java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.actionName, other.actionName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionLanguage == null ? 43 : this.conditionLanguage.hashCode());
+        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result = (result * PRIME) + (this.actionName == null ? 43 : this.actionName.hashCode());
+        return result;
+    }
 
     /**
      * Type of WebAppFirewallPolicyRule.

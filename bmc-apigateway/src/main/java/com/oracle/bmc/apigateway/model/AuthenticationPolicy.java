@@ -15,12 +15,6 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,6 +33,12 @@ package com.oracle.bmc.apigateway.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AuthenticationPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isAnonymousAccessAllowed"})
+    protected AuthenticationPolicy(Boolean isAnonymousAccessAllowed) {
+        super();
+        this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
+    }
 
     /**
      * Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS
@@ -46,12 +46,51 @@ public class AuthenticationPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAnonymousAccessAllowed")
-    Boolean isAnonymousAccessAllowed;
+    private final Boolean isAnonymousAccessAllowed;
+
+    public Boolean getIsAnonymousAccessAllowed() {
+        return isAnonymousAccessAllowed;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuthenticationPolicy(");
+        sb.append("isAnonymousAccessAllowed=")
+                .append(String.valueOf(this.isAnonymousAccessAllowed));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuthenticationPolicy)) {
+            return false;
+        }
+
+        AuthenticationPolicy other = (AuthenticationPolicy) o;
+        return java.util.Objects.equals(
+                this.isAnonymousAccessAllowed, other.isAnonymousAccessAllowed);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isAnonymousAccessAllowed == null
+                                ? 43
+                                : this.isAnonymousAccessAllowed.hashCode());
+        return result;
+    }
 
     /**
      * Type of the authentication policy to use.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         CustomAuthentication("CUSTOM_AUTHENTICATION"),
         JwtAuthentication("JWT_AUTHENTICATION"),
@@ -61,6 +100,8 @@ public class AuthenticationPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;

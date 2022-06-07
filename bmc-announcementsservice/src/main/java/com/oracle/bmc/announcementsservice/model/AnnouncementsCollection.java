@@ -16,16 +16,22 @@ package com.oracle.bmc.announcementsservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AnnouncementsCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AnnouncementsCollection {
+public final class AnnouncementsCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({"items", "userStatuses"})
+    public AnnouncementsCollection(
+            java.util.List<AnnouncementSummary> items,
+            java.util.List<AnnouncementUserStatusDetails> userStatuses) {
+        super();
+        this.items = items;
+        this.userStatuses = userStatuses;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AnnouncementSummary> items;
@@ -70,18 +76,72 @@ public class AnnouncementsCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A collection of announcements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<AnnouncementSummary> items;
+    private final java.util.List<AnnouncementSummary> items;
+
+    public java.util.List<AnnouncementSummary> getItems() {
+        return items;
+    }
 
     /**
      * The user-specific status for found announcements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userStatuses")
-    java.util.List<AnnouncementUserStatusDetails> userStatuses;
+    private final java.util.List<AnnouncementUserStatusDetails> userStatuses;
+
+    public java.util.List<AnnouncementUserStatusDetails> getUserStatuses() {
+        return userStatuses;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AnnouncementsCollection(");
+        sb.append("items=").append(String.valueOf(this.items));
+        sb.append(", userStatuses=").append(String.valueOf(this.userStatuses));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnnouncementsCollection)) {
+            return false;
+        }
+
+        AnnouncementsCollection other = (AnnouncementsCollection) o;
+        return java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.userStatuses, other.userStatuses)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result = (result * PRIME) + (this.userStatuses == null ? 43 : this.userStatuses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.dataintegration.responses;
 import com.oracle.bmc.dataintegration.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListUserDefinedFunctionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,11 +15,19 @@ public class ListUserDefinedFunctionsResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;
+
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
 
     /**
      * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -31,17 +35,30 @@ public class ListUserDefinedFunctionsResponse extends com.oracle.bmc.responses.B
      */
     private String opcPrevPage;
 
+    public String getOpcPrevPage() {
+        return opcPrevPage;
+    }
+
     /**
      * Total items in the entire list.
      *
      */
     private Integer opcTotalItems;
 
+    public Integer getOpcTotalItems() {
+        return opcTotalItems;
+    }
+
     /**
      * The returned UserDefinedFunctionSummaryCollection instance.
      */
     private com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummaryCollection
             userDefinedFunctionSummaryCollection;
+
+    public com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummaryCollection
+            getUserDefinedFunctionSummaryCollection() {
+        return userDefinedFunctionSummaryCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -75,6 +92,44 @@ public class ListUserDefinedFunctionsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcPrevPage;
+
+        public Builder opcPrevPage(String opcPrevPage) {
+            this.opcPrevPage = opcPrevPage;
+            return this;
+        }
+
+        private Integer opcTotalItems;
+
+        public Builder opcTotalItems(Integer opcTotalItems) {
+            this.opcTotalItems = opcTotalItems;
+            return this;
+        }
+
+        private com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummaryCollection
+                userDefinedFunctionSummaryCollection;
+
+        public Builder userDefinedFunctionSummaryCollection(
+                com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummaryCollection
+                        userDefinedFunctionSummaryCollection) {
+            this.userDefinedFunctionSummaryCollection = userDefinedFunctionSummaryCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -99,5 +154,62 @@ public class ListUserDefinedFunctionsResponse extends com.oracle.bmc.responses.B
                     opcTotalItems,
                     userDefinedFunctionSummaryCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcPrevPage=").append(String.valueOf(opcPrevPage));
+        sb.append(",opcTotalItems=").append(String.valueOf(opcTotalItems));
+        sb.append(",userDefinedFunctionSummaryCollection=")
+                .append(String.valueOf(userDefinedFunctionSummaryCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListUserDefinedFunctionsResponse)) {
+            return false;
+        }
+
+        ListUserDefinedFunctionsResponse other = (ListUserDefinedFunctionsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcPrevPage, other.opcPrevPage)
+                && java.util.Objects.equals(this.opcTotalItems, other.opcTotalItems)
+                && java.util.Objects.equals(
+                        this.userDefinedFunctionSummaryCollection,
+                        other.userDefinedFunctionSummaryCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcPrevPage == null ? 43 : this.opcPrevPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcTotalItems == null ? 43 : this.opcTotalItems.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userDefinedFunctionSummaryCollection == null
+                                ? 43
+                                : this.userDefinedFunctionSummaryCollection.hashCode());
+        return result;
     }
 }

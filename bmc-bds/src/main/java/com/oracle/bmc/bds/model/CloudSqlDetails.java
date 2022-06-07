@@ -15,14 +15,32 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CloudSqlDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CloudSqlDetails {
+public final class CloudSqlDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "shape",
+        "blockVolumeSizeInGBs",
+        "isKerberosMappedToDatabaseUsers",
+        "ipAddress",
+        "kerberosDetails"
+    })
+    public CloudSqlDetails(
+            String shape,
+            Long blockVolumeSizeInGBs,
+            Boolean isKerberosMappedToDatabaseUsers,
+            String ipAddress,
+            java.util.List<KerberosDetails> kerberosDetails) {
+        super();
+        this.shape = shape;
+        this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
+        this.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
+        this.ipAddress = ipAddress;
+        this.kerberosDetails = kerberosDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
@@ -105,11 +123,19 @@ public class CloudSqlDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Shape of the node
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The size of block volume in GB that needs to be attached to a given node.
@@ -117,7 +143,11 @@ public class CloudSqlDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
-    Long blockVolumeSizeInGBs;
+    private final Long blockVolumeSizeInGBs;
+
+    public Long getBlockVolumeSizeInGBs() {
+        return blockVolumeSizeInGBs;
+    }
 
     /**
      * Boolean flag specifying whether or not Kerberos principals are mapped
@@ -125,20 +155,95 @@ public class CloudSqlDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKerberosMappedToDatabaseUsers")
-    Boolean isKerberosMappedToDatabaseUsers;
+    private final Boolean isKerberosMappedToDatabaseUsers;
+
+    public Boolean getIsKerberosMappedToDatabaseUsers() {
+        return isKerberosMappedToDatabaseUsers;
+    }
 
     /**
      * IP address of the Cloud SQL node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * Details about the Kerberos principals.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kerberosDetails")
-    java.util.List<KerberosDetails> kerberosDetails;
+    private final java.util.List<KerberosDetails> kerberosDetails;
+
+    public java.util.List<KerberosDetails> getKerberosDetails() {
+        return kerberosDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CloudSqlDetails(");
+        sb.append("shape=").append(String.valueOf(this.shape));
+        sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
+        sb.append(", isKerberosMappedToDatabaseUsers=")
+                .append(String.valueOf(this.isKerberosMappedToDatabaseUsers));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", kerberosDetails=").append(String.valueOf(this.kerberosDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CloudSqlDetails)) {
+            return false;
+        }
+
+        CloudSqlDetails other = (CloudSqlDetails) o;
+        return java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.blockVolumeSizeInGBs, other.blockVolumeSizeInGBs)
+                && java.util.Objects.equals(
+                        this.isKerberosMappedToDatabaseUsers, other.isKerberosMappedToDatabaseUsers)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.kerberosDetails, other.kerberosDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockVolumeSizeInGBs == null
+                                ? 43
+                                : this.blockVolumeSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isKerberosMappedToDatabaseUsers == null
+                                ? 43
+                                : this.isKerberosMappedToDatabaseUsers.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kerberosDetails == null ? 43 : this.kerberosDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,34 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateTranslatorDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTranslatorDetails {
+public final class UpdateTranslatorDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "baseUrl",
+        "authToken",
+        "properties",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateTranslatorDetails(
+            String baseUrl,
+            String authToken,
+            java.util.Map<String, String> properties,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.baseUrl = baseUrl;
+        this.authToken = authToken;
+        this.properties = properties;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
         private String baseUrl;
@@ -104,17 +122,29 @@ public class UpdateTranslatorDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The base URL for invoking the Translation Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
-    String baseUrl;
+    private final String baseUrl;
+
+    public String getBaseUrl() {
+        return baseUrl;
+    }
 
     /**
      * The authentication token to use when invoking the Translation Service
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-    String authToken;
+    private final String authToken;
+
+    public String getAuthToken() {
+        return authToken;
+    }
 
     /**
      * Properties used when invoking the translation service.
@@ -122,7 +152,11 @@ public class UpdateTranslatorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, String> properties;
+    private final java.util.Map<String, String> properties;
+
+    public java.util.Map<String, String> getProperties() {
+        return properties;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
@@ -130,7 +164,11 @@ public class UpdateTranslatorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -138,8 +176,63 @@ public class UpdateTranslatorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTranslatorDetails(");
+        sb.append("baseUrl=").append(String.valueOf(this.baseUrl));
+        sb.append(", authToken=").append(String.valueOf(this.authToken));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTranslatorDetails)) {
+            return false;
+        }
+
+        UpdateTranslatorDetails other = (UpdateTranslatorDetails) o;
+        return java.util.Objects.equals(this.baseUrl, other.baseUrl)
+                && java.util.Objects.equals(this.authToken, other.authToken)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.baseUrl == null ? 43 : this.baseUrl.hashCode());
+        result = (result * PRIME) + (this.authToken == null ? 43 : this.authToken.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

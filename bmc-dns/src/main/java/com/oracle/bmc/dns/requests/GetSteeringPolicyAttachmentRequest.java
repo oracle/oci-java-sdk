@@ -9,14 +9,6 @@ import com.oracle.bmc.dns.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSteeringPolicyAttachmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetSteeringPolicyAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private String steeringPolicyAttachmentId;
 
+    public String getSteeringPolicyAttachmentId() {
+        return steeringPolicyAttachmentId;
+    }
     /**
      * The {@code If-None-Match} header field makes the request method conditional on
      * the absence of any current representation of the target resource, when
@@ -34,6 +29,9 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private String ifNoneMatch;
 
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
     /**
      * The {@code If-Modified-Since} header field makes a GET or HEAD request method
      * conditional on the selected representation's modification date being more
@@ -43,6 +41,9 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private String ifModifiedSince;
 
+    public String getIfModifiedSince() {
+        return ifModifiedSince;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need
      * to contact Oracle about a particular request, please provide
@@ -51,11 +52,18 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      *
      */
     private com.oracle.bmc.dns.model.Scope scope;
+
+    public com.oracle.bmc.dns.model.Scope getScope() {
+        return scope;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -63,6 +71,73 @@ public class GetSteeringPolicyAttachmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String steeringPolicyAttachmentId = null;
+
+        /**
+         * The OCID of the target steering policy attachment.
+         * @return this builder instance
+         */
+        public Builder steeringPolicyAttachmentId(String steeringPolicyAttachmentId) {
+            this.steeringPolicyAttachmentId = steeringPolicyAttachmentId;
+            return this;
+        }
+
+        private String ifNoneMatch = null;
+
+        /**
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
+
+        private String ifModifiedSince = null;
+
+        /**
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
+         *
+         * @return this builder instance
+         */
+        public Builder ifModifiedSince(String ifModifiedSince) {
+            this.ifModifiedSince = ifModifiedSince;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.dns.model.Scope scope = null;
+
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         * @return this builder instance
+         */
+        public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
+            this.scope = scope;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -118,5 +193,92 @@ public class GetSteeringPolicyAttachmentRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetSteeringPolicyAttachmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetSteeringPolicyAttachmentRequest
+         */
+        public GetSteeringPolicyAttachmentRequest buildWithoutInvocationCallback() {
+            GetSteeringPolicyAttachmentRequest request = new GetSteeringPolicyAttachmentRequest();
+            request.steeringPolicyAttachmentId = steeringPolicyAttachmentId;
+            request.ifNoneMatch = ifNoneMatch;
+            request.ifModifiedSince = ifModifiedSince;
+            request.opcRequestId = opcRequestId;
+            request.scope = scope;
+            return request;
+            // new GetSteeringPolicyAttachmentRequest(steeringPolicyAttachmentId, ifNoneMatch, ifModifiedSince, opcRequestId, scope);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .steeringPolicyAttachmentId(steeringPolicyAttachmentId)
+                .ifNoneMatch(ifNoneMatch)
+                .ifModifiedSince(ifModifiedSince)
+                .opcRequestId(opcRequestId)
+                .scope(scope);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",steeringPolicyAttachmentId=")
+                .append(String.valueOf(this.steeringPolicyAttachmentId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
+        sb.append(",ifModifiedSince=").append(String.valueOf(this.ifModifiedSince));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",scope=").append(String.valueOf(this.scope));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetSteeringPolicyAttachmentRequest)) {
+            return false;
+        }
+
+        GetSteeringPolicyAttachmentRequest other = (GetSteeringPolicyAttachmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.steeringPolicyAttachmentId, other.steeringPolicyAttachmentId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
+                && java.util.Objects.equals(this.ifModifiedSince, other.ifModifiedSince)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.scope, other.scope);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.steeringPolicyAttachmentId == null
+                                ? 43
+                                : this.steeringPolicyAttachmentId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ifModifiedSince == null ? 43 : this.ifModifiedSince.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        return result;
     }
 }

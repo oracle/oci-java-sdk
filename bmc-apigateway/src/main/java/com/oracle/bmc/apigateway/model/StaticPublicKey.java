@@ -15,12 +15,6 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,6 +33,12 @@ package com.oracle.bmc.apigateway.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class StaticPublicKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({"kid"})
+    protected StaticPublicKey(String kid) {
+        super();
+        this.kid = kid;
+    }
 
     /**
      * A unique key ID. This key will be used to verify the signature of a
@@ -46,12 +46,45 @@ public class StaticPublicKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kid")
-    String kid;
+    private final String kid;
+
+    public String getKid() {
+        return kid;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StaticPublicKey(");
+        sb.append("kid=").append(String.valueOf(this.kid));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StaticPublicKey)) {
+            return false;
+        }
+
+        StaticPublicKey other = (StaticPublicKey) o;
+        return java.util.Objects.equals(this.kid, other.kid);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.kid == null ? 43 : this.kid.hashCode());
+        return result;
+    }
 
     /**
      * The format of the public key.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Format {
         JsonWebKey("JSON_WEB_KEY"),
         Pem("PEM"),
@@ -61,6 +94,8 @@ public class StaticPublicKey {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Format.class);
 
         private final String value;
         private static java.util.Map<String, Format> map;

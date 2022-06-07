@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConsoleHistoryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateConsoleHistoryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateConsoleHistoryDetails> {
@@ -26,11 +18,17 @@ public class UpdateConsoleHistoryRequest
      */
     private String instanceConsoleHistoryId;
 
+    public String getInstanceConsoleHistoryId() {
+        return instanceConsoleHistoryId;
+    }
     /**
      * Update instance fields
      */
     private com.oracle.bmc.core.model.UpdateConsoleHistoryDetails updateConsoleHistoryDetails;
 
+    public com.oracle.bmc.core.model.UpdateConsoleHistoryDetails getUpdateConsoleHistoryDetails() {
+        return updateConsoleHistoryDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -38,6 +36,10 @@ public class UpdateConsoleHistoryRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +58,44 @@ public class UpdateConsoleHistoryRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String instanceConsoleHistoryId = null;
+
+        /**
+         * The OCID of the console history.
+         * @return this builder instance
+         */
+        public Builder instanceConsoleHistoryId(String instanceConsoleHistoryId) {
+            this.instanceConsoleHistoryId = instanceConsoleHistoryId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateConsoleHistoryDetails updateConsoleHistoryDetails =
+                null;
+
+        /**
+         * Update instance fields
+         * @return this builder instance
+         */
+        public Builder updateConsoleHistoryDetails(
+                com.oracle.bmc.core.model.UpdateConsoleHistoryDetails updateConsoleHistoryDetails) {
+            this.updateConsoleHistoryDetails = updateConsoleHistoryDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +160,86 @@ public class UpdateConsoleHistoryRequest
             updateConsoleHistoryDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateConsoleHistoryRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateConsoleHistoryRequest
+         */
+        public UpdateConsoleHistoryRequest buildWithoutInvocationCallback() {
+            UpdateConsoleHistoryRequest request = new UpdateConsoleHistoryRequest();
+            request.instanceConsoleHistoryId = instanceConsoleHistoryId;
+            request.updateConsoleHistoryDetails = updateConsoleHistoryDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateConsoleHistoryRequest(instanceConsoleHistoryId, updateConsoleHistoryDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .instanceConsoleHistoryId(instanceConsoleHistoryId)
+                .updateConsoleHistoryDetails(updateConsoleHistoryDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",instanceConsoleHistoryId=")
+                .append(String.valueOf(this.instanceConsoleHistoryId));
+        sb.append(",updateConsoleHistoryDetails=")
+                .append(String.valueOf(this.updateConsoleHistoryDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateConsoleHistoryRequest)) {
+            return false;
+        }
+
+        UpdateConsoleHistoryRequest other = (UpdateConsoleHistoryRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.instanceConsoleHistoryId, other.instanceConsoleHistoryId)
+                && java.util.Objects.equals(
+                        this.updateConsoleHistoryDetails, other.updateConsoleHistoryDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.instanceConsoleHistoryId == null
+                                ? 43
+                                : this.instanceConsoleHistoryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateConsoleHistoryDetails == null
+                                ? 43
+                                : this.updateConsoleHistoryDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

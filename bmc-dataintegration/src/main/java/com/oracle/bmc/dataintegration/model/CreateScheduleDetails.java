@@ -15,16 +15,52 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateScheduleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateScheduleDetails {
+public final class CreateScheduleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelVersion",
+        "name",
+        "description",
+        "objectVersion",
+        "objectStatus",
+        "identifier",
+        "frequencyDetails",
+        "timezone",
+        "isDaylightAdjustmentEnabled",
+        "registryMetadata"
+    })
+    public CreateScheduleDetails(
+            String key,
+            String modelVersion,
+            String name,
+            String description,
+            Integer objectVersion,
+            Integer objectStatus,
+            String identifier,
+            AbstractFrequencyDetails frequencyDetails,
+            String timezone,
+            Boolean isDaylightAdjustmentEnabled,
+            RegistryMetadata registryMetadata) {
+        super();
+        this.key = key;
+        this.modelVersion = modelVersion;
+        this.name = name;
+        this.description = description;
+        this.objectVersion = objectVersion;
+        this.objectStatus = objectStatus;
+        this.identifier = identifier;
+        this.frequencyDetails = frequencyDetails;
+        this.timezone = timezone;
+        this.isDaylightAdjustmentEnabled = isDaylightAdjustmentEnabled;
+        this.registryMetadata = registryMetadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -173,66 +209,195 @@ public class CreateScheduleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("frequencyDetails")
-    AbstractFrequencyDetails frequencyDetails;
+    private final AbstractFrequencyDetails frequencyDetails;
+
+    public AbstractFrequencyDetails getFrequencyDetails() {
+        return frequencyDetails;
+    }
 
     /**
      * The timezone for the schedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
-    String timezone;
+    private final String timezone;
+
+    public String getTimezone() {
+        return timezone;
+    }
 
     /**
      * A flag to indicate whether daylight adjustment should be considered or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDaylightAdjustmentEnabled")
-    Boolean isDaylightAdjustmentEnabled;
+    private final Boolean isDaylightAdjustmentEnabled;
+
+    public Boolean getIsDaylightAdjustmentEnabled() {
+        return isDaylightAdjustmentEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
-    RegistryMetadata registryMetadata;
+    private final RegistryMetadata registryMetadata;
+
+    public RegistryMetadata getRegistryMetadata() {
+        return registryMetadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateScheduleDetails(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", frequencyDetails=").append(String.valueOf(this.frequencyDetails));
+        sb.append(", timezone=").append(String.valueOf(this.timezone));
+        sb.append(", isDaylightAdjustmentEnabled=")
+                .append(String.valueOf(this.isDaylightAdjustmentEnabled));
+        sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateScheduleDetails)) {
+            return false;
+        }
+
+        CreateScheduleDetails other = (CreateScheduleDetails) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.frequencyDetails, other.frequencyDetails)
+                && java.util.Objects.equals(this.timezone, other.timezone)
+                && java.util.Objects.equals(
+                        this.isDaylightAdjustmentEnabled, other.isDaylightAdjustmentEnabled)
+                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.frequencyDetails == null ? 43 : this.frequencyDetails.hashCode());
+        result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDaylightAdjustmentEnabled == null
+                                ? 43
+                                : this.isDaylightAdjustmentEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

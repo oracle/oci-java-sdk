@@ -15,16 +15,40 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateUnifiedAgentConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateUnifiedAgentConfigurationDetails {
+public final class UpdateUnifiedAgentConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "isEnabled",
+        "definedTags",
+        "freeformTags",
+        "description",
+        "serviceConfiguration",
+        "groupAssociation"
+    })
+    public UpdateUnifiedAgentConfigurationDetails(
+            String displayName,
+            Boolean isEnabled,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags,
+            String description,
+            UnifiedAgentServiceConfigurationDetails serviceConfiguration,
+            GroupAssociationDetails groupAssociation) {
+        super();
+        this.displayName = displayName;
+        this.isEnabled = isEnabled;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+        this.description = description;
+        this.serviceConfiguration = serviceConfiguration;
+        this.groupAssociation = groupAssociation;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -131,19 +155,31 @@ public class UpdateUnifiedAgentConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Whether or not this resource is currently enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -153,7 +189,11 @@ public class UpdateUnifiedAgentConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -162,20 +202,99 @@ public class UpdateUnifiedAgentConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Description for this resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConfiguration")
-    UnifiedAgentServiceConfigurationDetails serviceConfiguration;
+    private final UnifiedAgentServiceConfigurationDetails serviceConfiguration;
+
+    public UnifiedAgentServiceConfigurationDetails getServiceConfiguration() {
+        return serviceConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("groupAssociation")
-    GroupAssociationDetails groupAssociation;
+    private final GroupAssociationDetails groupAssociation;
+
+    public GroupAssociationDetails getGroupAssociation() {
+        return groupAssociation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateUnifiedAgentConfigurationDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", serviceConfiguration=").append(String.valueOf(this.serviceConfiguration));
+        sb.append(", groupAssociation=").append(String.valueOf(this.groupAssociation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateUnifiedAgentConfigurationDetails)) {
+            return false;
+        }
+
+        UpdateUnifiedAgentConfigurationDetails other = (UpdateUnifiedAgentConfigurationDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.serviceConfiguration, other.serviceConfiguration)
+                && java.util.Objects.equals(this.groupAssociation, other.groupAssociation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceConfiguration == null
+                                ? 43
+                                : this.serviceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupAssociation == null ? 43 : this.groupAssociation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

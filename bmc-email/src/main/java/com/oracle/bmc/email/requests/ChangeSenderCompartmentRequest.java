@@ -9,14 +9,6 @@ import com.oracle.bmc.email.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeSenderCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeSenderCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeSenderCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.email.model.ChangeSenderCompartmentDetails> {
@@ -26,12 +18,19 @@ public class ChangeSenderCompartmentRequest
      */
     private String senderId;
 
+    public String getSenderId() {
+        return senderId;
+    }
     /**
      * Details for moving a sender into a different compartment.
      */
     private com.oracle.bmc.email.model.ChangeSenderCompartmentDetails
             changeSenderCompartmentDetails;
 
+    public com.oracle.bmc.email.model.ChangeSenderCompartmentDetails
+            getChangeSenderCompartmentDetails() {
+        return changeSenderCompartmentDetails;
+    }
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
@@ -40,10 +39,17 @@ public class ChangeSenderCompartmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The request ID for tracing from the system
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -62,6 +68,56 @@ public class ChangeSenderCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String senderId = null;
+
+        /**
+         * The unique OCID of the sender.
+         * @return this builder instance
+         */
+        public Builder senderId(String senderId) {
+            this.senderId = senderId;
+            return this;
+        }
+
+        private com.oracle.bmc.email.model.ChangeSenderCompartmentDetails
+                changeSenderCompartmentDetails = null;
+
+        /**
+         * Details for moving a sender into a different compartment.
+         * @return this builder instance
+         */
+        public Builder changeSenderCompartmentDetails(
+                com.oracle.bmc.email.model.ChangeSenderCompartmentDetails
+                        changeSenderCompartmentDetails) {
+            this.changeSenderCompartmentDetails = changeSenderCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The request ID for tracing from the system
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -127,5 +183,85 @@ public class ChangeSenderCompartmentRequest
             changeSenderCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeSenderCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeSenderCompartmentRequest
+         */
+        public ChangeSenderCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeSenderCompartmentRequest request = new ChangeSenderCompartmentRequest();
+            request.senderId = senderId;
+            request.changeSenderCompartmentDetails = changeSenderCompartmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ChangeSenderCompartmentRequest(senderId, changeSenderCompartmentDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .senderId(senderId)
+                .changeSenderCompartmentDetails(changeSenderCompartmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",senderId=").append(String.valueOf(this.senderId));
+        sb.append(",changeSenderCompartmentDetails=")
+                .append(String.valueOf(this.changeSenderCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeSenderCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeSenderCompartmentRequest other = (ChangeSenderCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.senderId, other.senderId)
+                && java.util.Objects.equals(
+                        this.changeSenderCompartmentDetails, other.changeSenderCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.senderId == null ? 43 : this.senderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeSenderCompartmentDetails == null
+                                ? 43
+                                : this.changeSenderCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

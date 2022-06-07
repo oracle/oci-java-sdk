@@ -16,16 +16,52 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PdbConversionHistoryEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PdbConversionHistoryEntry {
+public final class PdbConversionHistoryEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "action",
+        "target",
+        "sourceDatabaseId",
+        "targetDatabaseId",
+        "cdbName",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeStarted",
+        "timeEnded",
+        "additionalCdbParams"
+    })
+    public PdbConversionHistoryEntry(
+            String id,
+            Action action,
+            Target target,
+            String sourceDatabaseId,
+            String targetDatabaseId,
+            String cdbName,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded,
+            String additionalCdbParams) {
+        super();
+        this.id = id;
+        this.action = action;
+        this.target = target;
+        this.sourceDatabaseId = sourceDatabaseId;
+        this.targetDatabaseId = targetDatabaseId;
+        this.cdbName = cdbName;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+        this.additionalCdbParams = additionalCdbParams;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -174,11 +210,20 @@ public class PdbConversionHistoryEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database conversion history.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The operations used to convert a non-container database to a pluggable database.
      * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
@@ -187,7 +232,6 @@ public class PdbConversionHistoryEntry {
      * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Precheck("PRECHECK"),
         Convert("CONVERT"),
@@ -199,6 +243,8 @@ public class PdbConversionHistoryEntry {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -241,13 +287,17 @@ public class PdbConversionHistoryEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
     /**
      * The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
      *  - Use {@code NEW_DATABASE} to specify that the pluggable database be created within a new container database in the same database home.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Target {
         NewDatabase("NEW_DATABASE"),
 
@@ -256,6 +306,8 @@ public class PdbConversionHistoryEntry {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Target.class);
 
         private final String value;
         private static java.util.Map<String, Target> map;
@@ -295,29 +347,45 @@ public class PdbConversionHistoryEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    Target target;
+    private final Target target;
+
+    public Target getTarget() {
+        return target;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseId")
-    String sourceDatabaseId;
+    private final String sourceDatabaseId;
+
+    public String getSourceDatabaseId() {
+        return sourceDatabaseId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseId")
-    String targetDatabaseId;
+    private final String targetDatabaseId;
+
+    public String getTargetDatabaseId() {
+        return targetDatabaseId;
+    }
 
     /**
      * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
-    String cdbName;
+    private final String cdbName;
+
+    public String getCdbName() {
+        return cdbName;
+    }
+
     /**
      * Status of an operation performed during the conversion of a non-container database to a pluggable database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
@@ -328,6 +396,9 @@ public class PdbConversionHistoryEntry {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -365,33 +436,134 @@ public class PdbConversionHistoryEntry {
      * Status of an operation performed during the conversion of a non-container database to a pluggable database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycle state for the conversion operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time when the database conversion operation started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time when the database conversion operation ended.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
 
     /**
      * Additional container database parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalCdbParams")
-    String additionalCdbParams;
+    private final String additionalCdbParams;
+
+    public String getAdditionalCdbParams() {
+        return additionalCdbParams;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PdbConversionHistoryEntry(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", sourceDatabaseId=").append(String.valueOf(this.sourceDatabaseId));
+        sb.append(", targetDatabaseId=").append(String.valueOf(this.targetDatabaseId));
+        sb.append(", cdbName=").append(String.valueOf(this.cdbName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", additionalCdbParams=").append(String.valueOf(this.additionalCdbParams));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PdbConversionHistoryEntry)) {
+            return false;
+        }
+
+        PdbConversionHistoryEntry other = (PdbConversionHistoryEntry) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.sourceDatabaseId, other.sourceDatabaseId)
+                && java.util.Objects.equals(this.targetDatabaseId, other.targetDatabaseId)
+                && java.util.Objects.equals(this.cdbName, other.cdbName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.additionalCdbParams, other.additionalCdbParams)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDatabaseId == null ? 43 : this.sourceDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseId == null ? 43 : this.targetDatabaseId.hashCode());
+        result = (result * PRIME) + (this.cdbName == null ? 43 : this.cdbName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalCdbParams == null
+                                ? 43
+                                : this.additionalCdbParams.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

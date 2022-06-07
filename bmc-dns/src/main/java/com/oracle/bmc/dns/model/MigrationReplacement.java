@@ -16,16 +16,22 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MigrationReplacement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MigrationReplacement {
+public final class MigrationReplacement {
+    @Deprecated
+    @java.beans.ConstructorProperties({"rtype", "substituteRtype", "ttl", "rdata"})
+    public MigrationReplacement(String rtype, String substituteRtype, Integer ttl, String rdata) {
+        super();
+        this.rtype = rtype;
+        this.substituteRtype = substituteRtype;
+        this.ttl = ttl;
+        this.rdata = rdata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("rtype")
         private String rtype;
@@ -93,24 +99,40 @@ public class MigrationReplacement {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")
-    String rtype;
+    private final String rtype;
+
+    public String getRtype() {
+        return rtype;
+    }
 
     /**
      * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("substituteRtype")
-    String substituteRtype;
+    private final String substituteRtype;
+
+    public String getSubstituteRtype() {
+        return substituteRtype;
+    }
 
     /**
      * The Time To Live of the replacement record, in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
-    Integer ttl;
+    private final Integer ttl;
+
+    public Integer getTtl() {
+        return ttl;
+    }
 
     /**
      * The record data of the replacement record, as whitespace-delimited tokens in
@@ -118,8 +140,62 @@ public class MigrationReplacement {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
-    String rdata;
+    private final String rdata;
+
+    public String getRdata() {
+        return rdata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MigrationReplacement(");
+        sb.append("rtype=").append(String.valueOf(this.rtype));
+        sb.append(", substituteRtype=").append(String.valueOf(this.substituteRtype));
+        sb.append(", ttl=").append(String.valueOf(this.ttl));
+        sb.append(", rdata=").append(String.valueOf(this.rdata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MigrationReplacement)) {
+            return false;
+        }
+
+        MigrationReplacement other = (MigrationReplacement) o;
+        return java.util.Objects.equals(this.rtype, other.rtype)
+                && java.util.Objects.equals(this.substituteRtype, other.substituteRtype)
+                && java.util.Objects.equals(this.ttl, other.ttl)
+                && java.util.Objects.equals(this.rdata, other.rdata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.rtype == null ? 43 : this.rtype.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.substituteRtype == null ? 43 : this.substituteRtype.hashCode());
+        result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
+        result = (result * PRIME) + (this.rdata == null ? 43 : this.rdata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.apmcontrolplane.model;
  * Possibly types of operations that the work request may process.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.extern.slf4j.Slf4j
 public enum OperationTypes {
     CreateApmDomain("CREATE_APM_DOMAIN"),
     UpdateApmDomain("UPDATE_APM_DOMAIN"),
@@ -21,6 +20,9 @@ public enum OperationTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OperationTypes.class);
 
     private final String value;
     private static java.util.Map<String, OperationTypes> map;

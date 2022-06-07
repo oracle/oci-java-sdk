@@ -24,16 +24,73 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = VolumeGroupBackup.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VolumeGroupBackup {
+public final class VolumeGroupBackup {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "expirationTime",
+        "freeformTags",
+        "id",
+        "lifecycleState",
+        "sizeInMBs",
+        "sizeInGBs",
+        "sourceType",
+        "timeCreated",
+        "timeRequestReceived",
+        "type",
+        "uniqueSizeInMbs",
+        "uniqueSizeInGbs",
+        "volumeBackupIds",
+        "volumeGroupId",
+        "sourceVolumeGroupBackupId"
+    })
+    public VolumeGroupBackup(
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Date expirationTime,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            LifecycleState lifecycleState,
+            Long sizeInMBs,
+            Long sizeInGBs,
+            SourceType sourceType,
+            java.util.Date timeCreated,
+            java.util.Date timeRequestReceived,
+            Type type,
+            Long uniqueSizeInMbs,
+            Long uniqueSizeInGbs,
+            java.util.List<String> volumeBackupIds,
+            String volumeGroupId,
+            String sourceVolumeGroupBackupId) {
+        super();
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.expirationTime = expirationTime;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.sizeInMBs = sizeInMBs;
+        this.sizeInGBs = sizeInGBs;
+        this.sourceType = sourceType;
+        this.timeCreated = timeCreated;
+        this.timeRequestReceived = timeRequestReceived;
+        this.type = type;
+        this.uniqueSizeInMbs = uniqueSizeInMbs;
+        this.uniqueSizeInGbs = uniqueSizeInGbs;
+        this.volumeBackupIds = volumeBackupIds;
+        this.volumeGroupId = volumeGroupId;
+        this.sourceVolumeGroupBackupId = sourceVolumeGroupBackupId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -260,11 +317,19 @@ public class VolumeGroupBackup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment that contains the volume group backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -274,7 +339,11 @@ public class VolumeGroupBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -282,7 +351,11 @@ public class VolumeGroupBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time the volume group backup will expire and be automatically deleted.
@@ -293,7 +366,11 @@ public class VolumeGroupBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
-    java.util.Date expirationTime;
+    private final java.util.Date expirationTime;
+
+    public java.util.Date getExpirationTime() {
+        return expirationTime;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -303,17 +380,25 @@ public class VolumeGroupBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The OCID of the volume group backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The current state of a volume group backup.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Committed("COMMITTED"),
@@ -328,6 +413,9 @@ public class VolumeGroupBackup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -365,27 +453,39 @@ public class VolumeGroupBackup {
      * The current state of a volume group backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The aggregate size of the volume group backup, in MBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
-    Long sizeInMBs;
+    private final Long sizeInMBs;
+
+    public Long getSizeInMBs() {
+        return sizeInMBs;
+    }
 
     /**
      * The aggregate size of the volume group backup, in GBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
-    Long sizeInGBs;
+    private final Long sizeInGBs;
+
+    public Long getSizeInGBs() {
+        return sizeInGBs;
+    }
+
     /**
      * Specifies whether the volume group backup was created manually, or via scheduled
      * backup policy.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SourceType {
         Manual("MANUAL"),
         Scheduled("SCHEDULED"),
@@ -395,6 +495,9 @@ public class VolumeGroupBackup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SourceType.class);
 
         private final String value;
         private static java.util.Map<String, SourceType> map;
@@ -434,7 +537,11 @@ public class VolumeGroupBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
-    SourceType sourceType;
+    private final SourceType sourceType;
+
+    public SourceType getSourceType() {
+        return sourceType;
+    }
 
     /**
      * The date and time the volume group backup was created. This is the time the actual point-in-time image
@@ -442,18 +549,26 @@ public class VolumeGroupBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
-    java.util.Date timeRequestReceived;
+    private final java.util.Date timeRequestReceived;
+
+    public java.util.Date getTimeRequestReceived() {
+        return timeRequestReceived;
+    }
+
     /**
      * The type of backup.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Full("FULL"),
         Incremental("INCREMENTAL"),
@@ -463,6 +578,8 @@ public class VolumeGroupBackup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -499,7 +616,11 @@ public class VolumeGroupBackup {
      * The type of backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The aggregate size used by the volume group backup, in MBs.
@@ -509,7 +630,11 @@ public class VolumeGroupBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
-    Long uniqueSizeInMbs;
+    private final Long uniqueSizeInMbs;
+
+    public Long getUniqueSizeInMbs() {
+        return uniqueSizeInMbs;
+    }
 
     /**
      * The aggregate size used by the volume group backup, in GBs.
@@ -519,26 +644,156 @@ public class VolumeGroupBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGbs")
-    Long uniqueSizeInGbs;
+    private final Long uniqueSizeInGbs;
+
+    public Long getUniqueSizeInGbs() {
+        return uniqueSizeInGbs;
+    }
 
     /**
      * OCIDs for the volume backups in this volume group backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupIds")
-    java.util.List<String> volumeBackupIds;
+    private final java.util.List<String> volumeBackupIds;
+
+    public java.util.List<String> getVolumeBackupIds() {
+        return volumeBackupIds;
+    }
 
     /**
      * The OCID of the source volume group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
-    String volumeGroupId;
+    private final String volumeGroupId;
+
+    public String getVolumeGroupId() {
+        return volumeGroupId;
+    }
 
     /**
      * The OCID of the source volume group backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVolumeGroupBackupId")
-    String sourceVolumeGroupBackupId;
+    private final String sourceVolumeGroupBackupId;
+
+    public String getSourceVolumeGroupBackupId() {
+        return sourceVolumeGroupBackupId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VolumeGroupBackup(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", sizeInMBs=").append(String.valueOf(this.sizeInMBs));
+        sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeRequestReceived=").append(String.valueOf(this.timeRequestReceived));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", uniqueSizeInMbs=").append(String.valueOf(this.uniqueSizeInMbs));
+        sb.append(", uniqueSizeInGbs=").append(String.valueOf(this.uniqueSizeInGbs));
+        sb.append(", volumeBackupIds=").append(String.valueOf(this.volumeBackupIds));
+        sb.append(", volumeGroupId=").append(String.valueOf(this.volumeGroupId));
+        sb.append(", sourceVolumeGroupBackupId=")
+                .append(String.valueOf(this.sourceVolumeGroupBackupId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VolumeGroupBackup)) {
+            return false;
+        }
+
+        VolumeGroupBackup other = (VolumeGroupBackup) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.expirationTime, other.expirationTime)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sizeInMBs, other.sizeInMBs)
+                && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeRequestReceived, other.timeRequestReceived)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.uniqueSizeInMbs, other.uniqueSizeInMbs)
+                && java.util.Objects.equals(this.uniqueSizeInGbs, other.uniqueSizeInGbs)
+                && java.util.Objects.equals(this.volumeBackupIds, other.volumeBackupIds)
+                && java.util.Objects.equals(this.volumeGroupId, other.volumeGroupId)
+                && java.util.Objects.equals(
+                        this.sourceVolumeGroupBackupId, other.sourceVolumeGroupBackupId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expirationTime == null ? 43 : this.expirationTime.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.sizeInMBs == null ? 43 : this.sizeInMBs.hashCode());
+        result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRequestReceived == null
+                                ? 43
+                                : this.timeRequestReceived.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uniqueSizeInMbs == null ? 43 : this.uniqueSizeInMbs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uniqueSizeInGbs == null ? 43 : this.uniqueSizeInGbs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.volumeBackupIds == null ? 43 : this.volumeBackupIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.volumeGroupId == null ? 43 : this.volumeGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceVolumeGroupBackupId == null
+                                ? 43
+                                : this.sourceVolumeGroupBackupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

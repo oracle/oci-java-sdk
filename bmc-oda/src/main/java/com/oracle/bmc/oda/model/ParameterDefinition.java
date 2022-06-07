@@ -15,16 +15,55 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ParameterDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ParameterDefinition {
+public final class ParameterDefinition {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "type",
+        "description",
+        "isRequired",
+        "isSensitive",
+        "defaultValue",
+        "minLength",
+        "maxLength",
+        "pattern",
+        "direction",
+        "uiPlacementHint",
+        "resourceTypeMetadata"
+    })
+    public ParameterDefinition(
+            String name,
+            Type type,
+            String description,
+            Boolean isRequired,
+            Boolean isSensitive,
+            String defaultValue,
+            Integer minLength,
+            Integer maxLength,
+            String pattern,
+            Direction direction,
+            String uiPlacementHint,
+            Object resourceTypeMetadata) {
+        super();
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.isRequired = isRequired;
+        this.isSensitive = isSensitive;
+        this.defaultValue = defaultValue;
+        this.minLength = minLength;
+        this.maxLength = maxLength;
+        this.pattern = pattern;
+        this.direction = direction;
+        this.uiPlacementHint = uiPlacementHint;
+        this.resourceTypeMetadata = resourceTypeMetadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -184,15 +223,23 @@ public class ParameterDefinition {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the parameter
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * Enumerated parameter type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         String("STRING"),
         Uri("URI"),
@@ -204,6 +251,8 @@ public class ParameterDefinition {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -240,53 +289,85 @@ public class ParameterDefinition {
      * Enumerated parameter type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * Description of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Is this parameter required. Ignored for parameters with direction = OUTPUT.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
-    Boolean isRequired;
+    private final Boolean isRequired;
+
+    public Boolean getIsRequired() {
+        return isRequired;
+    }
 
     /**
      * Is the data for this parameter sensitive (e.g. should the data be hidden in UI, encrypted if stored, etc.)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
-    Boolean isSensitive;
+    private final Boolean isSensitive;
+
+    public Boolean getIsSensitive() {
+        return isSensitive;
+    }
 
     /**
      * Default value for the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
-    String defaultValue;
+    private final String defaultValue;
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
 
     /**
      * Used for character string types such as STRING to constrain the length of the value
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minLength")
-    Integer minLength;
+    private final Integer minLength;
+
+    public Integer getMinLength() {
+        return minLength;
+    }
 
     /**
      * Used for character string types such as STRING to constrain the length of the value
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxLength")
-    Integer maxLength;
+    private final Integer maxLength;
+
+    public Integer getMaxLength() {
+        return maxLength;
+    }
 
     /**
      * Regular expression used to validate the value of a string type such as STRING
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
-    String pattern;
+    private final String pattern;
+
+    public String getPattern() {
+        return pattern;
+    }
+
     /**
      * Is this parameter an input parameter, output parameter, or both?
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Direction {
         Input("INPUT"),
         Output("OUTPUT"),
@@ -296,6 +377,9 @@ public class ParameterDefinition {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Direction.class);
 
         private final String value;
         private static java.util.Map<String, Direction> map;
@@ -333,20 +417,110 @@ public class ParameterDefinition {
      * Is this parameter an input parameter, output parameter, or both?
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
-    Direction direction;
+    private final Direction direction;
+
+    public Direction getDirection() {
+        return direction;
+    }
 
     /**
      * A forward-slash-delimited 'path' in an imaginary hierarchy, at which this parameter's UI widgets should be placed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uiPlacementHint")
-    String uiPlacementHint;
+    private final String uiPlacementHint;
+
+    public String getUiPlacementHint() {
+        return uiPlacementHint;
+    }
 
     /**
      * Any configuration needed to help the resource type process this parameter (e.g. link to manifest, etc.).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeMetadata")
-    Object resourceTypeMetadata;
+    private final Object resourceTypeMetadata;
+
+    public Object getResourceTypeMetadata() {
+        return resourceTypeMetadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ParameterDefinition(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isRequired=").append(String.valueOf(this.isRequired));
+        sb.append(", isSensitive=").append(String.valueOf(this.isSensitive));
+        sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
+        sb.append(", minLength=").append(String.valueOf(this.minLength));
+        sb.append(", maxLength=").append(String.valueOf(this.maxLength));
+        sb.append(", pattern=").append(String.valueOf(this.pattern));
+        sb.append(", direction=").append(String.valueOf(this.direction));
+        sb.append(", uiPlacementHint=").append(String.valueOf(this.uiPlacementHint));
+        sb.append(", resourceTypeMetadata=").append(String.valueOf(this.resourceTypeMetadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ParameterDefinition)) {
+            return false;
+        }
+
+        ParameterDefinition other = (ParameterDefinition) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isRequired, other.isRequired)
+                && java.util.Objects.equals(this.isSensitive, other.isSensitive)
+                && java.util.Objects.equals(this.defaultValue, other.defaultValue)
+                && java.util.Objects.equals(this.minLength, other.minLength)
+                && java.util.Objects.equals(this.maxLength, other.maxLength)
+                && java.util.Objects.equals(this.pattern, other.pattern)
+                && java.util.Objects.equals(this.direction, other.direction)
+                && java.util.Objects.equals(this.uiPlacementHint, other.uiPlacementHint)
+                && java.util.Objects.equals(this.resourceTypeMetadata, other.resourceTypeMetadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
+        result = (result * PRIME) + (this.isSensitive == null ? 43 : this.isSensitive.hashCode());
+        result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
+        result = (result * PRIME) + (this.minLength == null ? 43 : this.minLength.hashCode());
+        result = (result * PRIME) + (this.maxLength == null ? 43 : this.maxLength.hashCode());
+        result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
+        result = (result * PRIME) + (this.direction == null ? 43 : this.direction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uiPlacementHint == null ? 43 : this.uiPlacementHint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceTypeMetadata == null
+                                ? 43
+                                : this.resourceTypeMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

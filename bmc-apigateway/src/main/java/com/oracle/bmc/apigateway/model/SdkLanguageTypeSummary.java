@@ -15,16 +15,34 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SdkLanguageTypeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SdkLanguageTypeSummary {
+public final class SdkLanguageTypeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "displayName",
+        "version",
+        "description",
+        "parameters"
+    })
+    public SdkLanguageTypeSummary(
+            String name,
+            String displayName,
+            String version,
+            String description,
+            java.util.List<SdkLanguageOptionalParameters> parameters) {
+        super();
+        this.name = name;
+        this.displayName = displayName;
+        this.version = version;
+        this.description = description;
+        this.parameters = parameters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -102,41 +120,116 @@ public class SdkLanguageTypeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the programming language.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Display name of the target programming language.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Version string of the programming language defined in name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * Additional details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * List of optional configurations that can be used while generating SDK for the given target language.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.List<SdkLanguageOptionalParameters> parameters;
+    private final java.util.List<SdkLanguageOptionalParameters> parameters;
+
+    public java.util.List<SdkLanguageOptionalParameters> getParameters() {
+        return parameters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SdkLanguageTypeSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SdkLanguageTypeSummary)) {
+            return false;
+        }
+
+        SdkLanguageTypeSummary other = (SdkLanguageTypeSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,21 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BlockchainPlatformComponentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BlockchainPlatformComponentDetails {
+public final class BlockchainPlatformComponentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"osns", "peers"})
+    public BlockchainPlatformComponentDetails(
+            java.util.List<Osn> osns, java.util.List<Peer> peers) {
+        super();
+        this.osns = osns;
+        this.peers = peers;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("osns")
         private java.util.List<Osn> osns;
@@ -70,18 +75,72 @@ public class BlockchainPlatformComponentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of OSNs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osns")
-    java.util.List<Osn> osns;
+    private final java.util.List<Osn> osns;
+
+    public java.util.List<Osn> getOsns() {
+        return osns;
+    }
 
     /**
      * List of Peers
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peers")
-    java.util.List<Peer> peers;
+    private final java.util.List<Peer> peers;
+
+    public java.util.List<Peer> getPeers() {
+        return peers;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BlockchainPlatformComponentDetails(");
+        sb.append("osns=").append(String.valueOf(this.osns));
+        sb.append(", peers=").append(String.valueOf(this.peers));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BlockchainPlatformComponentDetails)) {
+            return false;
+        }
+
+        BlockchainPlatformComponentDetails other = (BlockchainPlatformComponentDetails) o;
+        return java.util.Objects.equals(this.osns, other.osns)
+                && java.util.Objects.equals(this.peers, other.peers)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.osns == null ? 43 : this.osns.hashCode());
+        result = (result * PRIME) + (this.peers == null ? 43 : this.peers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

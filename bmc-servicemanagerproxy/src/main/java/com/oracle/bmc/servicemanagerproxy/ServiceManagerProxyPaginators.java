@@ -26,9 +26,12 @@ import com.oracle.bmc.servicemanagerproxy.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
-@lombok.RequiredArgsConstructor
 public class ServiceManagerProxyPaginators {
     private final ServiceManagerProxy client;
+
+    public ServiceManagerProxyPaginators(ServiceManagerProxy client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listServiceEnvironments operation. This iterable

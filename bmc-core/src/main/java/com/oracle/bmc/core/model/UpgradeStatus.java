@@ -16,14 +16,19 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpgradeStatus.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpgradeStatus {
+public final class UpgradeStatus {
+    @Deprecated
+    @java.beans.ConstructorProperties({"drgId", "status", "upgradedConnections"})
+    public UpgradeStatus(String drgId, Status status, String upgradedConnections) {
+        super();
+        this.drgId = drgId;
+        this.status = status;
+        this.upgradedConnections = upgradedConnections;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
@@ -80,17 +85,25 @@ public class UpgradeStatus {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The {@code drgId} of the upgraded DRG.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
-    String drgId;
+    private final String drgId;
+
+    public String getDrgId() {
+        return drgId;
+    }
+
     /**
      * The current upgrade status of the DRG attachment.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         NotUpgraded("NOT_UPGRADED"),
         InProgress("IN_PROGRESS"),
@@ -101,6 +114,8 @@ public class UpgradeStatus {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -139,15 +154,72 @@ public class UpgradeStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The number of upgraded connections.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("upgradedConnections")
-    String upgradedConnections;
+    private final String upgradedConnections;
+
+    public String getUpgradedConnections() {
+        return upgradedConnections;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpgradeStatus(");
+        sb.append("drgId=").append(String.valueOf(this.drgId));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", upgradedConnections=").append(String.valueOf(this.upgradedConnections));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpgradeStatus)) {
+            return false;
+        }
+
+        UpgradeStatus other = (UpgradeStatus) o;
+        return java.util.Objects.equals(this.drgId, other.drgId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.upgradedConnections, other.upgradedConnections)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.drgId == null ? 43 : this.drgId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upgradedConnections == null
+                                ? 43
+                                : this.upgradedConnections.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

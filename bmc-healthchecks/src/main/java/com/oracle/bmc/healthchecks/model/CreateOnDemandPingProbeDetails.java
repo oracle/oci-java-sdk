@@ -15,16 +15,37 @@ package com.oracle.bmc.healthchecks.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOnDemandPingProbeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOnDemandPingProbeDetails {
+public final class CreateOnDemandPingProbeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "targets",
+        "vantagePointNames",
+        "port",
+        "timeoutInSeconds",
+        "protocol"
+    })
+    public CreateOnDemandPingProbeDetails(
+            String compartmentId,
+            java.util.List<String> targets,
+            java.util.List<String> vantagePointNames,
+            Integer port,
+            Integer timeoutInSeconds,
+            PingProbeProtocol protocol) {
+        super();
+        this.compartmentId = compartmentId;
+        this.targets = targets;
+        this.vantagePointNames = vantagePointNames;
+        this.port = port;
+        this.timeoutInSeconds = timeoutInSeconds;
+        this.protocol = protocol;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -118,23 +139,39 @@ public class CreateOnDemandPingProbeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A list of targets (hostnames or IP addresses) of the probe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
-    java.util.List<String> targets;
+    private final java.util.List<String> targets;
+
+    public java.util.List<String> getTargets() {
+        return targets;
+    }
 
     /**
      * A list of names of vantage points from which to execute the probe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNames")
-    java.util.List<String> vantagePointNames;
+    private final java.util.List<String> vantagePointNames;
+
+    public java.util.List<String> getVantagePointNames() {
+        return vantagePointNames;
+    }
 
     /**
      * The port on which to probe endpoints. If unspecified, probes will use the
@@ -142,7 +179,11 @@ public class CreateOnDemandPingProbeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60.
@@ -150,11 +191,79 @@ public class CreateOnDemandPingProbeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
-    Integer timeoutInSeconds;
+    private final Integer timeoutInSeconds;
+
+    public Integer getTimeoutInSeconds() {
+        return timeoutInSeconds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    PingProbeProtocol protocol;
+    private final PingProbeProtocol protocol;
+
+    public PingProbeProtocol getProtocol() {
+        return protocol;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOnDemandPingProbeDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", targets=").append(String.valueOf(this.targets));
+        sb.append(", vantagePointNames=").append(String.valueOf(this.vantagePointNames));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOnDemandPingProbeDetails)) {
+            return false;
+        }
+
+        CreateOnDemandPingProbeDetails other = (CreateOnDemandPingProbeDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.targets, other.targets)
+                && java.util.Objects.equals(this.vantagePointNames, other.vantagePointNames)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.targets == null ? 43 : this.targets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vantagePointNames == null ? 43 : this.vantagePointNames.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

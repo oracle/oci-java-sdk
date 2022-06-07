@@ -16,16 +16,49 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AddDataFilesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AddDataFilesDetails {
+public final class AddDataFilesDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "credentialDetails",
+        "fileType",
+        "dataFiles",
+        "fileCount",
+        "fileSize",
+        "isReusable",
+        "isAutoExtensible",
+        "autoExtendNextSize",
+        "autoExtendMaxSize",
+        "isMaxSizeUnlimited"
+    })
+    public AddDataFilesDetails(
+            TablespaceAdminCredentialDetails credentialDetails,
+            FileType fileType,
+            java.util.List<String> dataFiles,
+            Integer fileCount,
+            TablespaceStorageSize fileSize,
+            Boolean isReusable,
+            Boolean isAutoExtensible,
+            TablespaceStorageSize autoExtendNextSize,
+            TablespaceStorageSize autoExtendMaxSize,
+            Boolean isMaxSizeUnlimited) {
+        super();
+        this.credentialDetails = credentialDetails;
+        this.fileType = fileType;
+        this.dataFiles = dataFiles;
+        this.fileCount = fileCount;
+        this.fileSize = fileSize;
+        this.isReusable = isReusable;
+        this.isAutoExtensible = isAutoExtensible;
+        this.autoExtendNextSize = autoExtendNextSize;
+        this.autoExtendMaxSize = autoExtendMaxSize;
+        this.isMaxSizeUnlimited = isMaxSizeUnlimited;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private TablespaceAdminCredentialDetails credentialDetails;
@@ -163,8 +196,17 @@ public class AddDataFilesDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
-    TablespaceAdminCredentialDetails credentialDetails;
+    private final TablespaceAdminCredentialDetails credentialDetails;
+
+    public TablespaceAdminCredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
+
     /**
      * Specifies whether the file is a data file or temp file.
      *
@@ -206,64 +248,180 @@ public class AddDataFilesDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileType")
-    FileType fileType;
+    private final FileType fileType;
+
+    public FileType getFileType() {
+        return fileType;
+    }
 
     /**
      * The list of data files or temp files added to the tablespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataFiles")
-    java.util.List<String> dataFiles;
+    private final java.util.List<String> dataFiles;
+
+    public java.util.List<String> getDataFiles() {
+        return dataFiles;
+    }
 
     /**
      * The number of data files or temp files to be added for the tablespace. This is for Oracle Managed Files only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileCount")
-    Integer fileCount;
+    private final Integer fileCount;
+
+    public Integer getFileCount() {
+        return fileCount;
+    }
 
     /**
      * The size of each data file or temp file.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
-    TablespaceStorageSize fileSize;
+    private final TablespaceStorageSize fileSize;
+
+    public TablespaceStorageSize getFileSize() {
+        return fileSize;
+    }
 
     /**
      * Specifies whether Oracle can reuse the data file or temp file. Reuse is only allowed when the file name is provided.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReusable")
-    Boolean isReusable;
+    private final Boolean isReusable;
+
+    public Boolean getIsReusable() {
+        return isReusable;
+    }
 
     /**
      * Specifies whether the data file or temp file can be extended automatically.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
-    Boolean isAutoExtensible;
+    private final Boolean isAutoExtensible;
+
+    public Boolean getIsAutoExtensible() {
+        return isAutoExtensible;
+    }
 
     /**
      * The size of the next increment of disk space to be allocated automatically when more extents are required.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
-    TablespaceStorageSize autoExtendNextSize;
+    private final TablespaceStorageSize autoExtendNextSize;
+
+    public TablespaceStorageSize getAutoExtendNextSize() {
+        return autoExtendNextSize;
+    }
 
     /**
      * The maximum disk space allowed for automatic extension of the data files or temp files.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
-    TablespaceStorageSize autoExtendMaxSize;
+    private final TablespaceStorageSize autoExtendMaxSize;
+
+    public TablespaceStorageSize getAutoExtendMaxSize() {
+        return autoExtendMaxSize;
+    }
 
     /**
      * Specifies whether the disk space of the data file or temp file can be limited.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
-    Boolean isMaxSizeUnlimited;
+    private final Boolean isMaxSizeUnlimited;
+
+    public Boolean getIsMaxSizeUnlimited() {
+        return isMaxSizeUnlimited;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AddDataFilesDetails(");
+        sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", fileType=").append(String.valueOf(this.fileType));
+        sb.append(", dataFiles=").append(String.valueOf(this.dataFiles));
+        sb.append(", fileCount=").append(String.valueOf(this.fileCount));
+        sb.append(", fileSize=").append(String.valueOf(this.fileSize));
+        sb.append(", isReusable=").append(String.valueOf(this.isReusable));
+        sb.append(", isAutoExtensible=").append(String.valueOf(this.isAutoExtensible));
+        sb.append(", autoExtendNextSize=").append(String.valueOf(this.autoExtendNextSize));
+        sb.append(", autoExtendMaxSize=").append(String.valueOf(this.autoExtendMaxSize));
+        sb.append(", isMaxSizeUnlimited=").append(String.valueOf(this.isMaxSizeUnlimited));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddDataFilesDetails)) {
+            return false;
+        }
+
+        AddDataFilesDetails other = (AddDataFilesDetails) o;
+        return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.fileType, other.fileType)
+                && java.util.Objects.equals(this.dataFiles, other.dataFiles)
+                && java.util.Objects.equals(this.fileCount, other.fileCount)
+                && java.util.Objects.equals(this.fileSize, other.fileSize)
+                && java.util.Objects.equals(this.isReusable, other.isReusable)
+                && java.util.Objects.equals(this.isAutoExtensible, other.isAutoExtensible)
+                && java.util.Objects.equals(this.autoExtendNextSize, other.autoExtendNextSize)
+                && java.util.Objects.equals(this.autoExtendMaxSize, other.autoExtendMaxSize)
+                && java.util.Objects.equals(this.isMaxSizeUnlimited, other.isMaxSizeUnlimited)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result = (result * PRIME) + (this.fileType == null ? 43 : this.fileType.hashCode());
+        result = (result * PRIME) + (this.dataFiles == null ? 43 : this.dataFiles.hashCode());
+        result = (result * PRIME) + (this.fileCount == null ? 43 : this.fileCount.hashCode());
+        result = (result * PRIME) + (this.fileSize == null ? 43 : this.fileSize.hashCode());
+        result = (result * PRIME) + (this.isReusable == null ? 43 : this.isReusable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoExtensible == null ? 43 : this.isAutoExtensible.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoExtendNextSize == null
+                                ? 43
+                                : this.autoExtendNextSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoExtendMaxSize == null ? 43 : this.autoExtendMaxSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaxSizeUnlimited == null
+                                ? 43
+                                : this.isMaxSizeUnlimited.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

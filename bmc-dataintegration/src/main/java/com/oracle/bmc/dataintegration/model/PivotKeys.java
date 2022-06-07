@@ -15,14 +15,38 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PivotKeys.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PivotKeys {
+public final class PivotKeys {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "pivotAxis",
+        "pivotKeyValueMap",
+        "key",
+        "modelType",
+        "modelVersion",
+        "parentRef",
+        "objectStatus"
+    })
+    public PivotKeys(
+            java.util.List<String> pivotAxis,
+            java.util.Map<String, java.util.List<String>> pivotKeyValueMap,
+            String key,
+            String modelType,
+            String modelVersion,
+            ParentReference parentRef,
+            Integer objectStatus) {
+        super();
+        this.pivotAxis = pivotAxis;
+        this.pivotKeyValueMap = pivotKeyValueMap;
+        this.key = key;
+        this.modelType = modelType;
+        this.modelVersion = modelVersion;
+        this.parentRef = parentRef;
+        this.objectStatus = objectStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("pivotAxis")
         private java.util.List<String> pivotAxis;
@@ -128,45 +152,136 @@ public class PivotKeys {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The pivot axis is the point around which the table will be rotated, and the pivot values will be transposed into columns in the output table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pivotAxis")
-    java.util.List<String> pivotAxis;
+    private final java.util.List<String> pivotAxis;
+
+    public java.util.List<String> getPivotAxis() {
+        return pivotAxis;
+    }
 
     /**
      * Map of alias to pivot key values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pivotKeyValueMap")
-    java.util.Map<String, java.util.List<String>> pivotKeyValueMap;
+    private final java.util.Map<String, java.util.List<String>> pivotKeyValueMap;
+
+    public java.util.Map<String, java.util.List<String>> getPivotKeyValueMap() {
+        return pivotKeyValueMap;
+    }
 
     /**
      * The key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The type of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PivotKeys(");
+        sb.append("pivotAxis=").append(String.valueOf(this.pivotAxis));
+        sb.append(", pivotKeyValueMap=").append(String.valueOf(this.pivotKeyValueMap));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PivotKeys)) {
+            return false;
+        }
+
+        PivotKeys other = (PivotKeys) o;
+        return java.util.Objects.equals(this.pivotAxis, other.pivotAxis)
+                && java.util.Objects.equals(this.pivotKeyValueMap, other.pivotKeyValueMap)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.pivotAxis == null ? 43 : this.pivotAxis.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pivotKeyValueMap == null ? 43 : this.pivotKeyValueMap.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

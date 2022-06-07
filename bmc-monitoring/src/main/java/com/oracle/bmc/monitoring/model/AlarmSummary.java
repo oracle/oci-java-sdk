@@ -25,14 +25,56 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AlarmSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AlarmSummary {
+public final class AlarmSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "metricCompartmentId",
+        "namespace",
+        "query",
+        "severity",
+        "destinations",
+        "suppression",
+        "isEnabled",
+        "freeformTags",
+        "definedTags",
+        "lifecycleState"
+    })
+    public AlarmSummary(
+            String id,
+            String displayName,
+            String compartmentId,
+            String metricCompartmentId,
+            String namespace,
+            String query,
+            Severity severity,
+            java.util.List<String> destinations,
+            Suppression suppression,
+            Boolean isEnabled,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Alarm.LifecycleState lifecycleState) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.metricCompartmentId = metricCompartmentId;
+        this.namespace = namespace;
+        this.query = query;
+        this.severity = severity;
+        this.destinations = destinations;
+        this.suppression = suppression;
+        this.isEnabled = isEnabled;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -204,12 +246,20 @@ public class AlarmSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
@@ -220,14 +270,22 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric
@@ -235,7 +293,11 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricCompartmentId")
-    String metricCompartmentId;
+    private final String metricCompartmentId;
+
+    public String getMetricCompartmentId() {
+        return metricCompartmentId;
+    }
 
     /**
      * The source service or application emitting the metric that is evaluated by the alarm.
@@ -244,7 +306,11 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
@@ -275,14 +341,18 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
-    String query;
+    private final String query;
+
+    public String getQuery() {
+        return query;
+    }
+
     /**
      * The perceived severity of the alarm with regard to the affected system.
      * <p>
      * Example: {@code CRITICAL}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Severity {
         Critical("CRITICAL"),
         Error("ERROR"),
@@ -294,6 +364,9 @@ public class AlarmSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Severity.class);
 
         private final String value;
         private static java.util.Map<String, Severity> map;
@@ -334,7 +407,11 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
 
     /**
      * A list of destinations to which the notifications for this alarm will be delivered.
@@ -344,14 +421,22 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
-    java.util.List<String> destinations;
+    private final java.util.List<String> destinations;
+
+    public java.util.List<String> getDestinations() {
+        return destinations;
+    }
 
     /**
      * The configuration details for suppressing an alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppression")
-    Suppression suppression;
+    private final Suppression suppression;
+
+    public Suppression getSuppression() {
+        return suppression;
+    }
 
     /**
      * Whether the alarm is enabled.
@@ -360,7 +445,11 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -368,7 +457,11 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -376,7 +469,11 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The current lifecycle state of the alarm.
@@ -385,8 +482,95 @@ public class AlarmSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    Alarm.LifecycleState lifecycleState;
+    private final Alarm.LifecycleState lifecycleState;
+
+    public Alarm.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AlarmSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", metricCompartmentId=").append(String.valueOf(this.metricCompartmentId));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", query=").append(String.valueOf(this.query));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", destinations=").append(String.valueOf(this.destinations));
+        sb.append(", suppression=").append(String.valueOf(this.suppression));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AlarmSummary)) {
+            return false;
+        }
+
+        AlarmSummary other = (AlarmSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.metricCompartmentId, other.metricCompartmentId)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.destinations, other.destinations)
+                && java.util.Objects.equals(this.suppression, other.suppression)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metricCompartmentId == null
+                                ? 43
+                                : this.metricCompartmentId.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
+        result = (result * PRIME) + (this.suppression == null ? 43 : this.suppression.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

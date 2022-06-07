@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateSwiftPasswordExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSwiftPasswordRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateSwiftPasswordRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.UpdateSwiftPasswordDetails> {
@@ -26,16 +18,26 @@ public class UpdateSwiftPasswordRequest
      */
     private String userId;
 
+    public String getUserId() {
+        return userId;
+    }
     /**
      * The OCID of the Swift password.
      */
     private String swiftPasswordId;
 
+    public String getSwiftPasswordId() {
+        return swiftPasswordId;
+    }
     /**
      * Request object for updating a Swift password.
      */
     private com.oracle.bmc.identity.model.UpdateSwiftPasswordDetails updateSwiftPasswordDetails;
 
+    public com.oracle.bmc.identity.model.UpdateSwiftPasswordDetails
+            getUpdateSwiftPasswordDetails() {
+        return updateSwiftPasswordDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -43,6 +45,10 @@ public class UpdateSwiftPasswordRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -61,6 +67,56 @@ public class UpdateSwiftPasswordRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String userId = null;
+
+        /**
+         * The OCID of the user.
+         * @return this builder instance
+         */
+        public Builder userId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        private String swiftPasswordId = null;
+
+        /**
+         * The OCID of the Swift password.
+         * @return this builder instance
+         */
+        public Builder swiftPasswordId(String swiftPasswordId) {
+            this.swiftPasswordId = swiftPasswordId;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.UpdateSwiftPasswordDetails
+                updateSwiftPasswordDetails = null;
+
+        /**
+         * Request object for updating a Swift password.
+         * @return this builder instance
+         */
+        public Builder updateSwiftPasswordDetails(
+                com.oracle.bmc.identity.model.UpdateSwiftPasswordDetails
+                        updateSwiftPasswordDetails) {
+            this.updateSwiftPasswordDetails = updateSwiftPasswordDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -126,5 +182,87 @@ public class UpdateSwiftPasswordRequest
             updateSwiftPasswordDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateSwiftPasswordRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateSwiftPasswordRequest
+         */
+        public UpdateSwiftPasswordRequest buildWithoutInvocationCallback() {
+            UpdateSwiftPasswordRequest request = new UpdateSwiftPasswordRequest();
+            request.userId = userId;
+            request.swiftPasswordId = swiftPasswordId;
+            request.updateSwiftPasswordDetails = updateSwiftPasswordDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateSwiftPasswordRequest(userId, swiftPasswordId, updateSwiftPasswordDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .userId(userId)
+                .swiftPasswordId(swiftPasswordId)
+                .updateSwiftPasswordDetails(updateSwiftPasswordDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",userId=").append(String.valueOf(this.userId));
+        sb.append(",swiftPasswordId=").append(String.valueOf(this.swiftPasswordId));
+        sb.append(",updateSwiftPasswordDetails=")
+                .append(String.valueOf(this.updateSwiftPasswordDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSwiftPasswordRequest)) {
+            return false;
+        }
+
+        UpdateSwiftPasswordRequest other = (UpdateSwiftPasswordRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.swiftPasswordId, other.swiftPasswordId)
+                && java.util.Objects.equals(
+                        this.updateSwiftPasswordDetails, other.updateSwiftPasswordDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.swiftPasswordId == null ? 43 : this.swiftPasswordId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateSwiftPasswordDetails == null
+                                ? 43
+                                : this.updateSwiftPasswordDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

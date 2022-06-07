@@ -15,16 +15,19 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateVolumeAttachmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateVolumeAttachmentDetails {
+public final class UpdateVolumeAttachmentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"iscsiLoginState"})
+    public UpdateVolumeAttachmentDetails(IscsiLoginState iscsiLoginState) {
+        super();
+        this.iscsiLoginState = iscsiLoginState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
         private IscsiLoginState iscsiLoginState;
@@ -59,6 +62,10 @@ public class UpdateVolumeAttachmentDetails {
      */
     public static Builder builder() {
         return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
     }
 
     /**
@@ -109,8 +116,53 @@ public class UpdateVolumeAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
-    IscsiLoginState iscsiLoginState;
+    private final IscsiLoginState iscsiLoginState;
+
+    public IscsiLoginState getIscsiLoginState() {
+        return iscsiLoginState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateVolumeAttachmentDetails(");
+        sb.append("iscsiLoginState=").append(String.valueOf(this.iscsiLoginState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateVolumeAttachmentDetails)) {
+            return false;
+        }
+
+        UpdateVolumeAttachmentDetails other = (UpdateVolumeAttachmentDetails) o;
+        return java.util.Objects.equals(this.iscsiLoginState, other.iscsiLoginState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.iscsiLoginState == null ? 43 : this.iscsiLoginState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

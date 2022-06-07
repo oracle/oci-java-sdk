@@ -15,16 +15,28 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ClusterNetworkPlacementConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClusterNetworkPlacementConfigurationDetails {
+public final class ClusterNetworkPlacementConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "primarySubnetId",
+        "secondaryVnicSubnets"
+    })
+    public ClusterNetworkPlacementConfigurationDetails(
+            String availabilityDomain,
+            String primarySubnetId,
+            java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.primarySubnetId = primarySubnetId;
+        this.secondaryVnicSubnets = secondaryVnicSubnets;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -84,6 +96,10 @@ public class ClusterNetworkPlacementConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain to place instances.
      * <p>
@@ -91,7 +107,11 @@ public class ClusterNetworkPlacementConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
@@ -99,14 +119,78 @@ public class ClusterNetworkPlacementConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
-    String primarySubnetId;
+    private final String primarySubnetId;
+
+    public String getPrimarySubnetId() {
+        return primarySubnetId;
+    }
 
     /**
      * The set of secondary VNIC data for instances in the pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnicSubnets")
-    java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets;
+    private final java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets;
+
+    public java.util.List<InstancePoolPlacementSecondaryVnicSubnet> getSecondaryVnicSubnets() {
+        return secondaryVnicSubnets;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClusterNetworkPlacementConfigurationDetails(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", primarySubnetId=").append(String.valueOf(this.primarySubnetId));
+        sb.append(", secondaryVnicSubnets=").append(String.valueOf(this.secondaryVnicSubnets));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClusterNetworkPlacementConfigurationDetails)) {
+            return false;
+        }
+
+        ClusterNetworkPlacementConfigurationDetails other =
+                (ClusterNetworkPlacementConfigurationDetails) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.primarySubnetId, other.primarySubnetId)
+                && java.util.Objects.equals(this.secondaryVnicSubnets, other.secondaryVnicSubnets)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primarySubnetId == null ? 43 : this.primarySubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secondaryVnicSubnets == null
+                                ? 43
+                                : this.secondaryVnicSubnets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

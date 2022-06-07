@@ -16,16 +16,23 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseConnectionString.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseConnectionString {
+public final class DatabaseConnectionString {
+    @Deprecated
+    @java.beans.ConstructorProperties({"hostname", "port", "service", "protocol"})
+    public DatabaseConnectionString(
+            String hostname, Integer port, String service, Protocol protocol) {
+        super();
+        this.hostname = hostname;
+        this.port = port;
+        this.service = service;
+        this.protocol = protocol;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
@@ -93,27 +100,43 @@ public class DatabaseConnectionString {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The host name of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * The port used to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The name of the service alias used to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
-    String service;
+    private final String service;
+
+    public String getService() {
+        return service;
+    }
+
     /**
      * The protocol used to connect to the database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Protocol {
         Tcp("TCP"),
         Tcps("TCPS"),
@@ -123,6 +146,9 @@ public class DatabaseConnectionString {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Protocol.class);
 
         private final String value;
         private static java.util.Map<String, Protocol> map;
@@ -160,8 +186,60 @@ public class DatabaseConnectionString {
      * The protocol used to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    Protocol protocol;
+    private final Protocol protocol;
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseConnectionString(");
+        sb.append("hostname=").append(String.valueOf(this.hostname));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", service=").append(String.valueOf(this.service));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseConnectionString)) {
+            return false;
+        }
+
+        DatabaseConnectionString other = (DatabaseConnectionString) o;
+        return java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.service, other.service)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

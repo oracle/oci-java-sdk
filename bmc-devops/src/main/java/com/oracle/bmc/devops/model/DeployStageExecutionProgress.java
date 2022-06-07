@@ -15,12 +15,6 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -103,34 +97,78 @@ package com.oracle.bmc.devops.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DeployStageExecutionProgress {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "deployStageDisplayName",
+        "deployStageId",
+        "timeStarted",
+        "timeFinished",
+        "status",
+        "deployStagePredecessors",
+        "deployStageExecutionProgressDetails"
+    })
+    protected DeployStageExecutionProgress(
+            String deployStageDisplayName,
+            String deployStageId,
+            java.util.Date timeStarted,
+            java.util.Date timeFinished,
+            Status status,
+            DeployStagePredecessorCollection deployStagePredecessors,
+            java.util.List<DeployStageExecutionProgressDetails>
+                    deployStageExecutionProgressDetails) {
+        super();
+        this.deployStageDisplayName = deployStageDisplayName;
+        this.deployStageId = deployStageId;
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
+        this.status = status;
+        this.deployStagePredecessors = deployStagePredecessors;
+        this.deployStageExecutionProgressDetails = deployStageExecutionProgressDetails;
+    }
 
     /**
      * Stage display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageDisplayName")
-    String deployStageDisplayName;
+    private final String deployStageDisplayName;
+
+    public String getDeployStageDisplayName() {
+        return deployStageDisplayName;
+    }
 
     /**
      * The OCID of the stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
-    String deployStageId;
+    private final String deployStageId;
+
+    public String getDeployStageId() {
+        return deployStageId;
+    }
 
     /**
      * Time the stage started executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * Time the stage finished executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
     /**
      * The current state of the stage.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -147,6 +185,8 @@ public class DeployStageExecutionProgress {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -184,14 +224,95 @@ public class DeployStageExecutionProgress {
      * The current state of the stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deployStagePredecessors")
-    DeployStagePredecessorCollection deployStagePredecessors;
+    private final DeployStagePredecessorCollection deployStagePredecessors;
+
+    public DeployStagePredecessorCollection getDeployStagePredecessors() {
+        return deployStagePredecessors;
+    }
 
     /**
      * Details about stage execution for all the target environments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageExecutionProgressDetails")
-    java.util.List<DeployStageExecutionProgressDetails> deployStageExecutionProgressDetails;
+    private final java.util.List<DeployStageExecutionProgressDetails>
+            deployStageExecutionProgressDetails;
+
+    public java.util.List<DeployStageExecutionProgressDetails>
+            getDeployStageExecutionProgressDetails() {
+        return deployStageExecutionProgressDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeployStageExecutionProgress(");
+        sb.append("deployStageDisplayName=").append(String.valueOf(this.deployStageDisplayName));
+        sb.append(", deployStageId=").append(String.valueOf(this.deployStageId));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", deployStagePredecessors=")
+                .append(String.valueOf(this.deployStagePredecessors));
+        sb.append(", deployStageExecutionProgressDetails=")
+                .append(String.valueOf(this.deployStageExecutionProgressDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeployStageExecutionProgress)) {
+            return false;
+        }
+
+        DeployStageExecutionProgress other = (DeployStageExecutionProgress) o;
+        return java.util.Objects.equals(this.deployStageDisplayName, other.deployStageDisplayName)
+                && java.util.Objects.equals(this.deployStageId, other.deployStageId)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(
+                        this.deployStagePredecessors, other.deployStagePredecessors)
+                && java.util.Objects.equals(
+                        this.deployStageExecutionProgressDetails,
+                        other.deployStageExecutionProgressDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.deployStageDisplayName == null
+                                ? 43
+                                : this.deployStageDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployStageId == null ? 43 : this.deployStageId.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployStagePredecessors == null
+                                ? 43
+                                : this.deployStagePredecessors.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployStageExecutionProgressDetails == null
+                                ? 43
+                                : this.deployStageExecutionProgressDetails.hashCode());
+        return result;
+    }
 }

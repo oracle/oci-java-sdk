@@ -15,16 +15,67 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BackupDestinationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackupDestinationSummary {
+public final class BackupDestinationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "type",
+        "associatedDatabases",
+        "connectionString",
+        "vpcUsers",
+        "localMountPointPath",
+        "nfsMountType",
+        "nfsServer",
+        "nfsServerExport",
+        "lifecycleState",
+        "timeCreated",
+        "lifecycleDetails",
+        "freeformTags",
+        "definedTags"
+    })
+    public BackupDestinationSummary(
+            String id,
+            String displayName,
+            String compartmentId,
+            Type type,
+            java.util.List<AssociatedDatabaseDetails> associatedDatabases,
+            String connectionString,
+            java.util.List<String> vpcUsers,
+            String localMountPointPath,
+            NfsMountType nfsMountType,
+            java.util.List<String> nfsServer,
+            String nfsServerExport,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            String lifecycleDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.type = type;
+        this.associatedDatabases = associatedDatabases;
+        this.connectionString = connectionString;
+        this.vpcUsers = vpcUsers;
+        this.localMountPointPath = localMountPointPath;
+        this.nfsMountType = nfsMountType;
+        this.nfsServer = nfsServer;
+        this.nfsServerExport = nfsServerExport;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.lifecycleDetails = lifecycleDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -230,27 +281,43 @@ public class BackupDestinationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The user-provided name of the backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * Type of the backup destination.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Nfs("NFS"),
         RecoveryAppliance("RECOVERY_APPLIANCE"),
@@ -260,6 +327,8 @@ public class BackupDestinationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -296,36 +365,56 @@ public class BackupDestinationSummary {
      * Type of the backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * List of databases associated with the backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedDatabases")
-    java.util.List<AssociatedDatabaseDetails> associatedDatabases;
+    private final java.util.List<AssociatedDatabaseDetails> associatedDatabases;
+
+    public java.util.List<AssociatedDatabaseDetails> getAssociatedDatabases() {
+        return associatedDatabases;
+    }
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
-    String connectionString;
+    private final String connectionString;
+
+    public String getConnectionString() {
+        return connectionString;
+    }
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
-    java.util.List<String> vpcUsers;
+    private final java.util.List<String> vpcUsers;
+
+    public java.util.List<String> getVpcUsers() {
+        return vpcUsers;
+    }
 
     /**
      * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
-    String localMountPointPath;
+    private final String localMountPointPath;
+
+    public String getLocalMountPointPath() {
+        return localMountPointPath;
+    }
+
     /**
      * NFS Mount type for backup destination.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum NfsMountType {
         SelfMount("SELF_MOUNT"),
         AutomatedMount("AUTOMATED_MOUNT"),
@@ -335,6 +424,9 @@ public class BackupDestinationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NfsMountType.class);
 
         private final String value;
         private static java.util.Map<String, NfsMountType> map;
@@ -372,23 +464,35 @@ public class BackupDestinationSummary {
      * NFS Mount type for backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
-    NfsMountType nfsMountType;
+    private final NfsMountType nfsMountType;
+
+    public NfsMountType getNfsMountType() {
+        return nfsMountType;
+    }
 
     /**
      * Host names or IP addresses for NFS Auto mount.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
-    java.util.List<String> nfsServer;
+    private final java.util.List<String> nfsServer;
+
+    public java.util.List<String> getNfsServer() {
+        return nfsServer;
+    }
 
     /**
      * Specifies the directory on which to mount the file system
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
-    String nfsServerExport;
+    private final String nfsServerExport;
+
+    public String getNfsServerExport() {
+        return nfsServerExport;
+    }
+
     /**
      * The current lifecycle state of the backup destination.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Failed("FAILED"),
@@ -399,6 +503,9 @@ public class BackupDestinationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -436,13 +543,21 @@ public class BackupDestinationSummary {
      * The current lifecycle state of the backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the backup destination was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * A descriptive text associated with the lifecycleState.
@@ -450,7 +565,11 @@ public class BackupDestinationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -460,7 +579,11 @@ public class BackupDestinationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -468,8 +591,114 @@ public class BackupDestinationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackupDestinationSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", associatedDatabases=").append(String.valueOf(this.associatedDatabases));
+        sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", vpcUsers=").append(String.valueOf(this.vpcUsers));
+        sb.append(", localMountPointPath=").append(String.valueOf(this.localMountPointPath));
+        sb.append(", nfsMountType=").append(String.valueOf(this.nfsMountType));
+        sb.append(", nfsServer=").append(String.valueOf(this.nfsServer));
+        sb.append(", nfsServerExport=").append(String.valueOf(this.nfsServerExport));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackupDestinationSummary)) {
+            return false;
+        }
+
+        BackupDestinationSummary other = (BackupDestinationSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.associatedDatabases, other.associatedDatabases)
+                && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.vpcUsers, other.vpcUsers)
+                && java.util.Objects.equals(this.localMountPointPath, other.localMountPointPath)
+                && java.util.Objects.equals(this.nfsMountType, other.nfsMountType)
+                && java.util.Objects.equals(this.nfsServer, other.nfsServer)
+                && java.util.Objects.equals(this.nfsServerExport, other.nfsServerExport)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedDatabases == null
+                                ? 43
+                                : this.associatedDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result = (result * PRIME) + (this.vpcUsers == null ? 43 : this.vpcUsers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localMountPointPath == null
+                                ? 43
+                                : this.localMountPointPath.hashCode());
+        result = (result * PRIME) + (this.nfsMountType == null ? 43 : this.nfsMountType.hashCode());
+        result = (result * PRIME) + (this.nfsServer == null ? 43 : this.nfsServer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nfsServerExport == null ? 43 : this.nfsServerExport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

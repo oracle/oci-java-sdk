@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabasesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDatabasesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,26 +16,41 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * A Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dbHomeId;
 
+    public String getDbHomeId() {
+        return dbHomeId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
      */
     private String systemId;
 
+    public String getSystemId() {
+        return systemId;
+    }
     /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The pagination token to continue listing from.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DBNAME is ascending. The DBNAME sort order is case sensitive.
      */
@@ -84,6 +91,10 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
@@ -124,15 +135,26 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
     private com.oracle.bmc.database.model.DatabaseSummary.LifecycleState lifecycleState;
 
+    public com.oracle.bmc.database.model.DatabaseSummary.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * A filter to return only resources that match the entire database name given. The match is not case sensitive.
      */
     private String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -140,6 +162,106 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String dbHomeId = null;
+
+        /**
+         * A Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder dbHomeId(String dbHomeId) {
+            this.dbHomeId = dbHomeId;
+            return this;
+        }
+
+        private String systemId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
+         * @return this builder instance
+         */
+        public Builder systemId(String systemId) {
+            this.systemId = systemId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return per page.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The pagination token to continue listing from.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DBNAME is ascending. The DBNAME sort order is case sensitive.
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.DatabaseSummary.LifecycleState lifecycleState = null;
+
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.database.model.DatabaseSummary.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String dbName = null;
+
+        /**
+         * A filter to return only resources that match the entire database name given. The match is not case sensitive.
+         * @return this builder instance
+         */
+        public Builder dbName(String dbName) {
+            this.dbName = dbName;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -199,5 +321,108 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListDatabasesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListDatabasesRequest
+         */
+        public ListDatabasesRequest buildWithoutInvocationCallback() {
+            ListDatabasesRequest request = new ListDatabasesRequest();
+            request.compartmentId = compartmentId;
+            request.dbHomeId = dbHomeId;
+            request.systemId = systemId;
+            request.limit = limit;
+            request.page = page;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.lifecycleState = lifecycleState;
+            request.dbName = dbName;
+            return request;
+            // new ListDatabasesRequest(compartmentId, dbHomeId, systemId, limit, page, sortBy, sortOrder, lifecycleState, dbName);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .dbHomeId(dbHomeId)
+                .systemId(systemId)
+                .limit(limit)
+                .page(page)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .lifecycleState(lifecycleState)
+                .dbName(dbName);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",dbHomeId=").append(String.valueOf(this.dbHomeId));
+        sb.append(",systemId=").append(String.valueOf(this.systemId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",dbName=").append(String.valueOf(this.dbName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListDatabasesRequest)) {
+            return false;
+        }
+
+        ListDatabasesRequest other = (ListDatabasesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.dbHomeId, other.dbHomeId)
+                && java.util.Objects.equals(this.systemId, other.systemId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.dbName, other.dbName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.dbHomeId == null ? 43 : this.dbHomeId.hashCode());
+        result = (result * PRIME) + (this.systemId == null ? 43 : this.systemId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        return result;
     }
 }

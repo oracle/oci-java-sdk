@@ -8,7 +8,6 @@ package com.oracle.bmc.datasafe.model;
  * Represents the category to which an audit policy belongs. An audit policy can belong to a single category.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public enum AuditPolicyCategory {
     BasicActivity("BASIC_ACTIVITY"),
     AdminUserActivity("ADMIN_USER_ACTIVITY"),
@@ -22,6 +21,9 @@ public enum AuditPolicyCategory {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AuditPolicyCategory.class);
 
     private final String value;
     private static java.util.Map<String, AuditPolicyCategory> map;

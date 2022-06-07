@@ -15,14 +15,18 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RequestUsage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RequestUsage {
+public final class RequestUsage {
+    @Deprecated
+    @java.beans.ConstructorProperties({"readUnitsConsumed", "writeUnitsConsumed"})
+    public RequestUsage(Integer readUnitsConsumed, Integer writeUnitsConsumed) {
+        super();
+        this.readUnitsConsumed = readUnitsConsumed;
+        this.writeUnitsConsumed = writeUnitsConsumed;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("readUnitsConsumed")
         private Integer readUnitsConsumed;
@@ -69,18 +73,78 @@ public class RequestUsage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Read Units consumed by this operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("readUnitsConsumed")
-    Integer readUnitsConsumed;
+    private final Integer readUnitsConsumed;
+
+    public Integer getReadUnitsConsumed() {
+        return readUnitsConsumed;
+    }
 
     /**
      * Write Units consumed by this operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("writeUnitsConsumed")
-    Integer writeUnitsConsumed;
+    private final Integer writeUnitsConsumed;
+
+    public Integer getWriteUnitsConsumed() {
+        return writeUnitsConsumed;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RequestUsage(");
+        sb.append("readUnitsConsumed=").append(String.valueOf(this.readUnitsConsumed));
+        sb.append(", writeUnitsConsumed=").append(String.valueOf(this.writeUnitsConsumed));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestUsage)) {
+            return false;
+        }
+
+        RequestUsage other = (RequestUsage) o;
+        return java.util.Objects.equals(this.readUnitsConsumed, other.readUnitsConsumed)
+                && java.util.Objects.equals(this.writeUnitsConsumed, other.writeUnitsConsumed)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.readUnitsConsumed == null ? 43 : this.readUnitsConsumed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.writeUnitsConsumed == null
+                                ? 43
+                                : this.writeUnitsConsumed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

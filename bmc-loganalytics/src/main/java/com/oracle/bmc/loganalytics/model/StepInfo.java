@@ -15,14 +15,24 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StepInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StepInfo {
+public final class StepInfo {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "inputSequenceCurrentMatch",
+        "regexEngineClassName",
+        "stepCount"
+    })
+    public StepInfo(
+            String inputSequenceCurrentMatch, String regexEngineClassName, Integer stepCount) {
+        super();
+        this.inputSequenceCurrentMatch = inputSequenceCurrentMatch;
+        this.regexEngineClassName = regexEngineClassName;
+        this.stepCount = stepCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("inputSequenceCurrentMatch")
         private String inputSequenceCurrentMatch;
@@ -80,24 +90,95 @@ public class StepInfo {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The currnet input sequence match.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputSequenceCurrentMatch")
-    String inputSequenceCurrentMatch;
+    private final String inputSequenceCurrentMatch;
+
+    public String getInputSequenceCurrentMatch() {
+        return inputSequenceCurrentMatch;
+    }
 
     /**
      * The regular expression engine class name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regexEngineClassName")
-    String regexEngineClassName;
+    private final String regexEngineClassName;
+
+    public String getRegexEngineClassName() {
+        return regexEngineClassName;
+    }
 
     /**
      * The step count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
-    Integer stepCount;
+    private final Integer stepCount;
+
+    public Integer getStepCount() {
+        return stepCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StepInfo(");
+        sb.append("inputSequenceCurrentMatch=")
+                .append(String.valueOf(this.inputSequenceCurrentMatch));
+        sb.append(", regexEngineClassName=").append(String.valueOf(this.regexEngineClassName));
+        sb.append(", stepCount=").append(String.valueOf(this.stepCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StepInfo)) {
+            return false;
+        }
+
+        StepInfo other = (StepInfo) o;
+        return java.util.Objects.equals(
+                        this.inputSequenceCurrentMatch, other.inputSequenceCurrentMatch)
+                && java.util.Objects.equals(this.regexEngineClassName, other.regexEngineClassName)
+                && java.util.Objects.equals(this.stepCount, other.stepCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.inputSequenceCurrentMatch == null
+                                ? 43
+                                : this.inputSequenceCurrentMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.regexEngineClassName == null
+                                ? 43
+                                : this.regexEngineClassName.hashCode());
+        result = (result * PRIME) + (this.stepCount == null ? 43 : this.stepCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

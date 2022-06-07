@@ -16,16 +16,49 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OAuth2ClientCredential.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OAuth2ClientCredential {
+public final class OAuth2ClientCredential {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "scopes",
+        "password",
+        "userId",
+        "expiresOn",
+        "id",
+        "compartmentId",
+        "name",
+        "description",
+        "lifecycleState",
+        "timeCreated"
+    })
+    public OAuth2ClientCredential(
+            java.util.List<FullyQualifiedScope> scopes,
+            String password,
+            String userId,
+            java.util.Date expiresOn,
+            String id,
+            String compartmentId,
+            String name,
+            String description,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated) {
+        super();
+        this.scopes = scopes;
+        this.password = password;
+        this.userId = userId;
+        this.expiresOn = expiresOn;
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.description = description;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("scopes")
         private java.util.List<FullyQualifiedScope> scopes;
@@ -163,23 +196,39 @@ public class OAuth2ClientCredential {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Allowed scopes for the given oauth credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
-    java.util.List<FullyQualifiedScope> scopes;
+    private final java.util.List<FullyQualifiedScope> scopes;
+
+    public java.util.List<FullyQualifiedScope> getScopes() {
+        return scopes;
+    }
 
     /**
      * Returned during create and update with password reset requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    String password;
+    private final String password;
+
+    public String getPassword() {
+        return password;
+    }
 
     /**
      * The OCID of the user the Oauth credential belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * Date and time when this credential will expire, in the format defined by RFC3339.
@@ -189,37 +238,57 @@ public class OAuth2ClientCredential {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expiresOn")
-    java.util.Date expiresOn;
+    private final java.util.Date expiresOn;
+
+    public java.util.Date getExpiresOn() {
+        return expiresOn;
+    }
 
     /**
      * The OCID of the Oauth credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment containing the Oauth credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the Oauth credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The description of the Oauth credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
     /**
      * The credential's current state. After creating a Oauth credential, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -232,6 +301,9 @@ public class OAuth2ClientCredential {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -271,7 +343,11 @@ public class OAuth2ClientCredential {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Date and time the {@code OAuth2ClientCredential} object was created, in the format defined by RFC3339.
@@ -280,8 +356,82 @@ public class OAuth2ClientCredential {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OAuth2ClientCredential(");
+        sb.append("scopes=").append(String.valueOf(this.scopes));
+        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", expiresOn=").append(String.valueOf(this.expiresOn));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OAuth2ClientCredential)) {
+            return false;
+        }
+
+        OAuth2ClientCredential other = (OAuth2ClientCredential) o;
+        return java.util.Objects.equals(this.scopes, other.scopes)
+                && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.expiresOn, other.expiresOn)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.scopes == null ? 43 : this.scopes.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.expiresOn == null ? 43 : this.expiresOn.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

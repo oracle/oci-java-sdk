@@ -15,16 +15,20 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SearchMonitoredResourceMembersDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SearchMonitoredResourceMembersDetails {
+public final class SearchMonitoredResourceMembersDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"destinationResourceId", "limitLevel"})
+    public SearchMonitoredResourceMembersDetails(String destinationResourceId, Integer limitLevel) {
+        super();
+        this.destinationResourceId = destinationResourceId;
+        this.limitLevel = limitLevel;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
         private String destinationResourceId;
@@ -72,18 +76,76 @@ public class SearchMonitoredResourceMembersDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
-    String destinationResourceId;
+    private final String destinationResourceId;
+
+    public String getDestinationResourceId() {
+        return destinationResourceId;
+    }
 
     /**
      * The field which determines the depth of hierarchy while searching for members
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("limitLevel")
-    Integer limitLevel;
+    private final Integer limitLevel;
+
+    public Integer getLimitLevel() {
+        return limitLevel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchMonitoredResourceMembersDetails(");
+        sb.append("destinationResourceId=").append(String.valueOf(this.destinationResourceId));
+        sb.append(", limitLevel=").append(String.valueOf(this.limitLevel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchMonitoredResourceMembersDetails)) {
+            return false;
+        }
+
+        SearchMonitoredResourceMembersDetails other = (SearchMonitoredResourceMembersDetails) o;
+        return java.util.Objects.equals(this.destinationResourceId, other.destinationResourceId)
+                && java.util.Objects.equals(this.limitLevel, other.limitLevel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.destinationResourceId == null
+                                ? 43
+                                : this.destinationResourceId.hashCode());
+        result = (result * PRIME) + (this.limitLevel == null ? 43 : this.limitLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

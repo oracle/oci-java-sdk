@@ -15,16 +15,43 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeviceFingerprintChallenge.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeviceFingerprintChallenge {
+public final class DeviceFingerprintChallenge {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isEnabled",
+        "action",
+        "failureThreshold",
+        "actionExpirationInSeconds",
+        "failureThresholdExpirationInSeconds",
+        "maxAddressCount",
+        "maxAddressCountExpirationInSeconds",
+        "challengeSettings"
+    })
+    public DeviceFingerprintChallenge(
+            Boolean isEnabled,
+            Action action,
+            Integer failureThreshold,
+            Integer actionExpirationInSeconds,
+            Integer failureThresholdExpirationInSeconds,
+            Integer maxAddressCount,
+            Integer maxAddressCountExpirationInSeconds,
+            BlockChallengeSettings challengeSettings) {
+        super();
+        this.isEnabled = isEnabled;
+        this.action = action;
+        this.failureThreshold = failureThreshold;
+        this.actionExpirationInSeconds = actionExpirationInSeconds;
+        this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
+        this.maxAddressCount = maxAddressCount;
+        this.maxAddressCountExpirationInSeconds = maxAddressCountExpirationInSeconds;
+        this.challengeSettings = challengeSettings;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
@@ -144,15 +171,23 @@ public class DeviceFingerprintChallenge {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Enables or disables the device fingerprint challenge Web Application Firewall feature.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
     /**
      * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Detect("DETECT"),
         Block("BLOCK"),
@@ -162,6 +197,8 @@ public class DeviceFingerprintChallenge {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -199,41 +236,155 @@ public class DeviceFingerprintChallenge {
      * The action to take on requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The number of failed requests allowed before taking action. If unspecified, defaults to {@code 10}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
-    Integer failureThreshold;
+    private final Integer failureThreshold;
+
+    public Integer getFailureThreshold() {
+        return failureThreshold;
+    }
 
     /**
      * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
-    Integer actionExpirationInSeconds;
+    private final Integer actionExpirationInSeconds;
+
+    public Integer getActionExpirationInSeconds() {
+        return actionExpirationInSeconds;
+    }
 
     /**
      * The number of seconds before the failure threshold resets. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThresholdExpirationInSeconds")
-    Integer failureThresholdExpirationInSeconds;
+    private final Integer failureThresholdExpirationInSeconds;
+
+    public Integer getFailureThresholdExpirationInSeconds() {
+        return failureThresholdExpirationInSeconds;
+    }
 
     /**
      * The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to {@code 20}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAddressCount")
-    Integer maxAddressCount;
+    private final Integer maxAddressCount;
+
+    public Integer getMaxAddressCount() {
+        return maxAddressCount;
+    }
 
     /**
      * The number of seconds before the maximum addresses count resets. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAddressCountExpirationInSeconds")
-    Integer maxAddressCountExpirationInSeconds;
+    private final Integer maxAddressCountExpirationInSeconds;
+
+    public Integer getMaxAddressCountExpirationInSeconds() {
+        return maxAddressCountExpirationInSeconds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("challengeSettings")
-    BlockChallengeSettings challengeSettings;
+    private final BlockChallengeSettings challengeSettings;
+
+    public BlockChallengeSettings getChallengeSettings() {
+        return challengeSettings;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeviceFingerprintChallenge(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", failureThreshold=").append(String.valueOf(this.failureThreshold));
+        sb.append(", actionExpirationInSeconds=")
+                .append(String.valueOf(this.actionExpirationInSeconds));
+        sb.append(", failureThresholdExpirationInSeconds=")
+                .append(String.valueOf(this.failureThresholdExpirationInSeconds));
+        sb.append(", maxAddressCount=").append(String.valueOf(this.maxAddressCount));
+        sb.append(", maxAddressCountExpirationInSeconds=")
+                .append(String.valueOf(this.maxAddressCountExpirationInSeconds));
+        sb.append(", challengeSettings=").append(String.valueOf(this.challengeSettings));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeviceFingerprintChallenge)) {
+            return false;
+        }
+
+        DeviceFingerprintChallenge other = (DeviceFingerprintChallenge) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.failureThreshold, other.failureThreshold)
+                && java.util.Objects.equals(
+                        this.actionExpirationInSeconds, other.actionExpirationInSeconds)
+                && java.util.Objects.equals(
+                        this.failureThresholdExpirationInSeconds,
+                        other.failureThresholdExpirationInSeconds)
+                && java.util.Objects.equals(this.maxAddressCount, other.maxAddressCount)
+                && java.util.Objects.equals(
+                        this.maxAddressCountExpirationInSeconds,
+                        other.maxAddressCountExpirationInSeconds)
+                && java.util.Objects.equals(this.challengeSettings, other.challengeSettings)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureThreshold == null ? 43 : this.failureThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actionExpirationInSeconds == null
+                                ? 43
+                                : this.actionExpirationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureThresholdExpirationInSeconds == null
+                                ? 43
+                                : this.failureThresholdExpirationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxAddressCount == null ? 43 : this.maxAddressCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxAddressCountExpirationInSeconds == null
+                                ? 43
+                                : this.maxAddressCountExpirationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.challengeSettings == null ? 43 : this.challengeSettings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

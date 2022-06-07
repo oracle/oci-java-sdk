@@ -9,14 +9,6 @@ import com.oracle.bmc.opsi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateExadataInsightExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateExadataInsightRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateExadataInsightRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.UpdateExadataInsightDetails> {
@@ -26,11 +18,17 @@ public class UpdateExadataInsightRequest
      */
     private String exadataInsightId;
 
+    public String getExadataInsightId() {
+        return exadataInsightId;
+    }
     /**
      * The configuration to be updated.
      */
     private com.oracle.bmc.opsi.model.UpdateExadataInsightDetails updateExadataInsightDetails;
 
+    public com.oracle.bmc.opsi.model.UpdateExadataInsightDetails getUpdateExadataInsightDetails() {
+        return updateExadataInsightDetails;
+    }
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
@@ -39,12 +37,19 @@ public class UpdateExadataInsightRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +68,57 @@ public class UpdateExadataInsightRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String exadataInsightId = null;
+
+        /**
+         * Unique Exadata insight identifier
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        private com.oracle.bmc.opsi.model.UpdateExadataInsightDetails updateExadataInsightDetails =
+                null;
+
+        /**
+         * The configuration to be updated.
+         * @return this builder instance
+         */
+        public Builder updateExadataInsightDetails(
+                com.oracle.bmc.opsi.model.UpdateExadataInsightDetails updateExadataInsightDetails) {
+            this.updateExadataInsightDetails = updateExadataInsightDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +184,87 @@ public class UpdateExadataInsightRequest
             updateExadataInsightDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateExadataInsightRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateExadataInsightRequest
+         */
+        public UpdateExadataInsightRequest buildWithoutInvocationCallback() {
+            UpdateExadataInsightRequest request = new UpdateExadataInsightRequest();
+            request.exadataInsightId = exadataInsightId;
+            request.updateExadataInsightDetails = updateExadataInsightDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateExadataInsightRequest(exadataInsightId, updateExadataInsightDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .exadataInsightId(exadataInsightId)
+                .updateExadataInsightDetails(updateExadataInsightDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(",updateExadataInsightDetails=")
+                .append(String.valueOf(this.updateExadataInsightDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateExadataInsightRequest)) {
+            return false;
+        }
+
+        UpdateExadataInsightRequest other = (UpdateExadataInsightRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(
+                        this.updateExadataInsightDetails, other.updateExadataInsightDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateExadataInsightDetails == null
+                                ? 43
+                                : this.updateExadataInsightDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

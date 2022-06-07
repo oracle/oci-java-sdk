@@ -7,10 +7,6 @@ package com.oracle.bmc.marketplace.responses;
 import com.oracle.bmc.marketplace.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetThirdPartyPaidListingEligibilityResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -20,11 +16,20 @@ public class GetThirdPartyPaidListingEligibilityResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned ThirdPartyPaidListingEligibility instance.
      */
     private com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
             thirdPartyPaidListingEligibility;
+
+    public com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
+            getThirdPartyPaidListingEligibility() {
+        return thirdPartyPaidListingEligibility;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -49,6 +54,23 @@ public class GetThirdPartyPaidListingEligibilityResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
+                thirdPartyPaidListingEligibility;
+
+        public Builder thirdPartyPaidListingEligibility(
+                com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
+                        thirdPartyPaidListingEligibility) {
+            this.thirdPartyPaidListingEligibility = thirdPartyPaidListingEligibility;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -65,5 +87,52 @@ public class GetThirdPartyPaidListingEligibilityResponse
             return new GetThirdPartyPaidListingEligibilityResponse(
                     __httpStatusCode__, opcRequestId, thirdPartyPaidListingEligibility);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",thirdPartyPaidListingEligibility=")
+                .append(String.valueOf(thirdPartyPaidListingEligibility));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetThirdPartyPaidListingEligibilityResponse)) {
+            return false;
+        }
+
+        GetThirdPartyPaidListingEligibilityResponse other =
+                (GetThirdPartyPaidListingEligibilityResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.thirdPartyPaidListingEligibility,
+                        other.thirdPartyPaidListingEligibility);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.thirdPartyPaidListingEligibility == null
+                                ? 43
+                                : this.thirdPartyPaidListingEligibility.hashCode());
+        return result;
     }
 }

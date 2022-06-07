@@ -15,16 +15,21 @@ package com.oracle.bmc.databasetools.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseToolsPrivateEndpointReverseConnectionConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseToolsPrivateEndpointReverseConnectionConfiguration {
+public final class DatabaseToolsPrivateEndpointReverseConnectionConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({"reverseConnectionsSourceIps"})
+    public DatabaseToolsPrivateEndpointReverseConnectionConfiguration(
+            java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
+                    reverseConnectionsSourceIps) {
+        super();
+        this.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionsSourceIps")
         private java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
@@ -65,15 +70,70 @@ public class DatabaseToolsPrivateEndpointReverseConnectionConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets
      * traveling from the service's VCN to the customer's VCN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionsSourceIps")
-    java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
+    private final java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
             reverseConnectionsSourceIps;
+
+    public java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
+            getReverseConnectionsSourceIps() {
+        return reverseConnectionsSourceIps;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseToolsPrivateEndpointReverseConnectionConfiguration(");
+        sb.append("reverseConnectionsSourceIps=")
+                .append(String.valueOf(this.reverseConnectionsSourceIps));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseToolsPrivateEndpointReverseConnectionConfiguration)) {
+            return false;
+        }
+
+        DatabaseToolsPrivateEndpointReverseConnectionConfiguration other =
+                (DatabaseToolsPrivateEndpointReverseConnectionConfiguration) o;
+        return java.util.Objects.equals(
+                        this.reverseConnectionsSourceIps, other.reverseConnectionsSourceIps)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.reverseConnectionsSourceIps == null
+                                ? 43
+                                : this.reverseConnectionsSourceIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

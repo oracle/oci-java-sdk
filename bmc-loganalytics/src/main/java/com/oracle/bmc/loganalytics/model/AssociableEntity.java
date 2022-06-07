@@ -15,14 +15,41 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AssociableEntity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AssociableEntity {
+public final class AssociableEntity {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "entityId",
+        "entityName",
+        "entityTypeName",
+        "entityTypeDisplayName",
+        "host",
+        "agentId",
+        "eligibilityStatus",
+        "ineligibilityDetails"
+    })
+    public AssociableEntity(
+            String entityId,
+            String entityName,
+            String entityTypeName,
+            String entityTypeDisplayName,
+            String host,
+            String agentId,
+            EligibilityStatus eligibilityStatus,
+            String ineligibilityDetails) {
+        super();
+        this.entityId = entityId;
+        this.entityName = entityName;
+        this.entityTypeName = entityTypeName;
+        this.entityTypeDisplayName = entityTypeDisplayName;
+        this.host = host;
+        this.agentId = agentId;
+        this.eligibilityStatus = eligibilityStatus;
+        this.ineligibilityDetails = ineligibilityDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
@@ -138,46 +165,74 @@ public class AssociableEntity {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The entity OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
-    String entityId;
+    private final String entityId;
+
+    public String getEntityId() {
+        return entityId;
+    }
 
     /**
      * The name of the entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
-    String entityName;
+    private final String entityName;
+
+    public String getEntityName() {
+        return entityName;
+    }
 
     /**
      * The type name of the entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
-    String entityTypeName;
+    private final String entityTypeName;
+
+    public String getEntityTypeName() {
+        return entityTypeName;
+    }
 
     /**
      * The display name of the entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
-    String entityTypeDisplayName;
+    private final String entityTypeDisplayName;
+
+    public String getEntityTypeDisplayName() {
+        return entityTypeDisplayName;
+    }
 
     /**
      * The entity host.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * The OCID of the Management Agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
-    String agentId;
+    private final String agentId;
+
+    public String getAgentId() {
+        return agentId;
+    }
+
     /**
      * This field indicates whether the entity is (in)eligible to be associated with this source.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EligibilityStatus {
         Eligible("ELIGIBLE"),
         Ineligible("INELIGIBLE"),
@@ -187,6 +242,9 @@ public class AssociableEntity {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EligibilityStatus.class);
 
         private final String value;
         private static java.util.Map<String, EligibilityStatus> map;
@@ -225,14 +283,94 @@ public class AssociableEntity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eligibilityStatus")
-    EligibilityStatus eligibilityStatus;
+    private final EligibilityStatus eligibilityStatus;
+
+    public EligibilityStatus getEligibilityStatus() {
+        return eligibilityStatus;
+    }
 
     /**
      * The reason the entity is not eligible for association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityDetails")
-    String ineligibilityDetails;
+    private final String ineligibilityDetails;
+
+    public String getIneligibilityDetails() {
+        return ineligibilityDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AssociableEntity(");
+        sb.append("entityId=").append(String.valueOf(this.entityId));
+        sb.append(", entityName=").append(String.valueOf(this.entityName));
+        sb.append(", entityTypeName=").append(String.valueOf(this.entityTypeName));
+        sb.append(", entityTypeDisplayName=").append(String.valueOf(this.entityTypeDisplayName));
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", agentId=").append(String.valueOf(this.agentId));
+        sb.append(", eligibilityStatus=").append(String.valueOf(this.eligibilityStatus));
+        sb.append(", ineligibilityDetails=").append(String.valueOf(this.ineligibilityDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AssociableEntity)) {
+            return false;
+        }
+
+        AssociableEntity other = (AssociableEntity) o;
+        return java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.entityName, other.entityName)
+                && java.util.Objects.equals(this.entityTypeName, other.entityTypeName)
+                && java.util.Objects.equals(this.entityTypeDisplayName, other.entityTypeDisplayName)
+                && java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.agentId, other.agentId)
+                && java.util.Objects.equals(this.eligibilityStatus, other.eligibilityStatus)
+                && java.util.Objects.equals(this.ineligibilityDetails, other.ineligibilityDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityTypeName == null ? 43 : this.entityTypeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityTypeDisplayName == null
+                                ? 43
+                                : this.entityTypeDisplayName.hashCode());
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.eligibilityStatus == null ? 43 : this.eligibilityStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ineligibilityDetails == null
+                                ? 43
+                                : this.ineligibilityDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

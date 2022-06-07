@@ -9,14 +9,6 @@ import com.oracle.bmc.containerengine.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateClusterExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateClusterRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateClusterRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerengine.model.CreateClusterDetails> {
@@ -26,6 +18,9 @@ public class CreateClusterRequest
      */
     private com.oracle.bmc.containerengine.model.CreateClusterDetails createClusterDetails;
 
+    public com.oracle.bmc.containerengine.model.CreateClusterDetails getCreateClusterDetails() {
+        return createClusterDetails;
+    }
     /**
      * A token you supply to uniquely identify the request and provide idempotency if
      * the request is retried. Idempotency tokens expire after 24 hours.
@@ -33,12 +28,19 @@ public class CreateClusterRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -57,6 +59,45 @@ public class CreateClusterRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.containerengine.model.CreateClusterDetails createClusterDetails =
+                null;
+
+        /**
+         * The details of the cluster to create.
+         * @return this builder instance
+         */
+        public Builder createClusterDetails(
+                com.oracle.bmc.containerengine.model.CreateClusterDetails createClusterDetails) {
+            this.createClusterDetails = createClusterDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token you supply to uniquely identify the request and provide idempotency if
+         * the request is retried. Idempotency tokens expire after 24 hours.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -121,5 +162,80 @@ public class CreateClusterRequest
             createClusterDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateClusterRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateClusterRequest
+         */
+        public CreateClusterRequest buildWithoutInvocationCallback() {
+            CreateClusterRequest request = new CreateClusterRequest();
+            request.createClusterDetails = createClusterDetails;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new CreateClusterRequest(createClusterDetails, opcRetryToken, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createClusterDetails(createClusterDetails)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createClusterDetails=").append(String.valueOf(this.createClusterDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateClusterRequest)) {
+            return false;
+        }
+
+        CreateClusterRequest other = (CreateClusterRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.createClusterDetails, other.createClusterDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createClusterDetails == null
+                                ? 43
+                                : this.createClusterDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

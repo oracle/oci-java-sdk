@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadLogFileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UploadLogFileRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
@@ -25,47 +17,71 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
      *
      */
     private String uploadName;
 
+    public String getUploadName() {
+        return uploadName;
+    }
     /**
      * Name of the log source that will be used to process the files being uploaded.
      *
      */
     private String logSourceName;
 
+    public String getLogSourceName() {
+        return logSourceName;
+    }
     /**
      * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
      *
      */
     private String filename;
 
+    public String getFilename() {
+        return filename;
+    }
     /**
      * The log group OCID to which the log data in this upload will be mapped to.
      *
      */
     private String opcMetaLoggrpid;
 
+    public String getOpcMetaLoggrpid() {
+        return opcMetaLoggrpid;
+    }
     /**
      * Log data
      */
     private java.io.InputStream uploadLogFileBody;
 
+    public java.io.InputStream getUploadLogFileBody() {
+        return uploadLogFileBody;
+    }
     /**
      * The entity OCID.
      *
      */
     private String entityId;
 
+    public String getEntityId() {
+        return entityId;
+    }
     /**
      * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone. When this property is not specified, the timezone of the entity specified is used. If the entity is also not specified or do not have a valid timezone then UTC is used
      *
      */
     private String timezone;
 
+    public String getTimezone() {
+        return timezone;
+    }
     /**
      * Character encoding to be used to detect the encoding type of file(s) being uploaded.
      * When this property is not specified, system detected character encoding will be used.
@@ -73,28 +89,43 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String charEncoding;
 
+    public String getCharEncoding() {
+        return charEncoding;
+    }
     /**
      * This property is used to specify the format of the date. This is to be used for ambiguous dates like 12/11/10. This property can take any of the following values -  MONTH_DAY_YEAR, DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
      *
      */
     private String dateFormat;
 
+    public String getDateFormat() {
+        return dateFormat;
+    }
     /**
      * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov  8 20:45:56).
      *
      */
     private String dateYear;
 
+    public String getDateYear() {
+        return dateYear;
+    }
     /**
      * This property can be used to reset configuration cache in case of an issue with the upload.
      */
     private Boolean invalidateCache;
 
+    public Boolean getInvalidateCache() {
+        return invalidateCache;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
      * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
@@ -105,11 +136,17 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String contentMd5;
 
+    public String getContentMd5() {
+        return contentMd5;
+    }
     /**
      * The content type of the log data.
      */
     private String contentType;
 
+    public String getContentType() {
+        return contentType;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -120,12 +157,18 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * The log set that gets associated with the uploaded logs.
      *
      */
     private String logSet;
 
+    public String getLogSet() {
+        return logSet;
+    }
     /**
      * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
      * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
@@ -133,6 +176,10 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
      *
      */
     private String expect;
+
+    public String getExpect() {
+        return expect;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -155,6 +202,229 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String uploadName = null;
+
+        /**
+         * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
+         *
+         * @return this builder instance
+         */
+        public Builder uploadName(String uploadName) {
+            this.uploadName = uploadName;
+            return this;
+        }
+
+        private String logSourceName = null;
+
+        /**
+         * Name of the log source that will be used to process the files being uploaded.
+         *
+         * @return this builder instance
+         */
+        public Builder logSourceName(String logSourceName) {
+            this.logSourceName = logSourceName;
+            return this;
+        }
+
+        private String filename = null;
+
+        /**
+         * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
+         *
+         * @return this builder instance
+         */
+        public Builder filename(String filename) {
+            this.filename = filename;
+            return this;
+        }
+
+        private String opcMetaLoggrpid = null;
+
+        /**
+         * The log group OCID to which the log data in this upload will be mapped to.
+         *
+         * @return this builder instance
+         */
+        public Builder opcMetaLoggrpid(String opcMetaLoggrpid) {
+            this.opcMetaLoggrpid = opcMetaLoggrpid;
+            return this;
+        }
+
+        private java.io.InputStream uploadLogFileBody = null;
+
+        /**
+         * Log data
+         * @return this builder instance
+         */
+        public Builder uploadLogFileBody(java.io.InputStream uploadLogFileBody) {
+            this.uploadLogFileBody = uploadLogFileBody;
+            return this;
+        }
+
+        private String entityId = null;
+
+        /**
+         * The entity OCID.
+         *
+         * @return this builder instance
+         */
+        public Builder entityId(String entityId) {
+            this.entityId = entityId;
+            return this;
+        }
+
+        private String timezone = null;
+
+        /**
+         * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone. When this property is not specified, the timezone of the entity specified is used. If the entity is also not specified or do not have a valid timezone then UTC is used
+         *
+         * @return this builder instance
+         */
+        public Builder timezone(String timezone) {
+            this.timezone = timezone;
+            return this;
+        }
+
+        private String charEncoding = null;
+
+        /**
+         * Character encoding to be used to detect the encoding type of file(s) being uploaded.
+         * When this property is not specified, system detected character encoding will be used.
+         *
+         * @return this builder instance
+         */
+        public Builder charEncoding(String charEncoding) {
+            this.charEncoding = charEncoding;
+            return this;
+        }
+
+        private String dateFormat = null;
+
+        /**
+         * This property is used to specify the format of the date. This is to be used for ambiguous dates like 12/11/10. This property can take any of the following values -  MONTH_DAY_YEAR, DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
+         *
+         * @return this builder instance
+         */
+        public Builder dateFormat(String dateFormat) {
+            this.dateFormat = dateFormat;
+            return this;
+        }
+
+        private String dateYear = null;
+
+        /**
+         * Used to indicate the year where the log entries timestamp do not mention year (Ex: Nov  8 20:45:56).
+         *
+         * @return this builder instance
+         */
+        public Builder dateYear(String dateYear) {
+            this.dateYear = dateYear;
+            return this;
+        }
+
+        private Boolean invalidateCache = null;
+
+        /**
+         * This property can be used to reset configuration cache in case of an issue with the upload.
+         * @return this builder instance
+         */
+        public Builder invalidateCache(Boolean invalidateCache) {
+            this.invalidateCache = invalidateCache;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String contentMd5 = null;
+
+        /**
+         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
+         * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+         * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+         * <p>
+         * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+         *
+         * @return this builder instance
+         */
+        public Builder contentMd5(String contentMd5) {
+            this.contentMd5 = contentMd5;
+            return this;
+        }
+
+        private String contentType = null;
+
+        /**
+         * The content type of the log data.
+         * @return this builder instance
+         */
+        public Builder contentType(String contentType) {
+            this.contentType = contentType;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String logSet = null;
+
+        /**
+         * The log set that gets associated with the uploaded logs.
+         *
+         * @return this builder instance
+         */
+        public Builder logSet(String logSet) {
+            this.logSet = logSet;
+            return this;
+        }
+
+        private String expect = null;
+
+        /**
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         *
+         * @return this builder instance
+         */
+        public Builder expect(String expect) {
+            this.expect = expect;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -234,5 +504,161 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             uploadLogFileBody(body);
             return this;
         }
+
+        /**
+         * Build the instance of UploadLogFileRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UploadLogFileRequest
+         */
+        public UploadLogFileRequest buildWithoutInvocationCallback() {
+            UploadLogFileRequest request = new UploadLogFileRequest();
+            request.namespaceName = namespaceName;
+            request.uploadName = uploadName;
+            request.logSourceName = logSourceName;
+            request.filename = filename;
+            request.opcMetaLoggrpid = opcMetaLoggrpid;
+            request.uploadLogFileBody = uploadLogFileBody;
+            request.entityId = entityId;
+            request.timezone = timezone;
+            request.charEncoding = charEncoding;
+            request.dateFormat = dateFormat;
+            request.dateYear = dateYear;
+            request.invalidateCache = invalidateCache;
+            request.opcRequestId = opcRequestId;
+            request.contentMd5 = contentMd5;
+            request.contentType = contentType;
+            request.opcRetryToken = opcRetryToken;
+            request.logSet = logSet;
+            request.expect = expect;
+            return request;
+            // new UploadLogFileRequest(namespaceName, uploadName, logSourceName, filename, opcMetaLoggrpid, uploadLogFileBody, entityId, timezone, charEncoding, dateFormat, dateYear, invalidateCache, opcRequestId, contentMd5, contentType, opcRetryToken, logSet, expect);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .uploadName(uploadName)
+                .logSourceName(logSourceName)
+                .filename(filename)
+                .opcMetaLoggrpid(opcMetaLoggrpid)
+                .uploadLogFileBody(uploadLogFileBody)
+                .entityId(entityId)
+                .timezone(timezone)
+                .charEncoding(charEncoding)
+                .dateFormat(dateFormat)
+                .dateYear(dateYear)
+                .invalidateCache(invalidateCache)
+                .opcRequestId(opcRequestId)
+                .contentMd5(contentMd5)
+                .contentType(contentType)
+                .opcRetryToken(opcRetryToken)
+                .logSet(logSet)
+                .expect(expect);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",uploadName=").append(String.valueOf(this.uploadName));
+        sb.append(",logSourceName=").append(String.valueOf(this.logSourceName));
+        sb.append(",filename=").append(String.valueOf(this.filename));
+        sb.append(",opcMetaLoggrpid=").append(String.valueOf(this.opcMetaLoggrpid));
+        sb.append(",uploadLogFileBody=").append(String.valueOf(this.uploadLogFileBody));
+        sb.append(",entityId=").append(String.valueOf(this.entityId));
+        sb.append(",timezone=").append(String.valueOf(this.timezone));
+        sb.append(",charEncoding=").append(String.valueOf(this.charEncoding));
+        sb.append(",dateFormat=").append(String.valueOf(this.dateFormat));
+        sb.append(",dateYear=").append(String.valueOf(this.dateYear));
+        sb.append(",invalidateCache=").append(String.valueOf(this.invalidateCache));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",contentMd5=").append(String.valueOf(this.contentMd5));
+        sb.append(",contentType=").append(String.valueOf(this.contentType));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",logSet=").append(String.valueOf(this.logSet));
+        sb.append(",expect=").append(String.valueOf(this.expect));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UploadLogFileRequest)) {
+            return false;
+        }
+
+        UploadLogFileRequest other = (UploadLogFileRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.uploadName, other.uploadName)
+                && java.util.Objects.equals(this.logSourceName, other.logSourceName)
+                && java.util.Objects.equals(this.filename, other.filename)
+                && java.util.Objects.equals(this.opcMetaLoggrpid, other.opcMetaLoggrpid)
+                && java.util.Objects.equals(this.uploadLogFileBody, other.uploadLogFileBody)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.timezone, other.timezone)
+                && java.util.Objects.equals(this.charEncoding, other.charEncoding)
+                && java.util.Objects.equals(this.dateFormat, other.dateFormat)
+                && java.util.Objects.equals(this.dateYear, other.dateYear)
+                && java.util.Objects.equals(this.invalidateCache, other.invalidateCache)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.contentMd5, other.contentMd5)
+                && java.util.Objects.equals(this.contentType, other.contentType)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.logSet, other.logSet)
+                && java.util.Objects.equals(this.expect, other.expect);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.uploadName == null ? 43 : this.uploadName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logSourceName == null ? 43 : this.logSourceName.hashCode());
+        result = (result * PRIME) + (this.filename == null ? 43 : this.filename.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcMetaLoggrpid == null ? 43 : this.opcMetaLoggrpid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uploadLogFileBody == null ? 43 : this.uploadLogFileBody.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
+        result = (result * PRIME) + (this.charEncoding == null ? 43 : this.charEncoding.hashCode());
+        result = (result * PRIME) + (this.dateFormat == null ? 43 : this.dateFormat.hashCode());
+        result = (result * PRIME) + (this.dateYear == null ? 43 : this.dateYear.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.invalidateCache == null ? 43 : this.invalidateCache.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.contentMd5 == null ? 43 : this.contentMd5.hashCode());
+        result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.logSet == null ? 43 : this.logSet.hashCode());
+        result = (result * PRIME) + (this.expect == null ? 43 : this.expect.hashCode());
+        return result;
     }
 }

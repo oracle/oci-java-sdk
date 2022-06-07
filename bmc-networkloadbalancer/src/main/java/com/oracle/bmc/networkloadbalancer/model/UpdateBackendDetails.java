@@ -15,16 +15,23 @@ package com.oracle.bmc.networkloadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateBackendDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateBackendDetails {
+public final class UpdateBackendDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"weight", "isBackup", "isDrain", "isOffline"})
+    public UpdateBackendDetails(
+            Integer weight, Boolean isBackup, Boolean isDrain, Boolean isOffline) {
+        super();
+        this.weight = weight;
+        this.isBackup = isBackup;
+        this.isDrain = isDrain;
+        this.isOffline = isOffline;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
@@ -92,6 +99,10 @@ public class UpdateBackendDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
      * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
@@ -103,7 +114,11 @@ public class UpdateBackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    Integer weight;
+    private final Integer weight;
+
+    public Integer getWeight() {
+        return weight;
+    }
 
     /**
      * Whether the network load balancer should treat this server as a backup unit. If {@code true}, then the network load balancer forwards no ingress
@@ -113,7 +128,11 @@ public class UpdateBackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBackup")
-    Boolean isBackup;
+    private final Boolean isBackup;
+
+    public Boolean getIsBackup() {
+        return isBackup;
+    }
 
     /**
      * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no
@@ -123,7 +142,11 @@ public class UpdateBackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDrain")
-    Boolean isDrain;
+    private final Boolean isDrain;
+
+    public Boolean getIsDrain() {
+        return isDrain;
+    }
 
     /**
      * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming
@@ -133,8 +156,60 @@ public class UpdateBackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOffline")
-    Boolean isOffline;
+    private final Boolean isOffline;
+
+    public Boolean getIsOffline() {
+        return isOffline;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateBackendDetails(");
+        sb.append("weight=").append(String.valueOf(this.weight));
+        sb.append(", isBackup=").append(String.valueOf(this.isBackup));
+        sb.append(", isDrain=").append(String.valueOf(this.isDrain));
+        sb.append(", isOffline=").append(String.valueOf(this.isOffline));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBackendDetails)) {
+            return false;
+        }
+
+        UpdateBackendDetails other = (UpdateBackendDetails) o;
+        return java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.isBackup, other.isBackup)
+                && java.util.Objects.equals(this.isDrain, other.isDrain)
+                && java.util.Objects.equals(this.isOffline, other.isOffline)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result = (result * PRIME) + (this.isBackup == null ? 43 : this.isBackup.hashCode());
+        result = (result * PRIME) + (this.isDrain == null ? 43 : this.isDrain.hashCode());
+        result = (result * PRIME) + (this.isOffline == null ? 43 : this.isOffline.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

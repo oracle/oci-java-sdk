@@ -15,16 +15,24 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TablespaceUsageTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TablespaceUsageTrendAggregation {
+public final class TablespaceUsageTrendAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"tablespaceName", "tablespaceType", "usageData"})
+    public TablespaceUsageTrendAggregation(
+            String tablespaceName,
+            String tablespaceType,
+            java.util.List<TablespaceUsageTrend> usageData) {
+        super();
+        this.tablespaceName = tablespaceName;
+        this.tablespaceType = tablespaceType;
+        this.usageData = usageData;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
         private String tablespaceName;
@@ -82,24 +90,89 @@ public class TablespaceUsageTrendAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
-    String tablespaceName;
+    private final String tablespaceName;
+
+    public String getTablespaceName() {
+        return tablespaceName;
+    }
 
     /**
      * Type of tablespace
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceType")
-    String tablespaceType;
+    private final String tablespaceType;
+
+    public String getTablespaceType() {
+        return tablespaceType;
+    }
 
     /**
      * List of usage data samples for a tablespace
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageData")
-    java.util.List<TablespaceUsageTrend> usageData;
+    private final java.util.List<TablespaceUsageTrend> usageData;
+
+    public java.util.List<TablespaceUsageTrend> getUsageData() {
+        return usageData;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TablespaceUsageTrendAggregation(");
+        sb.append("tablespaceName=").append(String.valueOf(this.tablespaceName));
+        sb.append(", tablespaceType=").append(String.valueOf(this.tablespaceType));
+        sb.append(", usageData=").append(String.valueOf(this.usageData));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TablespaceUsageTrendAggregation)) {
+            return false;
+        }
+
+        TablespaceUsageTrendAggregation other = (TablespaceUsageTrendAggregation) o;
+        return java.util.Objects.equals(this.tablespaceName, other.tablespaceName)
+                && java.util.Objects.equals(this.tablespaceType, other.tablespaceType)
+                && java.util.Objects.equals(this.usageData, other.usageData)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.tablespaceName == null ? 43 : this.tablespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tablespaceType == null ? 43 : this.tablespaceType.hashCode());
+        result = (result * PRIME) + (this.usageData == null ? 43 : this.usageData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

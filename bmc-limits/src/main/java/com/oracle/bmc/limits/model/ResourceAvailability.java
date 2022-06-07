@@ -17,16 +17,34 @@ package com.oracle.bmc.limits.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceAvailability.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceAvailability {
+public final class ResourceAvailability {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "used",
+        "available",
+        "fractionalUsage",
+        "fractionalAvailability",
+        "effectiveQuotaValue"
+    })
+    public ResourceAvailability(
+            Long used,
+            Long available,
+            java.math.BigDecimal fractionalUsage,
+            java.math.BigDecimal fractionalAvailability,
+            java.math.BigDecimal effectiveQuotaValue) {
+        super();
+        this.used = used;
+        this.available = available;
+        this.fractionalUsage = fractionalUsage;
+        this.fractionalAvailability = fractionalAvailability;
+        this.effectiveQuotaValue = effectiveQuotaValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("used")
         private Long used;
@@ -109,13 +127,21 @@ public class ResourceAvailability {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The current usage in the given compartment. To support resources with fractional counts,
      * the field rounds up to the nearest integer.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("used")
-    Long used;
+    private final Long used;
+
+    public Long getUsed() {
+        return used;
+    }
 
     /**
      * The count of available resources. To support resources with fractional counts,
@@ -123,21 +149,33 @@ public class ResourceAvailability {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("available")
-    Long available;
+    private final Long available;
+
+    public Long getAvailable() {
+        return available;
+    }
 
     /**
      * The current most accurate usage in the given compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fractionalUsage")
-    java.math.BigDecimal fractionalUsage;
+    private final java.math.BigDecimal fractionalUsage;
+
+    public java.math.BigDecimal getFractionalUsage() {
+        return fractionalUsage;
+    }
 
     /**
      * The most accurate count of available resources.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fractionalAvailability")
-    java.math.BigDecimal fractionalAvailability;
+    private final java.math.BigDecimal fractionalAvailability;
+
+    public java.math.BigDecimal getFractionalAvailability() {
+        return fractionalAvailability;
+    }
 
     /**
      * The effective quota value for the given compartment. This field is only present if there is a
@@ -145,8 +183,74 @@ public class ResourceAvailability {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveQuotaValue")
-    java.math.BigDecimal effectiveQuotaValue;
+    private final java.math.BigDecimal effectiveQuotaValue;
+
+    public java.math.BigDecimal getEffectiveQuotaValue() {
+        return effectiveQuotaValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceAvailability(");
+        sb.append("used=").append(String.valueOf(this.used));
+        sb.append(", available=").append(String.valueOf(this.available));
+        sb.append(", fractionalUsage=").append(String.valueOf(this.fractionalUsage));
+        sb.append(", fractionalAvailability=").append(String.valueOf(this.fractionalAvailability));
+        sb.append(", effectiveQuotaValue=").append(String.valueOf(this.effectiveQuotaValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceAvailability)) {
+            return false;
+        }
+
+        ResourceAvailability other = (ResourceAvailability) o;
+        return java.util.Objects.equals(this.used, other.used)
+                && java.util.Objects.equals(this.available, other.available)
+                && java.util.Objects.equals(this.fractionalUsage, other.fractionalUsage)
+                && java.util.Objects.equals(
+                        this.fractionalAvailability, other.fractionalAvailability)
+                && java.util.Objects.equals(this.effectiveQuotaValue, other.effectiveQuotaValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.used == null ? 43 : this.used.hashCode());
+        result = (result * PRIME) + (this.available == null ? 43 : this.available.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fractionalUsage == null ? 43 : this.fractionalUsage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fractionalAvailability == null
+                                ? 43
+                                : this.fractionalAvailability.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.effectiveQuotaValue == null
+                                ? 43
+                                : this.effectiveQuotaValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

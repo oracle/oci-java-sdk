@@ -16,22 +16,17 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LaunchDbSystemFromDbSystemDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "source"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase {
+public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -380,6 +375,10 @@ public class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public LaunchDbSystemFromDbSystemDetails(
             String compartmentId,
@@ -447,10 +446,19 @@ public class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase {
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
-    String sourceDbSystemId;
+    private final String sourceDbSystemId;
+
+    public String getSourceDbSystemId() {
+        return sourceDbSystemId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
-    CreateDbHomeFromDbSystemDetails dbHome;
+    private final CreateDbHomeFromDbSystemDetails dbHome;
+
+    public CreateDbHomeFromDbSystemDetails getDbHome() {
+        return dbHome;
+    }
+
     /**
      * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      *
@@ -492,8 +500,61 @@ public class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LaunchDbSystemFromDbSystemDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
+        sb.append(", dbHome=").append(String.valueOf(this.dbHome));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LaunchDbSystemFromDbSystemDetails)) {
+            return false;
+        }
+
+        LaunchDbSystemFromDbSystemDetails other = (LaunchDbSystemFromDbSystemDetails) o;
+        return java.util.Objects.equals(this.sourceDbSystemId, other.sourceDbSystemId)
+                && java.util.Objects.equals(this.dbHome, other.dbHome)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.sourceDbSystemId == null ? 43 : this.sourceDbSystemId.hashCode());
+        result = (result * PRIME) + (this.dbHome == null ? 43 : this.dbHome.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,20 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RestrictedOperation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RestrictedOperation {
+public final class RestrictedOperation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"operationName", "restrictingService"})
+    public RestrictedOperation(String operationName, String restrictingService) {
+        super();
+        this.operationName = operationName;
+        this.restrictingService = restrictingService;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operationName")
         private String operationName;
@@ -72,18 +76,78 @@ public class RestrictedOperation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the restricted operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
-    String operationName;
+    private final String operationName;
+
+    public String getOperationName() {
+        return operationName;
+    }
 
     /**
      * Name of the service restricting the operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restrictingService")
-    String restrictingService;
+    private final String restrictingService;
+
+    public String getRestrictingService() {
+        return restrictingService;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RestrictedOperation(");
+        sb.append("operationName=").append(String.valueOf(this.operationName));
+        sb.append(", restrictingService=").append(String.valueOf(this.restrictingService));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RestrictedOperation)) {
+            return false;
+        }
+
+        RestrictedOperation other = (RestrictedOperation) o;
+        return java.util.Objects.equals(this.operationName, other.operationName)
+                && java.util.Objects.equals(this.restrictingService, other.restrictingService)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operationName == null ? 43 : this.operationName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restrictingService == null
+                                ? 43
+                                : this.restrictingService.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

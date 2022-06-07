@@ -19,16 +19,49 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BootVolumeAttachment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BootVolumeAttachment {
+public final class BootVolumeAttachment {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "bootVolumeId",
+        "compartmentId",
+        "displayName",
+        "id",
+        "instanceId",
+        "lifecycleState",
+        "timeCreated",
+        "isPvEncryptionInTransitEnabled",
+        "encryptionInTransitType"
+    })
+    public BootVolumeAttachment(
+            String availabilityDomain,
+            String bootVolumeId,
+            String compartmentId,
+            String displayName,
+            String id,
+            String instanceId,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            Boolean isPvEncryptionInTransitEnabled,
+            EncryptionInTransitType encryptionInTransitType) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.bootVolumeId = bootVolumeId;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.id = id;
+        this.instanceId = instanceId;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+        this.encryptionInTransitType = encryptionInTransitType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -166,6 +199,10 @@ public class BootVolumeAttachment {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain of an instance.
      * <p>
@@ -173,19 +210,31 @@ public class BootVolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The OCID of the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
-    String bootVolumeId;
+    private final String bootVolumeId;
+
+    public String getBootVolumeId() {
+        return bootVolumeId;
+    }
 
     /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -193,23 +242,35 @@ public class BootVolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the boot volume attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the instance the boot volume is attached to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
+
     /**
      * The current state of the boot volume attachment.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Attaching("ATTACHING"),
         Attached("ATTACHED"),
@@ -221,6 +282,9 @@ public class BootVolumeAttachment {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -258,7 +322,11 @@ public class BootVolumeAttachment {
      * The current state of the boot volume attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -267,14 +335,22 @@ public class BootVolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
-    Boolean isPvEncryptionInTransitEnabled;
+    private final Boolean isPvEncryptionInTransitEnabled;
+
+    public Boolean getIsPvEncryptionInTransitEnabled() {
+        return isPvEncryptionInTransitEnabled;
+    }
 
     /**
      * Refer the top-level definition of encryptionInTransitType.
@@ -282,8 +358,98 @@ public class BootVolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
-    EncryptionInTransitType encryptionInTransitType;
+    private final EncryptionInTransitType encryptionInTransitType;
+
+    public EncryptionInTransitType getEncryptionInTransitType() {
+        return encryptionInTransitType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BootVolumeAttachment(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", bootVolumeId=").append(String.valueOf(this.bootVolumeId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", isPvEncryptionInTransitEnabled=")
+                .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append(", encryptionInTransitType=")
+                .append(String.valueOf(this.encryptionInTransitType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BootVolumeAttachment)) {
+            return false;
+        }
+
+        BootVolumeAttachment other = (BootVolumeAttachment) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.bootVolumeId, other.bootVolumeId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(
+                        this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(
+                        this.encryptionInTransitType, other.encryptionInTransitType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.bootVolumeId == null ? 43 : this.bootVolumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPvEncryptionInTransitEnabled == null
+                                ? 43
+                                : this.isPvEncryptionInTransitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionInTransitType == null
+                                ? 43
+                                : this.encryptionInTransitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,58 @@ package com.oracle.bmc.dataflow.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApplicationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApplicationSummary {
+public final class ApplicationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "language",
+        "lifecycleState",
+        "ownerPrincipalId",
+        "ownerUserName",
+        "sparkVersion",
+        "timeCreated",
+        "timeUpdated",
+        "type"
+    })
+    public ApplicationSummary(
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            ApplicationLanguage language,
+            ApplicationLifecycleState lifecycleState,
+            String ownerPrincipalId,
+            String ownerUserName,
+            String sparkVersion,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            ApplicationType type) {
+        super();
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.language = language;
+        this.lifecycleState = lifecycleState;
+        this.ownerPrincipalId = ownerPrincipalId;
+        this.ownerUserName = ownerUserName;
+        this.sparkVersion = sparkVersion;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.type = type;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -197,12 +239,20 @@ public class ApplicationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of a compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -210,14 +260,22 @@ public class ApplicationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. This name is not necessarily unique.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -226,35 +284,55 @@ public class ApplicationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The application ID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The Spark language.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
-    ApplicationLanguage language;
+    private final ApplicationLanguage language;
+
+    public ApplicationLanguage getLanguage() {
+        return language;
+    }
 
     /**
      * The current state of this application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ApplicationLifecycleState lifecycleState;
+    private final ApplicationLifecycleState lifecycleState;
+
+    public ApplicationLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The OCID of the user who created the resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerPrincipalId")
-    String ownerPrincipalId;
+    private final String ownerPrincipalId;
+
+    public String getOwnerPrincipalId() {
+        return ownerPrincipalId;
+    }
 
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist,
@@ -262,14 +340,22 @@ public class ApplicationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
-    String ownerUserName;
+    private final String ownerUserName;
+
+    public String getOwnerUserName() {
+        return ownerUserName;
+    }
 
     /**
      * The Spark version utilized to run the application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
-    String sparkVersion;
+    private final String sparkVersion;
+
+    public String getSparkVersion() {
+        return sparkVersion;
+    }
 
     /**
      * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -277,7 +363,11 @@ public class ApplicationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -285,15 +375,106 @@ public class ApplicationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The Spark application processing type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    ApplicationType type;
+    private final ApplicationType type;
+
+    public ApplicationType getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApplicationSummary(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", language=").append(String.valueOf(this.language));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", ownerPrincipalId=").append(String.valueOf(this.ownerPrincipalId));
+        sb.append(", ownerUserName=").append(String.valueOf(this.ownerUserName));
+        sb.append(", sparkVersion=").append(String.valueOf(this.sparkVersion));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApplicationSummary)) {
+            return false;
+        }
+
+        ApplicationSummary other = (ApplicationSummary) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.language, other.language)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.ownerPrincipalId, other.ownerPrincipalId)
+                && java.util.Objects.equals(this.ownerUserName, other.ownerUserName)
+                && java.util.Objects.equals(this.sparkVersion, other.sparkVersion)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ownerPrincipalId == null ? 43 : this.ownerPrincipalId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ownerUserName == null ? 43 : this.ownerUserName.hashCode());
+        result = (result * PRIME) + (this.sparkVersion == null ? 43 : this.sparkVersion.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.containerengine.model;
  * The source type for the node.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.extern.slf4j.Slf4j
 public enum NodeSourceType {
     Image("IMAGE"),
 
@@ -17,6 +16,9 @@ public enum NodeSourceType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(NodeSourceType.class);
 
     private final String value;
     private static java.util.Map<String, NodeSourceType> map;

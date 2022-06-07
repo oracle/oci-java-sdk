@@ -15,16 +15,37 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OrchestrationVariable.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OrchestrationVariable {
+public final class OrchestrationVariable {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "defaultValue",
+        "description",
+        "dataType",
+        "isMandatory",
+        "hintMessage"
+    })
+    public OrchestrationVariable(
+            String name,
+            String defaultValue,
+            String description,
+            OrchestrationVariableTypeEnum dataType,
+            Boolean isMandatory,
+            String hintMessage) {
+        super();
+        this.name = name;
+        this.defaultValue = defaultValue;
+        this.description = description;
+        this.dataType = dataType;
+        this.isMandatory = isMandatory;
+        this.hintMessage = hintMessage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -113,42 +134,124 @@ public class OrchestrationVariable {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the variable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The variable's default value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
-    String defaultValue;
+    private final String defaultValue;
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
 
     /**
      * A description of the variable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The data type of the variable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    OrchestrationVariableTypeEnum dataType;
+    private final OrchestrationVariableTypeEnum dataType;
+
+    public OrchestrationVariableTypeEnum getDataType() {
+        return dataType;
+    }
 
     /**
      * Whether the variable is mandatory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
-    Boolean isMandatory;
+    private final Boolean isMandatory;
+
+    public Boolean getIsMandatory() {
+        return isMandatory;
+    }
 
     /**
      * A brief textual description that helps to explain the variable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hintMessage")
-    String hintMessage;
+    private final String hintMessage;
+
+    public String getHintMessage() {
+        return hintMessage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OrchestrationVariable(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", isMandatory=").append(String.valueOf(this.isMandatory));
+        sb.append(", hintMessage=").append(String.valueOf(this.hintMessage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OrchestrationVariable)) {
+            return false;
+        }
+
+        OrchestrationVariable other = (OrchestrationVariable) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.defaultValue, other.defaultValue)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.isMandatory, other.isMandatory)
+                && java.util.Objects.equals(this.hintMessage, other.hintMessage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.isMandatory == null ? 43 : this.isMandatory.hashCode());
+        result = (result * PRIME) + (this.hintMessage == null ? 43 : this.hintMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

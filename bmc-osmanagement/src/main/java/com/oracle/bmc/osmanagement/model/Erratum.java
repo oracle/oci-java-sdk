@@ -15,14 +15,62 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Erratum.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Erratum {
+public final class Erratum {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "id",
+        "compartmentId",
+        "synopsis",
+        "issued",
+        "description",
+        "updated",
+        "advisoryType",
+        "from",
+        "solution",
+        "references",
+        "affectedInstances",
+        "relatedCves",
+        "softwareSources",
+        "packages"
+    })
+    public Erratum(
+            String name,
+            String id,
+            String compartmentId,
+            String synopsis,
+            String issued,
+            String description,
+            String updated,
+            UpdateTypes advisoryType,
+            String from,
+            String solution,
+            String references,
+            java.util.List<Id> affectedInstances,
+            java.util.List<String> relatedCves,
+            java.util.List<Id> softwareSources,
+            java.util.List<SoftwarePackageSummary> packages) {
+        super();
+        this.name = name;
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.synopsis = synopsis;
+        this.issued = issued;
+        this.description = description;
+        this.updated = updated;
+        this.advisoryType = advisoryType;
+        this.from = from;
+        this.solution = solution;
+        this.references = references;
+        this.affectedInstances = affectedInstances;
+        this.relatedCves = relatedCves;
+        this.softwareSources = softwareSources;
+        this.packages = packages;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -215,96 +263,247 @@ public class Erratum {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Advisory name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * OCID for the Erratum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * OCID for the Compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Summary description of the erratum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
-    String synopsis;
+    private final String synopsis;
+
+    public String getSynopsis() {
+        return synopsis;
+    }
 
     /**
      * date the erratum was issued
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("issued")
-    String issued;
+    private final String issued;
+
+    public String getIssued() {
+        return issued;
+    }
 
     /**
      * Details describing the erratum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * most recent date the erratum was updated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updated")
-    String updated;
+    private final String updated;
+
+    public String getUpdated() {
+        return updated;
+    }
 
     /**
      * Type of the erratum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
-    UpdateTypes advisoryType;
+    private final UpdateTypes advisoryType;
+
+    public UpdateTypes getAdvisoryType() {
+        return advisoryType;
+    }
 
     /**
      * Information specifying from where the erratum was release.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("from")
-    String from;
+    private final String from;
+
+    public String getFrom() {
+        return from;
+    }
 
     /**
      * Information describing how the erratum can be resolved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("solution")
-    String solution;
+    private final String solution;
+
+    public String getSolution() {
+        return solution;
+    }
 
     /**
      * Information describing how to find more information about the erratum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("references")
-    String references;
+    private final String references;
+
+    public String getReferences() {
+        return references;
+    }
 
     /**
      * list of managed instances  to this erratum
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("affectedInstances")
-    java.util.List<Id> affectedInstances;
+    private final java.util.List<Id> affectedInstances;
+
+    public java.util.List<Id> getAffectedInstances() {
+        return affectedInstances;
+    }
 
     /**
      * list of CVEs applicable to this erratum
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
-    java.util.List<String> relatedCves;
+    private final java.util.List<String> relatedCves;
+
+    public java.util.List<String> getRelatedCves() {
+        return relatedCves;
+    }
 
     /**
      * list of Software Sources
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
-    java.util.List<Id> softwareSources;
+    private final java.util.List<Id> softwareSources;
+
+    public java.util.List<Id> getSoftwareSources() {
+        return softwareSources;
+    }
 
     /**
      * list of Packages affected by this erratum
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
-    java.util.List<SoftwarePackageSummary> packages;
+    private final java.util.List<SoftwarePackageSummary> packages;
+
+    public java.util.List<SoftwarePackageSummary> getPackages() {
+        return packages;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Erratum(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", synopsis=").append(String.valueOf(this.synopsis));
+        sb.append(", issued=").append(String.valueOf(this.issued));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", updated=").append(String.valueOf(this.updated));
+        sb.append(", advisoryType=").append(String.valueOf(this.advisoryType));
+        sb.append(", from=").append(String.valueOf(this.from));
+        sb.append(", solution=").append(String.valueOf(this.solution));
+        sb.append(", references=").append(String.valueOf(this.references));
+        sb.append(", affectedInstances=").append(String.valueOf(this.affectedInstances));
+        sb.append(", relatedCves=").append(String.valueOf(this.relatedCves));
+        sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
+        sb.append(", packages=").append(String.valueOf(this.packages));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Erratum)) {
+            return false;
+        }
+
+        Erratum other = (Erratum) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.synopsis, other.synopsis)
+                && java.util.Objects.equals(this.issued, other.issued)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.updated, other.updated)
+                && java.util.Objects.equals(this.advisoryType, other.advisoryType)
+                && java.util.Objects.equals(this.from, other.from)
+                && java.util.Objects.equals(this.solution, other.solution)
+                && java.util.Objects.equals(this.references, other.references)
+                && java.util.Objects.equals(this.affectedInstances, other.affectedInstances)
+                && java.util.Objects.equals(this.relatedCves, other.relatedCves)
+                && java.util.Objects.equals(this.softwareSources, other.softwareSources)
+                && java.util.Objects.equals(this.packages, other.packages)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.synopsis == null ? 43 : this.synopsis.hashCode());
+        result = (result * PRIME) + (this.issued == null ? 43 : this.issued.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.updated == null ? 43 : this.updated.hashCode());
+        result = (result * PRIME) + (this.advisoryType == null ? 43 : this.advisoryType.hashCode());
+        result = (result * PRIME) + (this.from == null ? 43 : this.from.hashCode());
+        result = (result * PRIME) + (this.solution == null ? 43 : this.solution.hashCode());
+        result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.affectedInstances == null ? 43 : this.affectedInstances.hashCode());
+        result = (result * PRIME) + (this.relatedCves == null ? 43 : this.relatedCves.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -6,6 +6,7 @@ package com.oracle.bmc.mysql;
 
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,14 @@ import com.oracle.bmc.mysql.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.RequiredArgsConstructor
 public class ChannelsWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Channels client;
+
+    public ChannelsWaiters(java.util.concurrent.ExecutorService executorService, Channels client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

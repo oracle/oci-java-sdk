@@ -15,16 +15,85 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SecurityAssessmentSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SecurityAssessmentSummary {
+public final class SecurityAssessmentSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "description",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "timeUpdated",
+        "compartmentId",
+        "displayName",
+        "targetIds",
+        "ignoredTargetIds",
+        "ignoredAssessmentIds",
+        "isBaseline",
+        "isDeviatedFromBaseline",
+        "lastComparedBaselineId",
+        "scheduleSecurityAssessmentId",
+        "schedule",
+        "triggeredBy",
+        "link",
+        "type",
+        "statistics",
+        "freeformTags",
+        "definedTags"
+    })
+    public SecurityAssessmentSummary(
+            String id,
+            String description,
+            SecurityAssessmentLifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String compartmentId,
+            String displayName,
+            java.util.List<String> targetIds,
+            java.util.List<Object> ignoredTargetIds,
+            java.util.List<Object> ignoredAssessmentIds,
+            Boolean isBaseline,
+            Boolean isDeviatedFromBaseline,
+            String lastComparedBaselineId,
+            String scheduleSecurityAssessmentId,
+            String schedule,
+            TriggeredBy triggeredBy,
+            String link,
+            Type type,
+            SecurityAssessmentStatistics statistics,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.description = description;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.targetIds = targetIds;
+        this.ignoredTargetIds = ignoredTargetIds;
+        this.ignoredAssessmentIds = ignoredAssessmentIds;
+        this.isBaseline = isBaseline;
+        this.isDeviatedFromBaseline = isDeviatedFromBaseline;
+        this.lastComparedBaselineId = lastComparedBaselineId;
+        this.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
+        this.schedule = schedule;
+        this.triggeredBy = triggeredBy;
+        this.link = link;
+        this.type = type;
+        this.statistics = statistics;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -295,59 +364,99 @@ public class SecurityAssessmentSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the security assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The description of the security assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The current state of the security assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    SecurityAssessmentLifecycleState lifecycleState;
+    private final SecurityAssessmentLifecycleState lifecycleState;
+
+    public SecurityAssessmentLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Details about the current state of the security assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The OCID of the compartment that contains the security assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The display name of the security assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Array of database target OCIDs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
-    java.util.List<String> targetIds;
+    private final java.util.List<String> targetIds;
+
+    public java.util.List<String> getTargetIds() {
+        return targetIds;
+    }
 
     /**
      * List containing maps as values.
@@ -355,7 +464,11 @@ public class SecurityAssessmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ignoredTargetIds")
-    java.util.List<Object> ignoredTargetIds;
+    private final java.util.List<Object> ignoredTargetIds;
+
+    public java.util.List<Object> getIgnoredTargetIds() {
+        return ignoredTargetIds;
+    }
 
     /**
      * List containing maps as values.
@@ -363,31 +476,51 @@ public class SecurityAssessmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ignoredAssessmentIds")
-    java.util.List<Object> ignoredAssessmentIds;
+    private final java.util.List<Object> ignoredAssessmentIds;
+
+    public java.util.List<Object> getIgnoredAssessmentIds() {
+        return ignoredAssessmentIds;
+    }
 
     /**
      * Indicates whether or not the assessment is a baseline assessment. This applied to saved security assessments only.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBaseline")
-    Boolean isBaseline;
+    private final Boolean isBaseline;
+
+    public Boolean getIsBaseline() {
+        return isBaseline;
+    }
 
     /**
      * Indicates whether or not the security assessment deviates from the baseline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeviatedFromBaseline")
-    Boolean isDeviatedFromBaseline;
+    private final Boolean isDeviatedFromBaseline;
+
+    public Boolean getIsDeviatedFromBaseline() {
+        return isDeviatedFromBaseline;
+    }
 
     /**
      * The OCID of the baseline against which the latest assessment was compared.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastComparedBaselineId")
-    String lastComparedBaselineId;
+    private final String lastComparedBaselineId;
+
+    public String getLastComparedBaselineId() {
+        return lastComparedBaselineId;
+    }
 
     /**
      * The OCID of the security assessment that created this scheduled save assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleSecurityAssessmentId")
-    String scheduleSecurityAssessmentId;
+    private final String scheduleSecurityAssessmentId;
+
+    public String getScheduleSecurityAssessmentId() {
+        return scheduleSecurityAssessmentId;
+    }
 
     /**
      * Schedule of the assessment that runs periodically in the specified format: -
@@ -407,11 +540,15 @@ public class SecurityAssessmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedule")
-    String schedule;
+    private final String schedule;
+
+    public String getSchedule() {
+        return schedule;
+    }
+
     /**
      * Indicates whether the security assessment was created by system or by a user.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TriggeredBy {
         User("USER"),
         System("SYSTEM"),
@@ -421,6 +558,9 @@ public class SecurityAssessmentSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TriggeredBy.class);
 
         private final String value;
         private static java.util.Map<String, TriggeredBy> map;
@@ -458,14 +598,23 @@ public class SecurityAssessmentSummary {
      * Indicates whether the security assessment was created by system or by a user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggeredBy")
-    TriggeredBy triggeredBy;
+    private final TriggeredBy triggeredBy;
+
+    public TriggeredBy getTriggeredBy() {
+        return triggeredBy;
+    }
 
     /**
      * The summary of findings for the security assessment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("link")
-    String link;
+    private final String link;
+
+    public String getLink() {
+        return link;
+    }
+
     /**
      * The type of the security assessment. Possible values are:
      * <p>
@@ -476,7 +625,6 @@ public class SecurityAssessmentSummary {
      * This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Latest("LATEST"),
         Saved("SAVED"),
@@ -488,6 +636,8 @@ public class SecurityAssessmentSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -531,10 +681,18 @@ public class SecurityAssessmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
-    SecurityAssessmentStatistics statistics;
+    private final SecurityAssessmentStatistics statistics;
+
+    public SecurityAssessmentStatistics getStatistics() {
+        return statistics;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -543,7 +701,11 @@ public class SecurityAssessmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -552,8 +714,142 @@ public class SecurityAssessmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecurityAssessmentSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", targetIds=").append(String.valueOf(this.targetIds));
+        sb.append(", ignoredTargetIds=").append(String.valueOf(this.ignoredTargetIds));
+        sb.append(", ignoredAssessmentIds=").append(String.valueOf(this.ignoredAssessmentIds));
+        sb.append(", isBaseline=").append(String.valueOf(this.isBaseline));
+        sb.append(", isDeviatedFromBaseline=").append(String.valueOf(this.isDeviatedFromBaseline));
+        sb.append(", lastComparedBaselineId=").append(String.valueOf(this.lastComparedBaselineId));
+        sb.append(", scheduleSecurityAssessmentId=")
+                .append(String.valueOf(this.scheduleSecurityAssessmentId));
+        sb.append(", schedule=").append(String.valueOf(this.schedule));
+        sb.append(", triggeredBy=").append(String.valueOf(this.triggeredBy));
+        sb.append(", link=").append(String.valueOf(this.link));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", statistics=").append(String.valueOf(this.statistics));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecurityAssessmentSummary)) {
+            return false;
+        }
+
+        SecurityAssessmentSummary other = (SecurityAssessmentSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.targetIds, other.targetIds)
+                && java.util.Objects.equals(this.ignoredTargetIds, other.ignoredTargetIds)
+                && java.util.Objects.equals(this.ignoredAssessmentIds, other.ignoredAssessmentIds)
+                && java.util.Objects.equals(this.isBaseline, other.isBaseline)
+                && java.util.Objects.equals(
+                        this.isDeviatedFromBaseline, other.isDeviatedFromBaseline)
+                && java.util.Objects.equals(
+                        this.lastComparedBaselineId, other.lastComparedBaselineId)
+                && java.util.Objects.equals(
+                        this.scheduleSecurityAssessmentId, other.scheduleSecurityAssessmentId)
+                && java.util.Objects.equals(this.schedule, other.schedule)
+                && java.util.Objects.equals(this.triggeredBy, other.triggeredBy)
+                && java.util.Objects.equals(this.link, other.link)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.statistics, other.statistics)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ignoredTargetIds == null ? 43 : this.ignoredTargetIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ignoredAssessmentIds == null
+                                ? 43
+                                : this.ignoredAssessmentIds.hashCode());
+        result = (result * PRIME) + (this.isBaseline == null ? 43 : this.isBaseline.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDeviatedFromBaseline == null
+                                ? 43
+                                : this.isDeviatedFromBaseline.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastComparedBaselineId == null
+                                ? 43
+                                : this.lastComparedBaselineId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduleSecurityAssessmentId == null
+                                ? 43
+                                : this.scheduleSecurityAssessmentId.hashCode());
+        result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
+        result = (result * PRIME) + (this.triggeredBy == null ? 43 : this.triggeredBy.hashCode());
+        result = (result * PRIME) + (this.link == null ? 43 : this.link.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.statistics == null ? 43 : this.statistics.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,50 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ShapePlatformConfigOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ShapePlatformConfigOptions {
+public final class ShapePlatformConfigOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "type",
+        "secureBootOptions",
+        "measuredBootOptions",
+        "trustedPlatformModuleOptions",
+        "numaNodesPerSocketPlatformOptions",
+        "symmetricMultiThreadingOptions",
+        "accessControlServiceOptions",
+        "virtualInstructionsOptions",
+        "inputOutputMemoryManagementUnitOptions",
+        "percentageOfCoresEnabledOptions"
+    })
+    public ShapePlatformConfigOptions(
+            Type type,
+            ShapeSecureBootOptions secureBootOptions,
+            ShapeMeasuredBootOptions measuredBootOptions,
+            ShapeTrustedPlatformModuleOptions trustedPlatformModuleOptions,
+            ShapeNumaNodesPerSocketPlatformOptions numaNodesPerSocketPlatformOptions,
+            ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions,
+            ShapeAccessControlServiceEnabledPlatformOptions accessControlServiceOptions,
+            ShapeVirtualInstructionsEnabledPlatformOptions virtualInstructionsOptions,
+            ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+                    inputOutputMemoryManagementUnitOptions,
+            PercentageOfCoresEnabledOptions percentageOfCoresEnabledOptions) {
+        super();
+        this.type = type;
+        this.secureBootOptions = secureBootOptions;
+        this.measuredBootOptions = measuredBootOptions;
+        this.trustedPlatformModuleOptions = trustedPlatformModuleOptions;
+        this.numaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
+        this.symmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
+        this.accessControlServiceOptions = accessControlServiceOptions;
+        this.virtualInstructionsOptions = virtualInstructionsOptions;
+        this.inputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
+        this.percentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -175,11 +209,14 @@ public class ShapePlatformConfigOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of platform being configured.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
         AmdRomeBm("AMD_ROME_BM"),
@@ -194,6 +231,8 @@ public class ShapePlatformConfigOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -231,36 +270,193 @@ public class ShapePlatformConfigOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("secureBootOptions")
-    ShapeSecureBootOptions secureBootOptions;
+    private final ShapeSecureBootOptions secureBootOptions;
+
+    public ShapeSecureBootOptions getSecureBootOptions() {
+        return secureBootOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("measuredBootOptions")
-    ShapeMeasuredBootOptions measuredBootOptions;
+    private final ShapeMeasuredBootOptions measuredBootOptions;
+
+    public ShapeMeasuredBootOptions getMeasuredBootOptions() {
+        return measuredBootOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("trustedPlatformModuleOptions")
-    ShapeTrustedPlatformModuleOptions trustedPlatformModuleOptions;
+    private final ShapeTrustedPlatformModuleOptions trustedPlatformModuleOptions;
+
+    public ShapeTrustedPlatformModuleOptions getTrustedPlatformModuleOptions() {
+        return trustedPlatformModuleOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocketPlatformOptions")
-    ShapeNumaNodesPerSocketPlatformOptions numaNodesPerSocketPlatformOptions;
+    private final ShapeNumaNodesPerSocketPlatformOptions numaNodesPerSocketPlatformOptions;
+
+    public ShapeNumaNodesPerSocketPlatformOptions getNumaNodesPerSocketPlatformOptions() {
+        return numaNodesPerSocketPlatformOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("symmetricMultiThreadingOptions")
-    ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions;
+    private final ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions;
+
+    public ShapeSymmetricMultiThreadingEnabledPlatformOptions getSymmetricMultiThreadingOptions() {
+        return symmetricMultiThreadingOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("accessControlServiceOptions")
-    ShapeAccessControlServiceEnabledPlatformOptions accessControlServiceOptions;
+    private final ShapeAccessControlServiceEnabledPlatformOptions accessControlServiceOptions;
+
+    public ShapeAccessControlServiceEnabledPlatformOptions getAccessControlServiceOptions() {
+        return accessControlServiceOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("virtualInstructionsOptions")
-    ShapeVirtualInstructionsEnabledPlatformOptions virtualInstructionsOptions;
+    private final ShapeVirtualInstructionsEnabledPlatformOptions virtualInstructionsOptions;
+
+    public ShapeVirtualInstructionsEnabledPlatformOptions getVirtualInstructionsOptions() {
+        return virtualInstructionsOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("inputOutputMemoryManagementUnitOptions")
-    ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+    private final ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
             inputOutputMemoryManagementUnitOptions;
 
+    public ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+            getInputOutputMemoryManagementUnitOptions() {
+        return inputOutputMemoryManagementUnitOptions;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabledOptions")
-    PercentageOfCoresEnabledOptions percentageOfCoresEnabledOptions;
+    private final PercentageOfCoresEnabledOptions percentageOfCoresEnabledOptions;
+
+    public PercentageOfCoresEnabledOptions getPercentageOfCoresEnabledOptions() {
+        return percentageOfCoresEnabledOptions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ShapePlatformConfigOptions(");
+        sb.append("type=").append(String.valueOf(this.type));
+        sb.append(", secureBootOptions=").append(String.valueOf(this.secureBootOptions));
+        sb.append(", measuredBootOptions=").append(String.valueOf(this.measuredBootOptions));
+        sb.append(", trustedPlatformModuleOptions=")
+                .append(String.valueOf(this.trustedPlatformModuleOptions));
+        sb.append(", numaNodesPerSocketPlatformOptions=")
+                .append(String.valueOf(this.numaNodesPerSocketPlatformOptions));
+        sb.append(", symmetricMultiThreadingOptions=")
+                .append(String.valueOf(this.symmetricMultiThreadingOptions));
+        sb.append(", accessControlServiceOptions=")
+                .append(String.valueOf(this.accessControlServiceOptions));
+        sb.append(", virtualInstructionsOptions=")
+                .append(String.valueOf(this.virtualInstructionsOptions));
+        sb.append(", inputOutputMemoryManagementUnitOptions=")
+                .append(String.valueOf(this.inputOutputMemoryManagementUnitOptions));
+        sb.append(", percentageOfCoresEnabledOptions=")
+                .append(String.valueOf(this.percentageOfCoresEnabledOptions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ShapePlatformConfigOptions)) {
+            return false;
+        }
+
+        ShapePlatformConfigOptions other = (ShapePlatformConfigOptions) o;
+        return java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.secureBootOptions, other.secureBootOptions)
+                && java.util.Objects.equals(this.measuredBootOptions, other.measuredBootOptions)
+                && java.util.Objects.equals(
+                        this.trustedPlatformModuleOptions, other.trustedPlatformModuleOptions)
+                && java.util.Objects.equals(
+                        this.numaNodesPerSocketPlatformOptions,
+                        other.numaNodesPerSocketPlatformOptions)
+                && java.util.Objects.equals(
+                        this.symmetricMultiThreadingOptions, other.symmetricMultiThreadingOptions)
+                && java.util.Objects.equals(
+                        this.accessControlServiceOptions, other.accessControlServiceOptions)
+                && java.util.Objects.equals(
+                        this.virtualInstructionsOptions, other.virtualInstructionsOptions)
+                && java.util.Objects.equals(
+                        this.inputOutputMemoryManagementUnitOptions,
+                        other.inputOutputMemoryManagementUnitOptions)
+                && java.util.Objects.equals(
+                        this.percentageOfCoresEnabledOptions, other.percentageOfCoresEnabledOptions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secureBootOptions == null ? 43 : this.secureBootOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.measuredBootOptions == null
+                                ? 43
+                                : this.measuredBootOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustedPlatformModuleOptions == null
+                                ? 43
+                                : this.trustedPlatformModuleOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numaNodesPerSocketPlatformOptions == null
+                                ? 43
+                                : this.numaNodesPerSocketPlatformOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.symmetricMultiThreadingOptions == null
+                                ? 43
+                                : this.symmetricMultiThreadingOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accessControlServiceOptions == null
+                                ? 43
+                                : this.accessControlServiceOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualInstructionsOptions == null
+                                ? 43
+                                : this.virtualInstructionsOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inputOutputMemoryManagementUnitOptions == null
+                                ? 43
+                                : this.inputOutputMemoryManagementUnitOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentageOfCoresEnabledOptions == null
+                                ? 43
+                                : this.percentageOfCoresEnabledOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

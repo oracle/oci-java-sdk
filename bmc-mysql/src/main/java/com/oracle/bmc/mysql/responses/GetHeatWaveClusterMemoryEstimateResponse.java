@@ -7,10 +7,6 @@ package com.oracle.bmc.mysql.responses;
 import com.oracle.bmc.mysql.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetHeatWaveClusterMemoryEstimateResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,19 @@ public class GetHeatWaveClusterMemoryEstimateResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned HeatWaveClusterMemoryEstimate instance.
      */
     private com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate heatWaveClusterMemoryEstimate;
+
+    public com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate
+            getHeatWaveClusterMemoryEstimate() {
+        return heatWaveClusterMemoryEstimate;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -47,6 +52,23 @@ public class GetHeatWaveClusterMemoryEstimateResponse extends com.oracle.bmc.res
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate
+                heatWaveClusterMemoryEstimate;
+
+        public Builder heatWaveClusterMemoryEstimate(
+                com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate
+                        heatWaveClusterMemoryEstimate) {
+            this.heatWaveClusterMemoryEstimate = heatWaveClusterMemoryEstimate;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -63,5 +85,51 @@ public class GetHeatWaveClusterMemoryEstimateResponse extends com.oracle.bmc.res
             return new GetHeatWaveClusterMemoryEstimateResponse(
                     __httpStatusCode__, opcRequestId, heatWaveClusterMemoryEstimate);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",heatWaveClusterMemoryEstimate=")
+                .append(String.valueOf(heatWaveClusterMemoryEstimate));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetHeatWaveClusterMemoryEstimateResponse)) {
+            return false;
+        }
+
+        GetHeatWaveClusterMemoryEstimateResponse other =
+                (GetHeatWaveClusterMemoryEstimateResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.heatWaveClusterMemoryEstimate, other.heatWaveClusterMemoryEstimate);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveClusterMemoryEstimate == null
+                                ? 43
+                                : this.heatWaveClusterMemoryEstimate.hashCode());
+        return result;
     }
 }

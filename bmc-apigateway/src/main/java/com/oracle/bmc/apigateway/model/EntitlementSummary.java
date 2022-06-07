@@ -16,16 +16,22 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = EntitlementSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EntitlementSummary {
+public final class EntitlementSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "description", "rateLimit", "quota"})
+    public EntitlementSummary(String name, String description, RateLimit rateLimit, Quota quota) {
+        super();
+        this.name = name;
+        this.description = description;
+        this.rateLimit = rateLimit;
+        this.quota = quota;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -93,12 +99,20 @@ public class EntitlementSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An entitlement name, unique within a usage plan.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A user-friendly description. To provide some insight about the resource.
@@ -106,14 +120,74 @@ public class EntitlementSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("rateLimit")
-    RateLimit rateLimit;
+    private final RateLimit rateLimit;
+
+    public RateLimit getRateLimit() {
+        return rateLimit;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("quota")
-    Quota quota;
+    private final Quota quota;
+
+    public Quota getQuota() {
+        return quota;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EntitlementSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", rateLimit=").append(String.valueOf(this.rateLimit));
+        sb.append(", quota=").append(String.valueOf(this.quota));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EntitlementSummary)) {
+            return false;
+        }
+
+        EntitlementSummary other = (EntitlementSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.rateLimit, other.rateLimit)
+                && java.util.Objects.equals(this.quota, other.quota)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.rateLimit == null ? 43 : this.rateLimit.hashCode());
+        result = (result * PRIME) + (this.quota == null ? 43 : this.quota.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

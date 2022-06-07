@@ -16,22 +16,17 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DestroyJobOperationDetailsSummary.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "operation"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DestroyJobOperationDetailsSummary extends JobOperationDetailsSummary {
+public final class DestroyJobOperationDetailsSummary extends JobOperationDetailsSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
@@ -69,6 +64,10 @@ public class DestroyJobOperationDetailsSummary extends JobOperationDetailsSummar
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DestroyJobOperationDetailsSummary(
             DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy) {
@@ -83,8 +82,57 @@ public class DestroyJobOperationDetailsSummary extends JobOperationDetailsSummar
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
-    DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
+    private final DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
+
+    public DestroyJobOperationDetails.ExecutionPlanStrategy getExecutionPlanStrategy() {
+        return executionPlanStrategy;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DestroyJobOperationDetailsSummary(");
+        sb.append("super=").append(super.toString());
+        sb.append(", executionPlanStrategy=").append(String.valueOf(this.executionPlanStrategy));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DestroyJobOperationDetailsSummary)) {
+            return false;
+        }
+
+        DestroyJobOperationDetailsSummary other = (DestroyJobOperationDetailsSummary) o;
+        return java.util.Objects.equals(this.executionPlanStrategy, other.executionPlanStrategy)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.executionPlanStrategy == null
+                                ? 43
+                                : this.executionPlanStrategy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

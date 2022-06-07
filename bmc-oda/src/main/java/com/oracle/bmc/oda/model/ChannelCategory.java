@@ -8,7 +8,6 @@ package com.oracle.bmc.oda.model;
  * The valid set of Categories for a Channel.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.extern.slf4j.Slf4j
 public enum ChannelCategory {
     Agent("AGENT"),
     Application("APPLICATION"),
@@ -22,6 +21,9 @@ public enum ChannelCategory {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ChannelCategory.class);
 
     private final String value;
     private static java.util.Map<String, ChannelCategory> map;

@@ -9,14 +9,6 @@ import com.oracle.bmc.apmconfig.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/CreateConfigExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateConfigRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.apmconfig.model.CreateConfigDetails> {
@@ -27,11 +19,17 @@ public class CreateConfigRequest
      */
     private String apmDomainId;
 
+    public String getApmDomainId() {
+        return apmDomainId;
+    }
     /**
      * The configuration details of the new item.
      */
     private com.oracle.bmc.apmconfig.model.CreateConfigDetails createConfigDetails;
 
+    public com.oracle.bmc.apmconfig.model.CreateConfigDetails getCreateConfigDetails() {
+        return createConfigDetails;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -42,6 +40,9 @@ public class CreateConfigRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -49,12 +50,19 @@ public class CreateConfigRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
      * configuration item details and is used only to perform validation on the submitted data.
      *
      */
     private String opcDryRun;
+
+    public String getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -72,6 +80,72 @@ public class CreateConfigRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String apmDomainId = null;
+
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         * @return this builder instance
+         */
+        public Builder apmDomainId(String apmDomainId) {
+            this.apmDomainId = apmDomainId;
+            return this;
+        }
+
+        private com.oracle.bmc.apmconfig.model.CreateConfigDetails createConfigDetails = null;
+
+        /**
+         * The configuration details of the new item.
+         * @return this builder instance
+         */
+        public Builder createConfigDetails(
+                com.oracle.bmc.apmconfig.model.CreateConfigDetails createConfigDetails) {
+            this.createConfigDetails = createConfigDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+         * configuration item details and is used only to perform validation on the submitted data.
+         *
+         * @return this builder instance
+         */
+        public Builder opcDryRun(String opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -138,5 +212,90 @@ public class CreateConfigRequest
             createConfigDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateConfigRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateConfigRequest
+         */
+        public CreateConfigRequest buildWithoutInvocationCallback() {
+            CreateConfigRequest request = new CreateConfigRequest();
+            request.apmDomainId = apmDomainId;
+            request.createConfigDetails = createConfigDetails;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
+            return request;
+            // new CreateConfigRequest(apmDomainId, createConfigDetails, opcRetryToken, opcRequestId, opcDryRun);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .apmDomainId(apmDomainId)
+                .createConfigDetails(createConfigDetails)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
+        sb.append(",createConfigDetails=").append(String.valueOf(this.createConfigDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateConfigRequest)) {
+            return false;
+        }
+
+        CreateConfigRequest other = (CreateConfigRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
+                && java.util.Objects.equals(this.createConfigDetails, other.createConfigDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createConfigDetails == null
+                                ? 43
+                                : this.createConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
+        return result;
     }
 }

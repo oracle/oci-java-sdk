@@ -16,16 +16,19 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DetectStackDriftDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DetectStackDriftDetails {
+public final class DetectStackDriftDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"resourceAddresses"})
+    public DetectStackDriftDetails(java.util.List<String> resourceAddresses) {
+        super();
+        this.resourceAddresses = resourceAddresses;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAddresses")
         private java.util.List<String> resourceAddresses;
@@ -61,6 +64,10 @@ public class DetectStackDriftDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
      * which is a string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
@@ -69,8 +76,53 @@ public class DetectStackDriftDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAddresses")
-    java.util.List<String> resourceAddresses;
+    private final java.util.List<String> resourceAddresses;
+
+    public java.util.List<String> getResourceAddresses() {
+        return resourceAddresses;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DetectStackDriftDetails(");
+        sb.append("resourceAddresses=").append(String.valueOf(this.resourceAddresses));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetectStackDriftDetails)) {
+            return false;
+        }
+
+        DetectStackDriftDetails other = (DetectStackDriftDetails) o;
+        return java.util.Objects.equals(this.resourceAddresses, other.resourceAddresses)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.resourceAddresses == null ? 43 : this.resourceAddresses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

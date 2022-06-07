@@ -9,14 +9,6 @@ import com.oracle.bmc.apmtraces.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetSpanExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSpanRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,18 +17,27 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String apmDomainId;
 
+    public String getApmDomainId() {
+        return apmDomainId;
+    }
     /**
      * Unique Application Performance Monitoring span identifier (spanId).
      *
      */
     private String spanKey;
 
+    public String getSpanKey() {
+        return spanKey;
+    }
     /**
      * Unique Application Performance Monitoring trace identifier (traceId).
      *
      */
     private String traceKey;
 
+    public String getTraceKey() {
+        return traceKey;
+    }
     /**
      * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -44,11 +45,64 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetSpanRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String apmDomainId = null;
+
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         * @return this builder instance
+         */
+        public Builder apmDomainId(String apmDomainId) {
+            this.apmDomainId = apmDomainId;
+            return this;
+        }
+
+        private String spanKey = null;
+
+        /**
+         * Unique Application Performance Monitoring span identifier (spanId).
+         *
+         * @return this builder instance
+         */
+        public Builder spanKey(String spanKey) {
+            this.spanKey = spanKey;
+            return this;
+        }
+
+        private String traceKey = null;
+
+        /**
+         * Unique Application Performance Monitoring trace identifier (traceId).
+         *
+         * @return this builder instance
+         */
+        public Builder traceKey(String traceKey) {
+            this.traceKey = traceKey;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -103,5 +157,79 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetSpanRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetSpanRequest
+         */
+        public GetSpanRequest buildWithoutInvocationCallback() {
+            GetSpanRequest request = new GetSpanRequest();
+            request.apmDomainId = apmDomainId;
+            request.spanKey = spanKey;
+            request.traceKey = traceKey;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetSpanRequest(apmDomainId, spanKey, traceKey, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .apmDomainId(apmDomainId)
+                .spanKey(spanKey)
+                .traceKey(traceKey)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
+        sb.append(",spanKey=").append(String.valueOf(this.spanKey));
+        sb.append(",traceKey=").append(String.valueOf(this.traceKey));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetSpanRequest)) {
+            return false;
+        }
+
+        GetSpanRequest other = (GetSpanRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
+                && java.util.Objects.equals(this.spanKey, other.spanKey)
+                && java.util.Objects.equals(this.traceKey, other.traceKey)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
+        result = (result * PRIME) + (this.spanKey == null ? 43 : this.spanKey.hashCode());
+        result = (result * PRIME) + (this.traceKey == null ? 43 : this.traceKey.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -15,22 +15,17 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateSlackChannelDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateSlackChannelDetails extends UpdateChannelDetails {
+public final class UpdateSlackChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -171,6 +166,10 @@ public class UpdateSlackChannelDetails extends UpdateChannelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateSlackChannelDetails(
             String description,
@@ -196,38 +195,122 @@ public class UpdateSlackChannelDetails extends UpdateChannelDetails {
      * The Slack Client Id for the Slack app.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
-    String clientId;
+    private final String clientId;
+
+    public String getClientId() {
+        return clientId;
+    }
 
     /**
      * The URL to redirect to when authentication is successful.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authSuccessUrl")
-    String authSuccessUrl;
+    private final String authSuccessUrl;
+
+    public String getAuthSuccessUrl() {
+        return authSuccessUrl;
+    }
 
     /**
      * The URL to redirect to when authentication is unsuccessful.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authErrorUrl")
-    String authErrorUrl;
+    private final String authErrorUrl;
+
+    public String getAuthErrorUrl() {
+        return authErrorUrl;
+    }
 
     /**
      * The Signing Secret for the Slack App.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingSecret")
-    String signingSecret;
+    private final String signingSecret;
+
+    public String getSigningSecret() {
+        return signingSecret;
+    }
 
     /**
      * The Client Secret for the Slack App.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    String clientSecret;
+    private final String clientSecret;
+
+    public String getClientSecret() {
+        return clientSecret;
+    }
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
-    String botId;
+    private final String botId;
+
+    public String getBotId() {
+        return botId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateSlackChannelDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", clientId=").append(String.valueOf(this.clientId));
+        sb.append(", authSuccessUrl=").append(String.valueOf(this.authSuccessUrl));
+        sb.append(", authErrorUrl=").append(String.valueOf(this.authErrorUrl));
+        sb.append(", signingSecret=").append(String.valueOf(this.signingSecret));
+        sb.append(", clientSecret=").append(String.valueOf(this.clientSecret));
+        sb.append(", botId=").append(String.valueOf(this.botId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSlackChannelDetails)) {
+            return false;
+        }
+
+        UpdateSlackChannelDetails other = (UpdateSlackChannelDetails) o;
+        return java.util.Objects.equals(this.clientId, other.clientId)
+                && java.util.Objects.equals(this.authSuccessUrl, other.authSuccessUrl)
+                && java.util.Objects.equals(this.authErrorUrl, other.authErrorUrl)
+                && java.util.Objects.equals(this.signingSecret, other.signingSecret)
+                && java.util.Objects.equals(this.clientSecret, other.clientSecret)
+                && java.util.Objects.equals(this.botId, other.botId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authSuccessUrl == null ? 43 : this.authSuccessUrl.hashCode());
+        result = (result * PRIME) + (this.authErrorUrl == null ? 43 : this.authErrorUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signingSecret == null ? 43 : this.signingSecret.hashCode());
+        result = (result * PRIME) + (this.clientSecret == null ? 43 : this.clientSecret.hashCode());
+        result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,46 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CredentialAuthenticatorInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CredentialAuthenticatorInfo {
+public final class CredentialAuthenticatorInfo {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "rawCredential",
+        "userId",
+        "tenantId",
+        "userName",
+        "tenantName",
+        "credentialIdentifier",
+        "credentialList",
+        "service",
+        "clientId"
+    })
+    public CredentialAuthenticatorInfo(
+            String rawCredential,
+            String userId,
+            String tenantId,
+            String userName,
+            String tenantName,
+            String credentialIdentifier,
+            java.util.List<String> credentialList,
+            String service,
+            String clientId) {
+        super();
+        this.rawCredential = rawCredential;
+        this.userId = userId;
+        this.tenantId = tenantId;
+        this.userName = userName;
+        this.tenantName = tenantName;
+        this.credentialIdentifier = credentialIdentifier;
+        this.credentialList = credentialList;
+        this.service = service;
+        this.clientId = clientId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("rawCredential")
         private String rawCredential;
@@ -151,60 +181,171 @@ public class CredentialAuthenticatorInfo {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The raw credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rawCredential")
-    String rawCredential;
+    private final String rawCredential;
+
+    public String getRawCredential() {
+        return rawCredential;
+    }
 
     /**
      * The id of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * The id of the tenant.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * The name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * The name of the tenant.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
-    String tenantName;
+    private final String tenantName;
+
+    public String getTenantName() {
+        return tenantName;
+    }
 
     /**
      * The credential identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialIdentifier")
-    String credentialIdentifier;
+    private final String credentialIdentifier;
+
+    public String getCredentialIdentifier() {
+        return credentialIdentifier;
+    }
 
     /**
      * The credential list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialList")
-    java.util.List<String> credentialList;
+    private final java.util.List<String> credentialList;
+
+    public java.util.List<String> getCredentialList() {
+        return credentialList;
+    }
 
     /**
      * The name of the service that is making this authorization request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
-    String service;
+    private final String service;
+
+    public String getService() {
+        return service;
+    }
 
     /**
      * The id of the client.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
-    String clientId;
+    private final String clientId;
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CredentialAuthenticatorInfo(");
+        sb.append("rawCredential=").append(String.valueOf(this.rawCredential));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", tenantName=").append(String.valueOf(this.tenantName));
+        sb.append(", credentialIdentifier=").append(String.valueOf(this.credentialIdentifier));
+        sb.append(", credentialList=").append(String.valueOf(this.credentialList));
+        sb.append(", service=").append(String.valueOf(this.service));
+        sb.append(", clientId=").append(String.valueOf(this.clientId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CredentialAuthenticatorInfo)) {
+            return false;
+        }
+
+        CredentialAuthenticatorInfo other = (CredentialAuthenticatorInfo) o;
+        return java.util.Objects.equals(this.rawCredential, other.rawCredential)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.tenantName, other.tenantName)
+                && java.util.Objects.equals(this.credentialIdentifier, other.credentialIdentifier)
+                && java.util.Objects.equals(this.credentialList, other.credentialList)
+                && java.util.Objects.equals(this.service, other.service)
+                && java.util.Objects.equals(this.clientId, other.clientId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.rawCredential == null ? 43 : this.rawCredential.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.tenantName == null ? 43 : this.tenantName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialIdentifier == null
+                                ? 43
+                                : this.credentialIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialList == null ? 43 : this.credentialList.hashCode());
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

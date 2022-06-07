@@ -19,14 +19,83 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vtap.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Vtap {
+public final class Vtap {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "vcnId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "lifecycleState",
+        "lifecycleStateDetails",
+        "timeCreated",
+        "sourceId",
+        "targetId",
+        "targetIp",
+        "captureFilterId",
+        "encapsulationProtocol",
+        "vxlanNetworkIdentifier",
+        "isVtapEnabled",
+        "sourceType",
+        "trafficMode",
+        "maxPacketSize",
+        "targetType",
+        "sourcePrivateEndpointIp",
+        "sourcePrivateEndpointSubnetId"
+    })
+    public Vtap(
+            String compartmentId,
+            String vcnId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            LifecycleState lifecycleState,
+            LifecycleStateDetails lifecycleStateDetails,
+            java.util.Date timeCreated,
+            String sourceId,
+            String targetId,
+            String targetIp,
+            String captureFilterId,
+            EncapsulationProtocol encapsulationProtocol,
+            Long vxlanNetworkIdentifier,
+            Boolean isVtapEnabled,
+            SourceType sourceType,
+            TrafficMode trafficMode,
+            Integer maxPacketSize,
+            TargetType targetType,
+            String sourcePrivateEndpointIp,
+            String sourcePrivateEndpointSubnetId) {
+        super();
+        this.compartmentId = compartmentId;
+        this.vcnId = vcnId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleStateDetails = lifecycleStateDetails;
+        this.timeCreated = timeCreated;
+        this.sourceId = sourceId;
+        this.targetId = targetId;
+        this.targetIp = targetIp;
+        this.captureFilterId = captureFilterId;
+        this.encapsulationProtocol = encapsulationProtocol;
+        this.vxlanNetworkIdentifier = vxlanNetworkIdentifier;
+        this.isVtapEnabled = isVtapEnabled;
+        this.sourceType = sourceType;
+        this.trafficMode = trafficMode;
+        this.maxPacketSize = maxPacketSize;
+        this.targetType = targetType;
+        this.sourcePrivateEndpointIp = sourcePrivateEndpointIp;
+        this.sourcePrivateEndpointSubnetId = sourcePrivateEndpointSubnetId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -297,17 +366,29 @@ public class Vtap {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code Vtap} resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the {@code Vtap} resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    String vcnId;
+    private final String vcnId;
+
+    public String getVcnId() {
+        return vcnId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -317,7 +398,11 @@ public class Vtap {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -325,7 +410,11 @@ public class Vtap {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -335,17 +424,25 @@ public class Vtap {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The VTAP's administrative lifecycle state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -358,6 +455,9 @@ public class Vtap {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -395,11 +495,15 @@ public class Vtap {
      * The VTAP's administrative lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     /**
      * The VTAP's current running state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleStateDetails {
         Running("RUNNING"),
         Stopped("STOPPED"),
@@ -409,6 +513,9 @@ public class Vtap {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleStateDetails.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleStateDetails> map;
@@ -446,7 +553,11 @@ public class Vtap {
      * The VTAP's current running state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
-    LifecycleStateDetails lifecycleStateDetails;
+    private final LifecycleStateDetails lifecycleStateDetails;
+
+    public LifecycleStateDetails getLifecycleStateDetails() {
+        return lifecycleStateDetails;
+    }
 
     /**
      * The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -455,40 +566,60 @@ public class Vtap {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    String sourceId;
+    private final String sourceId;
+
+    public String getSourceId() {
+        return sourceId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The IP address of the destination resource where mirrored packets are sent.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetIp")
-    String targetIp;
+    private final String targetIp;
+
+    public String getTargetIp() {
+        return targetIp;
+    }
 
     /**
      * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captureFilterId")
-    String captureFilterId;
+    private final String captureFilterId;
+
+    public String getCaptureFilterId() {
+        return captureFilterId;
+    }
+
     /**
      * Defines an encapsulation header type for the VTAP's mirrored traffic.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EncapsulationProtocol {
         Vxlan("VXLAN"),
 
@@ -497,6 +628,9 @@ public class Vtap {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EncapsulationProtocol.class);
 
         private final String value;
         private static java.util.Map<String, EncapsulationProtocol> map;
@@ -535,14 +669,22 @@ public class Vtap {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encapsulationProtocol")
-    EncapsulationProtocol encapsulationProtocol;
+    private final EncapsulationProtocol encapsulationProtocol;
+
+    public EncapsulationProtocol getEncapsulationProtocol() {
+        return encapsulationProtocol;
+    }
 
     /**
      * The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vxlanNetworkIdentifier")
-    Long vxlanNetworkIdentifier;
+    private final Long vxlanNetworkIdentifier;
+
+    public Long getVxlanNetworkIdentifier() {
+        return vxlanNetworkIdentifier;
+    }
 
     /**
      * Used to start or stop a {@code Vtap} resource.
@@ -552,12 +694,16 @@ public class Vtap {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isVtapEnabled")
-    Boolean isVtapEnabled;
+    private final Boolean isVtapEnabled;
+
+    public Boolean getIsVtapEnabled() {
+        return isVtapEnabled;
+    }
+
     /**
      * The source type for the VTAP.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SourceType {
         Vnic("VNIC"),
         Subnet("SUBNET"),
@@ -571,6 +717,9 @@ public class Vtap {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SourceType.class);
 
         private final String value;
         private static java.util.Map<String, SourceType> map;
@@ -609,11 +758,15 @@ public class Vtap {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
-    SourceType sourceType;
+    private final SourceType sourceType;
+
+    public SourceType getSourceType() {
+        return sourceType;
+    }
+
     /**
      * Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TrafficMode {
         Default("DEFAULT"),
         Priority("PRIORITY"),
@@ -623,6 +776,9 @@ public class Vtap {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TrafficMode.class);
 
         private final String value;
         private static java.util.Map<String, TrafficMode> map;
@@ -660,18 +816,26 @@ public class Vtap {
      * Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
-    TrafficMode trafficMode;
+    private final TrafficMode trafficMode;
+
+    public TrafficMode getTrafficMode() {
+        return trafficMode;
+    }
 
     /**
      * The maximum size of the packets to be included in the filter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPacketSize")
-    Integer maxPacketSize;
+    private final Integer maxPacketSize;
+
+    public Integer getMaxPacketSize() {
+        return maxPacketSize;
+    }
+
     /**
      * The target type for the VTAP.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TargetType {
         Vnic("VNIC"),
         NetworkLoadBalancer("NETWORK_LOAD_BALANCER"),
@@ -682,6 +846,9 @@ public class Vtap {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TargetType.class);
 
         private final String value;
         private static java.util.Map<String, TargetType> map;
@@ -720,22 +887,171 @@ public class Vtap {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetType")
-    TargetType targetType;
+    private final TargetType targetType;
+
+    public TargetType getTargetType() {
+        return targetType;
+    }
 
     /**
      * The IP Address of the source private endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePrivateEndpointIp")
-    String sourcePrivateEndpointIp;
+    private final String sourcePrivateEndpointIp;
+
+    public String getSourcePrivateEndpointIp() {
+        return sourcePrivateEndpointIp;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePrivateEndpointSubnetId")
-    String sourcePrivateEndpointSubnetId;
+    private final String sourcePrivateEndpointSubnetId;
+
+    public String getSourcePrivateEndpointSubnetId() {
+        return sourcePrivateEndpointSubnetId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Vtap(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", targetIp=").append(String.valueOf(this.targetIp));
+        sb.append(", captureFilterId=").append(String.valueOf(this.captureFilterId));
+        sb.append(", encapsulationProtocol=").append(String.valueOf(this.encapsulationProtocol));
+        sb.append(", vxlanNetworkIdentifier=").append(String.valueOf(this.vxlanNetworkIdentifier));
+        sb.append(", isVtapEnabled=").append(String.valueOf(this.isVtapEnabled));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", trafficMode=").append(String.valueOf(this.trafficMode));
+        sb.append(", maxPacketSize=").append(String.valueOf(this.maxPacketSize));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
+        sb.append(", sourcePrivateEndpointIp=")
+                .append(String.valueOf(this.sourcePrivateEndpointIp));
+        sb.append(", sourcePrivateEndpointSubnetId=")
+                .append(String.valueOf(this.sourcePrivateEndpointSubnetId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Vtap)) {
+            return false;
+        }
+
+        Vtap other = (Vtap) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetIp, other.targetIp)
+                && java.util.Objects.equals(this.captureFilterId, other.captureFilterId)
+                && java.util.Objects.equals(this.encapsulationProtocol, other.encapsulationProtocol)
+                && java.util.Objects.equals(
+                        this.vxlanNetworkIdentifier, other.vxlanNetworkIdentifier)
+                && java.util.Objects.equals(this.isVtapEnabled, other.isVtapEnabled)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.trafficMode, other.trafficMode)
+                && java.util.Objects.equals(this.maxPacketSize, other.maxPacketSize)
+                && java.util.Objects.equals(this.targetType, other.targetType)
+                && java.util.Objects.equals(
+                        this.sourcePrivateEndpointIp, other.sourcePrivateEndpointIp)
+                && java.util.Objects.equals(
+                        this.sourcePrivateEndpointSubnetId, other.sourcePrivateEndpointSubnetId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateDetails == null
+                                ? 43
+                                : this.lifecycleStateDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetIp == null ? 43 : this.targetIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.captureFilterId == null ? 43 : this.captureFilterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encapsulationProtocol == null
+                                ? 43
+                                : this.encapsulationProtocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vxlanNetworkIdentifier == null
+                                ? 43
+                                : this.vxlanNetworkIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isVtapEnabled == null ? 43 : this.isVtapEnabled.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result = (result * PRIME) + (this.trafficMode == null ? 43 : this.trafficMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxPacketSize == null ? 43 : this.maxPacketSize.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourcePrivateEndpointIp == null
+                                ? 43
+                                : this.sourcePrivateEndpointIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourcePrivateEndpointSubnetId == null
+                                ? 43
+                                : this.sourcePrivateEndpointSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,32 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningAdvisorTaskSummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningAdvisorTaskSummaryReport {
+public final class SqlTuningAdvisorTaskSummaryReport {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "taskInfo",
+        "statistics",
+        "objectStatFindings",
+        "indexFindings"
+    })
+    public SqlTuningAdvisorTaskSummaryReport(
+            SqlTuningAdvisorTaskSummaryReportTaskInfo taskInfo,
+            SqlTuningAdvisorTaskSummaryReportStatistics statistics,
+            java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
+                    objectStatFindings,
+            java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary> indexFindings) {
+        super();
+        this.taskInfo = taskInfo;
+        this.statistics = statistics;
+        this.objectStatFindings = objectStatFindings;
+        this.indexFindings = indexFindings;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("taskInfo")
         private SqlTuningAdvisorTaskSummaryReportTaskInfo taskInfo;
@@ -98,24 +114,101 @@ public class SqlTuningAdvisorTaskSummaryReport {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("taskInfo")
-    SqlTuningAdvisorTaskSummaryReportTaskInfo taskInfo;
+    private final SqlTuningAdvisorTaskSummaryReportTaskInfo taskInfo;
+
+    public SqlTuningAdvisorTaskSummaryReportTaskInfo getTaskInfo() {
+        return taskInfo;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
-    SqlTuningAdvisorTaskSummaryReportStatistics statistics;
+    private final SqlTuningAdvisorTaskSummaryReportStatistics statistics;
+
+    public SqlTuningAdvisorTaskSummaryReportStatistics getStatistics() {
+        return statistics;
+    }
 
     /**
      * The list of object findings related to statistics.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatFindings")
-    java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary> objectStatFindings;
+    private final java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
+            objectStatFindings;
+
+    public java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
+            getObjectStatFindings() {
+        return objectStatFindings;
+    }
 
     /**
      * The list of object findings related to indexes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("indexFindings")
-    java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary> indexFindings;
+    private final java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary>
+            indexFindings;
+
+    public java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary> getIndexFindings() {
+        return indexFindings;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningAdvisorTaskSummaryReport(");
+        sb.append("taskInfo=").append(String.valueOf(this.taskInfo));
+        sb.append(", statistics=").append(String.valueOf(this.statistics));
+        sb.append(", objectStatFindings=").append(String.valueOf(this.objectStatFindings));
+        sb.append(", indexFindings=").append(String.valueOf(this.indexFindings));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningAdvisorTaskSummaryReport)) {
+            return false;
+        }
+
+        SqlTuningAdvisorTaskSummaryReport other = (SqlTuningAdvisorTaskSummaryReport) o;
+        return java.util.Objects.equals(this.taskInfo, other.taskInfo)
+                && java.util.Objects.equals(this.statistics, other.statistics)
+                && java.util.Objects.equals(this.objectStatFindings, other.objectStatFindings)
+                && java.util.Objects.equals(this.indexFindings, other.indexFindings)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.taskInfo == null ? 43 : this.taskInfo.hashCode());
+        result = (result * PRIME) + (this.statistics == null ? 43 : this.statistics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectStatFindings == null
+                                ? 43
+                                : this.objectStatFindings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.indexFindings == null ? 43 : this.indexFindings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

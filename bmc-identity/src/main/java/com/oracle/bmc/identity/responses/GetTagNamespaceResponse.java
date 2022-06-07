@@ -7,10 +7,6 @@ package com.oracle.bmc.identity.responses;
 import com.oracle.bmc.identity.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetTagNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -19,10 +15,18 @@ public class GetTagNamespaceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned TagNamespace instance.
      */
     private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
+
+    public com.oracle.bmc.identity.model.TagNamespace getTagNamespace() {
+        return tagNamespace;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "tagNamespace"})
     private GetTagNamespaceResponse(
@@ -42,6 +46,20 @@ public class GetTagNamespaceResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
+
+        public Builder tagNamespace(com.oracle.bmc.identity.model.TagNamespace tagNamespace) {
+            this.tagNamespace = tagNamespace;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +75,44 @@ public class GetTagNamespaceResponse extends com.oracle.bmc.responses.BmcRespons
         public GetTagNamespaceResponse build() {
             return new GetTagNamespaceResponse(__httpStatusCode__, opcRequestId, tagNamespace);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",tagNamespace=").append(String.valueOf(tagNamespace));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetTagNamespaceResponse)) {
+            return false;
+        }
+
+        GetTagNamespaceResponse other = (GetTagNamespaceResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.tagNamespace, other.tagNamespace);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.tagNamespace == null ? 43 : this.tagNamespace.hashCode());
+        return result;
     }
 }

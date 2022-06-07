@@ -15,16 +15,94 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BlockchainPlatform.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BlockchainPlatform {
+public final class BlockchainPlatform {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "description",
+        "isByol",
+        "timeCreated",
+        "timeUpdated",
+        "platformVersion",
+        "serviceVersion",
+        "platformRole",
+        "computeShape",
+        "platformShapeType",
+        "loadBalancerShape",
+        "serviceEndpoint",
+        "lifecycleState",
+        "lifecycleDetails",
+        "storageSizeInTBs",
+        "storageUsedInTBs",
+        "isMultiAD",
+        "totalOcpuCapacity",
+        "componentDetails",
+        "replicas",
+        "hostOcpuUtilizationInfo",
+        "freeformTags",
+        "definedTags"
+    })
+    public BlockchainPlatform(
+            String id,
+            String displayName,
+            String compartmentId,
+            String description,
+            Boolean isByol,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String platformVersion,
+            String serviceVersion,
+            PlatformRole platformRole,
+            ComputeShape computeShape,
+            PlatformShapeType platformShapeType,
+            LoadBalancerShape loadBalancerShape,
+            String serviceEndpoint,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            Double storageSizeInTBs,
+            Double storageUsedInTBs,
+            Boolean isMultiAD,
+            Integer totalOcpuCapacity,
+            BlockchainPlatformComponentDetails componentDetails,
+            ReplicaDetails replicas,
+            java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.description = description;
+        this.isByol = isByol;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.platformVersion = platformVersion;
+        this.serviceVersion = serviceVersion;
+        this.platformRole = platformRole;
+        this.computeShape = computeShape;
+        this.platformShapeType = platformShapeType;
+        this.loadBalancerShape = loadBalancerShape;
+        this.serviceEndpoint = serviceEndpoint;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.storageSizeInTBs = storageSizeInTBs;
+        this.storageUsedInTBs = storageUsedInTBs;
+        this.isMultiAD = isMultiAD;
+        this.totalOcpuCapacity = totalOcpuCapacity;
+        this.componentDetails = componentDetails;
+        this.replicas = replicas;
+        this.hostOcpuUtilizationInfo = hostOcpuUtilizationInfo;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -329,63 +407,103 @@ public class BlockchainPlatform {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * unique identifier that is immutable on creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Platform Instance Display name, can be renamed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Platform Instance Description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Bring your own license
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
-    Boolean isByol;
+    private final Boolean isByol;
+
+    public Boolean getIsByol() {
+        return isByol;
+    }
 
     /**
      * The time the the Platform Instance was created. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the Platform Instance was updated. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Platform Version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
-    String platformVersion;
+    private final String platformVersion;
+
+    public String getPlatformVersion() {
+        return platformVersion;
+    }
 
     /**
      * The version of the Platform Instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceVersion")
-    String serviceVersion;
+    private final String serviceVersion;
+
+    public String getServiceVersion() {
+        return serviceVersion;
+    }
+
     /**
      * Role of platform - FOUNDER or PARTICIPANT
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PlatformRole {
         Founder("FOUNDER"),
         Participant("PARTICIPANT"),
@@ -395,6 +513,9 @@ public class BlockchainPlatform {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlatformRole.class);
 
         private final String value;
         private static java.util.Map<String, PlatformRole> map;
@@ -432,11 +553,15 @@ public class BlockchainPlatform {
      * Role of platform - FOUNDER or PARTICIPANT
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformRole")
-    PlatformRole platformRole;
+    private final PlatformRole platformRole;
+
+    public PlatformRole getPlatformRole() {
+        return platformRole;
+    }
+
     /**
      * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ComputeShape {
         Standard("STANDARD"),
         EnterpriseSmall("ENTERPRISE_SMALL"),
@@ -450,6 +575,9 @@ public class BlockchainPlatform {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeShape.class);
 
         private final String value;
         private static java.util.Map<String, ComputeShape> map;
@@ -487,11 +615,15 @@ public class BlockchainPlatform {
      * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
-    ComputeShape computeShape;
+    private final ComputeShape computeShape;
+
+    public ComputeShape getComputeShape() {
+        return computeShape;
+    }
+
     /**
      * Type of Platform shape - DEFAULT or CUSTOM
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PlatformShapeType {
         Default("DEFAULT"),
         Custom("CUSTOM"),
@@ -501,6 +633,9 @@ public class BlockchainPlatform {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlatformShapeType.class);
 
         private final String value;
         private static java.util.Map<String, PlatformShapeType> map;
@@ -538,11 +673,15 @@ public class BlockchainPlatform {
      * Type of Platform shape - DEFAULT or CUSTOM
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformShapeType")
-    PlatformShapeType platformShapeType;
+    private final PlatformShapeType platformShapeType;
+
+    public PlatformShapeType getPlatformShapeType() {
+        return platformShapeType;
+    }
+
     /**
      * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LoadBalancerShape {
         Lb100Mbps("LB_100_MBPS"),
         Lb400Mbps("LB_400_MBPS"),
@@ -552,6 +691,9 @@ public class BlockchainPlatform {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LoadBalancerShape.class);
 
         private final String value;
         private static java.util.Map<String, LoadBalancerShape> map;
@@ -589,17 +731,25 @@ public class BlockchainPlatform {
      * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
-    LoadBalancerShape loadBalancerShape;
+    private final LoadBalancerShape loadBalancerShape;
+
+    public LoadBalancerShape getLoadBalancerShape() {
+        return loadBalancerShape;
+    }
 
     /**
      * Service endpoint URL, valid post-provisioning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceEndpoint")
-    String serviceEndpoint;
+    private final String serviceEndpoint;
+
+    public String getServiceEndpoint() {
+        return serviceEndpoint;
+    }
+
     /**
      * The current state of the Platform Instance.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -615,6 +765,9 @@ public class BlockchainPlatform {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -652,49 +805,85 @@ public class BlockchainPlatform {
      * The current state of the Platform Instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * Storage size in TBs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
-    Double storageSizeInTBs;
+    private final Double storageSizeInTBs;
+
+    public Double getStorageSizeInTBs() {
+        return storageSizeInTBs;
+    }
 
     /**
      * Storage used in TBs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInTBs")
-    Double storageUsedInTBs;
+    private final Double storageUsedInTBs;
+
+    public Double getStorageUsedInTBs() {
+        return storageUsedInTBs;
+    }
 
     /**
      * True for multi-AD blockchain plaforms, false for single-AD
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiAD")
-    Boolean isMultiAD;
+    private final Boolean isMultiAD;
+
+    public Boolean getIsMultiAD() {
+        return isMultiAD;
+    }
 
     /**
      * Number of total OCPUs allocated to the platform cluster
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuCapacity")
-    Integer totalOcpuCapacity;
+    private final Integer totalOcpuCapacity;
+
+    public Integer getTotalOcpuCapacity() {
+        return totalOcpuCapacity;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("componentDetails")
-    BlockchainPlatformComponentDetails componentDetails;
+    private final BlockchainPlatformComponentDetails componentDetails;
+
+    public BlockchainPlatformComponentDetails getComponentDetails() {
+        return componentDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("replicas")
-    ReplicaDetails replicas;
+    private final ReplicaDetails replicas;
+
+    public ReplicaDetails getReplicas() {
+        return replicas;
+    }
 
     /**
      * List of OcpuUtilization for all hosts
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfo")
-    java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo;
+    private final java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo;
+
+    public java.util.List<OcpuUtilizationInfo> getHostOcpuUtilizationInfo() {
+        return hostOcpuUtilizationInfo;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -702,7 +891,11 @@ public class BlockchainPlatform {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -710,8 +903,153 @@ public class BlockchainPlatform {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BlockchainPlatform(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isByol=").append(String.valueOf(this.isByol));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", platformVersion=").append(String.valueOf(this.platformVersion));
+        sb.append(", serviceVersion=").append(String.valueOf(this.serviceVersion));
+        sb.append(", platformRole=").append(String.valueOf(this.platformRole));
+        sb.append(", computeShape=").append(String.valueOf(this.computeShape));
+        sb.append(", platformShapeType=").append(String.valueOf(this.platformShapeType));
+        sb.append(", loadBalancerShape=").append(String.valueOf(this.loadBalancerShape));
+        sb.append(", serviceEndpoint=").append(String.valueOf(this.serviceEndpoint));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", storageSizeInTBs=").append(String.valueOf(this.storageSizeInTBs));
+        sb.append(", storageUsedInTBs=").append(String.valueOf(this.storageUsedInTBs));
+        sb.append(", isMultiAD=").append(String.valueOf(this.isMultiAD));
+        sb.append(", totalOcpuCapacity=").append(String.valueOf(this.totalOcpuCapacity));
+        sb.append(", componentDetails=").append(String.valueOf(this.componentDetails));
+        sb.append(", replicas=").append(String.valueOf(this.replicas));
+        sb.append(", hostOcpuUtilizationInfo=")
+                .append(String.valueOf(this.hostOcpuUtilizationInfo));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BlockchainPlatform)) {
+            return false;
+        }
+
+        BlockchainPlatform other = (BlockchainPlatform) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isByol, other.isByol)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.platformVersion, other.platformVersion)
+                && java.util.Objects.equals(this.serviceVersion, other.serviceVersion)
+                && java.util.Objects.equals(this.platformRole, other.platformRole)
+                && java.util.Objects.equals(this.computeShape, other.computeShape)
+                && java.util.Objects.equals(this.platformShapeType, other.platformShapeType)
+                && java.util.Objects.equals(this.loadBalancerShape, other.loadBalancerShape)
+                && java.util.Objects.equals(this.serviceEndpoint, other.serviceEndpoint)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.storageSizeInTBs, other.storageSizeInTBs)
+                && java.util.Objects.equals(this.storageUsedInTBs, other.storageUsedInTBs)
+                && java.util.Objects.equals(this.isMultiAD, other.isMultiAD)
+                && java.util.Objects.equals(this.totalOcpuCapacity, other.totalOcpuCapacity)
+                && java.util.Objects.equals(this.componentDetails, other.componentDetails)
+                && java.util.Objects.equals(this.replicas, other.replicas)
+                && java.util.Objects.equals(
+                        this.hostOcpuUtilizationInfo, other.hostOcpuUtilizationInfo)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformVersion == null ? 43 : this.platformVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceVersion == null ? 43 : this.serviceVersion.hashCode());
+        result = (result * PRIME) + (this.platformRole == null ? 43 : this.platformRole.hashCode());
+        result = (result * PRIME) + (this.computeShape == null ? 43 : this.computeShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformShapeType == null ? 43 : this.platformShapeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerShape == null ? 43 : this.loadBalancerShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceEndpoint == null ? 43 : this.serviceEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeInTBs == null ? 43 : this.storageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageUsedInTBs == null ? 43 : this.storageUsedInTBs.hashCode());
+        result = (result * PRIME) + (this.isMultiAD == null ? 43 : this.isMultiAD.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalOcpuCapacity == null ? 43 : this.totalOcpuCapacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.componentDetails == null ? 43 : this.componentDetails.hashCode());
+        result = (result * PRIME) + (this.replicas == null ? 43 : this.replicas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostOcpuUtilizationInfo == null
+                                ? 43
+                                : this.hostOcpuUtilizationInfo.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

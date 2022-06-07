@@ -15,14 +15,62 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClusterDetails {
+public final class ClusterDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bdaVersion",
+        "bdmVersion",
+        "bdsVersion",
+        "osVersion",
+        "dbVersion",
+        "bdCellVersion",
+        "csqlCellVersion",
+        "timeCreated",
+        "timeRefreshed",
+        "clouderaManagerUrl",
+        "ambariUrl",
+        "bigDataManagerUrl",
+        "hueServerUrl",
+        "odhVersion",
+        "jupyterHubUrl"
+    })
+    public ClusterDetails(
+            String bdaVersion,
+            String bdmVersion,
+            String bdsVersion,
+            String osVersion,
+            String dbVersion,
+            String bdCellVersion,
+            String csqlCellVersion,
+            java.util.Date timeCreated,
+            java.util.Date timeRefreshed,
+            String clouderaManagerUrl,
+            String ambariUrl,
+            String bigDataManagerUrl,
+            String hueServerUrl,
+            String odhVersion,
+            String jupyterHubUrl) {
+        super();
+        this.bdaVersion = bdaVersion;
+        this.bdmVersion = bdmVersion;
+        this.bdsVersion = bdsVersion;
+        this.osVersion = osVersion;
+        this.dbVersion = dbVersion;
+        this.bdCellVersion = bdCellVersion;
+        this.csqlCellVersion = csqlCellVersion;
+        this.timeCreated = timeCreated;
+        this.timeRefreshed = timeRefreshed;
+        this.clouderaManagerUrl = clouderaManagerUrl;
+        this.ambariUrl = ambariUrl;
+        this.bigDataManagerUrl = bigDataManagerUrl;
+        this.hueServerUrl = hueServerUrl;
+        this.odhVersion = odhVersion;
+        this.jupyterHubUrl = jupyterHubUrl;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bdaVersion")
         private String bdaVersion;
@@ -215,97 +263,256 @@ public class ClusterDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * BDA version installed in the cluster
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdaVersion")
-    String bdaVersion;
+    private final String bdaVersion;
+
+    public String getBdaVersion() {
+        return bdaVersion;
+    }
 
     /**
      * Big Data Manager version installed in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdmVersion")
-    String bdmVersion;
+    private final String bdmVersion;
+
+    public String getBdmVersion() {
+        return bdmVersion;
+    }
 
     /**
      * Big Data Service version installed in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdsVersion")
-    String bdsVersion;
+    private final String bdsVersion;
+
+    public String getBdsVersion() {
+        return bdsVersion;
+    }
 
     /**
      * Oracle Linux version installed in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
-    String osVersion;
+    private final String osVersion;
+
+    public String getOsVersion() {
+        return osVersion;
+    }
 
     /**
      * Cloud SQL query server database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-    String dbVersion;
+    private final String dbVersion;
+
+    public String getDbVersion() {
+        return dbVersion;
+    }
 
     /**
      * Cloud SQL cell version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdCellVersion")
-    String bdCellVersion;
+    private final String bdCellVersion;
+
+    public String getBdCellVersion() {
+        return bdCellVersion;
+    }
 
     /**
      * Big Data SQL version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csqlCellVersion")
-    String csqlCellVersion;
+    private final String csqlCellVersion;
+
+    public String getCsqlCellVersion() {
+        return csqlCellVersion;
+    }
 
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRefreshed")
-    java.util.Date timeRefreshed;
+    private final java.util.Date timeRefreshed;
+
+    public java.util.Date getTimeRefreshed() {
+        return timeRefreshed;
+    }
 
     /**
      * The URL of Cloudera Manager
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clouderaManagerUrl")
-    String clouderaManagerUrl;
+    private final String clouderaManagerUrl;
+
+    public String getClouderaManagerUrl() {
+        return clouderaManagerUrl;
+    }
 
     /**
      * The URL of Ambari
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ambariUrl")
-    String ambariUrl;
+    private final String ambariUrl;
+
+    public String getAmbariUrl() {
+        return ambariUrl;
+    }
 
     /**
      * The URL of Big Data Manager.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bigDataManagerUrl")
-    String bigDataManagerUrl;
+    private final String bigDataManagerUrl;
+
+    public String getBigDataManagerUrl() {
+        return bigDataManagerUrl;
+    }
 
     /**
      * The URL of the Hue server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hueServerUrl")
-    String hueServerUrl;
+    private final String hueServerUrl;
+
+    public String getHueServerUrl() {
+        return hueServerUrl;
+    }
 
     /**
      * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
-    String odhVersion;
+    private final String odhVersion;
+
+    public String getOdhVersion() {
+        return odhVersion;
+    }
 
     /**
      * The URL of the Jupyterhub.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jupyterHubUrl")
-    String jupyterHubUrl;
+    private final String jupyterHubUrl;
+
+    public String getJupyterHubUrl() {
+        return jupyterHubUrl;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClusterDetails(");
+        sb.append("bdaVersion=").append(String.valueOf(this.bdaVersion));
+        sb.append(", bdmVersion=").append(String.valueOf(this.bdmVersion));
+        sb.append(", bdsVersion=").append(String.valueOf(this.bdsVersion));
+        sb.append(", osVersion=").append(String.valueOf(this.osVersion));
+        sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", bdCellVersion=").append(String.valueOf(this.bdCellVersion));
+        sb.append(", csqlCellVersion=").append(String.valueOf(this.csqlCellVersion));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeRefreshed=").append(String.valueOf(this.timeRefreshed));
+        sb.append(", clouderaManagerUrl=").append(String.valueOf(this.clouderaManagerUrl));
+        sb.append(", ambariUrl=").append(String.valueOf(this.ambariUrl));
+        sb.append(", bigDataManagerUrl=").append(String.valueOf(this.bigDataManagerUrl));
+        sb.append(", hueServerUrl=").append(String.valueOf(this.hueServerUrl));
+        sb.append(", odhVersion=").append(String.valueOf(this.odhVersion));
+        sb.append(", jupyterHubUrl=").append(String.valueOf(this.jupyterHubUrl));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClusterDetails)) {
+            return false;
+        }
+
+        ClusterDetails other = (ClusterDetails) o;
+        return java.util.Objects.equals(this.bdaVersion, other.bdaVersion)
+                && java.util.Objects.equals(this.bdmVersion, other.bdmVersion)
+                && java.util.Objects.equals(this.bdsVersion, other.bdsVersion)
+                && java.util.Objects.equals(this.osVersion, other.osVersion)
+                && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.bdCellVersion, other.bdCellVersion)
+                && java.util.Objects.equals(this.csqlCellVersion, other.csqlCellVersion)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeRefreshed, other.timeRefreshed)
+                && java.util.Objects.equals(this.clouderaManagerUrl, other.clouderaManagerUrl)
+                && java.util.Objects.equals(this.ambariUrl, other.ambariUrl)
+                && java.util.Objects.equals(this.bigDataManagerUrl, other.bigDataManagerUrl)
+                && java.util.Objects.equals(this.hueServerUrl, other.hueServerUrl)
+                && java.util.Objects.equals(this.odhVersion, other.odhVersion)
+                && java.util.Objects.equals(this.jupyterHubUrl, other.jupyterHubUrl)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.bdaVersion == null ? 43 : this.bdaVersion.hashCode());
+        result = (result * PRIME) + (this.bdmVersion == null ? 43 : this.bdmVersion.hashCode());
+        result = (result * PRIME) + (this.bdsVersion == null ? 43 : this.bdsVersion.hashCode());
+        result = (result * PRIME) + (this.osVersion == null ? 43 : this.osVersion.hashCode());
+        result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bdCellVersion == null ? 43 : this.bdCellVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.csqlCellVersion == null ? 43 : this.csqlCellVersion.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRefreshed == null ? 43 : this.timeRefreshed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clouderaManagerUrl == null
+                                ? 43
+                                : this.clouderaManagerUrl.hashCode());
+        result = (result * PRIME) + (this.ambariUrl == null ? 43 : this.ambariUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bigDataManagerUrl == null ? 43 : this.bigDataManagerUrl.hashCode());
+        result = (result * PRIME) + (this.hueServerUrl == null ? 43 : this.hueServerUrl.hashCode());
+        result = (result * PRIME) + (this.odhVersion == null ? 43 : this.odhVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jupyterHubUrl == null ? 43 : this.jupyterHubUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

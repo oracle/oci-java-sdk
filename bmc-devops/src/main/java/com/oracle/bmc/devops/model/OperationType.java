@@ -8,7 +8,6 @@ package com.oracle.bmc.devops.model;
  * Possible operation types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.extern.slf4j.Slf4j
 public enum OperationType {
     CreateProject("CREATE_PROJECT"),
     UpdateProject("UPDATE_PROJECT"),
@@ -52,6 +51,9 @@ public enum OperationType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OperationType.class);
 
     private final String value;
     private static java.util.Map<String, OperationType> map;

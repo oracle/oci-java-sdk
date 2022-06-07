@@ -7,6 +7,7 @@ package com.oracle.bmc.servicemanagerproxy;
 import com.oracle.bmc.servicemanagerproxy.internal.http.*;
 import com.oracle.bmc.servicemanagerproxy.requests.*;
 import com.oracle.bmc.servicemanagerproxy.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ServiceManagerProxy service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.servicemanagerproxy.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
-@lombok.extern.slf4j.Slf4j
 public class ServiceManagerProxyAsyncClient implements ServiceManagerProxyAsync {
     /**
      * Service instance for ServiceManagerProxy.
@@ -34,7 +34,9 @@ public class ServiceManagerProxyAsyncClient implements ServiceManagerProxyAsync 
                     .serviceEndpointTemplate("https://smproxy.{region}.ocs.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ServiceManagerProxyAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class ServiceManagerProxyAsyncClient implements ServiceManagerProxyAsync 
          * @return the client
          */
         public ServiceManagerProxyAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new ServiceManagerProxyAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class ServiceManagerProxyAsyncClient implements ServiceManagerProxyAsync 
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

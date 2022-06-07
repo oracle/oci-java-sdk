@@ -15,14 +15,38 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Peer.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Peer {
+public final class Peer {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "peerKey",
+        "role",
+        "alias",
+        "ocpuAllocationParam",
+        "host",
+        "ad",
+        "lifecycleState"
+    })
+    public Peer(
+            String peerKey,
+            PeerRole.Role role,
+            String alias,
+            OcpuAllocationNumberParam ocpuAllocationParam,
+            String host,
+            AvailabilityDomain.Ads ad,
+            LifecycleState lifecycleState) {
+        super();
+        this.peerKey = peerKey;
+        this.role = role;
+        this.alias = alias;
+        this.ocpuAllocationParam = ocpuAllocationParam;
+        this.host = host;
+        this.ad = ad;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("peerKey")
         private String peerKey;
@@ -120,42 +144,70 @@ public class Peer {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * peer identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerKey")
-    String peerKey;
+    private final String peerKey;
+
+    public String getPeerKey() {
+        return peerKey;
+    }
 
     /**
      * Peer role
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    PeerRole.Role role;
+    private final PeerRole.Role role;
+
+    public PeerRole.Role getRole() {
+        return role;
+    }
 
     /**
      * peer alias
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
-    String alias;
+    private final String alias;
+
+    public String getAlias() {
+        return alias;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuAllocationParam")
-    OcpuAllocationNumberParam ocpuAllocationParam;
+    private final OcpuAllocationNumberParam ocpuAllocationParam;
+
+    public OcpuAllocationNumberParam getOcpuAllocationParam() {
+        return ocpuAllocationParam;
+    }
 
     /**
      * Host on which the Peer exists
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * Availability Domain of peer
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
-    AvailabilityDomain.Ads ad;
+    private final AvailabilityDomain.Ads ad;
+
+    public AvailabilityDomain.Ads getAd() {
+        return ad;
+    }
+
     /**
      * The current state of the peer.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -166,6 +218,9 @@ public class Peer {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -203,8 +258,75 @@ public class Peer {
      * The current state of the peer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Peer(");
+        sb.append("peerKey=").append(String.valueOf(this.peerKey));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(", alias=").append(String.valueOf(this.alias));
+        sb.append(", ocpuAllocationParam=").append(String.valueOf(this.ocpuAllocationParam));
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", ad=").append(String.valueOf(this.ad));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Peer)) {
+            return false;
+        }
+
+        Peer other = (Peer) o;
+        return java.util.Objects.equals(this.peerKey, other.peerKey)
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.ocpuAllocationParam, other.ocpuAllocationParam)
+                && java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.ad, other.ad)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.peerKey == null ? 43 : this.peerKey.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ocpuAllocationParam == null
+                                ? 43
+                                : this.ocpuAllocationParam.hashCode());
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.ad == null ? 43 : this.ad.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

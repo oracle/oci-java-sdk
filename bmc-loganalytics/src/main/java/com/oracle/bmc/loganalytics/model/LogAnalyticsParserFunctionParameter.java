@@ -15,16 +15,40 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsParserFunctionParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsParserFunctionParameter {
+public final class LogAnalyticsParserFunctionParameter {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "parserFunctionId",
+        "parserFunctionParameterName",
+        "parserFunctionParameterId",
+        "parserMetaPluginParameterName",
+        "parserMetaPluginParameterValue",
+        "parserName",
+        "parserMetaPluginParameter"
+    })
+    public LogAnalyticsParserFunctionParameter(
+            Long parserFunctionId,
+            String parserFunctionParameterName,
+            Long parserFunctionParameterId,
+            String parserMetaPluginParameterName,
+            String parserMetaPluginParameterValue,
+            String parserName,
+            LogAnalyticsParserMetaPluginParameter parserMetaPluginParameter) {
+        super();
+        this.parserFunctionId = parserFunctionId;
+        this.parserFunctionParameterName = parserFunctionParameterName;
+        this.parserFunctionParameterId = parserFunctionParameterId;
+        this.parserMetaPluginParameterName = parserMetaPluginParameterName;
+        this.parserMetaPluginParameterValue = parserMetaPluginParameterValue;
+        this.parserName = parserName;
+        this.parserMetaPluginParameter = parserMetaPluginParameter;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
         private Long parserFunctionId;
@@ -130,45 +154,166 @@ public class LogAnalyticsParserFunctionParameter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The parser function unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
-    Long parserFunctionId;
+    private final Long parserFunctionId;
+
+    public Long getParserFunctionId() {
+        return parserFunctionId;
+    }
 
     /**
      * The internal name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterName")
-    String parserFunctionParameterName;
+    private final String parserFunctionParameterName;
+
+    public String getParserFunctionParameterName() {
+        return parserFunctionParameterName;
+    }
 
     /**
      * The parameter unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterId")
-    Long parserFunctionParameterId;
+    private final Long parserFunctionParameterId;
+
+    public Long getParserFunctionParameterId() {
+        return parserFunctionParameterId;
+    }
 
     /**
      * The parameter internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterName")
-    String parserMetaPluginParameterName;
+    private final String parserMetaPluginParameterName;
+
+    public String getParserMetaPluginParameterName() {
+        return parserMetaPluginParameterName;
+    }
 
     /**
      * The parameter value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterValue")
-    String parserMetaPluginParameterValue;
+    private final String parserMetaPluginParameterValue;
+
+    public String getParserMetaPluginParameterValue() {
+        return parserMetaPluginParameterValue;
+    }
 
     /**
      * The parser internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
-    String parserName;
+    private final String parserName;
+
+    public String getParserName() {
+        return parserName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameter")
-    LogAnalyticsParserMetaPluginParameter parserMetaPluginParameter;
+    private final LogAnalyticsParserMetaPluginParameter parserMetaPluginParameter;
+
+    public LogAnalyticsParserMetaPluginParameter getParserMetaPluginParameter() {
+        return parserMetaPluginParameter;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsParserFunctionParameter(");
+        sb.append("parserFunctionId=").append(String.valueOf(this.parserFunctionId));
+        sb.append(", parserFunctionParameterName=")
+                .append(String.valueOf(this.parserFunctionParameterName));
+        sb.append(", parserFunctionParameterId=")
+                .append(String.valueOf(this.parserFunctionParameterId));
+        sb.append(", parserMetaPluginParameterName=")
+                .append(String.valueOf(this.parserMetaPluginParameterName));
+        sb.append(", parserMetaPluginParameterValue=")
+                .append(String.valueOf(this.parserMetaPluginParameterValue));
+        sb.append(", parserName=").append(String.valueOf(this.parserName));
+        sb.append(", parserMetaPluginParameter=")
+                .append(String.valueOf(this.parserMetaPluginParameter));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsParserFunctionParameter)) {
+            return false;
+        }
+
+        LogAnalyticsParserFunctionParameter other = (LogAnalyticsParserFunctionParameter) o;
+        return java.util.Objects.equals(this.parserFunctionId, other.parserFunctionId)
+                && java.util.Objects.equals(
+                        this.parserFunctionParameterName, other.parserFunctionParameterName)
+                && java.util.Objects.equals(
+                        this.parserFunctionParameterId, other.parserFunctionParameterId)
+                && java.util.Objects.equals(
+                        this.parserMetaPluginParameterName, other.parserMetaPluginParameterName)
+                && java.util.Objects.equals(
+                        this.parserMetaPluginParameterValue, other.parserMetaPluginParameterValue)
+                && java.util.Objects.equals(this.parserName, other.parserName)
+                && java.util.Objects.equals(
+                        this.parserMetaPluginParameter, other.parserMetaPluginParameter)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.parserFunctionId == null ? 43 : this.parserFunctionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserFunctionParameterName == null
+                                ? 43
+                                : this.parserFunctionParameterName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserFunctionParameterId == null
+                                ? 43
+                                : this.parserFunctionParameterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserMetaPluginParameterName == null
+                                ? 43
+                                : this.parserMetaPluginParameterName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserMetaPluginParameterValue == null
+                                ? 43
+                                : this.parserMetaPluginParameterValue.hashCode());
+        result = (result * PRIME) + (this.parserName == null ? 43 : this.parserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserMetaPluginParameter == null
+                                ? 43
+                                : this.parserMetaPluginParameter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

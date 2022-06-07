@@ -15,20 +15,15 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Source.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Source extends CreateConnectivityValidationDetails {
+public final class Source extends CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -265,6 +260,10 @@ public class Source extends CreateConnectivityValidationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Source(
             String key,
@@ -309,35 +308,132 @@ public class Source extends CreateConnectivityValidationDetails {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("entity")
-    DataEntity entity;
+    private final DataEntity entity;
+
+    public DataEntity getEntity() {
+        return entity;
+    }
 
     /**
      * Specifies the read access.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
-    Boolean isReadAccess;
+    private final Boolean isReadAccess;
+
+    public Boolean getIsReadAccess() {
+        return isReadAccess;
+    }
 
     /**
      * Specifies the copy fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
-    Boolean isCopyFields;
+    private final Boolean isCopyFields;
+
+    public Boolean getIsCopyFields() {
+        return isCopyFields;
+    }
 
     /**
      * Specifies if this uses a predefined shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
-    Boolean isPredefinedShape;
+    private final Boolean isPredefinedShape;
+
+    public Boolean getIsPredefinedShape() {
+        return isPredefinedShape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("schemaDriftConfig")
-    SchemaDriftConfig schemaDriftConfig;
+    private final SchemaDriftConfig schemaDriftConfig;
+
+    public SchemaDriftConfig getSchemaDriftConfig() {
+        return schemaDriftConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fixedDataShape")
-    Shape fixedDataShape;
+    private final Shape fixedDataShape;
+
+    public Shape getFixedDataShape() {
+        return fixedDataShape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("readOperationConfig")
-    ReadOperationConfig readOperationConfig;
+    private final ReadOperationConfig readOperationConfig;
+
+    public ReadOperationConfig getReadOperationConfig() {
+        return readOperationConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Source(");
+        sb.append("super=").append(super.toString());
+        sb.append(", entity=").append(String.valueOf(this.entity));
+        sb.append(", isReadAccess=").append(String.valueOf(this.isReadAccess));
+        sb.append(", isCopyFields=").append(String.valueOf(this.isCopyFields));
+        sb.append(", isPredefinedShape=").append(String.valueOf(this.isPredefinedShape));
+        sb.append(", schemaDriftConfig=").append(String.valueOf(this.schemaDriftConfig));
+        sb.append(", fixedDataShape=").append(String.valueOf(this.fixedDataShape));
+        sb.append(", readOperationConfig=").append(String.valueOf(this.readOperationConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Source)) {
+            return false;
+        }
+
+        Source other = (Source) o;
+        return java.util.Objects.equals(this.entity, other.entity)
+                && java.util.Objects.equals(this.isReadAccess, other.isReadAccess)
+                && java.util.Objects.equals(this.isCopyFields, other.isCopyFields)
+                && java.util.Objects.equals(this.isPredefinedShape, other.isPredefinedShape)
+                && java.util.Objects.equals(this.schemaDriftConfig, other.schemaDriftConfig)
+                && java.util.Objects.equals(this.fixedDataShape, other.fixedDataShape)
+                && java.util.Objects.equals(this.readOperationConfig, other.readOperationConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.entity == null ? 43 : this.entity.hashCode());
+        result = (result * PRIME) + (this.isReadAccess == null ? 43 : this.isReadAccess.hashCode());
+        result = (result * PRIME) + (this.isCopyFields == null ? 43 : this.isCopyFields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPredefinedShape == null ? 43 : this.isPredefinedShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.schemaDriftConfig == null ? 43 : this.schemaDriftConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fixedDataShape == null ? 43 : this.fixedDataShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.readOperationConfig == null
+                                ? 43
+                                : this.readOperationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

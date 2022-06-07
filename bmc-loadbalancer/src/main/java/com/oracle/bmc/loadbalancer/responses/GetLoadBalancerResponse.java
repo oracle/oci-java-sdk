@@ -7,10 +7,6 @@ package com.oracle.bmc.loadbalancer.responses;
 import com.oracle.bmc.loadbalancer.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetLoadBalancerResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -19,10 +15,18 @@ public class GetLoadBalancerResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned LoadBalancer instance.
      */
     private com.oracle.bmc.loadbalancer.model.LoadBalancer loadBalancer;
+
+    public com.oracle.bmc.loadbalancer.model.LoadBalancer getLoadBalancer() {
+        return loadBalancer;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "loadBalancer"})
     private GetLoadBalancerResponse(
@@ -42,6 +46,20 @@ public class GetLoadBalancerResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.loadbalancer.model.LoadBalancer loadBalancer;
+
+        public Builder loadBalancer(com.oracle.bmc.loadbalancer.model.LoadBalancer loadBalancer) {
+            this.loadBalancer = loadBalancer;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +75,44 @@ public class GetLoadBalancerResponse extends com.oracle.bmc.responses.BmcRespons
         public GetLoadBalancerResponse build() {
             return new GetLoadBalancerResponse(__httpStatusCode__, opcRequestId, loadBalancer);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",loadBalancer=").append(String.valueOf(loadBalancer));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetLoadBalancerResponse)) {
+            return false;
+        }
+
+        GetLoadBalancerResponse other = (GetLoadBalancerResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.loadBalancer, other.loadBalancer);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.loadBalancer == null ? 43 : this.loadBalancer.hashCode());
+        return result;
     }
 }

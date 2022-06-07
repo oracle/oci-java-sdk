@@ -16,14 +16,18 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VersionSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VersionSummary {
+public final class VersionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"versionFamily", "versions"})
+    public VersionSummary(String versionFamily, java.util.List<Version> versions) {
+        super();
+        this.versionFamily = versionFamily;
+        this.versions = versions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("versionFamily")
         private String versionFamily;
@@ -68,18 +72,74 @@ public class VersionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A descriptive summary of a group of versions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionFamily")
-    String versionFamily;
+    private final String versionFamily;
+
+    public String getVersionFamily() {
+        return versionFamily;
+    }
 
     /**
      * The list of supported MySQL Versions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versions")
-    java.util.List<Version> versions;
+    private final java.util.List<Version> versions;
+
+    public java.util.List<Version> getVersions() {
+        return versions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VersionSummary(");
+        sb.append("versionFamily=").append(String.valueOf(this.versionFamily));
+        sb.append(", versions=").append(String.valueOf(this.versions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VersionSummary)) {
+            return false;
+        }
+
+        VersionSummary other = (VersionSummary) o;
+        return java.util.Objects.equals(this.versionFamily, other.versionFamily)
+                && java.util.Objects.equals(this.versions, other.versions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.versionFamily == null ? 43 : this.versionFamily.hashCode());
+        result = (result * PRIME) + (this.versions == null ? 43 : this.versions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

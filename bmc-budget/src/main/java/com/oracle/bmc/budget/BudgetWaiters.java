@@ -6,6 +6,7 @@ package com.oracle.bmc.budget;
 
 import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,14 @@ import com.oracle.bmc.budget.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.RequiredArgsConstructor
 public class BudgetWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Budget client;
+
+    public BudgetWaiters(java.util.concurrent.ExecutorService executorService, Budget client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

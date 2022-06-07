@@ -15,16 +15,34 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ValidatePatternResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ValidatePatternResult {
+public final class ValidatePatternResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "message",
+        "status",
+        "expression",
+        "filePathPrefix",
+        "derivedLogicalEntities"
+    })
+    public ValidatePatternResult(
+            String message,
+            String status,
+            String expression,
+            String filePathPrefix,
+            java.util.List<DerivedLogicalEntities> derivedLogicalEntities) {
+        super();
+        this.message = message;
+        this.status = status;
+        this.expression = expression;
+        this.filePathPrefix = filePathPrefix;
+        this.derivedLogicalEntities = derivedLogicalEntities;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
@@ -104,36 +122,118 @@ public class ValidatePatternResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The message from the pattern validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * The status returned from the pattern validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * The expression used in the pattern validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
-    String expression;
+    private final String expression;
+
+    public String getExpression() {
+        return expression;
+    }
 
     /**
      * The prefix used in the pattern validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
-    String filePathPrefix;
+    private final String filePathPrefix;
+
+    public String getFilePathPrefix() {
+        return filePathPrefix;
+    }
 
     /**
      * Collection of logical entities derived from the pattern, as applied to a list of file paths.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("derivedLogicalEntities")
-    java.util.List<DerivedLogicalEntities> derivedLogicalEntities;
+    private final java.util.List<DerivedLogicalEntities> derivedLogicalEntities;
+
+    public java.util.List<DerivedLogicalEntities> getDerivedLogicalEntities() {
+        return derivedLogicalEntities;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ValidatePatternResult(");
+        sb.append("message=").append(String.valueOf(this.message));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", expression=").append(String.valueOf(this.expression));
+        sb.append(", filePathPrefix=").append(String.valueOf(this.filePathPrefix));
+        sb.append(", derivedLogicalEntities=").append(String.valueOf(this.derivedLogicalEntities));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ValidatePatternResult)) {
+            return false;
+        }
+
+        ValidatePatternResult other = (ValidatePatternResult) o;
+        return java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.expression, other.expression)
+                && java.util.Objects.equals(this.filePathPrefix, other.filePathPrefix)
+                && java.util.Objects.equals(
+                        this.derivedLogicalEntities, other.derivedLogicalEntities)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filePathPrefix == null ? 43 : this.filePathPrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.derivedLogicalEntities == null
+                                ? 43
+                                : this.derivedLogicalEntities.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

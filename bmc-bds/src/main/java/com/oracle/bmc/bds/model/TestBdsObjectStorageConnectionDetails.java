@@ -15,16 +15,22 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TestBdsObjectStorageConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TestBdsObjectStorageConnectionDetails {
+public final class TestBdsObjectStorageConnectionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"objectStorageUri", "passphrase", "objectStorageRegion"})
+    public TestBdsObjectStorageConnectionDetails(
+            String objectStorageUri, String passphrase, String objectStorageRegion) {
+        super();
+        this.objectStorageUri = objectStorageUri;
+        this.passphrase = passphrase;
+        this.objectStorageRegion = objectStorageRegion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUri")
         private String objectStorageUri;
@@ -83,24 +89,91 @@ public class TestBdsObjectStorageConnectionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An Oracle Cloud Infrastructure URI to which this connection must be attempted. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUri")
-    String objectStorageUri;
+    private final String objectStorageUri;
+
+    public String getObjectStorageUri() {
+        return objectStorageUri;
+    }
 
     /**
      * Base64 passphrase used to secure the private key which will be created on user behalf.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
-    String passphrase;
+    private final String passphrase;
+
+    public String getPassphrase() {
+        return passphrase;
+    }
 
     /**
      * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageRegion")
-    String objectStorageRegion;
+    private final String objectStorageRegion;
+
+    public String getObjectStorageRegion() {
+        return objectStorageRegion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TestBdsObjectStorageConnectionDetails(");
+        sb.append("objectStorageUri=").append(String.valueOf(this.objectStorageUri));
+        sb.append(", passphrase=").append(String.valueOf(this.passphrase));
+        sb.append(", objectStorageRegion=").append(String.valueOf(this.objectStorageRegion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TestBdsObjectStorageConnectionDetails)) {
+            return false;
+        }
+
+        TestBdsObjectStorageConnectionDetails other = (TestBdsObjectStorageConnectionDetails) o;
+        return java.util.Objects.equals(this.objectStorageUri, other.objectStorageUri)
+                && java.util.Objects.equals(this.passphrase, other.passphrase)
+                && java.util.Objects.equals(this.objectStorageRegion, other.objectStorageRegion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.objectStorageUri == null ? 43 : this.objectStorageUri.hashCode());
+        result = (result * PRIME) + (this.passphrase == null ? 43 : this.passphrase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectStorageRegion == null
+                                ? 43
+                                : this.objectStorageRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

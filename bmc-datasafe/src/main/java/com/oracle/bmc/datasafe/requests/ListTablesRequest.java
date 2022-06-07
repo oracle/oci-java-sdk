@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTablesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTablesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,31 +16,49 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String targetDatabaseId;
 
+    public String getTargetDatabaseId() {
+        return targetDatabaseId;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * A filter to return only items related to specific schema name.
      */
     private java.util.List<String> schemaName;
 
+    public java.util.List<String> getSchemaName() {
+        return schemaName;
+    }
     /**
      * A filter to return only items related to specific table name.
      */
     private java.util.List<String> tableName;
 
+    public java.util.List<String> getTableName() {
+        return tableName;
+    }
     /**
      * The sort order to use, either ascending (ASC) or descending (DESC).
      */
@@ -89,6 +99,10 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field used for sorting. Only one sorting order (sortOrder) can be specified.
      *
@@ -131,15 +145,26 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * A filter to return only items if table name contains a specific string.
      */
     private String tableNameContains;
 
+    public String getTableNameContains() {
+        return tableNameContains;
+    }
     /**
      * A filter to return only items if schema name contains a specific string.
      */
     private String schemaNameContains;
+
+    public String getSchemaNameContains() {
+        return schemaNameContains;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -147,6 +172,50 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String targetDatabaseId = null;
+
+        /**
+         * The OCID of the Data Safe target database.
+         * @return this builder instance
+         */
+        public Builder targetDatabaseId(String targetDatabaseId) {
+            this.targetDatabaseId = targetDatabaseId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
 
         private java.util.List<String> schemaName = null;
 
@@ -184,6 +253,51 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          */
         public Builder tableName(String singularValue) {
             return this.tableName(java.util.Arrays.asList(singularValue));
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String tableNameContains = null;
+
+        /**
+         * A filter to return only items if table name contains a specific string.
+         * @return this builder instance
+         */
+        public Builder tableNameContains(String tableNameContains) {
+            this.tableNameContains = tableNameContains;
+            return this;
+        }
+
+        private String schemaNameContains = null;
+
+        /**
+         * A filter to return only items if schema name contains a specific string.
+         * @return this builder instance
+         */
+        public Builder schemaNameContains(String schemaNameContains) {
+            this.schemaNameContains = schemaNameContains;
+            return this;
         }
 
         /**
@@ -245,5 +359,117 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListTablesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListTablesRequest
+         */
+        public ListTablesRequest buildWithoutInvocationCallback() {
+            ListTablesRequest request = new ListTablesRequest();
+            request.targetDatabaseId = targetDatabaseId;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.schemaName = schemaName;
+            request.tableName = tableName;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.tableNameContains = tableNameContains;
+            request.schemaNameContains = schemaNameContains;
+            return request;
+            // new ListTablesRequest(targetDatabaseId, opcRequestId, limit, page, schemaName, tableName, sortOrder, sortBy, tableNameContains, schemaNameContains);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .targetDatabaseId(targetDatabaseId)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .schemaName(schemaName)
+                .tableName(tableName)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .tableNameContains(tableNameContains)
+                .schemaNameContains(schemaNameContains);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",targetDatabaseId=").append(String.valueOf(this.targetDatabaseId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",schemaName=").append(String.valueOf(this.schemaName));
+        sb.append(",tableName=").append(String.valueOf(this.tableName));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",tableNameContains=").append(String.valueOf(this.tableNameContains));
+        sb.append(",schemaNameContains=").append(String.valueOf(this.schemaNameContains));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListTablesRequest)) {
+            return false;
+        }
+
+        ListTablesRequest other = (ListTablesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.targetDatabaseId, other.targetDatabaseId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.tableName, other.tableName)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.tableNameContains, other.tableNameContains)
+                && java.util.Objects.equals(this.schemaNameContains, other.schemaNameContains);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseId == null ? 43 : this.targetDatabaseId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tableNameContains == null ? 43 : this.tableNameContains.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.schemaNameContains == null
+                                ? 43
+                                : this.schemaNameContains.hashCode());
+        return result;
     }
 }

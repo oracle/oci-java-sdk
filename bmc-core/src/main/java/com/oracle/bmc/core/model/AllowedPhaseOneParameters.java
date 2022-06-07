@@ -15,16 +15,28 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AllowedPhaseOneParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AllowedPhaseOneParameters {
+public final class AllowedPhaseOneParameters {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "encryptionAlgorithms",
+        "authenticationAlgorithms",
+        "dhGroups"
+    })
+    public AllowedPhaseOneParameters(
+            java.util.List<String> encryptionAlgorithms,
+            java.util.List<String> authenticationAlgorithms,
+            java.util.List<String> dhGroups) {
+        super();
+        this.encryptionAlgorithms = encryptionAlgorithms;
+        this.authenticationAlgorithms = authenticationAlgorithms;
+        this.dhGroups = dhGroups;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
         private java.util.List<String> encryptionAlgorithms;
@@ -83,24 +95,95 @@ public class AllowedPhaseOneParameters {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Allowed phase one encryption algorithms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
-    java.util.List<String> encryptionAlgorithms;
+    private final java.util.List<String> encryptionAlgorithms;
+
+    public java.util.List<String> getEncryptionAlgorithms() {
+        return encryptionAlgorithms;
+    }
 
     /**
      * Allowed phase one authentication algorithms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithms")
-    java.util.List<String> authenticationAlgorithms;
+    private final java.util.List<String> authenticationAlgorithms;
+
+    public java.util.List<String> getAuthenticationAlgorithms() {
+        return authenticationAlgorithms;
+    }
 
     /**
      * Allowed phase one Diffie-Hellman groups.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhGroups")
-    java.util.List<String> dhGroups;
+    private final java.util.List<String> dhGroups;
+
+    public java.util.List<String> getDhGroups() {
+        return dhGroups;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AllowedPhaseOneParameters(");
+        sb.append("encryptionAlgorithms=").append(String.valueOf(this.encryptionAlgorithms));
+        sb.append(", authenticationAlgorithms=")
+                .append(String.valueOf(this.authenticationAlgorithms));
+        sb.append(", dhGroups=").append(String.valueOf(this.dhGroups));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AllowedPhaseOneParameters)) {
+            return false;
+        }
+
+        AllowedPhaseOneParameters other = (AllowedPhaseOneParameters) o;
+        return java.util.Objects.equals(this.encryptionAlgorithms, other.encryptionAlgorithms)
+                && java.util.Objects.equals(
+                        this.authenticationAlgorithms, other.authenticationAlgorithms)
+                && java.util.Objects.equals(this.dhGroups, other.dhGroups)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.encryptionAlgorithms == null
+                                ? 43
+                                : this.encryptionAlgorithms.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationAlgorithms == null
+                                ? 43
+                                : this.authenticationAlgorithms.hashCode());
+        result = (result * PRIME) + (this.dhGroups == null ? 43 : this.dhGroups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

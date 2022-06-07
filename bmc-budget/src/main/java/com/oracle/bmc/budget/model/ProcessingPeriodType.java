@@ -8,7 +8,6 @@ package com.oracle.bmc.budget.model;
  * The type of the budget processing period. Valid values are INVOICE and MONTH.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.extern.slf4j.Slf4j
 public enum ProcessingPeriodType {
     Invoice("INVOICE"),
     Month("MONTH"),
@@ -18,6 +17,9 @@ public enum ProcessingPeriodType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ProcessingPeriodType.class);
 
     private final String value;
     private static java.util.Map<String, ProcessingPeriodType> map;

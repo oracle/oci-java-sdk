@@ -7,10 +7,6 @@ package com.oracle.bmc.nosql.responses;
 import com.oracle.bmc.nosql.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list,
@@ -22,6 +18,10 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need
      * to contact Oracle about a particular request, please provide
@@ -30,10 +30,18 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned IndexCollection instance.
      */
     private com.oracle.bmc.nosql.model.IndexCollection indexCollection;
+
+    public com.oracle.bmc.nosql.model.IndexCollection getIndexCollection() {
+        return indexCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -60,6 +68,27 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.nosql.model.IndexCollection indexCollection;
+
+        public Builder indexCollection(com.oracle.bmc.nosql.model.IndexCollection indexCollection) {
+            this.indexCollection = indexCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -77,5 +106,49 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
             return new ListIndexesResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, indexCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",indexCollection=").append(String.valueOf(indexCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListIndexesResponse)) {
+            return false;
+        }
+
+        ListIndexesResponse other = (ListIndexesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.indexCollection, other.indexCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.indexCollection == null ? 43 : this.indexCollection.hashCode());
+        return result;
     }
 }

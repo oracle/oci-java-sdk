@@ -15,22 +15,17 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = VolumeGroupSourceFromVolumeGroupBackupDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeGroupSourceDetails {
+public final class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeGroupSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupBackupId")
         private String volumeGroupBackupId;
@@ -67,6 +62,10 @@ public class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeGroupSo
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public VolumeGroupSourceFromVolumeGroupBackupDetails(String volumeGroupBackupId) {
         super();
@@ -77,8 +76,58 @@ public class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeGroupSo
      * The OCID of the volume group backup to restore from.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupBackupId")
-    String volumeGroupBackupId;
+    private final String volumeGroupBackupId;
+
+    public String getVolumeGroupBackupId() {
+        return volumeGroupBackupId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VolumeGroupSourceFromVolumeGroupBackupDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", volumeGroupBackupId=").append(String.valueOf(this.volumeGroupBackupId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VolumeGroupSourceFromVolumeGroupBackupDetails)) {
+            return false;
+        }
+
+        VolumeGroupSourceFromVolumeGroupBackupDetails other =
+                (VolumeGroupSourceFromVolumeGroupBackupDetails) o;
+        return java.util.Objects.equals(this.volumeGroupBackupId, other.volumeGroupBackupId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.volumeGroupBackupId == null
+                                ? 43
+                                : this.volumeGroupBackupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

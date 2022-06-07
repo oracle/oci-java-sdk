@@ -15,16 +15,55 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OdaInstanceAttachment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OdaInstanceAttachment {
+public final class OdaInstanceAttachment {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "instanceId",
+        "attachToId",
+        "attachmentType",
+        "attachmentMetadata",
+        "restrictedOperations",
+        "owner",
+        "timeCreated",
+        "timeLastUpdate",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags"
+    })
+    public OdaInstanceAttachment(
+            String id,
+            String instanceId,
+            String attachToId,
+            AttachmentType attachmentType,
+            String attachmentMetadata,
+            java.util.List<String> restrictedOperations,
+            OdaInstanceOwner owner,
+            java.util.Date timeCreated,
+            java.util.Date timeLastUpdate,
+            LifecycleState lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.instanceId = instanceId;
+        this.attachToId = attachToId;
+        this.attachmentType = attachmentType;
+        this.attachmentMetadata = attachmentMetadata;
+        this.restrictedOperations = restrictedOperations;
+        this.owner = owner;
+        this.timeCreated = timeCreated;
+        this.timeLastUpdate = timeLastUpdate;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -185,27 +224,43 @@ public class OdaInstanceAttachment {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique immutable identifier that was assigned when the ODA instance attachment was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the ODA instance to which the attachment applies.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
 
     /**
      * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which the ODA instance is or is being attached.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachToId")
-    String attachToId;
+    private final String attachToId;
+
+    public String getAttachToId() {
+        return attachToId;
+    }
+
     /**
      * The type of attachment defined as an enum.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AttachmentType {
         Fusion("FUSION"),
 
@@ -214,6 +269,9 @@ public class OdaInstanceAttachment {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AttachmentType.class);
 
         private final String value;
         private static java.util.Map<String, AttachmentType> map;
@@ -251,38 +309,62 @@ public class OdaInstanceAttachment {
      * The type of attachment defined as an enum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
-    AttachmentType attachmentType;
+    private final AttachmentType attachmentType;
+
+    public AttachmentType getAttachmentType() {
+        return attachmentType;
+    }
 
     /**
      * Attachment-specific metadata, defined by the target service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentMetadata")
-    String attachmentMetadata;
+    private final String attachmentMetadata;
+
+    public String getAttachmentMetadata() {
+        return attachmentMetadata;
+    }
 
     /**
      * List of operation names that are restricted while this ODA instance is attached.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
-    java.util.List<String> restrictedOperations;
+    private final java.util.List<String> restrictedOperations;
+
+    public java.util.List<String> getRestrictedOperations() {
+        return restrictedOperations;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
-    OdaInstanceOwner owner;
+    private final OdaInstanceOwner owner;
+
+    public OdaInstanceOwner getOwner() {
+        return owner;
+    }
 
     /**
      * The time the attachment was created. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the attachment was last modified. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdate")
-    java.util.Date timeLastUpdate;
+    private final java.util.Date timeLastUpdate;
+
+    public java.util.Date getTimeLastUpdate() {
+        return timeLastUpdate;
+    }
+
     /**
      * The current state of the attachment.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Attaching("ATTACHING"),
         Active("ACTIVE"),
@@ -295,6 +377,9 @@ public class OdaInstanceAttachment {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -332,7 +417,11 @@ public class OdaInstanceAttachment {
      * The current state of the attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
@@ -340,7 +429,11 @@ public class OdaInstanceAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -348,8 +441,98 @@ public class OdaInstanceAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OdaInstanceAttachment(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", attachToId=").append(String.valueOf(this.attachToId));
+        sb.append(", attachmentType=").append(String.valueOf(this.attachmentType));
+        sb.append(", attachmentMetadata=").append(String.valueOf(this.attachmentMetadata));
+        sb.append(", restrictedOperations=").append(String.valueOf(this.restrictedOperations));
+        sb.append(", owner=").append(String.valueOf(this.owner));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLastUpdate=").append(String.valueOf(this.timeLastUpdate));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OdaInstanceAttachment)) {
+            return false;
+        }
+
+        OdaInstanceAttachment other = (OdaInstanceAttachment) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.attachToId, other.attachToId)
+                && java.util.Objects.equals(this.attachmentType, other.attachmentType)
+                && java.util.Objects.equals(this.attachmentMetadata, other.attachmentMetadata)
+                && java.util.Objects.equals(this.restrictedOperations, other.restrictedOperations)
+                && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLastUpdate, other.timeLastUpdate)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result = (result * PRIME) + (this.attachToId == null ? 43 : this.attachToId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachmentType == null ? 43 : this.attachmentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachmentMetadata == null
+                                ? 43
+                                : this.attachmentMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restrictedOperations == null
+                                ? 43
+                                : this.restrictedOperations.hashCode());
+        result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastUpdate == null ? 43 : this.timeLastUpdate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

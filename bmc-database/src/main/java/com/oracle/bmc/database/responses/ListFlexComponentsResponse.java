@@ -7,10 +7,6 @@ package com.oracle.bmc.database.responses;
 import com.oracle.bmc.database.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListFlexComponentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -18,6 +14,10 @@ public class ListFlexComponentsResponse extends com.oracle.bmc.responses.BmcResp
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -28,10 +28,18 @@ public class ListFlexComponentsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned FlexComponentCollection instance.
      */
     private com.oracle.bmc.database.model.FlexComponentCollection flexComponentCollection;
+
+    public com.oracle.bmc.database.model.FlexComponentCollection getFlexComponentCollection() {
+        return flexComponentCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -58,6 +66,28 @@ public class ListFlexComponentsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.FlexComponentCollection flexComponentCollection;
+
+        public Builder flexComponentCollection(
+                com.oracle.bmc.database.model.FlexComponentCollection flexComponentCollection) {
+            this.flexComponentCollection = flexComponentCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -75,5 +105,52 @@ public class ListFlexComponentsResponse extends com.oracle.bmc.responses.BmcResp
             return new ListFlexComponentsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, flexComponentCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",flexComponentCollection=").append(String.valueOf(flexComponentCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListFlexComponentsResponse)) {
+            return false;
+        }
+
+        ListFlexComponentsResponse other = (ListFlexComponentsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.flexComponentCollection, other.flexComponentCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flexComponentCollection == null
+                                ? 43
+                                : this.flexComponentCollection.hashCode());
+        return result;
     }
 }

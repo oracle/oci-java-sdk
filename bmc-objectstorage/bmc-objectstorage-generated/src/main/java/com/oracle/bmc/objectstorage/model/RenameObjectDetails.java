@@ -18,16 +18,34 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RenameObjectDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RenameObjectDetails {
+public final class RenameObjectDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sourceName",
+        "newName",
+        "srcObjIfMatchETag",
+        "newObjIfMatchETag",
+        "newObjIfNoneMatchETag"
+    })
+    public RenameObjectDetails(
+            String sourceName,
+            String newName,
+            String srcObjIfMatchETag,
+            String newObjIfMatchETag,
+            String newObjIfNoneMatchETag) {
+        super();
+        this.sourceName = sourceName;
+        this.newName = newName;
+        this.srcObjIfMatchETag = srcObjIfMatchETag;
+        this.newObjIfMatchETag = newObjIfMatchETag;
+        this.newObjIfNoneMatchETag = newObjIfNoneMatchETag;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
@@ -110,29 +128,49 @@ public class RenameObjectDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the source object to be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
 
     /**
      * The new name of the source object. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newName")
-    String newName;
+    private final String newName;
+
+    public String getNewName() {
+        return newName;
+    }
 
     /**
      * The if-match entity tag (ETag) of the source object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("srcObjIfMatchETag")
-    String srcObjIfMatchETag;
+    private final String srcObjIfMatchETag;
+
+    public String getSrcObjIfMatchETag() {
+        return srcObjIfMatchETag;
+    }
 
     /**
      * The if-match entity tag (ETag) of the new object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newObjIfMatchETag")
-    String newObjIfMatchETag;
+    private final String newObjIfMatchETag;
+
+    public String getNewObjIfMatchETag() {
+        return newObjIfMatchETag;
+    }
 
     /**
      * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
@@ -140,8 +178,71 @@ public class RenameObjectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newObjIfNoneMatchETag")
-    String newObjIfNoneMatchETag;
+    private final String newObjIfNoneMatchETag;
+
+    public String getNewObjIfNoneMatchETag() {
+        return newObjIfNoneMatchETag;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RenameObjectDetails(");
+        sb.append("sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", newName=").append(String.valueOf(this.newName));
+        sb.append(", srcObjIfMatchETag=").append(String.valueOf(this.srcObjIfMatchETag));
+        sb.append(", newObjIfMatchETag=").append(String.valueOf(this.newObjIfMatchETag));
+        sb.append(", newObjIfNoneMatchETag=").append(String.valueOf(this.newObjIfNoneMatchETag));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RenameObjectDetails)) {
+            return false;
+        }
+
+        RenameObjectDetails other = (RenameObjectDetails) o;
+        return java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.newName, other.newName)
+                && java.util.Objects.equals(this.srcObjIfMatchETag, other.srcObjIfMatchETag)
+                && java.util.Objects.equals(this.newObjIfMatchETag, other.newObjIfMatchETag)
+                && java.util.Objects.equals(this.newObjIfNoneMatchETag, other.newObjIfNoneMatchETag)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result = (result * PRIME) + (this.newName == null ? 43 : this.newName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.srcObjIfMatchETag == null ? 43 : this.srcObjIfMatchETag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.newObjIfMatchETag == null ? 43 : this.newObjIfMatchETag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.newObjIfNoneMatchETag == null
+                                ? 43
+                                : this.newObjIfNoneMatchETag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

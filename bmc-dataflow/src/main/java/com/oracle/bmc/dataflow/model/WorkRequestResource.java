@@ -16,16 +16,37 @@ package com.oracle.bmc.dataflow.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestResource {
+public final class WorkRequestResource {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "actionType",
+        "id",
+        "resourceId",
+        "resourceType",
+        "resourceUri",
+        "workRequestid"
+    })
+    public WorkRequestResource(
+            ActionType actionType,
+            Long id,
+            String resourceId,
+            String resourceType,
+            String resourceUri,
+            String workRequestid) {
+        super();
+        this.actionType = actionType;
+        this.id = id;
+        this.resourceId = resourceId;
+        this.resourceType = resourceType;
+        this.resourceUri = resourceUri;
+        this.workRequestid = workRequestid;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
@@ -114,11 +135,14 @@ public class WorkRequestResource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The way in which this resource is affected by the work tracked in the work request.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ActionType {
         Created("CREATED"),
         Updated("UPDATED"),
@@ -131,6 +155,9 @@ public class WorkRequestResource {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ActionType.class);
 
         private final String value;
         private static java.util.Map<String, ActionType> map;
@@ -169,43 +196,123 @@ public class WorkRequestResource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
-    ActionType actionType;
+    private final ActionType actionType;
+
+    public ActionType getActionType() {
+        return actionType;
+    }
 
     /**
      * The id of a work request resource object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    Long id;
+    private final Long id;
+
+    public Long getId() {
+        return id;
+    }
 
     /**
      * The id of the releated resource. See resourceType to identity the specific type of resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The type of resource.  See resourceId for the id of the specific resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * The URI path that the user can use to get access to the resource metadata
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
-    String resourceUri;
+    private final String resourceUri;
+
+    public String getResourceUri() {
+        return resourceUri;
+    }
 
     /**
      * The OCID of a work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestid")
-    String workRequestid;
+    private final String workRequestid;
+
+    public String getWorkRequestid() {
+        return workRequestid;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestResource(");
+        sb.append("actionType=").append(String.valueOf(this.actionType));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", resourceUri=").append(String.valueOf(this.resourceUri));
+        sb.append(", workRequestid=").append(String.valueOf(this.workRequestid));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestResource)) {
+            return false;
+        }
+
+        WorkRequestResource other = (WorkRequestResource) o;
+        return java.util.Objects.equals(this.actionType, other.actionType)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourceUri, other.resourceUri)
+                && java.util.Objects.equals(this.workRequestid, other.workRequestid)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.resourceUri == null ? 43 : this.resourceUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestid == null ? 43 : this.workRequestid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

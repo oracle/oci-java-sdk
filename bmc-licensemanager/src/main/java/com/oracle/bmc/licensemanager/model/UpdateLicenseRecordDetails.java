@@ -15,16 +15,46 @@ package com.oracle.bmc.licensemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateLicenseRecordDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateLicenseRecordDetails {
+public final class UpdateLicenseRecordDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "isPerpetual",
+        "expirationDate",
+        "supportEndDate",
+        "isUnlimited",
+        "licenseCount",
+        "productId",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateLicenseRecordDetails(
+            String displayName,
+            Boolean isPerpetual,
+            java.util.Date expirationDate,
+            java.util.Date supportEndDate,
+            Boolean isUnlimited,
+            Integer licenseCount,
+            String productId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.isPerpetual = isPerpetual;
+        this.expirationDate = expirationDate;
+        this.supportEndDate = supportEndDate;
+        this.isUnlimited = isUnlimited;
+        this.licenseCount = licenseCount;
+        this.productId = productId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -152,18 +182,30 @@ public class UpdateLicenseRecordDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * License record name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Specifies if the license record term is perpertual.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPerpetual")
-    Boolean isPerpetual;
+    private final Boolean isPerpetual;
+
+    public Boolean getIsPerpetual() {
+        return isPerpetual;
+    }
 
     /**
      * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -172,7 +214,11 @@ public class UpdateLicenseRecordDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expirationDate")
-    java.util.Date expirationDate;
+    private final java.util.Date expirationDate;
+
+    public java.util.Date getExpirationDate() {
+        return expirationDate;
+    }
 
     /**
      * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -181,13 +227,21 @@ public class UpdateLicenseRecordDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportEndDate")
-    java.util.Date supportEndDate;
+    private final java.util.Date supportEndDate;
+
+    public java.util.Date getSupportEndDate() {
+        return supportEndDate;
+    }
 
     /**
      * Specifies if the license count is unlimited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
-    Boolean isUnlimited;
+    private final Boolean isUnlimited;
+
+    public Boolean getIsUnlimited() {
+        return isUnlimited;
+    }
 
     /**
      * The number of license units added by a user in a license record.
@@ -195,13 +249,21 @@ public class UpdateLicenseRecordDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseCount")
-    Integer licenseCount;
+    private final Integer licenseCount;
+
+    public Integer getLicenseCount() {
+        return licenseCount;
+    }
 
     /**
      * The license record product ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productId")
-    String productId;
+    private final String productId;
+
+    public String getProductId() {
+        return productId;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
@@ -209,7 +271,11 @@ public class UpdateLicenseRecordDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -217,8 +283,79 @@ public class UpdateLicenseRecordDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateLicenseRecordDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isPerpetual=").append(String.valueOf(this.isPerpetual));
+        sb.append(", expirationDate=").append(String.valueOf(this.expirationDate));
+        sb.append(", supportEndDate=").append(String.valueOf(this.supportEndDate));
+        sb.append(", isUnlimited=").append(String.valueOf(this.isUnlimited));
+        sb.append(", licenseCount=").append(String.valueOf(this.licenseCount));
+        sb.append(", productId=").append(String.valueOf(this.productId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLicenseRecordDetails)) {
+            return false;
+        }
+
+        UpdateLicenseRecordDetails other = (UpdateLicenseRecordDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isPerpetual, other.isPerpetual)
+                && java.util.Objects.equals(this.expirationDate, other.expirationDate)
+                && java.util.Objects.equals(this.supportEndDate, other.supportEndDate)
+                && java.util.Objects.equals(this.isUnlimited, other.isUnlimited)
+                && java.util.Objects.equals(this.licenseCount, other.licenseCount)
+                && java.util.Objects.equals(this.productId, other.productId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.isPerpetual == null ? 43 : this.isPerpetual.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expirationDate == null ? 43 : this.expirationDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportEndDate == null ? 43 : this.supportEndDate.hashCode());
+        result = (result * PRIME) + (this.isUnlimited == null ? 43 : this.isUnlimited.hashCode());
+        result = (result * PRIME) + (this.licenseCount == null ? 43 : this.licenseCount.hashCode());
+        result = (result * PRIME) + (this.productId == null ? 43 : this.productId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

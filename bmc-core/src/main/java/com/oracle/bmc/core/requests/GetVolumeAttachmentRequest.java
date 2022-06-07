@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVolumeAttachmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetVolumeAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,12 +16,27 @@ public class GetVolumeAttachmentRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String volumeAttachmentId;
 
+    public String getVolumeAttachmentId() {
+        return volumeAttachmentId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetVolumeAttachmentRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String volumeAttachmentId = null;
+
+        /**
+         * The OCID of the volume attachment.
+         * @return this builder instance
+         */
+        public Builder volumeAttachmentId(String volumeAttachmentId) {
+            this.volumeAttachmentId = volumeAttachmentId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -81,5 +88,67 @@ public class GetVolumeAttachmentRequest extends com.oracle.bmc.requests.BmcReque
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetVolumeAttachmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetVolumeAttachmentRequest
+         */
+        public GetVolumeAttachmentRequest buildWithoutInvocationCallback() {
+            GetVolumeAttachmentRequest request = new GetVolumeAttachmentRequest();
+            request.volumeAttachmentId = volumeAttachmentId;
+            return request;
+            // new GetVolumeAttachmentRequest(volumeAttachmentId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().volumeAttachmentId(volumeAttachmentId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",volumeAttachmentId=").append(String.valueOf(this.volumeAttachmentId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetVolumeAttachmentRequest)) {
+            return false;
+        }
+
+        GetVolumeAttachmentRequest other = (GetVolumeAttachmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.volumeAttachmentId, other.volumeAttachmentId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.volumeAttachmentId == null
+                                ? 43
+                                : this.volumeAttachmentId.hashCode());
+        return result;
     }
 }

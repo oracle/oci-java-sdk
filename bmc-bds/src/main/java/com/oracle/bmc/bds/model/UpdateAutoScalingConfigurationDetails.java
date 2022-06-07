@@ -15,16 +15,34 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateAutoScalingConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateAutoScalingConfigurationDetails {
+public final class UpdateAutoScalingConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "isEnabled",
+        "clusterAdminPassword",
+        "policy",
+        "policyDetails"
+    })
+    public UpdateAutoScalingConfigurationDetails(
+            String displayName,
+            Boolean isEnabled,
+            String clusterAdminPassword,
+            AutoScalePolicy policy,
+            UpdateAutoScalePolicyDetails policyDetails) {
+        super();
+        this.displayName = displayName;
+        this.isEnabled = isEnabled;
+        this.clusterAdminPassword = clusterAdminPassword;
+        this.policy = policy;
+        this.policyDetails = policyDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -103,30 +121,111 @@ public class UpdateAutoScalingConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Whether the autoscale configuration is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    String clusterAdminPassword;
+    private final String clusterAdminPassword;
+
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
-    AutoScalePolicy policy;
+    private final AutoScalePolicy policy;
+
+    public AutoScalePolicy getPolicy() {
+        return policy;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("policyDetails")
-    UpdateAutoScalePolicyDetails policyDetails;
+    private final UpdateAutoScalePolicyDetails policyDetails;
+
+    public UpdateAutoScalePolicyDetails getPolicyDetails() {
+        return policyDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateAutoScalingConfigurationDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", policy=").append(String.valueOf(this.policy));
+        sb.append(", policyDetails=").append(String.valueOf(this.policyDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAutoScalingConfigurationDetails)) {
+            return false;
+        }
+
+        UpdateAutoScalingConfigurationDetails other = (UpdateAutoScalingConfigurationDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.policy, other.policy)
+                && java.util.Objects.equals(this.policyDetails, other.policyDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterAdminPassword == null
+                                ? 43
+                                : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.policyDetails == null ? 43 : this.policyDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

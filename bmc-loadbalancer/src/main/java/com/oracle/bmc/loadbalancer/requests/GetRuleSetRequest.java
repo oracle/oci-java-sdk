@@ -9,14 +9,6 @@ import com.oracle.bmc.loadbalancer.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetRuleSetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRuleSetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String loadBalancerId;
 
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
     /**
      * The name of the rule set to retrieve.
      * <p>
@@ -32,6 +27,9 @@ public class GetRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String ruleSetName;
 
+    public String getRuleSetName() {
+        return ruleSetName;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -39,12 +37,54 @@ public class GetRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetRuleSetRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String loadBalancerId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the specified load balancer.
+         * @return this builder instance
+         */
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        private String ruleSetName = null;
+
+        /**
+         * The name of the rule set to retrieve.
+         * <p>
+         * Example: {@code example_rule_set}
+         *
+         * @return this builder instance
+         */
+        public Builder ruleSetName(String ruleSetName) {
+            this.ruleSetName = ruleSetName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -98,5 +138,76 @@ public class GetRuleSetRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetRuleSetRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetRuleSetRequest
+         */
+        public GetRuleSetRequest buildWithoutInvocationCallback() {
+            GetRuleSetRequest request = new GetRuleSetRequest();
+            request.loadBalancerId = loadBalancerId;
+            request.ruleSetName = ruleSetName;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetRuleSetRequest(loadBalancerId, ruleSetName, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .loadBalancerId(loadBalancerId)
+                .ruleSetName(ruleSetName)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(",ruleSetName=").append(String.valueOf(this.ruleSetName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetRuleSetRequest)) {
+            return false;
+        }
+
+        GetRuleSetRequest other = (GetRuleSetRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.ruleSetName, other.ruleSetName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result = (result * PRIME) + (this.ruleSetName == null ? 43 : this.ruleSetName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

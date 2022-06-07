@@ -15,16 +15,20 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GenerateMaskingReportForDownloadDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GenerateMaskingReportForDownloadDetails {
+public final class GenerateMaskingReportForDownloadDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"reportId", "reportFormat"})
+    public GenerateMaskingReportForDownloadDetails(String reportId, ReportFormat reportFormat) {
+        super();
+        this.reportId = reportId;
+        this.reportFormat = reportFormat;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("reportId")
         private String reportId;
@@ -70,11 +74,20 @@ public class GenerateMaskingReportForDownloadDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the masking report for which a downloadable file is to be generated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reportId")
-    String reportId;
+    private final String reportId;
+
+    public String getReportId() {
+        return reportId;
+    }
+
     /**
      * Format of the report.
      **/
@@ -114,8 +127,54 @@ public class GenerateMaskingReportForDownloadDetails {
      * Format of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
-    ReportFormat reportFormat;
+    private final ReportFormat reportFormat;
+
+    public ReportFormat getReportFormat() {
+        return reportFormat;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GenerateMaskingReportForDownloadDetails(");
+        sb.append("reportId=").append(String.valueOf(this.reportId));
+        sb.append(", reportFormat=").append(String.valueOf(this.reportFormat));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateMaskingReportForDownloadDetails)) {
+            return false;
+        }
+
+        GenerateMaskingReportForDownloadDetails other = (GenerateMaskingReportForDownloadDetails) o;
+        return java.util.Objects.equals(this.reportId, other.reportId)
+                && java.util.Objects.equals(this.reportFormat, other.reportFormat)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.reportId == null ? 43 : this.reportId.hashCode());
+        result = (result * PRIME) + (this.reportFormat == null ? 43 : this.reportFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

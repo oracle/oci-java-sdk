@@ -15,12 +15,6 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -83,30 +77,97 @@ package com.oracle.bmc.databasemanagement.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AwrQueryResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "version", "queryKey", "dbQueryTimeInSecs"})
+    protected AwrQueryResult(
+            String name, String version, String queryKey, Double dbQueryTimeInSecs) {
+        super();
+        this.name = name;
+        this.version = version;
+        this.queryKey = queryKey;
+        this.dbQueryTimeInSecs = dbQueryTimeInSecs;
+    }
 
     /**
      * The name of the query result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The version of the query result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The ID assigned to the query instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryKey")
-    String queryKey;
+    private final String queryKey;
+
+    public String getQueryKey() {
+        return queryKey;
+    }
 
     /**
      * The time taken to query the database tier (in seconds).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbQueryTimeInSecs")
-    Double dbQueryTimeInSecs;
+    private final Double dbQueryTimeInSecs;
+
+    public Double getDbQueryTimeInSecs() {
+        return dbQueryTimeInSecs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AwrQueryResult(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", queryKey=").append(String.valueOf(this.queryKey));
+        sb.append(", dbQueryTimeInSecs=").append(String.valueOf(this.dbQueryTimeInSecs));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AwrQueryResult)) {
+            return false;
+        }
+
+        AwrQueryResult other = (AwrQueryResult) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.queryKey, other.queryKey)
+                && java.util.Objects.equals(this.dbQueryTimeInSecs, other.dbQueryTimeInSecs);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.queryKey == null ? 43 : this.queryKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbQueryTimeInSecs == null ? 43 : this.dbQueryTimeInSecs.hashCode());
+        return result;
+    }
 
     /**
      * The result type of AWR query.

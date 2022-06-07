@@ -15,14 +15,24 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffLineDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DiffLineDetails {
+public final class DiffLineDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"baseLine", "targetLine", "lineContent", "conflictMarker"})
+    public DiffLineDetails(
+            Integer baseLine,
+            Integer targetLine,
+            String lineContent,
+            ConflictMarker conflictMarker) {
+        super();
+        this.baseLine = baseLine;
+        this.targetLine = targetLine;
+        this.lineContent = lineContent;
+        this.conflictMarker = conflictMarker;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
         private Integer baseLine;
@@ -90,27 +100,43 @@ public class DiffLineDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of a line in the base version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
-    Integer baseLine;
+    private final Integer baseLine;
+
+    public Integer getBaseLine() {
+        return baseLine;
+    }
 
     /**
      * The number of a line in the target version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetLine")
-    Integer targetLine;
+    private final Integer targetLine;
+
+    public Integer getTargetLine() {
+        return targetLine;
+    }
 
     /**
      * The contents of a line.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
-    String lineContent;
+    private final String lineContent;
+
+    public String getLineContent() {
+        return lineContent;
+    }
+
     /**
      * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ConflictMarker {
         Base("BASE"),
         Target("TARGET"),
@@ -122,6 +148,9 @@ public class DiffLineDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConflictMarker.class);
 
         private final String value;
         private static java.util.Map<String, ConflictMarker> map;
@@ -159,8 +188,62 @@ public class DiffLineDetails {
      * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conflictMarker")
-    ConflictMarker conflictMarker;
+    private final ConflictMarker conflictMarker;
+
+    public ConflictMarker getConflictMarker() {
+        return conflictMarker;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DiffLineDetails(");
+        sb.append("baseLine=").append(String.valueOf(this.baseLine));
+        sb.append(", targetLine=").append(String.valueOf(this.targetLine));
+        sb.append(", lineContent=").append(String.valueOf(this.lineContent));
+        sb.append(", conflictMarker=").append(String.valueOf(this.conflictMarker));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DiffLineDetails)) {
+            return false;
+        }
+
+        DiffLineDetails other = (DiffLineDetails) o;
+        return java.util.Objects.equals(this.baseLine, other.baseLine)
+                && java.util.Objects.equals(this.targetLine, other.targetLine)
+                && java.util.Objects.equals(this.lineContent, other.lineContent)
+                && java.util.Objects.equals(this.conflictMarker, other.conflictMarker)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.baseLine == null ? 43 : this.baseLine.hashCode());
+        result = (result * PRIME) + (this.targetLine == null ? 43 : this.targetLine.hashCode());
+        result = (result * PRIME) + (this.lineContent == null ? 43 : this.lineContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conflictMarker == null ? 43 : this.conflictMarker.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

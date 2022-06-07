@@ -9,14 +9,6 @@ import com.oracle.bmc.datalabelingservicedataplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservicedataplane/ListAnnotationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAnnotationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,59 +16,93 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Filter the results by the OCID of the dataset.
      */
     private String datasetId;
 
+    public String getDatasetId() {
+        return datasetId;
+    }
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
             lifecycleState;
 
+    public com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
+            getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * The unique OCID identifier.
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * The OCID of the principal which updated the annotation.
      */
     private String updatedBy;
 
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
     /**
      * The OCID of the record annotated.
      */
     private String recordId;
 
+    public String getRecordId() {
+        return recordId;
+    }
     /**
      * The date and time the resource was created, in the timestamp format defined by RFC3339.
      *
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
+        return timeCreatedGreaterThanOrEqualTo;
+    }
     /**
      * The date and time the resource was created, in the timestamp format defined by RFC3339.
      *
      */
     private java.util.Date timeCreatedLessThanOrEqualTo;
 
+    public java.util.Date getTimeCreatedLessThanOrEqualTo() {
+        return timeCreatedLessThanOrEqualTo;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.datalabelingservicedataplane.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. If no value is specified timeCreated is used by default.
      */
@@ -117,10 +143,18 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -128,6 +162,156 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String datasetId = null;
+
+        /**
+         * Filter the results by the OCID of the dataset.
+         * @return this builder instance
+         */
+        public Builder datasetId(String datasetId) {
+            this.datasetId = datasetId;
+            return this;
+        }
+
+        private com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
+                lifecycleState = null;
+
+        /**
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String id = null;
+
+        /**
+         * The unique OCID identifier.
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String updatedBy = null;
+
+        /**
+         * The OCID of the principal which updated the annotation.
+         * @return this builder instance
+         */
+        public Builder updatedBy(String updatedBy) {
+            this.updatedBy = updatedBy;
+            return this;
+        }
+
+        private String recordId = null;
+
+        /**
+         * The OCID of the record annotated.
+         * @return this builder instance
+         */
+        public Builder recordId(String recordId) {
+            this.recordId = recordId;
+            return this;
+        }
+
+        private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
+
+        /**
+         * The date and time the resource was created, in the timestamp format defined by RFC3339.
+         *
+         * @return this builder instance
+         */
+        public Builder timeCreatedGreaterThanOrEqualTo(
+                java.util.Date timeCreatedGreaterThanOrEqualTo) {
+            this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeCreatedLessThanOrEqualTo = null;
+
+        /**
+         * The date and time the resource was created, in the timestamp format defined by RFC3339.
+         *
+         * @return this builder instance
+         */
+        public Builder timeCreatedLessThanOrEqualTo(java.util.Date timeCreatedLessThanOrEqualTo) {
+            this.timeCreatedLessThanOrEqualTo = timeCreatedLessThanOrEqualTo;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(
+                com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. If no value is specified timeCreated is used by default.
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -191,5 +375,140 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAnnotationsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAnnotationsRequest
+         */
+        public ListAnnotationsRequest buildWithoutInvocationCallback() {
+            ListAnnotationsRequest request = new ListAnnotationsRequest();
+            request.compartmentId = compartmentId;
+            request.datasetId = datasetId;
+            request.lifecycleState = lifecycleState;
+            request.id = id;
+            request.updatedBy = updatedBy;
+            request.recordId = recordId;
+            request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            request.timeCreatedLessThanOrEqualTo = timeCreatedLessThanOrEqualTo;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListAnnotationsRequest(compartmentId, datasetId, lifecycleState, id, updatedBy, recordId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThanOrEqualTo, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .datasetId(datasetId)
+                .lifecycleState(lifecycleState)
+                .id(id)
+                .updatedBy(updatedBy)
+                .recordId(recordId)
+                .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
+                .timeCreatedLessThanOrEqualTo(timeCreatedLessThanOrEqualTo)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",datasetId=").append(String.valueOf(this.datasetId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",updatedBy=").append(String.valueOf(this.updatedBy));
+        sb.append(",recordId=").append(String.valueOf(this.recordId));
+        sb.append(",timeCreatedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
+        sb.append(",timeCreatedLessThanOrEqualTo=")
+                .append(String.valueOf(this.timeCreatedLessThanOrEqualTo));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAnnotationsRequest)) {
+            return false;
+        }
+
+        ListAnnotationsRequest other = (ListAnnotationsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.datasetId, other.datasetId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.updatedBy, other.updatedBy)
+                && java.util.Objects.equals(this.recordId, other.recordId)
+                && java.util.Objects.equals(
+                        this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeCreatedLessThanOrEqualTo, other.timeCreatedLessThanOrEqualTo)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.datasetId == null ? 43 : this.datasetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.updatedBy == null ? 43 : this.updatedBy.hashCode());
+        result = (result * PRIME) + (this.recordId == null ? 43 : this.recordId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeCreatedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedLessThanOrEqualTo == null
+                                ? 43
+                                : this.timeCreatedLessThanOrEqualTo.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

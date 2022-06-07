@@ -15,16 +15,37 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CompleteExternalBackupJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CompleteExternalBackupJobDetails {
+public final class CompleteExternalBackupJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tdeWalletPath",
+        "cfBackupHandle",
+        "spfBackupHandle",
+        "sqlPatches",
+        "dataSize",
+        "redoSize"
+    })
+    public CompleteExternalBackupJobDetails(
+            String tdeWalletPath,
+            String cfBackupHandle,
+            String spfBackupHandle,
+            java.util.List<String> sqlPatches,
+            Long dataSize,
+            Long redoSize) {
+        super();
+        this.tdeWalletPath = tdeWalletPath;
+        this.cfBackupHandle = cfBackupHandle;
+        this.spfBackupHandle = spfBackupHandle;
+        this.sqlPatches = sqlPatches;
+        this.dataSize = dataSize;
+        this.redoSize = redoSize;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPath")
         private String tdeWalletPath;
@@ -118,42 +139,130 @@ public class CompleteExternalBackupJobDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPath")
-    String tdeWalletPath;
+    private final String tdeWalletPath;
+
+    public String getTdeWalletPath() {
+        return tdeWalletPath;
+    }
 
     /**
      * The handle of the control file backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cfBackupHandle")
-    String cfBackupHandle;
+    private final String cfBackupHandle;
+
+    public String getCfBackupHandle() {
+        return cfBackupHandle;
+    }
 
     /**
      * The handle of the spfile backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("spfBackupHandle")
-    String spfBackupHandle;
+    private final String spfBackupHandle;
+
+    public String getSpfBackupHandle() {
+        return spfBackupHandle;
+    }
 
     /**
      * The list of SQL patches that need to be applied to the backup during the restore.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlPatches")
-    java.util.List<String> sqlPatches;
+    private final java.util.List<String> sqlPatches;
+
+    public java.util.List<String> getSqlPatches() {
+        return sqlPatches;
+    }
 
     /**
      * The size of the data in the database, in megabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSize")
-    Long dataSize;
+    private final Long dataSize;
+
+    public Long getDataSize() {
+        return dataSize;
+    }
 
     /**
      * The size of the redo in the database, in megabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redoSize")
-    Long redoSize;
+    private final Long redoSize;
+
+    public Long getRedoSize() {
+        return redoSize;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CompleteExternalBackupJobDetails(");
+        sb.append("tdeWalletPath=").append(String.valueOf(this.tdeWalletPath));
+        sb.append(", cfBackupHandle=").append(String.valueOf(this.cfBackupHandle));
+        sb.append(", spfBackupHandle=").append(String.valueOf(this.spfBackupHandle));
+        sb.append(", sqlPatches=").append(String.valueOf(this.sqlPatches));
+        sb.append(", dataSize=").append(String.valueOf(this.dataSize));
+        sb.append(", redoSize=").append(String.valueOf(this.redoSize));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CompleteExternalBackupJobDetails)) {
+            return false;
+        }
+
+        CompleteExternalBackupJobDetails other = (CompleteExternalBackupJobDetails) o;
+        return java.util.Objects.equals(this.tdeWalletPath, other.tdeWalletPath)
+                && java.util.Objects.equals(this.cfBackupHandle, other.cfBackupHandle)
+                && java.util.Objects.equals(this.spfBackupHandle, other.spfBackupHandle)
+                && java.util.Objects.equals(this.sqlPatches, other.sqlPatches)
+                && java.util.Objects.equals(this.dataSize, other.dataSize)
+                && java.util.Objects.equals(this.redoSize, other.redoSize)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.tdeWalletPath == null ? 43 : this.tdeWalletPath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cfBackupHandle == null ? 43 : this.cfBackupHandle.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.spfBackupHandle == null ? 43 : this.spfBackupHandle.hashCode());
+        result = (result * PRIME) + (this.sqlPatches == null ? 43 : this.sqlPatches.hashCode());
+        result = (result * PRIME) + (this.dataSize == null ? 43 : this.dataSize.hashCode());
+        result = (result * PRIME) + (this.redoSize == null ? 43 : this.redoSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,61 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateAutonomousVmClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateAutonomousVmClusterDetails {
+public final class CreateAutonomousVmClusterDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "exadataInfrastructureId",
+        "vmClusterNetworkId",
+        "timeZone",
+        "isLocalBackupEnabled",
+        "licenseModel",
+        "totalContainerDatabases",
+        "cpuCoreCountPerNode",
+        "memoryPerOracleComputeUnitInGBs",
+        "autonomousDataStorageSizeInTBs",
+        "maintenanceWindowDetails",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateAutonomousVmClusterDetails(
+            String compartmentId,
+            String displayName,
+            String exadataInfrastructureId,
+            String vmClusterNetworkId,
+            String timeZone,
+            Boolean isLocalBackupEnabled,
+            LicenseModel licenseModel,
+            Integer totalContainerDatabases,
+            Integer cpuCoreCountPerNode,
+            Integer memoryPerOracleComputeUnitInGBs,
+            Double autonomousDataStorageSizeInTBs,
+            MaintenanceWindow maintenanceWindowDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.exadataInfrastructureId = exadataInfrastructureId;
+        this.vmClusterNetworkId = vmClusterNetworkId;
+        this.timeZone = timeZone;
+        this.isLocalBackupEnabled = isLocalBackupEnabled;
+        this.licenseModel = licenseModel;
+        this.totalContainerDatabases = totalContainerDatabases;
+        this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+        this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+        this.maintenanceWindowDetails = maintenanceWindowDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -208,42 +253,71 @@ public class CreateAutonomousVmClusterDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
-    String exadataInfrastructureId;
+    private final String exadataInfrastructureId;
+
+    public String getExadataInfrastructureId() {
+        return exadataInfrastructureId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
-    String vmClusterNetworkId;
+    private final String vmClusterNetworkId;
+
+    public String getVmClusterNetworkId() {
+        return vmClusterNetworkId;
+    }
 
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    String timeZone;
+    private final String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
 
     /**
      * If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
-    Boolean isLocalBackupEnabled;
+    private final Boolean isLocalBackupEnabled;
+
+    public Boolean getIsLocalBackupEnabled() {
+        return isLocalBackupEnabled;
+    }
+
     /**
      * The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      *
@@ -285,34 +359,58 @@ public class CreateAutonomousVmClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * The total number of Autonomous Container Databases that can be created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
-    Integer totalContainerDatabases;
+    private final Integer totalContainerDatabases;
+
+    public Integer getTotalContainerDatabases() {
+        return totalContainerDatabases;
+    }
 
     /**
      * The number of OCPU cores to enable per VM cluster node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
-    Integer cpuCoreCountPerNode;
+    private final Integer cpuCoreCountPerNode;
+
+    public Integer getCpuCoreCountPerNode() {
+        return cpuCoreCountPerNode;
+    }
 
     /**
      * The amount of memory (in GBs) to be enabled per each OCPU core.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
-    Integer memoryPerOracleComputeUnitInGBs;
+    private final Integer memoryPerOracleComputeUnitInGBs;
+
+    public Integer getMemoryPerOracleComputeUnitInGBs() {
+        return memoryPerOracleComputeUnitInGBs;
+    }
 
     /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
-    Double autonomousDataStorageSizeInTBs;
+    private final Double autonomousDataStorageSizeInTBs;
+
+    public Double getAutonomousDataStorageSizeInTBs() {
+        return autonomousDataStorageSizeInTBs;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
-    MaintenanceWindow maintenanceWindowDetails;
+    private final MaintenanceWindow maintenanceWindowDetails;
+
+    public MaintenanceWindow getMaintenanceWindowDetails() {
+        return maintenanceWindowDetails;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -322,7 +420,11 @@ public class CreateAutonomousVmClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -330,8 +432,134 @@ public class CreateAutonomousVmClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateAutonomousVmClusterDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", exadataInfrastructureId=")
+                .append(String.valueOf(this.exadataInfrastructureId));
+        sb.append(", vmClusterNetworkId=").append(String.valueOf(this.vmClusterNetworkId));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", isLocalBackupEnabled=").append(String.valueOf(this.isLocalBackupEnabled));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", totalContainerDatabases=")
+                .append(String.valueOf(this.totalContainerDatabases));
+        sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
+        sb.append(", memoryPerOracleComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", autonomousDataStorageSizeInTBs=")
+                .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
+        sb.append(", maintenanceWindowDetails=")
+                .append(String.valueOf(this.maintenanceWindowDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAutonomousVmClusterDetails)) {
+            return false;
+        }
+
+        CreateAutonomousVmClusterDetails other = (CreateAutonomousVmClusterDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.exadataInfrastructureId, other.exadataInfrastructureId)
+                && java.util.Objects.equals(this.vmClusterNetworkId, other.vmClusterNetworkId)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.isLocalBackupEnabled, other.isLocalBackupEnabled)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.totalContainerDatabases, other.totalContainerDatabases)
+                && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
+                && java.util.Objects.equals(
+                        this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(
+                        this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
+                && java.util.Objects.equals(
+                        this.maintenanceWindowDetails, other.maintenanceWindowDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfrastructureId == null
+                                ? 43
+                                : this.exadataInfrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterNetworkId == null
+                                ? 43
+                                : this.vmClusterNetworkId.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLocalBackupEnabled == null
+                                ? 43
+                                : this.isLocalBackupEnabled.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalContainerDatabases == null
+                                ? 43
+                                : this.totalContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuCoreCountPerNode == null
+                                ? 43
+                                : this.cpuCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerOracleComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDataStorageSizeInTBs == null
+                                ? 43
+                                : this.autonomousDataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindowDetails == null
+                                ? 43
+                                : this.maintenanceWindowDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,14 +16,77 @@ package com.oracle.bmc.goldengate.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DeploymentBackup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeploymentBackup {
+public final class DeploymentBackup {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "deploymentId",
+        "compartmentId",
+        "displayName",
+        "isAutomatic",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeOfBackup",
+        "timeBackupFinished",
+        "sizeInBytes",
+        "backupType",
+        "oggVersion",
+        "namespaceName",
+        "bucketName",
+        "objectName",
+        "timeCreated",
+        "timeUpdated",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public DeploymentBackup(
+            String id,
+            String deploymentId,
+            String compartmentId,
+            String displayName,
+            Boolean isAutomatic,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeOfBackup,
+            java.util.Date timeBackupFinished,
+            java.math.BigDecimal sizeInBytes,
+            DeploymentBackupType backupType,
+            String oggVersion,
+            String namespaceName,
+            String bucketName,
+            String objectName,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.id = id;
+        this.deploymentId = deploymentId;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.isAutomatic = isAutomatic;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeOfBackup = timeOfBackup;
+        this.timeBackupFinished = timeBackupFinished;
+        this.sizeInBytes = sizeInBytes;
+        this.backupType = backupType;
+        this.oggVersion = oggVersion;
+        this.namespaceName = namespaceName;
+        this.bucketName = bucketName;
+        this.objectName = objectName;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -272,121 +335,193 @@ public class DeploymentBackup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
-    String deploymentId;
+    private final String deploymentId;
+
+    public String getDeploymentId() {
+        return deploymentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * An object's Display Name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * True if this object is automatically created
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
-    Boolean isAutomatic;
+    private final Boolean isAutomatic;
+
+    public Boolean getIsAutomatic() {
+        return isAutomatic;
+    }
 
     /**
      * Possible lifecycle states.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfBackup")
-    java.util.Date timeOfBackup;
+    private final java.util.Date timeOfBackup;
+
+    public java.util.Date getTimeOfBackup() {
+        return timeOfBackup;
+    }
 
     /**
      * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeBackupFinished")
-    java.util.Date timeBackupFinished;
+    private final java.util.Date timeBackupFinished;
+
+    public java.util.Date getTimeBackupFinished() {
+        return timeBackupFinished;
+    }
 
     /**
      * The size of the backup stored in object storage (in bytes)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-    java.math.BigDecimal sizeInBytes;
+    private final java.math.BigDecimal sizeInBytes;
+
+    public java.math.BigDecimal getSizeInBytes() {
+        return sizeInBytes;
+    }
 
     /**
      * Possible Deployment backup types.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
-    DeploymentBackupType backupType;
+    private final DeploymentBackupType backupType;
+
+    public DeploymentBackupType getBackupType() {
+        return backupType;
+    }
 
     /**
      * Version of OGG
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
-    String oggVersion;
+    private final String oggVersion;
+
+    public String getOggVersion() {
+        return oggVersion;
+    }
 
     /**
      * Name of namespace that serves as a container for all of your buckets
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
-    String namespaceName;
+    private final String namespaceName;
+
+    public String getNamespaceName() {
+        return namespaceName;
+    }
 
     /**
      * Name of the bucket where the object is to be uploaded in the object storage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     /**
      * Name of the object to be uploaded to object storage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
@@ -394,7 +529,11 @@ public class DeploymentBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
@@ -402,7 +541,11 @@ public class DeploymentBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -410,8 +553,120 @@ public class DeploymentBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeploymentBackup(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", deploymentId=").append(String.valueOf(this.deploymentId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isAutomatic=").append(String.valueOf(this.isAutomatic));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeOfBackup=").append(String.valueOf(this.timeOfBackup));
+        sb.append(", timeBackupFinished=").append(String.valueOf(this.timeBackupFinished));
+        sb.append(", sizeInBytes=").append(String.valueOf(this.sizeInBytes));
+        sb.append(", backupType=").append(String.valueOf(this.backupType));
+        sb.append(", oggVersion=").append(String.valueOf(this.oggVersion));
+        sb.append(", namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(", bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeploymentBackup)) {
+            return false;
+        }
+
+        DeploymentBackup other = (DeploymentBackup) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.deploymentId, other.deploymentId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isAutomatic, other.isAutomatic)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeOfBackup, other.timeOfBackup)
+                && java.util.Objects.equals(this.timeBackupFinished, other.timeBackupFinished)
+                && java.util.Objects.equals(this.sizeInBytes, other.sizeInBytes)
+                && java.util.Objects.equals(this.backupType, other.backupType)
+                && java.util.Objects.equals(this.oggVersion, other.oggVersion)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.isAutomatic == null ? 43 : this.isAutomatic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeOfBackup == null ? 43 : this.timeOfBackup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeBackupFinished == null
+                                ? 43
+                                : this.timeBackupFinished.hashCode());
+        result = (result * PRIME) + (this.sizeInBytes == null ? 43 : this.sizeInBytes.hashCode());
+        result = (result * PRIME) + (this.backupType == null ? 43 : this.backupType.hashCode());
+        result = (result * PRIME) + (this.oggVersion == null ? 43 : this.oggVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

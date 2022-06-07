@@ -15,22 +15,18 @@ package com.oracle.bmc.databasetools.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseToolsConnectionOracleDatabaseSummary.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseToolsConnectionOracleDatabaseSummary extends DatabaseToolsConnectionSummary {
+public final class DatabaseToolsConnectionOracleDatabaseSummary
+        extends DatabaseToolsConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -246,6 +242,10 @@ public class DatabaseToolsConnectionOracleDatabaseSummary extends DatabaseToolsC
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DatabaseToolsConnectionOracleDatabaseSummary(
             String id,
@@ -286,28 +286,48 @@ public class DatabaseToolsConnectionOracleDatabaseSummary extends DatabaseToolsC
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
-    DatabaseToolsRelatedResource relatedResource;
+    private final DatabaseToolsRelatedResource relatedResource;
+
+    public DatabaseToolsRelatedResource getRelatedResource() {
+        return relatedResource;
+    }
 
     /**
      * Connect descriptor or Easy Connect Naming method to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
-    String connectionString;
+    private final String connectionString;
+
+    public String getConnectionString() {
+        return connectionString;
+    }
 
     /**
      * Database user name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("userPassword")
-    DatabaseToolsUserPasswordSummary userPassword;
+    private final DatabaseToolsUserPasswordSummary userPassword;
+
+    public DatabaseToolsUserPasswordSummary getUserPassword() {
+        return userPassword;
+    }
 
     /**
      * Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedProperties")
-    java.util.Map<String, String> advancedProperties;
+    private final java.util.Map<String, String> advancedProperties;
+
+    public java.util.Map<String, String> getAdvancedProperties() {
+        return advancedProperties;
+    }
 
     /**
      * Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and
@@ -315,14 +335,92 @@ public class DatabaseToolsConnectionOracleDatabaseSummary extends DatabaseToolsC
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStores")
-    java.util.List<DatabaseToolsKeyStoreSummary> keyStores;
+    private final java.util.List<DatabaseToolsKeyStoreSummary> keyStores;
+
+    public java.util.List<DatabaseToolsKeyStoreSummary> getKeyStores() {
+        return keyStores;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
-    String privateEndpointId;
+    private final String privateEndpointId;
+
+    public String getPrivateEndpointId() {
+        return privateEndpointId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseToolsConnectionOracleDatabaseSummary(");
+        sb.append("super=").append(super.toString());
+        sb.append(", relatedResource=").append(String.valueOf(this.relatedResource));
+        sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", userPassword=").append(String.valueOf(this.userPassword));
+        sb.append(", advancedProperties=").append(String.valueOf(this.advancedProperties));
+        sb.append(", keyStores=").append(String.valueOf(this.keyStores));
+        sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseToolsConnectionOracleDatabaseSummary)) {
+            return false;
+        }
+
+        DatabaseToolsConnectionOracleDatabaseSummary other =
+                (DatabaseToolsConnectionOracleDatabaseSummary) o;
+        return java.util.Objects.equals(this.relatedResource, other.relatedResource)
+                && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.userPassword, other.userPassword)
+                && java.util.Objects.equals(this.advancedProperties, other.advancedProperties)
+                && java.util.Objects.equals(this.keyStores, other.keyStores)
+                && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.relatedResource == null ? 43 : this.relatedResource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.userPassword == null ? 43 : this.userPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.advancedProperties == null
+                                ? 43
+                                : this.advancedProperties.hashCode());
+        result = (result * PRIME) + (this.keyStores == null ? 43 : this.keyStores.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

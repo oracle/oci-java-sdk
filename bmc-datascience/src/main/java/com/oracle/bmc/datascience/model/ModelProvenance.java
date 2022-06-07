@@ -15,14 +15,35 @@ package com.oracle.bmc.datascience.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ModelProvenance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModelProvenance {
+public final class ModelProvenance {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "repositoryUrl",
+        "gitBranch",
+        "gitCommit",
+        "scriptDir",
+        "trainingScript",
+        "trainingId"
+    })
+    public ModelProvenance(
+            String repositoryUrl,
+            String gitBranch,
+            String gitCommit,
+            String scriptDir,
+            String trainingScript,
+            String trainingId) {
+        super();
+        this.repositoryUrl = repositoryUrl;
+        this.gitBranch = gitBranch;
+        this.gitCommit = gitCommit;
+        this.scriptDir = scriptDir;
+        this.trainingScript = trainingScript;
+        this.trainingId = trainingId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
@@ -116,43 +137,129 @@ public class ModelProvenance {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * For model reproducibility purposes. URL of the git repository associated with model training.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
-    String repositoryUrl;
+    private final String repositoryUrl;
+
+    public String getRepositoryUrl() {
+        return repositoryUrl;
+    }
 
     /**
      * For model reproducibility purposes. Branch of the git repository associated with model training.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gitBranch")
-    String gitBranch;
+    private final String gitBranch;
+
+    public String getGitBranch() {
+        return gitBranch;
+    }
 
     /**
      * For model reproducibility purposes. Commit ID of the git repository associated with model training.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gitCommit")
-    String gitCommit;
+    private final String gitCommit;
+
+    public String getGitCommit() {
+        return gitCommit;
+    }
 
     /**
      * For model reproducibility purposes. Path to model artifacts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scriptDir")
-    String scriptDir;
+    private final String scriptDir;
+
+    public String getScriptDir() {
+        return scriptDir;
+    }
 
     /**
      * For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trainingScript")
-    String trainingScript;
+    private final String trainingScript;
+
+    public String getTrainingScript() {
+        return trainingScript;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trainingId")
-    String trainingId;
+    private final String trainingId;
+
+    public String getTrainingId() {
+        return trainingId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModelProvenance(");
+        sb.append("repositoryUrl=").append(String.valueOf(this.repositoryUrl));
+        sb.append(", gitBranch=").append(String.valueOf(this.gitBranch));
+        sb.append(", gitCommit=").append(String.valueOf(this.gitCommit));
+        sb.append(", scriptDir=").append(String.valueOf(this.scriptDir));
+        sb.append(", trainingScript=").append(String.valueOf(this.trainingScript));
+        sb.append(", trainingId=").append(String.valueOf(this.trainingId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModelProvenance)) {
+            return false;
+        }
+
+        ModelProvenance other = (ModelProvenance) o;
+        return java.util.Objects.equals(this.repositoryUrl, other.repositoryUrl)
+                && java.util.Objects.equals(this.gitBranch, other.gitBranch)
+                && java.util.Objects.equals(this.gitCommit, other.gitCommit)
+                && java.util.Objects.equals(this.scriptDir, other.scriptDir)
+                && java.util.Objects.equals(this.trainingScript, other.trainingScript)
+                && java.util.Objects.equals(this.trainingId, other.trainingId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.repositoryUrl == null ? 43 : this.repositoryUrl.hashCode());
+        result = (result * PRIME) + (this.gitBranch == null ? 43 : this.gitBranch.hashCode());
+        result = (result * PRIME) + (this.gitCommit == null ? 43 : this.gitCommit.hashCode());
+        result = (result * PRIME) + (this.scriptDir == null ? 43 : this.scriptDir.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trainingScript == null ? 43 : this.trainingScript.hashCode());
+        result = (result * PRIME) + (this.trainingId == null ? 43 : this.trainingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

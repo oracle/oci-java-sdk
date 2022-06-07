@@ -15,12 +15,6 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,16 +33,72 @@ package com.oracle.bmc.ospgateway.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class PaymentOption {
+    @Deprecated
+    @java.beans.ConstructorProperties({"walletInstrumentId", "walletTransactionId"})
+    protected PaymentOption(String walletInstrumentId, String walletTransactionId) {
+        super();
+        this.walletInstrumentId = walletInstrumentId;
+        this.walletTransactionId = walletTransactionId;
+    }
 
     /**
      * Wallet instrument internal id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletInstrumentId")
-    String walletInstrumentId;
+    private final String walletInstrumentId;
+
+    public String getWalletInstrumentId() {
+        return walletInstrumentId;
+    }
 
     /**
      * Wallet transaction id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletTransactionId")
-    String walletTransactionId;
+    private final String walletTransactionId;
+
+    public String getWalletTransactionId() {
+        return walletTransactionId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PaymentOption(");
+        sb.append("walletInstrumentId=").append(String.valueOf(this.walletInstrumentId));
+        sb.append(", walletTransactionId=").append(String.valueOf(this.walletTransactionId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PaymentOption)) {
+            return false;
+        }
+
+        PaymentOption other = (PaymentOption) o;
+        return java.util.Objects.equals(this.walletInstrumentId, other.walletInstrumentId)
+                && java.util.Objects.equals(this.walletTransactionId, other.walletTransactionId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.walletInstrumentId == null
+                                ? 43
+                                : this.walletInstrumentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.walletTransactionId == null
+                                ? 43
+                                : this.walletTransactionId.hashCode());
+        return result;
+    }
 }

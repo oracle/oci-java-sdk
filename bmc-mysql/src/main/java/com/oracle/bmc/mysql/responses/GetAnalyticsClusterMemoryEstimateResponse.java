@@ -7,10 +7,6 @@ package com.oracle.bmc.mysql.responses;
 import com.oracle.bmc.mysql.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetAnalyticsClusterMemoryEstimateResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -20,11 +16,20 @@ public class GetAnalyticsClusterMemoryEstimateResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned AnalyticsClusterMemoryEstimate instance.
      */
     private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
             analyticsClusterMemoryEstimate;
+
+    public com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
+            getAnalyticsClusterMemoryEstimate() {
+        return analyticsClusterMemoryEstimate;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -49,6 +54,23 @@ public class GetAnalyticsClusterMemoryEstimateResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
+                analyticsClusterMemoryEstimate;
+
+        public Builder analyticsClusterMemoryEstimate(
+                com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
+                        analyticsClusterMemoryEstimate) {
+            this.analyticsClusterMemoryEstimate = analyticsClusterMemoryEstimate;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -65,5 +87,51 @@ public class GetAnalyticsClusterMemoryEstimateResponse
             return new GetAnalyticsClusterMemoryEstimateResponse(
                     __httpStatusCode__, opcRequestId, analyticsClusterMemoryEstimate);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",analyticsClusterMemoryEstimate=")
+                .append(String.valueOf(analyticsClusterMemoryEstimate));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetAnalyticsClusterMemoryEstimateResponse)) {
+            return false;
+        }
+
+        GetAnalyticsClusterMemoryEstimateResponse other =
+                (GetAnalyticsClusterMemoryEstimateResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.analyticsClusterMemoryEstimate, other.analyticsClusterMemoryEstimate);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.analyticsClusterMemoryEstimate == null
+                                ? 43
+                                : this.analyticsClusterMemoryEstimate.hashCode());
+        return result;
     }
 }

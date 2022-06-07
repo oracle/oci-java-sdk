@@ -18,16 +18,19 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSubCategoryDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSubCategoryDetails {
+public final class CreateSubCategoryDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"subCategoryKey"})
+    public CreateSubCategoryDetails(String subCategoryKey) {
+        super();
+        this.subCategoryKey = subCategoryKey;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
         private String subCategoryKey;
@@ -63,12 +66,61 @@ public class CreateSubCategoryDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier for the subcategory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
-    String subCategoryKey;
+    private final String subCategoryKey;
+
+    public String getSubCategoryKey() {
+        return subCategoryKey;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSubCategoryDetails(");
+        sb.append("subCategoryKey=").append(String.valueOf(this.subCategoryKey));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSubCategoryDetails)) {
+            return false;
+        }
+
+        CreateSubCategoryDetails other = (CreateSubCategoryDetails) o;
+        return java.util.Objects.equals(this.subCategoryKey, other.subCategoryKey)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.subCategoryKey == null ? 43 : this.subCategoryKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

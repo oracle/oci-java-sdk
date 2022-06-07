@@ -15,16 +15,52 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AssignedSubscriptionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AssignedSubscriptionSummary {
+public final class AssignedSubscriptionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "classicSubscriptionId",
+        "serviceName",
+        "isClassicSubscription",
+        "regionAssignment",
+        "lifecycleState",
+        "startDate",
+        "endDate",
+        "timeUpdated",
+        "timeCreated"
+    })
+    public AssignedSubscriptionSummary(
+            String id,
+            String compartmentId,
+            String classicSubscriptionId,
+            String serviceName,
+            Boolean isClassicSubscription,
+            String regionAssignment,
+            SubscriptionLifecycleState lifecycleState,
+            java.util.Date startDate,
+            java.util.Date endDate,
+            java.util.Date timeUpdated,
+            java.util.Date timeCreated) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.classicSubscriptionId = classicSubscriptionId;
+        this.serviceName = serviceName;
+        this.isClassicSubscription = isClassicSubscription;
+        this.regionAssignment = regionAssignment;
+        this.lifecycleState = lifecycleState;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.timeUpdated = timeUpdated;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -173,72 +209,203 @@ public class AssignedSubscriptionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID of the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * OCID of the compartment. Always a tenancy OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Subscription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
-    String classicSubscriptionId;
+    private final String classicSubscriptionId;
+
+    public String getClassicSubscriptionId() {
+        return classicSubscriptionId;
+    }
 
     /**
      * The type of subscription, such as 'CLOUDCM', 'SAAS', 'ERP', or 'CRM'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * Denotes if the subscription is legacy or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClassicSubscription")
-    Boolean isClassicSubscription;
+    private final Boolean isClassicSubscription;
+
+    public Boolean getIsClassicSubscription() {
+        return isClassicSubscription;
+    }
 
     /**
      * Region for the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionAssignment")
-    String regionAssignment;
+    private final String regionAssignment;
+
+    public String getRegionAssignment() {
+        return regionAssignment;
+    }
 
     /**
      * Lifecycle state of the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    SubscriptionLifecycleState lifecycleState;
+    private final SubscriptionLifecycleState lifecycleState;
+
+    public SubscriptionLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Subscription start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
-    java.util.Date startDate;
+    private final java.util.Date startDate;
+
+    public java.util.Date getStartDate() {
+        return startDate;
+    }
 
     /**
      * Subscription end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
-    java.util.Date endDate;
+    private final java.util.Date endDate;
+
+    public java.util.Date getEndDate() {
+        return endDate;
+    }
 
     /**
      * Date-time when subscription is updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Date-time when subscription is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AssignedSubscriptionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", classicSubscriptionId=").append(String.valueOf(this.classicSubscriptionId));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", isClassicSubscription=").append(String.valueOf(this.isClassicSubscription));
+        sb.append(", regionAssignment=").append(String.valueOf(this.regionAssignment));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", startDate=").append(String.valueOf(this.startDate));
+        sb.append(", endDate=").append(String.valueOf(this.endDate));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AssignedSubscriptionSummary)) {
+            return false;
+        }
+
+        AssignedSubscriptionSummary other = (AssignedSubscriptionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.classicSubscriptionId, other.classicSubscriptionId)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.isClassicSubscription, other.isClassicSubscription)
+                && java.util.Objects.equals(this.regionAssignment, other.regionAssignment)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.startDate, other.startDate)
+                && java.util.Objects.equals(this.endDate, other.endDate)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classicSubscriptionId == null
+                                ? 43
+                                : this.classicSubscriptionId.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isClassicSubscription == null
+                                ? 43
+                                : this.isClassicSubscription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.regionAssignment == null ? 43 : this.regionAssignment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.startDate == null ? 43 : this.startDate.hashCode());
+        result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,26 @@ package com.oracle.bmc.computeinstanceagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Plugin.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Plugin {
+public final class Plugin {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "version", "status", "lastUpdateTime", "message"})
+    public Plugin(
+            String name,
+            String version,
+            String status,
+            java.util.Date lastUpdateTime,
+            String message) {
+        super();
+        this.name = name;
+        this.version = version;
+        this.status = status;
+        this.lastUpdateTime = lastUpdateTime;
+        this.message = message;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -99,36 +111,113 @@ public class Plugin {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The plugin name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The plugin version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The plugin status
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * The last update time of the plugin
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateTime")
-    java.util.Date lastUpdateTime;
+    private final java.util.Date lastUpdateTime;
+
+    public java.util.Date getLastUpdateTime() {
+        return lastUpdateTime;
+    }
 
     /**
      * The optional message from the agent plugin
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Plugin(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", lastUpdateTime=").append(String.valueOf(this.lastUpdateTime));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Plugin)) {
+            return false;
+        }
+
+        Plugin other = (Plugin) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.lastUpdateTime, other.lastUpdateTime)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastUpdateTime == null ? 43 : this.lastUpdateTime.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

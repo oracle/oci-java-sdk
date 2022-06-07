@@ -7,10 +7,6 @@ package com.oracle.bmc.networkloadbalancer.responses;
 import com.oracle.bmc.networkloadbalancer.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListNetworkLoadBalancersPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -20,6 +16,10 @@ public class ListNetworkLoadBalancersPoliciesResponse extends com.oracle.bmc.res
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact
      * Oracle about a particular request, then provide the request identifier.
@@ -27,11 +27,20 @@ public class ListNetworkLoadBalancersPoliciesResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned NetworkLoadBalancersPolicyCollection instance.
      */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicyCollection
             networkLoadBalancersPolicyCollection;
+
+    public com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicyCollection
+            getNetworkLoadBalancersPolicyCollection() {
+        return networkLoadBalancersPolicyCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -59,6 +68,30 @@ public class ListNetworkLoadBalancersPoliciesResponse extends com.oracle.bmc.res
             return this;
         }
 
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicyCollection
+                networkLoadBalancersPolicyCollection;
+
+        public Builder networkLoadBalancersPolicyCollection(
+                com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicyCollection
+                        networkLoadBalancersPolicyCollection) {
+            this.networkLoadBalancersPolicyCollection = networkLoadBalancersPolicyCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -79,5 +112,55 @@ public class ListNetworkLoadBalancersPoliciesResponse extends com.oracle.bmc.res
                     opcRequestId,
                     networkLoadBalancersPolicyCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",networkLoadBalancersPolicyCollection=")
+                .append(String.valueOf(networkLoadBalancersPolicyCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListNetworkLoadBalancersPoliciesResponse)) {
+            return false;
+        }
+
+        ListNetworkLoadBalancersPoliciesResponse other =
+                (ListNetworkLoadBalancersPoliciesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.networkLoadBalancersPolicyCollection,
+                        other.networkLoadBalancersPolicyCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkLoadBalancersPolicyCollection == null
+                                ? 43
+                                : this.networkLoadBalancersPolicyCollection.hashCode());
+        return result;
     }
 }

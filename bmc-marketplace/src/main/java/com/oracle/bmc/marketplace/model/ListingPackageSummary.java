@@ -15,16 +15,40 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ListingPackageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ListingPackageSummary {
+public final class ListingPackageSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "listingId",
+        "packageVersion",
+        "packageType",
+        "pricing",
+        "regions",
+        "resourceId",
+        "timeCreated"
+    })
+    public ListingPackageSummary(
+            String listingId,
+            String packageVersion,
+            PackageTypeEnum packageType,
+            PricingModel pricing,
+            java.util.List<Region> regions,
+            String resourceId,
+            java.util.Date timeCreated) {
+        super();
+        this.listingId = listingId;
+        this.packageVersion = packageVersion;
+        this.packageType = packageType;
+        this.pricing = pricing;
+        this.regions = regions;
+        this.resourceId = resourceId;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
@@ -129,39 +153,67 @@ public class ListingPackageSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The ID of the listing that the specified package belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * The version of the specified package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
-    String packageVersion;
+    private final String packageVersion;
+
+    public String getPackageVersion() {
+        return packageVersion;
+    }
 
     /**
      * The specified package's type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
-    PackageTypeEnum packageType;
+    private final PackageTypeEnum packageType;
+
+    public PackageTypeEnum getPackageType() {
+        return packageType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("pricing")
-    PricingModel pricing;
+    private final PricingModel pricing;
+
+    public PricingModel getPricing() {
+        return pricing;
+    }
 
     /**
      * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
-    java.util.List<Region> regions;
+    private final java.util.List<Region> regions;
+
+    public java.util.List<Region> getRegions() {
+        return regions;
+    }
 
     /**
      * The unique identifier for the package resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -171,8 +223,71 @@ public class ListingPackageSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ListingPackageSummary(");
+        sb.append("listingId=").append(String.valueOf(this.listingId));
+        sb.append(", packageVersion=").append(String.valueOf(this.packageVersion));
+        sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", pricing=").append(String.valueOf(this.pricing));
+        sb.append(", regions=").append(String.valueOf(this.regions));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListingPackageSummary)) {
+            return false;
+        }
+
+        ListingPackageSummary other = (ListingPackageSummary) o;
+        return java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.packageVersion, other.packageVersion)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.pricing, other.pricing)
+                && java.util.Objects.equals(this.regions, other.regions)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.pricing == null ? 43 : this.pricing.hashCode());
+        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

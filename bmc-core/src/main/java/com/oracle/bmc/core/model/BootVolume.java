@@ -24,14 +24,77 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BootVolume.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BootVolume {
+public final class BootVolume {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "compartmentId",
+        "definedTags",
+        "systemTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "imageId",
+        "isHydrated",
+        "vpusPerGB",
+        "lifecycleState",
+        "sizeInGBs",
+        "sizeInMBs",
+        "sourceDetails",
+        "timeCreated",
+        "volumeGroupId",
+        "kmsKeyId",
+        "isAutoTuneEnabled",
+        "autoTunedVpusPerGB",
+        "bootVolumeReplicas"
+    })
+    public BootVolume(
+            String availabilityDomain,
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            String imageId,
+            Boolean isHydrated,
+            Long vpusPerGB,
+            LifecycleState lifecycleState,
+            Long sizeInGBs,
+            Long sizeInMBs,
+            BootVolumeSourceDetails sourceDetails,
+            java.util.Date timeCreated,
+            String volumeGroupId,
+            String kmsKeyId,
+            Boolean isAutoTuneEnabled,
+            Long autoTunedVpusPerGB,
+            java.util.List<BootVolumeReplicaInfo> bootVolumeReplicas) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.imageId = imageId;
+        this.isHydrated = isHydrated;
+        this.vpusPerGB = vpusPerGB;
+        this.lifecycleState = lifecycleState;
+        this.sizeInGBs = sizeInGBs;
+        this.sizeInMBs = sizeInMBs;
+        this.sourceDetails = sourceDetails;
+        this.timeCreated = timeCreated;
+        this.volumeGroupId = volumeGroupId;
+        this.kmsKeyId = kmsKeyId;
+        this.isAutoTuneEnabled = isAutoTuneEnabled;
+        this.autoTunedVpusPerGB = autoTunedVpusPerGB;
+        this.bootVolumeReplicas = bootVolumeReplicas;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -281,6 +344,10 @@ public class BootVolume {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain of the boot volume.
      * <p>
@@ -288,13 +355,21 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The OCID of the compartment that contains the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -304,7 +379,11 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
@@ -312,7 +391,11 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -320,7 +403,11 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -330,19 +417,31 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The boot volume's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The image OCID used to create the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
-    String imageId;
+    private final String imageId;
+
+    public String getImageId() {
+        return imageId;
+    }
 
     /**
      * Specifies whether the boot volume's data has finished copying
@@ -350,7 +449,11 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
-    Boolean isHydrated;
+    private final Boolean isHydrated;
+
+    public Boolean getIsHydrated() {
+        return isHydrated;
+    }
 
     /**
      * The number of volume performance units (VPUs) that will be applied to this boot volume per GB,
@@ -367,11 +470,15 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
-    Long vpusPerGB;
+    private final Long vpusPerGB;
+
+    public Long getVpusPerGB() {
+        return vpusPerGB;
+    }
+
     /**
      * The current state of a boot volume.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Restoring("RESTORING"),
@@ -385,6 +492,9 @@ public class BootVolume {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -422,13 +532,21 @@ public class BootVolume {
      * The current state of a boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The size of the boot volume in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
-    Long sizeInGBs;
+    private final Long sizeInGBs;
+
+    public Long getSizeInGBs() {
+        return sizeInGBs;
+    }
 
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024.
@@ -436,10 +554,18 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
-    Long sizeInMBs;
+    private final Long sizeInMBs;
+
+    public Long getSizeInMBs() {
+        return sizeInMBs;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
-    BootVolumeSourceDetails sourceDetails;
+    private final BootVolumeSourceDetails sourceDetails;
+
+    public BootVolumeSourceDetails getSourceDetails() {
+        return sourceDetails;
+    }
 
     /**
      * The date and time the boot volume was created. Format defined
@@ -447,40 +573,182 @@ public class BootVolume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The OCID of the source volume group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
-    String volumeGroupId;
+    private final String volumeGroupId;
+
+    public String getVolumeGroupId() {
+        return volumeGroupId;
+    }
 
     /**
      * The OCID of the Key Management master encryption key assigned to the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * Specifies whether the auto-tune performance is enabled for this boot volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
-    Boolean isAutoTuneEnabled;
+    private final Boolean isAutoTuneEnabled;
+
+    public Boolean getIsAutoTuneEnabled() {
+        return isAutoTuneEnabled;
+    }
 
     /**
      * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")
-    Long autoTunedVpusPerGB;
+    private final Long autoTunedVpusPerGB;
+
+    public Long getAutoTunedVpusPerGB() {
+        return autoTunedVpusPerGB;
+    }
 
     /**
      * The list of boot volume replicas of this boot volume
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeReplicas")
-    java.util.List<BootVolumeReplicaInfo> bootVolumeReplicas;
+    private final java.util.List<BootVolumeReplicaInfo> bootVolumeReplicas;
+
+    public java.util.List<BootVolumeReplicaInfo> getBootVolumeReplicas() {
+        return bootVolumeReplicas;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BootVolume(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", imageId=").append(String.valueOf(this.imageId));
+        sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
+        sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
+        sb.append(", sizeInMBs=").append(String.valueOf(this.sizeInMBs));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", volumeGroupId=").append(String.valueOf(this.volumeGroupId));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
+        sb.append(", autoTunedVpusPerGB=").append(String.valueOf(this.autoTunedVpusPerGB));
+        sb.append(", bootVolumeReplicas=").append(String.valueOf(this.bootVolumeReplicas));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BootVolume)) {
+            return false;
+        }
+
+        BootVolume other = (BootVolume) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.isHydrated, other.isHydrated)
+                && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
+                && java.util.Objects.equals(this.sizeInMBs, other.sizeInMBs)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.volumeGroupId, other.volumeGroupId)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
+                && java.util.Objects.equals(this.autoTunedVpusPerGB, other.autoTunedVpusPerGB)
+                && java.util.Objects.equals(this.bootVolumeReplicas, other.bootVolumeReplicas)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.isHydrated == null ? 43 : this.isHydrated.hashCode());
+        result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
+        result = (result * PRIME) + (this.sizeInMBs == null ? 43 : this.sizeInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.volumeGroupId == null ? 43 : this.volumeGroupId.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoTuneEnabled == null ? 43 : this.isAutoTuneEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoTunedVpusPerGB == null
+                                ? 43
+                                : this.autoTunedVpusPerGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bootVolumeReplicas == null
+                                ? 43
+                                : this.bootVolumeReplicas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

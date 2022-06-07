@@ -16,20 +16,15 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TrendColumn.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TrendColumn extends AbstractColumn {
+public final class TrendColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -246,6 +241,10 @@ public class TrendColumn extends AbstractColumn {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public TrendColumn(
             String displayName,
@@ -290,31 +289,131 @@ public class TrendColumn extends AbstractColumn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
-    String intervalGap;
+    private final String intervalGap;
+
+    public String getIntervalGap() {
+        return intervalGap;
+    }
 
     /**
      * Timestamps for each series data point
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervals")
-    java.util.List<Long> intervals;
+    private final java.util.List<Long> intervals;
+
+    public java.util.List<Long> getIntervals() {
+        return intervals;
+    }
 
     /**
      * Sum across all column values for a given timestamp.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCounts")
-    java.util.List<Long> totalIntervalCounts;
+    private final java.util.List<Long> totalIntervalCounts;
+
+    public java.util.List<Long> getTotalIntervalCounts() {
+        return totalIntervalCounts;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCountsAfterFilter")
-    java.util.List<Long> totalIntervalCountsAfterFilter;
+    private final java.util.List<Long> totalIntervalCountsAfterFilter;
+
+    public java.util.List<Long> getTotalIntervalCountsAfterFilter() {
+        return totalIntervalCountsAfterFilter;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGroupCounts")
-    java.util.List<Long> intervalGroupCounts;
+    private final java.util.List<Long> intervalGroupCounts;
+
+    public java.util.List<Long> getIntervalGroupCounts() {
+        return intervalGroupCounts;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGroupCountsAfterFilter")
-    java.util.List<Long> intervalGroupCountsAfterFilter;
+    private final java.util.List<Long> intervalGroupCountsAfterFilter;
+
+    public java.util.List<Long> getIntervalGroupCountsAfterFilter() {
+        return intervalGroupCountsAfterFilter;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TrendColumn(");
+        sb.append("super=").append(super.toString());
+        sb.append(", intervalGap=").append(String.valueOf(this.intervalGap));
+        sb.append(", intervals=").append(String.valueOf(this.intervals));
+        sb.append(", totalIntervalCounts=").append(String.valueOf(this.totalIntervalCounts));
+        sb.append(", totalIntervalCountsAfterFilter=")
+                .append(String.valueOf(this.totalIntervalCountsAfterFilter));
+        sb.append(", intervalGroupCounts=").append(String.valueOf(this.intervalGroupCounts));
+        sb.append(", intervalGroupCountsAfterFilter=")
+                .append(String.valueOf(this.intervalGroupCountsAfterFilter));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TrendColumn)) {
+            return false;
+        }
+
+        TrendColumn other = (TrendColumn) o;
+        return java.util.Objects.equals(this.intervalGap, other.intervalGap)
+                && java.util.Objects.equals(this.intervals, other.intervals)
+                && java.util.Objects.equals(this.totalIntervalCounts, other.totalIntervalCounts)
+                && java.util.Objects.equals(
+                        this.totalIntervalCountsAfterFilter, other.totalIntervalCountsAfterFilter)
+                && java.util.Objects.equals(this.intervalGroupCounts, other.intervalGroupCounts)
+                && java.util.Objects.equals(
+                        this.intervalGroupCountsAfterFilter, other.intervalGroupCountsAfterFilter)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.intervalGap == null ? 43 : this.intervalGap.hashCode());
+        result = (result * PRIME) + (this.intervals == null ? 43 : this.intervals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalIntervalCounts == null
+                                ? 43
+                                : this.totalIntervalCounts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalIntervalCountsAfterFilter == null
+                                ? 43
+                                : this.totalIntervalCountsAfterFilter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.intervalGroupCounts == null
+                                ? 43
+                                : this.intervalGroupCounts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.intervalGroupCountsAfterFilter == null
+                                ? 43
+                                : this.intervalGroupCountsAfterFilter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -25,16 +25,55 @@ package com.oracle.bmc.networkloadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateNetworkLoadBalancerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateNetworkLoadBalancerDetails {
+public final class CreateNetworkLoadBalancerDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "isPreserveSourceDestination",
+        "reservedIps",
+        "isPrivate",
+        "subnetId",
+        "networkSecurityGroupIds",
+        "nlbIpVersion",
+        "listeners",
+        "backendSets",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateNetworkLoadBalancerDetails(
+            String compartmentId,
+            String displayName,
+            Boolean isPreserveSourceDestination,
+            java.util.List<ReservedIP> reservedIps,
+            Boolean isPrivate,
+            String subnetId,
+            java.util.List<String> networkSecurityGroupIds,
+            NlbIpVersion nlbIpVersion,
+            java.util.Map<String, ListenerDetails> listeners,
+            java.util.Map<String, BackendSetDetails> backendSets,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.isPreserveSourceDestination = isPreserveSourceDestination;
+        this.reservedIps = reservedIps;
+        this.isPrivate = isPrivate;
+        this.subnetId = subnetId;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
+        this.nlbIpVersion = nlbIpVersion;
+        this.listeners = listeners;
+        this.backendSets = backendSets;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -195,17 +234,29 @@ public class CreateNetworkLoadBalancerDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Network load balancer identifier, which can be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically
@@ -213,14 +264,22 @@ public class CreateNetworkLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSourceDestination")
-    Boolean isPreserveSourceDestination;
+    private final Boolean isPreserveSourceDestination;
+
+    public Boolean getIsPreserveSourceDestination() {
+        return isPreserveSourceDestination;
+    }
 
     /**
      * An array of reserved Ips.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
-    java.util.List<ReservedIP> reservedIps;
+    private final java.util.List<ReservedIP> reservedIps;
+
+    public java.util.List<ReservedIP> getReservedIps() {
+        return reservedIps;
+    }
 
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
@@ -239,13 +298,21 @@ public class CreateNetworkLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
-    Boolean isPrivate;
+    private final Boolean isPrivate;
+
+    public Boolean getIsPrivate() {
+        return isPrivate;
+    }
 
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * An array of network security groups [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the network load
@@ -264,25 +331,41 @@ public class CreateNetworkLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
-    java.util.List<String> networkSecurityGroupIds;
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
 
     /**
      * IP version associated with the NLB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
-    NlbIpVersion nlbIpVersion;
+    private final NlbIpVersion nlbIpVersion;
+
+    public NlbIpVersion getNlbIpVersion() {
+        return nlbIpVersion;
+    }
 
     /**
      * Listeners associated with the network load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
-    java.util.Map<String, ListenerDetails> listeners;
+    private final java.util.Map<String, ListenerDetails> listeners;
+
+    public java.util.Map<String, ListenerDetails> getListeners() {
+        return listeners;
+    }
 
     /**
      * Backend sets associated with the network load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
-    java.util.Map<String, BackendSetDetails> backendSets;
+    private final java.util.Map<String, BackendSetDetails> backendSets;
+
+    public java.util.Map<String, BackendSetDetails> getBackendSets() {
+        return backendSets;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
@@ -290,7 +373,11 @@ public class CreateNetworkLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -298,8 +385,98 @@ public class CreateNetworkLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateNetworkLoadBalancerDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isPreserveSourceDestination=")
+                .append(String.valueOf(this.isPreserveSourceDestination));
+        sb.append(", reservedIps=").append(String.valueOf(this.reservedIps));
+        sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
+        sb.append(", nlbIpVersion=").append(String.valueOf(this.nlbIpVersion));
+        sb.append(", listeners=").append(String.valueOf(this.listeners));
+        sb.append(", backendSets=").append(String.valueOf(this.backendSets));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateNetworkLoadBalancerDetails)) {
+            return false;
+        }
+
+        CreateNetworkLoadBalancerDetails other = (CreateNetworkLoadBalancerDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.isPreserveSourceDestination, other.isPreserveSourceDestination)
+                && java.util.Objects.equals(this.reservedIps, other.reservedIps)
+                && java.util.Objects.equals(this.isPrivate, other.isPrivate)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
+                && java.util.Objects.equals(this.nlbIpVersion, other.nlbIpVersion)
+                && java.util.Objects.equals(this.listeners, other.listeners)
+                && java.util.Objects.equals(this.backendSets, other.backendSets)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPreserveSourceDestination == null
+                                ? 43
+                                : this.isPreserveSourceDestination.hashCode());
+        result = (result * PRIME) + (this.reservedIps == null ? 43 : this.reservedIps.hashCode());
+        result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
+        result = (result * PRIME) + (this.nlbIpVersion == null ? 43 : this.nlbIpVersion.hashCode());
+        result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
+        result = (result * PRIME) + (this.backendSets == null ? 43 : this.backendSets.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

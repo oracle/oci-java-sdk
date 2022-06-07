@@ -15,12 +15,6 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -47,17 +41,58 @@ package com.oracle.bmc.apmsynthetics.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class MonitorConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isFailureRetried"})
+    protected MonitorConfiguration(Boolean isFailureRetried) {
+        super();
+        this.isFailureRetried = isFailureRetried;
+    }
 
     /**
      * If isFailureRetried is enabled, then a failed call will be retried.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFailureRetried")
-    Boolean isFailureRetried;
+    private final Boolean isFailureRetried;
+
+    public Boolean getIsFailureRetried() {
+        return isFailureRetried;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitorConfiguration(");
+        sb.append("isFailureRetried=").append(String.valueOf(this.isFailureRetried));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitorConfiguration)) {
+            return false;
+        }
+
+        MonitorConfiguration other = (MonitorConfiguration) o;
+        return java.util.Objects.equals(this.isFailureRetried, other.isFailureRetried);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isFailureRetried == null ? 43 : this.isFailureRetried.hashCode());
+        return result;
+    }
 
     /**
      * Type of configuration.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ConfigType {
         BrowserConfig("BROWSER_CONFIG"),
         ScriptedBrowserConfig("SCRIPTED_BROWSER_CONFIG"),
@@ -69,6 +104,9 @@ public class MonitorConfiguration {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConfigType.class);
 
         private final String value;
         private static java.util.Map<String, ConfigType> map;

@@ -16,16 +16,21 @@ package com.oracle.bmc.sch.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonitoringSourceSelectedNamespace.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonitoringSourceSelectedNamespace {
+public final class MonitoringSourceSelectedNamespace {
+    @Deprecated
+    @java.beans.ConstructorProperties({"namespace", "metrics"})
+    public MonitoringSourceSelectedNamespace(
+            String namespace, MonitoringSourceMetricDetails metrics) {
+        super();
+        this.namespace = namespace;
+        this.metrics = metrics;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
@@ -71,6 +76,10 @@ public class MonitoringSourceSelectedNamespace {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The source service or application to use when querying for metric data points. Must begin with {@code oci_}.
      * <p>
@@ -78,11 +87,61 @@ public class MonitoringSourceSelectedNamespace {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
-    MonitoringSourceMetricDetails metrics;
+    private final MonitoringSourceMetricDetails metrics;
+
+    public MonitoringSourceMetricDetails getMetrics() {
+        return metrics;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitoringSourceSelectedNamespace(");
+        sb.append("namespace=").append(String.valueOf(this.namespace));
+        sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitoringSourceSelectedNamespace)) {
+            return false;
+        }
+
+        MonitoringSourceSelectedNamespace other = (MonitoringSourceSelectedNamespace) o;
+        return java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

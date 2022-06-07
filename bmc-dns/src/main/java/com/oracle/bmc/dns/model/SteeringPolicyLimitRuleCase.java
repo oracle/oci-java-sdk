@@ -15,16 +15,20 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SteeringPolicyLimitRuleCase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SteeringPolicyLimitRuleCase {
+public final class SteeringPolicyLimitRuleCase {
+    @Deprecated
+    @java.beans.ConstructorProperties({"caseCondition", "count"})
+    public SteeringPolicyLimitRuleCase(String caseCondition, Integer count) {
+        super();
+        this.caseCondition = caseCondition;
+        this.count = count;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
         private String caseCondition;
@@ -70,6 +74,10 @@ public class SteeringPolicyLimitRuleCase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An expression that uses conditions at the time of a DNS query to indicate
      * whether a case matches. Conditions may include the geographical location, IP
@@ -80,7 +88,11 @@ public class SteeringPolicyLimitRuleCase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
-    String caseCondition;
+    private final String caseCondition;
+
+    public String getCaseCondition() {
+        return caseCondition;
+    }
 
     /**
      * The number of answers allowed to remain after the limit rule has been processed, keeping only the
@@ -90,8 +102,56 @@ public class SteeringPolicyLimitRuleCase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    Integer count;
+    private final Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SteeringPolicyLimitRuleCase(");
+        sb.append("caseCondition=").append(String.valueOf(this.caseCondition));
+        sb.append(", count=").append(String.valueOf(this.count));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SteeringPolicyLimitRuleCase)) {
+            return false;
+        }
+
+        SteeringPolicyLimitRuleCase other = (SteeringPolicyLimitRuleCase) o;
+        return java.util.Objects.equals(this.caseCondition, other.caseCondition)
+                && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.caseCondition == null ? 43 : this.caseCondition.hashCode());
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

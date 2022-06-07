@@ -9,14 +9,6 @@ import com.oracle.bmc.dataconnectivity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/UpdateDataAssetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDataAssetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateDataAssetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails> {
@@ -26,16 +18,26 @@ public class UpdateDataAssetRequest
      */
     private String registryId;
 
+    public String getRegistryId() {
+        return registryId;
+    }
     /**
      * The data asset key.
      */
     private String dataAssetKey;
 
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
     /**
      * The information needed to update a data asset.
      */
     private com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails updateDataAssetDetails;
 
+    public com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails
+            getUpdateDataAssetDetails() {
+        return updateDataAssetDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -44,6 +46,9 @@ public class UpdateDataAssetRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
      * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
@@ -51,6 +56,10 @@ public class UpdateDataAssetRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -69,6 +78,70 @@ public class UpdateDataAssetRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String registryId = null;
+
+        /**
+         * The registry Ocid.
+         * @return this builder instance
+         */
+        public Builder registryId(String registryId) {
+            this.registryId = registryId;
+            return this;
+        }
+
+        private String dataAssetKey = null;
+
+        /**
+         * The data asset key.
+         * @return this builder instance
+         */
+        public Builder dataAssetKey(String dataAssetKey) {
+            this.dataAssetKey = dataAssetKey;
+            return this;
+        }
+
+        private com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails
+                updateDataAssetDetails = null;
+
+        /**
+         * The information needed to update a data asset.
+         * @return this builder instance
+         */
+        public Builder updateDataAssetDetails(
+                com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails
+                        updateDataAssetDetails) {
+            this.updateDataAssetDetails = updateDataAssetDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -135,5 +208,89 @@ public class UpdateDataAssetRequest
             updateDataAssetDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateDataAssetRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateDataAssetRequest
+         */
+        public UpdateDataAssetRequest buildWithoutInvocationCallback() {
+            UpdateDataAssetRequest request = new UpdateDataAssetRequest();
+            request.registryId = registryId;
+            request.dataAssetKey = dataAssetKey;
+            request.updateDataAssetDetails = updateDataAssetDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateDataAssetRequest(registryId, dataAssetKey, updateDataAssetDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .registryId(registryId)
+                .dataAssetKey(dataAssetKey)
+                .updateDataAssetDetails(updateDataAssetDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",registryId=").append(String.valueOf(this.registryId));
+        sb.append(",dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(",updateDataAssetDetails=").append(String.valueOf(this.updateDataAssetDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDataAssetRequest)) {
+            return false;
+        }
+
+        UpdateDataAssetRequest other = (UpdateDataAssetRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.registryId, other.registryId)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(
+                        this.updateDataAssetDetails, other.updateDataAssetDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDataAssetDetails == null
+                                ? 43
+                                : this.updateDataAssetDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

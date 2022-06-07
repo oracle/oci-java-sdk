@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListScheduledTasksExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListScheduledTasksRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,37 +17,58 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * Required parameter to specify schedule task type.
      */
     private com.oracle.bmc.loganalytics.model.TaskType taskType;
 
+    public com.oracle.bmc.loganalytics.model.TaskType getTaskType() {
+        return taskType;
+    }
     /**
      * The ID of the compartment in which to list resources.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * A filter to return only resources that match the given display name exactly.
      *
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -98,6 +111,10 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
      *
@@ -141,6 +158,10 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * A filter to return only scheduled tasks whose stream action savedSearchId matches the given
      * ManagementSavedSearch id [OCID] exactly.
@@ -148,11 +169,18 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String savedSearchId;
 
+    public String getSavedSearchId() {
+        return savedSearchId;
+    }
     /**
      * A filter to return only resources whose display name contains the substring.
      *
      */
     private String displayNameContains;
+
+    public String getDisplayNameContains() {
+        return displayNameContains;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -160,6 +188,134 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.TaskType taskType = null;
+
+        /**
+         * Required parameter to specify schedule task type.
+         * @return this builder instance
+         */
+        public Builder taskType(com.oracle.bmc.loganalytics.model.TaskType taskType) {
+            this.taskType = taskType;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String savedSearchId = null;
+
+        /**
+         * A filter to return only scheduled tasks whose stream action savedSearchId matches the given
+         * ManagementSavedSearch id [OCID] exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder savedSearchId(String savedSearchId) {
+            this.savedSearchId = savedSearchId;
+            return this;
+        }
+
+        private String displayNameContains = null;
+
+        /**
+         * A filter to return only resources whose display name contains the substring.
+         *
+         * @return this builder instance
+         */
+        public Builder displayNameContains(String displayNameContains) {
+            this.displayNameContains = displayNameContains;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -221,5 +377,124 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListScheduledTasksRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListScheduledTasksRequest
+         */
+        public ListScheduledTasksRequest buildWithoutInvocationCallback() {
+            ListScheduledTasksRequest request = new ListScheduledTasksRequest();
+            request.namespaceName = namespaceName;
+            request.taskType = taskType;
+            request.compartmentId = compartmentId;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.displayName = displayName;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.savedSearchId = savedSearchId;
+            request.displayNameContains = displayNameContains;
+            return request;
+            // new ListScheduledTasksRequest(namespaceName, taskType, compartmentId, opcRequestId, limit, page, displayName, sortOrder, sortBy, savedSearchId, displayNameContains);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .taskType(taskType)
+                .compartmentId(compartmentId)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .displayName(displayName)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .savedSearchId(savedSearchId)
+                .displayNameContains(displayNameContains);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",taskType=").append(String.valueOf(this.taskType));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",savedSearchId=").append(String.valueOf(this.savedSearchId));
+        sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListScheduledTasksRequest)) {
+            return false;
+        }
+
+        ListScheduledTasksRequest other = (ListScheduledTasksRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.savedSearchId, other.savedSearchId)
+                && java.util.Objects.equals(this.displayNameContains, other.displayNameContains);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.savedSearchId == null ? 43 : this.savedSearchId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.displayNameContains == null
+                                ? 43
+                                : this.displayNameContains.hashCode());
+        return result;
     }
 }

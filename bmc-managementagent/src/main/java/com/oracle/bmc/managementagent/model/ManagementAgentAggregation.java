@@ -15,16 +15,21 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagementAgentAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagementAgentAggregation {
+public final class ManagementAgentAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dimensions", "count"})
+    public ManagementAgentAggregation(
+            ManagementAgentAggregationDimensions dimensions, Integer count) {
+        super();
+        this.dimensions = dimensions;
+        this.count = count;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private ManagementAgentAggregationDimensions dimensions;
@@ -70,15 +75,69 @@ public class ManagementAgentAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    ManagementAgentAggregationDimensions dimensions;
+    private final ManagementAgentAggregationDimensions dimensions;
+
+    public ManagementAgentAggregationDimensions getDimensions() {
+        return dimensions;
+    }
 
     /**
      * The number of Management Agents in this group
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    Integer count;
+    private final Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagementAgentAggregation(");
+        sb.append("dimensions=").append(String.valueOf(this.dimensions));
+        sb.append(", count=").append(String.valueOf(this.count));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagementAgentAggregation)) {
+            return false;
+        }
+
+        ManagementAgentAggregation other = (ManagementAgentAggregation) o;
+        return java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

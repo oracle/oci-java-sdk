@@ -17,16 +17,34 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SearchResultCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SearchResultCollection {
+public final class SearchResultCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "count",
+        "items",
+        "query",
+        "facetedSearchAggregation",
+        "sortableFields"
+    })
+    public SearchResultCollection(
+            Integer count,
+            java.util.List<SearchResult> items,
+            String query,
+            java.util.List<FacetedSearchAggregation> facetedSearchAggregation,
+            java.util.List<String> sortableFields) {
+        super();
+        this.count = count;
+        this.items = items;
+        this.query = query;
+        this.facetedSearchAggregation = facetedSearchAggregation;
+        this.sortableFields = sortableFields;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
@@ -106,36 +124,119 @@ public class SearchResultCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Total number of items returned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    Integer count;
+    private final Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
 
     /**
      * Search result set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<SearchResult> items;
+    private final java.util.List<SearchResult> items;
+
+    public java.util.List<SearchResult> getItems() {
+        return items;
+    }
 
     /**
      * String that data objects are to be searched with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
-    String query;
+    private final String query;
+
+    public String getQuery() {
+        return query;
+    }
 
     /**
      * Aggregations/facets on properties of data objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("facetedSearchAggregation")
-    java.util.List<FacetedSearchAggregation> facetedSearchAggregation;
+    private final java.util.List<FacetedSearchAggregation> facetedSearchAggregation;
+
+    public java.util.List<FacetedSearchAggregation> getFacetedSearchAggregation() {
+        return facetedSearchAggregation;
+    }
 
     /**
      * A list of fields or properties used in the sorting of a search result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortableFields")
-    java.util.List<String> sortableFields;
+    private final java.util.List<String> sortableFields;
+
+    public java.util.List<String> getSortableFields() {
+        return sortableFields;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchResultCollection(");
+        sb.append("count=").append(String.valueOf(this.count));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append(", query=").append(String.valueOf(this.query));
+        sb.append(", facetedSearchAggregation=")
+                .append(String.valueOf(this.facetedSearchAggregation));
+        sb.append(", sortableFields=").append(String.valueOf(this.sortableFields));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchResultCollection)) {
+            return false;
+        }
+
+        SearchResultCollection other = (SearchResultCollection) o;
+        return java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(
+                        this.facetedSearchAggregation, other.facetedSearchAggregation)
+                && java.util.Objects.equals(this.sortableFields, other.sortableFields)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.facetedSearchAggregation == null
+                                ? 43
+                                : this.facetedSearchAggregation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sortableFields == null ? 43 : this.sortableFields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

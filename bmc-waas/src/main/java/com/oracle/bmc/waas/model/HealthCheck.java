@@ -16,14 +16,50 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HealthCheck.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HealthCheck {
+public final class HealthCheck {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isEnabled",
+        "method",
+        "path",
+        "headers",
+        "expectedResponseCodeGroup",
+        "isResponseTextCheckEnabled",
+        "expectedResponseText",
+        "intervalInSeconds",
+        "timeoutInSeconds",
+        "healthyThreshold",
+        "unhealthyThreshold"
+    })
+    public HealthCheck(
+            Boolean isEnabled,
+            Method method,
+            String path,
+            java.util.Map<String, String> headers,
+            java.util.List<ExpectedResponseCodeGroup> expectedResponseCodeGroup,
+            Boolean isResponseTextCheckEnabled,
+            String expectedResponseText,
+            Integer intervalInSeconds,
+            Integer timeoutInSeconds,
+            Integer healthyThreshold,
+            Integer unhealthyThreshold) {
+        super();
+        this.isEnabled = isEnabled;
+        this.method = method;
+        this.path = path;
+        this.headers = headers;
+        this.expectedResponseCodeGroup = expectedResponseCodeGroup;
+        this.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
+        this.expectedResponseText = expectedResponseText;
+        this.intervalInSeconds = intervalInSeconds;
+        this.timeoutInSeconds = timeoutInSeconds;
+        this.healthyThreshold = healthyThreshold;
+        this.unhealthyThreshold = unhealthyThreshold;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
@@ -173,15 +209,23 @@ public class HealthCheck {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Enables or disables the health checks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
     /**
      * An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Method {
         Get("GET"),
         Head("HEAD"),
@@ -192,6 +236,8 @@ public class HealthCheck {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Method.class);
 
         private final String value;
         private static java.util.Map<String, Method> map;
@@ -229,13 +275,21 @@ public class HealthCheck {
      * An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("method")
-    Method method;
+    private final Method method;
+
+    public Method getMethod() {
+        return method;
+    }
 
     /**
      * Path to visit on your origins when performing the health check.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * HTTP header fields to include in health check requests, expressed as {@code "name": "value"} properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
@@ -243,10 +297,14 @@ public class HealthCheck {
      **Note:** The only currently-supported header fields are Host and User-Agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
-    java.util.Map<String, String> headers;
+    private final java.util.Map<String, String> headers;
+
+    public java.util.Map<String, String> getHeaders() {
+        return headers;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExpectedResponseCodeGroup {
         _2Xx("2XX"),
         _3Xx("3XX"),
@@ -258,6 +316,9 @@ public class HealthCheck {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExpectedResponseCodeGroup.class);
 
         private final String value;
         private static java.util.Map<String, ExpectedResponseCodeGroup> map;
@@ -299,44 +360,167 @@ public class HealthCheck {
      * - **5XX:** Server errors response code group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedResponseCodeGroup")
-    java.util.List<ExpectedResponseCodeGroup> expectedResponseCodeGroup;
+    private final java.util.List<ExpectedResponseCodeGroup> expectedResponseCodeGroup;
+
+    public java.util.List<ExpectedResponseCodeGroup> getExpectedResponseCodeGroup() {
+        return expectedResponseCodeGroup;
+    }
 
     /**
      * Enables or disables additional check for predefined text in addition to response code.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResponseTextCheckEnabled")
-    Boolean isResponseTextCheckEnabled;
+    private final Boolean isResponseTextCheckEnabled;
+
+    public Boolean getIsResponseTextCheckEnabled() {
+        return isResponseTextCheckEnabled;
+    }
 
     /**
      * Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedResponseText")
-    String expectedResponseText;
+    private final String expectedResponseText;
+
+    public String getExpectedResponseText() {
+        return expectedResponseText;
+    }
 
     /**
      * Time between health checks of an individual origin server, in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInSeconds")
-    Integer intervalInSeconds;
+    private final Integer intervalInSeconds;
+
+    public Integer getIntervalInSeconds() {
+        return intervalInSeconds;
+    }
 
     /**
      * Response timeout represents wait time until request is considered failed, in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
-    Integer timeoutInSeconds;
+    private final Integer timeoutInSeconds;
+
+    public Integer getTimeoutInSeconds() {
+        return timeoutInSeconds;
+    }
 
     /**
      * Number of successful health checks after which the server is marked up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthyThreshold")
-    Integer healthyThreshold;
+    private final Integer healthyThreshold;
+
+    public Integer getHealthyThreshold() {
+        return healthyThreshold;
+    }
 
     /**
      * Number of failed health checks after which the server is marked down.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unhealthyThreshold")
-    Integer unhealthyThreshold;
+    private final Integer unhealthyThreshold;
+
+    public Integer getUnhealthyThreshold() {
+        return unhealthyThreshold;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HealthCheck(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", method=").append(String.valueOf(this.method));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", headers=").append(String.valueOf(this.headers));
+        sb.append(", expectedResponseCodeGroup=")
+                .append(String.valueOf(this.expectedResponseCodeGroup));
+        sb.append(", isResponseTextCheckEnabled=")
+                .append(String.valueOf(this.isResponseTextCheckEnabled));
+        sb.append(", expectedResponseText=").append(String.valueOf(this.expectedResponseText));
+        sb.append(", intervalInSeconds=").append(String.valueOf(this.intervalInSeconds));
+        sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
+        sb.append(", healthyThreshold=").append(String.valueOf(this.healthyThreshold));
+        sb.append(", unhealthyThreshold=").append(String.valueOf(this.unhealthyThreshold));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HealthCheck)) {
+            return false;
+        }
+
+        HealthCheck other = (HealthCheck) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.method, other.method)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.headers, other.headers)
+                && java.util.Objects.equals(
+                        this.expectedResponseCodeGroup, other.expectedResponseCodeGroup)
+                && java.util.Objects.equals(
+                        this.isResponseTextCheckEnabled, other.isResponseTextCheckEnabled)
+                && java.util.Objects.equals(this.expectedResponseText, other.expectedResponseText)
+                && java.util.Objects.equals(this.intervalInSeconds, other.intervalInSeconds)
+                && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
+                && java.util.Objects.equals(this.healthyThreshold, other.healthyThreshold)
+                && java.util.Objects.equals(this.unhealthyThreshold, other.unhealthyThreshold)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.method == null ? 43 : this.method.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedResponseCodeGroup == null
+                                ? 43
+                                : this.expectedResponseCodeGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isResponseTextCheckEnabled == null
+                                ? 43
+                                : this.isResponseTextCheckEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedResponseText == null
+                                ? 43
+                                : this.expectedResponseText.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.intervalInSeconds == null ? 43 : this.intervalInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthyThreshold == null ? 43 : this.healthyThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unhealthyThreshold == null
+                                ? 43
+                                : this.unhealthyThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

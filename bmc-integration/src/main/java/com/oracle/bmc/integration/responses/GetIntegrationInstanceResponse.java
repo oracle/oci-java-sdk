@@ -7,15 +7,15 @@ package com.oracle.bmc.integration.responses;
 import com.oracle.bmc.integration.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetIntegrationInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -25,10 +25,18 @@ public class GetIntegrationInstanceResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned IntegrationInstance instance.
      */
     private com.oracle.bmc.integration.model.IntegrationInstance integrationInstance;
+
+    public com.oracle.bmc.integration.model.IntegrationInstance getIntegrationInstance() {
+        return integrationInstance;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -55,6 +63,28 @@ public class GetIntegrationInstanceResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.integration.model.IntegrationInstance integrationInstance;
+
+        public Builder integrationInstance(
+                com.oracle.bmc.integration.model.IntegrationInstance integrationInstance) {
+            this.integrationInstance = integrationInstance;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -72,5 +102,51 @@ public class GetIntegrationInstanceResponse extends com.oracle.bmc.responses.Bmc
             return new GetIntegrationInstanceResponse(
                     __httpStatusCode__, etag, opcRequestId, integrationInstance);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",integrationInstance=").append(String.valueOf(integrationInstance));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetIntegrationInstanceResponse)) {
+            return false;
+        }
+
+        GetIntegrationInstanceResponse other = (GetIntegrationInstanceResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.integrationInstance, other.integrationInstance);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.integrationInstance == null
+                                ? 43
+                                : this.integrationInstance.hashCode());
+        return result;
     }
 }

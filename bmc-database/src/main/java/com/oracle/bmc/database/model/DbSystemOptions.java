@@ -15,14 +15,17 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystemOptions {
+public final class DbSystemOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"storageManagement"})
+    public DbSystemOptions(StorageManagement storageManagement) {
+        super();
+        this.storageManagement = storageManagement;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("storageManagement")
         private StorageManagement storageManagement;
@@ -58,13 +61,16 @@ public class DbSystemOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The storage option used in DB system.
      * ASM - Automatic storage management
      * LVM - Logical Volume management
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum StorageManagement {
         Asm("ASM"),
         Lvm("LVM"),
@@ -74,6 +80,9 @@ public class DbSystemOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StorageManagement.class);
 
         private final String value;
         private static java.util.Map<String, StorageManagement> map;
@@ -114,8 +123,53 @@ public class DbSystemOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageManagement")
-    StorageManagement storageManagement;
+    private final StorageManagement storageManagement;
+
+    public StorageManagement getStorageManagement() {
+        return storageManagement;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystemOptions(");
+        sb.append("storageManagement=").append(String.valueOf(this.storageManagement));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystemOptions)) {
+            return false;
+        }
+
+        DbSystemOptions other = (DbSystemOptions) o;
+        return java.util.Objects.equals(this.storageManagement, other.storageManagement)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.storageManagement == null ? 43 : this.storageManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

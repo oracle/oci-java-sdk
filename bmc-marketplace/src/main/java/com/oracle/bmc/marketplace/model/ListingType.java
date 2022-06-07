@@ -9,7 +9,6 @@ package com.oracle.bmc.marketplace.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.extern.slf4j.Slf4j
 public enum ListingType {
     Community("COMMUNITY"),
     Partner("PARTNER"),
@@ -20,6 +19,9 @@ public enum ListingType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ListingType.class);
 
     private final String value;
     private static java.util.Map<String, ListingType> map;

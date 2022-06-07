@@ -15,16 +15,20 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateLoadBalancerShapeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateLoadBalancerShapeDetails {
+public final class UpdateLoadBalancerShapeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"shapeName", "shapeDetails"})
+    public UpdateLoadBalancerShapeDetails(String shapeName, ShapeDetails shapeDetails) {
+        super();
+        this.shapeName = shapeName;
+        this.shapeDetails = shapeDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
@@ -70,6 +74,10 @@ public class UpdateLoadBalancerShapeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The new shape name for the load balancer.
      * <p>
@@ -84,15 +92,65 @@ public class UpdateLoadBalancerShapeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    String shapeName;
+    private final String shapeName;
+
+    public String getShapeName() {
+        return shapeName;
+    }
 
     /**
      * The configuration details to update load balancer to a different profile.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
-    ShapeDetails shapeDetails;
+    private final ShapeDetails shapeDetails;
+
+    public ShapeDetails getShapeDetails() {
+        return shapeDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateLoadBalancerShapeDetails(");
+        sb.append("shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", shapeDetails=").append(String.valueOf(this.shapeDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLoadBalancerShapeDetails)) {
+            return false;
+        }
+
+        UpdateLoadBalancerShapeDetails other = (UpdateLoadBalancerShapeDetails) o;
+        return java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.shapeDetails, other.shapeDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.shapeDetails == null ? 43 : this.shapeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

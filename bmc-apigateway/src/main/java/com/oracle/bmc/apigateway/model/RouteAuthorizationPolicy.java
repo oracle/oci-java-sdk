@@ -17,12 +17,6 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -45,6 +39,39 @@ package com.oracle.bmc.apigateway.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class RouteAuthorizationPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected RouteAuthorizationPolicy() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RouteAuthorizationPolicy(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RouteAuthorizationPolicy)) {
+            return false;
+        }
+
+        RouteAuthorizationPolicy other = (RouteAuthorizationPolicy) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * Indicates how authorization should be applied. For a type of ANY_OF, an "allowedScope"
@@ -53,7 +80,6 @@ public class RouteAuthorizationPolicy {
      * policy.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Anonymous("ANONYMOUS"),
         AnyOf("ANY_OF"),
@@ -64,6 +90,8 @@ public class RouteAuthorizationPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;

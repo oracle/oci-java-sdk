@@ -16,16 +16,21 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DbSystemComputePerformanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystemComputePerformanceSummary {
+public final class DbSystemComputePerformanceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"shape", "computePerformanceList"})
+    public DbSystemComputePerformanceSummary(
+            String shape, java.util.List<ComputePerformanceSummary> computePerformanceList) {
+        super();
+        this.shape = shape;
+        this.computePerformanceList = computePerformanceList;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
@@ -73,18 +78,77 @@ public class DbSystemComputePerformanceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The shape of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * List of Compute performance details for the specified DB system shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computePerformanceList")
-    java.util.List<ComputePerformanceSummary> computePerformanceList;
+    private final java.util.List<ComputePerformanceSummary> computePerformanceList;
+
+    public java.util.List<ComputePerformanceSummary> getComputePerformanceList() {
+        return computePerformanceList;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystemComputePerformanceSummary(");
+        sb.append("shape=").append(String.valueOf(this.shape));
+        sb.append(", computePerformanceList=").append(String.valueOf(this.computePerformanceList));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystemComputePerformanceSummary)) {
+            return false;
+        }
+
+        DbSystemComputePerformanceSummary other = (DbSystemComputePerformanceSummary) o;
+        return java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(
+                        this.computePerformanceList, other.computePerformanceList)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computePerformanceList == null
+                                ? 43
+                                : this.computePerformanceList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

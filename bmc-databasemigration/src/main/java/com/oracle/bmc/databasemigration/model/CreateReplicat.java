@@ -16,14 +16,24 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateReplicat.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateReplicat {
+public final class CreateReplicat {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "mapParallelism",
+        "minApplyParallelism",
+        "maxApplyParallelism"
+    })
+    public CreateReplicat(
+            Integer mapParallelism, Integer minApplyParallelism, Integer maxApplyParallelism) {
+        super();
+        this.mapParallelism = mapParallelism;
+        this.minApplyParallelism = minApplyParallelism;
+        this.maxApplyParallelism = maxApplyParallelism;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("mapParallelism")
         private Integer mapParallelism;
@@ -81,27 +91,98 @@ public class CreateReplicat {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Number of threads used to read trail files (valid for Parallel Replicat)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mapParallelism")
-    Integer mapParallelism;
+    private final Integer mapParallelism;
+
+    public Integer getMapParallelism() {
+        return mapParallelism;
+    }
 
     /**
      * Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minApplyParallelism")
-    Integer minApplyParallelism;
+    private final Integer minApplyParallelism;
+
+    public Integer getMinApplyParallelism() {
+        return minApplyParallelism;
+    }
 
     /**
      * Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxApplyParallelism")
-    Integer maxApplyParallelism;
+    private final Integer maxApplyParallelism;
+
+    public Integer getMaxApplyParallelism() {
+        return maxApplyParallelism;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateReplicat(");
+        sb.append("mapParallelism=").append(String.valueOf(this.mapParallelism));
+        sb.append(", minApplyParallelism=").append(String.valueOf(this.minApplyParallelism));
+        sb.append(", maxApplyParallelism=").append(String.valueOf(this.maxApplyParallelism));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateReplicat)) {
+            return false;
+        }
+
+        CreateReplicat other = (CreateReplicat) o;
+        return java.util.Objects.equals(this.mapParallelism, other.mapParallelism)
+                && java.util.Objects.equals(this.minApplyParallelism, other.minApplyParallelism)
+                && java.util.Objects.equals(this.maxApplyParallelism, other.maxApplyParallelism)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.mapParallelism == null ? 43 : this.mapParallelism.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minApplyParallelism == null
+                                ? 43
+                                : this.minApplyParallelism.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxApplyParallelism == null
+                                ? 43
+                                : this.maxApplyParallelism.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

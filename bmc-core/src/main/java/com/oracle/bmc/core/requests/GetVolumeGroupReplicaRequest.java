@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupReplicaExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVolumeGroupReplicaRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetVolumeGroupReplicaRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,12 +17,27 @@ public class GetVolumeGroupReplicaRequest
      */
     private String volumeGroupReplicaId;
 
+    public String getVolumeGroupReplicaId() {
+        return volumeGroupReplicaId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetVolumeGroupReplicaRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String volumeGroupReplicaId = null;
+
+        /**
+         * The OCID of the volume replica group.
+         * @return this builder instance
+         */
+        public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
+            this.volumeGroupReplicaId = volumeGroupReplicaId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -82,5 +89,67 @@ public class GetVolumeGroupReplicaRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetVolumeGroupReplicaRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetVolumeGroupReplicaRequest
+         */
+        public GetVolumeGroupReplicaRequest buildWithoutInvocationCallback() {
+            GetVolumeGroupReplicaRequest request = new GetVolumeGroupReplicaRequest();
+            request.volumeGroupReplicaId = volumeGroupReplicaId;
+            return request;
+            // new GetVolumeGroupReplicaRequest(volumeGroupReplicaId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().volumeGroupReplicaId(volumeGroupReplicaId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",volumeGroupReplicaId=").append(String.valueOf(this.volumeGroupReplicaId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetVolumeGroupReplicaRequest)) {
+            return false;
+        }
+
+        GetVolumeGroupReplicaRequest other = (GetVolumeGroupReplicaRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.volumeGroupReplicaId, other.volumeGroupReplicaId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.volumeGroupReplicaId == null
+                                ? 43
+                                : this.volumeGroupReplicaId.hashCode());
+        return result;
     }
 }

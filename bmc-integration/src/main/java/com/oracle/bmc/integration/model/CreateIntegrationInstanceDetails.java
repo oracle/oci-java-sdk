@@ -15,16 +15,61 @@ package com.oracle.bmc.integration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateIntegrationInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateIntegrationInstanceDetails {
+public final class CreateIntegrationInstanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "integrationInstanceType",
+        "freeformTags",
+        "definedTags",
+        "isByol",
+        "idcsAt",
+        "messagePacks",
+        "isVisualBuilderEnabled",
+        "customEndpoint",
+        "alternateCustomEndpoints",
+        "consumptionModel",
+        "isFileServerEnabled",
+        "networkEndpointDetails"
+    })
+    public CreateIntegrationInstanceDetails(
+            String displayName,
+            String compartmentId,
+            IntegrationInstanceType integrationInstanceType,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isByol,
+            String idcsAt,
+            Integer messagePacks,
+            Boolean isVisualBuilderEnabled,
+            CreateCustomEndpointDetails customEndpoint,
+            java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints,
+            ConsumptionModel consumptionModel,
+            Boolean isFileServerEnabled,
+            NetworkEndpointDetails networkEndpointDetails) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.integrationInstanceType = integrationInstanceType;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.isByol = isByol;
+        this.idcsAt = idcsAt;
+        this.messagePacks = messagePacks;
+        this.isVisualBuilderEnabled = isVisualBuilderEnabled;
+        this.customEndpoint = customEndpoint;
+        this.alternateCustomEndpoints = alternateCustomEndpoints;
+        this.consumptionModel = consumptionModel;
+        this.isFileServerEnabled = isFileServerEnabled;
+        this.networkEndpointDetails = networkEndpointDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -208,17 +253,30 @@ public class CreateIntegrationInstanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Integration Instance Identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Compartment Identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * Standard or Enterprise type
      **/
@@ -258,7 +316,11 @@ public class CreateIntegrationInstanceDetails {
      * Standard or Enterprise type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
-    IntegrationInstanceType integrationInstanceType;
+    private final IntegrationInstanceType integrationInstanceType;
+
+    public IntegrationInstanceType getIntegrationInstanceType() {
+        return integrationInstanceType;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name,
@@ -267,7 +329,11 @@ public class CreateIntegrationInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to
@@ -276,34 +342,58 @@ public class CreateIntegrationInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Bring your own license.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
-    Boolean isByol;
+    private final Boolean isByol;
+
+    public Boolean getIsByol() {
+        return isByol;
+    }
 
     /**
      * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAt")
-    String idcsAt;
+    private final String idcsAt;
+
+    public String getIdcsAt() {
+        return idcsAt;
+    }
 
     /**
      * The number of configured message packs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
-    Integer messagePacks;
+    private final Integer messagePacks;
+
+    public Integer getMessagePacks() {
+        return messagePacks;
+    }
 
     /**
      * Visual Builder is enabled or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
-    Boolean isVisualBuilderEnabled;
+    private final Boolean isVisualBuilderEnabled;
+
+    public Boolean getIsVisualBuilderEnabled() {
+        return isVisualBuilderEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customEndpoint")
-    CreateCustomEndpointDetails customEndpoint;
+    private final CreateCustomEndpointDetails customEndpoint;
+
+    public CreateCustomEndpointDetails getCustomEndpoint() {
+        return customEndpoint;
+    }
 
     /**
      * A list of alternate custom endpoints to be used for the integration instance URL
@@ -311,7 +401,12 @@ public class CreateIntegrationInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
-    java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints;
+    private final java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints;
+
+    public java.util.List<CreateCustomEndpointDetails> getAlternateCustomEndpoints() {
+        return alternateCustomEndpoints;
+    }
+
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      **/
@@ -352,17 +447,139 @@ public class CreateIntegrationInstanceDetails {
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
-    ConsumptionModel consumptionModel;
+    private final ConsumptionModel consumptionModel;
+
+    public ConsumptionModel getConsumptionModel() {
+        return consumptionModel;
+    }
 
     /**
      * The file server is enabled or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
-    Boolean isFileServerEnabled;
+    private final Boolean isFileServerEnabled;
+
+    public Boolean getIsFileServerEnabled() {
+        return isFileServerEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
-    NetworkEndpointDetails networkEndpointDetails;
+    private final NetworkEndpointDetails networkEndpointDetails;
+
+    public NetworkEndpointDetails getNetworkEndpointDetails() {
+        return networkEndpointDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateIntegrationInstanceDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", integrationInstanceType=")
+                .append(String.valueOf(this.integrationInstanceType));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isByol=").append(String.valueOf(this.isByol));
+        sb.append(", idcsAt=").append(String.valueOf(this.idcsAt));
+        sb.append(", messagePacks=").append(String.valueOf(this.messagePacks));
+        sb.append(", isVisualBuilderEnabled=").append(String.valueOf(this.isVisualBuilderEnabled));
+        sb.append(", customEndpoint=").append(String.valueOf(this.customEndpoint));
+        sb.append(", alternateCustomEndpoints=")
+                .append(String.valueOf(this.alternateCustomEndpoints));
+        sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
+        sb.append(", isFileServerEnabled=").append(String.valueOf(this.isFileServerEnabled));
+        sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateIntegrationInstanceDetails)) {
+            return false;
+        }
+
+        CreateIntegrationInstanceDetails other = (CreateIntegrationInstanceDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.integrationInstanceType, other.integrationInstanceType)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.isByol, other.isByol)
+                && java.util.Objects.equals(this.idcsAt, other.idcsAt)
+                && java.util.Objects.equals(this.messagePacks, other.messagePacks)
+                && java.util.Objects.equals(
+                        this.isVisualBuilderEnabled, other.isVisualBuilderEnabled)
+                && java.util.Objects.equals(this.customEndpoint, other.customEndpoint)
+                && java.util.Objects.equals(
+                        this.alternateCustomEndpoints, other.alternateCustomEndpoints)
+                && java.util.Objects.equals(this.consumptionModel, other.consumptionModel)
+                && java.util.Objects.equals(this.isFileServerEnabled, other.isFileServerEnabled)
+                && java.util.Objects.equals(
+                        this.networkEndpointDetails, other.networkEndpointDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.integrationInstanceType == null
+                                ? 43
+                                : this.integrationInstanceType.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
+        result = (result * PRIME) + (this.idcsAt == null ? 43 : this.idcsAt.hashCode());
+        result = (result * PRIME) + (this.messagePacks == null ? 43 : this.messagePacks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isVisualBuilderEnabled == null
+                                ? 43
+                                : this.isVisualBuilderEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customEndpoint == null ? 43 : this.customEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.alternateCustomEndpoints == null
+                                ? 43
+                                : this.alternateCustomEndpoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumptionModel == null ? 43 : this.consumptionModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isFileServerEnabled == null
+                                ? 43
+                                : this.isFileServerEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkEndpointDetails == null
+                                ? 43
+                                : this.networkEndpointDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

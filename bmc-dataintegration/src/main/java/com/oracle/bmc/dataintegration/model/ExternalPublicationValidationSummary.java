@@ -15,16 +15,37 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExternalPublicationValidationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExternalPublicationValidationSummary {
+public final class ExternalPublicationValidationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "totalMessageCount",
+        "errorMessageCount",
+        "warnMessageCount",
+        "infoMessageCount",
+        "validationMessages",
+        "key"
+    })
+    public ExternalPublicationValidationSummary(
+            Integer totalMessageCount,
+            Integer errorMessageCount,
+            Integer warnMessageCount,
+            Integer infoMessageCount,
+            java.util.Map<String, java.util.List<ValidationMessage>> validationMessages,
+            String key) {
+        super();
+        this.totalMessageCount = totalMessageCount;
+        this.errorMessageCount = errorMessageCount;
+        this.warnMessageCount = warnMessageCount;
+        this.infoMessageCount = infoMessageCount;
+        this.validationMessages = validationMessages;
+        this.key = key;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("totalMessageCount")
         private Integer totalMessageCount;
@@ -119,42 +140,136 @@ public class ExternalPublicationValidationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Total number of validation messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMessageCount")
-    Integer totalMessageCount;
+    private final Integer totalMessageCount;
+
+    public Integer getTotalMessageCount() {
+        return totalMessageCount;
+    }
 
     /**
      * Total number of validation error messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessageCount")
-    Integer errorMessageCount;
+    private final Integer errorMessageCount;
+
+    public Integer getErrorMessageCount() {
+        return errorMessageCount;
+    }
 
     /**
      * Total number of validation warning messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warnMessageCount")
-    Integer warnMessageCount;
+    private final Integer warnMessageCount;
+
+    public Integer getWarnMessageCount() {
+        return warnMessageCount;
+    }
 
     /**
      * Total number of validation information messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infoMessageCount")
-    Integer infoMessageCount;
+    private final Integer infoMessageCount;
+
+    public Integer getInfoMessageCount() {
+        return infoMessageCount;
+    }
 
     /**
      * Detailed information of the data flow object validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationMessages")
-    java.util.Map<String, java.util.List<ValidationMessage>> validationMessages;
+    private final java.util.Map<String, java.util.List<ValidationMessage>> validationMessages;
+
+    public java.util.Map<String, java.util.List<ValidationMessage>> getValidationMessages() {
+        return validationMessages;
+    }
 
     /**
      * Objects use a 36 character key as unique ID. It is system generated and cannot be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalPublicationValidationSummary(");
+        sb.append("totalMessageCount=").append(String.valueOf(this.totalMessageCount));
+        sb.append(", errorMessageCount=").append(String.valueOf(this.errorMessageCount));
+        sb.append(", warnMessageCount=").append(String.valueOf(this.warnMessageCount));
+        sb.append(", infoMessageCount=").append(String.valueOf(this.infoMessageCount));
+        sb.append(", validationMessages=").append(String.valueOf(this.validationMessages));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalPublicationValidationSummary)) {
+            return false;
+        }
+
+        ExternalPublicationValidationSummary other = (ExternalPublicationValidationSummary) o;
+        return java.util.Objects.equals(this.totalMessageCount, other.totalMessageCount)
+                && java.util.Objects.equals(this.errorMessageCount, other.errorMessageCount)
+                && java.util.Objects.equals(this.warnMessageCount, other.warnMessageCount)
+                && java.util.Objects.equals(this.infoMessageCount, other.infoMessageCount)
+                && java.util.Objects.equals(this.validationMessages, other.validationMessages)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.totalMessageCount == null ? 43 : this.totalMessageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.errorMessageCount == null ? 43 : this.errorMessageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.warnMessageCount == null ? 43 : this.warnMessageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infoMessageCount == null ? 43 : this.infoMessageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validationMessages == null
+                                ? 43
+                                : this.validationMessages.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

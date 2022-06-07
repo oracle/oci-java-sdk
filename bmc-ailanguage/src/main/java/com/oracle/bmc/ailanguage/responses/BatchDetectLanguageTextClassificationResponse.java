@@ -7,10 +7,6 @@ package com.oracle.bmc.ailanguage.responses;
 import com.oracle.bmc.ailanguage.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class BatchDetectLanguageTextClassificationResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -20,11 +16,20 @@ public class BatchDetectLanguageTextClassificationResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned BatchDetectLanguageTextClassificationResult instance.
      */
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
             batchDetectLanguageTextClassificationResult;
+
+    public com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
+            getBatchDetectLanguageTextClassificationResult() {
+        return batchDetectLanguageTextClassificationResult;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -50,6 +55,24 @@ public class BatchDetectLanguageTextClassificationResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
+                batchDetectLanguageTextClassificationResult;
+
+        public Builder batchDetectLanguageTextClassificationResult(
+                com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
+                        batchDetectLanguageTextClassificationResult) {
+            this.batchDetectLanguageTextClassificationResult =
+                    batchDetectLanguageTextClassificationResult;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -67,5 +90,52 @@ public class BatchDetectLanguageTextClassificationResponse
             return new BatchDetectLanguageTextClassificationResponse(
                     __httpStatusCode__, opcRequestId, batchDetectLanguageTextClassificationResult);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",batchDetectLanguageTextClassificationResult=")
+                .append(String.valueOf(batchDetectLanguageTextClassificationResult));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BatchDetectLanguageTextClassificationResponse)) {
+            return false;
+        }
+
+        BatchDetectLanguageTextClassificationResponse other =
+                (BatchDetectLanguageTextClassificationResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.batchDetectLanguageTextClassificationResult,
+                        other.batchDetectLanguageTextClassificationResult);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.batchDetectLanguageTextClassificationResult == null
+                                ? 43
+                                : this.batchDetectLanguageTextClassificationResult.hashCode());
+        return result;
     }
 }

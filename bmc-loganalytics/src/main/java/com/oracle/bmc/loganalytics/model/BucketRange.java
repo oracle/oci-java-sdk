@@ -16,14 +16,19 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BucketRange.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BucketRange {
+public final class BucketRange {
+    @Deprecated
+    @java.beans.ConstructorProperties({"lower", "upper", "alias"})
+    public BucketRange(java.math.BigDecimal lower, java.math.BigDecimal upper, String alias) {
+        super();
+        this.lower = lower;
+        this.upper = upper;
+        this.alias = alias;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("lower")
         private java.math.BigDecimal lower;
@@ -77,27 +82,88 @@ public class BucketRange {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Lower bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lower")
-    java.math.BigDecimal lower;
+    private final java.math.BigDecimal lower;
+
+    public java.math.BigDecimal getLower() {
+        return lower;
+    }
 
     /**
      * Upper bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("upper")
-    java.math.BigDecimal upper;
+    private final java.math.BigDecimal upper;
+
+    public java.math.BigDecimal getUpper() {
+        return upper;
+    }
 
     /**
      * Optional alias of the bucket range if specified in the querystring.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
-    String alias;
+    private final String alias;
+
+    public String getAlias() {
+        return alias;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BucketRange(");
+        sb.append("lower=").append(String.valueOf(this.lower));
+        sb.append(", upper=").append(String.valueOf(this.upper));
+        sb.append(", alias=").append(String.valueOf(this.alias));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BucketRange)) {
+            return false;
+        }
+
+        BucketRange other = (BucketRange) o;
+        return java.util.Objects.equals(this.lower, other.lower)
+                && java.util.Objects.equals(this.upper, other.upper)
+                && java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.lower == null ? 43 : this.lower.hashCode());
+        result = (result * PRIME) + (this.upper == null ? 43 : this.upper.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

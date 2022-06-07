@@ -9,14 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListRecipientInvitationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRecipientInvitationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListRecipientInvitationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,30 +17,49 @@ public class ListRecipientInvitationsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The tenancy that sent the invitation.
      */
     private String senderTenancyId;
 
+    public String getSenderTenancyId() {
+        return senderTenancyId;
+    }
     /**
      * The lifecycle state of the resource.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState;
 
+    public com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * The status of the recipient invitation.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationStatus status;
 
+    public com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationStatus getStatus() {
+        return status;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
+
+    public String getPage() {
+        return page;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -56,6 +67,75 @@ public class ListRecipientInvitationsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String senderTenancyId = null;
+
+        /**
+         * The tenancy that sent the invitation.
+         * @return this builder instance
+         */
+        public Builder senderTenancyId(String senderTenancyId) {
+            this.senderTenancyId = senderTenancyId;
+            return this;
+        }
+
+        private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState = null;
+
+        /**
+         * The lifecycle state of the resource.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationStatus status =
+                null;
+
+        /**
+         * The status of the recipient invitation.
+         * @return this builder instance
+         */
+        public Builder status(
+                com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationStatus status) {
+            this.status = status;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -112,5 +192,95 @@ public class ListRecipientInvitationsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListRecipientInvitationsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListRecipientInvitationsRequest
+         */
+        public ListRecipientInvitationsRequest buildWithoutInvocationCallback() {
+            ListRecipientInvitationsRequest request = new ListRecipientInvitationsRequest();
+            request.compartmentId = compartmentId;
+            request.senderTenancyId = senderTenancyId;
+            request.lifecycleState = lifecycleState;
+            request.status = status;
+            request.opcRequestId = opcRequestId;
+            request.page = page;
+            return request;
+            // new ListRecipientInvitationsRequest(compartmentId, senderTenancyId, lifecycleState, status, opcRequestId, page);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .senderTenancyId(senderTenancyId)
+                .lifecycleState(lifecycleState)
+                .status(status)
+                .opcRequestId(opcRequestId)
+                .page(page);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",senderTenancyId=").append(String.valueOf(this.senderTenancyId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListRecipientInvitationsRequest)) {
+            return false;
+        }
+
+        ListRecipientInvitationsRequest other = (ListRecipientInvitationsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.senderTenancyId, other.senderTenancyId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.page, other.page);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.senderTenancyId == null ? 43 : this.senderTenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        return result;
     }
 }

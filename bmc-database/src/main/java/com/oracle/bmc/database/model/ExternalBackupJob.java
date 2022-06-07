@@ -16,16 +16,40 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExternalBackupJob.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExternalBackupJob {
+public final class ExternalBackupJob {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "backupId",
+        "provisioning",
+        "swiftPath",
+        "bucketName",
+        "tag",
+        "userName",
+        "swiftPassword"
+    })
+    public ExternalBackupJob(
+            String backupId,
+            Boolean provisioning,
+            String swiftPath,
+            String bucketName,
+            String tag,
+            String userName,
+            String swiftPassword) {
+        super();
+        this.backupId = backupId;
+        this.provisioning = provisioning;
+        this.swiftPath = swiftPath;
+        this.bucketName = bucketName;
+        this.tag = tag;
+        this.userName = userName;
+        this.swiftPassword = swiftPassword;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
@@ -130,41 +154,69 @@ public class ExternalBackupJob {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
-    String backupId;
+    private final String backupId;
+
+    public String getBackupId() {
+        return backupId;
+    }
 
     /**
      * An indicator for the provisioning state of the resource. If {@code TRUE}, the resource is still being provisioned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioning")
-    Boolean provisioning;
+    private final Boolean provisioning;
+
+    public Boolean getProvisioning() {
+        return provisioning;
+    }
 
     /**
      * The Swift path to use as a destination for the standalone backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("swiftPath")
-    String swiftPath;
+    private final String swiftPath;
+
+    public String getSwiftPath() {
+        return swiftPath;
+    }
 
     /**
      * The name of the Swift compartment bucket where the backup should be stored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     /**
      * The tag for RMAN to apply to the backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tag")
-    String tag;
+    private final String tag;
+
+    public String getTag() {
+        return tag;
+    }
 
     /**
      * The Swift user name to use for transferring the standalone backup to the designated Swift compartment bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
@@ -172,8 +224,71 @@ public class ExternalBackupJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
-    String swiftPassword;
+    private final String swiftPassword;
+
+    public String getSwiftPassword() {
+        return swiftPassword;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalBackupJob(");
+        sb.append("backupId=").append(String.valueOf(this.backupId));
+        sb.append(", provisioning=").append(String.valueOf(this.provisioning));
+        sb.append(", swiftPath=").append(String.valueOf(this.swiftPath));
+        sb.append(", bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", tag=").append(String.valueOf(this.tag));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", swiftPassword=").append(String.valueOf(this.swiftPassword));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalBackupJob)) {
+            return false;
+        }
+
+        ExternalBackupJob other = (ExternalBackupJob) o;
+        return java.util.Objects.equals(this.backupId, other.backupId)
+                && java.util.Objects.equals(this.provisioning, other.provisioning)
+                && java.util.Objects.equals(this.swiftPath, other.swiftPath)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.tag, other.tag)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.swiftPassword, other.swiftPassword)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.backupId == null ? 43 : this.backupId.hashCode());
+        result = (result * PRIME) + (this.provisioning == null ? 43 : this.provisioning.hashCode());
+        result = (result * PRIME) + (this.swiftPath == null ? 43 : this.swiftPath.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.tag == null ? 43 : this.tag.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.swiftPassword == null ? 43 : this.swiftPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

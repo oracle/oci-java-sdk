@@ -9,14 +9,6 @@ import com.oracle.bmc.devops.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetCommitExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCommitRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetCommitRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,15 +16,25 @@ public class GetCommitRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String repositoryId;
 
+    public String getRepositoryId() {
+        return repositoryId;
+    }
     /**
      * A filter to return only resources that match the given commit ID.
      */
     private String commitId;
 
+    public String getCommitId() {
+        return commitId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -40,6 +42,39 @@ public class GetCommitRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String repositoryId = null;
+
+        /**
+         * Unique repository identifier.
+         * @return this builder instance
+         */
+        public Builder repositoryId(String repositoryId) {
+            this.repositoryId = repositoryId;
+            return this;
+        }
+
+        private String commitId = null;
+
+        /**
+         * A filter to return only resources that match the given commit ID.
+         * @return this builder instance
+         */
+        public Builder commitId(String commitId) {
+            this.commitId = commitId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -93,5 +128,74 @@ public class GetCommitRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetCommitRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetCommitRequest
+         */
+        public GetCommitRequest buildWithoutInvocationCallback() {
+            GetCommitRequest request = new GetCommitRequest();
+            request.repositoryId = repositoryId;
+            request.commitId = commitId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetCommitRequest(repositoryId, commitId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .repositoryId(repositoryId)
+                .commitId(commitId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",repositoryId=").append(String.valueOf(this.repositoryId));
+        sb.append(",commitId=").append(String.valueOf(this.commitId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetCommitRequest)) {
+            return false;
+        }
+
+        GetCommitRequest other = (GetCommitRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.repositoryId, other.repositoryId)
+                && java.util.Objects.equals(this.commitId, other.commitId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
+        result = (result * PRIME) + (this.commitId == null ? 43 : this.commitId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

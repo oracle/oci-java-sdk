@@ -15,16 +15,103 @@ package com.oracle.bmc.rover.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateRoverNodeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateRoverNodeDetails {
+public final class CreateRoverNodeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "shape",
+        "customerShippingAddress",
+        "nodeWorkloads",
+        "superUserPassword",
+        "unlockPassphrase",
+        "pointOfContact",
+        "pointOfContactPhoneNumber",
+        "shippingPreference",
+        "shippingVendor",
+        "timePickupExpected",
+        "publicKey",
+        "timeReturnWindowStarts",
+        "timeReturnWindowEnds",
+        "lifecycleState",
+        "enclosureType",
+        "lifecycleStateDetails",
+        "serialNumber",
+        "oracleShippingTrackingUrl",
+        "isImportRequested",
+        "importCompartmentId",
+        "importFileBucket",
+        "dataValidationCode",
+        "masterKeyId",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public CreateRoverNodeDetails(
+            String displayName,
+            String compartmentId,
+            String shape,
+            ShippingAddress customerShippingAddress,
+            java.util.List<RoverWorkload> nodeWorkloads,
+            String superUserPassword,
+            String unlockPassphrase,
+            String pointOfContact,
+            String pointOfContactPhoneNumber,
+            ShippingPreference shippingPreference,
+            String shippingVendor,
+            java.util.Date timePickupExpected,
+            String publicKey,
+            java.util.Date timeReturnWindowStarts,
+            java.util.Date timeReturnWindowEnds,
+            LifecycleState lifecycleState,
+            EnclosureType enclosureType,
+            String lifecycleStateDetails,
+            String serialNumber,
+            String oracleShippingTrackingUrl,
+            Boolean isImportRequested,
+            String importCompartmentId,
+            String importFileBucket,
+            String dataValidationCode,
+            String masterKeyId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.shape = shape;
+        this.customerShippingAddress = customerShippingAddress;
+        this.nodeWorkloads = nodeWorkloads;
+        this.superUserPassword = superUserPassword;
+        this.unlockPassphrase = unlockPassphrase;
+        this.pointOfContact = pointOfContact;
+        this.pointOfContactPhoneNumber = pointOfContactPhoneNumber;
+        this.shippingPreference = shippingPreference;
+        this.shippingVendor = shippingVendor;
+        this.timePickupExpected = timePickupExpected;
+        this.publicKey = publicKey;
+        this.timeReturnWindowStarts = timeReturnWindowStarts;
+        this.timeReturnWindowEnds = timeReturnWindowEnds;
+        this.lifecycleState = lifecycleState;
+        this.enclosureType = enclosureType;
+        this.lifecycleStateDetails = lifecycleStateDetails;
+        this.serialNumber = serialNumber;
+        this.oracleShippingTrackingUrl = oracleShippingTrackingUrl;
+        this.isImportRequested = isImportRequested;
+        this.importCompartmentId = importCompartmentId;
+        this.importFileBucket = importFileBucket;
+        this.dataValidationCode = dataValidationCode;
+        this.masterKeyId = masterKeyId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -361,56 +448,97 @@ public class CreateRoverNodeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the compartment containing the RoverNode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The shape of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customerShippingAddress")
-    ShippingAddress customerShippingAddress;
+    private final ShippingAddress customerShippingAddress;
+
+    public ShippingAddress getCustomerShippingAddress() {
+        return customerShippingAddress;
+    }
 
     /**
      * List of existing workloads that should be provisioned on the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeWorkloads")
-    java.util.List<RoverWorkload> nodeWorkloads;
+    private final java.util.List<RoverWorkload> nodeWorkloads;
+
+    public java.util.List<RoverWorkload> getNodeWorkloads() {
+        return nodeWorkloads;
+    }
 
     /**
      * Root password for the rover node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("superUserPassword")
-    String superUserPassword;
+    private final String superUserPassword;
+
+    public String getSuperUserPassword() {
+        return superUserPassword;
+    }
 
     /**
      * Passphrase to unlock the rover node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unlockPassphrase")
-    String unlockPassphrase;
+    private final String unlockPassphrase;
+
+    public String getUnlockPassphrase() {
+        return unlockPassphrase;
+    }
 
     /**
      * Name of point of contact for this order if customer is picking up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pointOfContact")
-    String pointOfContact;
+    private final String pointOfContact;
+
+    public String getPointOfContact() {
+        return pointOfContact;
+    }
 
     /**
      * Phone number of point of contact for this order if customer is picking up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pointOfContactPhoneNumber")
-    String pointOfContactPhoneNumber;
+    private final String pointOfContactPhoneNumber;
+
+    public String getPointOfContactPhoneNumber() {
+        return pointOfContactPhoneNumber;
+    }
+
     /**
      * Preference for device delivery.
      **/
@@ -450,97 +578,161 @@ public class CreateRoverNodeDetails {
      * Preference for device delivery.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shippingPreference")
-    ShippingPreference shippingPreference;
+    private final ShippingPreference shippingPreference;
+
+    public ShippingPreference getShippingPreference() {
+        return shippingPreference;
+    }
 
     /**
      * Shipping vendor of choice for orace to customer shipping.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shippingVendor")
-    String shippingVendor;
+    private final String shippingVendor;
+
+    public String getShippingVendor() {
+        return shippingVendor;
+    }
 
     /**
      * Expected date when customer wants to pickup the device if they chose customer pickup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePickupExpected")
-    java.util.Date timePickupExpected;
+    private final java.util.Date timePickupExpected;
+
+    public java.util.Date getTimePickupExpected() {
+        return timePickupExpected;
+    }
 
     /**
      * The public key of the resource principal
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
-    String publicKey;
+    private final String publicKey;
+
+    public String getPublicKey() {
+        return publicKey;
+    }
 
     /**
      * Start time for the window to pickup the device from customer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReturnWindowStarts")
-    java.util.Date timeReturnWindowStarts;
+    private final java.util.Date timeReturnWindowStarts;
+
+    public java.util.Date getTimeReturnWindowStarts() {
+        return timeReturnWindowStarts;
+    }
 
     /**
      * End time for the window to pickup the device from customer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReturnWindowEnds")
-    java.util.Date timeReturnWindowEnds;
+    private final java.util.Date timeReturnWindowEnds;
+
+    public java.util.Date getTimeReturnWindowEnds() {
+        return timeReturnWindowEnds;
+    }
 
     /**
      * The current state of the RoverNode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The type of enclosure rover nodes in this cluster are shipped in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enclosureType")
-    EnclosureType enclosureType;
+    private final EnclosureType enclosureType;
+
+    public EnclosureType getEnclosureType() {
+        return enclosureType;
+    }
 
     /**
      * A property that can contain details on the lifecycle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
-    String lifecycleStateDetails;
+    private final String lifecycleStateDetails;
+
+    public String getLifecycleStateDetails() {
+        return lifecycleStateDetails;
+    }
 
     /**
      * Serial number of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
-    String serialNumber;
+    private final String serialNumber;
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 
     /**
      * Tracking Url for the shipped FmsRoverNode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleShippingTrackingUrl")
-    String oracleShippingTrackingUrl;
+    private final String oracleShippingTrackingUrl;
+
+    public String getOracleShippingTrackingUrl() {
+        return oracleShippingTrackingUrl;
+    }
 
     /**
      * The flag indicating that customer requests data to be imported to OCI upon Rover node return.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
-    Boolean isImportRequested;
+    private final Boolean isImportRequested;
+
+    public Boolean getIsImportRequested() {
+        return isImportRequested;
+    }
 
     /**
      * An OCID of a compartment where data will be imported to upon Rover node return.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
-    String importCompartmentId;
+    private final String importCompartmentId;
+
+    public String getImportCompartmentId() {
+        return importCompartmentId;
+    }
 
     /**
      * Name of a bucket where files from NFS share will be imported to upon Rover node return.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
-    String importFileBucket;
+    private final String importFileBucket;
+
+    public String getImportFileBucket() {
+        return importFileBucket;
+    }
 
     /**
      * Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
-    String dataValidationCode;
+    private final String dataValidationCode;
+
+    public String getDataValidationCode() {
+        return dataValidationCode;
+    }
 
     /**
      * Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
-    String masterKeyId;
+    private final String masterKeyId;
+
+    public String getMasterKeyId() {
+        return masterKeyId;
+    }
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
@@ -549,7 +741,11 @@ public class CreateRoverNodeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
@@ -558,7 +754,11 @@ public class CreateRoverNodeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
@@ -567,8 +767,199 @@ public class CreateRoverNodeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateRoverNodeDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", customerShippingAddress=")
+                .append(String.valueOf(this.customerShippingAddress));
+        sb.append(", nodeWorkloads=").append(String.valueOf(this.nodeWorkloads));
+        sb.append(", superUserPassword=").append(String.valueOf(this.superUserPassword));
+        sb.append(", unlockPassphrase=").append(String.valueOf(this.unlockPassphrase));
+        sb.append(", pointOfContact=").append(String.valueOf(this.pointOfContact));
+        sb.append(", pointOfContactPhoneNumber=")
+                .append(String.valueOf(this.pointOfContactPhoneNumber));
+        sb.append(", shippingPreference=").append(String.valueOf(this.shippingPreference));
+        sb.append(", shippingVendor=").append(String.valueOf(this.shippingVendor));
+        sb.append(", timePickupExpected=").append(String.valueOf(this.timePickupExpected));
+        sb.append(", publicKey=").append(String.valueOf(this.publicKey));
+        sb.append(", timeReturnWindowStarts=").append(String.valueOf(this.timeReturnWindowStarts));
+        sb.append(", timeReturnWindowEnds=").append(String.valueOf(this.timeReturnWindowEnds));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", enclosureType=").append(String.valueOf(this.enclosureType));
+        sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
+        sb.append(", oracleShippingTrackingUrl=")
+                .append(String.valueOf(this.oracleShippingTrackingUrl));
+        sb.append(", isImportRequested=").append(String.valueOf(this.isImportRequested));
+        sb.append(", importCompartmentId=").append(String.valueOf(this.importCompartmentId));
+        sb.append(", importFileBucket=").append(String.valueOf(this.importFileBucket));
+        sb.append(", dataValidationCode=").append(String.valueOf(this.dataValidationCode));
+        sb.append(", masterKeyId=").append(String.valueOf(this.masterKeyId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateRoverNodeDetails)) {
+            return false;
+        }
+
+        CreateRoverNodeDetails other = (CreateRoverNodeDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(
+                        this.customerShippingAddress, other.customerShippingAddress)
+                && java.util.Objects.equals(this.nodeWorkloads, other.nodeWorkloads)
+                && java.util.Objects.equals(this.superUserPassword, other.superUserPassword)
+                && java.util.Objects.equals(this.unlockPassphrase, other.unlockPassphrase)
+                && java.util.Objects.equals(this.pointOfContact, other.pointOfContact)
+                && java.util.Objects.equals(
+                        this.pointOfContactPhoneNumber, other.pointOfContactPhoneNumber)
+                && java.util.Objects.equals(this.shippingPreference, other.shippingPreference)
+                && java.util.Objects.equals(this.shippingVendor, other.shippingVendor)
+                && java.util.Objects.equals(this.timePickupExpected, other.timePickupExpected)
+                && java.util.Objects.equals(this.publicKey, other.publicKey)
+                && java.util.Objects.equals(
+                        this.timeReturnWindowStarts, other.timeReturnWindowStarts)
+                && java.util.Objects.equals(this.timeReturnWindowEnds, other.timeReturnWindowEnds)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.enclosureType, other.enclosureType)
+                && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.serialNumber, other.serialNumber)
+                && java.util.Objects.equals(
+                        this.oracleShippingTrackingUrl, other.oracleShippingTrackingUrl)
+                && java.util.Objects.equals(this.isImportRequested, other.isImportRequested)
+                && java.util.Objects.equals(this.importCompartmentId, other.importCompartmentId)
+                && java.util.Objects.equals(this.importFileBucket, other.importFileBucket)
+                && java.util.Objects.equals(this.dataValidationCode, other.dataValidationCode)
+                && java.util.Objects.equals(this.masterKeyId, other.masterKeyId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerShippingAddress == null
+                                ? 43
+                                : this.customerShippingAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodeWorkloads == null ? 43 : this.nodeWorkloads.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.superUserPassword == null ? 43 : this.superUserPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unlockPassphrase == null ? 43 : this.unlockPassphrase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pointOfContact == null ? 43 : this.pointOfContact.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pointOfContactPhoneNumber == null
+                                ? 43
+                                : this.pointOfContactPhoneNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shippingPreference == null
+                                ? 43
+                                : this.shippingPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shippingVendor == null ? 43 : this.shippingVendor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePickupExpected == null
+                                ? 43
+                                : this.timePickupExpected.hashCode());
+        result = (result * PRIME) + (this.publicKey == null ? 43 : this.publicKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeReturnWindowStarts == null
+                                ? 43
+                                : this.timeReturnWindowStarts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeReturnWindowEnds == null
+                                ? 43
+                                : this.timeReturnWindowEnds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enclosureType == null ? 43 : this.enclosureType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateDetails == null
+                                ? 43
+                                : this.lifecycleStateDetails.hashCode());
+        result = (result * PRIME) + (this.serialNumber == null ? 43 : this.serialNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleShippingTrackingUrl == null
+                                ? 43
+                                : this.oracleShippingTrackingUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isImportRequested == null ? 43 : this.isImportRequested.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importCompartmentId == null
+                                ? 43
+                                : this.importCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importFileBucket == null ? 43 : this.importFileBucket.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataValidationCode == null
+                                ? 43
+                                : this.dataValidationCode.hashCode());
+        result = (result * PRIME) + (this.masterKeyId == null ? 43 : this.masterKeyId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

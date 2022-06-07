@@ -15,14 +15,19 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Sku.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Sku {
+public final class Sku {
+    @Deprecated
+    @java.beans.ConstructorProperties({"number", "name", "quantity"})
+    public Sku(String number, String name, Integer quantity) {
+        super();
+        this.number = number;
+        this.name = name;
+        this.quantity = quantity;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("number")
         private String number;
@@ -77,24 +82,85 @@ public class Sku {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * SKU number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("number")
-    String number;
+    private final String number;
+
+    public String getNumber() {
+        return number;
+    }
 
     /**
      * SKU name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * SKU quantity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
-    Integer quantity;
+    private final Integer quantity;
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Sku(");
+        sb.append("number=").append(String.valueOf(this.number));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", quantity=").append(String.valueOf(this.quantity));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Sku)) {
+            return false;
+        }
+
+        Sku other = (Sku) o;
+        return java.util.Objects.equals(this.number, other.number)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.number == null ? 43 : this.number.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

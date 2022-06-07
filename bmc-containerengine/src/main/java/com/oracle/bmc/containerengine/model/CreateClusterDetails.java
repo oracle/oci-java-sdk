@@ -15,16 +15,49 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateClusterDetails {
+public final class CreateClusterDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "compartmentId",
+        "endpointConfig",
+        "vcnId",
+        "kubernetesVersion",
+        "kmsKeyId",
+        "freeformTags",
+        "definedTags",
+        "options",
+        "imagePolicyConfig"
+    })
+    public CreateClusterDetails(
+            String name,
+            String compartmentId,
+            CreateClusterEndpointConfigDetails endpointConfig,
+            String vcnId,
+            String kubernetesVersion,
+            String kmsKeyId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            ClusterCreateOptions options,
+            CreateImagePolicyConfigDetails imagePolicyConfig) {
+        super();
+        this.name = name;
+        this.compartmentId = compartmentId;
+        this.endpointConfig = endpointConfig;
+        this.vcnId = vcnId;
+        this.kubernetesVersion = kubernetesVersion;
+        this.kmsKeyId = kmsKeyId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.options = options;
+        this.imagePolicyConfig = imagePolicyConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -163,36 +196,60 @@ public class CreateClusterDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the cluster. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The OCID of the compartment in which to create the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The network configuration for access to the Cluster control plane.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointConfig")
-    CreateClusterEndpointConfigDetails endpointConfig;
+    private final CreateClusterEndpointConfigDetails endpointConfig;
+
+    public CreateClusterEndpointConfigDetails getEndpointConfig() {
+        return endpointConfig;
+    }
 
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    String vcnId;
+    private final String vcnId;
+
+    public String getVcnId() {
+        return vcnId;
+    }
 
     /**
      * The version of Kubernetes to install into the cluster masters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
-    String kubernetesVersion;
+    private final String kubernetesVersion;
+
+    public String getKubernetesVersion() {
+        return kubernetesVersion;
+    }
 
     /**
      * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
@@ -200,7 +257,11 @@ public class CreateClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -209,7 +270,11 @@ public class CreateClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -218,13 +283,21 @@ public class CreateClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Optional attributes for the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
-    ClusterCreateOptions options;
+    private final ClusterCreateOptions options;
+
+    public ClusterCreateOptions getOptions() {
+        return options;
+    }
 
     /**
      * The image verification policy for signature validation. Once a policy is created and enabled with
@@ -233,8 +306,86 @@ public class CreateClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
-    CreateImagePolicyConfigDetails imagePolicyConfig;
+    private final CreateImagePolicyConfigDetails imagePolicyConfig;
+
+    public CreateImagePolicyConfigDetails getImagePolicyConfig() {
+        return imagePolicyConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateClusterDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", endpointConfig=").append(String.valueOf(this.endpointConfig));
+        sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", kubernetesVersion=").append(String.valueOf(this.kubernetesVersion));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", options=").append(String.valueOf(this.options));
+        sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateClusterDetails)) {
+            return false;
+        }
+
+        CreateClusterDetails other = (CreateClusterDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.endpointConfig, other.endpointConfig)
+                && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.kubernetesVersion, other.kubernetesVersion)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.options, other.options)
+                && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.endpointConfig == null ? 43 : this.endpointConfig.hashCode());
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kubernetesVersion == null ? 43 : this.kubernetesVersion.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.imagePolicyConfig == null ? 43 : this.imagePolicyConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

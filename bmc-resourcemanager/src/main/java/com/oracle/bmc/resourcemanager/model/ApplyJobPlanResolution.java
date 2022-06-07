@@ -16,16 +16,22 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApplyJobPlanResolution.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApplyJobPlanResolution {
+public final class ApplyJobPlanResolution {
+    @Deprecated
+    @java.beans.ConstructorProperties({"planJobId", "isUseLatestJobId", "isAutoApproved"})
+    public ApplyJobPlanResolution(
+            String planJobId, Boolean isUseLatestJobId, Boolean isAutoApproved) {
+        super();
+        this.planJobId = planJobId;
+        this.isUseLatestJobId = isUseLatestJobId;
+        this.isAutoApproved = isAutoApproved;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("planJobId")
         private String planJobId;
@@ -83,12 +89,20 @@ public class ApplyJobPlanResolution {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies the most recently executed plan job.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planJobId")
-    String planJobId;
+    private final String planJobId;
+
+    public String getPlanJobId() {
+        return planJobId;
+    }
 
     /**
      * Specifies whether to use the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the most recently run plan job.
@@ -96,7 +110,11 @@ public class ApplyJobPlanResolution {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUseLatestJobId")
-    Boolean isUseLatestJobId;
+    private final Boolean isUseLatestJobId;
+
+    public Boolean getIsUseLatestJobId() {
+        return isUseLatestJobId;
+    }
 
     /**
      * Specifies whether to use the configuration directly, without reference to a Plan job.
@@ -105,8 +123,61 @@ public class ApplyJobPlanResolution {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproved")
-    Boolean isAutoApproved;
+    private final Boolean isAutoApproved;
+
+    public Boolean getIsAutoApproved() {
+        return isAutoApproved;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApplyJobPlanResolution(");
+        sb.append("planJobId=").append(String.valueOf(this.planJobId));
+        sb.append(", isUseLatestJobId=").append(String.valueOf(this.isUseLatestJobId));
+        sb.append(", isAutoApproved=").append(String.valueOf(this.isAutoApproved));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApplyJobPlanResolution)) {
+            return false;
+        }
+
+        ApplyJobPlanResolution other = (ApplyJobPlanResolution) o;
+        return java.util.Objects.equals(this.planJobId, other.planJobId)
+                && java.util.Objects.equals(this.isUseLatestJobId, other.isUseLatestJobId)
+                && java.util.Objects.equals(this.isAutoApproved, other.isAutoApproved)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.planJobId == null ? 43 : this.planJobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUseLatestJobId == null ? 43 : this.isUseLatestJobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoApproved == null ? 43 : this.isAutoApproved.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

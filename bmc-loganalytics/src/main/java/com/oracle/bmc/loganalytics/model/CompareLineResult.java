@@ -15,16 +15,34 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CompareLineResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CompareLineResult {
+public final class CompareLineResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "leftContent",
+        "rightContent",
+        "diffType",
+        "leftIndices",
+        "rightIndices"
+    })
+    public CompareLineResult(
+            String leftContent,
+            String rightContent,
+            String diffType,
+            String leftIndices,
+            String rightIndices) {
+        super();
+        this.leftContent = leftContent;
+        this.rightContent = rightContent;
+        this.diffType = diffType;
+        this.leftIndices = leftIndices;
+        this.rightIndices = rightIndices;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("leftContent")
         private String leftContent;
@@ -103,13 +121,21 @@ public class CompareLineResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A line from the content on the left. This may be empty if there is no matching line on
      * the left for a line in the right content.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("leftContent")
-    String leftContent;
+    private final String leftContent;
+
+    public String getLeftContent() {
+        return leftContent;
+    }
 
     /**
      * A line from the content on the right. This may be empty if there is no matching line on
@@ -117,7 +143,11 @@ public class CompareLineResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rightContent")
-    String rightContent;
+    private final String rightContent;
+
+    public String getRightContent() {
+        return rightContent;
+    }
 
     /**
      * The result of the line comparison. An empty string means the lines being compared are the
@@ -126,7 +156,11 @@ public class CompareLineResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diffType")
-    String diffType;
+    private final String diffType;
+
+    public String getDiffType() {
+        return diffType;
+    }
 
     /**
      * A comma delimited set of indices that identify which characters are different from those
@@ -134,7 +168,11 @@ public class CompareLineResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("leftIndices")
-    String leftIndices;
+    private final String leftIndices;
+
+    public String getLeftIndices() {
+        return leftIndices;
+    }
 
     /**
      * A comma delimited set of indices that identify which characters are different from those
@@ -142,8 +180,63 @@ public class CompareLineResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rightIndices")
-    String rightIndices;
+    private final String rightIndices;
+
+    public String getRightIndices() {
+        return rightIndices;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CompareLineResult(");
+        sb.append("leftContent=").append(String.valueOf(this.leftContent));
+        sb.append(", rightContent=").append(String.valueOf(this.rightContent));
+        sb.append(", diffType=").append(String.valueOf(this.diffType));
+        sb.append(", leftIndices=").append(String.valueOf(this.leftIndices));
+        sb.append(", rightIndices=").append(String.valueOf(this.rightIndices));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CompareLineResult)) {
+            return false;
+        }
+
+        CompareLineResult other = (CompareLineResult) o;
+        return java.util.Objects.equals(this.leftContent, other.leftContent)
+                && java.util.Objects.equals(this.rightContent, other.rightContent)
+                && java.util.Objects.equals(this.diffType, other.diffType)
+                && java.util.Objects.equals(this.leftIndices, other.leftIndices)
+                && java.util.Objects.equals(this.rightIndices, other.rightIndices)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.leftContent == null ? 43 : this.leftContent.hashCode());
+        result = (result * PRIME) + (this.rightContent == null ? 43 : this.rightContent.hashCode());
+        result = (result * PRIME) + (this.diffType == null ? 43 : this.diffType.hashCode());
+        result = (result * PRIME) + (this.leftIndices == null ? 43 : this.leftIndices.hashCode());
+        result = (result * PRIME) + (this.rightIndices == null ? 43 : this.rightIndices.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

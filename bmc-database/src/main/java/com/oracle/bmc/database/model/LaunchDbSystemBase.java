@@ -18,12 +18,6 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -50,12 +44,100 @@ package com.oracle.bmc.database.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class LaunchDbSystemBase {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "faultDomains",
+        "displayName",
+        "availabilityDomain",
+        "subnetId",
+        "backupSubnetId",
+        "nsgIds",
+        "backupNetworkNsgIds",
+        "shape",
+        "timeZone",
+        "dbSystemOptions",
+        "storageVolumePerformanceMode",
+        "sparseDiskgroup",
+        "sshPublicKeys",
+        "hostname",
+        "domain",
+        "cpuCoreCount",
+        "clusterName",
+        "dataStoragePercentage",
+        "initialDataStorageSizeInGB",
+        "kmsKeyId",
+        "kmsKeyVersionId",
+        "nodeCount",
+        "freeformTags",
+        "definedTags",
+        "privateIp"
+    })
+    protected LaunchDbSystemBase(
+            String compartmentId,
+            java.util.List<String> faultDomains,
+            String displayName,
+            String availabilityDomain,
+            String subnetId,
+            String backupSubnetId,
+            java.util.List<String> nsgIds,
+            java.util.List<String> backupNetworkNsgIds,
+            String shape,
+            String timeZone,
+            DbSystemOptions dbSystemOptions,
+            StorageVolumePerformanceMode storageVolumePerformanceMode,
+            Boolean sparseDiskgroup,
+            java.util.List<String> sshPublicKeys,
+            String hostname,
+            String domain,
+            Integer cpuCoreCount,
+            String clusterName,
+            Integer dataStoragePercentage,
+            Integer initialDataStorageSizeInGB,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            Integer nodeCount,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String privateIp) {
+        super();
+        this.compartmentId = compartmentId;
+        this.faultDomains = faultDomains;
+        this.displayName = displayName;
+        this.availabilityDomain = availabilityDomain;
+        this.subnetId = subnetId;
+        this.backupSubnetId = backupSubnetId;
+        this.nsgIds = nsgIds;
+        this.backupNetworkNsgIds = backupNetworkNsgIds;
+        this.shape = shape;
+        this.timeZone = timeZone;
+        this.dbSystemOptions = dbSystemOptions;
+        this.storageVolumePerformanceMode = storageVolumePerformanceMode;
+        this.sparseDiskgroup = sparseDiskgroup;
+        this.sshPublicKeys = sshPublicKeys;
+        this.hostname = hostname;
+        this.domain = domain;
+        this.cpuCoreCount = cpuCoreCount;
+        this.clusterName = clusterName;
+        this.dataStoragePercentage = dataStoragePercentage;
+        this.initialDataStorageSizeInGB = initialDataStorageSizeInGB;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.nodeCount = nodeCount;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.privateIp = privateIp;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain.
@@ -78,19 +160,31 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
-    java.util.List<String> faultDomains;
+    private final java.util.List<String> faultDomains;
+
+    public java.util.List<String> getFaultDomains() {
+        return faultDomains;
+    }
 
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The availability domain where the DB system is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
@@ -105,7 +199,11 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
@@ -114,23 +212,35 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
-    String backupSubnetId;
+    private final String backupSubnetId;
+
+    public String getBackupSubnetId() {
+        return backupSubnetId;
+    }
 
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
-    java.util.List<String> backupNetworkNsgIds;
+    private final java.util.List<String> backupNetworkNsgIds;
+
+    public java.util.List<String> getBackupNetworkNsgIds() {
+        return backupNetworkNsgIds;
+    }
 
     /**
      * The shape of the DB system. The shape determines resources allocated to the DB system.
@@ -141,16 +251,29 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    String timeZone;
+    private final String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemOptions")
-    DbSystemOptions dbSystemOptions;
+    private final DbSystemOptions dbSystemOptions;
+
+    public DbSystemOptions getDbSystemOptions() {
+        return dbSystemOptions;
+    }
+
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code HIGH_PERFORMANCE}. See [Block Volume Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      *
@@ -192,20 +315,32 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
-    StorageVolumePerformanceMode storageVolumePerformanceMode;
+    private final StorageVolumePerformanceMode storageVolumePerformanceMode;
+
+    public StorageVolumePerformanceMode getStorageVolumePerformanceMode() {
+        return storageVolumePerformanceMode;
+    }
 
     /**
      * If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
-    Boolean sparseDiskgroup;
+    private final Boolean sparseDiskgroup;
+
+    public Boolean getSparseDiskgroup() {
+        return sparseDiskgroup;
+    }
 
     /**
      * The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
-    java.util.List<String> sshPublicKeys;
+    private final java.util.List<String> sshPublicKeys;
+
+    public java.util.List<String> getSshPublicKeys() {
+        return sshPublicKeys;
+    }
 
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and
@@ -218,7 +353,11 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * A domain name used for the DB system. If the Oracle-provided Internet and VCN
@@ -227,7 +366,11 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
+    private final String domain;
+
+    public String getDomain() {
+        return domain;
+    }
 
     /**
      * The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
@@ -248,14 +391,22 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
-    String clusterName;
+    private final String clusterName;
+
+    public String getClusterName() {
+        return clusterName;
+    }
 
     /**
      * The percentage assigned to DATA storage (user data and database files).
@@ -264,34 +415,54 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
-    Integer dataStoragePercentage;
+    private final Integer dataStoragePercentage;
+
+    public Integer getDataStoragePercentage() {
+        return dataStoragePercentage;
+    }
 
     /**
      * Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialDataStorageSizeInGB")
-    Integer initialDataStorageSizeInGB;
+    private final Integer initialDataStorageSizeInGB;
+
+    public Integer getInitialDataStorageSizeInGB() {
+        return initialDataStorageSizeInGB;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
-    String kmsKeyVersionId;
+    private final String kmsKeyVersionId;
+
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
 
     /**
      * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
-    Integer nodeCount;
+    private final Integer nodeCount;
+
+    public Integer getNodeCount() {
+        return nodeCount;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -301,7 +472,11 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -309,7 +484,11 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR.
@@ -317,7 +496,152 @@ public class LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    String privateIp;
+    private final String privateIp;
+
+    public String getPrivateIp() {
+        return privateIp;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LaunchDbSystemBase(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", dbSystemOptions=").append(String.valueOf(this.dbSystemOptions));
+        sb.append(", storageVolumePerformanceMode=")
+                .append(String.valueOf(this.storageVolumePerformanceMode));
+        sb.append(", sparseDiskgroup=").append(String.valueOf(this.sparseDiskgroup));
+        sb.append(", sshPublicKeys=").append(String.valueOf(this.sshPublicKeys));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", domain=").append(String.valueOf(this.domain));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", clusterName=").append(String.valueOf(this.clusterName));
+        sb.append(", dataStoragePercentage=").append(String.valueOf(this.dataStoragePercentage));
+        sb.append(", initialDataStorageSizeInGB=")
+                .append(String.valueOf(this.initialDataStorageSizeInGB));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LaunchDbSystemBase)) {
+            return false;
+        }
+
+        LaunchDbSystemBase other = (LaunchDbSystemBase) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.faultDomains, other.faultDomains)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.dbSystemOptions, other.dbSystemOptions)
+                && java.util.Objects.equals(
+                        this.storageVolumePerformanceMode, other.storageVolumePerformanceMode)
+                && java.util.Objects.equals(this.sparseDiskgroup, other.sparseDiskgroup)
+                && java.util.Objects.equals(this.sshPublicKeys, other.sshPublicKeys)
+                && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.clusterName, other.clusterName)
+                && java.util.Objects.equals(this.dataStoragePercentage, other.dataStoragePercentage)
+                && java.util.Objects.equals(
+                        this.initialDataStorageSizeInGB, other.initialDataStorageSizeInGB)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.nodeCount, other.nodeCount)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.privateIp, other.privateIp);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.faultDomains == null ? 43 : this.faultDomains.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSubnetId == null ? 43 : this.backupSubnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupNetworkNsgIds == null
+                                ? 43
+                                : this.backupNetworkNsgIds.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSystemOptions == null ? 43 : this.dbSystemOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageVolumePerformanceMode == null
+                                ? 43
+                                : this.storageVolumePerformanceMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sparseDiskgroup == null ? 43 : this.sparseDiskgroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sshPublicKeys == null ? 43 : this.sshPublicKeys.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.clusterName == null ? 43 : this.clusterName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStoragePercentage == null
+                                ? 43
+                                : this.dataStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialDataStorageSizeInGB == null
+                                ? 43
+                                : this.initialDataStorageSizeInGB.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        return result;
+    }
 
     /**
      * The source of the database:

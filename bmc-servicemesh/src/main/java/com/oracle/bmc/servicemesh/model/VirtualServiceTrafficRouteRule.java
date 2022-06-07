@@ -15,12 +15,6 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -43,17 +37,57 @@ package com.oracle.bmc.servicemesh.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class VirtualServiceTrafficRouteRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({"destinations"})
+    protected VirtualServiceTrafficRouteRule(
+            java.util.List<VirtualDeploymentTrafficRuleTarget> destinations) {
+        super();
+        this.destinations = destinations;
+    }
 
     /**
      * The destination of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
-    java.util.List<VirtualDeploymentTrafficRuleTarget> destinations;
+    private final java.util.List<VirtualDeploymentTrafficRuleTarget> destinations;
+
+    public java.util.List<VirtualDeploymentTrafficRuleTarget> getDestinations() {
+        return destinations;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VirtualServiceTrafficRouteRule(");
+        sb.append("destinations=").append(String.valueOf(this.destinations));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VirtualServiceTrafficRouteRule)) {
+            return false;
+        }
+
+        VirtualServiceTrafficRouteRule other = (VirtualServiceTrafficRouteRule) o;
+        return java.util.Objects.equals(this.destinations, other.destinations);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
+        return result;
+    }
 
     /**
      * Type of protocol.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Http("HTTP"),
         TlsPassthrough("TLS_PASSTHROUGH"),
@@ -64,6 +98,8 @@ public class VirtualServiceTrafficRouteRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;

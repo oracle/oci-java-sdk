@@ -9,14 +9,6 @@ import com.oracle.bmc.ons.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/PublishMessageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PublishMessageRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class PublishMessageRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ons.model.MessageDetails> {
 
@@ -26,11 +18,17 @@ public class PublishMessageRequest
      */
     private String topicId;
 
+    public String getTopicId() {
+        return topicId;
+    }
     /**
      * The message to publish.
      */
     private com.oracle.bmc.ons.model.MessageDetails messageDetails;
 
+    public com.oracle.bmc.ons.model.MessageDetails getMessageDetails() {
+        return messageDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -38,6 +36,9 @@ public class PublishMessageRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * **Deprecated.**
      * Support for JSON is deprecated.
@@ -93,6 +94,10 @@ public class PublishMessageRequest
         }
     };
 
+    public MessageType getMessageType() {
+        return messageType;
+    }
+
     /**
      * Alternative accessor for the body parameter.
      * @return body parameter
@@ -109,6 +114,60 @@ public class PublishMessageRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String topicId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+         *
+         * @return this builder instance
+         */
+        public Builder topicId(String topicId) {
+            this.topicId = topicId;
+            return this;
+        }
+
+        private com.oracle.bmc.ons.model.MessageDetails messageDetails = null;
+
+        /**
+         * The message to publish.
+         * @return this builder instance
+         */
+        public Builder messageDetails(com.oracle.bmc.ons.model.MessageDetails messageDetails) {
+            this.messageDetails = messageDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private MessageType messageType = null;
+
+        /**
+         * **Deprecated.**
+         * Support for JSON is deprecated.
+         * You can send a JSON payload even when transmitting the payload as a raw string.
+         * Configure your receiving system to read the raw payload as JSON format.
+         * <p>
+         * Type of message body in the request.
+         * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
+         *
+         * @return this builder instance
+         */
+        public Builder messageType(MessageType messageType) {
+            this.messageType = messageType;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -174,5 +233,81 @@ public class PublishMessageRequest
             messageDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of PublishMessageRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of PublishMessageRequest
+         */
+        public PublishMessageRequest buildWithoutInvocationCallback() {
+            PublishMessageRequest request = new PublishMessageRequest();
+            request.topicId = topicId;
+            request.messageDetails = messageDetails;
+            request.opcRequestId = opcRequestId;
+            request.messageType = messageType;
+            return request;
+            // new PublishMessageRequest(topicId, messageDetails, opcRequestId, messageType);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .topicId(topicId)
+                .messageDetails(messageDetails)
+                .opcRequestId(opcRequestId)
+                .messageType(messageType);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",topicId=").append(String.valueOf(this.topicId));
+        sb.append(",messageDetails=").append(String.valueOf(this.messageDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",messageType=").append(String.valueOf(this.messageType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PublishMessageRequest)) {
+            return false;
+        }
+
+        PublishMessageRequest other = (PublishMessageRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.topicId, other.topicId)
+                && java.util.Objects.equals(this.messageDetails, other.messageDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.messageType, other.messageType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.topicId == null ? 43 : this.topicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.messageDetails == null ? 43 : this.messageDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.messageType == null ? 43 : this.messageType.hashCode());
+        return result;
     }
 }

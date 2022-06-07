@@ -15,14 +15,19 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ConfigValue.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConfigValue {
+public final class ConfigValue {
+    @Deprecated
+    @java.beans.ConstructorProperties({"listType", "managedListType", "value"})
+    public ConfigValue(ConfigurationListItemType listType, String managedListType, String value) {
+        super();
+        this.listType = listType;
+        this.managedListType = managedListType;
+        this.value = value;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("listType")
         private ConfigurationListItemType listType;
@@ -79,24 +84,87 @@ public class ConfigValue {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * configuration list item type, either CUSTOM or MANAGED
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listType")
-    ConfigurationListItemType listType;
+    private final ConfigurationListItemType listType;
+
+    public ConfigurationListItemType getListType() {
+        return listType;
+    }
 
     /**
      * type of the managed list
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedListType")
-    String managedListType;
+    private final String managedListType;
+
+    public String getManagedListType() {
+        return managedListType;
+    }
 
     /**
      * configuration value
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConfigValue(");
+        sb.append("listType=").append(String.valueOf(this.listType));
+        sb.append(", managedListType=").append(String.valueOf(this.managedListType));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConfigValue)) {
+            return false;
+        }
+
+        ConfigValue other = (ConfigValue) o;
+        return java.util.Objects.equals(this.listType, other.listType)
+                && java.util.Objects.equals(this.managedListType, other.managedListType)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.listType == null ? 43 : this.listType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedListType == null ? 43 : this.managedListType.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

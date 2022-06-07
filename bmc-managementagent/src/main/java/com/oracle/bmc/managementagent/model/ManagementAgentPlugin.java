@@ -15,16 +15,43 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagementAgentPlugin.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagementAgentPlugin {
+public final class ManagementAgentPlugin {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "version",
+        "supportedPlatformTypes",
+        "displayName",
+        "description",
+        "isConsoleDeployable",
+        "lifecycleState"
+    })
+    public ManagementAgentPlugin(
+            String id,
+            String name,
+            Integer version,
+            java.util.List<PlatformTypes> supportedPlatformTypes,
+            String displayName,
+            String description,
+            Boolean isConsoleDeployable,
+            LifecycleStates lifecycleState) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.version = version;
+        this.supportedPlatformTypes = supportedPlatformTypes;
+        this.displayName = displayName;
+        this.description = description;
+        this.isConsoleDeployable = isConsoleDeployable;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -141,54 +168,161 @@ public class ManagementAgentPlugin {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Management Agent Plugin Id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Management Agent Plugin Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Management Agent Plugin Version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    Integer version;
+    private final Integer version;
+
+    public Integer getVersion() {
+        return version;
+    }
 
     /**
      * Supported Platform Types
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedPlatformTypes")
-    java.util.List<PlatformTypes> supportedPlatformTypes;
+    private final java.util.List<PlatformTypes> supportedPlatformTypes;
+
+    public java.util.List<PlatformTypes> getSupportedPlatformTypes() {
+        return supportedPlatformTypes;
+    }
 
     /**
      * Management Agent Plugin Display Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Management Agent Plugin description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConsoleDeployable")
-    Boolean isConsoleDeployable;
+    private final Boolean isConsoleDeployable;
+
+    public Boolean getIsConsoleDeployable() {
+        return isConsoleDeployable;
+    }
 
     /**
      * The current state of Management Agent Plugin
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagementAgentPlugin(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", supportedPlatformTypes=").append(String.valueOf(this.supportedPlatformTypes));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isConsoleDeployable=").append(String.valueOf(this.isConsoleDeployable));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagementAgentPlugin)) {
+            return false;
+        }
+
+        ManagementAgentPlugin other = (ManagementAgentPlugin) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(
+                        this.supportedPlatformTypes, other.supportedPlatformTypes)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isConsoleDeployable, other.isConsoleDeployable)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedPlatformTypes == null
+                                ? 43
+                                : this.supportedPlatformTypes.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isConsoleDeployable == null
+                                ? 43
+                                : this.isConsoleDeployable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,58 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateUserDefinedFunctionValidationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateUserDefinedFunctionValidationDetails {
+public final class CreateUserDefinedFunctionValidationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelType",
+        "modelVersion",
+        "parentRef",
+        "name",
+        "identifier",
+        "objectVersion",
+        "signatures",
+        "expr",
+        "description",
+        "objectStatus",
+        "metadata",
+        "keyMap"
+    })
+    public CreateUserDefinedFunctionValidationDetails(
+            String key,
+            ModelType modelType,
+            String modelVersion,
+            ParentReference parentRef,
+            String name,
+            String identifier,
+            Integer objectVersion,
+            java.util.List<FunctionSignature> signatures,
+            Expression expr,
+            String description,
+            Integer objectStatus,
+            ObjectMetadata metadata,
+            java.util.Map<String, String> keyMap) {
+        super();
+        this.key = key;
+        this.modelType = modelType;
+        this.modelVersion = modelVersion;
+        this.parentRef = parentRef;
+        this.name = name;
+        this.identifier = identifier;
+        this.objectVersion = objectVersion;
+        this.signatures = signatures;
+        this.expr = expr;
+        this.description = description;
+        this.objectStatus = objectStatus;
+        this.metadata = metadata;
+        this.keyMap = keyMap;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -195,11 +237,20 @@ public class CreateUserDefinedFunctionValidationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Generated key that can be used in API calls to identify user defined function. On scenarios where reference to the user defined function is needed, a value can be passed in create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
+
     /**
      * The type of the object.
      **/
@@ -238,65 +289,191 @@ public class CreateUserDefinedFunctionValidationDetails {
      * The type of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    ModelType modelType;
+    private final ModelType modelType;
+
+    public ModelType getModelType() {
+        return modelType;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * The version of the object that is used to track changes in the object instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     /**
      * An array of function signature.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signatures")
-    java.util.List<FunctionSignature> signatures;
+    private final java.util.List<FunctionSignature> signatures;
+
+    public java.util.List<FunctionSignature> getSignatures() {
+        return signatures;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("expr")
-    Expression expr;
+    private final Expression expr;
+
+    public Expression getExpr() {
+        return expr;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    ObjectMetadata metadata;
+    private final ObjectMetadata metadata;
+
+    public ObjectMetadata getMetadata() {
+        return metadata;
+    }
 
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
-    java.util.Map<String, String> keyMap;
+    private final java.util.Map<String, String> keyMap;
+
+    public java.util.Map<String, String> getKeyMap() {
+        return keyMap;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateUserDefinedFunctionValidationDetails(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", signatures=").append(String.valueOf(this.signatures));
+        sb.append(", expr=").append(String.valueOf(this.expr));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", keyMap=").append(String.valueOf(this.keyMap));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateUserDefinedFunctionValidationDetails)) {
+            return false;
+        }
+
+        CreateUserDefinedFunctionValidationDetails other =
+                (CreateUserDefinedFunctionValidationDetails) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.signatures, other.signatures)
+                && java.util.Objects.equals(this.expr, other.expr)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.keyMap, other.keyMap)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result = (result * PRIME) + (this.signatures == null ? 43 : this.signatures.hashCode());
+        result = (result * PRIME) + (this.expr == null ? 43 : this.expr.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

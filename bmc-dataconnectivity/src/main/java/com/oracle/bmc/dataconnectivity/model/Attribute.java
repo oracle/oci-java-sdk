@@ -15,14 +15,38 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Attribute.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Attribute {
+public final class Attribute {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "isSensitive",
+        "isMandatory",
+        "isGenerated",
+        "isBase64Encoded",
+        "validKeyList",
+        "attributeType"
+    })
+    public Attribute(
+            String name,
+            Boolean isSensitive,
+            Boolean isMandatory,
+            Boolean isGenerated,
+            Boolean isBase64Encoded,
+            java.util.List<String> validKeyList,
+            String attributeType) {
+        super();
+        this.name = name;
+        this.isSensitive = isSensitive;
+        this.isMandatory = isMandatory;
+        this.isGenerated = isGenerated;
+        this.isBase64Encoded = isBase64Encoded;
+        this.validKeyList = validKeyList;
+        this.attributeType = attributeType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -127,48 +151,141 @@ public class Attribute {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of of the Attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * True if Attribute is sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
-    Boolean isSensitive;
+    private final Boolean isSensitive;
+
+    public Boolean getIsSensitive() {
+        return isSensitive;
+    }
 
     /**
      * True if Attribute is mandatory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
-    Boolean isMandatory;
+    private final Boolean isMandatory;
+
+    public Boolean getIsMandatory() {
+        return isMandatory;
+    }
 
     /**
      * True if Attribute is generated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGenerated")
-    Boolean isGenerated;
+    private final Boolean isGenerated;
+
+    public Boolean getIsGenerated() {
+        return isGenerated;
+    }
 
     /**
      * True if Attribute is encoded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBase64Encoded")
-    Boolean isBase64Encoded;
+    private final Boolean isBase64Encoded;
+
+    public Boolean getIsBase64Encoded() {
+        return isBase64Encoded;
+    }
 
     /**
      * List of valid key list
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validKeyList")
-    java.util.List<String> validKeyList;
+    private final java.util.List<String> validKeyList;
+
+    public java.util.List<String> getValidKeyList() {
+        return validKeyList;
+    }
 
     /**
      * Attribute type details
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
-    String attributeType;
+    private final String attributeType;
+
+    public String getAttributeType() {
+        return attributeType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Attribute(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", isSensitive=").append(String.valueOf(this.isSensitive));
+        sb.append(", isMandatory=").append(String.valueOf(this.isMandatory));
+        sb.append(", isGenerated=").append(String.valueOf(this.isGenerated));
+        sb.append(", isBase64Encoded=").append(String.valueOf(this.isBase64Encoded));
+        sb.append(", validKeyList=").append(String.valueOf(this.validKeyList));
+        sb.append(", attributeType=").append(String.valueOf(this.attributeType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Attribute)) {
+            return false;
+        }
+
+        Attribute other = (Attribute) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isSensitive, other.isSensitive)
+                && java.util.Objects.equals(this.isMandatory, other.isMandatory)
+                && java.util.Objects.equals(this.isGenerated, other.isGenerated)
+                && java.util.Objects.equals(this.isBase64Encoded, other.isBase64Encoded)
+                && java.util.Objects.equals(this.validKeyList, other.validKeyList)
+                && java.util.Objects.equals(this.attributeType, other.attributeType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.isSensitive == null ? 43 : this.isSensitive.hashCode());
+        result = (result * PRIME) + (this.isMandatory == null ? 43 : this.isMandatory.hashCode());
+        result = (result * PRIME) + (this.isGenerated == null ? 43 : this.isGenerated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBase64Encoded == null ? 43 : this.isBase64Encoded.hashCode());
+        result = (result * PRIME) + (this.validKeyList == null ? 43 : this.validKeyList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attributeType == null ? 43 : this.attributeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

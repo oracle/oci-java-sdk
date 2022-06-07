@@ -15,16 +15,20 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AbstractParserTestResultLogLine.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AbstractParserTestResultLogLine {
+public final class AbstractParserTestResultLogLine {
+    @Deprecated
+    @java.beans.ConstructorProperties({"originalLogLine", "preProcessedLogLine"})
+    public AbstractParserTestResultLogLine(String originalLogLine, String preProcessedLogLine) {
+        super();
+        this.originalLogLine = originalLogLine;
+        this.preProcessedLogLine = preProcessedLogLine;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("originalLogLine")
         private String originalLogLine;
@@ -72,18 +76,78 @@ public class AbstractParserTestResultLogLine {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The original log line.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalLogLine")
-    String originalLogLine;
+    private final String originalLogLine;
+
+    public String getOriginalLogLine() {
+        return originalLogLine;
+    }
 
     /**
      * The pre-processed log line.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preProcessedLogLine")
-    String preProcessedLogLine;
+    private final String preProcessedLogLine;
+
+    public String getPreProcessedLogLine() {
+        return preProcessedLogLine;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractParserTestResultLogLine(");
+        sb.append("originalLogLine=").append(String.valueOf(this.originalLogLine));
+        sb.append(", preProcessedLogLine=").append(String.valueOf(this.preProcessedLogLine));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractParserTestResultLogLine)) {
+            return false;
+        }
+
+        AbstractParserTestResultLogLine other = (AbstractParserTestResultLogLine) o;
+        return java.util.Objects.equals(this.originalLogLine, other.originalLogLine)
+                && java.util.Objects.equals(this.preProcessedLogLine, other.preProcessedLogLine)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.originalLogLine == null ? 43 : this.originalLogLine.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preProcessedLogLine == null
+                                ? 43
+                                : this.preProcessedLogLine.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

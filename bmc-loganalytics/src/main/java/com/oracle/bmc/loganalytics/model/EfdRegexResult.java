@@ -15,14 +15,47 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EfdRegexResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EfdRegexResult {
+public final class EfdRegexResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "baseFieldName",
+        "id",
+        "matchResult",
+        "parsedFieldCount",
+        "parsedFields",
+        "regex",
+        "status",
+        "statusDescription",
+        "isValidRegexSyntax",
+        "violations"
+    })
+    public EfdRegexResult(
+            String baseFieldName,
+            Long id,
+            RegexMatchResult matchResult,
+            Integer parsedFieldCount,
+            java.util.Map<String, String> parsedFields,
+            String regex,
+            String status,
+            String statusDescription,
+            Boolean isValidRegexSyntax,
+            java.util.List<Violation> violations) {
+        super();
+        this.baseFieldName = baseFieldName;
+        this.id = id;
+        this.matchResult = matchResult;
+        this.parsedFieldCount = parsedFieldCount;
+        this.parsedFields = parsedFields;
+        this.regex = regex;
+        this.status = status;
+        this.statusDescription = statusDescription;
+        this.isValidRegexSyntax = isValidRegexSyntax;
+        this.violations = violations;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
         private String baseFieldName;
@@ -160,64 +193,184 @@ public class EfdRegexResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The base field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
-    String baseFieldName;
+    private final String baseFieldName;
+
+    public String getBaseFieldName() {
+        return baseFieldName;
+    }
 
     /**
      * the unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    Long id;
+    private final Long id;
+
+    public Long getId() {
+        return id;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("matchResult")
-    RegexMatchResult matchResult;
+    private final RegexMatchResult matchResult;
+
+    public RegexMatchResult getMatchResult() {
+        return matchResult;
+    }
 
     /**
      * The parsed field count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldCount")
-    Integer parsedFieldCount;
+    private final Integer parsedFieldCount;
+
+    public Integer getParsedFieldCount() {
+        return parsedFieldCount;
+    }
 
     /**
      * The parsed fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFields")
-    java.util.Map<String, String> parsedFields;
+    private final java.util.Map<String, String> parsedFields;
+
+    public java.util.Map<String, String> getParsedFields() {
+        return parsedFields;
+    }
 
     /**
      * The regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regex")
-    String regex;
+    private final String regex;
+
+    public String getRegex() {
+        return regex;
+    }
 
     /**
      * The status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * The Status description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
-    String statusDescription;
+    private final String statusDescription;
+
+    public String getStatusDescription() {
+        return statusDescription;
+    }
 
     /**
      * A flag indicating whether or not the regular expression is valid.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValidRegexSyntax")
-    Boolean isValidRegexSyntax;
+    private final Boolean isValidRegexSyntax;
+
+    public Boolean getIsValidRegexSyntax() {
+        return isValidRegexSyntax;
+    }
 
     /**
      * The list of violations (if any).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("violations")
-    java.util.List<Violation> violations;
+    private final java.util.List<Violation> violations;
+
+    public java.util.List<Violation> getViolations() {
+        return violations;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EfdRegexResult(");
+        sb.append("baseFieldName=").append(String.valueOf(this.baseFieldName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", matchResult=").append(String.valueOf(this.matchResult));
+        sb.append(", parsedFieldCount=").append(String.valueOf(this.parsedFieldCount));
+        sb.append(", parsedFields=").append(String.valueOf(this.parsedFields));
+        sb.append(", regex=").append(String.valueOf(this.regex));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", statusDescription=").append(String.valueOf(this.statusDescription));
+        sb.append(", isValidRegexSyntax=").append(String.valueOf(this.isValidRegexSyntax));
+        sb.append(", violations=").append(String.valueOf(this.violations));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EfdRegexResult)) {
+            return false;
+        }
+
+        EfdRegexResult other = (EfdRegexResult) o;
+        return java.util.Objects.equals(this.baseFieldName, other.baseFieldName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.matchResult, other.matchResult)
+                && java.util.Objects.equals(this.parsedFieldCount, other.parsedFieldCount)
+                && java.util.Objects.equals(this.parsedFields, other.parsedFields)
+                && java.util.Objects.equals(this.regex, other.regex)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.statusDescription, other.statusDescription)
+                && java.util.Objects.equals(this.isValidRegexSyntax, other.isValidRegexSyntax)
+                && java.util.Objects.equals(this.violations, other.violations)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.baseFieldName == null ? 43 : this.baseFieldName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.matchResult == null ? 43 : this.matchResult.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parsedFieldCount == null ? 43 : this.parsedFieldCount.hashCode());
+        result = (result * PRIME) + (this.parsedFields == null ? 43 : this.parsedFields.hashCode());
+        result = (result * PRIME) + (this.regex == null ? 43 : this.regex.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusDescription == null ? 43 : this.statusDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isValidRegexSyntax == null
+                                ? 43
+                                : this.isValidRegexSyntax.hashCode());
+        result = (result * PRIME) + (this.violations == null ? 43 : this.violations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

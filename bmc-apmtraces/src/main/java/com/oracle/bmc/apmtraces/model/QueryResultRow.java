@@ -18,14 +18,20 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryResultRow.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class QueryResultRow {
+public final class QueryResultRow {
+    @Deprecated
+    @java.beans.ConstructorProperties({"queryResultRowData", "queryResultRowMetadata"})
+    public QueryResultRow(
+            java.util.Map<String, Object> queryResultRowData,
+            java.util.Map<String, Object> queryResultRowMetadata) {
+        super();
+        this.queryResultRowData = queryResultRowData;
+        this.queryResultRowMetadata = queryResultRowMetadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowData")
         private java.util.Map<String, Object> queryResultRowData;
@@ -74,6 +80,10 @@ public class QueryResultRow {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A map containing the actual data represented by a single row of the query result.
      * The key is the column name or attribute specified in the show clause, or an aggregate function in the show clause.
@@ -86,7 +96,11 @@ public class QueryResultRow {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowData")
-    java.util.Map<String, Object> queryResultRowData;
+    private final java.util.Map<String, Object> queryResultRowData;
+
+    public java.util.Map<String, Object> getQueryResultRowData() {
+        return queryResultRowData;
+    }
 
     /**
      * A map containing metadata or add-on data for the data presented in the queryResultRowData map.  Data required to present drill down
@@ -94,8 +108,63 @@ public class QueryResultRow {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowMetadata")
-    java.util.Map<String, Object> queryResultRowMetadata;
+    private final java.util.Map<String, Object> queryResultRowMetadata;
+
+    public java.util.Map<String, Object> getQueryResultRowMetadata() {
+        return queryResultRowMetadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("QueryResultRow(");
+        sb.append("queryResultRowData=").append(String.valueOf(this.queryResultRowData));
+        sb.append(", queryResultRowMetadata=").append(String.valueOf(this.queryResultRowMetadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QueryResultRow)) {
+            return false;
+        }
+
+        QueryResultRow other = (QueryResultRow) o;
+        return java.util.Objects.equals(this.queryResultRowData, other.queryResultRowData)
+                && java.util.Objects.equals(
+                        this.queryResultRowMetadata, other.queryResultRowMetadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.queryResultRowData == null
+                                ? 43
+                                : this.queryResultRowData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryResultRowMetadata == null
+                                ? 43
+                                : this.queryResultRowMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

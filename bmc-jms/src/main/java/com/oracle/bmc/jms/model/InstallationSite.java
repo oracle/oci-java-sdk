@@ -17,14 +17,50 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstallationSite.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstallationSite {
+public final class InstallationSite {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "installationKey",
+        "managedInstanceId",
+        "jre",
+        "path",
+        "operatingSystem",
+        "approximateApplicationCount",
+        "timeLastSeen",
+        "blocklist",
+        "lifecycleState",
+        "managedInstanceType",
+        "hostname"
+    })
+    public InstallationSite(
+            String installationKey,
+            String managedInstanceId,
+            JavaRuntimeId jre,
+            String path,
+            OperatingSystem operatingSystem,
+            Integer approximateApplicationCount,
+            java.util.Date timeLastSeen,
+            java.util.List<BlocklistEntry> blocklist,
+            LifecycleState lifecycleState,
+            ManagedInstanceType managedInstanceType,
+            String hostname) {
+        super();
+        this.installationKey = installationKey;
+        this.managedInstanceId = managedInstanceId;
+        this.jre = jre;
+        this.path = path;
+        this.operatingSystem = operatingSystem;
+        this.approximateApplicationCount = approximateApplicationCount;
+        this.timeLastSeen = timeLastSeen;
+        this.blocklist = blocklist;
+        this.lifecycleState = lifecycleState;
+        this.managedInstanceType = managedInstanceType;
+        this.hostname = hostname;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
         private String installationKey;
@@ -173,36 +209,64 @@ public class InstallationSite {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
-    String installationKey;
+    private final String installationKey;
+
+    public String getInstallationKey() {
+        return installationKey;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
-    String managedInstanceId;
+    private final String managedInstanceId;
+
+    public String getManagedInstanceId() {
+        return managedInstanceId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("jre")
-    JavaRuntimeId jre;
+    private final JavaRuntimeId jre;
+
+    public JavaRuntimeId getJre() {
+        return jre;
+    }
 
     /**
      * The file system path of the installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    OperatingSystem operatingSystem;
+    private final OperatingSystem operatingSystem;
+
+    public OperatingSystem getOperatingSystem() {
+        return operatingSystem;
+    }
 
     /**
      * The approximate count of applications running on this installation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
-    Integer approximateApplicationCount;
+    private final Integer approximateApplicationCount;
+
+    public Integer getApproximateApplicationCount() {
+        return approximateApplicationCount;
+    }
 
     /**
      * The date and time the resource was _last_ reported to JMS.
@@ -212,32 +276,139 @@ public class InstallationSite {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
-    java.util.Date timeLastSeen;
+    private final java.util.Date timeLastSeen;
+
+    public java.util.Date getTimeLastSeen() {
+        return timeLastSeen;
+    }
 
     /**
      * The list of operations that are blocklisted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blocklist")
-    java.util.List<BlocklistEntry> blocklist;
+    private final java.util.List<BlocklistEntry> blocklist;
+
+    public java.util.List<BlocklistEntry> getBlocklist() {
+        return blocklist;
+    }
 
     /**
      * The lifecycle state of the installation site.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The type of the source of events.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceType")
-    ManagedInstanceType managedInstanceType;
+    private final ManagedInstanceType managedInstanceType;
+
+    public ManagedInstanceType getManagedInstanceType() {
+        return managedInstanceType;
+    }
 
     /**
      * The hostname of the managed instance (if applicable).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstallationSite(");
+        sb.append("installationKey=").append(String.valueOf(this.installationKey));
+        sb.append(", managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(", jre=").append(String.valueOf(this.jre));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", approximateApplicationCount=")
+                .append(String.valueOf(this.approximateApplicationCount));
+        sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
+        sb.append(", blocklist=").append(String.valueOf(this.blocklist));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", managedInstanceType=").append(String.valueOf(this.managedInstanceType));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstallationSite)) {
+            return false;
+        }
+
+        InstallationSite other = (InstallationSite) o;
+        return java.util.Objects.equals(this.installationKey, other.installationKey)
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.jre, other.jre)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(
+                        this.approximateApplicationCount, other.approximateApplicationCount)
+                && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
+                && java.util.Objects.equals(this.blocklist, other.blocklist)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.managedInstanceType, other.managedInstanceType)
+                && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.installationKey == null ? 43 : this.installationKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result = (result * PRIME) + (this.jre == null ? 43 : this.jre.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateApplicationCount == null
+                                ? 43
+                                : this.approximateApplicationCount.hashCode());
+        result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
+        result = (result * PRIME) + (this.blocklist == null ? 43 : this.blocklist.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceType == null
+                                ? 43
+                                : this.managedInstanceType.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -20,16 +20,34 @@ package com.oracle.bmc.networkloadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BackendSetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackendSetDetails {
+public final class BackendSetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "policy",
+        "ipVersion",
+        "isPreserveSource",
+        "backends",
+        "healthChecker"
+    })
+    public BackendSetDetails(
+            NetworkLoadBalancingPolicy policy,
+            IpVersion ipVersion,
+            Boolean isPreserveSource,
+            java.util.List<Backend> backends,
+            HealthChecker healthChecker) {
+        super();
+        this.policy = policy;
+        this.ipVersion = ipVersion;
+        this.isPreserveSource = isPreserveSource;
+        this.backends = backends;
+        this.healthChecker = healthChecker;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private NetworkLoadBalancingPolicy policy;
@@ -108,6 +126,10 @@ public class BackendSetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The network load balancer policy for the backend set.
      * <p>
@@ -115,13 +137,21 @@ public class BackendSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
-    NetworkLoadBalancingPolicy policy;
+    private final NetworkLoadBalancingPolicy policy;
+
+    public NetworkLoadBalancingPolicy getPolicy() {
+        return policy;
+    }
 
     /**
      * IP version associated with the backend set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
-    IpVersion ipVersion;
+    private final IpVersion ipVersion;
+
+    public IpVersion getIpVersion() {
+        return ipVersion;
+    }
 
     /**
      * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
@@ -130,18 +160,85 @@ public class BackendSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
-    Boolean isPreserveSource;
+    private final Boolean isPreserveSource;
+
+    public Boolean getIsPreserveSource() {
+        return isPreserveSource;
+    }
 
     /**
      * An array of backends.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backends")
-    java.util.List<Backend> backends;
+    private final java.util.List<Backend> backends;
+
+    public java.util.List<Backend> getBackends() {
+        return backends;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
-    HealthChecker healthChecker;
+    private final HealthChecker healthChecker;
+
+    public HealthChecker getHealthChecker() {
+        return healthChecker;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackendSetDetails(");
+        sb.append("policy=").append(String.valueOf(this.policy));
+        sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
+        sb.append(", isPreserveSource=").append(String.valueOf(this.isPreserveSource));
+        sb.append(", backends=").append(String.valueOf(this.backends));
+        sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackendSetDetails)) {
+            return false;
+        }
+
+        BackendSetDetails other = (BackendSetDetails) o;
+        return java.util.Objects.equals(this.policy, other.policy)
+                && java.util.Objects.equals(this.ipVersion, other.ipVersion)
+                && java.util.Objects.equals(this.isPreserveSource, other.isPreserveSource)
+                && java.util.Objects.equals(this.backends, other.backends)
+                && java.util.Objects.equals(this.healthChecker, other.healthChecker)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
+        result = (result * PRIME) + (this.ipVersion == null ? 43 : this.ipVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPreserveSource == null ? 43 : this.isPreserveSource.hashCode());
+        result = (result * PRIME) + (this.backends == null ? 43 : this.backends.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthChecker == null ? 43 : this.healthChecker.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

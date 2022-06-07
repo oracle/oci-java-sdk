@@ -16,12 +16,6 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -44,6 +38,12 @@ package com.oracle.bmc.opsi.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DatabaseConfigurationMetricGroup {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeCollected"})
+    protected DatabaseConfigurationMetricGroup(java.util.Date timeCollected) {
+        super();
+        this.timeCollected = timeCollected;
+    }
 
     /**
      * Collection timestamp
@@ -51,7 +51,43 @@ public class DatabaseConfigurationMetricGroup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
-    java.util.Date timeCollected;
+    private final java.util.Date timeCollected;
+
+    public java.util.Date getTimeCollected() {
+        return timeCollected;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseConfigurationMetricGroup(");
+        sb.append("timeCollected=").append(String.valueOf(this.timeCollected));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseConfigurationMetricGroup)) {
+            return false;
+        }
+
+        DatabaseConfigurationMetricGroup other = (DatabaseConfigurationMetricGroup) o;
+        return java.util.Objects.equals(this.timeCollected, other.timeCollected);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeCollected == null ? 43 : this.timeCollected.hashCode());
+        return result;
+    }
 
     /**
      * Name of the metric group.

@@ -8,7 +8,6 @@ package com.oracle.bmc.certificatesmanagement.model;
  * The name of the profile used to create the certificate, which depends on the type of certificate you need.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.extern.slf4j.Slf4j
 public enum CertificateProfileType {
     TlsServerOrClient("TLS_SERVER_OR_CLIENT"),
     TlsServer("TLS_SERVER"),
@@ -20,6 +19,9 @@ public enum CertificateProfileType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CertificateProfileType.class);
 
     private final String value;
     private static java.util.Map<String, CertificateProfileType> map;

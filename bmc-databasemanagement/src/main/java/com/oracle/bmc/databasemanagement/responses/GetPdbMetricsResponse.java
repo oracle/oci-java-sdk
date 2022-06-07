@@ -7,10 +7,6 @@ package com.oracle.bmc.databasemanagement.responses;
 import com.oracle.bmc.databasemanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetPdbMetricsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetPdbMetricsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned PdbMetrics instance.
      */
     private com.oracle.bmc.databasemanagement.model.PdbMetrics pdbMetrics;
+
+    public com.oracle.bmc.databasemanagement.model.PdbMetrics getPdbMetrics() {
+        return pdbMetrics;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "pdbMetrics"})
     private GetPdbMetricsResponse(
@@ -42,6 +46,20 @@ public class GetPdbMetricsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.PdbMetrics pdbMetrics;
+
+        public Builder pdbMetrics(com.oracle.bmc.databasemanagement.model.PdbMetrics pdbMetrics) {
+            this.pdbMetrics = pdbMetrics;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +75,44 @@ public class GetPdbMetricsResponse extends com.oracle.bmc.responses.BmcResponse 
         public GetPdbMetricsResponse build() {
             return new GetPdbMetricsResponse(__httpStatusCode__, opcRequestId, pdbMetrics);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",pdbMetrics=").append(String.valueOf(pdbMetrics));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetPdbMetricsResponse)) {
+            return false;
+        }
+
+        GetPdbMetricsResponse other = (GetPdbMetricsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.pdbMetrics, other.pdbMetrics);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.pdbMetrics == null ? 43 : this.pdbMetrics.hashCode());
+        return result;
     }
 }

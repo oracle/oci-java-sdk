@@ -15,14 +15,41 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChildDatabase.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChildDatabase {
+public final class ChildDatabase {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "compartmentId",
+        "deploymentType",
+        "workloadType",
+        "databaseType",
+        "databaseSubType",
+        "timeAdded"
+    })
+    public ChildDatabase(
+            String id,
+            String name,
+            String compartmentId,
+            DeploymentType deploymentType,
+            WorkloadType workloadType,
+            DatabaseType databaseType,
+            DatabaseSubType databaseSubType,
+            java.util.Date timeAdded) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.compartmentId = compartmentId;
+        this.deploymentType = deploymentType;
+        this.workloadType = workloadType;
+        this.databaseType = databaseType;
+        this.databaseSubType = databaseSubType;
+        this.timeAdded = timeAdded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -138,41 +165,69 @@ public class ChildDatabase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The infrastructure used to deploy the Oracle Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
-    DeploymentType deploymentType;
+    private final DeploymentType deploymentType;
+
+    public DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
 
     /**
      * The workload type of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
-    WorkloadType workloadType;
+    private final WorkloadType workloadType;
+
+    public WorkloadType getWorkloadType() {
+        return workloadType;
+    }
 
     /**
      * The type of Oracle Database installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    DatabaseType databaseType;
+    private final DatabaseType databaseType;
+
+    public DatabaseType getDatabaseType() {
+        return databaseType;
+    }
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
@@ -180,14 +235,88 @@ public class ChildDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
-    DatabaseSubType databaseSubType;
+    private final DatabaseSubType databaseSubType;
+
+    public DatabaseSubType getDatabaseSubType() {
+        return databaseSubType;
+    }
 
     /**
      * The date and time the Managed Database was added to the group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAdded")
-    java.util.Date timeAdded;
+    private final java.util.Date timeAdded;
+
+    public java.util.Date getTimeAdded() {
+        return timeAdded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChildDatabase(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(", workloadType=").append(String.valueOf(this.workloadType));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
+        sb.append(", timeAdded=").append(String.valueOf(this.timeAdded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChildDatabase)) {
+            return false;
+        }
+
+        ChildDatabase other = (ChildDatabase) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(this.workloadType, other.workloadType)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
+                && java.util.Objects.equals(this.timeAdded, other.timeAdded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result = (result * PRIME) + (this.workloadType == null ? 43 : this.workloadType.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSubType == null ? 43 : this.databaseSubType.hashCode());
+        result = (result * PRIME) + (this.timeAdded == null ? 43 : this.timeAdded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

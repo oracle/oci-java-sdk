@@ -16,16 +16,22 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AggregatedSnapshot.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AggregatedSnapshot {
+public final class AggregatedSnapshot {
+    @Deprecated
+    @java.beans.ConstructorProperties({"details", "aggregatedStackTraces"})
+    public AggregatedSnapshot(
+            java.util.List<SnapshotDetail> details,
+            java.util.List<AggregatedStackTrace> aggregatedStackTraces) {
+        super();
+        this.details = details;
+        this.aggregatedStackTraces = aggregatedStackTraces;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private java.util.List<SnapshotDetail> details;
@@ -73,20 +79,78 @@ public class AggregatedSnapshot {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Aggregated snapshot details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
-    java.util.List<SnapshotDetail> details;
+    private final java.util.List<SnapshotDetail> details;
+
+    public java.util.List<SnapshotDetail> getDetails() {
+        return details;
+    }
 
     /**
      * List of aggregated stack trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedStackTraces")
-    java.util.List<AggregatedStackTrace> aggregatedStackTraces;
+    private final java.util.List<AggregatedStackTrace> aggregatedStackTraces;
+
+    public java.util.List<AggregatedStackTrace> getAggregatedStackTraces() {
+        return aggregatedStackTraces;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AggregatedSnapshot(");
+        sb.append("details=").append(String.valueOf(this.details));
+        sb.append(", aggregatedStackTraces=").append(String.valueOf(this.aggregatedStackTraces));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AggregatedSnapshot)) {
+            return false;
+        }
+
+        AggregatedSnapshot other = (AggregatedSnapshot) o;
+        return java.util.Objects.equals(this.details, other.details)
+                && java.util.Objects.equals(this.aggregatedStackTraces, other.aggregatedStackTraces)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aggregatedStackTraces == null
+                                ? 43
+                                : this.aggregatedStackTraces.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

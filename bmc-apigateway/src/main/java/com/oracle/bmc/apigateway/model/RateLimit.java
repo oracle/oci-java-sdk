@@ -16,14 +16,18 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RateLimit.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RateLimit {
+public final class RateLimit {
+    @Deprecated
+    @java.beans.ConstructorProperties({"value", "unit"})
+    public RateLimit(Integer value, Unit unit) {
+        super();
+        this.value = value;
+        this.unit = unit;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
@@ -68,18 +72,26 @@ public class RateLimit {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of requests that can be made per time period.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    Integer value;
+    private final Integer value;
+
+    public Integer getValue() {
+        return value;
+    }
+
     /**
      * The unit of time over which rate limits are calculated.
      * Example: {@code SECOND}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Unit {
         Second("SECOND"),
 
@@ -88,6 +100,8 @@ public class RateLimit {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Unit.class);
 
         private final String value;
         private static java.util.Map<String, Unit> map;
@@ -126,8 +140,54 @@ public class RateLimit {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    Unit unit;
+    private final Unit unit;
+
+    public Unit getUnit() {
+        return unit;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RateLimit(");
+        sb.append("value=").append(String.valueOf(this.value));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RateLimit)) {
+            return false;
+        }
+
+        RateLimit other = (RateLimit) o;
+        return java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

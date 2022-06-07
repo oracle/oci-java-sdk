@@ -16,14 +16,29 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TunnelStatus.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TunnelStatus {
+public final class TunnelStatus {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "ipAddress",
+        "lifecycleState",
+        "timeCreated",
+        "timeStateModified"
+    })
+    public TunnelStatus(
+            String ipAddress,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeStateModified) {
+        super();
+        this.ipAddress = ipAddress;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeStateModified = timeStateModified;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
@@ -91,6 +106,10 @@ public class TunnelStatus {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The IP address of Oracle's VPN headend.
      * <p>
@@ -98,11 +117,15 @@ public class TunnelStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
     /**
      * The tunnel's current state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Up("UP"),
         Down("DOWN"),
@@ -114,6 +137,9 @@ public class TunnelStatus {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -151,7 +177,11 @@ public class TunnelStatus {
      * The tunnel's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -160,7 +190,11 @@ public class TunnelStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * When the state of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -169,8 +203,64 @@ public class TunnelStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStateModified")
-    java.util.Date timeStateModified;
+    private final java.util.Date timeStateModified;
+
+    public java.util.Date getTimeStateModified() {
+        return timeStateModified;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TunnelStatus(");
+        sb.append("ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeStateModified=").append(String.valueOf(this.timeStateModified));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TunnelStatus)) {
+            return false;
+        }
+
+        TunnelStatus other = (TunnelStatus) o;
+        return java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeStateModified, other.timeStateModified)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeStateModified == null ? 43 : this.timeStateModified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

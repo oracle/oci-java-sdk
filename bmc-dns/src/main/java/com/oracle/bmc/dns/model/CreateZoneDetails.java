@@ -18,22 +18,17 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateZoneDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "migrationSource"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateZoneDetails extends CreateZoneBaseDetails {
+public final class CreateZoneDetails extends CreateZoneBaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -150,6 +145,10 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateZoneDetails(
             String name,
@@ -210,20 +209,32 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
-    ZoneType zoneType;
+    private final ZoneType zoneType;
+
+    public ZoneType getZoneType() {
+        return zoneType;
+    }
 
     /**
      * This value will be null for zones in the global DNS.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("viewId")
-    String viewId;
+    private final String viewId;
+
+    public String getViewId() {
+        return viewId;
+    }
 
     /**
      * The scope of the zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    Scope scope;
+    private final Scope scope;
+
+    public Scope getScope() {
+        return scope;
+    }
 
     /**
      * External master servers for the zone. {@code externalMasters} becomes a
@@ -231,8 +242,64 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
-    java.util.List<ExternalMaster> externalMasters;
+    private final java.util.List<ExternalMaster> externalMasters;
+
+    public java.util.List<ExternalMaster> getExternalMasters() {
+        return externalMasters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateZoneDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", zoneType=").append(String.valueOf(this.zoneType));
+        sb.append(", viewId=").append(String.valueOf(this.viewId));
+        sb.append(", scope=").append(String.valueOf(this.scope));
+        sb.append(", externalMasters=").append(String.valueOf(this.externalMasters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateZoneDetails)) {
+            return false;
+        }
+
+        CreateZoneDetails other = (CreateZoneDetails) o;
+        return java.util.Objects.equals(this.zoneType, other.zoneType)
+                && java.util.Objects.equals(this.viewId, other.viewId)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.externalMasters, other.externalMasters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.zoneType == null ? 43 : this.zoneType.hashCode());
+        result = (result * PRIME) + (this.viewId == null ? 43 : this.viewId.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalMasters == null ? 43 : this.externalMasters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

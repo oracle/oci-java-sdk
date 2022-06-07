@@ -7,20 +7,24 @@ package com.oracle.bmc.cims.responses;
 import com.oracle.bmc.cims.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned User instance.
      */
     private com.oracle.bmc.cims.model.User user;
+
+    public com.oracle.bmc.cims.model.User getUser() {
+        return user;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "user"})
     private CreateUserResponse(
@@ -35,6 +39,20 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.cims.model.User user;
+
+        public Builder user(com.oracle.bmc.cims.model.User user) {
+            this.user = user;
             return this;
         }
 
@@ -53,5 +71,44 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
         public CreateUserResponse build() {
             return new CreateUserResponse(__httpStatusCode__, opcRequestId, user);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",user=").append(String.valueOf(user));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateUserResponse)) {
+            return false;
+        }
+
+        CreateUserResponse other = (CreateUserResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.user, other.user);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
+        return result;
     }
 }

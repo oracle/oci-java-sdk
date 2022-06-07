@@ -15,16 +15,22 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseCredentials.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseCredentials {
+public final class DatabaseCredentials {
+    @Deprecated
+    @java.beans.ConstructorProperties({"userName", "password", "secretId", "role"})
+    public DatabaseCredentials(String userName, String password, String secretId, Role role) {
+        super();
+        this.userName = userName;
+        this.password = password;
+        this.secretId = secretId;
+        this.role = role;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
@@ -92,25 +98,42 @@ public class DatabaseCredentials {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The database user name used to perform management activity.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * The password for the database user name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    String password;
+    private final String password;
+
+    public String getPassword() {
+        return password;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
-    String secretId;
+    private final String secretId;
+
+    public String getSecretId() {
+        return secretId;
+    }
+
     /**
      * The role of the database user. Indicates whether the database user is a normal user or sysdba.
      **/
@@ -150,8 +173,60 @@ public class DatabaseCredentials {
      * The role of the database user. Indicates whether the database user is a normal user or sysdba.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    Role role;
+    private final Role role;
+
+    public Role getRole() {
+        return role;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseCredentials(");
+        sb.append("userName=").append(String.valueOf(this.userName));
+        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseCredentials)) {
+            return false;
+        }
+
+        DatabaseCredentials other = (DatabaseCredentials) o;
+        return java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

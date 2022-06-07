@@ -16,16 +16,43 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateTemplateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateTemplateDetails {
+public final class CreateTemplateDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "description",
+        "longDescription",
+        "logoFileBase64Encoded",
+        "templateConfigSource",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateTemplateDetails(
+            String compartmentId,
+            String displayName,
+            String description,
+            String longDescription,
+            String logoFileBase64Encoded,
+            CreateTemplateConfigSourceDetails templateConfigSource,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.description = description;
+        this.longDescription = longDescription;
+        this.logoFileBase64Encoded = logoFileBase64Encoded;
+        this.templateConfigSource = templateConfigSource;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -143,29 +170,49 @@ public class CreateTemplateDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this template.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The template's display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the template. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Detailed description of the template. This description is displayed in the Console page listing templates when the template is expanded. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
-    String longDescription;
+    private final String longDescription;
+
+    public String getLongDescription() {
+        return longDescription;
+    }
 
     /**
      * Base64-encoded logo to use as the template icon.
@@ -173,10 +220,18 @@ public class CreateTemplateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoFileBase64Encoded")
-    String logoFileBase64Encoded;
+    private final String logoFileBase64Encoded;
+
+    public String getLogoFileBase64Encoded() {
+        return logoFileBase64Encoded;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("templateConfigSource")
-    CreateTemplateConfigSourceDetails templateConfigSource;
+    private final CreateTemplateConfigSourceDetails templateConfigSource;
+
+    public CreateTemplateConfigSourceDetails getTemplateConfigSource() {
+        return templateConfigSource;
+    }
 
     /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
@@ -185,7 +240,11 @@ public class CreateTemplateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -194,8 +253,84 @@ public class CreateTemplateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateTemplateDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", longDescription=").append(String.valueOf(this.longDescription));
+        sb.append(", logoFileBase64Encoded=").append(String.valueOf(this.logoFileBase64Encoded));
+        sb.append(", templateConfigSource=").append(String.valueOf(this.templateConfigSource));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTemplateDetails)) {
+            return false;
+        }
+
+        CreateTemplateDetails other = (CreateTemplateDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.longDescription, other.longDescription)
+                && java.util.Objects.equals(this.logoFileBase64Encoded, other.logoFileBase64Encoded)
+                && java.util.Objects.equals(this.templateConfigSource, other.templateConfigSource)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.longDescription == null ? 43 : this.longDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logoFileBase64Encoded == null
+                                ? 43
+                                : this.logoFileBase64Encoded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.templateConfigSource == null
+                                ? 43
+                                : this.templateConfigSource.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

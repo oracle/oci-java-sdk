@@ -9,14 +9,6 @@ import com.oracle.bmc.servicemesh.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVirtualServiceRouteTableRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetVirtualServiceRouteTableRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,10 +17,17 @@ public class GetVirtualServiceRouteTableRequest
      */
     private String virtualServiceRouteTableId;
 
+    public String getVirtualServiceRouteTableId() {
+        return virtualServiceRouteTableId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -36,6 +35,28 @@ public class GetVirtualServiceRouteTableRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String virtualServiceRouteTableId = null;
+
+        /**
+         * Unique VirtualServiceRouteTable identifier.
+         * @return this builder instance
+         */
+        public Builder virtualServiceRouteTableId(String virtualServiceRouteTableId) {
+            this.virtualServiceRouteTableId = virtualServiceRouteTableId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -88,5 +109,75 @@ public class GetVirtualServiceRouteTableRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetVirtualServiceRouteTableRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetVirtualServiceRouteTableRequest
+         */
+        public GetVirtualServiceRouteTableRequest buildWithoutInvocationCallback() {
+            GetVirtualServiceRouteTableRequest request = new GetVirtualServiceRouteTableRequest();
+            request.virtualServiceRouteTableId = virtualServiceRouteTableId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetVirtualServiceRouteTableRequest(virtualServiceRouteTableId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .virtualServiceRouteTableId(virtualServiceRouteTableId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",virtualServiceRouteTableId=")
+                .append(String.valueOf(this.virtualServiceRouteTableId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetVirtualServiceRouteTableRequest)) {
+            return false;
+        }
+
+        GetVirtualServiceRouteTableRequest other = (GetVirtualServiceRouteTableRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.virtualServiceRouteTableId, other.virtualServiceRouteTableId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.virtualServiceRouteTableId == null
+                                ? 43
+                                : this.virtualServiceRouteTableId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

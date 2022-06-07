@@ -17,16 +17,55 @@ package com.oracle.bmc.managementdashboard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagementDashboardTileDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagementDashboardTileDetails {
+public final class ManagementDashboardTileDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "savedSearchId",
+        "row",
+        "column",
+        "height",
+        "width",
+        "nls",
+        "uiConfig",
+        "dataConfig",
+        "state",
+        "drilldownConfig",
+        "parametersMap"
+    })
+    public ManagementDashboardTileDetails(
+            String displayName,
+            String savedSearchId,
+            Integer row,
+            Integer column,
+            Integer height,
+            Integer width,
+            Object nls,
+            Object uiConfig,
+            java.util.List<Object> dataConfig,
+            State state,
+            Object drilldownConfig,
+            Object parametersMap) {
+        super();
+        this.displayName = displayName;
+        this.savedSearchId = savedSearchId;
+        this.row = row;
+        this.column = column;
+        this.height = height;
+        this.width = width;
+        this.nls = nls;
+        this.uiConfig = uiConfig;
+        this.dataConfig = dataConfig;
+        this.state = state;
+        this.drilldownConfig = drilldownConfig;
+        this.parametersMap = parametersMap;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -186,63 +225,103 @@ public class ManagementDashboardTileDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Display name of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * ID of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
-    String savedSearchId;
+    private final String savedSearchId;
+
+    public String getSavedSearchId() {
+        return savedSearchId;
+    }
 
     /**
      * Tile's row number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("row")
-    Integer row;
+    private final Integer row;
+
+    public Integer getRow() {
+        return row;
+    }
 
     /**
      * Tile's column number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("column")
-    Integer column;
+    private final Integer column;
+
+    public Integer getColumn() {
+        return column;
+    }
 
     /**
      * The number of rows the tile occupies.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("height")
-    Integer height;
+    private final Integer height;
+
+    public Integer getHeight() {
+        return height;
+    }
 
     /**
      * The number of columns the tile occupies.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("width")
-    Integer width;
+    private final Integer width;
+
+    public Integer getWidth() {
+        return width;
+    }
 
     /**
      * JSON that contains internationalization options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
-    Object nls;
+    private final Object nls;
+
+    public Object getNls() {
+        return nls;
+    }
 
     /**
      * JSON that contains user interface options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
-    Object uiConfig;
+    private final Object uiConfig;
+
+    public Object getUiConfig() {
+        return uiConfig;
+    }
 
     /**
      * Array of JSON that contain data source options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
-    java.util.List<Object> dataConfig;
+    private final java.util.List<Object> dataConfig;
+
+    public java.util.List<Object> getDataConfig() {
+        return dataConfig;
+    }
+
     /**
      * Current state of the saved search.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum State {
         Deleted("DELETED"),
         Unauthorized("UNAUTHORIZED"),
@@ -253,6 +332,8 @@ public class ManagementDashboardTileDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(State.class);
 
         private final String value;
         private static java.util.Map<String, State> map;
@@ -290,20 +371,110 @@ public class ManagementDashboardTileDetails {
      * Current state of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    State state;
+    private final State state;
+
+    public State getState() {
+        return state;
+    }
 
     /**
      * Drill-down configuration to define the destination of a drill-down action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
-    Object drilldownConfig;
+    private final Object drilldownConfig;
+
+    public Object getDrilldownConfig() {
+        return drilldownConfig;
+    }
 
     /**
      * Specifies the saved search parameters values
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parametersMap")
-    Object parametersMap;
+    private final Object parametersMap;
+
+    public Object getParametersMap() {
+        return parametersMap;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagementDashboardTileDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", savedSearchId=").append(String.valueOf(this.savedSearchId));
+        sb.append(", row=").append(String.valueOf(this.row));
+        sb.append(", column=").append(String.valueOf(this.column));
+        sb.append(", height=").append(String.valueOf(this.height));
+        sb.append(", width=").append(String.valueOf(this.width));
+        sb.append(", nls=").append(String.valueOf(this.nls));
+        sb.append(", uiConfig=").append(String.valueOf(this.uiConfig));
+        sb.append(", dataConfig=").append(String.valueOf(this.dataConfig));
+        sb.append(", state=").append(String.valueOf(this.state));
+        sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
+        sb.append(", parametersMap=").append(String.valueOf(this.parametersMap));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagementDashboardTileDetails)) {
+            return false;
+        }
+
+        ManagementDashboardTileDetails other = (ManagementDashboardTileDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.savedSearchId, other.savedSearchId)
+                && java.util.Objects.equals(this.row, other.row)
+                && java.util.Objects.equals(this.column, other.column)
+                && java.util.Objects.equals(this.height, other.height)
+                && java.util.Objects.equals(this.width, other.width)
+                && java.util.Objects.equals(this.nls, other.nls)
+                && java.util.Objects.equals(this.uiConfig, other.uiConfig)
+                && java.util.Objects.equals(this.dataConfig, other.dataConfig)
+                && java.util.Objects.equals(this.state, other.state)
+                && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
+                && java.util.Objects.equals(this.parametersMap, other.parametersMap)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.savedSearchId == null ? 43 : this.savedSearchId.hashCode());
+        result = (result * PRIME) + (this.row == null ? 43 : this.row.hashCode());
+        result = (result * PRIME) + (this.column == null ? 43 : this.column.hashCode());
+        result = (result * PRIME) + (this.height == null ? 43 : this.height.hashCode());
+        result = (result * PRIME) + (this.width == null ? 43 : this.width.hashCode());
+        result = (result * PRIME) + (this.nls == null ? 43 : this.nls.hashCode());
+        result = (result * PRIME) + (this.uiConfig == null ? 43 : this.uiConfig.hashCode());
+        result = (result * PRIME) + (this.dataConfig == null ? 43 : this.dataConfig.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drilldownConfig == null ? 43 : this.drilldownConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parametersMap == null ? 43 : this.parametersMap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

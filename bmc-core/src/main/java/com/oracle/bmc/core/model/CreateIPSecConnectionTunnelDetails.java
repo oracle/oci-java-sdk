@@ -15,16 +15,52 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateIPSecConnectionTunnelDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateIPSecConnectionTunnelDetails {
+public final class CreateIPSecConnectionTunnelDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "routing",
+        "ikeVersion",
+        "sharedSecret",
+        "bgpSessionConfig",
+        "oracleInitiation",
+        "natTranslationEnabled",
+        "phaseOneConfig",
+        "phaseTwoConfig",
+        "dpdConfig",
+        "encryptionDomainConfig"
+    })
+    public CreateIPSecConnectionTunnelDetails(
+            String displayName,
+            Routing routing,
+            IkeVersion ikeVersion,
+            String sharedSecret,
+            CreateIPSecTunnelBgpSessionDetails bgpSessionConfig,
+            OracleInitiation oracleInitiation,
+            NatTranslationEnabled natTranslationEnabled,
+            PhaseOneConfigDetails phaseOneConfig,
+            PhaseTwoConfigDetails phaseTwoConfig,
+            DpdConfig dpdConfig,
+            CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig) {
+        super();
+        this.displayName = displayName;
+        this.routing = routing;
+        this.ikeVersion = ikeVersion;
+        this.sharedSecret = sharedSecret;
+        this.bgpSessionConfig = bgpSessionConfig;
+        this.oracleInitiation = oracleInitiation;
+        this.natTranslationEnabled = natTranslationEnabled;
+        this.phaseOneConfig = phaseOneConfig;
+        this.phaseTwoConfig = phaseTwoConfig;
+        this.dpdConfig = dpdConfig;
+        this.encryptionDomainConfig = encryptionDomainConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -174,13 +210,22 @@ public class CreateIPSecConnectionTunnelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
      *
@@ -223,7 +268,12 @@ public class CreateIPSecConnectionTunnelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
-    Routing routing;
+    private final Routing routing;
+
+    public Routing getRouting() {
+        return routing;
+    }
+
     /**
      * Internet Key Exchange protocol version.
      *
@@ -265,7 +315,11 @@ public class CreateIPSecConnectionTunnelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
-    IkeVersion ikeVersion;
+    private final IkeVersion ikeVersion;
+
+    public IkeVersion getIkeVersion() {
+        return ikeVersion;
+    }
 
     /**
      * The shared secret (pre-shared key) to use for the IPSec tunnel. Only numbers, letters, and
@@ -275,10 +329,19 @@ public class CreateIPSecConnectionTunnelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
-    String sharedSecret;
+    private final String sharedSecret;
+
+    public String getSharedSecret() {
+        return sharedSecret;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")
-    CreateIPSecTunnelBgpSessionDetails bgpSessionConfig;
+    private final CreateIPSecTunnelBgpSessionDetails bgpSessionConfig;
+
+    public CreateIPSecTunnelBgpSessionDetails getBgpSessionConfig() {
+        return bgpSessionConfig;
+    }
+
     /**
      * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
      *
@@ -320,7 +383,12 @@ public class CreateIPSecConnectionTunnelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInitiation")
-    OracleInitiation oracleInitiation;
+    private final OracleInitiation oracleInitiation;
+
+    public OracleInitiation getOracleInitiation() {
+        return oracleInitiation;
+    }
+
     /**
      * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
      * and when it detects that the port used to forward packets has changed (most likely because a NAT device
@@ -377,20 +445,126 @@ public class CreateIPSecConnectionTunnelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
-    NatTranslationEnabled natTranslationEnabled;
+    private final NatTranslationEnabled natTranslationEnabled;
+
+    public NatTranslationEnabled getNatTranslationEnabled() {
+        return natTranslationEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("phaseOneConfig")
-    PhaseOneConfigDetails phaseOneConfig;
+    private final PhaseOneConfigDetails phaseOneConfig;
+
+    public PhaseOneConfigDetails getPhaseOneConfig() {
+        return phaseOneConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("phaseTwoConfig")
-    PhaseTwoConfigDetails phaseTwoConfig;
+    private final PhaseTwoConfigDetails phaseTwoConfig;
+
+    public PhaseTwoConfigDetails getPhaseTwoConfig() {
+        return phaseTwoConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dpdConfig")
-    DpdConfig dpdConfig;
+    private final DpdConfig dpdConfig;
+
+    public DpdConfig getDpdConfig() {
+        return dpdConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
-    CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
+    private final CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
+
+    public CreateIPSecTunnelEncryptionDomainDetails getEncryptionDomainConfig() {
+        return encryptionDomainConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateIPSecConnectionTunnelDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", routing=").append(String.valueOf(this.routing));
+        sb.append(", ikeVersion=").append(String.valueOf(this.ikeVersion));
+        sb.append(", sharedSecret=").append(String.valueOf(this.sharedSecret));
+        sb.append(", bgpSessionConfig=").append(String.valueOf(this.bgpSessionConfig));
+        sb.append(", oracleInitiation=").append(String.valueOf(this.oracleInitiation));
+        sb.append(", natTranslationEnabled=").append(String.valueOf(this.natTranslationEnabled));
+        sb.append(", phaseOneConfig=").append(String.valueOf(this.phaseOneConfig));
+        sb.append(", phaseTwoConfig=").append(String.valueOf(this.phaseTwoConfig));
+        sb.append(", dpdConfig=").append(String.valueOf(this.dpdConfig));
+        sb.append(", encryptionDomainConfig=").append(String.valueOf(this.encryptionDomainConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateIPSecConnectionTunnelDetails)) {
+            return false;
+        }
+
+        CreateIPSecConnectionTunnelDetails other = (CreateIPSecConnectionTunnelDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.routing, other.routing)
+                && java.util.Objects.equals(this.ikeVersion, other.ikeVersion)
+                && java.util.Objects.equals(this.sharedSecret, other.sharedSecret)
+                && java.util.Objects.equals(this.bgpSessionConfig, other.bgpSessionConfig)
+                && java.util.Objects.equals(this.oracleInitiation, other.oracleInitiation)
+                && java.util.Objects.equals(this.natTranslationEnabled, other.natTranslationEnabled)
+                && java.util.Objects.equals(this.phaseOneConfig, other.phaseOneConfig)
+                && java.util.Objects.equals(this.phaseTwoConfig, other.phaseTwoConfig)
+                && java.util.Objects.equals(this.dpdConfig, other.dpdConfig)
+                && java.util.Objects.equals(
+                        this.encryptionDomainConfig, other.encryptionDomainConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.routing == null ? 43 : this.routing.hashCode());
+        result = (result * PRIME) + (this.ikeVersion == null ? 43 : this.ikeVersion.hashCode());
+        result = (result * PRIME) + (this.sharedSecret == null ? 43 : this.sharedSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bgpSessionConfig == null ? 43 : this.bgpSessionConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleInitiation == null ? 43 : this.oracleInitiation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.natTranslationEnabled == null
+                                ? 43
+                                : this.natTranslationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.phaseOneConfig == null ? 43 : this.phaseOneConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.phaseTwoConfig == null ? 43 : this.phaseTwoConfig.hashCode());
+        result = (result * PRIME) + (this.dpdConfig == null ? 43 : this.dpdConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionDomainConfig == null
+                                ? 43
+                                : this.encryptionDomainConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

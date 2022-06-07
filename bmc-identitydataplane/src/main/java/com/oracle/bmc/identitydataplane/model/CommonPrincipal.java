@@ -15,14 +15,18 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CommonPrincipal.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CommonPrincipal {
+public final class CommonPrincipal {
+    @Deprecated
+    @java.beans.ConstructorProperties({"tenant", "user"})
+    public CommonPrincipal(Tenant tenant, User user) {
+        super();
+        this.tenant = tenant;
+        this.user = user;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenant")
         private Tenant tenant;
@@ -67,18 +71,72 @@ public class CommonPrincipal {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The tenant.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenant")
-    Tenant tenant;
+    private final Tenant tenant;
+
+    public Tenant getTenant() {
+        return tenant;
+    }
 
     /**
      * The user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("user")
-    User user;
+    private final User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CommonPrincipal(");
+        sb.append("tenant=").append(String.valueOf(this.tenant));
+        sb.append(", user=").append(String.valueOf(this.user));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CommonPrincipal)) {
+            return false;
+        }
+
+        CommonPrincipal other = (CommonPrincipal) o;
+        return java.util.Objects.equals(this.tenant, other.tenant)
+                && java.util.Objects.equals(this.user, other.user)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenant == null ? 43 : this.tenant.hashCode());
+        result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

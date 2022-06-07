@@ -15,14 +15,20 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EventContent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EventContent {
+public final class EventContent {
+    @Deprecated
+    @java.beans.ConstructorProperties({"contentAvailability", "instancePath", "size"})
+    public EventContent(
+            ContentAvailability contentAvailability, String instancePath, Integer size) {
+        super();
+        this.contentAvailability = contentAvailability;
+        this.instancePath = instancePath;
+        this.size = size;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("contentAvailability")
         private ContentAvailability contentAvailability;
@@ -79,24 +85,89 @@ public class EventContent {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Status of the event content
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentAvailability")
-    ContentAvailability contentAvailability;
+    private final ContentAvailability contentAvailability;
+
+    public ContentAvailability getContentAvailability() {
+        return contentAvailability;
+    }
 
     /**
      * Path to the event content on the instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instancePath")
-    String instancePath;
+    private final String instancePath;
+
+    public String getInstancePath() {
+        return instancePath;
+    }
 
     /**
      * size in bytes of the event content (size of the zip file uploaded)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
-    Integer size;
+    private final Integer size;
+
+    public Integer getSize() {
+        return size;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EventContent(");
+        sb.append("contentAvailability=").append(String.valueOf(this.contentAvailability));
+        sb.append(", instancePath=").append(String.valueOf(this.instancePath));
+        sb.append(", size=").append(String.valueOf(this.size));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EventContent)) {
+            return false;
+        }
+
+        EventContent other = (EventContent) o;
+        return java.util.Objects.equals(this.contentAvailability, other.contentAvailability)
+                && java.util.Objects.equals(this.instancePath, other.instancePath)
+                && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.contentAvailability == null
+                                ? 43
+                                : this.contentAvailability.hashCode());
+        result = (result * PRIME) + (this.instancePath == null ? 43 : this.instancePath.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

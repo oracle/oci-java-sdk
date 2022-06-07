@@ -15,16 +15,24 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BulkEditTagsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BulkEditTagsDetails {
+public final class BulkEditTagsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"compartmentId", "resources", "bulkEditOperations"})
+    public BulkEditTagsDetails(
+            String compartmentId,
+            java.util.List<BulkEditResource> resources,
+            java.util.List<BulkEditOperationDetails> bulkEditOperations) {
+        super();
+        this.compartmentId = compartmentId;
+        this.resources = resources;
+        this.bulkEditOperations = bulkEditOperations;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -83,27 +91,94 @@ public class BulkEditTagsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment where the bulk tag edit request is submitted.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The resources to be updated.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
-    java.util.List<BulkEditResource> resources;
+    private final java.util.List<BulkEditResource> resources;
+
+    public java.util.List<BulkEditResource> getResources() {
+        return resources;
+    }
 
     /**
      * The operations associated with the request to bulk edit tags.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bulkEditOperations")
-    java.util.List<BulkEditOperationDetails> bulkEditOperations;
+    private final java.util.List<BulkEditOperationDetails> bulkEditOperations;
+
+    public java.util.List<BulkEditOperationDetails> getBulkEditOperations() {
+        return bulkEditOperations;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BulkEditTagsDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", resources=").append(String.valueOf(this.resources));
+        sb.append(", bulkEditOperations=").append(String.valueOf(this.bulkEditOperations));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BulkEditTagsDetails)) {
+            return false;
+        }
+
+        BulkEditTagsDetails other = (BulkEditTagsDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.resources, other.resources)
+                && java.util.Objects.equals(this.bulkEditOperations, other.bulkEditOperations)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bulkEditOperations == null
+                                ? 43
+                                : this.bulkEditOperations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

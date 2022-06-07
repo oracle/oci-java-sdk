@@ -25,14 +25,83 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LoadBalancer.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LoadBalancer {
+public final class LoadBalancer {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "lifecycleState",
+        "timeCreated",
+        "ipAddresses",
+        "shapeName",
+        "shapeDetails",
+        "isPrivate",
+        "subnetIds",
+        "networkSecurityGroupIds",
+        "listeners",
+        "hostnames",
+        "sslCipherSuites",
+        "certificates",
+        "backendSets",
+        "pathRouteSets",
+        "freeformTags",
+        "definedTags",
+        "systemTags",
+        "ruleSets",
+        "routingPolicies"
+    })
+    public LoadBalancer(
+            String id,
+            String compartmentId,
+            String displayName,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.List<IpAddress> ipAddresses,
+            String shapeName,
+            ShapeDetails shapeDetails,
+            Boolean isPrivate,
+            java.util.List<String> subnetIds,
+            java.util.List<String> networkSecurityGroupIds,
+            java.util.Map<String, Listener> listeners,
+            java.util.Map<String, Hostname> hostnames,
+            java.util.Map<String, SSLCipherSuite> sslCipherSuites,
+            java.util.Map<String, Certificate> certificates,
+            java.util.Map<String, BackendSet> backendSets,
+            java.util.Map<String, PathRouteSet> pathRouteSets,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, RuleSet> ruleSets,
+            java.util.Map<String, RoutingPolicy> routingPolicies) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.ipAddresses = ipAddresses;
+        this.shapeName = shapeName;
+        this.shapeDetails = shapeDetails;
+        this.isPrivate = isPrivate;
+        this.subnetIds = subnetIds;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
+        this.listeners = listeners;
+        this.hostnames = hostnames;
+        this.sslCipherSuites = sslCipherSuites;
+        this.certificates = certificates;
+        this.backendSets = backendSets;
+        this.pathRouteSets = pathRouteSets;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.ruleSets = ruleSets;
+        this.routingPolicies = routingPolicies;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -303,17 +372,29 @@ public class LoadBalancer {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
@@ -322,12 +403,16 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The current state of the load balancer.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Failed("FAILED"),
@@ -340,6 +425,9 @@ public class LoadBalancer {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -378,7 +466,11 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.
@@ -387,14 +479,22 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * An array of IP addresses.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
-    java.util.List<IpAddress> ipAddresses;
+    private final java.util.List<IpAddress> ipAddresses;
+
+    public java.util.List<IpAddress> getIpAddresses() {
+        return ipAddresses;
+    }
 
     /**
      * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
@@ -405,10 +505,18 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    String shapeName;
+    private final String shapeName;
+
+    public String getShapeName() {
+        return shapeName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
-    ShapeDetails shapeDetails;
+    private final ShapeDetails shapeDetails;
+
+    public ShapeDetails getShapeDetails() {
+        return shapeDetails;
+    }
 
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
@@ -425,13 +533,21 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
-    Boolean isPrivate;
+    private final Boolean isPrivate;
+
+    public Boolean getIsPrivate() {
+        return isPrivate;
+    }
 
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
-    java.util.List<String> subnetIds;
+    private final java.util.List<String> subnetIds;
+
+    public java.util.List<String> getSubnetIds() {
+        return subnetIds;
+    }
 
     /**
      * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the load
@@ -450,25 +566,53 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
-    java.util.List<String> networkSecurityGroupIds;
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
-    java.util.Map<String, Listener> listeners;
+    private final java.util.Map<String, Listener> listeners;
+
+    public java.util.Map<String, Listener> getListeners() {
+        return listeners;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
-    java.util.Map<String, Hostname> hostnames;
+    private final java.util.Map<String, Hostname> hostnames;
+
+    public java.util.Map<String, Hostname> getHostnames() {
+        return hostnames;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sslCipherSuites")
-    java.util.Map<String, SSLCipherSuite> sslCipherSuites;
+    private final java.util.Map<String, SSLCipherSuite> sslCipherSuites;
+
+    public java.util.Map<String, SSLCipherSuite> getSslCipherSuites() {
+        return sslCipherSuites;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("certificates")
-    java.util.Map<String, Certificate> certificates;
+    private final java.util.Map<String, Certificate> certificates;
+
+    public java.util.Map<String, Certificate> getCertificates() {
+        return certificates;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
-    java.util.Map<String, BackendSet> backendSets;
+    private final java.util.Map<String, BackendSet> backendSets;
+
+    public java.util.Map<String, BackendSet> getBackendSets() {
+        return backendSets;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSets")
-    java.util.Map<String, PathRouteSet> pathRouteSets;
+    private final java.util.Map<String, PathRouteSet> pathRouteSets;
+
+    public java.util.Map<String, PathRouteSet> getPathRouteSets() {
+        return pathRouteSets;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -478,7 +622,11 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -488,7 +636,11 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
@@ -499,14 +651,144 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
-    java.util.Map<String, RuleSet> ruleSets;
+    private final java.util.Map<String, RuleSet> ruleSets;
+
+    public java.util.Map<String, RuleSet> getRuleSets() {
+        return ruleSets;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicies")
-    java.util.Map<String, RoutingPolicy> routingPolicies;
+    private final java.util.Map<String, RoutingPolicy> routingPolicies;
+
+    public java.util.Map<String, RoutingPolicy> getRoutingPolicies() {
+        return routingPolicies;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LoadBalancer(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", shapeDetails=").append(String.valueOf(this.shapeDetails));
+        sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
+        sb.append(", subnetIds=").append(String.valueOf(this.subnetIds));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
+        sb.append(", listeners=").append(String.valueOf(this.listeners));
+        sb.append(", hostnames=").append(String.valueOf(this.hostnames));
+        sb.append(", sslCipherSuites=").append(String.valueOf(this.sslCipherSuites));
+        sb.append(", certificates=").append(String.valueOf(this.certificates));
+        sb.append(", backendSets=").append(String.valueOf(this.backendSets));
+        sb.append(", pathRouteSets=").append(String.valueOf(this.pathRouteSets));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
+        sb.append(", routingPolicies=").append(String.valueOf(this.routingPolicies));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LoadBalancer)) {
+            return false;
+        }
+
+        LoadBalancer other = (LoadBalancer) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.shapeDetails, other.shapeDetails)
+                && java.util.Objects.equals(this.isPrivate, other.isPrivate)
+                && java.util.Objects.equals(this.subnetIds, other.subnetIds)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
+                && java.util.Objects.equals(this.listeners, other.listeners)
+                && java.util.Objects.equals(this.hostnames, other.hostnames)
+                && java.util.Objects.equals(this.sslCipherSuites, other.sslCipherSuites)
+                && java.util.Objects.equals(this.certificates, other.certificates)
+                && java.util.Objects.equals(this.backendSets, other.backendSets)
+                && java.util.Objects.equals(this.pathRouteSets, other.pathRouteSets)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.ruleSets, other.ruleSets)
+                && java.util.Objects.equals(this.routingPolicies, other.routingPolicies)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.ipAddresses == null ? 43 : this.ipAddresses.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.shapeDetails == null ? 43 : this.shapeDetails.hashCode());
+        result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
+        result = (result * PRIME) + (this.subnetIds == null ? 43 : this.subnetIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
+        result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
+        result = (result * PRIME) + (this.hostnames == null ? 43 : this.hostnames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslCipherSuites == null ? 43 : this.sslCipherSuites.hashCode());
+        result = (result * PRIME) + (this.certificates == null ? 43 : this.certificates.hashCode());
+        result = (result * PRIME) + (this.backendSets == null ? 43 : this.backendSets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pathRouteSets == null ? 43 : this.pathRouteSets.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.ruleSets == null ? 43 : this.ruleSets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routingPolicies == null ? 43 : this.routingPolicies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -26,9 +26,12 @@ import com.oracle.bmc.servicecatalog.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
-@lombok.RequiredArgsConstructor
 public class ServiceCatalogPaginators {
     private final ServiceCatalog client;
+
+    public ServiceCatalogPaginators(ServiceCatalog client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listApplications operation. This iterable

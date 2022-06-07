@@ -9,14 +9,6 @@ import com.oracle.bmc.dns.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteSteeringPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteSteeringPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteSteeringPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class DeleteSteeringPolicyRequest
      */
     private String steeringPolicyId;
 
+    public String getSteeringPolicyId() {
+        return steeringPolicyId;
+    }
     /**
      * The {@code If-Match} header field makes the request method conditional on the
      * existence of at least one current representation of the target resource,
@@ -35,6 +30,9 @@ public class DeleteSteeringPolicyRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The {@code If-Unmodified-Since} header field makes the request method
      * conditional on the selected representation's last modification date being
@@ -45,6 +43,9 @@ public class DeleteSteeringPolicyRequest
      */
     private String ifUnmodifiedSince;
 
+    public String getIfUnmodifiedSince() {
+        return ifUnmodifiedSince;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need
      * to contact Oracle about a particular request, please provide
@@ -53,11 +54,18 @@ public class DeleteSteeringPolicyRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      *
      */
     private com.oracle.bmc.dns.model.Scope scope;
+
+    public com.oracle.bmc.dns.model.Scope getScope() {
+        return scope;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -65,6 +73,75 @@ public class DeleteSteeringPolicyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String steeringPolicyId = null;
+
+        /**
+         * The OCID of the target steering policy.
+         * @return this builder instance
+         */
+        public Builder steeringPolicyId(String steeringPolicyId) {
+            this.steeringPolicyId = steeringPolicyId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String ifUnmodifiedSince = null;
+
+        /**
+         * The {@code If-Unmodified-Since} header field makes the request method
+         * conditional on the selected representation's last modification date being
+         * earlier than or equal to the date provided in the field-value.  This
+         * field accomplishes the same purpose as If-Match for cases where the user
+         * agent does not have an entity-tag for the representation.
+         *
+         * @return this builder instance
+         */
+        public Builder ifUnmodifiedSince(String ifUnmodifiedSince) {
+            this.ifUnmodifiedSince = ifUnmodifiedSince;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.dns.model.Scope scope = null;
+
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         * @return this builder instance
+         */
+        public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
+            this.scope = scope;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +197,88 @@ public class DeleteSteeringPolicyRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteSteeringPolicyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteSteeringPolicyRequest
+         */
+        public DeleteSteeringPolicyRequest buildWithoutInvocationCallback() {
+            DeleteSteeringPolicyRequest request = new DeleteSteeringPolicyRequest();
+            request.steeringPolicyId = steeringPolicyId;
+            request.ifMatch = ifMatch;
+            request.ifUnmodifiedSince = ifUnmodifiedSince;
+            request.opcRequestId = opcRequestId;
+            request.scope = scope;
+            return request;
+            // new DeleteSteeringPolicyRequest(steeringPolicyId, ifMatch, ifUnmodifiedSince, opcRequestId, scope);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .steeringPolicyId(steeringPolicyId)
+                .ifMatch(ifMatch)
+                .ifUnmodifiedSince(ifUnmodifiedSince)
+                .opcRequestId(opcRequestId)
+                .scope(scope);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",steeringPolicyId=").append(String.valueOf(this.steeringPolicyId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",ifUnmodifiedSince=").append(String.valueOf(this.ifUnmodifiedSince));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",scope=").append(String.valueOf(this.scope));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteSteeringPolicyRequest)) {
+            return false;
+        }
+
+        DeleteSteeringPolicyRequest other = (DeleteSteeringPolicyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.steeringPolicyId, other.steeringPolicyId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.ifUnmodifiedSince, other.ifUnmodifiedSince)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.scope, other.scope);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.steeringPolicyId == null ? 43 : this.steeringPolicyId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ifUnmodifiedSince == null ? 43 : this.ifUnmodifiedSince.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        return result;
     }
 }

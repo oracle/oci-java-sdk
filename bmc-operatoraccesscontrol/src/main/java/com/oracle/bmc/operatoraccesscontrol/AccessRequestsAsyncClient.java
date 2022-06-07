@@ -7,6 +7,7 @@ package com.oracle.bmc.operatoraccesscontrol;
 import com.oracle.bmc.operatoraccesscontrol.internal.http.*;
 import com.oracle.bmc.operatoraccesscontrol.requests.*;
 import com.oracle.bmc.operatoraccesscontrol.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for AccessRequests service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.operatoraccesscontrol.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.extern.slf4j.Slf4j
 public class AccessRequestsAsyncClient implements AccessRequestsAsync {
     /**
      * Service instance for AccessRequests.
@@ -35,7 +35,9 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                             "https://operator-access-control.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AccessRequestsAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -319,9 +321,13 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
          * @return the client
          */
         public AccessRequestsAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new AccessRequestsAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -331,6 +337,10 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

@@ -15,12 +15,6 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -32,58 +26,144 @@ package com.oracle.bmc.databasemanagement.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Job {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "name",
+        "description",
+        "managedDatabaseGroupId",
+        "managedDatabaseId",
+        "managedDatabasesDetails",
+        "databaseSubType",
+        "scheduleType",
+        "lifecycleState",
+        "timeout",
+        "resultLocation",
+        "scheduleDetails",
+        "submissionErrorMessage",
+        "timeCreated",
+        "timeUpdated"
+    })
+    protected Job(
+            String id,
+            String compartmentId,
+            String name,
+            String description,
+            String managedDatabaseGroupId,
+            String managedDatabaseId,
+            java.util.List<JobDatabase> managedDatabasesDetails,
+            DatabaseSubType databaseSubType,
+            ScheduleType scheduleType,
+            LifecycleState lifecycleState,
+            String timeout,
+            JobExecutionResultLocation resultLocation,
+            JobScheduleDetails scheduleDetails,
+            String submissionErrorMessage,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.description = description;
+        this.managedDatabaseGroupId = managedDatabaseGroupId;
+        this.managedDatabaseId = managedDatabaseId;
+        this.managedDatabasesDetails = managedDatabasesDetails;
+        this.databaseSubType = databaseSubType;
+        this.scheduleType = scheduleType;
+        this.lifecycleState = lifecycleState;
+        this.timeout = timeout;
+        this.resultLocation = resultLocation;
+        this.scheduleDetails = scheduleDetails;
+        this.submissionErrorMessage = submissionErrorMessage;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the job resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The display name of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The description of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the job has to be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
-    String managedDatabaseGroupId;
+    private final String managedDatabaseGroupId;
+
+    public String getManagedDatabaseGroupId() {
+        return managedDatabaseGroupId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database where the job has to be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
-    String managedDatabaseId;
+    private final String managedDatabaseId;
+
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
 
     /**
      * The details of the Managed Databases where the job has to be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabasesDetails")
-    java.util.List<JobDatabase> managedDatabasesDetails;
+    private final java.util.List<JobDatabase> managedDatabasesDetails;
+
+    public java.util.List<JobDatabase> getManagedDatabasesDetails() {
+        return managedDatabasesDetails;
+    }
 
     /**
      * The subtype of the Oracle Database where the job has to be executed. Applicable only when managedDatabaseGroupId is provided.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
-    DatabaseSubType databaseSubType;
+    private final DatabaseSubType databaseSubType;
+
+    public DatabaseSubType getDatabaseSubType() {
+        return databaseSubType;
+    }
+
     /**
      * The schedule type of the job.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ScheduleType {
         Immediate("IMMEDIATE"),
         Later("LATER"),
@@ -93,6 +173,9 @@ public class Job {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ScheduleType.class);
 
         private final String value;
         private static java.util.Map<String, ScheduleType> map;
@@ -130,11 +213,15 @@ public class Job {
      * The schedule type of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
-    ScheduleType scheduleType;
+    private final ScheduleType scheduleType;
+
+    public ScheduleType getScheduleType() {
+        return scheduleType;
+    }
+
     /**
      * The lifecycle state of the job.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -144,6 +231,9 @@ public class Job {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -181,35 +271,166 @@ public class Job {
      * The lifecycle state of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The job timeout duration, which is expressed like "1h 10m 15s".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
-    String timeout;
+    private final String timeout;
+
+    public String getTimeout() {
+        return timeout;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("resultLocation")
-    JobExecutionResultLocation resultLocation;
+    private final JobExecutionResultLocation resultLocation;
+
+    public JobExecutionResultLocation getResultLocation() {
+        return resultLocation;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
-    JobScheduleDetails scheduleDetails;
+    private final JobScheduleDetails scheduleDetails;
+
+    public JobScheduleDetails getScheduleDetails() {
+        return scheduleDetails;
+    }
 
     /**
      * The error message that is returned if the job submission fails. Null is returned in all other scenarios.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("submissionErrorMessage")
-    String submissionErrorMessage;
+    private final String submissionErrorMessage;
+
+    public String getSubmissionErrorMessage() {
+        return submissionErrorMessage;
+    }
 
     /**
      * The date and time when the job was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time when the job was last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Job(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", managedDatabaseGroupId=").append(String.valueOf(this.managedDatabaseGroupId));
+        sb.append(", managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(", managedDatabasesDetails=")
+                .append(String.valueOf(this.managedDatabasesDetails));
+        sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
+        sb.append(", scheduleType=").append(String.valueOf(this.scheduleType));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeout=").append(String.valueOf(this.timeout));
+        sb.append(", resultLocation=").append(String.valueOf(this.resultLocation));
+        sb.append(", scheduleDetails=").append(String.valueOf(this.scheduleDetails));
+        sb.append(", submissionErrorMessage=").append(String.valueOf(this.submissionErrorMessage));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Job)) {
+            return false;
+        }
+
+        Job other = (Job) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.managedDatabaseGroupId, other.managedDatabaseGroupId)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(
+                        this.managedDatabasesDetails, other.managedDatabasesDetails)
+                && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
+                && java.util.Objects.equals(this.scheduleType, other.scheduleType)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeout, other.timeout)
+                && java.util.Objects.equals(this.resultLocation, other.resultLocation)
+                && java.util.Objects.equals(this.scheduleDetails, other.scheduleDetails)
+                && java.util.Objects.equals(
+                        this.submissionErrorMessage, other.submissionErrorMessage)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseGroupId == null
+                                ? 43
+                                : this.managedDatabaseGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabasesDetails == null
+                                ? 43
+                                : this.managedDatabasesDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSubType == null ? 43 : this.databaseSubType.hashCode());
+        result = (result * PRIME) + (this.scheduleType == null ? 43 : this.scheduleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeout == null ? 43 : this.timeout.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resultLocation == null ? 43 : this.resultLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduleDetails == null ? 43 : this.scheduleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.submissionErrorMessage == null
+                                ? 43
+                                : this.submissionErrorMessage.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        return result;
+    }
 }

@@ -15,14 +15,22 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JWK.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JWK {
+public final class JWK {
+    @Deprecated
+    @java.beans.ConstructorProperties({"n", "e", "kid", "use", "alg", "kty"})
+    public JWK(String n, String e, String kid, String use, String alg, String kty) {
+        super();
+        this.n = n;
+        this.e = e;
+        this.kid = kid;
+        this.use = use;
+        this.alg = alg;
+        this.kty = kty;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("n")
         private String n;
@@ -109,42 +117,124 @@ public class JWK {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The modulus.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("n")
-    String n;
+    private final String n;
+
+    public String getN() {
+        return n;
+    }
 
     /**
      * The exponent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("e")
-    String e;
+    private final String e;
+
+    public String getE() {
+        return e;
+    }
 
     /**
      * The key id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kid")
-    String kid;
+    private final String kid;
+
+    public String getKid() {
+        return kid;
+    }
 
     /**
      * The key use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("use")
-    String use;
+    private final String use;
+
+    public String getUse() {
+        return use;
+    }
 
     /**
      * The algorithm.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alg")
-    String alg;
+    private final String alg;
+
+    public String getAlg() {
+        return alg;
+    }
 
     /**
      * The key type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kty")
-    String kty;
+    private final String kty;
+
+    public String getKty() {
+        return kty;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JWK(");
+        sb.append("n=").append(String.valueOf(this.n));
+        sb.append(", e=").append(String.valueOf(this.e));
+        sb.append(", kid=").append(String.valueOf(this.kid));
+        sb.append(", use=").append(String.valueOf(this.use));
+        sb.append(", alg=").append(String.valueOf(this.alg));
+        sb.append(", kty=").append(String.valueOf(this.kty));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JWK)) {
+            return false;
+        }
+
+        JWK other = (JWK) o;
+        return java.util.Objects.equals(this.n, other.n)
+                && java.util.Objects.equals(this.e, other.e)
+                && java.util.Objects.equals(this.kid, other.kid)
+                && java.util.Objects.equals(this.use, other.use)
+                && java.util.Objects.equals(this.alg, other.alg)
+                && java.util.Objects.equals(this.kty, other.kty)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.n == null ? 43 : this.n.hashCode());
+        result = (result * PRIME) + (this.e == null ? 43 : this.e.hashCode());
+        result = (result * PRIME) + (this.kid == null ? 43 : this.kid.hashCode());
+        result = (result * PRIME) + (this.use == null ? 43 : this.use.hashCode());
+        result = (result * PRIME) + (this.alg == null ? 43 : this.alg.hashCode());
+        result = (result * PRIME) + (this.kty == null ? 43 : this.kty.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeKmsKeyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateVolumeKmsKeyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateVolumeKmsKeyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails> {
@@ -26,11 +18,17 @@ public class UpdateVolumeKmsKeyRequest
      */
     private String volumeId;
 
+    public String getVolumeId() {
+        return volumeId;
+    }
     /**
      * Updates the Key Management master encryption key assigned to the specified volume.
      */
     private com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails;
 
+    public com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails getUpdateVolumeKmsKeyDetails() {
+        return updateVolumeKmsKeyDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -38,6 +36,10 @@ public class UpdateVolumeKmsKeyRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +58,44 @@ public class UpdateVolumeKmsKeyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String volumeId = null;
+
+        /**
+         * The OCID of the volume.
+         * @return this builder instance
+         */
+        public Builder volumeId(String volumeId) {
+            this.volumeId = volumeId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails =
+                null;
+
+        /**
+         * Updates the Key Management master encryption key assigned to the specified volume.
+         * @return this builder instance
+         */
+        public Builder updateVolumeKmsKeyDetails(
+                com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails) {
+            this.updateVolumeKmsKeyDetails = updateVolumeKmsKeyDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +160,80 @@ public class UpdateVolumeKmsKeyRequest
             updateVolumeKmsKeyDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateVolumeKmsKeyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateVolumeKmsKeyRequest
+         */
+        public UpdateVolumeKmsKeyRequest buildWithoutInvocationCallback() {
+            UpdateVolumeKmsKeyRequest request = new UpdateVolumeKmsKeyRequest();
+            request.volumeId = volumeId;
+            request.updateVolumeKmsKeyDetails = updateVolumeKmsKeyDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateVolumeKmsKeyRequest(volumeId, updateVolumeKmsKeyDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .volumeId(volumeId)
+                .updateVolumeKmsKeyDetails(updateVolumeKmsKeyDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",volumeId=").append(String.valueOf(this.volumeId));
+        sb.append(",updateVolumeKmsKeyDetails=")
+                .append(String.valueOf(this.updateVolumeKmsKeyDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateVolumeKmsKeyRequest)) {
+            return false;
+        }
+
+        UpdateVolumeKmsKeyRequest other = (UpdateVolumeKmsKeyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.volumeId, other.volumeId)
+                && java.util.Objects.equals(
+                        this.updateVolumeKmsKeyDetails, other.updateVolumeKmsKeyDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.volumeId == null ? 43 : this.volumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateVolumeKmsKeyDetails == null
+                                ? 43
+                                : this.updateVolumeKmsKeyDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

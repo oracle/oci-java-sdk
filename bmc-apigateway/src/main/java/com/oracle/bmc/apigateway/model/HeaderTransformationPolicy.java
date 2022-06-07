@@ -16,16 +16,24 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HeaderTransformationPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HeaderTransformationPolicy {
+public final class HeaderTransformationPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"setHeaders", "renameHeaders", "filterHeaders"})
+    public HeaderTransformationPolicy(
+            SetHeaderPolicy setHeaders,
+            RenameHeaderPolicy renameHeaders,
+            FilterHeaderPolicy filterHeaders) {
+        super();
+        this.setHeaders = setHeaders;
+        this.renameHeaders = renameHeaders;
+        this.filterHeaders = filterHeaders;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("setHeaders")
         private SetHeaderPolicy setHeaders;
@@ -83,15 +91,80 @@ public class HeaderTransformationPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("setHeaders")
-    SetHeaderPolicy setHeaders;
+    private final SetHeaderPolicy setHeaders;
+
+    public SetHeaderPolicy getSetHeaders() {
+        return setHeaders;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("renameHeaders")
-    RenameHeaderPolicy renameHeaders;
+    private final RenameHeaderPolicy renameHeaders;
+
+    public RenameHeaderPolicy getRenameHeaders() {
+        return renameHeaders;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("filterHeaders")
-    FilterHeaderPolicy filterHeaders;
+    private final FilterHeaderPolicy filterHeaders;
+
+    public FilterHeaderPolicy getFilterHeaders() {
+        return filterHeaders;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HeaderTransformationPolicy(");
+        sb.append("setHeaders=").append(String.valueOf(this.setHeaders));
+        sb.append(", renameHeaders=").append(String.valueOf(this.renameHeaders));
+        sb.append(", filterHeaders=").append(String.valueOf(this.filterHeaders));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HeaderTransformationPolicy)) {
+            return false;
+        }
+
+        HeaderTransformationPolicy other = (HeaderTransformationPolicy) o;
+        return java.util.Objects.equals(this.setHeaders, other.setHeaders)
+                && java.util.Objects.equals(this.renameHeaders, other.renameHeaders)
+                && java.util.Objects.equals(this.filterHeaders, other.filterHeaders)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.setHeaders == null ? 43 : this.setHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.renameHeaders == null ? 43 : this.renameHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterHeaders == null ? 43 : this.filterHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

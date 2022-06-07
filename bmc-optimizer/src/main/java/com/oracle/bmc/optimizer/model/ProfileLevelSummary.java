@@ -16,16 +16,40 @@ package com.oracle.bmc.optimizer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProfileLevelSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProfileLevelSummary {
+public final class ProfileLevelSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "recommendationName",
+        "metrics",
+        "defaultInterval",
+        "validIntervals",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public ProfileLevelSummary(
+            String name,
+            String recommendationName,
+            java.util.List<EvaluatedMetric> metrics,
+            Integer defaultInterval,
+            java.util.List<Integer> validIntervals,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.name = name;
+        this.recommendationName = recommendationName;
+        this.metrics = metrics;
+        this.defaultInterval = defaultInterval;
+        this.validIntervals = validIntervals;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -130,50 +154,147 @@ public class ProfileLevelSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A unique name for the profile level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The name of the recommendation this profile level applies to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationName")
-    String recommendationName;
+    private final String recommendationName;
+
+    public String getRecommendationName() {
+        return recommendationName;
+    }
 
     /**
      * The metrics that will be evaluated by profiles using this profile level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
-    java.util.List<EvaluatedMetric> metrics;
+    private final java.util.List<EvaluatedMetric> metrics;
+
+    public java.util.List<EvaluatedMetric> getMetrics() {
+        return metrics;
+    }
 
     /**
      * The default aggregation interval (in days) for profiles using this profile level.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInterval")
-    Integer defaultInterval;
+    private final Integer defaultInterval;
+
+    public Integer getDefaultInterval() {
+        return defaultInterval;
+    }
 
     /**
      * An array of aggregation intervals (in days) allowed for profiles using this profile level.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validIntervals")
-    java.util.List<Integer> validIntervals;
+    private final java.util.List<Integer> validIntervals;
+
+    public java.util.List<Integer> getValidIntervals() {
+        return validIntervals;
+    }
 
     /**
      * The date and time the category details were created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the category details were last updated, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProfileLevelSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", recommendationName=").append(String.valueOf(this.recommendationName));
+        sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append(", defaultInterval=").append(String.valueOf(this.defaultInterval));
+        sb.append(", validIntervals=").append(String.valueOf(this.validIntervals));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProfileLevelSummary)) {
+            return false;
+        }
+
+        ProfileLevelSummary other = (ProfileLevelSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.recommendationName, other.recommendationName)
+                && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.defaultInterval, other.defaultInterval)
+                && java.util.Objects.equals(this.validIntervals, other.validIntervals)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendationName == null
+                                ? 43
+                                : this.recommendationName.hashCode());
+        result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultInterval == null ? 43 : this.defaultInterval.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validIntervals == null ? 43 : this.validIntervals.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

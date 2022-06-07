@@ -15,16 +15,28 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateClusterOptionsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateClusterOptionsDetails {
+public final class UpdateClusterOptionsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "admissionControllerOptions",
+        "persistentVolumeConfig",
+        "serviceLbConfig"
+    })
+    public UpdateClusterOptionsDetails(
+            AdmissionControllerOptions admissionControllerOptions,
+            PersistentVolumeConfigDetails persistentVolumeConfig,
+            ServiceLbConfigDetails serviceLbConfig) {
+        super();
+        this.admissionControllerOptions = admissionControllerOptions;
+        this.persistentVolumeConfig = persistentVolumeConfig;
+        this.serviceLbConfig = serviceLbConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
         private AdmissionControllerOptions admissionControllerOptions;
@@ -85,18 +97,92 @@ public class UpdateClusterOptionsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Configurable cluster admission controllers
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
-    AdmissionControllerOptions admissionControllerOptions;
+    private final AdmissionControllerOptions admissionControllerOptions;
+
+    public AdmissionControllerOptions getAdmissionControllerOptions() {
+        return admissionControllerOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("persistentVolumeConfig")
-    PersistentVolumeConfigDetails persistentVolumeConfig;
+    private final PersistentVolumeConfigDetails persistentVolumeConfig;
+
+    public PersistentVolumeConfigDetails getPersistentVolumeConfig() {
+        return persistentVolumeConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLbConfig")
-    ServiceLbConfigDetails serviceLbConfig;
+    private final ServiceLbConfigDetails serviceLbConfig;
+
+    public ServiceLbConfigDetails getServiceLbConfig() {
+        return serviceLbConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateClusterOptionsDetails(");
+        sb.append("admissionControllerOptions=")
+                .append(String.valueOf(this.admissionControllerOptions));
+        sb.append(", persistentVolumeConfig=").append(String.valueOf(this.persistentVolumeConfig));
+        sb.append(", serviceLbConfig=").append(String.valueOf(this.serviceLbConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateClusterOptionsDetails)) {
+            return false;
+        }
+
+        UpdateClusterOptionsDetails other = (UpdateClusterOptionsDetails) o;
+        return java.util.Objects.equals(
+                        this.admissionControllerOptions, other.admissionControllerOptions)
+                && java.util.Objects.equals(
+                        this.persistentVolumeConfig, other.persistentVolumeConfig)
+                && java.util.Objects.equals(this.serviceLbConfig, other.serviceLbConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.admissionControllerOptions == null
+                                ? 43
+                                : this.admissionControllerOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.persistentVolumeConfig == null
+                                ? 43
+                                : this.persistentVolumeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceLbConfig == null ? 43 : this.serviceLbConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,24 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RemoveDataFileDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RemoveDataFileDetails {
+public final class RemoveDataFileDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"credentialDetails", "fileType", "dataFile"})
+    public RemoveDataFileDetails(
+            TablespaceAdminCredentialDetails credentialDetails,
+            FileType fileType,
+            String dataFile) {
+        super();
+        this.credentialDetails = credentialDetails;
+        this.fileType = fileType;
+        this.dataFile = dataFile;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private TablespaceAdminCredentialDetails credentialDetails;
@@ -82,8 +90,17 @@ public class RemoveDataFileDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
-    TablespaceAdminCredentialDetails credentialDetails;
+    private final TablespaceAdminCredentialDetails credentialDetails;
+
+    public TablespaceAdminCredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
+
     /**
      * Specifies whether the file is a data file or temp file.
      *
@@ -125,15 +142,70 @@ public class RemoveDataFileDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileType")
-    FileType fileType;
+    private final FileType fileType;
+
+    public FileType getFileType() {
+        return fileType;
+    }
 
     /**
      * Name of the data file or temp file to be removed from the tablespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataFile")
-    String dataFile;
+    private final String dataFile;
+
+    public String getDataFile() {
+        return dataFile;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RemoveDataFileDetails(");
+        sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", fileType=").append(String.valueOf(this.fileType));
+        sb.append(", dataFile=").append(String.valueOf(this.dataFile));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RemoveDataFileDetails)) {
+            return false;
+        }
+
+        RemoveDataFileDetails other = (RemoveDataFileDetails) o;
+        return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.fileType, other.fileType)
+                && java.util.Objects.equals(this.dataFile, other.dataFile)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result = (result * PRIME) + (this.fileType == null ? 43 : this.fileType.hashCode());
+        result = (result * PRIME) + (this.dataFile == null ? 43 : this.dataFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

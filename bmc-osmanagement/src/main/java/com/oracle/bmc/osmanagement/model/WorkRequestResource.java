@@ -15,16 +15,34 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestResource {
+public final class WorkRequestResource {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "entityType",
+        "actionType",
+        "identifier",
+        "name",
+        "entityUri"
+    })
+    public WorkRequestResource(
+            String entityType,
+            ActionType actionType,
+            String identifier,
+            String name,
+            String entityUri) {
+        super();
+        this.entityType = entityType;
+        this.actionType = actionType;
+        this.identifier = identifier;
+        this.name = name;
+        this.entityUri = entityUri;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
@@ -102,11 +120,20 @@ public class WorkRequestResource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The resource type for the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
+
     /**
      * The way in which this resource is affected by the work tracked in the work request.
      * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
@@ -115,7 +142,6 @@ public class WorkRequestResource {
      * the state will be FAILED.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ActionType {
         Created("CREATED"),
         Updated("UPDATED"),
@@ -130,6 +156,9 @@ public class WorkRequestResource {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ActionType.class);
 
         private final String value;
         private static java.util.Map<String, ActionType> map;
@@ -172,26 +201,93 @@ public class WorkRequestResource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
-    ActionType actionType;
+    private final ActionType actionType;
+
+    public ActionType getActionType() {
+        return actionType;
+    }
 
     /**
      * The identifier of the resource. Not all resources will have an id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * The name of the resource. Not all resources will have a name specified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The URI path that the user can do a GET on to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
-    String entityUri;
+    private final String entityUri;
+
+    public String getEntityUri() {
+        return entityUri;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestResource(");
+        sb.append("entityType=").append(String.valueOf(this.entityType));
+        sb.append(", actionType=").append(String.valueOf(this.actionType));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", entityUri=").append(String.valueOf(this.entityUri));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestResource)) {
+            return false;
+        }
+
+        WorkRequestResource other = (WorkRequestResource) o;
+        return java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.actionType, other.actionType)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.entityUri, other.entityUri)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.entityUri == null ? 43 : this.entityUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

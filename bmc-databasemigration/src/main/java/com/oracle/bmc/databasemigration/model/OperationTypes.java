@@ -9,7 +9,6 @@ package com.oracle.bmc.databasemigration.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.extern.slf4j.Slf4j
 public enum OperationTypes {
     CreateAgent("CREATE_AGENT"),
     DeleteAgent("DELETE_AGENT"),
@@ -28,6 +27,9 @@ public enum OperationTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OperationTypes.class);
 
     private final String value;
     private static java.util.Map<String, OperationTypes> map;

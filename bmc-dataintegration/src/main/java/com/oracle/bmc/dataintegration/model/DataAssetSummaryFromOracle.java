@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DataAssetSummaryFromOracle.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataAssetSummaryFromOracle extends DataAssetSummary {
+public final class DataAssetSummaryFromOracle extends DataAssetSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -289,6 +284,10 @@ public class DataAssetSummaryFromOracle extends DataAssetSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DataAssetSummaryFromOracle(
             String key,
@@ -340,47 +339,158 @@ public class DataAssetSummaryFromOracle extends DataAssetSummary {
      * The Oracle Database hostname.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * The Oracle Database port.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    String port;
+    private final String port;
+
+    public String getPort() {
+        return port;
+    }
 
     /**
      * The Oracle Database service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * The Oracle Database driver class.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
-    String driverClass;
+    private final String driverClass;
+
+    public String getDriverClass() {
+        return driverClass;
+    }
 
     /**
      * The Oracle Database SID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sid")
-    String sid;
+    private final String sid;
+
+    public String getSid() {
+        return sid;
+    }
 
     /**
      * The credential file content from a wallet for the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
-    String credentialFileContent;
+    private final String credentialFileContent;
+
+    public String getCredentialFileContent() {
+        return credentialFileContent;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecret")
-    SensitiveAttribute walletSecret;
+    private final SensitiveAttribute walletSecret;
+
+    public SensitiveAttribute getWalletSecret() {
+        return walletSecret;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecret")
-    SensitiveAttribute walletPasswordSecret;
+    private final SensitiveAttribute walletPasswordSecret;
+
+    public SensitiveAttribute getWalletPasswordSecret() {
+        return walletPasswordSecret;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-    ConnectionSummaryFromOracle defaultConnection;
+    private final ConnectionSummaryFromOracle defaultConnection;
+
+    public ConnectionSummaryFromOracle getDefaultConnection() {
+        return defaultConnection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataAssetSummaryFromOracle(");
+        sb.append("super=").append(super.toString());
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", driverClass=").append(String.valueOf(this.driverClass));
+        sb.append(", sid=").append(String.valueOf(this.sid));
+        sb.append(", credentialFileContent=").append(String.valueOf(this.credentialFileContent));
+        sb.append(", walletSecret=").append(String.valueOf(this.walletSecret));
+        sb.append(", walletPasswordSecret=").append(String.valueOf(this.walletPasswordSecret));
+        sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataAssetSummaryFromOracle)) {
+            return false;
+        }
+
+        DataAssetSummaryFromOracle other = (DataAssetSummaryFromOracle) o;
+        return java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.driverClass, other.driverClass)
+                && java.util.Objects.equals(this.sid, other.sid)
+                && java.util.Objects.equals(this.credentialFileContent, other.credentialFileContent)
+                && java.util.Objects.equals(this.walletSecret, other.walletSecret)
+                && java.util.Objects.equals(this.walletPasswordSecret, other.walletPasswordSecret)
+                && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.driverClass == null ? 43 : this.driverClass.hashCode());
+        result = (result * PRIME) + (this.sid == null ? 43 : this.sid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialFileContent == null
+                                ? 43
+                                : this.credentialFileContent.hashCode());
+        result = (result * PRIME) + (this.walletSecret == null ? 43 : this.walletSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.walletPasswordSecret == null
+                                ? 43
+                                : this.walletPasswordSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

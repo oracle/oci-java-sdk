@@ -24,14 +24,71 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Job.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Job {
+public final class Job {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "stackId",
+        "compartmentId",
+        "displayName",
+        "operation",
+        "jobOperationDetails",
+        "applyJobPlanResolution",
+        "resolvedPlanJobId",
+        "timeCreated",
+        "timeFinished",
+        "lifecycleState",
+        "failureDetails",
+        "cancellationDetails",
+        "workingDirectory",
+        "variables",
+        "configSource",
+        "freeformTags",
+        "definedTags"
+    })
+    public Job(
+            String id,
+            String stackId,
+            String compartmentId,
+            String displayName,
+            Operation operation,
+            JobOperationDetails jobOperationDetails,
+            ApplyJobPlanResolution applyJobPlanResolution,
+            String resolvedPlanJobId,
+            java.util.Date timeCreated,
+            java.util.Date timeFinished,
+            LifecycleState lifecycleState,
+            FailureDetails failureDetails,
+            CancellationDetails cancellationDetails,
+            String workingDirectory,
+            java.util.Map<String, String> variables,
+            ConfigSourceRecord configSource,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.stackId = stackId;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.operation = operation;
+        this.jobOperationDetails = jobOperationDetails;
+        this.applyJobPlanResolution = applyJobPlanResolution;
+        this.resolvedPlanJobId = resolvedPlanJobId;
+        this.timeCreated = timeCreated;
+        this.timeFinished = timeFinished;
+        this.lifecycleState = lifecycleState;
+        this.failureDetails = failureDetails;
+        this.cancellationDetails = cancellationDetails;
+        this.workingDirectory = workingDirectory;
+        this.variables = variables;
+        this.configSource = configSource;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -258,33 +315,53 @@ public class Job {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackId")
-    String stackId;
+    private final String stackId;
+
+    public String getStackId() {
+        return stackId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The job's display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The type of job executing.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Operation {
         Plan("PLAN"),
         Apply("APPLY"),
@@ -296,6 +373,9 @@ public class Job {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Operation.class);
 
         private final String value;
         private static java.util.Map<String, Operation> map;
@@ -333,13 +413,25 @@ public class Job {
      * The type of job executing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    Operation operation;
+    private final Operation operation;
+
+    public Operation getOperation() {
+        return operation;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
-    JobOperationDetails jobOperationDetails;
+    private final JobOperationDetails jobOperationDetails;
+
+    public JobOperationDetails getJobOperationDetails() {
+        return jobOperationDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("applyJobPlanResolution")
-    ApplyJobPlanResolution applyJobPlanResolution;
+    private final ApplyJobPlanResolution applyJobPlanResolution;
+
+    public ApplyJobPlanResolution getApplyJobPlanResolution() {
+        return applyJobPlanResolution;
+    }
 
     /**
      * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
@@ -347,7 +439,11 @@ public class Job {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedPlanJobId")
-    String resolvedPlanJobId;
+    private final String resolvedPlanJobId;
+
+    public String getResolvedPlanJobId() {
+        return resolvedPlanJobId;
+    }
 
     /**
      * The date and time when the job was created.
@@ -356,7 +452,11 @@ public class Job {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time when the job stopped running, irrespective of whether the job ran successfully.
@@ -365,14 +465,18 @@ public class Job {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
     /**
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
      * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -386,6 +490,9 @@ public class Job {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -426,13 +533,25 @@ public class Job {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
-    FailureDetails failureDetails;
+    private final FailureDetails failureDetails;
+
+    public FailureDetails getFailureDetails() {
+        return failureDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cancellationDetails")
-    CancellationDetails cancellationDetails;
+    private final CancellationDetails cancellationDetails;
+
+    public CancellationDetails getCancellationDetails() {
+        return cancellationDetails;
+    }
 
     /**
      * File path to the directory to use for running Terraform.
@@ -444,7 +563,11 @@ public class Job {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
-    String workingDirectory;
+    private final String workingDirectory;
+
+    public String getWorkingDirectory() {
+        return workingDirectory;
+    }
 
     /**
      * Terraform variables associated with this resource.
@@ -454,10 +577,18 @@ public class Job {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
-    java.util.Map<String, String> variables;
+    private final java.util.Map<String, String> variables;
+
+    public java.util.Map<String, String> getVariables() {
+        return variables;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configSource")
-    ConfigSourceRecord configSource;
+    private final ConfigSourceRecord configSource;
+
+    public ConfigSourceRecord getConfigSource() {
+        return configSource;
+    }
 
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
@@ -466,7 +597,11 @@ public class Job {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -475,8 +610,125 @@ public class Job {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Job(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", stackId=").append(String.valueOf(this.stackId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append(", jobOperationDetails=").append(String.valueOf(this.jobOperationDetails));
+        sb.append(", applyJobPlanResolution=").append(String.valueOf(this.applyJobPlanResolution));
+        sb.append(", resolvedPlanJobId=").append(String.valueOf(this.resolvedPlanJobId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", failureDetails=").append(String.valueOf(this.failureDetails));
+        sb.append(", cancellationDetails=").append(String.valueOf(this.cancellationDetails));
+        sb.append(", workingDirectory=").append(String.valueOf(this.workingDirectory));
+        sb.append(", variables=").append(String.valueOf(this.variables));
+        sb.append(", configSource=").append(String.valueOf(this.configSource));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Job)) {
+            return false;
+        }
+
+        Job other = (Job) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.stackId, other.stackId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.jobOperationDetails, other.jobOperationDetails)
+                && java.util.Objects.equals(
+                        this.applyJobPlanResolution, other.applyJobPlanResolution)
+                && java.util.Objects.equals(this.resolvedPlanJobId, other.resolvedPlanJobId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.failureDetails, other.failureDetails)
+                && java.util.Objects.equals(this.cancellationDetails, other.cancellationDetails)
+                && java.util.Objects.equals(this.workingDirectory, other.workingDirectory)
+                && java.util.Objects.equals(this.variables, other.variables)
+                && java.util.Objects.equals(this.configSource, other.configSource)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.stackId == null ? 43 : this.stackId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobOperationDetails == null
+                                ? 43
+                                : this.jobOperationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applyJobPlanResolution == null
+                                ? 43
+                                : this.applyJobPlanResolution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resolvedPlanJobId == null ? 43 : this.resolvedPlanJobId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureDetails == null ? 43 : this.failureDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cancellationDetails == null
+                                ? 43
+                                : this.cancellationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workingDirectory == null ? 43 : this.workingDirectory.hashCode());
+        result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
+        result = (result * PRIME) + (this.configSource == null ? 43 : this.configSource.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

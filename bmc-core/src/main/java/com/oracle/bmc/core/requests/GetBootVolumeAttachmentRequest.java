@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetBootVolumeAttachmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetBootVolumeAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,12 +17,27 @@ public class GetBootVolumeAttachmentRequest
      */
     private String bootVolumeAttachmentId;
 
+    public String getBootVolumeAttachmentId() {
+        return bootVolumeAttachmentId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetBootVolumeAttachmentRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bootVolumeAttachmentId = null;
+
+        /**
+         * The OCID of the boot volume attachment.
+         * @return this builder instance
+         */
+        public Builder bootVolumeAttachmentId(String bootVolumeAttachmentId) {
+            this.bootVolumeAttachmentId = bootVolumeAttachmentId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -82,5 +89,68 @@ public class GetBootVolumeAttachmentRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetBootVolumeAttachmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetBootVolumeAttachmentRequest
+         */
+        public GetBootVolumeAttachmentRequest buildWithoutInvocationCallback() {
+            GetBootVolumeAttachmentRequest request = new GetBootVolumeAttachmentRequest();
+            request.bootVolumeAttachmentId = bootVolumeAttachmentId;
+            return request;
+            // new GetBootVolumeAttachmentRequest(bootVolumeAttachmentId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().bootVolumeAttachmentId(bootVolumeAttachmentId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bootVolumeAttachmentId=").append(String.valueOf(this.bootVolumeAttachmentId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetBootVolumeAttachmentRequest)) {
+            return false;
+        }
+
+        GetBootVolumeAttachmentRequest other = (GetBootVolumeAttachmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.bootVolumeAttachmentId, other.bootVolumeAttachmentId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.bootVolumeAttachmentId == null
+                                ? 43
+                                : this.bootVolumeAttachmentId.hashCode());
+        return result;
     }
 }

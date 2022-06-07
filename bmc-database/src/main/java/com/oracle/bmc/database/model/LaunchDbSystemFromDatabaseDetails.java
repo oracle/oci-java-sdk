@@ -16,22 +16,17 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LaunchDbSystemFromDatabaseDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "source"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
+public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -391,6 +386,10 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public LaunchDbSystemFromDatabaseDetails(
             String compartmentId,
@@ -457,7 +456,12 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
-    CreateDbHomeFromDatabaseDetails dbHome;
+    private final CreateDbHomeFromDatabaseDetails dbHome;
+
+    public CreateDbHomeFromDatabaseDetails getDbHome() {
+        return dbHome;
+    }
+
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system.
      * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -503,7 +507,12 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-    DatabaseEdition databaseEdition;
+    private final DatabaseEdition databaseEdition;
+
+    public DatabaseEdition getDatabaseEdition() {
+        return databaseEdition;
+    }
+
     /**
      * The type of redundancy configured for the DB system.
      * NORMAL 2-way redundancy, recommended for test and development systems.
@@ -549,7 +558,12 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
-    DiskRedundancy diskRedundancy;
+    private final DiskRedundancy diskRedundancy;
+
+    public DiskRedundancy getDiskRedundancy() {
+        return diskRedundancy;
+    }
+
     /**
      * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      *
@@ -591,8 +605,66 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LaunchDbSystemFromDatabaseDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", dbHome=").append(String.valueOf(this.dbHome));
+        sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append(", diskRedundancy=").append(String.valueOf(this.diskRedundancy));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LaunchDbSystemFromDatabaseDetails)) {
+            return false;
+        }
+
+        LaunchDbSystemFromDatabaseDetails other = (LaunchDbSystemFromDatabaseDetails) o;
+        return java.util.Objects.equals(this.dbHome, other.dbHome)
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(this.diskRedundancy, other.diskRedundancy)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dbHome == null ? 43 : this.dbHome.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diskRedundancy == null ? 43 : this.diskRedundancy.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

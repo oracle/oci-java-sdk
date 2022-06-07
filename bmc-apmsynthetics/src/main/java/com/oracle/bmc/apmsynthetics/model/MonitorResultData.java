@@ -15,16 +15,23 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonitorResultData.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonitorResultData {
+public final class MonitorResultData {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "byteContent", "stringContent", "timestamp"})
+    public MonitorResultData(
+            String name, byte[] byteContent, String stringContent, java.util.Date timestamp) {
+        super();
+        this.name = name;
+        this.byteContent = byteContent;
+        this.stringContent = stringContent;
+        this.timestamp = timestamp;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -92,11 +99,19 @@ public class MonitorResultData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Data content in byte format.
@@ -104,7 +119,11 @@ public class MonitorResultData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("byteContent")
-    byte[] byteContent;
+    private final byte[] byteContent;
+
+    public byte[] getByteContent() {
+        return byteContent;
+    }
 
     /**
      * Data content in string format.
@@ -112,7 +131,11 @@ public class MonitorResultData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stringContent")
-    String stringContent;
+    private final String stringContent;
+
+    public String getStringContent() {
+        return stringContent;
+    }
 
     /**
      * The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -121,8 +144,62 @@ public class MonitorResultData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitorResultData(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", byteContent=").append(String.valueOf(this.byteContent));
+        sb.append(", stringContent=").append(String.valueOf(this.stringContent));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitorResultData)) {
+            return false;
+        }
+
+        MonitorResultData other = (MonitorResultData) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.byteContent, other.byteContent)
+                && java.util.Objects.equals(this.stringContent, other.stringContent)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.byteContent == null ? 43 : this.byteContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stringContent == null ? 43 : this.stringContent.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

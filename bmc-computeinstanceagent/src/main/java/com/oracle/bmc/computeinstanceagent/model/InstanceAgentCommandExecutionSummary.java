@@ -15,16 +15,46 @@ package com.oracle.bmc.computeinstanceagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceAgentCommandExecutionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceAgentCommandExecutionSummary {
+public final class InstanceAgentCommandExecutionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "instanceAgentCommandId",
+        "instanceId",
+        "deliveryState",
+        "lifecycleState",
+        "timeCreated",
+        "timeUpdated",
+        "sequenceNumber",
+        "displayName",
+        "content"
+    })
+    public InstanceAgentCommandExecutionSummary(
+            String instanceAgentCommandId,
+            String instanceId,
+            DeliveryState deliveryState,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            Long sequenceNumber,
+            String displayName,
+            InstanceAgentCommandExecutionOutputContent content) {
+        super();
+        this.instanceAgentCommandId = instanceAgentCommandId;
+        this.instanceId = instanceId;
+        this.deliveryState = deliveryState;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.sequenceNumber = sequenceNumber;
+        this.displayName = displayName;
+        this.content = content;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
         private String instanceAgentCommandId;
@@ -151,17 +181,30 @@ public class InstanceAgentCommandExecutionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
-    String instanceAgentCommandId;
+    private final String instanceAgentCommandId;
+
+    public String getInstanceAgentCommandId() {
+        return instanceAgentCommandId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
+
     /**
      * The command delivery state.
      *  * {@code VISIBLE} - The command is visible to the instance.
@@ -171,7 +214,6 @@ public class InstanceAgentCommandExecutionSummary {
      *  * {@code EXPIRED} - The instance has not requested for commands and the command's delivery has expired.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DeliveryState {
         Visible("VISIBLE"),
         Pending("PENDING"),
@@ -184,6 +226,9 @@ public class InstanceAgentCommandExecutionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DeliveryState.class);
 
         private final String value;
         private static java.util.Map<String, DeliveryState> map;
@@ -227,7 +272,12 @@ public class InstanceAgentCommandExecutionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deliveryState")
-    DeliveryState deliveryState;
+    private final DeliveryState deliveryState;
+
+    public DeliveryState getDeliveryState() {
+        return deliveryState;
+    }
+
     /**
      * The command execution lifecycle state.
      * * {@code ACCEPTED} - The command has been accepted to run.
@@ -238,7 +288,6 @@ public class InstanceAgentCommandExecutionSummary {
      * * {@code CANCELED} - The command execution was canceled.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -252,6 +301,9 @@ public class InstanceAgentCommandExecutionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -296,7 +348,11 @@ public class InstanceAgentCommandExecutionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the command was created, in the format defined by
@@ -304,7 +360,11 @@ public class InstanceAgentCommandExecutionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the command was last updated, in the format defined by
@@ -312,26 +372,115 @@ public class InstanceAgentCommandExecutionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * A large, non-consecutive number that Oracle Cloud Agent assigns to each created command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sequenceNumber")
-    Long sequenceNumber;
+    private final Long sequenceNumber;
+
+    public Long getSequenceNumber() {
+        return sequenceNumber;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The execution output from a command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    InstanceAgentCommandExecutionOutputContent content;
+    private final InstanceAgentCommandExecutionOutputContent content;
+
+    public InstanceAgentCommandExecutionOutputContent getContent() {
+        return content;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceAgentCommandExecutionSummary(");
+        sb.append("instanceAgentCommandId=").append(String.valueOf(this.instanceAgentCommandId));
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", deliveryState=").append(String.valueOf(this.deliveryState));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", sequenceNumber=").append(String.valueOf(this.sequenceNumber));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", content=").append(String.valueOf(this.content));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceAgentCommandExecutionSummary)) {
+            return false;
+        }
+
+        InstanceAgentCommandExecutionSummary other = (InstanceAgentCommandExecutionSummary) o;
+        return java.util.Objects.equals(this.instanceAgentCommandId, other.instanceAgentCommandId)
+                && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.deliveryState, other.deliveryState)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.sequenceNumber, other.sequenceNumber)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.content, other.content)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.instanceAgentCommandId == null
+                                ? 43
+                                : this.instanceAgentCommandId.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deliveryState == null ? 43 : this.deliveryState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sequenceNumber == null ? 43 : this.sequenceNumber.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

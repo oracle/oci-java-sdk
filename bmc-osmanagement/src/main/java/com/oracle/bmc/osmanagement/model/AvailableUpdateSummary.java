@@ -15,16 +15,49 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AvailableUpdateSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AvailableUpdateSummary {
+public final class AvailableUpdateSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "name",
+        "updateType",
+        "type",
+        "installedVersion",
+        "availableVersion",
+        "architecture",
+        "errata",
+        "relatedCves",
+        "softwareSources"
+    })
+    public AvailableUpdateSummary(
+            String displayName,
+            String name,
+            UpdateTypes updateType,
+            String type,
+            String installedVersion,
+            String availableVersion,
+            String architecture,
+            java.util.List<Id> errata,
+            java.util.List<String> relatedCves,
+            java.util.List<SoftwareSourceId> softwareSources) {
+        super();
+        this.displayName = displayName;
+        this.name = name;
+        this.updateType = updateType;
+        this.type = type;
+        this.installedVersion = installedVersion;
+        this.availableVersion = availableVersion;
+        this.architecture = architecture;
+        this.errata = errata;
+        this.relatedCves = relatedCves;
+        this.softwareSources = softwareSources;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -162,66 +195,182 @@ public class AvailableUpdateSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Package name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Unique identifier for the package available for update. NOTE - This is not an OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The purpose of this update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
-    UpdateTypes updateType;
+    private final UpdateTypes updateType;
+
+    public UpdateTypes getUpdateType() {
+        return updateType;
+    }
 
     /**
      * Type of the package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Version of the installed package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
-    String installedVersion;
+    private final String installedVersion;
+
+    public String getInstalledVersion() {
+        return installedVersion;
+    }
 
     /**
      * Version of the package available for update
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableVersion")
-    String availableVersion;
+    private final String availableVersion;
+
+    public String getAvailableVersion() {
+        return availableVersion;
+    }
 
     /**
      * The architecture for which this package was built
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-    String architecture;
+    private final String architecture;
+
+    public String getArchitecture() {
+        return architecture;
+    }
 
     /**
      * List of errata containing this update
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errata")
-    java.util.List<Id> errata;
+    private final java.util.List<Id> errata;
+
+    public java.util.List<Id> getErrata() {
+        return errata;
+    }
 
     /**
      * List of CVEs applicable to this erratum
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
-    java.util.List<String> relatedCves;
+    private final java.util.List<String> relatedCves;
+
+    public java.util.List<String> getRelatedCves() {
+        return relatedCves;
+    }
 
     /**
      * list of software sources that provide the software package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
-    java.util.List<SoftwareSourceId> softwareSources;
+    private final java.util.List<SoftwareSourceId> softwareSources;
+
+    public java.util.List<SoftwareSourceId> getSoftwareSources() {
+        return softwareSources;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AvailableUpdateSummary(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", updateType=").append(String.valueOf(this.updateType));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", installedVersion=").append(String.valueOf(this.installedVersion));
+        sb.append(", availableVersion=").append(String.valueOf(this.availableVersion));
+        sb.append(", architecture=").append(String.valueOf(this.architecture));
+        sb.append(", errata=").append(String.valueOf(this.errata));
+        sb.append(", relatedCves=").append(String.valueOf(this.relatedCves));
+        sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AvailableUpdateSummary)) {
+            return false;
+        }
+
+        AvailableUpdateSummary other = (AvailableUpdateSummary) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.updateType, other.updateType)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.installedVersion, other.installedVersion)
+                && java.util.Objects.equals(this.availableVersion, other.availableVersion)
+                && java.util.Objects.equals(this.architecture, other.architecture)
+                && java.util.Objects.equals(this.errata, other.errata)
+                && java.util.Objects.equals(this.relatedCves, other.relatedCves)
+                && java.util.Objects.equals(this.softwareSources, other.softwareSources)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.updateType == null ? 43 : this.updateType.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.installedVersion == null ? 43 : this.installedVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableVersion == null ? 43 : this.availableVersion.hashCode());
+        result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
+        result = (result * PRIME) + (this.errata == null ? 43 : this.errata.hashCode());
+        result = (result * PRIME) + (this.relatedCves == null ? 43 : this.relatedCves.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,37 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConnectionDetails {
+public final class ConnectionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "protocol",
+        "port",
+        "connectorId",
+        "serviceName",
+        "dbUniqueName",
+        "dbId"
+    })
+    public ConnectionDetails(
+            Protocol protocol,
+            Integer port,
+            String connectorId,
+            String serviceName,
+            String dbUniqueName,
+            String dbId) {
+        super();
+        this.protocol = protocol;
+        this.port = port;
+        this.connectorId = connectorId;
+        this.serviceName = serviceName;
+        this.dbUniqueName = dbUniqueName;
+        this.dbId = dbId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
@@ -113,10 +134,13 @@ public class ConnectionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Protocol used in DB connection string when connecting to external database service.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Protocol {
         Tcp("TCP"),
         Tcps("TCPS"),
@@ -126,6 +150,9 @@ public class ConnectionDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Protocol.class);
 
         private final String value;
         private static java.util.Map<String, Protocol> map;
@@ -163,38 +190,116 @@ public class ConnectionDetails {
      * Protocol used in DB connection string when connecting to external database service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    Protocol protocol;
+    private final Protocol protocol;
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
 
     /**
      * Listener Port number used for connection requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * Database connector Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
-    String connectorId;
+    private final String connectorId;
+
+    public String getConnectorId() {
+        return connectorId;
+    }
 
     /**
      * Service name used for connection requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * UniqueName used for database connection requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    private final String dbUniqueName;
+
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
 
     /**
      * dbId of the database
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
-    String dbId;
+    private final String dbId;
+
+    public String getDbId() {
+        return dbId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConnectionDetails(");
+        sb.append("protocol=").append(String.valueOf(this.protocol));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", connectorId=").append(String.valueOf(this.connectorId));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", dbId=").append(String.valueOf(this.dbId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConnectionDetails)) {
+            return false;
+        }
+
+        ConnectionDetails other = (ConnectionDetails) o;
+        return java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.connectorId, other.connectorId)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(this.dbId, other.dbId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.connectorId == null ? 43 : this.connectorId.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result = (result * PRIME) + (this.dbId == null ? 43 : this.dbId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

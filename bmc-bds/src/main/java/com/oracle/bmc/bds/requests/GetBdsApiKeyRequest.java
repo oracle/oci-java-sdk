@@ -9,14 +9,6 @@ import com.oracle.bmc.bds.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetBdsApiKeyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetBdsApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,15 +16,25 @@ public class GetBdsApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String bdsInstanceId;
 
+    public String getBdsInstanceId() {
+        return bdsInstanceId;
+    }
     /**
      * The API key identifier.
      */
     private String apiKeyId;
 
+    public String getApiKeyId() {
+        return apiKeyId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -40,6 +42,39 @@ public class GetBdsApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bdsInstanceId = null;
+
+        /**
+         * The OCID of the cluster.
+         * @return this builder instance
+         */
+        public Builder bdsInstanceId(String bdsInstanceId) {
+            this.bdsInstanceId = bdsInstanceId;
+            return this;
+        }
+
+        private String apiKeyId = null;
+
+        /**
+         * The API key identifier.
+         * @return this builder instance
+         */
+        public Builder apiKeyId(String apiKeyId) {
+            this.apiKeyId = apiKeyId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -93,5 +128,76 @@ public class GetBdsApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetBdsApiKeyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetBdsApiKeyRequest
+         */
+        public GetBdsApiKeyRequest buildWithoutInvocationCallback() {
+            GetBdsApiKeyRequest request = new GetBdsApiKeyRequest();
+            request.bdsInstanceId = bdsInstanceId;
+            request.apiKeyId = apiKeyId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetBdsApiKeyRequest(bdsInstanceId, apiKeyId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .bdsInstanceId(bdsInstanceId)
+                .apiKeyId(apiKeyId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bdsInstanceId=").append(String.valueOf(this.bdsInstanceId));
+        sb.append(",apiKeyId=").append(String.valueOf(this.apiKeyId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetBdsApiKeyRequest)) {
+            return false;
+        }
+
+        GetBdsApiKeyRequest other = (GetBdsApiKeyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.bdsInstanceId, other.bdsInstanceId)
+                && java.util.Objects.equals(this.apiKeyId, other.apiKeyId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.bdsInstanceId == null ? 43 : this.bdsInstanceId.hashCode());
+        result = (result * PRIME) + (this.apiKeyId == null ? 43 : this.apiKeyId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

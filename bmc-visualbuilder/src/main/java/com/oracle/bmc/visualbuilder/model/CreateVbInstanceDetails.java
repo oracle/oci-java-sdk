@@ -15,16 +15,49 @@ package com.oracle.bmc.visualbuilder.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVbInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateVbInstanceDetails {
+public final class CreateVbInstanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "freeformTags",
+        "definedTags",
+        "idcsOpenId",
+        "nodeCount",
+        "isVisualBuilderEnabled",
+        "customEndpoint",
+        "alternateCustomEndpoints",
+        "consumptionModel"
+    })
+    public CreateVbInstanceDetails(
+            String displayName,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String idcsOpenId,
+            Integer nodeCount,
+            Boolean isVisualBuilderEnabled,
+            CreateCustomEndpointDetails customEndpoint,
+            java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints,
+            ConsumptionModel consumptionModel) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.idcsOpenId = idcsOpenId;
+        this.nodeCount = nodeCount;
+        this.isVisualBuilderEnabled = isVisualBuilderEnabled;
+        this.customEndpoint = customEndpoint;
+        this.alternateCustomEndpoints = alternateCustomEndpoints;
+        this.consumptionModel = consumptionModel;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -164,17 +197,29 @@ public class CreateVbInstanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Vb Instance Identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Compartment Identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name,
@@ -183,7 +228,11 @@ public class CreateVbInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to
@@ -192,28 +241,48 @@ public class CreateVbInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsOpenId")
-    String idcsOpenId;
+    private final String idcsOpenId;
+
+    public String getIdcsOpenId() {
+        return idcsOpenId;
+    }
 
     /**
      * The number of Nodes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
-    Integer nodeCount;
+    private final Integer nodeCount;
+
+    public Integer getNodeCount() {
+        return nodeCount;
+    }
 
     /**
      * Visual Builder is enabled or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
-    Boolean isVisualBuilderEnabled;
+    private final Boolean isVisualBuilderEnabled;
+
+    public Boolean getIsVisualBuilderEnabled() {
+        return isVisualBuilderEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customEndpoint")
-    CreateCustomEndpointDetails customEndpoint;
+    private final CreateCustomEndpointDetails customEndpoint;
+
+    public CreateCustomEndpointDetails getCustomEndpoint() {
+        return customEndpoint;
+    }
 
     /**
      * A list of alternate custom endpoints to be used for the vb instance URL
@@ -221,7 +290,12 @@ public class CreateVbInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
-    java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints;
+    private final java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints;
+
+    public java.util.List<CreateCustomEndpointDetails> getAlternateCustomEndpoints() {
+        return alternateCustomEndpoints;
+    }
+
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      **/
@@ -262,8 +336,95 @@ public class CreateVbInstanceDetails {
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
-    ConsumptionModel consumptionModel;
+    private final ConsumptionModel consumptionModel;
+
+    public ConsumptionModel getConsumptionModel() {
+        return consumptionModel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateVbInstanceDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", idcsOpenId=").append(String.valueOf(this.idcsOpenId));
+        sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
+        sb.append(", isVisualBuilderEnabled=").append(String.valueOf(this.isVisualBuilderEnabled));
+        sb.append(", customEndpoint=").append(String.valueOf(this.customEndpoint));
+        sb.append(", alternateCustomEndpoints=")
+                .append(String.valueOf(this.alternateCustomEndpoints));
+        sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateVbInstanceDetails)) {
+            return false;
+        }
+
+        CreateVbInstanceDetails other = (CreateVbInstanceDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.idcsOpenId, other.idcsOpenId)
+                && java.util.Objects.equals(this.nodeCount, other.nodeCount)
+                && java.util.Objects.equals(
+                        this.isVisualBuilderEnabled, other.isVisualBuilderEnabled)
+                && java.util.Objects.equals(this.customEndpoint, other.customEndpoint)
+                && java.util.Objects.equals(
+                        this.alternateCustomEndpoints, other.alternateCustomEndpoints)
+                && java.util.Objects.equals(this.consumptionModel, other.consumptionModel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.idcsOpenId == null ? 43 : this.idcsOpenId.hashCode());
+        result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isVisualBuilderEnabled == null
+                                ? 43
+                                : this.isVisualBuilderEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customEndpoint == null ? 43 : this.customEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.alternateCustomEndpoints == null
+                                ? 43
+                                : this.alternateCustomEndpoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumptionModel == null ? 43 : this.consumptionModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

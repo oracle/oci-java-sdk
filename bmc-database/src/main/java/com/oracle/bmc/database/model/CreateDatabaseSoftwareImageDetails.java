@@ -18,16 +18,52 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDatabaseSoftwareImageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDatabaseSoftwareImageDetails {
+public final class CreateDatabaseSoftwareImageDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "databaseVersion",
+        "displayName",
+        "imageShapeFamily",
+        "imageType",
+        "patchSet",
+        "databaseSoftwareImageOneOffPatches",
+        "lsInventory",
+        "freeformTags",
+        "definedTags",
+        "sourceDbHomeId"
+    })
+    public CreateDatabaseSoftwareImageDetails(
+            String compartmentId,
+            String databaseVersion,
+            String displayName,
+            ImageShapeFamily imageShapeFamily,
+            ImageType imageType,
+            String patchSet,
+            java.util.List<String> databaseSoftwareImageOneOffPatches,
+            String lsInventory,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String sourceDbHomeId) {
+        super();
+        this.compartmentId = compartmentId;
+        this.databaseVersion = databaseVersion;
+        this.displayName = displayName;
+        this.imageShapeFamily = imageShapeFamily;
+        this.imageType = imageType;
+        this.patchSet = patchSet;
+        this.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
+        this.lsInventory = lsInventory;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.sourceDbHomeId = sourceDbHomeId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -179,23 +215,40 @@ public class CreateDatabaseSoftwareImageDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The database version with which the database software image is to be built.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
-    String databaseVersion;
+    private final String databaseVersion;
+
+    public String getDatabaseVersion() {
+        return databaseVersion;
+    }
 
     /**
      * The user-friendly name for the database software image. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * To what shape the image is meant for.
      **/
@@ -236,7 +289,12 @@ public class CreateDatabaseSoftwareImageDetails {
      * To what shape the image is meant for.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageShapeFamily")
-    ImageShapeFamily imageShapeFamily;
+    private final ImageShapeFamily imageShapeFamily;
+
+    public ImageShapeFamily getImageShapeFamily() {
+        return imageShapeFamily;
+    }
+
     /**
      * The type of software image. Can be grid or database.
      **/
@@ -276,25 +334,41 @@ public class CreateDatabaseSoftwareImageDetails {
      * The type of software image. Can be grid or database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageType")
-    ImageType imageType;
+    private final ImageType imageType;
+
+    public ImageType getImageType() {
+        return imageType;
+    }
 
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchSet")
-    String patchSet;
+    private final String patchSet;
+
+    public String getPatchSet() {
+        return patchSet;
+    }
 
     /**
      * List of one-off patches for Database Homes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageOneOffPatches")
-    java.util.List<String> databaseSoftwareImageOneOffPatches;
+    private final java.util.List<String> databaseSoftwareImageOneOffPatches;
+
+    public java.util.List<String> getDatabaseSoftwareImageOneOffPatches() {
+        return databaseSoftwareImageOneOffPatches;
+    }
 
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lsInventory")
-    String lsInventory;
+    private final String lsInventory;
+
+    public String getLsInventory() {
+        return lsInventory;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -304,7 +378,11 @@ public class CreateDatabaseSoftwareImageDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -312,14 +390,106 @@ public class CreateDatabaseSoftwareImageDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbHomeId")
-    String sourceDbHomeId;
+    private final String sourceDbHomeId;
+
+    public String getSourceDbHomeId() {
+        return sourceDbHomeId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDatabaseSoftwareImageDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", imageShapeFamily=").append(String.valueOf(this.imageShapeFamily));
+        sb.append(", imageType=").append(String.valueOf(this.imageType));
+        sb.append(", patchSet=").append(String.valueOf(this.patchSet));
+        sb.append(", databaseSoftwareImageOneOffPatches=")
+                .append(String.valueOf(this.databaseSoftwareImageOneOffPatches));
+        sb.append(", lsInventory=").append(String.valueOf(this.lsInventory));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", sourceDbHomeId=").append(String.valueOf(this.sourceDbHomeId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDatabaseSoftwareImageDetails)) {
+            return false;
+        }
+
+        CreateDatabaseSoftwareImageDetails other = (CreateDatabaseSoftwareImageDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.imageShapeFamily, other.imageShapeFamily)
+                && java.util.Objects.equals(this.imageType, other.imageType)
+                && java.util.Objects.equals(this.patchSet, other.patchSet)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageOneOffPatches,
+                        other.databaseSoftwareImageOneOffPatches)
+                && java.util.Objects.equals(this.lsInventory, other.lsInventory)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.sourceDbHomeId, other.sourceDbHomeId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.imageShapeFamily == null ? 43 : this.imageShapeFamily.hashCode());
+        result = (result * PRIME) + (this.imageType == null ? 43 : this.imageType.hashCode());
+        result = (result * PRIME) + (this.patchSet == null ? 43 : this.patchSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageOneOffPatches == null
+                                ? 43
+                                : this.databaseSoftwareImageOneOffPatches.hashCode());
+        result = (result * PRIME) + (this.lsInventory == null ? 43 : this.lsInventory.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDbHomeId == null ? 43 : this.sourceDbHomeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

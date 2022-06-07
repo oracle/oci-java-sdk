@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDrgCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeDrgCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeDrgCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.ChangeDrgCompartmentDetails> {
@@ -26,11 +18,17 @@ public class ChangeDrgCompartmentRequest
      */
     private String drgId;
 
+    public String getDrgId() {
+        return drgId;
+    }
     /**
      * Request to change the compartment of a DRG.
      */
     private com.oracle.bmc.core.model.ChangeDrgCompartmentDetails changeDrgCompartmentDetails;
 
+    public com.oracle.bmc.core.model.ChangeDrgCompartmentDetails getChangeDrgCompartmentDetails() {
+        return changeDrgCompartmentDetails;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -38,6 +36,9 @@ public class ChangeDrgCompartmentRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -47,6 +48,10 @@ public class ChangeDrgCompartmentRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +70,59 @@ public class ChangeDrgCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String drgId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         * @return this builder instance
+         */
+        public Builder drgId(String drgId) {
+            this.drgId = drgId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.ChangeDrgCompartmentDetails changeDrgCompartmentDetails =
+                null;
+
+        /**
+         * Request to change the compartment of a DRG.
+         * @return this builder instance
+         */
+        public Builder changeDrgCompartmentDetails(
+                com.oracle.bmc.core.model.ChangeDrgCompartmentDetails changeDrgCompartmentDetails) {
+            this.changeDrgCompartmentDetails = changeDrgCompartmentDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +188,87 @@ public class ChangeDrgCompartmentRequest
             changeDrgCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeDrgCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeDrgCompartmentRequest
+         */
+        public ChangeDrgCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeDrgCompartmentRequest request = new ChangeDrgCompartmentRequest();
+            request.drgId = drgId;
+            request.changeDrgCompartmentDetails = changeDrgCompartmentDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new ChangeDrgCompartmentRequest(drgId, changeDrgCompartmentDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .drgId(drgId)
+                .changeDrgCompartmentDetails(changeDrgCompartmentDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",drgId=").append(String.valueOf(this.drgId));
+        sb.append(",changeDrgCompartmentDetails=")
+                .append(String.valueOf(this.changeDrgCompartmentDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeDrgCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeDrgCompartmentRequest other = (ChangeDrgCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.drgId, other.drgId)
+                && java.util.Objects.equals(
+                        this.changeDrgCompartmentDetails, other.changeDrgCompartmentDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.drgId == null ? 43 : this.drgId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeDrgCompartmentDetails == null
+                                ? 43
+                                : this.changeDrgCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

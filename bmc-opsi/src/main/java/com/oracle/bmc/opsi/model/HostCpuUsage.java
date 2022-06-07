@@ -16,20 +16,15 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostCpuUsage.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HostCpuUsage extends HostPerformanceMetricGroup {
+public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -167,6 +162,10 @@ public class HostCpuUsage extends HostPerformanceMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HostCpuUsage(
             java.util.Date timeCollected,
@@ -195,56 +194,180 @@ public class HostCpuUsage extends HostPerformanceMetricGroup {
      * Percentage of CPU time spent in user mode
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUserModeInPercent")
-    Float cpuUserModeInPercent;
+    private final Float cpuUserModeInPercent;
+
+    public Float getCpuUserModeInPercent() {
+        return cpuUserModeInPercent;
+    }
 
     /**
      * Percentage of CPU time spent in system mode
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuSystemModeInPercent")
-    Float cpuSystemModeInPercent;
+    private final Float cpuSystemModeInPercent;
+
+    public Float getCpuSystemModeInPercent() {
+        return cpuSystemModeInPercent;
+    }
 
     /**
      * Amount of CPU Time spent in seconds
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsageInSec")
-    Double cpuUsageInSec;
+    private final Double cpuUsageInSec;
+
+    public Double getCpuUsageInSec() {
+        return cpuUsageInSec;
+    }
 
     /**
      * Amount of CPU Time spent in percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationInPercent")
-    Float cpuUtilizationInPercent;
+    private final Float cpuUtilizationInPercent;
+
+    public Float getCpuUtilizationInPercent() {
+        return cpuUtilizationInPercent;
+    }
 
     /**
      * Amount of CPU time stolen in percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuStolenInPercent")
-    Float cpuStolenInPercent;
+    private final Float cpuStolenInPercent;
+
+    public Float getCpuStolenInPercent() {
+        return cpuStolenInPercent;
+    }
 
     /**
      * Amount of CPU idle time in percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuIdleInPercent")
-    Float cpuIdleInPercent;
+    private final Float cpuIdleInPercent;
+
+    public Float getCpuIdleInPercent() {
+        return cpuIdleInPercent;
+    }
 
     /**
      * Load average in the last 1 minute
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad1min")
-    Float cpuLoad1min;
+    private final Float cpuLoad1min;
+
+    public Float getCpuLoad1min() {
+        return cpuLoad1min;
+    }
 
     /**
      * Load average in the last 5 minutes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad5min")
-    Float cpuLoad5min;
+    private final Float cpuLoad5min;
+
+    public Float getCpuLoad5min() {
+        return cpuLoad5min;
+    }
 
     /**
      * Load average in the last 15 minutes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad15min")
-    Float cpuLoad15min;
+    private final Float cpuLoad15min;
+
+    public Float getCpuLoad15min() {
+        return cpuLoad15min;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostCpuUsage(");
+        sb.append("super=").append(super.toString());
+        sb.append(", cpuUserModeInPercent=").append(String.valueOf(this.cpuUserModeInPercent));
+        sb.append(", cpuSystemModeInPercent=").append(String.valueOf(this.cpuSystemModeInPercent));
+        sb.append(", cpuUsageInSec=").append(String.valueOf(this.cpuUsageInSec));
+        sb.append(", cpuUtilizationInPercent=")
+                .append(String.valueOf(this.cpuUtilizationInPercent));
+        sb.append(", cpuStolenInPercent=").append(String.valueOf(this.cpuStolenInPercent));
+        sb.append(", cpuIdleInPercent=").append(String.valueOf(this.cpuIdleInPercent));
+        sb.append(", cpuLoad1min=").append(String.valueOf(this.cpuLoad1min));
+        sb.append(", cpuLoad5min=").append(String.valueOf(this.cpuLoad5min));
+        sb.append(", cpuLoad15min=").append(String.valueOf(this.cpuLoad15min));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostCpuUsage)) {
+            return false;
+        }
+
+        HostCpuUsage other = (HostCpuUsage) o;
+        return java.util.Objects.equals(this.cpuUserModeInPercent, other.cpuUserModeInPercent)
+                && java.util.Objects.equals(
+                        this.cpuSystemModeInPercent, other.cpuSystemModeInPercent)
+                && java.util.Objects.equals(this.cpuUsageInSec, other.cpuUsageInSec)
+                && java.util.Objects.equals(
+                        this.cpuUtilizationInPercent, other.cpuUtilizationInPercent)
+                && java.util.Objects.equals(this.cpuStolenInPercent, other.cpuStolenInPercent)
+                && java.util.Objects.equals(this.cpuIdleInPercent, other.cpuIdleInPercent)
+                && java.util.Objects.equals(this.cpuLoad1min, other.cpuLoad1min)
+                && java.util.Objects.equals(this.cpuLoad5min, other.cpuLoad5min)
+                && java.util.Objects.equals(this.cpuLoad15min, other.cpuLoad15min)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.cpuUserModeInPercent == null
+                                ? 43
+                                : this.cpuUserModeInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuSystemModeInPercent == null
+                                ? 43
+                                : this.cpuSystemModeInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuUsageInSec == null ? 43 : this.cpuUsageInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuUtilizationInPercent == null
+                                ? 43
+                                : this.cpuUtilizationInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuStolenInPercent == null
+                                ? 43
+                                : this.cpuStolenInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuIdleInPercent == null ? 43 : this.cpuIdleInPercent.hashCode());
+        result = (result * PRIME) + (this.cpuLoad1min == null ? 43 : this.cpuLoad1min.hashCode());
+        result = (result * PRIME) + (this.cpuLoad5min == null ? 43 : this.cpuLoad5min.hashCode());
+        result = (result * PRIME) + (this.cpuLoad15min == null ? 43 : this.cpuLoad15min.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

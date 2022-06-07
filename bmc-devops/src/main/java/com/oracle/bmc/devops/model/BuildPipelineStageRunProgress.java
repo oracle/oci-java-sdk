@@ -15,12 +15,6 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -47,34 +41,74 @@ package com.oracle.bmc.devops.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BuildPipelineStageRunProgress {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "stageDisplayName",
+        "buildPipelineStageId",
+        "timeStarted",
+        "timeFinished",
+        "status",
+        "buildPipelineStagePredecessors"
+    })
+    protected BuildPipelineStageRunProgress(
+            String stageDisplayName,
+            String buildPipelineStageId,
+            java.util.Date timeStarted,
+            java.util.Date timeFinished,
+            Status status,
+            BuildPipelineStagePredecessorCollection buildPipelineStagePredecessors) {
+        super();
+        this.stageDisplayName = stageDisplayName;
+        this.buildPipelineStageId = buildPipelineStageId;
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
+        this.status = status;
+        this.buildPipelineStagePredecessors = buildPipelineStagePredecessors;
+    }
 
     /**
      * Build Run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stageDisplayName")
-    String stageDisplayName;
+    private final String stageDisplayName;
+
+    public String getStageDisplayName() {
+        return stageDisplayName;
+    }
 
     /**
      * The stage OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineStageId")
-    String buildPipelineStageId;
+    private final String buildPipelineStageId;
+
+    public String getBuildPipelineStageId() {
+        return buildPipelineStageId;
+    }
 
     /**
      * The time the stage started executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The time the stage finished executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
     /**
      * The current status of the stage.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -88,6 +122,8 @@ public class BuildPipelineStageRunProgress {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -125,8 +161,73 @@ public class BuildPipelineStageRunProgress {
      * The current status of the stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineStagePredecessors")
-    BuildPipelineStagePredecessorCollection buildPipelineStagePredecessors;
+    private final BuildPipelineStagePredecessorCollection buildPipelineStagePredecessors;
+
+    public BuildPipelineStagePredecessorCollection getBuildPipelineStagePredecessors() {
+        return buildPipelineStagePredecessors;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BuildPipelineStageRunProgress(");
+        sb.append("stageDisplayName=").append(String.valueOf(this.stageDisplayName));
+        sb.append(", buildPipelineStageId=").append(String.valueOf(this.buildPipelineStageId));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", buildPipelineStagePredecessors=")
+                .append(String.valueOf(this.buildPipelineStagePredecessors));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BuildPipelineStageRunProgress)) {
+            return false;
+        }
+
+        BuildPipelineStageRunProgress other = (BuildPipelineStageRunProgress) o;
+        return java.util.Objects.equals(this.stageDisplayName, other.stageDisplayName)
+                && java.util.Objects.equals(this.buildPipelineStageId, other.buildPipelineStageId)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(
+                        this.buildPipelineStagePredecessors, other.buildPipelineStagePredecessors);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.stageDisplayName == null ? 43 : this.stageDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.buildPipelineStageId == null
+                                ? 43
+                                : this.buildPipelineStageId.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.buildPipelineStagePredecessors == null
+                                ? 43
+                                : this.buildPipelineStagePredecessors.hashCode());
+        return result;
+    }
 }

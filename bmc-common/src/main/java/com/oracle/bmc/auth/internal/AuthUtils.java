@@ -215,7 +215,7 @@ public class AuthUtils {
         }
     }
 
-    private static byte[] getEncodedCertificateFromPem(String pemEncodedCertificate) {
+    static byte[] getEncodedCertificateFromPem(String pemEncodedCertificate) {
         // strip out header and footer
         return Base64.decodeBase64(
                 pemEncodedCertificate

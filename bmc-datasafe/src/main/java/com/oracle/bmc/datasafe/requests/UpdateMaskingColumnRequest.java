@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateMaskingColumnExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMaskingColumnRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateMaskingColumnRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateMaskingColumnDetails> {
@@ -26,16 +18,26 @@ public class UpdateMaskingColumnRequest
      */
     private String maskingColumnKey;
 
+    public String getMaskingColumnKey() {
+        return maskingColumnKey;
+    }
     /**
      * The OCID of the masking policy.
      */
     private String maskingPolicyId;
 
+    public String getMaskingPolicyId() {
+        return maskingPolicyId;
+    }
     /**
      * Details to update a masking column.
      */
     private com.oracle.bmc.datasafe.model.UpdateMaskingColumnDetails updateMaskingColumnDetails;
 
+    public com.oracle.bmc.datasafe.model.UpdateMaskingColumnDetails
+            getUpdateMaskingColumnDetails() {
+        return updateMaskingColumnDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the if-match parameter to the value of the
@@ -46,10 +48,17 @@ public class UpdateMaskingColumnRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -68,6 +77,69 @@ public class UpdateMaskingColumnRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String maskingColumnKey = null;
+
+        /**
+         * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
+         * @return this builder instance
+         */
+        public Builder maskingColumnKey(String maskingColumnKey) {
+            this.maskingColumnKey = maskingColumnKey;
+            return this;
+        }
+
+        private String maskingPolicyId = null;
+
+        /**
+         * The OCID of the masking policy.
+         * @return this builder instance
+         */
+        public Builder maskingPolicyId(String maskingPolicyId) {
+            this.maskingPolicyId = maskingPolicyId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.UpdateMaskingColumnDetails
+                updateMaskingColumnDetails = null;
+
+        /**
+         * Details to update a masking column.
+         * @return this builder instance
+         */
+        public Builder updateMaskingColumnDetails(
+                com.oracle.bmc.datasafe.model.UpdateMaskingColumnDetails
+                        updateMaskingColumnDetails) {
+            this.updateMaskingColumnDetails = updateMaskingColumnDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -134,5 +206,94 @@ public class UpdateMaskingColumnRequest
             updateMaskingColumnDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateMaskingColumnRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateMaskingColumnRequest
+         */
+        public UpdateMaskingColumnRequest buildWithoutInvocationCallback() {
+            UpdateMaskingColumnRequest request = new UpdateMaskingColumnRequest();
+            request.maskingColumnKey = maskingColumnKey;
+            request.maskingPolicyId = maskingPolicyId;
+            request.updateMaskingColumnDetails = updateMaskingColumnDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateMaskingColumnRequest(maskingColumnKey, maskingPolicyId, updateMaskingColumnDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .maskingColumnKey(maskingColumnKey)
+                .maskingPolicyId(maskingPolicyId)
+                .updateMaskingColumnDetails(updateMaskingColumnDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",maskingColumnKey=").append(String.valueOf(this.maskingColumnKey));
+        sb.append(",maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
+        sb.append(",updateMaskingColumnDetails=")
+                .append(String.valueOf(this.updateMaskingColumnDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateMaskingColumnRequest)) {
+            return false;
+        }
+
+        UpdateMaskingColumnRequest other = (UpdateMaskingColumnRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.maskingColumnKey, other.maskingColumnKey)
+                && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
+                && java.util.Objects.equals(
+                        this.updateMaskingColumnDetails, other.updateMaskingColumnDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.maskingColumnKey == null ? 43 : this.maskingColumnKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingPolicyId == null ? 43 : this.maskingPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateMaskingColumnDetails == null
+                                ? 43
+                                : this.updateMaskingColumnDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

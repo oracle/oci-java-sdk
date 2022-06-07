@@ -17,16 +17,21 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SetHeaderPolicyItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SetHeaderPolicyItem {
+public final class SetHeaderPolicyItem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "values", "ifExists"})
+    public SetHeaderPolicyItem(String name, java.util.List<String> values, IfExists ifExists) {
+        super();
+        this.name = name;
+        this.values = values;
+        this.ifExists = ifExists;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -81,12 +86,20 @@ public class SetHeaderPolicyItem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The case-insensitive name of the header.  This name must be unique across transformation policies.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within
@@ -94,13 +107,17 @@ public class SetHeaderPolicyItem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
-    java.util.List<String> values;
+    private final java.util.List<String> values;
+
+    public java.util.List<String> getValues() {
+        return values;
+    }
+
     /**
      * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
      * APPEND will append to the existing value, or SKIP will keep the existing value.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum IfExists {
         Overwrite("OVERWRITE"),
         Append("APPEND"),
@@ -111,6 +128,9 @@ public class SetHeaderPolicyItem {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IfExists.class);
 
         private final String value;
         private static java.util.Map<String, IfExists> map;
@@ -150,8 +170,57 @@ public class SetHeaderPolicyItem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ifExists")
-    IfExists ifExists;
+    private final IfExists ifExists;
+
+    public IfExists getIfExists() {
+        return ifExists;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SetHeaderPolicyItem(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", values=").append(String.valueOf(this.values));
+        sb.append(", ifExists=").append(String.valueOf(this.ifExists));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SetHeaderPolicyItem)) {
+            return false;
+        }
+
+        SetHeaderPolicyItem other = (SetHeaderPolicyItem) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.values, other.values)
+                && java.util.Objects.equals(this.ifExists, other.ifExists)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
+        result = (result * PRIME) + (this.ifExists == null ? 43 : this.ifExists.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

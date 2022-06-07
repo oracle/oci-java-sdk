@@ -16,14 +16,35 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AdvisorReport.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AdvisorReport {
+public final class AdvisorReport {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "reportLocationDetails",
+        "result",
+        "numberOfFatal",
+        "numberOfFatalBlockers",
+        "numberOfWarnings",
+        "numberOfInformationalResults"
+    })
+    public AdvisorReport(
+            AdvisorReportLocationDetails reportLocationDetails,
+            AdvisorResults result,
+            Integer numberOfFatal,
+            Integer numberOfFatalBlockers,
+            Integer numberOfWarnings,
+            Integer numberOfInformationalResults) {
+        super();
+        this.reportLocationDetails = reportLocationDetails;
+        this.result = result;
+        this.numberOfFatal = numberOfFatal;
+        this.numberOfFatalBlockers = numberOfFatalBlockers;
+        this.numberOfWarnings = numberOfWarnings;
+        this.numberOfInformationalResults = numberOfInformationalResults;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("reportLocationDetails")
         private AdvisorReportLocationDetails reportLocationDetails;
@@ -117,44 +138,144 @@ public class AdvisorReport {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("reportLocationDetails")
-    AdvisorReportLocationDetails reportLocationDetails;
+    private final AdvisorReportLocationDetails reportLocationDetails;
+
+    public AdvisorReportLocationDetails getReportLocationDetails() {
+        return reportLocationDetails;
+    }
 
     /**
      * Pre-Migration advisor result.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("result")
-    AdvisorResults result;
+    private final AdvisorResults result;
+
+    public AdvisorResults getResult() {
+        return result;
+    }
 
     /**
      * Number of Fatal results in the advisor report.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfFatal")
-    Integer numberOfFatal;
+    private final Integer numberOfFatal;
+
+    public Integer getNumberOfFatal() {
+        return numberOfFatal;
+    }
 
     /**
      * Number of Fatal Blocker results in the advisor report.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfFatalBlockers")
-    Integer numberOfFatalBlockers;
+    private final Integer numberOfFatalBlockers;
+
+    public Integer getNumberOfFatalBlockers() {
+        return numberOfFatalBlockers;
+    }
 
     /**
      * Number of Warning results in the advisor report.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfWarnings")
-    Integer numberOfWarnings;
+    private final Integer numberOfWarnings;
+
+    public Integer getNumberOfWarnings() {
+        return numberOfWarnings;
+    }
 
     /**
      * Number of Informational results in the advisor report.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfInformationalResults")
-    Integer numberOfInformationalResults;
+    private final Integer numberOfInformationalResults;
+
+    public Integer getNumberOfInformationalResults() {
+        return numberOfInformationalResults;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AdvisorReport(");
+        sb.append("reportLocationDetails=").append(String.valueOf(this.reportLocationDetails));
+        sb.append(", result=").append(String.valueOf(this.result));
+        sb.append(", numberOfFatal=").append(String.valueOf(this.numberOfFatal));
+        sb.append(", numberOfFatalBlockers=").append(String.valueOf(this.numberOfFatalBlockers));
+        sb.append(", numberOfWarnings=").append(String.valueOf(this.numberOfWarnings));
+        sb.append(", numberOfInformationalResults=")
+                .append(String.valueOf(this.numberOfInformationalResults));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AdvisorReport)) {
+            return false;
+        }
+
+        AdvisorReport other = (AdvisorReport) o;
+        return java.util.Objects.equals(this.reportLocationDetails, other.reportLocationDetails)
+                && java.util.Objects.equals(this.result, other.result)
+                && java.util.Objects.equals(this.numberOfFatal, other.numberOfFatal)
+                && java.util.Objects.equals(this.numberOfFatalBlockers, other.numberOfFatalBlockers)
+                && java.util.Objects.equals(this.numberOfWarnings, other.numberOfWarnings)
+                && java.util.Objects.equals(
+                        this.numberOfInformationalResults, other.numberOfInformationalResults)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.reportLocationDetails == null
+                                ? 43
+                                : this.reportLocationDetails.hashCode());
+        result = (result * PRIME) + (this.result == null ? 43 : this.result.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfFatal == null ? 43 : this.numberOfFatal.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfFatalBlockers == null
+                                ? 43
+                                : this.numberOfFatalBlockers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfWarnings == null ? 43 : this.numberOfWarnings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfInformationalResults == null
+                                ? 43
+                                : this.numberOfInformationalResults.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,11 +15,19 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
@@ -33,16 +37,28 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
      */
     private String opcWorkRequestId;
 
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /**
      * Location of the resource.
      *
      */
     private String location;
 
+    public String getLocation() {
+        return location;
+    }
+
     /**
      * The returned InstancePoolInstance instance.
      */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
+
+    public com.oracle.bmc.core.model.InstancePoolInstance getInstancePoolInstance() {
+        return instancePoolInstance;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -75,6 +91,42 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String location;
+
+        public Builder location(String location) {
+            this.location = location;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
+
+        public Builder instancePoolInstance(
+                com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance) {
+            this.instancePoolInstance = instancePoolInstance;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -99,5 +151,59 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
                     location,
                     instancePoolInstance);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",location=").append(String.valueOf(location));
+        sb.append(",instancePoolInstance=").append(String.valueOf(instancePoolInstance));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AttachInstancePoolInstanceResponse)) {
+            return false;
+        }
+
+        AttachInstancePoolInstanceResponse other = (AttachInstancePoolInstanceResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.instancePoolInstance, other.instancePoolInstance);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instancePoolInstance == null
+                                ? 43
+                                : this.instancePoolInstance.hashCode());
+        return result;
     }
 }

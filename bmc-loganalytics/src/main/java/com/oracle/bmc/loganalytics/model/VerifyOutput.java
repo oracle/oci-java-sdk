@@ -15,14 +15,35 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VerifyOutput.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VerifyOutput {
+public final class VerifyOutput {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "scheduledTaskId",
+        "responseTimeInMs",
+        "totalMatchedCount",
+        "totalCount",
+        "columns",
+        "results"
+    })
+    public VerifyOutput(
+            String scheduledTaskId,
+            Long responseTimeInMs,
+            Long totalMatchedCount,
+            Integer totalCount,
+            java.util.List<ResultColumn> columns,
+            java.util.List<java.util.Map<String, Object>> results) {
+        super();
+        this.scheduledTaskId = scheduledTaskId;
+        this.responseTimeInMs = responseTimeInMs;
+        this.totalMatchedCount = totalMatchedCount;
+        this.totalCount = totalCount;
+        this.columns = columns;
+        this.results = results;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledTaskId")
         private String scheduledTaskId;
@@ -116,42 +137,130 @@ public class VerifyOutput {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Acceleration task identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledTaskId")
-    String scheduledTaskId;
+    private final String scheduledTaskId;
+
+    public String getScheduledTaskId() {
+        return scheduledTaskId;
+    }
 
     /**
      * Response time in ms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
-    Long responseTimeInMs;
+    private final Long responseTimeInMs;
+
+    public Long getResponseTimeInMs() {
+        return responseTimeInMs;
+    }
 
     /**
      * Total match count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
-    Long totalMatchedCount;
+    private final Long totalMatchedCount;
+
+    public Long getTotalMatchedCount() {
+        return totalMatchedCount;
+    }
 
     /**
      * Total count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
-    Integer totalCount;
+    private final Integer totalCount;
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
 
     /**
      * Acceleration result columns, included if requested (shouldIncludeResults).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
-    java.util.List<ResultColumn> columns;
+    private final java.util.List<ResultColumn> columns;
+
+    public java.util.List<ResultColumn> getColumns() {
+        return columns;
+    }
 
     /**
      * Acceleration result values, included if requested (shouldIncludeResults).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("results")
-    java.util.List<java.util.Map<String, Object>> results;
+    private final java.util.List<java.util.Map<String, Object>> results;
+
+    public java.util.List<java.util.Map<String, Object>> getResults() {
+        return results;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VerifyOutput(");
+        sb.append("scheduledTaskId=").append(String.valueOf(this.scheduledTaskId));
+        sb.append(", responseTimeInMs=").append(String.valueOf(this.responseTimeInMs));
+        sb.append(", totalMatchedCount=").append(String.valueOf(this.totalMatchedCount));
+        sb.append(", totalCount=").append(String.valueOf(this.totalCount));
+        sb.append(", columns=").append(String.valueOf(this.columns));
+        sb.append(", results=").append(String.valueOf(this.results));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VerifyOutput)) {
+            return false;
+        }
+
+        VerifyOutput other = (VerifyOutput) o;
+        return java.util.Objects.equals(this.scheduledTaskId, other.scheduledTaskId)
+                && java.util.Objects.equals(this.responseTimeInMs, other.responseTimeInMs)
+                && java.util.Objects.equals(this.totalMatchedCount, other.totalMatchedCount)
+                && java.util.Objects.equals(this.totalCount, other.totalCount)
+                && java.util.Objects.equals(this.columns, other.columns)
+                && java.util.Objects.equals(this.results, other.results)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.scheduledTaskId == null ? 43 : this.scheduledTaskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responseTimeInMs == null ? 43 : this.responseTimeInMs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMatchedCount == null ? 43 : this.totalMatchedCount.hashCode());
+        result = (result * PRIME) + (this.totalCount == null ? 43 : this.totalCount.hashCode());
+        result = (result * PRIME) + (this.columns == null ? 43 : this.columns.hashCode());
+        result = (result * PRIME) + (this.results == null ? 43 : this.results.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

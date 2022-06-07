@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteTargetResponderRecipeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteTargetResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,17 @@ public class DeleteTargetResponderRecipeRequest
      */
     private String targetId;
 
+    public String getTargetId() {
+        return targetId;
+    }
     /**
      * OCID of TargetResponderRecipe
      */
     private String targetResponderRecipeId;
 
+    public String getTargetResponderRecipeId() {
+        return targetResponderRecipeId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -40,10 +38,17 @@ public class DeleteTargetResponderRecipeRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -51,6 +56,55 @@ public class DeleteTargetResponderRecipeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String targetId = null;
+
+        /**
+         * OCID of target
+         * @return this builder instance
+         */
+        public Builder targetId(String targetId) {
+            this.targetId = targetId;
+            return this;
+        }
+
+        private String targetResponderRecipeId = null;
+
+        /**
+         * OCID of TargetResponderRecipe
+         * @return this builder instance
+         */
+        public Builder targetResponderRecipeId(String targetResponderRecipeId) {
+            this.targetResponderRecipeId = targetResponderRecipeId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -105,5 +159,84 @@ public class DeleteTargetResponderRecipeRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteTargetResponderRecipeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteTargetResponderRecipeRequest
+         */
+        public DeleteTargetResponderRecipeRequest buildWithoutInvocationCallback() {
+            DeleteTargetResponderRecipeRequest request = new DeleteTargetResponderRecipeRequest();
+            request.targetId = targetId;
+            request.targetResponderRecipeId = targetResponderRecipeId;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new DeleteTargetResponderRecipeRequest(targetId, targetResponderRecipeId, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .targetId(targetId)
+                .targetResponderRecipeId(targetResponderRecipeId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetResponderRecipeId=").append(String.valueOf(this.targetResponderRecipeId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteTargetResponderRecipeRequest)) {
+            return false;
+        }
+
+        DeleteTargetResponderRecipeRequest other = (DeleteTargetResponderRecipeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(
+                        this.targetResponderRecipeId, other.targetResponderRecipeId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResponderRecipeId == null
+                                ? 43
+                                : this.targetResponderRecipeId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

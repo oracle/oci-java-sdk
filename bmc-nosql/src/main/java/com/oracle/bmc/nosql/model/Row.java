@@ -15,14 +15,22 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Row.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Row {
+public final class Row {
+    @Deprecated
+    @java.beans.ConstructorProperties({"value", "timeOfExpiration", "usage"})
+    public Row(
+            java.util.Map<String, Object> value,
+            java.util.Date timeOfExpiration,
+            RequestUsage usage) {
+        super();
+        this.value = value;
+        this.timeOfExpiration = timeOfExpiration;
+        this.usage = usage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private java.util.Map<String, Object> value;
@@ -79,11 +87,19 @@ public class Row {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The map of values from a row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    java.util.Map<String, Object> value;
+    private final java.util.Map<String, Object> value;
+
+    public java.util.Map<String, Object> getValue() {
+        return value;
+    }
 
     /**
      * The expiration time of the row. A zero value indicates that
@@ -92,11 +108,66 @@ public class Row {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
-    java.util.Date timeOfExpiration;
+    private final java.util.Date timeOfExpiration;
+
+    public java.util.Date getTimeOfExpiration() {
+        return timeOfExpiration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
-    RequestUsage usage;
+    private final RequestUsage usage;
+
+    public RequestUsage getUsage() {
+        return usage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Row(");
+        sb.append("value=").append(String.valueOf(this.value));
+        sb.append(", timeOfExpiration=").append(String.valueOf(this.timeOfExpiration));
+        sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Row)) {
+            return false;
+        }
+
+        Row other = (Row) o;
+        return java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.timeOfExpiration, other.timeOfExpiration)
+                && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfExpiration == null ? 43 : this.timeOfExpiration.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

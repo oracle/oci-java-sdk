@@ -26,9 +26,12 @@ import com.oracle.bmc.dts.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.RequiredArgsConstructor
 public class TransferJobPaginators {
     private final TransferJob client;
+
+    public TransferJobPaginators(TransferJob client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listTransferJobs operation. This iterable

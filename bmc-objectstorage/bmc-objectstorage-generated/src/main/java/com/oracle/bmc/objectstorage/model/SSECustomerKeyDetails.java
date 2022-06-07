@@ -16,16 +16,21 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SSECustomerKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SSECustomerKeyDetails {
+public final class SSECustomerKeyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"algorithm", "key", "keySha256"})
+    public SSECustomerKeyDetails(Algorithm algorithm, String key, String keySha256) {
+        super();
+        this.algorithm = algorithm;
+        this.key = key;
+        this.keySha256 = keySha256;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
@@ -81,6 +86,10 @@ public class SSECustomerKeyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Specifies the encryption algorithm. The only supported value is "AES256".
      *
@@ -121,14 +130,22 @@ public class SSECustomerKeyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
-    Algorithm algorithm;
+    private final Algorithm algorithm;
+
+    public Algorithm getAlgorithm() {
+        return algorithm;
+    }
 
     /**
      * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object data.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity
@@ -136,8 +153,57 @@ public class SSECustomerKeyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keySha256")
-    String keySha256;
+    private final String keySha256;
+
+    public String getKeySha256() {
+        return keySha256;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SSECustomerKeyDetails(");
+        sb.append("algorithm=").append(String.valueOf(this.algorithm));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", keySha256=").append(String.valueOf(this.keySha256));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SSECustomerKeyDetails)) {
+            return false;
+        }
+
+        SSECustomerKeyDetails other = (SSECustomerKeyDetails) o;
+        return java.util.Objects.equals(this.algorithm, other.algorithm)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.keySha256, other.keySha256)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.algorithm == null ? 43 : this.algorithm.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.keySha256 == null ? 43 : this.keySha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

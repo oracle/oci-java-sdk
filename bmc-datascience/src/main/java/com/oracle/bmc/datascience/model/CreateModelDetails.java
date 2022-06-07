@@ -15,16 +15,49 @@ package com.oracle.bmc.datascience.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateModelDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateModelDetails {
+public final class CreateModelDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "projectId",
+        "displayName",
+        "description",
+        "freeformTags",
+        "definedTags",
+        "customMetadataList",
+        "definedMetadataList",
+        "inputSchema",
+        "outputSchema"
+    })
+    public CreateModelDetails(
+            String compartmentId,
+            String projectId,
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<Metadata> customMetadataList,
+            java.util.List<Metadata> definedMetadataList,
+            String inputSchema,
+            String outputSchema) {
+        super();
+        this.compartmentId = compartmentId;
+        this.projectId = projectId;
+        this.displayName = displayName;
+        this.description = description;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.customMetadataList = customMetadataList;
+        this.definedMetadataList = definedMetadataList;
+        this.inputSchema = inputSchema;
+        this.outputSchema = outputSchema;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -163,17 +196,29 @@ public class CreateModelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
-    String projectId;
+    private final String projectId;
+
+    public String getProjectId() {
+        return projectId;
+    }
 
     /**
      * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
@@ -181,13 +226,21 @@ public class CreateModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A short description of the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -195,7 +248,11 @@ public class CreateModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -203,32 +260,128 @@ public class CreateModelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * An array of custom metadata details for the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
-    java.util.List<Metadata> customMetadataList;
+    private final java.util.List<Metadata> customMetadataList;
+
+    public java.util.List<Metadata> getCustomMetadataList() {
+        return customMetadataList;
+    }
 
     /**
      * An array of defined metadata details for the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
-    java.util.List<Metadata> definedMetadataList;
+    private final java.util.List<Metadata> definedMetadataList;
+
+    public java.util.List<Metadata> getDefinedMetadataList() {
+        return definedMetadataList;
+    }
 
     /**
      * Input schema file content in String format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputSchema")
-    String inputSchema;
+    private final String inputSchema;
+
+    public String getInputSchema() {
+        return inputSchema;
+    }
 
     /**
      * Output schema file content in String format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputSchema")
-    String outputSchema;
+    private final String outputSchema;
+
+    public String getOutputSchema() {
+        return outputSchema;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateModelDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", projectId=").append(String.valueOf(this.projectId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", customMetadataList=").append(String.valueOf(this.customMetadataList));
+        sb.append(", definedMetadataList=").append(String.valueOf(this.definedMetadataList));
+        sb.append(", inputSchema=").append(String.valueOf(this.inputSchema));
+        sb.append(", outputSchema=").append(String.valueOf(this.outputSchema));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateModelDetails)) {
+            return false;
+        }
+
+        CreateModelDetails other = (CreateModelDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.projectId, other.projectId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.customMetadataList, other.customMetadataList)
+                && java.util.Objects.equals(this.definedMetadataList, other.definedMetadataList)
+                && java.util.Objects.equals(this.inputSchema, other.inputSchema)
+                && java.util.Objects.equals(this.outputSchema, other.outputSchema)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customMetadataList == null
+                                ? 43
+                                : this.customMetadataList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedMetadataList == null
+                                ? 43
+                                : this.definedMetadataList.hashCode());
+        result = (result * PRIME) + (this.inputSchema == null ? 43 : this.inputSchema.hashCode());
+        result = (result * PRIME) + (this.outputSchema == null ? 43 : this.outputSchema.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

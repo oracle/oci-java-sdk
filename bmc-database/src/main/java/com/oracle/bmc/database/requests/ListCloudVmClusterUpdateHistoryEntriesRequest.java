@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCloudVmClusterUpdateHistoryEntriesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListCloudVmClusterUpdateHistoryEntriesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class ListCloudVmClusterUpdateHistoryEntriesRequest
      */
     private String cloudVmClusterId;
 
+    public String getCloudVmClusterId() {
+        return cloudVmClusterId;
+    }
     /**
      * A filter to return only resources that match the given update type exactly.
      */
@@ -66,21 +61,35 @@ public class ListCloudVmClusterUpdateHistoryEntriesRequest
             throw new IllegalArgumentException("Invalid UpdateType: " + key);
         }
     };
+
+    public UpdateType getUpdateType() {
+        return updateType;
+    }
     /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The pagination token to continue listing from.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Unique identifier for the request.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -88,6 +97,62 @@ public class ListCloudVmClusterUpdateHistoryEntriesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String cloudVmClusterId = null;
+
+        /**
+         * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder cloudVmClusterId(String cloudVmClusterId) {
+            this.cloudVmClusterId = cloudVmClusterId;
+            return this;
+        }
+
+        private UpdateType updateType = null;
+
+        /**
+         * A filter to return only resources that match the given update type exactly.
+         * @return this builder instance
+         */
+        public Builder updateType(UpdateType updateType) {
+            this.updateType = updateType;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return per page.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The pagination token to continue listing from.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -144,5 +209,88 @@ public class ListCloudVmClusterUpdateHistoryEntriesRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListCloudVmClusterUpdateHistoryEntriesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListCloudVmClusterUpdateHistoryEntriesRequest
+         */
+        public ListCloudVmClusterUpdateHistoryEntriesRequest buildWithoutInvocationCallback() {
+            ListCloudVmClusterUpdateHistoryEntriesRequest request =
+                    new ListCloudVmClusterUpdateHistoryEntriesRequest();
+            request.cloudVmClusterId = cloudVmClusterId;
+            request.updateType = updateType;
+            request.limit = limit;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListCloudVmClusterUpdateHistoryEntriesRequest(cloudVmClusterId, updateType, limit, page, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .cloudVmClusterId(cloudVmClusterId)
+                .updateType(updateType)
+                .limit(limit)
+                .page(page)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",cloudVmClusterId=").append(String.valueOf(this.cloudVmClusterId));
+        sb.append(",updateType=").append(String.valueOf(this.updateType));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListCloudVmClusterUpdateHistoryEntriesRequest)) {
+            return false;
+        }
+
+        ListCloudVmClusterUpdateHistoryEntriesRequest other =
+                (ListCloudVmClusterUpdateHistoryEntriesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.cloudVmClusterId, other.cloudVmClusterId)
+                && java.util.Objects.equals(this.updateType, other.updateType)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.cloudVmClusterId == null ? 43 : this.cloudVmClusterId.hashCode());
+        result = (result * PRIME) + (this.updateType == null ? 43 : this.updateType.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

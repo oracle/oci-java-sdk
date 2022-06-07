@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GenericDeliveredArtifact.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "artifactType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GenericDeliveredArtifact extends DeliveredArtifact {
+public final class GenericDeliveredArtifact extends DeliveredArtifact {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
         private String deployArtifactId;
@@ -124,6 +119,10 @@ public class GenericDeliveredArtifact extends DeliveredArtifact {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public GenericDeliveredArtifact(
             String deployArtifactId,
@@ -143,26 +142,100 @@ public class GenericDeliveredArtifact extends DeliveredArtifact {
      * The OCID of the artifact registry repository used by the DeliverArtifactStage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactRepositoryId")
-    String artifactRepositoryId;
+    private final String artifactRepositoryId;
+
+    public String getArtifactRepositoryId() {
+        return artifactRepositoryId;
+    }
 
     /**
      * The OCID of the artifact pushed by the Deliver Artifacts stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deliveredArtifactId")
-    String deliveredArtifactId;
+    private final String deliveredArtifactId;
+
+    public String getDeliveredArtifactId() {
+        return deliveredArtifactId;
+    }
 
     /**
      * Path of the repository where artifact was pushed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * Version of the artifact pushed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GenericDeliveredArtifact(");
+        sb.append("super=").append(super.toString());
+        sb.append(", artifactRepositoryId=").append(String.valueOf(this.artifactRepositoryId));
+        sb.append(", deliveredArtifactId=").append(String.valueOf(this.deliveredArtifactId));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenericDeliveredArtifact)) {
+            return false;
+        }
+
+        GenericDeliveredArtifact other = (GenericDeliveredArtifact) o;
+        return java.util.Objects.equals(this.artifactRepositoryId, other.artifactRepositoryId)
+                && java.util.Objects.equals(this.deliveredArtifactId, other.deliveredArtifactId)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.artifactRepositoryId == null
+                                ? 43
+                                : this.artifactRepositoryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deliveredArtifactId == null
+                                ? 43
+                                : this.deliveredArtifactId.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

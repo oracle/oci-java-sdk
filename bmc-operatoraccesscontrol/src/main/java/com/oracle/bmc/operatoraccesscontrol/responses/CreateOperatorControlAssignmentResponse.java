@@ -7,10 +7,6 @@ package com.oracle.bmc.operatoraccesscontrol.responses;
 import com.oracle.bmc.operatoraccesscontrol.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
@@ -18,11 +14,19 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      */
     private String opcWorkRequestId;
+
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -31,11 +35,20 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned OperatorControlAssignment instance.
      */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
             operatorControlAssignment;
+
+    public com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
+            getOperatorControlAssignment() {
+        return operatorControlAssignment;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -66,6 +79,37 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
+                operatorControlAssignment;
+
+        public Builder operatorControlAssignment(
+                com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
+                        operatorControlAssignment) {
+            this.operatorControlAssignment = operatorControlAssignment;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -88,5 +132,57 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
                     opcRequestId,
                     operatorControlAssignment);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",operatorControlAssignment=").append(String.valueOf(operatorControlAssignment));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOperatorControlAssignmentResponse)) {
+            return false;
+        }
+
+        CreateOperatorControlAssignmentResponse other = (CreateOperatorControlAssignmentResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.operatorControlAssignment, other.operatorControlAssignment);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatorControlAssignment == null
+                                ? 43
+                                : this.operatorControlAssignment.hashCode());
+        return result;
     }
 }

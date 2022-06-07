@@ -8,7 +8,6 @@ package com.oracle.bmc.aianomalydetection.model;
  * Possible data sources
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.extern.slf4j.Slf4j
 public enum DataSourceType {
     OracleObjectStorage("ORACLE_OBJECT_STORAGE"),
     OracleAtp("ORACLE_ATP"),
@@ -19,6 +18,9 @@ public enum DataSourceType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataSourceType.class);
 
     private final String value;
     private static java.util.Map<String, DataSourceType> map;

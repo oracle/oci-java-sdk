@@ -7,16 +7,16 @@ package com.oracle.bmc.loganalytics.responses;
 import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListQueryWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -26,6 +26,10 @@ public class ListQueryWorkRequestsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
@@ -34,10 +38,19 @@ public class ListQueryWorkRequestsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcPrevPage;
 
+    public String getOpcPrevPage() {
+        return opcPrevPage;
+    }
+
     /**
      * The returned QueryWorkRequestCollection instance.
      */
     private com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection queryWorkRequestCollection;
+
+    public com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection
+            getQueryWorkRequestCollection() {
+        return queryWorkRequestCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -68,6 +81,37 @@ public class ListQueryWorkRequestsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcPrevPage;
+
+        public Builder opcPrevPage(String opcPrevPage) {
+            this.opcPrevPage = opcPrevPage;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection
+                queryWorkRequestCollection;
+
+        public Builder queryWorkRequestCollection(
+                com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection
+                        queryWorkRequestCollection) {
+            this.queryWorkRequestCollection = queryWorkRequestCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -90,5 +134,56 @@ public class ListQueryWorkRequestsResponse extends com.oracle.bmc.responses.BmcR
                     opcPrevPage,
                     queryWorkRequestCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcPrevPage=").append(String.valueOf(opcPrevPage));
+        sb.append(",queryWorkRequestCollection=")
+                .append(String.valueOf(queryWorkRequestCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListQueryWorkRequestsResponse)) {
+            return false;
+        }
+
+        ListQueryWorkRequestsResponse other = (ListQueryWorkRequestsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcPrevPage, other.opcPrevPage)
+                && java.util.Objects.equals(
+                        this.queryWorkRequestCollection, other.queryWorkRequestCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcPrevPage == null ? 43 : this.opcPrevPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryWorkRequestCollection == null
+                                ? 43
+                                : this.queryWorkRequestCollection.hashCode());
+        return result;
     }
 }

@@ -17,16 +17,61 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVolumeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateVolumeDetails {
+public final class CreateVolumeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "backupPolicyId",
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "kmsKeyId",
+        "vpusPerGB",
+        "sizeInGBs",
+        "sizeInMBs",
+        "sourceDetails",
+        "volumeBackupId",
+        "isAutoTuneEnabled",
+        "blockVolumeReplicas"
+    })
+    public CreateVolumeDetails(
+            String availabilityDomain,
+            String backupPolicyId,
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String kmsKeyId,
+            Long vpusPerGB,
+            Long sizeInGBs,
+            Long sizeInMBs,
+            VolumeSourceDetails sourceDetails,
+            String volumeBackupId,
+            Boolean isAutoTuneEnabled,
+            java.util.List<BlockVolumeReplicaDetails> blockVolumeReplicas) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.backupPolicyId = backupPolicyId;
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.kmsKeyId = kmsKeyId;
+        this.vpusPerGB = vpusPerGB;
+        this.sizeInGBs = sizeInGBs;
+        this.sizeInMBs = sizeInMBs;
+        this.sourceDetails = sourceDetails;
+        this.volumeBackupId = volumeBackupId;
+        this.isAutoTuneEnabled = isAutoTuneEnabled;
+        this.blockVolumeReplicas = blockVolumeReplicas;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -210,6 +255,10 @@ public class CreateVolumeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.
      * <p>
@@ -217,7 +266,11 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * If provided, specifies the ID of the volume backup policy to assign to the newly
@@ -225,13 +278,21 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupPolicyId")
-    String backupPolicyId;
+    private final String backupPolicyId;
+
+    public String getBackupPolicyId() {
+        return backupPolicyId;
+    }
 
     /**
      * The OCID of the compartment that contains the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -241,7 +302,11 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -249,7 +314,11 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -259,7 +328,11 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The OCID of the Key Management key to assign as the master encryption key
@@ -267,7 +340,11 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
@@ -286,13 +363,21 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
-    Long vpusPerGB;
+    private final Long vpusPerGB;
+
+    public Long getVpusPerGB() {
+        return vpusPerGB;
+    }
 
     /**
      * The size of the volume in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
-    Long sizeInGBs;
+    private final Long sizeInGBs;
+
+    public Long getSizeInGBs() {
+        return sizeInGBs;
+    }
 
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024.
@@ -300,10 +385,18 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
-    Long sizeInMBs;
+    private final Long sizeInMBs;
+
+    public Long getSizeInMBs() {
+        return sizeInMBs;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
-    VolumeSourceDetails sourceDetails;
+    private final VolumeSourceDetails sourceDetails;
+
+    public VolumeSourceDetails getSourceDetails() {
+        return sourceDetails;
+    }
 
     /**
      * The OCID of the volume backup from which the data should be restored on the newly created volume.
@@ -312,14 +405,22 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupId")
-    String volumeBackupId;
+    private final String volumeBackupId;
+
+    public String getVolumeBackupId() {
+        return volumeBackupId;
+    }
 
     /**
      * Specifies whether the auto-tune performance is enabled for this volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
-    Boolean isAutoTuneEnabled;
+    private final Boolean isAutoTuneEnabled;
+
+    public Boolean getIsAutoTuneEnabled() {
+        return isAutoTuneEnabled;
+    }
 
     /**
      * The list of block volume replicas to be enabled for this volume
@@ -327,8 +428,108 @@ public class CreateVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeReplicas")
-    java.util.List<BlockVolumeReplicaDetails> blockVolumeReplicas;
+    private final java.util.List<BlockVolumeReplicaDetails> blockVolumeReplicas;
+
+    public java.util.List<BlockVolumeReplicaDetails> getBlockVolumeReplicas() {
+        return blockVolumeReplicas;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateVolumeDetails(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", backupPolicyId=").append(String.valueOf(this.backupPolicyId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
+        sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
+        sb.append(", sizeInMBs=").append(String.valueOf(this.sizeInMBs));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
+        sb.append(", volumeBackupId=").append(String.valueOf(this.volumeBackupId));
+        sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
+        sb.append(", blockVolumeReplicas=").append(String.valueOf(this.blockVolumeReplicas));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateVolumeDetails)) {
+            return false;
+        }
+
+        CreateVolumeDetails other = (CreateVolumeDetails) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.backupPolicyId, other.backupPolicyId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
+                && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
+                && java.util.Objects.equals(this.sizeInMBs, other.sizeInMBs)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
+                && java.util.Objects.equals(this.volumeBackupId, other.volumeBackupId)
+                && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
+                && java.util.Objects.equals(this.blockVolumeReplicas, other.blockVolumeReplicas)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupPolicyId == null ? 43 : this.backupPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
+        result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
+        result = (result * PRIME) + (this.sizeInMBs == null ? 43 : this.sizeInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.volumeBackupId == null ? 43 : this.volumeBackupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoTuneEnabled == null ? 43 : this.isAutoTuneEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockVolumeReplicas == null
+                                ? 43
+                                : this.blockVolumeReplicas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

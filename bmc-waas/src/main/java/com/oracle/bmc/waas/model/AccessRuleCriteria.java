@@ -15,16 +15,21 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AccessRuleCriteria.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AccessRuleCriteria {
+public final class AccessRuleCriteria {
+    @Deprecated
+    @java.beans.ConstructorProperties({"condition", "value", "isCaseSensitive"})
+    public AccessRuleCriteria(Condition condition, String value, Boolean isCaseSensitive) {
+        super();
+        this.condition = condition;
+        this.value = value;
+        this.isCaseSensitive = isCaseSensitive;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private Condition condition;
@@ -82,6 +87,10 @@ public class AccessRuleCriteria {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
      * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the {@code value} field. URL must start with a {@code /}.
@@ -135,7 +144,6 @@ public class AccessRuleCriteria {
      * - **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the {@code value} field.
      * *Example:* {@code Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0}
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Condition {
         UrlIs("URL_IS"),
         UrlIsNot("URL_IS_NOT"),
@@ -164,6 +172,9 @@ public class AccessRuleCriteria {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Condition.class);
 
         private final String value;
         private static java.util.Map<String, Condition> map;
@@ -251,20 +262,79 @@ public class AccessRuleCriteria {
      * *Example:* {@code Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    Condition condition;
+    private final Condition condition;
+
+    public Condition getCondition() {
+        return condition;
+    }
 
     /**
      * The criteria value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * When enabled, the condition will be matched with case-sensitive rules.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
-    Boolean isCaseSensitive;
+    private final Boolean isCaseSensitive;
+
+    public Boolean getIsCaseSensitive() {
+        return isCaseSensitive;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AccessRuleCriteria(");
+        sb.append("condition=").append(String.valueOf(this.condition));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", isCaseSensitive=").append(String.valueOf(this.isCaseSensitive));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AccessRuleCriteria)) {
+            return false;
+        }
+
+        AccessRuleCriteria other = (AccessRuleCriteria) o;
+        return java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.isCaseSensitive, other.isCaseSensitive)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCaseSensitive == null ? 43 : this.isCaseSensitive.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

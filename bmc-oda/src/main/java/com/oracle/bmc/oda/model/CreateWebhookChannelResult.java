@@ -15,22 +15,17 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateWebhookChannelResult.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateWebhookChannelResult extends CreateChannelResult {
+public final class CreateWebhookChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -226,6 +221,10 @@ public class CreateWebhookChannelResult extends CreateChannelResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateWebhookChannelResult(
             String id,
@@ -267,25 +266,41 @@ public class CreateWebhookChannelResult extends CreateChannelResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
-    String secretKey;
+    private final String secretKey;
+
+    public String getSecretKey() {
+        return secretKey;
+    }
 
     /**
      * The URL to send responses to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
-    String outboundUrl;
+    private final String outboundUrl;
+
+    public String getOutboundUrl() {
+        return outboundUrl;
+    }
 
     /**
      * The version for payloads.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("payloadVersion")
-    WebhookPayloadVersion payloadVersion;
+    private final WebhookPayloadVersion payloadVersion;
+
+    public WebhookPayloadVersion getPayloadVersion() {
+        return payloadVersion;
+    }
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
-    String botId;
+    private final String botId;
+
+    public String getBotId() {
+        return botId;
+    }
 
     /**
      * The URL to use to send messages to this channel.
@@ -293,8 +308,67 @@ public class CreateWebhookChannelResult extends CreateChannelResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
-    String webhookUrl;
+    private final String webhookUrl;
+
+    public String getWebhookUrl() {
+        return webhookUrl;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateWebhookChannelResult(");
+        sb.append("super=").append(super.toString());
+        sb.append(", secretKey=").append(String.valueOf(this.secretKey));
+        sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
+        sb.append(", payloadVersion=").append(String.valueOf(this.payloadVersion));
+        sb.append(", botId=").append(String.valueOf(this.botId));
+        sb.append(", webhookUrl=").append(String.valueOf(this.webhookUrl));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateWebhookChannelResult)) {
+            return false;
+        }
+
+        CreateWebhookChannelResult other = (CreateWebhookChannelResult) o;
+        return java.util.Objects.equals(this.secretKey, other.secretKey)
+                && java.util.Objects.equals(this.outboundUrl, other.outboundUrl)
+                && java.util.Objects.equals(this.payloadVersion, other.payloadVersion)
+                && java.util.Objects.equals(this.botId, other.botId)
+                && java.util.Objects.equals(this.webhookUrl, other.webhookUrl)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.secretKey == null ? 43 : this.secretKey.hashCode());
+        result = (result * PRIME) + (this.outboundUrl == null ? 43 : this.outboundUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.payloadVersion == null ? 43 : this.payloadVersion.hashCode());
+        result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
+        result = (result * PRIME) + (this.webhookUrl == null ? 43 : this.webhookUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

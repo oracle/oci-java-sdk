@@ -16,14 +16,71 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbServerSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbServerSummary {
+public final class DbServerSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "exadataInfrastructureId",
+        "cpuCoreCount",
+        "memorySizeInGBs",
+        "dbNodeStorageSizeInGBs",
+        "vmClusterIds",
+        "dbNodeIds",
+        "lifecycleState",
+        "lifecycleDetails",
+        "maxCpuCount",
+        "maxMemoryInGBs",
+        "maxDbNodeStorageInGBs",
+        "timeCreated",
+        "dbServerPatchingDetails",
+        "freeformTags",
+        "definedTags"
+    })
+    public DbServerSummary(
+            String id,
+            String displayName,
+            String compartmentId,
+            String exadataInfrastructureId,
+            Integer cpuCoreCount,
+            Integer memorySizeInGBs,
+            Integer dbNodeStorageSizeInGBs,
+            java.util.List<String> vmClusterIds,
+            java.util.List<String> dbNodeIds,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            Integer maxCpuCount,
+            Integer maxMemoryInGBs,
+            Integer maxDbNodeStorageInGBs,
+            java.util.Date timeCreated,
+            DbServerPatchingDetails dbServerPatchingDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.exadataInfrastructureId = exadataInfrastructureId;
+        this.cpuCoreCount = cpuCoreCount;
+        this.memorySizeInGBs = memorySizeInGBs;
+        this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+        this.vmClusterIds = vmClusterIds;
+        this.dbNodeIds = dbNodeIds;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.maxCpuCount = maxCpuCount;
+        this.maxMemoryInGBs = maxMemoryInGBs;
+        this.maxDbNodeStorageInGBs = maxDbNodeStorageInGBs;
+        this.timeCreated = timeCreated;
+        this.dbServerPatchingDetails = dbServerPatchingDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -250,65 +307,105 @@ public class DbServerSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The user-friendly name for the Db server. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
-    String exadataInfrastructureId;
+    private final String exadataInfrastructureId;
+
+    public String getExadataInfrastructureId() {
+        return exadataInfrastructureId;
+    }
 
     /**
      * The number of CPU cores enabled on the Db server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The allocated memory in GBs on the Db server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
-    Integer memorySizeInGBs;
+    private final Integer memorySizeInGBs;
+
+    public Integer getMemorySizeInGBs() {
+        return memorySizeInGBs;
+    }
 
     /**
      * The allocated local node storage in GBs on the Db server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
-    Integer dbNodeStorageSizeInGBs;
+    private final Integer dbNodeStorageSizeInGBs;
+
+    public Integer getDbNodeStorageSizeInGBs() {
+        return dbNodeStorageSizeInGBs;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
-    java.util.List<String> vmClusterIds;
+    private final java.util.List<String> vmClusterIds;
+
+    public java.util.List<String> getVmClusterIds() {
+        return vmClusterIds;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
-    java.util.List<String> dbNodeIds;
+    private final java.util.List<String> dbNodeIds;
+
+    public java.util.List<String> getDbNodeIds() {
+        return dbNodeIds;
+    }
+
     /**
      * The current state of the Db server.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Available("AVAILABLE"),
@@ -322,6 +419,9 @@ public class DbServerSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -359,40 +459,68 @@ public class DbServerSummary {
      * The current state of the Db server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The total number of CPU cores available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
-    Integer maxCpuCount;
+    private final Integer maxCpuCount;
+
+    public Integer getMaxCpuCount() {
+        return maxCpuCount;
+    }
 
     /**
      * The total memory available in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
-    Integer maxMemoryInGBs;
+    private final Integer maxMemoryInGBs;
+
+    public Integer getMaxMemoryInGBs() {
+        return maxMemoryInGBs;
+    }
 
     /**
      * The total local node storage available in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
-    Integer maxDbNodeStorageInGBs;
+    private final Integer maxDbNodeStorageInGBs;
+
+    public Integer getMaxDbNodeStorageInGBs() {
+        return maxDbNodeStorageInGBs;
+    }
 
     /**
      * The date and time that the Db Server was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbServerPatchingDetails")
-    DbServerPatchingDetails dbServerPatchingDetails;
+    private final DbServerPatchingDetails dbServerPatchingDetails;
+
+    public DbServerPatchingDetails getDbServerPatchingDetails() {
+        return dbServerPatchingDetails;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -402,7 +530,11 @@ public class DbServerSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -410,8 +542,133 @@ public class DbServerSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbServerSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", exadataInfrastructureId=")
+                .append(String.valueOf(this.exadataInfrastructureId));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
+        sb.append(", vmClusterIds=").append(String.valueOf(this.vmClusterIds));
+        sb.append(", dbNodeIds=").append(String.valueOf(this.dbNodeIds));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", maxCpuCount=").append(String.valueOf(this.maxCpuCount));
+        sb.append(", maxMemoryInGBs=").append(String.valueOf(this.maxMemoryInGBs));
+        sb.append(", maxDbNodeStorageInGBs=").append(String.valueOf(this.maxDbNodeStorageInGBs));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", dbServerPatchingDetails=")
+                .append(String.valueOf(this.dbServerPatchingDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbServerSummary)) {
+            return false;
+        }
+
+        DbServerSummary other = (DbServerSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.exadataInfrastructureId, other.exadataInfrastructureId)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(
+                        this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
+                && java.util.Objects.equals(this.vmClusterIds, other.vmClusterIds)
+                && java.util.Objects.equals(this.dbNodeIds, other.dbNodeIds)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.maxCpuCount, other.maxCpuCount)
+                && java.util.Objects.equals(this.maxMemoryInGBs, other.maxMemoryInGBs)
+                && java.util.Objects.equals(this.maxDbNodeStorageInGBs, other.maxDbNodeStorageInGBs)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(
+                        this.dbServerPatchingDetails, other.dbServerPatchingDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfrastructureId == null
+                                ? 43
+                                : this.exadataInfrastructureId.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbNodeStorageSizeInGBs == null
+                                ? 43
+                                : this.dbNodeStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.vmClusterIds == null ? 43 : this.vmClusterIds.hashCode());
+        result = (result * PRIME) + (this.dbNodeIds == null ? 43 : this.dbNodeIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.maxCpuCount == null ? 43 : this.maxCpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxMemoryInGBs == null ? 43 : this.maxMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxDbNodeStorageInGBs == null
+                                ? 43
+                                : this.maxDbNodeStorageInGBs.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbServerPatchingDetails == null
+                                ? 43
+                                : this.dbServerPatchingDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

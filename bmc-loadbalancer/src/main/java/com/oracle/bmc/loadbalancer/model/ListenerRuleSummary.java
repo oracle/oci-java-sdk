@@ -17,16 +17,20 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ListenerRuleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ListenerRuleSummary {
+public final class ListenerRuleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"rule", "ruleSetName"})
+    public ListenerRuleSummary(Rule rule, String ruleSetName) {
+        super();
+        this.rule = rule;
+        this.ruleSetName = ruleSetName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("rule")
         private Rule rule;
@@ -71,19 +75,73 @@ public class ListenerRuleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A rule object that applies to the listener.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rule")
-    Rule rule;
+    private final Rule rule;
+
+    public Rule getRule() {
+        return rule;
+    }
 
     /**
      * The name of the rule set that the rule belongs to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetName")
-    String ruleSetName;
+    private final String ruleSetName;
+
+    public String getRuleSetName() {
+        return ruleSetName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ListenerRuleSummary(");
+        sb.append("rule=").append(String.valueOf(this.rule));
+        sb.append(", ruleSetName=").append(String.valueOf(this.ruleSetName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListenerRuleSummary)) {
+            return false;
+        }
+
+        ListenerRuleSummary other = (ListenerRuleSummary) o;
+        return java.util.Objects.equals(this.rule, other.rule)
+                && java.util.Objects.equals(this.ruleSetName, other.ruleSetName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.rule == null ? 43 : this.rule.hashCode());
+        result = (result * PRIME) + (this.ruleSetName == null ? 43 : this.ruleSetName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

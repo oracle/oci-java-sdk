@@ -15,20 +15,15 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OciService.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "sourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OciService extends Source {
+public final class OciService extends Source {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
@@ -95,6 +90,10 @@ public class OciService extends Source {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public OciService(
             String service,
@@ -112,26 +111,92 @@ public class OciService extends Source {
      * Service generating log.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
-    String service;
+    private final String service;
+
+    public String getService() {
+        return service;
+    }
 
     /**
      * The unique identifier of the resource emitting the log.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resource")
-    String resource;
+    private final String resource;
+
+    public String getResource() {
+        return resource;
+    }
 
     /**
      * Log object category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    String category;
+    private final String category;
+
+    public String getCategory() {
+        return category;
+    }
 
     /**
      * Log category parameters are stored here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.Map<String, String> parameters;
+    private final java.util.Map<String, String> parameters;
+
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OciService(");
+        sb.append("super=").append(super.toString());
+        sb.append(", service=").append(String.valueOf(this.service));
+        sb.append(", resource=").append(String.valueOf(this.resource));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OciService)) {
+            return false;
+        }
+
+        OciService other = (OciService) o;
+        return java.util.Objects.equals(this.service, other.service)
+                && java.util.Objects.equals(this.resource, other.resource)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result = (result * PRIME) + (this.resource == null ? 43 : this.resource.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

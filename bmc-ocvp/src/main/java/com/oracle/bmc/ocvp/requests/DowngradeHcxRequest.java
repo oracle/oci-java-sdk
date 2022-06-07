@@ -9,14 +9,6 @@ import com.oracle.bmc.ocvp.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DowngradeHcxExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DowngradeHcxRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DowngradeHcxRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ocvp.model.DowngradeHcxDetails> {
 
@@ -25,12 +17,18 @@ public class DowngradeHcxRequest
      */
     private com.oracle.bmc.ocvp.model.DowngradeHcxDetails downgradeHcxDetails;
 
+    public com.oracle.bmc.ocvp.model.DowngradeHcxDetails getDowngradeHcxDetails() {
+        return downgradeHcxDetails;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
      *
      */
     private String sddcId;
 
+    public String getSddcId() {
+        return sddcId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -41,6 +39,9 @@ public class DowngradeHcxRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -51,12 +52,19 @@ public class DowngradeHcxRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request. If you need to contact Oracle about a particular
      * request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -74,6 +82,75 @@ public class DowngradeHcxRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.ocvp.model.DowngradeHcxDetails downgradeHcxDetails = null;
+
+        /**
+         * The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
+         * @return this builder instance
+         */
+        public Builder downgradeHcxDetails(
+                com.oracle.bmc.ocvp.model.DowngradeHcxDetails downgradeHcxDetails) {
+            this.downgradeHcxDetails = downgradeHcxDetails;
+            return this;
+        }
+
+        private String sddcId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
+         *
+         * @return this builder instance
+         */
+        public Builder sddcId(String sddcId) {
+            this.sddcId = sddcId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -140,5 +217,90 @@ public class DowngradeHcxRequest
             downgradeHcxDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of DowngradeHcxRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DowngradeHcxRequest
+         */
+        public DowngradeHcxRequest buildWithoutInvocationCallback() {
+            DowngradeHcxRequest request = new DowngradeHcxRequest();
+            request.downgradeHcxDetails = downgradeHcxDetails;
+            request.sddcId = sddcId;
+            request.opcRetryToken = opcRetryToken;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new DowngradeHcxRequest(downgradeHcxDetails, sddcId, opcRetryToken, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .downgradeHcxDetails(downgradeHcxDetails)
+                .sddcId(sddcId)
+                .opcRetryToken(opcRetryToken)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",downgradeHcxDetails=").append(String.valueOf(this.downgradeHcxDetails));
+        sb.append(",sddcId=").append(String.valueOf(this.sddcId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DowngradeHcxRequest)) {
+            return false;
+        }
+
+        DowngradeHcxRequest other = (DowngradeHcxRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.downgradeHcxDetails, other.downgradeHcxDetails)
+                && java.util.Objects.equals(this.sddcId, other.sddcId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.downgradeHcxDetails == null
+                                ? 43
+                                : this.downgradeHcxDetails.hashCode());
+        result = (result * PRIME) + (this.sddcId == null ? 43 : this.sddcId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

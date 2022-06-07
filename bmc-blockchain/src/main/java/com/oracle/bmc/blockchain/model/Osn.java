@@ -15,14 +15,24 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Osn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Osn {
+public final class Osn {
+    @Deprecated
+    @java.beans.ConstructorProperties({"osnKey", "ad", "ocpuAllocationParam", "lifecycleState"})
+    public Osn(
+            String osnKey,
+            AvailabilityDomain.Ads ad,
+            OcpuAllocationNumberParam ocpuAllocationParam,
+            LifecycleState lifecycleState) {
+        super();
+        this.osnKey = osnKey;
+        this.ad = ad;
+        this.ocpuAllocationParam = ocpuAllocationParam;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("osnKey")
         private String osnKey;
@@ -89,24 +99,40 @@ public class Osn {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OSN identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osnKey")
-    String osnKey;
+    private final String osnKey;
+
+    public String getOsnKey() {
+        return osnKey;
+    }
 
     /**
      * Availability Domain of OSN
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
-    AvailabilityDomain.Ads ad;
+    private final AvailabilityDomain.Ads ad;
+
+    public AvailabilityDomain.Ads getAd() {
+        return ad;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuAllocationParam")
-    OcpuAllocationNumberParam ocpuAllocationParam;
+    private final OcpuAllocationNumberParam ocpuAllocationParam;
+
+    public OcpuAllocationNumberParam getOcpuAllocationParam() {
+        return ocpuAllocationParam;
+    }
+
     /**
      * The current state of the OSN.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -117,6 +143,9 @@ public class Osn {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -154,8 +183,66 @@ public class Osn {
      * The current state of the OSN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Osn(");
+        sb.append("osnKey=").append(String.valueOf(this.osnKey));
+        sb.append(", ad=").append(String.valueOf(this.ad));
+        sb.append(", ocpuAllocationParam=").append(String.valueOf(this.ocpuAllocationParam));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Osn)) {
+            return false;
+        }
+
+        Osn other = (Osn) o;
+        return java.util.Objects.equals(this.osnKey, other.osnKey)
+                && java.util.Objects.equals(this.ad, other.ad)
+                && java.util.Objects.equals(this.ocpuAllocationParam, other.ocpuAllocationParam)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.osnKey == null ? 43 : this.osnKey.hashCode());
+        result = (result * PRIME) + (this.ad == null ? 43 : this.ad.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ocpuAllocationParam == null
+                                ? 43
+                                : this.ocpuAllocationParam.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

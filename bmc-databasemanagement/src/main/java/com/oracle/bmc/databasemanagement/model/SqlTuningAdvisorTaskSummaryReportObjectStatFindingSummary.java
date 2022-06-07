@@ -15,16 +15,37 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
+public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "objectHashValue",
+        "objectName",
+        "objectType",
+        "schema",
+        "problemType",
+        "referenceCount"
+    })
+    public SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary(
+            Long objectHashValue,
+            String objectName,
+            String objectType,
+            String schema,
+            ProblemType problemType,
+            Integer referenceCount) {
+        super();
+        this.objectHashValue = objectHashValue;
+        this.objectName = objectName;
+        this.objectType = objectType;
+        this.schema = schema;
+        this.problemType = problemType;
+        this.referenceCount = referenceCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objectHashValue")
         private Long objectHashValue;
@@ -118,33 +139,53 @@ public class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Numerical representation of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectHashValue")
-    Long objectHashValue;
+    private final Long objectHashValue;
+
+    public Long getObjectHashValue() {
+        return objectHashValue;
+    }
 
     /**
      * Name of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * Type of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    String objectType;
+    private final String objectType;
+
+    public String getObjectType() {
+        return objectType;
+    }
 
     /**
      * Schema of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
-    String schema;
+    private final String schema;
+
+    public String getSchema() {
+        return schema;
+    }
+
     /**
      * Type of statistics problem related to the object.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ProblemType {
         Missing("MISSING"),
         Stale("STALE"),
@@ -154,6 +195,9 @@ public class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ProblemType.class);
 
         private final String value;
         private static java.util.Map<String, ProblemType> map;
@@ -191,14 +235,81 @@ public class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
      * Type of statistics problem related to the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
-    ProblemType problemType;
+    private final ProblemType problemType;
+
+    public ProblemType getProblemType() {
+        return problemType;
+    }
 
     /**
      * The number of the times the object is referenced within the SQL Tuning advisor task findings.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
-    Integer referenceCount;
+    private final Integer referenceCount;
+
+    public Integer getReferenceCount() {
+        return referenceCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary(");
+        sb.append("objectHashValue=").append(String.valueOf(this.objectHashValue));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", objectType=").append(String.valueOf(this.objectType));
+        sb.append(", schema=").append(String.valueOf(this.schema));
+        sb.append(", problemType=").append(String.valueOf(this.problemType));
+        sb.append(", referenceCount=").append(String.valueOf(this.referenceCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary)) {
+            return false;
+        }
+
+        SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary other =
+                (SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary) o;
+        return java.util.Objects.equals(this.objectHashValue, other.objectHashValue)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.schema, other.schema)
+                && java.util.Objects.equals(this.problemType, other.problemType)
+                && java.util.Objects.equals(this.referenceCount, other.referenceCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.objectHashValue == null ? 43 : this.objectHashValue.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result = (result * PRIME) + (this.schema == null ? 43 : this.schema.hashCode());
+        result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referenceCount == null ? 43 : this.referenceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

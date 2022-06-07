@@ -12,7 +12,6 @@ package com.oracle.bmc.datacatalog.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.extern.slf4j.Slf4j
 public enum JobLifecycleState {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
@@ -23,6 +22,9 @@ public enum JobLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(JobLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, JobLifecycleState> map;

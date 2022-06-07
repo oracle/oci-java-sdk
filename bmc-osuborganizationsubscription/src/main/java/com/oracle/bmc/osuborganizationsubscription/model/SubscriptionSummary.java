@@ -16,16 +16,43 @@ package com.oracle.bmc.osuborganizationsubscription.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SubscriptionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SubscriptionSummary {
+public final class SubscriptionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "serviceName",
+        "type",
+        "status",
+        "timeStart",
+        "timeEnd",
+        "currency",
+        "totalValue"
+    })
+    public SubscriptionSummary(
+            String id,
+            String serviceName,
+            String type,
+            String status,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            Currency currency,
+            String totalValue) {
+        super();
+        this.id = id;
+        this.serviceName = serviceName;
+        this.type = type;
+        this.status = status;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.currency = currency;
+        this.totalValue = totalValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -141,58 +168,154 @@ public class SubscriptionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * SPM internal Subscription ID
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Customer friendly service name provided by PRG
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * Subscription Type i.e. IAAS,SAAS,PAAS
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Status of the plan
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * Represents the date when the first service of the subscription was activated
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Represents the date when the last service of the subscription ends
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
-    Currency currency;
+    private final Currency currency;
+
+    public Currency getCurrency() {
+        return currency;
+    }
 
     /**
      * Total aggregate TCLV of all lines for the subscription including expired, active, and signed
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalValue")
-    String totalValue;
+    private final String totalValue;
+
+    public String getTotalValue() {
+        return totalValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SubscriptionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", currency=").append(String.valueOf(this.currency));
+        sb.append(", totalValue=").append(String.valueOf(this.totalValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SubscriptionSummary)) {
+            return false;
+        }
+
+        SubscriptionSummary other = (SubscriptionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.currency, other.currency)
+                && java.util.Objects.equals(this.totalValue, other.totalValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.currency == null ? 43 : this.currency.hashCode());
+        result = (result * PRIME) + (this.totalValue == null ? 43 : this.totalValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

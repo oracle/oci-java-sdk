@@ -16,16 +16,34 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = QueryResultMetadataSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class QueryResultMetadataSummary {
+public final class QueryResultMetadataSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "queryResultRowTypeSummaries",
+        "sourceName",
+        "queryResultsGroupedBy",
+        "queryResultsOrderedBy",
+        "timeSeriesIntervalInMins"
+    })
+    public QueryResultMetadataSummary(
+            java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries,
+            String sourceName,
+            java.util.List<QueryResultsGroupedBySummary> queryResultsGroupedBy,
+            java.util.List<QueryResultsOrderedBySummary> queryResultsOrderedBy,
+            Integer timeSeriesIntervalInMins) {
+        super();
+        this.queryResultRowTypeSummaries = queryResultRowTypeSummaries;
+        this.sourceName = sourceName;
+        this.queryResultsGroupedBy = queryResultsGroupedBy;
+        this.queryResultsOrderedBy = queryResultsOrderedBy;
+        this.timeSeriesIntervalInMins = timeSeriesIntervalInMins;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowTypeSummaries")
         private java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
@@ -111,20 +129,32 @@ public class QueryResultMetadataSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A collection of QueryResultRowTypeSummary objects that describe the type and properties of the individual row elements of the query rows
      * being returned.  The i-th element in this list contains the QueryResultRowTypeSummary of the i-th key-value pair in the QueryResultRowData map.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowTypeSummaries")
-    java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
+    private final java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
+
+    public java.util.List<QueryResultRowTypeSummary> getQueryResultRowTypeSummaries() {
+        return queryResultRowTypeSummaries;
+    }
 
     /**
      * Source of the query result set (traces, spans, and so on).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
 
     /**
      * Columns or attributes of the query rows  which are group by values.  This is a list of ResultsGroupedBy summary objects,
@@ -132,7 +162,11 @@ public class QueryResultMetadataSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsGroupedBy")
-    java.util.List<QueryResultsGroupedBySummary> queryResultsGroupedBy;
+    private final java.util.List<QueryResultsGroupedBySummary> queryResultsGroupedBy;
+
+    public java.util.List<QueryResultsGroupedBySummary> getQueryResultsGroupedBy() {
+        return queryResultsGroupedBy;
+    }
 
     /**
      * Order by which the query results are organized.  This is a list of queryResultsOrderedBy summary objects, and the list
@@ -140,15 +174,94 @@ public class QueryResultMetadataSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsOrderedBy")
-    java.util.List<QueryResultsOrderedBySummary> queryResultsOrderedBy;
+    private final java.util.List<QueryResultsOrderedBySummary> queryResultsOrderedBy;
+
+    public java.util.List<QueryResultsOrderedBySummary> getQueryResultsOrderedBy() {
+        return queryResultsOrderedBy;
+    }
 
     /**
      * Interval for the time series function in minutes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSeriesIntervalInMins")
-    Integer timeSeriesIntervalInMins;
+    private final Integer timeSeriesIntervalInMins;
+
+    public Integer getTimeSeriesIntervalInMins() {
+        return timeSeriesIntervalInMins;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("QueryResultMetadataSummary(");
+        sb.append("queryResultRowTypeSummaries=")
+                .append(String.valueOf(this.queryResultRowTypeSummaries));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", queryResultsGroupedBy=").append(String.valueOf(this.queryResultsGroupedBy));
+        sb.append(", queryResultsOrderedBy=").append(String.valueOf(this.queryResultsOrderedBy));
+        sb.append(", timeSeriesIntervalInMins=")
+                .append(String.valueOf(this.timeSeriesIntervalInMins));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QueryResultMetadataSummary)) {
+            return false;
+        }
+
+        QueryResultMetadataSummary other = (QueryResultMetadataSummary) o;
+        return java.util.Objects.equals(
+                        this.queryResultRowTypeSummaries, other.queryResultRowTypeSummaries)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.queryResultsGroupedBy, other.queryResultsGroupedBy)
+                && java.util.Objects.equals(this.queryResultsOrderedBy, other.queryResultsOrderedBy)
+                && java.util.Objects.equals(
+                        this.timeSeriesIntervalInMins, other.timeSeriesIntervalInMins)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.queryResultRowTypeSummaries == null
+                                ? 43
+                                : this.queryResultRowTypeSummaries.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryResultsGroupedBy == null
+                                ? 43
+                                : this.queryResultsGroupedBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryResultsOrderedBy == null
+                                ? 43
+                                : this.queryResultsOrderedBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSeriesIntervalInMins == null
+                                ? 43
+                                : this.timeSeriesIntervalInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

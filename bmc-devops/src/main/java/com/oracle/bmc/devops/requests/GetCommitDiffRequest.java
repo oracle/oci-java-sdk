@@ -9,14 +9,6 @@ import com.oracle.bmc.devops.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetCommitDiffExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCommitDiffRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,25 +16,41 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String repositoryId;
 
+    public String getRepositoryId() {
+        return repositoryId;
+    }
     /**
      * The commit or reference name where changes are coming from.
      */
     private String targetVersion;
 
+    public String getTargetVersion() {
+        return targetVersion;
+    }
     /**
      * The commit or reference name to compare changes against. If base version is not provided, the difference goes against an empty tree.
      */
     private String baseVersion;
 
+    public String getBaseVersion() {
+        return baseVersion;
+    }
     /**
      * Boolean value to indicate whether to use merge base or most recent revision.
      */
     private Boolean isComparisonFromMergeBase;
 
+    public Boolean getIsComparisonFromMergeBase() {
+        return isComparisonFromMergeBase;
+    }
     /**
      * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -50,6 +58,61 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String repositoryId = null;
+
+        /**
+         * Unique repository identifier.
+         * @return this builder instance
+         */
+        public Builder repositoryId(String repositoryId) {
+            this.repositoryId = repositoryId;
+            return this;
+        }
+
+        private String targetVersion = null;
+
+        /**
+         * The commit or reference name where changes are coming from.
+         * @return this builder instance
+         */
+        public Builder targetVersion(String targetVersion) {
+            this.targetVersion = targetVersion;
+            return this;
+        }
+
+        private String baseVersion = null;
+
+        /**
+         * The commit or reference name to compare changes against. If base version is not provided, the difference goes against an empty tree.
+         * @return this builder instance
+         */
+        public Builder baseVersion(String baseVersion) {
+            this.baseVersion = baseVersion;
+            return this;
+        }
+
+        private Boolean isComparisonFromMergeBase = null;
+
+        /**
+         * Boolean value to indicate whether to use merge base or most recent revision.
+         * @return this builder instance
+         */
+        public Builder isComparisonFromMergeBase(Boolean isComparisonFromMergeBase) {
+            this.isComparisonFromMergeBase = isComparisonFromMergeBase;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -105,5 +168,92 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetCommitDiffRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetCommitDiffRequest
+         */
+        public GetCommitDiffRequest buildWithoutInvocationCallback() {
+            GetCommitDiffRequest request = new GetCommitDiffRequest();
+            request.repositoryId = repositoryId;
+            request.targetVersion = targetVersion;
+            request.baseVersion = baseVersion;
+            request.isComparisonFromMergeBase = isComparisonFromMergeBase;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetCommitDiffRequest(repositoryId, targetVersion, baseVersion, isComparisonFromMergeBase, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .repositoryId(repositoryId)
+                .targetVersion(targetVersion)
+                .baseVersion(baseVersion)
+                .isComparisonFromMergeBase(isComparisonFromMergeBase)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",repositoryId=").append(String.valueOf(this.repositoryId));
+        sb.append(",targetVersion=").append(String.valueOf(this.targetVersion));
+        sb.append(",baseVersion=").append(String.valueOf(this.baseVersion));
+        sb.append(",isComparisonFromMergeBase=")
+                .append(String.valueOf(this.isComparisonFromMergeBase));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetCommitDiffRequest)) {
+            return false;
+        }
+
+        GetCommitDiffRequest other = (GetCommitDiffRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.repositoryId, other.repositoryId)
+                && java.util.Objects.equals(this.targetVersion, other.targetVersion)
+                && java.util.Objects.equals(this.baseVersion, other.baseVersion)
+                && java.util.Objects.equals(
+                        this.isComparisonFromMergeBase, other.isComparisonFromMergeBase)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetVersion == null ? 43 : this.targetVersion.hashCode());
+        result = (result * PRIME) + (this.baseVersion == null ? 43 : this.baseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isComparisonFromMergeBase == null
+                                ? 43
+                                : this.isComparisonFromMergeBase.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,40 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsParserFilter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsParserFilter {
+public final class LogAnalyticsParserFilter {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "parser",
+        "agentVersion",
+        "isInUse",
+        "operatingSystem",
+        "parserId",
+        "version"
+    })
+    public LogAnalyticsParserFilter(
+            String id,
+            LogAnalyticsParser parser,
+            String agentVersion,
+            Long isInUse,
+            String operatingSystem,
+            Long parserId,
+            String version) {
+        super();
+        this.id = id;
+        this.parser = parser;
+        this.agentVersion = agentVersion;
+        this.isInUse = isInUse;
+        this.operatingSystem = operatingSystem;
+        this.parserId = parserId;
+        this.version = version;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -123,46 +147,137 @@ public class LogAnalyticsParserFilter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The parser filter unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parser")
-    LogAnalyticsParser parser;
+    private final LogAnalyticsParser parser;
+
+    public LogAnalyticsParser getParser() {
+        return parser;
+    }
 
     /**
      * The agent version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
-    String agentVersion;
+    private final String agentVersion;
+
+    public String getAgentVersion() {
+        return agentVersion;
+    }
 
     /**
      * A flag idicating whether or not hte filter is currently being used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInUse")
-    Long isInUse;
+    private final Long isInUse;
+
+    public Long getIsInUse() {
+        return isInUse;
+    }
 
     /**
      * The operating system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    String operatingSystem;
+    private final String operatingSystem;
+
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
 
     /**
      * The parser unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserId")
-    Long parserId;
+    private final Long parserId;
+
+    public Long getParserId() {
+        return parserId;
+    }
 
     /**
      * The version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsParserFilter(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", parser=").append(String.valueOf(this.parser));
+        sb.append(", agentVersion=").append(String.valueOf(this.agentVersion));
+        sb.append(", isInUse=").append(String.valueOf(this.isInUse));
+        sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", parserId=").append(String.valueOf(this.parserId));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsParserFilter)) {
+            return false;
+        }
+
+        LogAnalyticsParserFilter other = (LogAnalyticsParserFilter) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.parser, other.parser)
+                && java.util.Objects.equals(this.agentVersion, other.agentVersion)
+                && java.util.Objects.equals(this.isInUse, other.isInUse)
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(this.parserId, other.parserId)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.parser == null ? 43 : this.parser.hashCode());
+        result = (result * PRIME) + (this.agentVersion == null ? 43 : this.agentVersion.hashCode());
+        result = (result * PRIME) + (this.isInUse == null ? 43 : this.isInUse.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result = (result * PRIME) + (this.parserId == null ? 43 : this.parserId.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,14 +16,18 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Header.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Header {
+public final class Header {
+    @Deprecated
+    @java.beans.ConstructorProperties({"headerName", "headerValue"})
+    public Header(String headerName, String headerValue) {
+        super();
+        this.headerName = headerName;
+        this.headerValue = headerValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("headerName")
         private String headerName;
@@ -68,18 +72,72 @@ public class Header {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the header.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerName")
-    String headerName;
+    private final String headerName;
+
+    public String getHeaderName() {
+        return headerName;
+    }
 
     /**
      * Value of the header.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerValue")
-    String headerValue;
+    private final String headerValue;
+
+    public String getHeaderValue() {
+        return headerValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Header(");
+        sb.append("headerName=").append(String.valueOf(this.headerName));
+        sb.append(", headerValue=").append(String.valueOf(this.headerValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Header)) {
+            return false;
+        }
+
+        Header other = (Header) o;
+        return java.util.Objects.equals(this.headerName, other.headerName)
+                && java.util.Objects.equals(this.headerValue, other.headerValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.headerName == null ? 43 : this.headerName.hashCode());
+        result = (result * PRIME) + (this.headerValue == null ? 43 : this.headerValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

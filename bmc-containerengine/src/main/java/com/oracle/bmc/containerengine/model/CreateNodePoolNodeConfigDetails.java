@@ -15,16 +15,40 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateNodePoolNodeConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateNodePoolNodeConfigDetails {
+public final class CreateNodePoolNodeConfigDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "size",
+        "nsgIds",
+        "kmsKeyId",
+        "isPvEncryptionInTransitEnabled",
+        "freeformTags",
+        "definedTags",
+        "placementConfigs"
+    })
+    public CreateNodePoolNodeConfigDetails(
+            Integer size,
+            java.util.List<String> nsgIds,
+            String kmsKeyId,
+            Boolean isPvEncryptionInTransitEnabled,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<NodePoolPlacementConfigDetails> placementConfigs) {
+        super();
+        this.size = size;
+        this.nsgIds = nsgIds;
+        this.kmsKeyId = kmsKeyId;
+        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.placementConfigs = placementConfigs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Integer size;
@@ -131,31 +155,51 @@ public class CreateNodePoolNodeConfigDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of nodes that should be in the node pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
-    Integer size;
+    private final Integer size;
+
+    public Integer getSize() {
+        return size;
+    }
 
     /**
      * The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see {@link NetworkSecurityGroup}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * The OCID of the Key Management Service key assigned to the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
-    Boolean isPvEncryptionInTransitEnabled;
+    private final Boolean isPvEncryptionInTransitEnabled;
+
+    public Boolean getIsPvEncryptionInTransitEnabled() {
+        return isPvEncryptionInTransitEnabled;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -164,7 +208,11 @@ public class CreateNodePoolNodeConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -173,7 +221,11 @@ public class CreateNodePoolNodeConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The placement configurations for the node pool. Provide one placement
@@ -185,8 +237,77 @@ public class CreateNodePoolNodeConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("placementConfigs")
-    java.util.List<NodePoolPlacementConfigDetails> placementConfigs;
+    private final java.util.List<NodePoolPlacementConfigDetails> placementConfigs;
+
+    public java.util.List<NodePoolPlacementConfigDetails> getPlacementConfigs() {
+        return placementConfigs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateNodePoolNodeConfigDetails(");
+        sb.append("size=").append(String.valueOf(this.size));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", isPvEncryptionInTransitEnabled=")
+                .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", placementConfigs=").append(String.valueOf(this.placementConfigs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateNodePoolNodeConfigDetails)) {
+            return false;
+        }
+
+        CreateNodePoolNodeConfigDetails other = (CreateNodePoolNodeConfigDetails) o;
+        return java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(
+                        this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.placementConfigs, other.placementConfigs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPvEncryptionInTransitEnabled == null
+                                ? 43
+                                : this.isPvEncryptionInTransitEnabled.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConfigs == null ? 43 : this.placementConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

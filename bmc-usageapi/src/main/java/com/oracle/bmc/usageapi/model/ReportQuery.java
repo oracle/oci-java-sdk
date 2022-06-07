@@ -15,14 +15,53 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReportQuery.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReportQuery {
+public final class ReportQuery {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tenantId",
+        "timeUsageStarted",
+        "timeUsageEnded",
+        "granularity",
+        "isAggregateByTime",
+        "forecast",
+        "queryType",
+        "groupBy",
+        "groupByTag",
+        "compartmentDepth",
+        "filter",
+        "dateRangeName"
+    })
+    public ReportQuery(
+            String tenantId,
+            java.util.Date timeUsageStarted,
+            java.util.Date timeUsageEnded,
+            Granularity granularity,
+            Boolean isAggregateByTime,
+            Forecast forecast,
+            QueryType queryType,
+            java.util.List<String> groupBy,
+            java.util.List<Tag> groupByTag,
+            java.math.BigDecimal compartmentDepth,
+            Filter filter,
+            DateRangeName dateRangeName) {
+        super();
+        this.tenantId = tenantId;
+        this.timeUsageStarted = timeUsageStarted;
+        this.timeUsageEnded = timeUsageEnded;
+        this.granularity = granularity;
+        this.isAggregateByTime = isAggregateByTime;
+        this.forecast = forecast;
+        this.queryType = queryType;
+        this.groupBy = groupBy;
+        this.groupByTag = groupByTag;
+        this.compartmentDepth = compartmentDepth;
+        this.filter = filter;
+        this.dateRangeName = dateRangeName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
@@ -182,23 +221,40 @@ public class ReportQuery {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Tenant ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * The usage start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
-    java.util.Date timeUsageStarted;
+    private final java.util.Date timeUsageStarted;
+
+    public java.util.Date getTimeUsageStarted() {
+        return timeUsageStarted;
+    }
 
     /**
      * The usage end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
-    java.util.Date timeUsageEnded;
+    private final java.util.Date timeUsageEnded;
+
+    public java.util.Date getTimeUsageEnded() {
+        return timeUsageEnded;
+    }
+
     /**
      * The usage granularity.
      * HOURLY - Hourly data aggregation.
@@ -207,7 +263,6 @@ public class ReportQuery {
      * TOTAL - Not yet supported.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Granularity {
         Hourly("HOURLY"),
         Daily("DAILY"),
@@ -219,6 +274,9 @@ public class ReportQuery {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Granularity.class);
 
         private final String value;
         private static java.util.Map<String, Granularity> map;
@@ -261,16 +319,29 @@ public class ReportQuery {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("granularity")
-    Granularity granularity;
+    private final Granularity granularity;
+
+    public Granularity getGranularity() {
+        return granularity;
+    }
 
     /**
      * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
-    Boolean isAggregateByTime;
+    private final Boolean isAggregateByTime;
+
+    public Boolean getIsAggregateByTime() {
+        return isAggregateByTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("forecast")
-    Forecast forecast;
+    private final Forecast forecast;
+
+    public Forecast getForecast() {
+        return forecast;
+    }
+
     /**
      * The query usage type. COST by default if it is missing.
      * Usage - Query the usage data.
@@ -280,7 +351,6 @@ public class ReportQuery {
      * AllCredit - Query the credit adjustments and expired credit
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum QueryType {
         Usage("USAGE"),
         Cost("COST"),
@@ -293,6 +363,9 @@ public class ReportQuery {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(QueryType.class);
 
         private final String value;
         private static java.util.Map<String, QueryType> map;
@@ -336,7 +409,11 @@ public class ReportQuery {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
-    QueryType queryType;
+    private final QueryType queryType;
+
+    public QueryType getQueryType() {
+        return queryType;
+    }
 
     /**
      * Aggregate the result by.
@@ -347,7 +424,11 @@ public class ReportQuery {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
-    java.util.List<String> groupBy;
+    private final java.util.List<String> groupBy;
+
+    public java.util.List<String> getGroupBy() {
+        return groupBy;
+    }
 
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list.
@@ -356,20 +437,32 @@ public class ReportQuery {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
-    java.util.List<Tag> groupByTag;
+    private final java.util.List<Tag> groupByTag;
+
+    public java.util.List<Tag> getGroupByTag() {
+        return groupByTag;
+    }
 
     /**
      * The compartment depth level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
-    java.math.BigDecimal compartmentDepth;
+    private final java.math.BigDecimal compartmentDepth;
+
+    public java.math.BigDecimal getCompartmentDepth() {
+        return compartmentDepth;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
-    Filter filter;
+    private final Filter filter;
+
+    public Filter getFilter() {
+        return filter;
+    }
+
     /**
      * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DateRangeName {
         LastSevenDays("LAST_SEVEN_DAYS"),
         LastTenDays("LAST_TEN_DAYS"),
@@ -387,6 +480,9 @@ public class ReportQuery {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DateRangeName.class);
 
         private final String value;
         private static java.util.Map<String, DateRangeName> map;
@@ -424,8 +520,94 @@ public class ReportQuery {
      * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dateRangeName")
-    DateRangeName dateRangeName;
+    private final DateRangeName dateRangeName;
+
+    public DateRangeName getDateRangeName() {
+        return dateRangeName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReportQuery(");
+        sb.append("tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
+        sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
+        sb.append(", granularity=").append(String.valueOf(this.granularity));
+        sb.append(", isAggregateByTime=").append(String.valueOf(this.isAggregateByTime));
+        sb.append(", forecast=").append(String.valueOf(this.forecast));
+        sb.append(", queryType=").append(String.valueOf(this.queryType));
+        sb.append(", groupBy=").append(String.valueOf(this.groupBy));
+        sb.append(", groupByTag=").append(String.valueOf(this.groupByTag));
+        sb.append(", compartmentDepth=").append(String.valueOf(this.compartmentDepth));
+        sb.append(", filter=").append(String.valueOf(this.filter));
+        sb.append(", dateRangeName=").append(String.valueOf(this.dateRangeName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReportQuery)) {
+            return false;
+        }
+
+        ReportQuery other = (ReportQuery) o;
+        return java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.timeUsageStarted, other.timeUsageStarted)
+                && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
+                && java.util.Objects.equals(this.granularity, other.granularity)
+                && java.util.Objects.equals(this.isAggregateByTime, other.isAggregateByTime)
+                && java.util.Objects.equals(this.forecast, other.forecast)
+                && java.util.Objects.equals(this.queryType, other.queryType)
+                && java.util.Objects.equals(this.groupBy, other.groupBy)
+                && java.util.Objects.equals(this.groupByTag, other.groupByTag)
+                && java.util.Objects.equals(this.compartmentDepth, other.compartmentDepth)
+                && java.util.Objects.equals(this.filter, other.filter)
+                && java.util.Objects.equals(this.dateRangeName, other.dateRangeName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUsageStarted == null ? 43 : this.timeUsageStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUsageEnded == null ? 43 : this.timeUsageEnded.hashCode());
+        result = (result * PRIME) + (this.granularity == null ? 43 : this.granularity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAggregateByTime == null ? 43 : this.isAggregateByTime.hashCode());
+        result = (result * PRIME) + (this.forecast == null ? 43 : this.forecast.hashCode());
+        result = (result * PRIME) + (this.queryType == null ? 43 : this.queryType.hashCode());
+        result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
+        result = (result * PRIME) + (this.groupByTag == null ? 43 : this.groupByTag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentDepth == null ? 43 : this.compartmentDepth.hashCode());
+        result = (result * PRIME) + (this.filter == null ? 43 : this.filter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dateRangeName == null ? 43 : this.dateRangeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

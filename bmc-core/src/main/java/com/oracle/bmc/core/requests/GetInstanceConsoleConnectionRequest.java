@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetInstanceConsoleConnectionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetInstanceConsoleConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,12 +17,27 @@ public class GetInstanceConsoleConnectionRequest
      */
     private String instanceConsoleConnectionId;
 
+    public String getInstanceConsoleConnectionId() {
+        return instanceConsoleConnectionId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetInstanceConsoleConnectionRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String instanceConsoleConnectionId = null;
+
+        /**
+         * The OCID of the instance console connection.
+         * @return this builder instance
+         */
+        public Builder instanceConsoleConnectionId(String instanceConsoleConnectionId) {
+            this.instanceConsoleConnectionId = instanceConsoleConnectionId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -82,5 +89,69 @@ public class GetInstanceConsoleConnectionRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetInstanceConsoleConnectionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetInstanceConsoleConnectionRequest
+         */
+        public GetInstanceConsoleConnectionRequest buildWithoutInvocationCallback() {
+            GetInstanceConsoleConnectionRequest request = new GetInstanceConsoleConnectionRequest();
+            request.instanceConsoleConnectionId = instanceConsoleConnectionId;
+            return request;
+            // new GetInstanceConsoleConnectionRequest(instanceConsoleConnectionId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().instanceConsoleConnectionId(instanceConsoleConnectionId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",instanceConsoleConnectionId=")
+                .append(String.valueOf(this.instanceConsoleConnectionId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetInstanceConsoleConnectionRequest)) {
+            return false;
+        }
+
+        GetInstanceConsoleConnectionRequest other = (GetInstanceConsoleConnectionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.instanceConsoleConnectionId, other.instanceConsoleConnectionId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.instanceConsoleConnectionId == null
+                                ? 43
+                                : this.instanceConsoleConnectionId.hashCode());
+        return result;
     }
 }

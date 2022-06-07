@@ -15,14 +15,74 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BdsInstance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BdsInstance {
+public final class BdsInstance {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "lifecycleState",
+        "clusterVersion",
+        "isHighAvailability",
+        "isSecure",
+        "isCloudSqlConfigured",
+        "networkConfig",
+        "clusterDetails",
+        "nodes",
+        "cloudSqlDetails",
+        "createdBy",
+        "timeCreated",
+        "timeUpdated",
+        "numberOfNodes",
+        "bootstrapScriptUrl",
+        "freeformTags",
+        "definedTags"
+    })
+    public BdsInstance(
+            String id,
+            String compartmentId,
+            String displayName,
+            LifecycleState lifecycleState,
+            ClusterVersion clusterVersion,
+            Boolean isHighAvailability,
+            Boolean isSecure,
+            Boolean isCloudSqlConfigured,
+            NetworkConfig networkConfig,
+            ClusterDetails clusterDetails,
+            java.util.List<Node> nodes,
+            CloudSqlDetails cloudSqlDetails,
+            String createdBy,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            Integer numberOfNodes,
+            String bootstrapScriptUrl,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.lifecycleState = lifecycleState;
+        this.clusterVersion = clusterVersion;
+        this.isHighAvailability = isHighAvailability;
+        this.isSecure = isSecure;
+        this.isCloudSqlConfigured = isCloudSqlConfigured;
+        this.networkConfig = networkConfig;
+        this.clusterDetails = clusterDetails;
+        this.nodes = nodes;
+        this.cloudSqlDetails = cloudSqlDetails;
+        this.createdBy = createdBy;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.numberOfNodes = numberOfNodes;
+        this.bootstrapScriptUrl = bootstrapScriptUrl;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -260,27 +320,43 @@ public class BdsInstance {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the Big Data Service resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The state of the cluster.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -297,6 +373,9 @@ public class BdsInstance {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -334,11 +413,15 @@ public class BdsInstance {
      * The state of the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     /**
      * Version of the Hadoop distribution.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ClusterVersion {
         Cdh5("CDH5"),
         Cdh6("CDH6"),
@@ -350,6 +433,9 @@ public class BdsInstance {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ClusterVersion.class);
 
         private final String value;
         private static java.util.Map<String, ClusterVersion> map;
@@ -387,70 +473,122 @@ public class BdsInstance {
      * Version of the Hadoop distribution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterVersion")
-    ClusterVersion clusterVersion;
+    private final ClusterVersion clusterVersion;
+
+    public ClusterVersion getClusterVersion() {
+        return clusterVersion;
+    }
 
     /**
      * Boolean flag specifying whether or not the cluster is highly available (HA)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighAvailability")
-    Boolean isHighAvailability;
+    private final Boolean isHighAvailability;
+
+    public Boolean getIsHighAvailability() {
+        return isHighAvailability;
+    }
 
     /**
      * Boolean flag specifying whether or not the cluster should be set up as secure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
-    Boolean isSecure;
+    private final Boolean isSecure;
+
+    public Boolean getIsSecure() {
+        return isSecure;
+    }
 
     /**
      * Boolean flag specifying whether or not Cloud SQL should be configured.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloudSqlConfigured")
-    Boolean isCloudSqlConfigured;
+    private final Boolean isCloudSqlConfigured;
+
+    public Boolean getIsCloudSqlConfigured() {
+        return isCloudSqlConfigured;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfig")
-    NetworkConfig networkConfig;
+    private final NetworkConfig networkConfig;
+
+    public NetworkConfig getNetworkConfig() {
+        return networkConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("clusterDetails")
-    ClusterDetails clusterDetails;
+    private final ClusterDetails clusterDetails;
+
+    public ClusterDetails getClusterDetails() {
+        return clusterDetails;
+    }
 
     /**
      * The list of nodes in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
-    java.util.List<Node> nodes;
+    private final java.util.List<Node> nodes;
+
+    public java.util.List<Node> getNodes() {
+        return nodes;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cloudSqlDetails")
-    CloudSqlDetails cloudSqlDetails;
+    private final CloudSqlDetails cloudSqlDetails;
+
+    public CloudSqlDetails getCloudSqlDetails() {
+        return cloudSqlDetails;
+    }
 
     /**
      * The user who created the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    String createdBy;
+    private final String createdBy;
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
 
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Number of nodes that forming the cluster
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodes")
-    Integer numberOfNodes;
+    private final Integer numberOfNodes;
+
+    public Integer getNumberOfNodes() {
+        return numberOfNodes;
+    }
 
     /**
      * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
-    String bootstrapScriptUrl;
+    private final String bootstrapScriptUrl;
+
+    public String getBootstrapScriptUrl() {
+        return bootstrapScriptUrl;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
@@ -458,7 +596,11 @@ public class BdsInstance {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -466,8 +608,131 @@ public class BdsInstance {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BdsInstance(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", clusterVersion=").append(String.valueOf(this.clusterVersion));
+        sb.append(", isHighAvailability=").append(String.valueOf(this.isHighAvailability));
+        sb.append(", isSecure=").append(String.valueOf(this.isSecure));
+        sb.append(", isCloudSqlConfigured=").append(String.valueOf(this.isCloudSqlConfigured));
+        sb.append(", networkConfig=").append(String.valueOf(this.networkConfig));
+        sb.append(", clusterDetails=").append(String.valueOf(this.clusterDetails));
+        sb.append(", nodes=").append(String.valueOf(this.nodes));
+        sb.append(", cloudSqlDetails=").append(String.valueOf(this.cloudSqlDetails));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", numberOfNodes=").append(String.valueOf(this.numberOfNodes));
+        sb.append(", bootstrapScriptUrl=").append(String.valueOf(this.bootstrapScriptUrl));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BdsInstance)) {
+            return false;
+        }
+
+        BdsInstance other = (BdsInstance) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.clusterVersion, other.clusterVersion)
+                && java.util.Objects.equals(this.isHighAvailability, other.isHighAvailability)
+                && java.util.Objects.equals(this.isSecure, other.isSecure)
+                && java.util.Objects.equals(this.isCloudSqlConfigured, other.isCloudSqlConfigured)
+                && java.util.Objects.equals(this.networkConfig, other.networkConfig)
+                && java.util.Objects.equals(this.clusterDetails, other.clusterDetails)
+                && java.util.Objects.equals(this.nodes, other.nodes)
+                && java.util.Objects.equals(this.cloudSqlDetails, other.cloudSqlDetails)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.numberOfNodes, other.numberOfNodes)
+                && java.util.Objects.equals(this.bootstrapScriptUrl, other.bootstrapScriptUrl)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterVersion == null ? 43 : this.clusterVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHighAvailability == null
+                                ? 43
+                                : this.isHighAvailability.hashCode());
+        result = (result * PRIME) + (this.isSecure == null ? 43 : this.isSecure.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCloudSqlConfigured == null
+                                ? 43
+                                : this.isCloudSqlConfigured.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkConfig == null ? 43 : this.networkConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterDetails == null ? 43 : this.clusterDetails.hashCode());
+        result = (result * PRIME) + (this.nodes == null ? 43 : this.nodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudSqlDetails == null ? 43 : this.cloudSqlDetails.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfNodes == null ? 43 : this.numberOfNodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bootstrapScriptUrl == null
+                                ? 43
+                                : this.bootstrapScriptUrl.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

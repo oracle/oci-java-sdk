@@ -15,12 +15,6 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -44,33 +38,102 @@ package com.oracle.bmc.aivision.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class FieldValue {
+    @Deprecated
+    @java.beans.ConstructorProperties({"text", "confidence", "boundingPolygon", "wordIndexes"})
+    protected FieldValue(
+            String text,
+            Float confidence,
+            BoundingPolygon boundingPolygon,
+            java.util.List<Integer> wordIndexes) {
+        super();
+        this.text = text;
+        this.confidence = confidence;
+        this.boundingPolygon = boundingPolygon;
+        this.wordIndexes = wordIndexes;
+    }
 
     /**
      * The detected text of a field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
-    String text;
+    private final String text;
+
+    public String getText() {
+        return text;
+    }
 
     /**
      * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
-    Float confidence;
+    private final Float confidence;
+
+    public Float getConfidence() {
+        return confidence;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("boundingPolygon")
-    BoundingPolygon boundingPolygon;
+    private final BoundingPolygon boundingPolygon;
+
+    public BoundingPolygon getBoundingPolygon() {
+        return boundingPolygon;
+    }
 
     /**
      * The indexes of the words in the field value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
-    java.util.List<Integer> wordIndexes;
+    private final java.util.List<Integer> wordIndexes;
+
+    public java.util.List<Integer> getWordIndexes() {
+        return wordIndexes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FieldValue(");
+        sb.append("text=").append(String.valueOf(this.text));
+        sb.append(", confidence=").append(String.valueOf(this.confidence));
+        sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
+        sb.append(", wordIndexes=").append(String.valueOf(this.wordIndexes));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FieldValue)) {
+            return false;
+        }
+
+        FieldValue other = (FieldValue) o;
+        return java.util.Objects.equals(this.text, other.text)
+                && java.util.Objects.equals(this.confidence, other.confidence)
+                && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
+                && java.util.Objects.equals(this.wordIndexes, other.wordIndexes);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
+        result = (result * PRIME) + (this.confidence == null ? 43 : this.confidence.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
+        result = (result * PRIME) + (this.wordIndexes == null ? 43 : this.wordIndexes.hashCode());
+        return result;
+    }
 
     /**
      * The type of data detected.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ValueType {
         String("STRING"),
         Date("DATE"),
@@ -85,6 +148,9 @@ public class FieldValue {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ValueType.class);
 
         private final String value;
         private static java.util.Map<String, ValueType> map;

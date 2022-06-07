@@ -6,6 +6,7 @@ package com.oracle.bmc.optimizer;
 
 import com.oracle.bmc.optimizer.requests.*;
 import com.oracle.bmc.optimizer.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,15 @@ import com.oracle.bmc.optimizer.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.RequiredArgsConstructor
 public class OptimizerWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Optimizer client;
+
+    public OptimizerWaiters(
+            java.util.concurrent.ExecutorService executorService, Optimizer client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

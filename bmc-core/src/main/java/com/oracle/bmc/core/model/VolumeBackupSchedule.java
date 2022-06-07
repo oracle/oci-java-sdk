@@ -17,16 +17,49 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = VolumeBackupSchedule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VolumeBackupSchedule {
+public final class VolumeBackupSchedule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "backupType",
+        "offsetSeconds",
+        "period",
+        "offsetType",
+        "hourOfDay",
+        "dayOfWeek",
+        "dayOfMonth",
+        "month",
+        "retentionSeconds",
+        "timeZone"
+    })
+    public VolumeBackupSchedule(
+            BackupType backupType,
+            Integer offsetSeconds,
+            Period period,
+            OffsetType offsetType,
+            Integer hourOfDay,
+            DayOfWeek dayOfWeek,
+            Integer dayOfMonth,
+            Month month,
+            Integer retentionSeconds,
+            TimeZone timeZone) {
+        super();
+        this.backupType = backupType;
+        this.offsetSeconds = offsetSeconds;
+        this.period = period;
+        this.offsetType = offsetType;
+        this.hourOfDay = hourOfDay;
+        this.dayOfWeek = dayOfWeek;
+        this.dayOfMonth = dayOfMonth;
+        this.month = month;
+        this.retentionSeconds = retentionSeconds;
+        this.timeZone = timeZone;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private BackupType backupType;
@@ -164,10 +197,13 @@ public class VolumeBackupSchedule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of volume backup to create.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BackupType {
         Full("FULL"),
         Incremental("INCREMENTAL"),
@@ -177,6 +213,9 @@ public class VolumeBackupSchedule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BackupType.class);
 
         private final String value;
         private static java.util.Map<String, BackupType> map;
@@ -214,7 +253,11 @@ public class VolumeBackupSchedule {
      * The type of volume backup to create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
-    BackupType backupType;
+    private final BackupType backupType;
+
+    public BackupType getBackupType() {
+        return backupType;
+    }
 
     /**
      * The number of seconds that the volume backup start
@@ -223,11 +266,15 @@ public class VolumeBackupSchedule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetSeconds")
-    Integer offsetSeconds;
+    private final Integer offsetSeconds;
+
+    public Integer getOffsetSeconds() {
+        return offsetSeconds;
+    }
+
     /**
      * The volume backup frequency.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Period {
         OneHour("ONE_HOUR"),
         OneDay("ONE_DAY"),
@@ -240,6 +287,8 @@ public class VolumeBackupSchedule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Period.class);
 
         private final String value;
         private static java.util.Map<String, Period> map;
@@ -277,7 +326,12 @@ public class VolumeBackupSchedule {
      * The volume backup frequency.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("period")
-    Period period;
+    private final Period period;
+
+    public Period getPeriod() {
+        return period;
+    }
+
     /**
      * Indicates how the offset is defined. If value is {@code STRUCTURED},
      * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
@@ -304,7 +358,6 @@ public class VolumeBackupSchedule {
      * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OffsetType {
         Structured("STRUCTURED"),
         NumericSeconds("NUMERIC_SECONDS"),
@@ -314,6 +367,9 @@ public class VolumeBackupSchedule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OffsetType.class);
 
         private final String value;
         private static java.util.Map<String, OffsetType> map;
@@ -374,17 +430,25 @@ public class VolumeBackupSchedule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
-    OffsetType offsetType;
+    private final OffsetType offsetType;
+
+    public OffsetType getOffsetType() {
+        return offsetType;
+    }
 
     /**
      * The hour of the day to schedule the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
-    Integer hourOfDay;
+    private final Integer hourOfDay;
+
+    public Integer getHourOfDay() {
+        return hourOfDay;
+    }
+
     /**
      * The day of the week to schedule the volume backup.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DayOfWeek {
         Monday("MONDAY"),
         Tuesday("TUESDAY"),
@@ -399,6 +463,9 @@ public class VolumeBackupSchedule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DayOfWeek.class);
 
         private final String value;
         private static java.util.Map<String, DayOfWeek> map;
@@ -436,17 +503,25 @@ public class VolumeBackupSchedule {
      * The day of the week to schedule the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
-    DayOfWeek dayOfWeek;
+    private final DayOfWeek dayOfWeek;
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
 
     /**
      * The day of the month to schedule the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
-    Integer dayOfMonth;
+    private final Integer dayOfMonth;
+
+    public Integer getDayOfMonth() {
+        return dayOfMonth;
+    }
+
     /**
      * The month of the year to schedule the volume backup.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Month {
         January("JANUARY"),
         February("FEBRUARY"),
@@ -466,6 +541,8 @@ public class VolumeBackupSchedule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Month.class);
 
         private final String value;
         private static java.util.Map<String, Month> map;
@@ -503,17 +580,25 @@ public class VolumeBackupSchedule {
      * The month of the year to schedule the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("month")
-    Month month;
+    private final Month month;
+
+    public Month getMonth() {
+        return month;
+    }
 
     /**
      * How long, in seconds, to keep the volume backups created by this schedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionSeconds")
-    Integer retentionSeconds;
+    private final Integer retentionSeconds;
+
+    public Integer getRetentionSeconds() {
+        return retentionSeconds;
+    }
+
     /**
      * Specifies what time zone is the schedule in
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TimeZone {
         Utc("UTC"),
         RegionalDataCenterTime("REGIONAL_DATA_CENTER_TIME"),
@@ -523,6 +608,9 @@ public class VolumeBackupSchedule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TimeZone.class);
 
         private final String value;
         private static java.util.Map<String, TimeZone> map;
@@ -560,8 +648,82 @@ public class VolumeBackupSchedule {
      * Specifies what time zone is the schedule in
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    TimeZone timeZone;
+    private final TimeZone timeZone;
+
+    public TimeZone getTimeZone() {
+        return timeZone;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VolumeBackupSchedule(");
+        sb.append("backupType=").append(String.valueOf(this.backupType));
+        sb.append(", offsetSeconds=").append(String.valueOf(this.offsetSeconds));
+        sb.append(", period=").append(String.valueOf(this.period));
+        sb.append(", offsetType=").append(String.valueOf(this.offsetType));
+        sb.append(", hourOfDay=").append(String.valueOf(this.hourOfDay));
+        sb.append(", dayOfWeek=").append(String.valueOf(this.dayOfWeek));
+        sb.append(", dayOfMonth=").append(String.valueOf(this.dayOfMonth));
+        sb.append(", month=").append(String.valueOf(this.month));
+        sb.append(", retentionSeconds=").append(String.valueOf(this.retentionSeconds));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VolumeBackupSchedule)) {
+            return false;
+        }
+
+        VolumeBackupSchedule other = (VolumeBackupSchedule) o;
+        return java.util.Objects.equals(this.backupType, other.backupType)
+                && java.util.Objects.equals(this.offsetSeconds, other.offsetSeconds)
+                && java.util.Objects.equals(this.period, other.period)
+                && java.util.Objects.equals(this.offsetType, other.offsetType)
+                && java.util.Objects.equals(this.hourOfDay, other.hourOfDay)
+                && java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
+                && java.util.Objects.equals(this.dayOfMonth, other.dayOfMonth)
+                && java.util.Objects.equals(this.month, other.month)
+                && java.util.Objects.equals(this.retentionSeconds, other.retentionSeconds)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.backupType == null ? 43 : this.backupType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.offsetSeconds == null ? 43 : this.offsetSeconds.hashCode());
+        result = (result * PRIME) + (this.period == null ? 43 : this.period.hashCode());
+        result = (result * PRIME) + (this.offsetType == null ? 43 : this.offsetType.hashCode());
+        result = (result * PRIME) + (this.hourOfDay == null ? 43 : this.hourOfDay.hashCode());
+        result = (result * PRIME) + (this.dayOfWeek == null ? 43 : this.dayOfWeek.hashCode());
+        result = (result * PRIME) + (this.dayOfMonth == null ? 43 : this.dayOfMonth.hashCode());
+        result = (result * PRIME) + (this.month == null ? 43 : this.month.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionSeconds == null ? 43 : this.retentionSeconds.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

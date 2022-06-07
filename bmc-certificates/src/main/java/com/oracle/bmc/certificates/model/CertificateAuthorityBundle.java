@@ -16,16 +16,52 @@ package com.oracle.bmc.certificates.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CertificateAuthorityBundle.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CertificateAuthorityBundle {
+public final class CertificateAuthorityBundle {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "certificateAuthorityId",
+        "certificateAuthorityName",
+        "serialNumber",
+        "certificatePem",
+        "certChainPem",
+        "versionName",
+        "timeCreated",
+        "versionNumber",
+        "validity",
+        "stages",
+        "revocationStatus"
+    })
+    public CertificateAuthorityBundle(
+            String certificateAuthorityId,
+            String certificateAuthorityName,
+            String serialNumber,
+            String certificatePem,
+            String certChainPem,
+            String versionName,
+            java.util.Date timeCreated,
+            Long versionNumber,
+            Validity validity,
+            java.util.List<VersionStage> stages,
+            RevocationStatus revocationStatus) {
+        super();
+        this.certificateAuthorityId = certificateAuthorityId;
+        this.certificateAuthorityName = certificateAuthorityName;
+        this.serialNumber = serialNumber;
+        this.certificatePem = certificatePem;
+        this.certChainPem = certChainPem;
+        this.versionName = versionName;
+        this.timeCreated = timeCreated;
+        this.versionNumber = versionNumber;
+        this.validity = validity;
+        this.stages = stages;
+        this.revocationStatus = revocationStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
         private String certificateAuthorityId;
@@ -174,17 +210,29 @@ public class CertificateAuthorityBundle {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the certificate authority (CA).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
-    String certificateAuthorityId;
+    private final String certificateAuthorityId;
+
+    public String getCertificateAuthorityId() {
+        return certificateAuthorityId;
+    }
 
     /**
      * The name of the CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityName")
-    String certificateAuthorityName;
+    private final String certificateAuthorityName;
+
+    public String getCertificateAuthorityName() {
+        return certificateAuthorityName;
+    }
 
     /**
      * A unique certificate identifier used in certificate revocation tracking, formatted as octets.
@@ -192,25 +240,41 @@ public class CertificateAuthorityBundle {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
-    String serialNumber;
+    private final String serialNumber;
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 
     /**
      * The certificate (in PEM format) for this CA version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificatePem")
-    String certificatePem;
+    private final String certificatePem;
+
+    public String getCertificatePem() {
+        return certificatePem;
+    }
 
     /**
      * The certificate chain (in PEM format) for this CA version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certChainPem")
-    String certChainPem;
+    private final String certChainPem;
+
+    public String getCertChainPem() {
+        return certChainPem;
+    }
 
     /**
      * The name of the CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
-    String versionName;
+    private final String versionName;
+
+    public String getVersionName() {
+        return versionName;
+    }
 
     /**
      * A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -218,26 +282,131 @@ public class CertificateAuthorityBundle {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The version number of the CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
-    Long versionNumber;
+    private final Long versionNumber;
+
+    public Long getVersionNumber() {
+        return versionNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("validity")
-    Validity validity;
+    private final Validity validity;
+
+    public Validity getValidity() {
+        return validity;
+    }
 
     /**
      * A list of rotation states for this CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
-    java.util.List<VersionStage> stages;
+    private final java.util.List<VersionStage> stages;
+
+    public java.util.List<VersionStage> getStages() {
+        return stages;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("revocationStatus")
-    RevocationStatus revocationStatus;
+    private final RevocationStatus revocationStatus;
+
+    public RevocationStatus getRevocationStatus() {
+        return revocationStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateAuthorityBundle(");
+        sb.append("certificateAuthorityId=").append(String.valueOf(this.certificateAuthorityId));
+        sb.append(", certificateAuthorityName=")
+                .append(String.valueOf(this.certificateAuthorityName));
+        sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
+        sb.append(", certificatePem=").append(String.valueOf(this.certificatePem));
+        sb.append(", certChainPem=").append(String.valueOf(this.certChainPem));
+        sb.append(", versionName=").append(String.valueOf(this.versionName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", versionNumber=").append(String.valueOf(this.versionNumber));
+        sb.append(", validity=").append(String.valueOf(this.validity));
+        sb.append(", stages=").append(String.valueOf(this.stages));
+        sb.append(", revocationStatus=").append(String.valueOf(this.revocationStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateAuthorityBundle)) {
+            return false;
+        }
+
+        CertificateAuthorityBundle other = (CertificateAuthorityBundle) o;
+        return java.util.Objects.equals(this.certificateAuthorityId, other.certificateAuthorityId)
+                && java.util.Objects.equals(
+                        this.certificateAuthorityName, other.certificateAuthorityName)
+                && java.util.Objects.equals(this.serialNumber, other.serialNumber)
+                && java.util.Objects.equals(this.certificatePem, other.certificatePem)
+                && java.util.Objects.equals(this.certChainPem, other.certChainPem)
+                && java.util.Objects.equals(this.versionName, other.versionName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.versionNumber, other.versionNumber)
+                && java.util.Objects.equals(this.validity, other.validity)
+                && java.util.Objects.equals(this.stages, other.stages)
+                && java.util.Objects.equals(this.revocationStatus, other.revocationStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.certificateAuthorityId == null
+                                ? 43
+                                : this.certificateAuthorityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateAuthorityName == null
+                                ? 43
+                                : this.certificateAuthorityName.hashCode());
+        result = (result * PRIME) + (this.serialNumber == null ? 43 : this.serialNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificatePem == null ? 43 : this.certificatePem.hashCode());
+        result = (result * PRIME) + (this.certChainPem == null ? 43 : this.certChainPem.hashCode());
+        result = (result * PRIME) + (this.versionName == null ? 43 : this.versionName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionNumber == null ? 43 : this.versionNumber.hashCode());
+        result = (result * PRIME) + (this.validity == null ? 43 : this.validity.hashCode());
+        result = (result * PRIME) + (this.stages == null ? 43 : this.stages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.revocationStatus == null ? 43 : this.revocationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

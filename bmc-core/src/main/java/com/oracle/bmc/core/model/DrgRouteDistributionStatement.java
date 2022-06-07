@@ -17,16 +17,26 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DrgRouteDistributionStatement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DrgRouteDistributionStatement {
+public final class DrgRouteDistributionStatement {
+    @Deprecated
+    @java.beans.ConstructorProperties({"matchCriteria", "action", "priority", "id"})
+    public DrgRouteDistributionStatement(
+            java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria,
+            Action action,
+            Integer priority,
+            String id) {
+        super();
+        this.matchCriteria = matchCriteria;
+        this.action = action;
+        this.priority = priority;
+        this.id = id;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
         private java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
@@ -95,18 +105,26 @@ public class DrgRouteDistributionStatement {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The action is applied only if all of the match criteria is met.
      * If there are no match criteria in a statement, any input is considered a match and the action is applied.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
-    java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
+    private final java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
+
+    public java.util.List<DrgRouteDistributionMatchCriteria> getMatchCriteria() {
+        return matchCriteria;
+    }
+
     /**
      * {@code ACCEPT} indicates the route should be imported or exported as-is.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Accept("ACCEPT"),
 
@@ -115,6 +133,8 @@ public class DrgRouteDistributionStatement {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -153,7 +173,11 @@ public class DrgRouteDistributionStatement {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * This field specifies the priority of each statement in a route distribution.
@@ -165,15 +189,73 @@ public class DrgRouteDistributionStatement {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
-    Integer priority;
+    private final Integer priority;
+
+    public Integer getPriority() {
+        return priority;
+    }
 
     /**
      * The Oracle-assigned ID of the route distribution statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DrgRouteDistributionStatement(");
+        sb.append("matchCriteria=").append(String.valueOf(this.matchCriteria));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", priority=").append(String.valueOf(this.priority));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DrgRouteDistributionStatement)) {
+            return false;
+        }
+
+        DrgRouteDistributionStatement other = (DrgRouteDistributionStatement) o;
+        return java.util.Objects.equals(this.matchCriteria, other.matchCriteria)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.priority, other.priority)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.matchCriteria == null ? 43 : this.matchCriteria.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

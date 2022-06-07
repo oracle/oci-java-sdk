@@ -8,7 +8,6 @@ package com.oracle.bmc.networkloadbalancer.model;
  * Mode specifying the version of IP.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.extern.slf4j.Slf4j
 public enum IpVersion {
     Ipv4("IPV4"),
     Ipv6("IPV6"),
@@ -18,6 +17,8 @@ public enum IpVersion {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(IpVersion.class);
 
     private final String value;
     private static java.util.Map<String, IpVersion> map;

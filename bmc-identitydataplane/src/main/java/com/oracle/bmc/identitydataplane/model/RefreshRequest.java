@@ -15,14 +15,18 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RefreshRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RefreshRequest {
+public final class RefreshRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({"currentToken", "newPublicKey"})
+    public RefreshRequest(String currentToken, String newPublicKey) {
+        super();
+        this.currentToken = currentToken;
+        this.newPublicKey = newPublicKey;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("currentToken")
         private String currentToken;
@@ -68,18 +72,72 @@ public class RefreshRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The current security token that is to be renewed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentToken")
-    String currentToken;
+    private final String currentToken;
+
+    public String getCurrentToken() {
+        return currentToken;
+    }
 
     /**
      * An optional new public for the new token. If not supplied, currentToken's public key will be used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newPublicKey")
-    String newPublicKey;
+    private final String newPublicKey;
+
+    public String getNewPublicKey() {
+        return newPublicKey;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RefreshRequest(");
+        sb.append("currentToken=").append(String.valueOf(this.currentToken));
+        sb.append(", newPublicKey=").append(String.valueOf(this.newPublicKey));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RefreshRequest)) {
+            return false;
+        }
+
+        RefreshRequest other = (RefreshRequest) o;
+        return java.util.Objects.equals(this.currentToken, other.currentToken)
+                && java.util.Objects.equals(this.newPublicKey, other.newPublicKey)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.currentToken == null ? 43 : this.currentToken.hashCode());
+        result = (result * PRIME) + (this.newPublicKey == null ? 43 : this.newPublicKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

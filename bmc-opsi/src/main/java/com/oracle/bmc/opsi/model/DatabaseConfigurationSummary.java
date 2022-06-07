@@ -15,12 +15,6 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -47,48 +41,112 @@ package com.oracle.bmc.opsi.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DatabaseConfigurationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "databaseInsightId",
+        "compartmentId",
+        "databaseName",
+        "databaseDisplayName",
+        "databaseType",
+        "databaseVersion",
+        "cdbName",
+        "definedTags",
+        "freeformTags",
+        "processorCount"
+    })
+    protected DatabaseConfigurationSummary(
+            String databaseInsightId,
+            String compartmentId,
+            String databaseName,
+            String databaseDisplayName,
+            String databaseType,
+            String databaseVersion,
+            String cdbName,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags,
+            Integer processorCount) {
+        super();
+        this.databaseInsightId = databaseInsightId;
+        this.compartmentId = compartmentId;
+        this.databaseName = databaseName;
+        this.databaseDisplayName = databaseDisplayName;
+        this.databaseType = databaseType;
+        this.databaseVersion = databaseVersion;
+        this.cdbName = cdbName;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+        this.processorCount = processorCount;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseInsightId")
-    String databaseInsightId;
+    private final String databaseInsightId;
+
+    public String getDatabaseInsightId() {
+        return databaseInsightId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The database name. The database name is unique within the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
-    String databaseName;
+    private final String databaseName;
+
+    public String getDatabaseName() {
+        return databaseName;
+    }
 
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
-    String databaseDisplayName;
+    private final String databaseDisplayName;
+
+    public String getDatabaseDisplayName() {
+        return databaseDisplayName;
+    }
 
     /**
      * Operations Insights internal representation of the database type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    String databaseType;
+    private final String databaseType;
+
+    public String getDatabaseType() {
+        return databaseType;
+    }
 
     /**
      * The version of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
-    String databaseVersion;
+    private final String databaseVersion;
+
+    public String getDatabaseVersion() {
+        return databaseVersion;
+    }
 
     /**
      * Name of the CDB.Only applies to PDB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
-    String cdbName;
+    private final String cdbName;
+
+    public String getCdbName() {
+        return cdbName;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -96,7 +154,11 @@ public class DatabaseConfigurationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -104,11 +166,88 @@ public class DatabaseConfigurationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorCount")
-    Integer processorCount;
+    private final Integer processorCount;
+
+    public Integer getProcessorCount() {
+        return processorCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseConfigurationSummary(");
+        sb.append("databaseInsightId=").append(String.valueOf(this.databaseInsightId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", databaseName=").append(String.valueOf(this.databaseName));
+        sb.append(", databaseDisplayName=").append(String.valueOf(this.databaseDisplayName));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
+        sb.append(", cdbName=").append(String.valueOf(this.cdbName));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", processorCount=").append(String.valueOf(this.processorCount));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseConfigurationSummary)) {
+            return false;
+        }
+
+        DatabaseConfigurationSummary other = (DatabaseConfigurationSummary) o;
+        return java.util.Objects.equals(this.databaseInsightId, other.databaseInsightId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.databaseName, other.databaseName)
+                && java.util.Objects.equals(this.databaseDisplayName, other.databaseDisplayName)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
+                && java.util.Objects.equals(this.cdbName, other.cdbName)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.processorCount, other.processorCount);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.databaseInsightId == null ? 43 : this.databaseInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.databaseName == null ? 43 : this.databaseName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseDisplayName == null
+                                ? 43
+                                : this.databaseDisplayName.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
+        result = (result * PRIME) + (this.cdbName == null ? 43 : this.cdbName.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.processorCount == null ? 43 : this.processorCount.hashCode());
+        return result;
+    }
 }

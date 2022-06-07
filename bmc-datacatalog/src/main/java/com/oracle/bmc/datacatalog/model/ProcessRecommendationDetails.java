@@ -16,16 +16,24 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProcessRecommendationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProcessRecommendationDetails {
+public final class ProcessRecommendationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"recommendationKey", "recommendationStatus", "properties"})
+    public ProcessRecommendationDetails(
+            String recommendationKey,
+            RecommendationStatus recommendationStatus,
+            java.util.Map<String, java.util.Map<String, String>> properties) {
+        super();
+        this.recommendationKey = recommendationKey;
+        this.recommendationStatus = recommendationStatus;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
         private String recommendationKey;
@@ -84,17 +92,29 @@ public class ProcessRecommendationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier of the recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
-    String recommendationKey;
+    private final String recommendationKey;
+
+    public String getRecommendationKey() {
+        return recommendationKey;
+    }
 
     /**
      * The status of a recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationStatus")
-    RecommendationStatus recommendationStatus;
+    private final RecommendationStatus recommendationStatus;
+
+    public RecommendationStatus getRecommendationStatus() {
+        return recommendationStatus;
+    }
 
     /**
      * A map of maps that contains additional properties which are specific to the associated objects.
@@ -110,8 +130,63 @@ public class ProcessRecommendationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, java.util.Map<String, String>> properties;
+    private final java.util.Map<String, java.util.Map<String, String>> properties;
+
+    public java.util.Map<String, java.util.Map<String, String>> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProcessRecommendationDetails(");
+        sb.append("recommendationKey=").append(String.valueOf(this.recommendationKey));
+        sb.append(", recommendationStatus=").append(String.valueOf(this.recommendationStatus));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProcessRecommendationDetails)) {
+            return false;
+        }
+
+        ProcessRecommendationDetails other = (ProcessRecommendationDetails) o;
+        return java.util.Objects.equals(this.recommendationKey, other.recommendationKey)
+                && java.util.Objects.equals(this.recommendationStatus, other.recommendationStatus)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.recommendationKey == null ? 43 : this.recommendationKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendationStatus == null
+                                ? 43
+                                : this.recommendationStatus.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

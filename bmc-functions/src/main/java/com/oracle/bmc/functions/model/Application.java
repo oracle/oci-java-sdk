@@ -16,14 +16,59 @@ package com.oracle.bmc.functions.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Application.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Application {
+public final class Application {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "lifecycleState",
+        "config",
+        "subnetIds",
+        "networkSecurityGroupIds",
+        "syslogUrl",
+        "traceConfig",
+        "freeformTags",
+        "definedTags",
+        "timeCreated",
+        "timeUpdated",
+        "imagePolicyConfig"
+    })
+    public Application(
+            String id,
+            String compartmentId,
+            String displayName,
+            LifecycleState lifecycleState,
+            java.util.Map<String, String> config,
+            java.util.List<String> subnetIds,
+            java.util.List<String> networkSecurityGroupIds,
+            String syslogUrl,
+            ApplicationTraceConfig traceConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            ImagePolicyConfig imagePolicyConfig) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.lifecycleState = lifecycleState;
+        this.config = config;
+        this.subnetIds = subnetIds;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
+        this.syslogUrl = syslogUrl;
+        this.traceConfig = traceConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.imagePolicyConfig = imagePolicyConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -206,31 +251,47 @@ public class Application {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment that contains the application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The display name of the application. The display name is unique within the compartment containing the application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The current state of the application.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -245,6 +306,9 @@ public class Application {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -283,7 +347,11 @@ public class Application {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration.
@@ -295,21 +363,33 @@ public class Application {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
-    java.util.Map<String, String> config;
+    private final java.util.Map<String, String> config;
+
+    public java.util.Map<String, String> getConfig() {
+        return config;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
-    java.util.List<String> subnetIds;
+    private final java.util.List<String> subnetIds;
+
+    public java.util.List<String> getSubnetIds() {
+        return subnetIds;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
-    java.util.List<String> networkSecurityGroupIds;
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
 
     /**
      * A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
@@ -320,10 +400,18 @@ public class Application {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
-    String syslogUrl;
+    private final String syslogUrl;
+
+    public String getSyslogUrl() {
+        return syslogUrl;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
-    ApplicationTraceConfig traceConfig;
+    private final ApplicationTraceConfig traceConfig;
+
+    public ApplicationTraceConfig getTraceConfig() {
+        return traceConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -333,7 +421,11 @@ public class Application {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -342,7 +434,11 @@ public class Application {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -352,7 +448,11 @@ public class Application {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -361,11 +461,109 @@ public class Application {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
-    ImagePolicyConfig imagePolicyConfig;
+    private final ImagePolicyConfig imagePolicyConfig;
+
+    public ImagePolicyConfig getImagePolicyConfig() {
+        return imagePolicyConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Application(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", config=").append(String.valueOf(this.config));
+        sb.append(", subnetIds=").append(String.valueOf(this.subnetIds));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
+        sb.append(", syslogUrl=").append(String.valueOf(this.syslogUrl));
+        sb.append(", traceConfig=").append(String.valueOf(this.traceConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Application)) {
+            return false;
+        }
+
+        Application other = (Application) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.config, other.config)
+                && java.util.Objects.equals(this.subnetIds, other.subnetIds)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
+                && java.util.Objects.equals(this.syslogUrl, other.syslogUrl)
+                && java.util.Objects.equals(this.traceConfig, other.traceConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.config == null ? 43 : this.config.hashCode());
+        result = (result * PRIME) + (this.subnetIds == null ? 43 : this.subnetIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
+        result = (result * PRIME) + (this.syslogUrl == null ? 43 : this.syslogUrl.hashCode());
+        result = (result * PRIME) + (this.traceConfig == null ? 43 : this.traceConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.imagePolicyConfig == null ? 43 : this.imagePolicyConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

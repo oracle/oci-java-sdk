@@ -15,16 +15,40 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDrgAttachmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDrgAttachmentDetails {
+public final class UpdateDrgAttachmentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "drgRouteTableId",
+        "networkDetails",
+        "definedTags",
+        "freeformTags",
+        "exportDrgRouteDistributionId",
+        "routeTableId"
+    })
+    public UpdateDrgAttachmentDetails(
+            String displayName,
+            String drgRouteTableId,
+            DrgAttachmentNetworkUpdateDetails networkDetails,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags,
+            String exportDrgRouteDistributionId,
+            String routeTableId) {
+        super();
+        this.displayName = displayName;
+        this.drgRouteTableId = drgRouteTableId;
+        this.networkDetails = networkDetails;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+        this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
+        this.routeTableId = routeTableId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -130,13 +154,21 @@ public class UpdateDrgAttachmentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
@@ -148,10 +180,18 @@ public class UpdateDrgAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
-    String drgRouteTableId;
+    private final String drgRouteTableId;
+
+    public String getDrgRouteTableId() {
+        return drgRouteTableId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkDetails")
-    DrgAttachmentNetworkUpdateDetails networkDetails;
+    private final DrgAttachmentNetworkUpdateDetails networkDetails;
+
+    public DrgAttachmentNetworkUpdateDetails getNetworkDetails() {
+        return networkDetails;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -161,7 +201,11 @@ public class UpdateDrgAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -171,7 +215,11 @@ public class UpdateDrgAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
@@ -180,7 +228,11 @@ public class UpdateDrgAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
-    String exportDrgRouteDistributionId;
+    private final String exportDrgRouteDistributionId;
+
+    public String getExportDrgRouteDistributionId() {
+        return exportDrgRouteDistributionId;
+    }
 
     /**
      * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that is used to route the traffic as it enters a VCN through this attachment.
@@ -192,8 +244,79 @@ public class UpdateDrgAttachmentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    String routeTableId;
+    private final String routeTableId;
+
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDrgAttachmentDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
+        sb.append(", networkDetails=").append(String.valueOf(this.networkDetails));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", exportDrgRouteDistributionId=")
+                .append(String.valueOf(this.exportDrgRouteDistributionId));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDrgAttachmentDetails)) {
+            return false;
+        }
+
+        UpdateDrgAttachmentDetails other = (UpdateDrgAttachmentDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.drgRouteTableId, other.drgRouteTableId)
+                && java.util.Objects.equals(this.networkDetails, other.networkDetails)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.exportDrgRouteDistributionId, other.exportDrgRouteDistributionId)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drgRouteTableId == null ? 43 : this.drgRouteTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkDetails == null ? 43 : this.networkDetails.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportDrgRouteDistributionId == null
+                                ? 43
+                                : this.exportDrgRouteDistributionId.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,37 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateGroupCursorDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateGroupCursorDetails {
+public final class CreateGroupCursorDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "type",
+        "time",
+        "groupName",
+        "instanceName",
+        "timeoutInMs",
+        "commitOnGet"
+    })
+    public CreateGroupCursorDetails(
+            Type type,
+            java.util.Date time,
+            String groupName,
+            String instanceName,
+            Integer timeoutInMs,
+            Boolean commitOnGet) {
+        super();
+        this.type = type;
+        this.time = time;
+        this.groupName = groupName;
+        this.instanceName = instanceName;
+        this.timeoutInMs = timeoutInMs;
+        this.commitOnGet = commitOnGet;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -113,6 +134,10 @@ public class CreateGroupCursorDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of the cursor. This value is only used when the group is created.
      **/
@@ -153,31 +178,51 @@ public class CreateGroupCursorDetails {
      * The type of the cursor. This value is only used when the group is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The time to consume from if type is AT_TIME.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
-    java.util.Date time;
+    private final java.util.Date time;
+
+    public java.util.Date getTime() {
+        return time;
+    }
 
     /**
      * Name of the consumer group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupName")
-    String groupName;
+    private final String groupName;
+
+    public String getGroupName() {
+        return groupName;
+    }
 
     /**
      * A unique identifier for the instance joining the consumer group. If an instanceName is not provided, a UUID will be generated and used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
-    String instanceName;
+    private final String instanceName;
+
+    public String getInstanceName() {
+        return instanceName;
+    }
 
     /**
      * The amount of a consumer instance inactivity time, before partition reservations are released.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
-    Integer timeoutInMs;
+    private final Integer timeoutInMs;
+
+    public Integer getTimeoutInMs() {
+        return timeoutInMs;
+    }
 
     /**
      * When using consumer-groups, the default commit-on-get behaviour can be overriden by setting this value to false.
@@ -185,8 +230,66 @@ public class CreateGroupCursorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitOnGet")
-    Boolean commitOnGet;
+    private final Boolean commitOnGet;
+
+    public Boolean getCommitOnGet() {
+        return commitOnGet;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateGroupCursorDetails(");
+        sb.append("type=").append(String.valueOf(this.type));
+        sb.append(", time=").append(String.valueOf(this.time));
+        sb.append(", groupName=").append(String.valueOf(this.groupName));
+        sb.append(", instanceName=").append(String.valueOf(this.instanceName));
+        sb.append(", timeoutInMs=").append(String.valueOf(this.timeoutInMs));
+        sb.append(", commitOnGet=").append(String.valueOf(this.commitOnGet));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateGroupCursorDetails)) {
+            return false;
+        }
+
+        CreateGroupCursorDetails other = (CreateGroupCursorDetails) o;
+        return java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.time, other.time)
+                && java.util.Objects.equals(this.groupName, other.groupName)
+                && java.util.Objects.equals(this.instanceName, other.instanceName)
+                && java.util.Objects.equals(this.timeoutInMs, other.timeoutInMs)
+                && java.util.Objects.equals(this.commitOnGet, other.commitOnGet)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
+        result = (result * PRIME) + (this.groupName == null ? 43 : this.groupName.hashCode());
+        result = (result * PRIME) + (this.instanceName == null ? 43 : this.instanceName.hashCode());
+        result = (result * PRIME) + (this.timeoutInMs == null ? 43 : this.timeoutInMs.hashCode());
+        result = (result * PRIME) + (this.commitOnGet == null ? 43 : this.commitOnGet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

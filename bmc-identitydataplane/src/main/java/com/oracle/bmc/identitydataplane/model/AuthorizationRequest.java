@@ -15,16 +15,37 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AuthorizationRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuthorizationRequest {
+public final class AuthorizationRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "requestId",
+        "userPrincipal",
+        "svcPrincipal",
+        "serviceName",
+        "context",
+        "policyHash"
+    })
+    public AuthorizationRequest(
+            String requestId,
+            Principal userPrincipal,
+            Principal svcPrincipal,
+            String serviceName,
+            java.util.List<PermissionContext> context,
+            String policyHash) {
+        super();
+        this.requestId = requestId;
+        this.userPrincipal = userPrincipal;
+        this.svcPrincipal = svcPrincipal;
+        this.serviceName = serviceName;
+        this.context = context;
+        this.policyHash = policyHash;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("requestId")
         private String requestId;
@@ -118,35 +139,59 @@ public class AuthorizationRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The id of this request. It is a GUID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestId")
-    String requestId;
+    private final String requestId;
+
+    public String getRequestId() {
+        return requestId;
+    }
 
     /**
      * The user principal object
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userPrincipal")
-    Principal userPrincipal;
+    private final Principal userPrincipal;
+
+    public Principal getUserPrincipal() {
+        return userPrincipal;
+    }
 
     /**
      * The service principal object for service to service calls.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("svcPrincipal")
-    Principal svcPrincipal;
+    private final Principal svcPrincipal;
+
+    public Principal getSvcPrincipal() {
+        return svcPrincipal;
+    }
 
     /**
      * The name of the service that is making this authorization request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * A set of permission contexts
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("context")
-    java.util.List<PermissionContext> context;
+    private final java.util.List<PermissionContext> context;
+
+    public java.util.List<PermissionContext> getContext() {
+        return context;
+    }
 
     /**
      * The hash of cached policy on the caller service side. If this is different than what Identity has, it will
@@ -154,8 +199,68 @@ public class AuthorizationRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyHash")
-    String policyHash;
+    private final String policyHash;
+
+    public String getPolicyHash() {
+        return policyHash;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuthorizationRequest(");
+        sb.append("requestId=").append(String.valueOf(this.requestId));
+        sb.append(", userPrincipal=").append(String.valueOf(this.userPrincipal));
+        sb.append(", svcPrincipal=").append(String.valueOf(this.svcPrincipal));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", context=").append(String.valueOf(this.context));
+        sb.append(", policyHash=").append(String.valueOf(this.policyHash));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuthorizationRequest)) {
+            return false;
+        }
+
+        AuthorizationRequest other = (AuthorizationRequest) o;
+        return java.util.Objects.equals(this.requestId, other.requestId)
+                && java.util.Objects.equals(this.userPrincipal, other.userPrincipal)
+                && java.util.Objects.equals(this.svcPrincipal, other.svcPrincipal)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.context, other.context)
+                && java.util.Objects.equals(this.policyHash, other.policyHash)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.requestId == null ? 43 : this.requestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userPrincipal == null ? 43 : this.userPrincipal.hashCode());
+        result = (result * PRIME) + (this.svcPrincipal == null ? 43 : this.svcPrincipal.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.context == null ? 43 : this.context.hashCode());
+        result = (result * PRIME) + (this.policyHash == null ? 43 : this.policyHash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

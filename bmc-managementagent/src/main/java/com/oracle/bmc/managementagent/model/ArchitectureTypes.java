@@ -11,7 +11,6 @@ package com.oracle.bmc.managementagent.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.extern.slf4j.Slf4j
 public enum ArchitectureTypes {
     X8664("X86_64"),
     Sparc("SPARC"),
@@ -21,6 +20,9 @@ public enum ArchitectureTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ArchitectureTypes.class);
 
     private final String value;
     private static java.util.Map<String, ArchitectureTypes> map;

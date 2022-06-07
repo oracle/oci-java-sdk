@@ -15,16 +15,21 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ThinAuthorizationResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ThinAuthorizationResponse {
+public final class ThinAuthorizationResponse {
+    @Deprecated
+    @java.beans.ConstructorProperties({"authorizationRequest", "decisionCacheDuration"})
+    public ThinAuthorizationResponse(
+            AuthorizationRequest authorizationRequest, String decisionCacheDuration) {
+        super();
+        this.authorizationRequest = authorizationRequest;
+        this.decisionCacheDuration = decisionCacheDuration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
         private AuthorizationRequest authorizationRequest;
@@ -72,11 +77,19 @@ public class ThinAuthorizationResponse {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The policy string related to the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
-    AuthorizationRequest authorizationRequest;
+    private final AuthorizationRequest authorizationRequest;
+
+    public AuthorizationRequest getAuthorizationRequest() {
+        return authorizationRequest;
+    }
 
     /**
      * The duration of how long this decision should be cached. Note that the type is of type java.time.Duration, not
@@ -84,8 +97,62 @@ public class ThinAuthorizationResponse {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
-    String decisionCacheDuration;
+    private final String decisionCacheDuration;
+
+    public String getDecisionCacheDuration() {
+        return decisionCacheDuration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ThinAuthorizationResponse(");
+        sb.append("authorizationRequest=").append(String.valueOf(this.authorizationRequest));
+        sb.append(", decisionCacheDuration=").append(String.valueOf(this.decisionCacheDuration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ThinAuthorizationResponse)) {
+            return false;
+        }
+
+        ThinAuthorizationResponse other = (ThinAuthorizationResponse) o;
+        return java.util.Objects.equals(this.authorizationRequest, other.authorizationRequest)
+                && java.util.Objects.equals(this.decisionCacheDuration, other.decisionCacheDuration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.authorizationRequest == null
+                                ? 43
+                                : this.authorizationRequest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.decisionCacheDuration == null
+                                ? 43
+                                : this.decisionCacheDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

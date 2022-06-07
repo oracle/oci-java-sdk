@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListFieldsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFieldsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,6 +17,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * A flag indicating how to handle filtering when multiple filter criteria are specified.
      * A value of true will always result in the most expansive list of items being returned.
@@ -35,6 +30,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Boolean isMatchAll;
 
+    public Boolean getIsMatchAll() {
+        return isMatchAll;
+    }
     /**
      * A list of source IDs used for filtering.  Only fields used by the specified
      * sources will be returned.
@@ -42,6 +40,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String sourceIds;
 
+    public String getSourceIds() {
+        return sourceIds;
+    }
     /**
      * A list of source names used for filtering.  Only fields used by the specified
      * sources will be returned.
@@ -49,6 +50,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String sourceNames;
 
+    public String getSourceNames() {
+        return sourceNames;
+    }
     /**
      * The parser type used for filtering.  Only items with, or associated with, parsers
      * of the specified type will be returned.
@@ -97,6 +101,10 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid ParserType: " + key);
         }
     };
+
+    public ParserType getParserType() {
+        return parserType;
+    }
     /**
      * A list of parser names used for filtering.  Only fields used by the specified
      * parsers will be returned.
@@ -104,6 +112,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String parserIds;
 
+    public String getParserIds() {
+        return parserIds;
+    }
     /**
      * A list of parser names used for filtering.  Only fields used by the specified
      * parsers will be returned.
@@ -111,26 +122,41 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String parserNames;
 
+    public String getParserNames() {
+        return parserNames;
+    }
     /**
      * isIncludeParser
      */
     private Boolean isIncludeParser;
 
+    public Boolean getIsIncludeParser() {
+        return isIncludeParser;
+    }
     /**
      * filter
      */
     private String filter;
 
+    public String getFilter() {
+        return filter;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -173,6 +199,10 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The attribute used to sort the returned fields
      */
@@ -213,10 +243,18 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -224,6 +262,177 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private Boolean isMatchAll = null;
+
+        /**
+         * A flag indicating how to handle filtering when multiple filter criteria are specified.
+         * A value of true will always result in the most expansive list of items being returned.
+         * For example, if two field lists are supplies as filter criteria, a value of true will
+         * result in any item matching a field in either list being returned, while a value of
+         * false will result in a list of items which only have fields contained in both input lists.
+         *
+         * @return this builder instance
+         */
+        public Builder isMatchAll(Boolean isMatchAll) {
+            this.isMatchAll = isMatchAll;
+            return this;
+        }
+
+        private String sourceIds = null;
+
+        /**
+         * A list of source IDs used for filtering.  Only fields used by the specified
+         * sources will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder sourceIds(String sourceIds) {
+            this.sourceIds = sourceIds;
+            return this;
+        }
+
+        private String sourceNames = null;
+
+        /**
+         * A list of source names used for filtering.  Only fields used by the specified
+         * sources will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder sourceNames(String sourceNames) {
+            this.sourceNames = sourceNames;
+            return this;
+        }
+
+        private ParserType parserType = null;
+
+        /**
+         * The parser type used for filtering.  Only items with, or associated with, parsers
+         * of the specified type will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder parserType(ParserType parserType) {
+            this.parserType = parserType;
+            return this;
+        }
+
+        private String parserIds = null;
+
+        /**
+         * A list of parser names used for filtering.  Only fields used by the specified
+         * parsers will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder parserIds(String parserIds) {
+            this.parserIds = parserIds;
+            return this;
+        }
+
+        private String parserNames = null;
+
+        /**
+         * A list of parser names used for filtering.  Only fields used by the specified
+         * parsers will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder parserNames(String parserNames) {
+            this.parserNames = parserNames;
+            return this;
+        }
+
+        private Boolean isIncludeParser = null;
+
+        /**
+         * isIncludeParser
+         * @return this builder instance
+         */
+        public Builder isIncludeParser(Boolean isIncludeParser) {
+            this.isIncludeParser = isIncludeParser;
+            return this;
+        }
+
+        private String filter = null;
+
+        /**
+         * filter
+         * @return this builder instance
+         */
+        public Builder filter(String filter) {
+            this.filter = filter;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The attribute used to sort the returned fields
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -288,5 +497,133 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListFieldsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListFieldsRequest
+         */
+        public ListFieldsRequest buildWithoutInvocationCallback() {
+            ListFieldsRequest request = new ListFieldsRequest();
+            request.namespaceName = namespaceName;
+            request.isMatchAll = isMatchAll;
+            request.sourceIds = sourceIds;
+            request.sourceNames = sourceNames;
+            request.parserType = parserType;
+            request.parserIds = parserIds;
+            request.parserNames = parserNames;
+            request.isIncludeParser = isIncludeParser;
+            request.filter = filter;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListFieldsRequest(namespaceName, isMatchAll, sourceIds, sourceNames, parserType, parserIds, parserNames, isIncludeParser, filter, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .isMatchAll(isMatchAll)
+                .sourceIds(sourceIds)
+                .sourceNames(sourceNames)
+                .parserType(parserType)
+                .parserIds(parserIds)
+                .parserNames(parserNames)
+                .isIncludeParser(isIncludeParser)
+                .filter(filter)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",isMatchAll=").append(String.valueOf(this.isMatchAll));
+        sb.append(",sourceIds=").append(String.valueOf(this.sourceIds));
+        sb.append(",sourceNames=").append(String.valueOf(this.sourceNames));
+        sb.append(",parserType=").append(String.valueOf(this.parserType));
+        sb.append(",parserIds=").append(String.valueOf(this.parserIds));
+        sb.append(",parserNames=").append(String.valueOf(this.parserNames));
+        sb.append(",isIncludeParser=").append(String.valueOf(this.isIncludeParser));
+        sb.append(",filter=").append(String.valueOf(this.filter));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListFieldsRequest)) {
+            return false;
+        }
+
+        ListFieldsRequest other = (ListFieldsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.isMatchAll, other.isMatchAll)
+                && java.util.Objects.equals(this.sourceIds, other.sourceIds)
+                && java.util.Objects.equals(this.sourceNames, other.sourceNames)
+                && java.util.Objects.equals(this.parserType, other.parserType)
+                && java.util.Objects.equals(this.parserIds, other.parserIds)
+                && java.util.Objects.equals(this.parserNames, other.parserNames)
+                && java.util.Objects.equals(this.isIncludeParser, other.isIncludeParser)
+                && java.util.Objects.equals(this.filter, other.filter)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.isMatchAll == null ? 43 : this.isMatchAll.hashCode());
+        result = (result * PRIME) + (this.sourceIds == null ? 43 : this.sourceIds.hashCode());
+        result = (result * PRIME) + (this.sourceNames == null ? 43 : this.sourceNames.hashCode());
+        result = (result * PRIME) + (this.parserType == null ? 43 : this.parserType.hashCode());
+        result = (result * PRIME) + (this.parserIds == null ? 43 : this.parserIds.hashCode());
+        result = (result * PRIME) + (this.parserNames == null ? 43 : this.parserNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncludeParser == null ? 43 : this.isIncludeParser.hashCode());
+        result = (result * PRIME) + (this.filter == null ? 43 : this.filter.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

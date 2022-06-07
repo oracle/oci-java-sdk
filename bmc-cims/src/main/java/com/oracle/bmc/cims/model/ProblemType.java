@@ -8,7 +8,6 @@ package com.oracle.bmc.cims.model;
  * The kind of support ticket, such as a technical support request.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.extern.slf4j.Slf4j
 public enum ProblemType {
     Limit("LIMIT"),
     LegacyLimit("LEGACY_LIMIT"),
@@ -20,6 +19,9 @@ public enum ProblemType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ProblemType.class);
 
     private final String value;
     private static java.util.Map<String, ProblemType> map;

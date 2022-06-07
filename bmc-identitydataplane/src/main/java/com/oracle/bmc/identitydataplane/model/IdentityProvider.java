@@ -15,14 +15,47 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IdentityProvider.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IdentityProvider {
+public final class IdentityProvider {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "tenantName",
+        "tenantId",
+        "redirectUri",
+        "signingCertificate",
+        "protocol",
+        "serviceProviderEntityId",
+        "forceAuthentication",
+        "authnContextClassRefs"
+    })
+    public IdentityProvider(
+            String id,
+            String name,
+            String tenantName,
+            String tenantId,
+            String redirectUri,
+            String signingCertificate,
+            Protocol protocol,
+            String serviceProviderEntityId,
+            Boolean forceAuthentication,
+            java.util.List<String> authnContextClassRefs) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.tenantName = tenantName;
+        this.tenantId = tenantId;
+        this.redirectUri = redirectUri;
+        this.signingCertificate = signingCertificate;
+        this.protocol = protocol;
+        this.serviceProviderEntityId = serviceProviderEntityId;
+        this.forceAuthentication = forceAuthentication;
+        this.authnContextClassRefs = authnContextClassRefs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -160,41 +193,70 @@ public class IdentityProvider {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The id of the provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The name of the tenant.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
-    String tenantName;
+    private final String tenantName;
+
+    public String getTenantName() {
+        return tenantName;
+    }
 
     /**
      * The id of the tenant.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * The SAML endpoint where user will be redirected.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUri")
-    String redirectUri;
+    private final String redirectUri;
+
+    public String getRedirectUri() {
+        return redirectUri;
+    }
 
     /**
      * The signing certificate of the provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
-    String signingCertificate;
+    private final String signingCertificate;
+
+    public String getSigningCertificate() {
+        return signingCertificate;
+    }
+
     /**
      * The type of the provider.
      **/
@@ -233,26 +295,126 @@ public class IdentityProvider {
      * The type of the provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    Protocol protocol;
+    private final Protocol protocol;
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
 
     /**
      * The id of the service provider entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceProviderEntityId")
-    String serviceProviderEntityId;
+    private final String serviceProviderEntityId;
+
+    public String getServiceProviderEntityId() {
+        return serviceProviderEntityId;
+    }
 
     /**
      * Whether to force authentication.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forceAuthentication")
-    Boolean forceAuthentication;
+    private final Boolean forceAuthentication;
+
+    public Boolean getForceAuthentication() {
+        return forceAuthentication;
+    }
 
     /**
      * Authentication context class refs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authnContextClassRefs")
-    java.util.List<String> authnContextClassRefs;
+    private final java.util.List<String> authnContextClassRefs;
+
+    public java.util.List<String> getAuthnContextClassRefs() {
+        return authnContextClassRefs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IdentityProvider(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", tenantName=").append(String.valueOf(this.tenantName));
+        sb.append(", tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", redirectUri=").append(String.valueOf(this.redirectUri));
+        sb.append(", signingCertificate=").append(String.valueOf(this.signingCertificate));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", serviceProviderEntityId=")
+                .append(String.valueOf(this.serviceProviderEntityId));
+        sb.append(", forceAuthentication=").append(String.valueOf(this.forceAuthentication));
+        sb.append(", authnContextClassRefs=").append(String.valueOf(this.authnContextClassRefs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IdentityProvider)) {
+            return false;
+        }
+
+        IdentityProvider other = (IdentityProvider) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.tenantName, other.tenantName)
+                && java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.redirectUri, other.redirectUri)
+                && java.util.Objects.equals(this.signingCertificate, other.signingCertificate)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(
+                        this.serviceProviderEntityId, other.serviceProviderEntityId)
+                && java.util.Objects.equals(this.forceAuthentication, other.forceAuthentication)
+                && java.util.Objects.equals(this.authnContextClassRefs, other.authnContextClassRefs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.tenantName == null ? 43 : this.tenantName.hashCode());
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result = (result * PRIME) + (this.redirectUri == null ? 43 : this.redirectUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signingCertificate == null
+                                ? 43
+                                : this.signingCertificate.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceProviderEntityId == null
+                                ? 43
+                                : this.serviceProviderEntityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.forceAuthentication == null
+                                ? 43
+                                : this.forceAuthentication.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authnContextClassRefs == null
+                                ? 43
+                                : this.authnContextClassRefs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

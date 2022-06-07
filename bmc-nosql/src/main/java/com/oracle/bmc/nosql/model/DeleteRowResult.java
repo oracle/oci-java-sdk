@@ -15,14 +15,24 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DeleteRowResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeleteRowResult {
+public final class DeleteRowResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isSuccess", "existingVersion", "existingValue", "usage"})
+    public DeleteRowResult(
+            Boolean isSuccess,
+            String existingVersion,
+            java.util.Map<String, Object> existingValue,
+            RequestUsage usage) {
+        super();
+        this.isSuccess = isSuccess;
+        this.existingVersion = existingVersion;
+        this.existingValue = existingValue;
+        this.usage = usage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isSuccess")
         private Boolean isSuccess;
@@ -90,11 +100,19 @@ public class DeleteRowResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Convey the success or failure of the operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSuccess")
-    Boolean isSuccess;
+    private final Boolean isSuccess;
+
+    public Boolean getIsSuccess() {
+        return isSuccess;
+    }
 
     /**
      * The version string associated with the existing row.
@@ -103,17 +121,81 @@ public class DeleteRowResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("existingVersion")
-    String existingVersion;
+    private final String existingVersion;
+
+    public String getExistingVersion() {
+        return existingVersion;
+    }
 
     /**
      * The map of values from a row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("existingValue")
-    java.util.Map<String, Object> existingValue;
+    private final java.util.Map<String, Object> existingValue;
+
+    public java.util.Map<String, Object> getExistingValue() {
+        return existingValue;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
-    RequestUsage usage;
+    private final RequestUsage usage;
+
+    public RequestUsage getUsage() {
+        return usage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeleteRowResult(");
+        sb.append("isSuccess=").append(String.valueOf(this.isSuccess));
+        sb.append(", existingVersion=").append(String.valueOf(this.existingVersion));
+        sb.append(", existingValue=").append(String.valueOf(this.existingValue));
+        sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteRowResult)) {
+            return false;
+        }
+
+        DeleteRowResult other = (DeleteRowResult) o;
+        return java.util.Objects.equals(this.isSuccess, other.isSuccess)
+                && java.util.Objects.equals(this.existingVersion, other.existingVersion)
+                && java.util.Objects.equals(this.existingValue, other.existingValue)
+                && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isSuccess == null ? 43 : this.isSuccess.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.existingVersion == null ? 43 : this.existingVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.existingValue == null ? 43 : this.existingValue.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

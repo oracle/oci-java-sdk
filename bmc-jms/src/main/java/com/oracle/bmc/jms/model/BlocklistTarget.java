@@ -15,14 +15,19 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BlocklistTarget.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BlocklistTarget {
+public final class BlocklistTarget {
+    @Deprecated
+    @java.beans.ConstructorProperties({"fleetId", "managedInstanceId", "installationKey"})
+    public BlocklistTarget(String fleetId, String managedInstanceId, String installationKey) {
+        super();
+        this.fleetId = fleetId;
+        this.managedInstanceId = managedInstanceId;
+        this.installationKey = installationKey;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
@@ -80,26 +85,91 @@ public class BlocklistTarget {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
-    String fleetId;
+    private final String fleetId;
+
+    public String getFleetId() {
+        return fleetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
-    String managedInstanceId;
+    private final String managedInstanceId;
+
+    public String getManagedInstanceId() {
+        return managedInstanceId;
+    }
 
     /**
      * The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
-    String installationKey;
+    private final String installationKey;
+
+    public String getInstallationKey() {
+        return installationKey;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BlocklistTarget(");
+        sb.append("fleetId=").append(String.valueOf(this.fleetId));
+        sb.append(", managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(", installationKey=").append(String.valueOf(this.installationKey));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BlocklistTarget)) {
+            return false;
+        }
+
+        BlocklistTarget other = (BlocklistTarget) o;
+        return java.util.Objects.equals(this.fleetId, other.fleetId)
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.installationKey, other.installationKey)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.installationKey == null ? 43 : this.installationKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

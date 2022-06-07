@@ -15,16 +15,31 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProvisionAuditConditions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProvisionAuditConditions {
+public final class ProvisionAuditConditions {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "auditPolicyName",
+        "isPrivUsersManagedByDataSafe",
+        "isEnabled",
+        "enableConditions"
+    })
+    public ProvisionAuditConditions(
+            String auditPolicyName,
+            Boolean isPrivUsersManagedByDataSafe,
+            Boolean isEnabled,
+            java.util.List<EnableConditions> enableConditions) {
+        super();
+        this.auditPolicyName = auditPolicyName;
+        this.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
+        this.isEnabled = isEnabled;
+        this.enableConditions = enableConditions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
         private String auditPolicyName;
@@ -96,33 +111,111 @@ public class ProvisionAuditConditions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates the audit policy name available for provisioning from Data Safe. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
-    String auditPolicyName;
+    private final String auditPolicyName;
+
+    public String getAuditPolicyName() {
+        return auditPolicyName;
+    }
 
     /**
      * Indicates whether the privileged user list is managed by Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivUsersManagedByDataSafe")
-    Boolean isPrivUsersManagedByDataSafe;
+    private final Boolean isPrivUsersManagedByDataSafe;
+
+    public Boolean getIsPrivUsersManagedByDataSafe() {
+        return isPrivUsersManagedByDataSafe;
+    }
 
     /**
      * Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Indicates the users/roles in the target database for which the audit policy will be enforced, and the success/failure event condition to generate the audit event.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableConditions")
-    java.util.List<EnableConditions> enableConditions;
+    private final java.util.List<EnableConditions> enableConditions;
+
+    public java.util.List<EnableConditions> getEnableConditions() {
+        return enableConditions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProvisionAuditConditions(");
+        sb.append("auditPolicyName=").append(String.valueOf(this.auditPolicyName));
+        sb.append(", isPrivUsersManagedByDataSafe=")
+                .append(String.valueOf(this.isPrivUsersManagedByDataSafe));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", enableConditions=").append(String.valueOf(this.enableConditions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProvisionAuditConditions)) {
+            return false;
+        }
+
+        ProvisionAuditConditions other = (ProvisionAuditConditions) o;
+        return java.util.Objects.equals(this.auditPolicyName, other.auditPolicyName)
+                && java.util.Objects.equals(
+                        this.isPrivUsersManagedByDataSafe, other.isPrivUsersManagedByDataSafe)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.enableConditions, other.enableConditions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.auditPolicyName == null ? 43 : this.auditPolicyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPrivUsersManagedByDataSafe == null
+                                ? 43
+                                : this.isPrivUsersManagedByDataSafe.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enableConditions == null ? 43 : this.enableConditions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

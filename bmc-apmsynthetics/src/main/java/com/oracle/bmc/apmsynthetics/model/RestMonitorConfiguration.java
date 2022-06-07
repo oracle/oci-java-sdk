@@ -15,22 +15,17 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RestMonitorConfiguration.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "configType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RestMonitorConfiguration extends MonitorConfiguration {
+public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isFailureRetried")
         private Boolean isFailureRetried;
@@ -192,6 +187,10 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public RestMonitorConfiguration(
             Boolean isFailureRetried,
@@ -224,48 +223,80 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
      * If redirection enabled, then redirects will be allowed while accessing target URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRedirectionEnabled")
-    Boolean isRedirectionEnabled;
+    private final Boolean isRedirectionEnabled;
+
+    public Boolean getIsRedirectionEnabled() {
+        return isRedirectionEnabled;
+    }
 
     /**
      * If certificate validation enabled, then call will fail for certificate errors.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
-    Boolean isCertificateValidationEnabled;
+    private final Boolean isCertificateValidationEnabled;
+
+    public Boolean getIsCertificateValidationEnabled() {
+        return isCertificateValidationEnabled;
+    }
 
     /**
      * Request HTTP method.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestMethod")
-    RequestMethods requestMethod;
+    private final RequestMethods requestMethod;
+
+    public RequestMethods getRequestMethod() {
+        return requestMethod;
+    }
 
     /**
      * Request http authentication scheme.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
-    RequestAuthenticationSchemes reqAuthenticationScheme;
+    private final RequestAuthenticationSchemes reqAuthenticationScheme;
+
+    public RequestAuthenticationSchemes getReqAuthenticationScheme() {
+        return reqAuthenticationScheme;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationDetails")
-    RequestAuthenticationDetails reqAuthenticationDetails;
+    private final RequestAuthenticationDetails reqAuthenticationDetails;
+
+    public RequestAuthenticationDetails getReqAuthenticationDetails() {
+        return reqAuthenticationDetails;
+    }
 
     /**
      * List of request headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
-    java.util.List<Header> requestHeaders;
+    private final java.util.List<Header> requestHeaders;
+
+    public java.util.List<Header> getRequestHeaders() {
+        return requestHeaders;
+    }
 
     /**
      * List of request query params. Example: {@code [{"paramName": "sortOrder", "paramValue": "asc"}]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestQueryParams")
-    java.util.List<RequestQueryParam> requestQueryParams;
+    private final java.util.List<RequestQueryParam> requestQueryParams;
+
+    public java.util.List<RequestQueryParam> getRequestQueryParams() {
+        return requestQueryParams;
+    }
 
     /**
      * Request post body content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestPostBody")
-    String requestPostBody;
+    private final String requestPostBody;
+
+    public String getRequestPostBody() {
+        return requestPostBody;
+    }
 
     /**
      * Verify response content against regular expression based string.
@@ -273,18 +304,145 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseContent")
-    String verifyResponseContent;
+    private final String verifyResponseContent;
+
+    public String getVerifyResponseContent() {
+        return verifyResponseContent;
+    }
 
     /**
      * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
-    java.util.List<String> verifyResponseCodes;
+    private final java.util.List<String> verifyResponseCodes;
+
+    public java.util.List<String> getVerifyResponseCodes() {
+        return verifyResponseCodes;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
-    NetworkConfiguration networkConfiguration;
+    private final NetworkConfiguration networkConfiguration;
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return networkConfiguration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RestMonitorConfiguration(");
+        sb.append("super=").append(super.toString());
+        sb.append(", isRedirectionEnabled=").append(String.valueOf(this.isRedirectionEnabled));
+        sb.append(", isCertificateValidationEnabled=")
+                .append(String.valueOf(this.isCertificateValidationEnabled));
+        sb.append(", requestMethod=").append(String.valueOf(this.requestMethod));
+        sb.append(", reqAuthenticationScheme=")
+                .append(String.valueOf(this.reqAuthenticationScheme));
+        sb.append(", reqAuthenticationDetails=")
+                .append(String.valueOf(this.reqAuthenticationDetails));
+        sb.append(", requestHeaders=").append(String.valueOf(this.requestHeaders));
+        sb.append(", requestQueryParams=").append(String.valueOf(this.requestQueryParams));
+        sb.append(", requestPostBody=").append(String.valueOf(this.requestPostBody));
+        sb.append(", verifyResponseContent=").append(String.valueOf(this.verifyResponseContent));
+        sb.append(", verifyResponseCodes=").append(String.valueOf(this.verifyResponseCodes));
+        sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RestMonitorConfiguration)) {
+            return false;
+        }
+
+        RestMonitorConfiguration other = (RestMonitorConfiguration) o;
+        return java.util.Objects.equals(this.isRedirectionEnabled, other.isRedirectionEnabled)
+                && java.util.Objects.equals(
+                        this.isCertificateValidationEnabled, other.isCertificateValidationEnabled)
+                && java.util.Objects.equals(this.requestMethod, other.requestMethod)
+                && java.util.Objects.equals(
+                        this.reqAuthenticationScheme, other.reqAuthenticationScheme)
+                && java.util.Objects.equals(
+                        this.reqAuthenticationDetails, other.reqAuthenticationDetails)
+                && java.util.Objects.equals(this.requestHeaders, other.requestHeaders)
+                && java.util.Objects.equals(this.requestQueryParams, other.requestQueryParams)
+                && java.util.Objects.equals(this.requestPostBody, other.requestPostBody)
+                && java.util.Objects.equals(this.verifyResponseContent, other.verifyResponseContent)
+                && java.util.Objects.equals(this.verifyResponseCodes, other.verifyResponseCodes)
+                && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.isRedirectionEnabled == null
+                                ? 43
+                                : this.isRedirectionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCertificateValidationEnabled == null
+                                ? 43
+                                : this.isCertificateValidationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestMethod == null ? 43 : this.requestMethod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reqAuthenticationScheme == null
+                                ? 43
+                                : this.reqAuthenticationScheme.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reqAuthenticationDetails == null
+                                ? 43
+                                : this.reqAuthenticationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestHeaders == null ? 43 : this.requestHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestQueryParams == null
+                                ? 43
+                                : this.requestQueryParams.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestPostBody == null ? 43 : this.requestPostBody.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.verifyResponseContent == null
+                                ? 43
+                                : this.verifyResponseContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.verifyResponseCodes == null
+                                ? 43
+                                : this.verifyResponseCodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkConfiguration == null
+                                ? 43
+                                : this.networkConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

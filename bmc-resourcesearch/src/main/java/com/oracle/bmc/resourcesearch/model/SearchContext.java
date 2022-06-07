@@ -15,14 +15,17 @@ package com.oracle.bmc.resourcesearch.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SearchContext.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SearchContext {
+public final class SearchContext {
+    @Deprecated
+    @java.beans.ConstructorProperties({"highlights"})
+    public SearchContext(java.util.Map<String, java.util.List<String>> highlights) {
+        super();
+        this.highlights = highlights;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("highlights")
         private java.util.Map<String, java.util.List<String>> highlights;
@@ -58,6 +61,10 @@ public class SearchContext {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Describes what in each field matched the search criteria by showing highlighted values, but only for free text searches or for structured
      * queries that use a MATCHING clause. The list of strings represents fragments of values that matched the query conditions. Highlighted
@@ -65,8 +72,51 @@ public class SearchContext {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("highlights")
-    java.util.Map<String, java.util.List<String>> highlights;
+    private final java.util.Map<String, java.util.List<String>> highlights;
+
+    public java.util.Map<String, java.util.List<String>> getHighlights() {
+        return highlights;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchContext(");
+        sb.append("highlights=").append(String.valueOf(this.highlights));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchContext)) {
+            return false;
+        }
+
+        SearchContext other = (SearchContext) o;
+        return java.util.Objects.equals(this.highlights, other.highlights)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.highlights == null ? 43 : this.highlights.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

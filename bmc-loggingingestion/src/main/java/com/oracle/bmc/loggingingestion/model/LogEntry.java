@@ -17,14 +17,19 @@ package com.oracle.bmc.loggingingestion.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LogEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogEntry {
+public final class LogEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({"data", "id", "time"})
+    public LogEntry(String data, String id, java.util.Date time) {
+        super();
+        this.data = data;
+        this.id = id;
+        this.time = time;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("data")
         private String data;
@@ -78,11 +83,19 @@ public class LogEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The log entry content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("data")
-    String data;
+    private final String data;
+
+    public String getData() {
+        return data;
+    }
 
     /**
      * UUID uniquely representing this logEntry. This is not an OCID related
@@ -90,7 +103,11 @@ public class LogEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string with milliseconds precision.
@@ -98,8 +115,57 @@ public class LogEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
-    java.util.Date time;
+    private final java.util.Date time;
+
+    public java.util.Date getTime() {
+        return time;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogEntry(");
+        sb.append("data=").append(String.valueOf(this.data));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", time=").append(String.valueOf(this.time));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogEntry)) {
+            return false;
+        }
+
+        LogEntry other = (LogEntry) o;
+        return java.util.Objects.equals(this.data, other.data)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.time, other.time)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.data == null ? 43 : this.data.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

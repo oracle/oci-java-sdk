@@ -17,16 +17,43 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateBackupDestinationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateBackupDestinationDetails {
+public final class UpdateBackupDestinationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "vpcUsers",
+        "connectionString",
+        "localMountPointPath",
+        "nfsMountType",
+        "nfsServer",
+        "nfsServerExport",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateBackupDestinationDetails(
+            java.util.List<String> vpcUsers,
+            String connectionString,
+            String localMountPointPath,
+            NfsMountType nfsMountType,
+            java.util.List<String> nfsServer,
+            String nfsServerExport,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.vpcUsers = vpcUsers;
+        this.connectionString = connectionString;
+        this.localMountPointPath = localMountPointPath;
+        this.nfsMountType = nfsMountType;
+        this.nfsServer = nfsServer;
+        this.nfsServerExport = nfsServerExport;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
         private java.util.List<String> vpcUsers;
@@ -143,24 +170,41 @@ public class UpdateBackupDestinationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
-    java.util.List<String> vpcUsers;
+    private final java.util.List<String> vpcUsers;
+
+    public java.util.List<String> getVpcUsers() {
+        return vpcUsers;
+    }
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
-    String connectionString;
+    private final String connectionString;
+
+    public String getConnectionString() {
+        return connectionString;
+    }
 
     /**
      * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
-    String localMountPointPath;
+    private final String localMountPointPath;
+
+    public String getLocalMountPointPath() {
+        return localMountPointPath;
+    }
+
     /**
      * NFS Mount type for backup destination.
      **/
@@ -200,19 +244,31 @@ public class UpdateBackupDestinationDetails {
      * NFS Mount type for backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
-    NfsMountType nfsMountType;
+    private final NfsMountType nfsMountType;
+
+    public NfsMountType getNfsMountType() {
+        return nfsMountType;
+    }
 
     /**
      * IP addresses for NFS Auto mount.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
-    java.util.List<String> nfsServer;
+    private final java.util.List<String> nfsServer;
+
+    public java.util.List<String> getNfsServer() {
+        return nfsServer;
+    }
 
     /**
      * Specifies the directory on which to mount the file system
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
-    String nfsServerExport;
+    private final String nfsServerExport;
+
+    public String getNfsServerExport() {
+        return nfsServerExport;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -222,7 +278,11 @@ public class UpdateBackupDestinationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -230,8 +290,80 @@ public class UpdateBackupDestinationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateBackupDestinationDetails(");
+        sb.append("vpcUsers=").append(String.valueOf(this.vpcUsers));
+        sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", localMountPointPath=").append(String.valueOf(this.localMountPointPath));
+        sb.append(", nfsMountType=").append(String.valueOf(this.nfsMountType));
+        sb.append(", nfsServer=").append(String.valueOf(this.nfsServer));
+        sb.append(", nfsServerExport=").append(String.valueOf(this.nfsServerExport));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBackupDestinationDetails)) {
+            return false;
+        }
+
+        UpdateBackupDestinationDetails other = (UpdateBackupDestinationDetails) o;
+        return java.util.Objects.equals(this.vpcUsers, other.vpcUsers)
+                && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.localMountPointPath, other.localMountPointPath)
+                && java.util.Objects.equals(this.nfsMountType, other.nfsMountType)
+                && java.util.Objects.equals(this.nfsServer, other.nfsServer)
+                && java.util.Objects.equals(this.nfsServerExport, other.nfsServerExport)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.vpcUsers == null ? 43 : this.vpcUsers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localMountPointPath == null
+                                ? 43
+                                : this.localMountPointPath.hashCode());
+        result = (result * PRIME) + (this.nfsMountType == null ? 43 : this.nfsMountType.hashCode());
+        result = (result * PRIME) + (this.nfsServer == null ? 43 : this.nfsServer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nfsServerExport == null ? 43 : this.nfsServerExport.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

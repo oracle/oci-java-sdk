@@ -29,22 +29,17 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExtendHttpRequestHeaderValueRule.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "action"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExtendHttpRequestHeaderValueRule extends Rule {
+public final class ExtendHttpRequestHeaderValueRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("header")
         private String header;
@@ -100,6 +95,10 @@ public class ExtendHttpRequestHeaderValueRule extends Rule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ExtendHttpRequestHeaderValueRule(String header, String prefix, String suffix) {
         super();
@@ -115,7 +114,11 @@ public class ExtendHttpRequestHeaderValueRule extends Rule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("header")
-    String header;
+    private final String header;
+
+    public String getHeader() {
+        return header;
+    }
 
     /**
      * A string to prepend to the header value. The resulting header value must conform to RFC 7230.
@@ -127,7 +130,11 @@ public class ExtendHttpRequestHeaderValueRule extends Rule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
-    String prefix;
+    private final String prefix;
+
+    public String getPrefix() {
+        return prefix;
+    }
 
     /**
      * A string to append to the header value. The resulting header value must conform to RFC 7230.
@@ -139,8 +146,59 @@ public class ExtendHttpRequestHeaderValueRule extends Rule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suffix")
-    String suffix;
+    private final String suffix;
+
+    public String getSuffix() {
+        return suffix;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExtendHttpRequestHeaderValueRule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", header=").append(String.valueOf(this.header));
+        sb.append(", prefix=").append(String.valueOf(this.prefix));
+        sb.append(", suffix=").append(String.valueOf(this.suffix));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExtendHttpRequestHeaderValueRule)) {
+            return false;
+        }
+
+        ExtendHttpRequestHeaderValueRule other = (ExtendHttpRequestHeaderValueRule) o;
+        return java.util.Objects.equals(this.header, other.header)
+                && java.util.Objects.equals(this.prefix, other.prefix)
+                && java.util.Objects.equals(this.suffix, other.suffix)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.header == null ? 43 : this.header.hashCode());
+        result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
+        result = (result * PRIME) + (this.suffix == null ? 43 : this.suffix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

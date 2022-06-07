@@ -15,16 +15,46 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsAssociationParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsAssociationParameter {
+public final class LogAnalyticsAssociationParameter {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "agentId",
+        "entityType",
+        "entityId",
+        "sourceId",
+        "sourceDisplayName",
+        "sourceType",
+        "status",
+        "missingProperties",
+        "requiredProperties"
+    })
+    public LogAnalyticsAssociationParameter(
+            String agentId,
+            String entityType,
+            String entityId,
+            String sourceId,
+            String sourceDisplayName,
+            String sourceType,
+            Status status,
+            java.util.List<String> missingProperties,
+            java.util.List<String> requiredProperties) {
+        super();
+        this.agentId = agentId;
+        this.entityType = entityType;
+        this.entityId = entityId;
+        this.sourceId = sourceId;
+        this.sourceDisplayName = sourceDisplayName;
+        this.sourceType = sourceType;
+        this.status = status;
+        this.missingProperties = missingProperties;
+        this.requiredProperties = requiredProperties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
@@ -151,45 +181,73 @@ public class LogAnalyticsAssociationParameter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The agent unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
-    String agentId;
+    private final String agentId;
+
+    public String getAgentId() {
+        return agentId;
+    }
 
     /**
      * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
 
     /**
      * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
-    String entityId;
+    private final String entityId;
+
+    public String getEntityId() {
+        return entityId;
+    }
 
     /**
      * The source name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    String sourceId;
+    private final String sourceId;
+
+    public String getSourceId() {
+        return sourceId;
+    }
 
     /**
      * The source display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
-    String sourceDisplayName;
+    private final String sourceDisplayName;
+
+    public String getSourceDisplayName() {
+        return sourceDisplayName;
+    }
 
     /**
      * The source type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
-    String sourceType;
+    private final String sourceType;
+
+    public String getSourceType() {
+        return sourceType;
+    }
+
     /**
      * The status.  Either FAILED or SUCCEEDED.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
@@ -199,6 +257,8 @@ public class LogAnalyticsAssociationParameter {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -236,20 +296,103 @@ public class LogAnalyticsAssociationParameter {
      * The status.  Either FAILED or SUCCEEDED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * A list of missing properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("missingProperties")
-    java.util.List<String> missingProperties;
+    private final java.util.List<String> missingProperties;
+
+    public java.util.List<String> getMissingProperties() {
+        return missingProperties;
+    }
 
     /**
      * A list of requried properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requiredProperties")
-    java.util.List<String> requiredProperties;
+    private final java.util.List<String> requiredProperties;
+
+    public java.util.List<String> getRequiredProperties() {
+        return requiredProperties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsAssociationParameter(");
+        sb.append("agentId=").append(String.valueOf(this.agentId));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", entityId=").append(String.valueOf(this.entityId));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", sourceDisplayName=").append(String.valueOf(this.sourceDisplayName));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", missingProperties=").append(String.valueOf(this.missingProperties));
+        sb.append(", requiredProperties=").append(String.valueOf(this.requiredProperties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsAssociationParameter)) {
+            return false;
+        }
+
+        LogAnalyticsAssociationParameter other = (LogAnalyticsAssociationParameter) o;
+        return java.util.Objects.equals(this.agentId, other.agentId)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.sourceDisplayName, other.sourceDisplayName)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.missingProperties, other.missingProperties)
+                && java.util.Objects.equals(this.requiredProperties, other.requiredProperties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDisplayName == null ? 43 : this.sourceDisplayName.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.missingProperties == null ? 43 : this.missingProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requiredProperties == null
+                                ? 43
+                                : this.requiredProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

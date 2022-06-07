@@ -16,16 +16,49 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsEntityType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsEntityType {
+public final class LogAnalyticsEntityType {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "internalName",
+        "compartmentId",
+        "category",
+        "cloudType",
+        "properties",
+        "lifecycleState",
+        "timeCreated",
+        "timeUpdated",
+        "managementAgentEligibilityStatus"
+    })
+    public LogAnalyticsEntityType(
+            String name,
+            String internalName,
+            String compartmentId,
+            String category,
+            EntityCloudType cloudType,
+            java.util.List<EntityTypeProperty> properties,
+            EntityLifecycleStates lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            ManagementAgentEligibilityStatus managementAgentEligibilityStatus) {
+        super();
+        this.name = name;
+        this.internalName = internalName;
+        this.compartmentId = compartmentId;
+        this.category = category;
+        this.cloudType = cloudType;
+        this.properties = properties;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.managementAgentEligibilityStatus = managementAgentEligibilityStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -165,72 +198,112 @@ public class LogAnalyticsEntityType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Log analytics entity type name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Internal name for the log analytics entity type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
-    String internalName;
+    private final String internalName;
+
+    public String getInternalName() {
+        return internalName;
+    }
 
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Log analytics entity type category. Category will be used for grouping and filtering.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    String category;
+    private final String category;
+
+    public String getCategory() {
+        return category;
+    }
 
     /**
      * Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudType")
-    EntityCloudType cloudType;
+    private final EntityCloudType cloudType;
+
+    public EntityCloudType getCloudType() {
+        return cloudType;
+    }
 
     /**
      * The parameters used in file patterns specified in log sources for this log analytics entity type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.List<EntityTypeProperty> properties;
+    private final java.util.List<EntityTypeProperty> properties;
+
+    public java.util.List<EntityTypeProperty> getProperties() {
+        return properties;
+    }
 
     /**
      * The current lifecycle state of the log analytics entity.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    EntityLifecycleStates lifecycleState;
+    private final EntityLifecycleStates lifecycleState;
+
+    public EntityLifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     /**
      * This field indicates whether logs for entities of this type can be collected using a management agent.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ManagementAgentEligibilityStatus {
         Eligible("ELIGIBLE"),
         Ineligible("INELIGIBLE"),
@@ -241,6 +314,9 @@ public class LogAnalyticsEntityType {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagementAgentEligibilityStatus.class);
 
         private final String value;
         private static java.util.Map<String, ManagementAgentEligibilityStatus> map;
@@ -279,8 +355,89 @@ public class LogAnalyticsEntityType {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentEligibilityStatus")
-    ManagementAgentEligibilityStatus managementAgentEligibilityStatus;
+    private final ManagementAgentEligibilityStatus managementAgentEligibilityStatus;
+
+    public ManagementAgentEligibilityStatus getManagementAgentEligibilityStatus() {
+        return managementAgentEligibilityStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsEntityType(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", internalName=").append(String.valueOf(this.internalName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", cloudType=").append(String.valueOf(this.cloudType));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", managementAgentEligibilityStatus=")
+                .append(String.valueOf(this.managementAgentEligibilityStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsEntityType)) {
+            return false;
+        }
+
+        LogAnalyticsEntityType other = (LogAnalyticsEntityType) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.internalName, other.internalName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.cloudType, other.cloudType)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(
+                        this.managementAgentEligibilityStatus,
+                        other.managementAgentEligibilityStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.internalName == null ? 43 : this.internalName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.cloudType == null ? 43 : this.cloudType.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementAgentEligibilityStatus == null
+                                ? 43
+                                : this.managementAgentEligibilityStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

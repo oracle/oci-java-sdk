@@ -16,14 +16,35 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UserDetails {
+public final class UserDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "status",
+        "profile",
+        "tablespace",
+        "isUserPredefinedByOracle",
+        "authenticationType"
+    })
+    public UserDetails(
+            String name,
+            String status,
+            String profile,
+            String tablespace,
+            Boolean isUserPredefinedByOracle,
+            AuthenticationType authenticationType) {
+        super();
+        this.name = name;
+        this.status = status;
+        this.profile = profile;
+        this.tablespace = tablespace;
+        this.isUserPredefinedByOracle = isUserPredefinedByOracle;
+        this.authenticationType = authenticationType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -117,35 +138,60 @@ public class UserDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The status of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * The name of the profile assigned to the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
-    String profile;
+    private final String profile;
+
+    public String getProfile() {
+        return profile;
+    }
 
     /**
      * The default tablespace of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
-    String tablespace;
+    private final String tablespace;
+
+    public String getTablespace() {
+        return tablespace;
+    }
 
     /**
      * Indicates whether or not the user is predefined by ORACLE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserPredefinedByOracle")
-    Boolean isUserPredefinedByOracle;
+    private final Boolean isUserPredefinedByOracle;
+
+    public Boolean getIsUserPredefinedByOracle() {
+        return isUserPredefinedByOracle;
+    }
+
     /**
      * The authentication type of the user.
      **/
@@ -185,8 +231,76 @@ public class UserDetails {
      * The authentication type of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
-    AuthenticationType authenticationType;
+    private final AuthenticationType authenticationType;
+
+    public AuthenticationType getAuthenticationType() {
+        return authenticationType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UserDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", profile=").append(String.valueOf(this.profile));
+        sb.append(", tablespace=").append(String.valueOf(this.tablespace));
+        sb.append(", isUserPredefinedByOracle=")
+                .append(String.valueOf(this.isUserPredefinedByOracle));
+        sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UserDetails)) {
+            return false;
+        }
+
+        UserDetails other = (UserDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.profile, other.profile)
+                && java.util.Objects.equals(this.tablespace, other.tablespace)
+                && java.util.Objects.equals(
+                        this.isUserPredefinedByOracle, other.isUserPredefinedByOracle)
+                && java.util.Objects.equals(this.authenticationType, other.authenticationType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.profile == null ? 43 : this.profile.hashCode());
+        result = (result * PRIME) + (this.tablespace == null ? 43 : this.tablespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUserPredefinedByOracle == null
+                                ? 43
+                                : this.isUserPredefinedByOracle.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationType == null
+                                ? 43
+                                : this.authenticationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

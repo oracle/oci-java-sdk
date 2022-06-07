@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BuildStageRunProgress.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "buildPipelineStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BuildStageRunProgress extends BuildPipelineStageRunProgress {
+public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("stageDisplayName")
         private String stageDisplayName;
@@ -225,6 +220,10 @@ public class BuildStageRunProgress extends BuildPipelineStageRunProgress {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public BuildStageRunProgress(
             String stageDisplayName,
@@ -264,14 +263,22 @@ public class BuildStageRunProgress extends BuildPipelineStageRunProgress {
      * Name of Build Runner shape where this Build Stage is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualBuildRunnerShape")
-    String actualBuildRunnerShape;
+    private final String actualBuildRunnerShape;
+
+    public String getActualBuildRunnerShape() {
+        return actualBuildRunnerShape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("actualBuildRunnerShapeConfig")
-    ActualBuildRunnerShapeConfig actualBuildRunnerShapeConfig;
+    private final ActualBuildRunnerShapeConfig actualBuildRunnerShapeConfig;
+
+    public ActualBuildRunnerShapeConfig getActualBuildRunnerShapeConfig() {
+        return actualBuildRunnerShapeConfig;
+    }
+
     /**
      * Image name for the Build Environment
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Image {
         Ol7X8664Standard10("OL7_X86_64_STANDARD_10"),
 
@@ -280,6 +287,8 @@ public class BuildStageRunProgress extends BuildPipelineStageRunProgress {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Image.class);
 
         private final String value;
         private static java.util.Map<String, Image> map;
@@ -317,38 +326,159 @@ public class BuildStageRunProgress extends BuildPipelineStageRunProgress {
      * Image name for the Build Environment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("image")
-    Image image;
+    private final Image image;
+
+    public Image getImage() {
+        return image;
+    }
 
     /**
      * The path to the build specification file for this Environment. The default location if not specified is build_spec.yaml
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildSpecFile")
-    String buildSpecFile;
+    private final String buildSpecFile;
+
+    public String getBuildSpecFile() {
+        return buildSpecFile;
+    }
 
     /**
      * Timeout for the Build Stage Execution. Value in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stageExecutionTimeoutInSeconds")
-    Integer stageExecutionTimeoutInSeconds;
+    private final Integer stageExecutionTimeoutInSeconds;
+
+    public Integer getStageExecutionTimeoutInSeconds() {
+        return stageExecutionTimeoutInSeconds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("buildSourceCollection")
-    BuildSourceCollection buildSourceCollection;
+    private final BuildSourceCollection buildSourceCollection;
+
+    public BuildSourceCollection getBuildSourceCollection() {
+        return buildSourceCollection;
+    }
 
     /**
      * Name of the BuildSource in which the build_spec.yml file need to be located. If not specified, the 1st entry in the BuildSource collection will be chosen as Primary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryBuildSource")
-    String primaryBuildSource;
+    private final String primaryBuildSource;
+
+    public String getPrimaryBuildSource() {
+        return primaryBuildSource;
+    }
 
     /**
      * The details about all the steps in a Build stage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
-    java.util.List<BuildStageRunStep> steps;
+    private final java.util.List<BuildStageRunStep> steps;
+
+    public java.util.List<BuildStageRunStep> getSteps() {
+        return steps;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("exportedVariables")
-    ExportedVariableCollection exportedVariables;
+    private final ExportedVariableCollection exportedVariables;
+
+    public ExportedVariableCollection getExportedVariables() {
+        return exportedVariables;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BuildStageRunProgress(");
+        sb.append("super=").append(super.toString());
+        sb.append(", actualBuildRunnerShape=").append(String.valueOf(this.actualBuildRunnerShape));
+        sb.append(", actualBuildRunnerShapeConfig=")
+                .append(String.valueOf(this.actualBuildRunnerShapeConfig));
+        sb.append(", image=").append(String.valueOf(this.image));
+        sb.append(", buildSpecFile=").append(String.valueOf(this.buildSpecFile));
+        sb.append(", stageExecutionTimeoutInSeconds=")
+                .append(String.valueOf(this.stageExecutionTimeoutInSeconds));
+        sb.append(", buildSourceCollection=").append(String.valueOf(this.buildSourceCollection));
+        sb.append(", primaryBuildSource=").append(String.valueOf(this.primaryBuildSource));
+        sb.append(", steps=").append(String.valueOf(this.steps));
+        sb.append(", exportedVariables=").append(String.valueOf(this.exportedVariables));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BuildStageRunProgress)) {
+            return false;
+        }
+
+        BuildStageRunProgress other = (BuildStageRunProgress) o;
+        return java.util.Objects.equals(this.actualBuildRunnerShape, other.actualBuildRunnerShape)
+                && java.util.Objects.equals(
+                        this.actualBuildRunnerShapeConfig, other.actualBuildRunnerShapeConfig)
+                && java.util.Objects.equals(this.image, other.image)
+                && java.util.Objects.equals(this.buildSpecFile, other.buildSpecFile)
+                && java.util.Objects.equals(
+                        this.stageExecutionTimeoutInSeconds, other.stageExecutionTimeoutInSeconds)
+                && java.util.Objects.equals(this.buildSourceCollection, other.buildSourceCollection)
+                && java.util.Objects.equals(this.primaryBuildSource, other.primaryBuildSource)
+                && java.util.Objects.equals(this.steps, other.steps)
+                && java.util.Objects.equals(this.exportedVariables, other.exportedVariables)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.actualBuildRunnerShape == null
+                                ? 43
+                                : this.actualBuildRunnerShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actualBuildRunnerShapeConfig == null
+                                ? 43
+                                : this.actualBuildRunnerShapeConfig.hashCode());
+        result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.buildSpecFile == null ? 43 : this.buildSpecFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stageExecutionTimeoutInSeconds == null
+                                ? 43
+                                : this.stageExecutionTimeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.buildSourceCollection == null
+                                ? 43
+                                : this.buildSourceCollection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryBuildSource == null
+                                ? 43
+                                : this.primaryBuildSource.hashCode());
+        result = (result * PRIME) + (this.steps == null ? 43 : this.steps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportedVariables == null ? 43 : this.exportedVariables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

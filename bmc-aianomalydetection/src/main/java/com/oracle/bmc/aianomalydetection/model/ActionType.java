@@ -8,7 +8,6 @@ package com.oracle.bmc.aianomalydetection.model;
  * Possible types of actions.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.extern.slf4j.Slf4j
 public enum ActionType {
     Created("CREATED"),
     Updated("UPDATED"),
@@ -21,6 +20,8 @@ public enum ActionType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(ActionType.class);
 
     private final String value;
     private static java.util.Map<String, ActionType> map;

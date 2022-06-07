@@ -16,20 +16,15 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostMemoryUsage.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HostMemoryUsage extends HostPerformanceMetricGroup {
+public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -223,6 +218,10 @@ public class HostMemoryUsage extends HostPerformanceMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HostMemoryUsage(
             java.util.Date timeCollected,
@@ -261,86 +260,261 @@ public class HostMemoryUsage extends HostPerformanceMetricGroup {
      * Amount of physical memory used in gigabytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUsedInGB")
-    Double memoryUsedInGB;
+    private final Double memoryUsedInGB;
+
+    public Double getMemoryUsedInGB() {
+        return memoryUsedInGB;
+    }
 
     /**
      * Amount of physical memory used in percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilizationInPercent")
-    Float memoryUtilizationInPercent;
+    private final Float memoryUtilizationInPercent;
+
+    public Float getMemoryUtilizationInPercent() {
+        return memoryUtilizationInPercent;
+    }
 
     /**
      * Load on memory in gigabytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryLoadInGB")
-    Double memoryLoadInGB;
+    private final Double memoryLoadInGB;
+
+    public Double getMemoryLoadInGB() {
+        return memoryLoadInGB;
+    }
 
     /**
      * Amount of usable physical memory in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("realMemoryInKB")
-    Double realMemoryInKB;
+    private final Double realMemoryInKB;
+
+    public Double getRealMemoryInKB() {
+        return realMemoryInKB;
+    }
 
     /**
      * Amount of available physical memory in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeMemoryInKB")
-    Double freeMemoryInKB;
+    private final Double freeMemoryInKB;
+
+    public Double getFreeMemoryInKB() {
+        return freeMemoryInKB;
+    }
 
     /**
      * Memory used excluding buffers and cache in gigabytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logicalMemoryUsedInGB")
-    Double logicalMemoryUsedInGB;
+    private final Double logicalMemoryUsedInGB;
+
+    public Double getLogicalMemoryUsedInGB() {
+        return logicalMemoryUsedInGB;
+    }
 
     /**
      * Amount of logical memory used in percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logicalMemoryUtilizationInPercent")
-    Float logicalMemoryUtilizationInPercent;
+    private final Float logicalMemoryUtilizationInPercent;
+
+    public Float getLogicalMemoryUtilizationInPercent() {
+        return logicalMemoryUtilizationInPercent;
+    }
 
     /**
      * Amount of avaiable virtual memory in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeLogicalMemoryInKB")
-    Double freeLogicalMemoryInKB;
+    private final Double freeLogicalMemoryInKB;
+
+    public Double getFreeLogicalMemoryInKB() {
+        return freeLogicalMemoryInKB;
+    }
 
     /**
      * Number of major page faults
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("majorPageFaults")
-    Integer majorPageFaults;
+    private final Integer majorPageFaults;
+
+    public Integer getMajorPageFaults() {
+        return majorPageFaults;
+    }
 
     /**
      * Amount of available swap space in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("swapFreeInKB")
-    Double swapFreeInKB;
+    private final Double swapFreeInKB;
+
+    public Double getSwapFreeInKB() {
+        return swapFreeInKB;
+    }
 
     /**
      * Amount of memory used for anon huge pages in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("anonHugePagesInKB")
-    Double anonHugePagesInKB;
+    private final Double anonHugePagesInKB;
+
+    public Double getAnonHugePagesInKB() {
+        return anonHugePagesInKB;
+    }
 
     /**
      * Number of available huge pages
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesFree")
-    Integer hugePagesFree;
+    private final Integer hugePagesFree;
+
+    public Integer getHugePagesFree() {
+        return hugePagesFree;
+    }
 
     /**
      * Number of reserved huge pages
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesReserved")
-    Integer hugePagesReserved;
+    private final Integer hugePagesReserved;
+
+    public Integer getHugePagesReserved() {
+        return hugePagesReserved;
+    }
 
     /**
      * Number of surplus huge pages
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesSurplus")
-    Integer hugePagesSurplus;
+    private final Integer hugePagesSurplus;
+
+    public Integer getHugePagesSurplus() {
+        return hugePagesSurplus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostMemoryUsage(");
+        sb.append("super=").append(super.toString());
+        sb.append(", memoryUsedInGB=").append(String.valueOf(this.memoryUsedInGB));
+        sb.append(", memoryUtilizationInPercent=")
+                .append(String.valueOf(this.memoryUtilizationInPercent));
+        sb.append(", memoryLoadInGB=").append(String.valueOf(this.memoryLoadInGB));
+        sb.append(", realMemoryInKB=").append(String.valueOf(this.realMemoryInKB));
+        sb.append(", freeMemoryInKB=").append(String.valueOf(this.freeMemoryInKB));
+        sb.append(", logicalMemoryUsedInGB=").append(String.valueOf(this.logicalMemoryUsedInGB));
+        sb.append(", logicalMemoryUtilizationInPercent=")
+                .append(String.valueOf(this.logicalMemoryUtilizationInPercent));
+        sb.append(", freeLogicalMemoryInKB=").append(String.valueOf(this.freeLogicalMemoryInKB));
+        sb.append(", majorPageFaults=").append(String.valueOf(this.majorPageFaults));
+        sb.append(", swapFreeInKB=").append(String.valueOf(this.swapFreeInKB));
+        sb.append(", anonHugePagesInKB=").append(String.valueOf(this.anonHugePagesInKB));
+        sb.append(", hugePagesFree=").append(String.valueOf(this.hugePagesFree));
+        sb.append(", hugePagesReserved=").append(String.valueOf(this.hugePagesReserved));
+        sb.append(", hugePagesSurplus=").append(String.valueOf(this.hugePagesSurplus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostMemoryUsage)) {
+            return false;
+        }
+
+        HostMemoryUsage other = (HostMemoryUsage) o;
+        return java.util.Objects.equals(this.memoryUsedInGB, other.memoryUsedInGB)
+                && java.util.Objects.equals(
+                        this.memoryUtilizationInPercent, other.memoryUtilizationInPercent)
+                && java.util.Objects.equals(this.memoryLoadInGB, other.memoryLoadInGB)
+                && java.util.Objects.equals(this.realMemoryInKB, other.realMemoryInKB)
+                && java.util.Objects.equals(this.freeMemoryInKB, other.freeMemoryInKB)
+                && java.util.Objects.equals(this.logicalMemoryUsedInGB, other.logicalMemoryUsedInGB)
+                && java.util.Objects.equals(
+                        this.logicalMemoryUtilizationInPercent,
+                        other.logicalMemoryUtilizationInPercent)
+                && java.util.Objects.equals(this.freeLogicalMemoryInKB, other.freeLogicalMemoryInKB)
+                && java.util.Objects.equals(this.majorPageFaults, other.majorPageFaults)
+                && java.util.Objects.equals(this.swapFreeInKB, other.swapFreeInKB)
+                && java.util.Objects.equals(this.anonHugePagesInKB, other.anonHugePagesInKB)
+                && java.util.Objects.equals(this.hugePagesFree, other.hugePagesFree)
+                && java.util.Objects.equals(this.hugePagesReserved, other.hugePagesReserved)
+                && java.util.Objects.equals(this.hugePagesSurplus, other.hugePagesSurplus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.memoryUsedInGB == null ? 43 : this.memoryUsedInGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryUtilizationInPercent == null
+                                ? 43
+                                : this.memoryUtilizationInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryLoadInGB == null ? 43 : this.memoryLoadInGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.realMemoryInKB == null ? 43 : this.realMemoryInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeMemoryInKB == null ? 43 : this.freeMemoryInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logicalMemoryUsedInGB == null
+                                ? 43
+                                : this.logicalMemoryUsedInGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logicalMemoryUtilizationInPercent == null
+                                ? 43
+                                : this.logicalMemoryUtilizationInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeLogicalMemoryInKB == null
+                                ? 43
+                                : this.freeLogicalMemoryInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.majorPageFaults == null ? 43 : this.majorPageFaults.hashCode());
+        result = (result * PRIME) + (this.swapFreeInKB == null ? 43 : this.swapFreeInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.anonHugePagesInKB == null ? 43 : this.anonHugePagesInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePagesFree == null ? 43 : this.hugePagesFree.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePagesReserved == null ? 43 : this.hugePagesReserved.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePagesSurplus == null ? 43 : this.hugePagesSurplus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

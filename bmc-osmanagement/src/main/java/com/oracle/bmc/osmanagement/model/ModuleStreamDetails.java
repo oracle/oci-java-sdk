@@ -15,16 +15,20 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ModuleStreamDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModuleStreamDetails {
+public final class ModuleStreamDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"moduleName", "streamName"})
+    public ModuleStreamDetails(String moduleName, String streamName) {
+        super();
+        this.moduleName = moduleName;
+        this.streamName = streamName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
@@ -69,18 +73,72 @@ public class ModuleStreamDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of a module
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
-    String moduleName;
+    private final String moduleName;
+
+    public String getModuleName() {
+        return moduleName;
+    }
 
     /**
      * The name of a stream of the specified module
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
-    String streamName;
+    private final String streamName;
+
+    public String getStreamName() {
+        return streamName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModuleStreamDetails(");
+        sb.append("moduleName=").append(String.valueOf(this.moduleName));
+        sb.append(", streamName=").append(String.valueOf(this.streamName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModuleStreamDetails)) {
+            return false;
+        }
+
+        ModuleStreamDetails other = (ModuleStreamDetails) o;
+        return java.util.Objects.equals(this.moduleName, other.moduleName)
+                && java.util.Objects.equals(this.streamName, other.streamName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.moduleName == null ? 43 : this.moduleName.hashCode());
+        result = (result * PRIME) + (this.streamName == null ? 43 : this.streamName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

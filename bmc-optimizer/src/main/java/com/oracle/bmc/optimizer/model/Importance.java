@@ -8,7 +8,6 @@ package com.oracle.bmc.optimizer.model;
  * Possible importance types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.extern.slf4j.Slf4j
 public enum Importance {
     Critical("CRITICAL"),
     High("HIGH"),
@@ -21,6 +20,8 @@ public enum Importance {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Importance.class);
 
     private final String value;
     private static java.util.Map<String, Importance> map;

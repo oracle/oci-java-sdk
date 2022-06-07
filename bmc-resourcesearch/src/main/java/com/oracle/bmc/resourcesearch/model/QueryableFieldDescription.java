@@ -15,16 +15,26 @@ package com.oracle.bmc.resourcesearch.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = QueryableFieldDescription.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class QueryableFieldDescription {
+public final class QueryableFieldDescription {
+    @Deprecated
+    @java.beans.ConstructorProperties({"fieldType", "fieldName", "isArray", "objectProperties"})
+    public QueryableFieldDescription(
+            FieldType fieldType,
+            String fieldName,
+            Boolean isArray,
+            java.util.List<QueryableFieldDescription> objectProperties) {
+        super();
+        this.fieldType = fieldType;
+        this.fieldName = fieldName;
+        this.isArray = isArray;
+        this.objectProperties = objectProperties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
         private FieldType fieldType;
@@ -93,11 +103,14 @@ public class QueryableFieldDescription {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of the field, which dictates what semantics and query constraints you can use when searching or querying.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum FieldType {
         Identifier("IDENTIFIER"),
         String("STRING"),
@@ -113,6 +126,9 @@ public class QueryableFieldDescription {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FieldType.class);
 
         private final String value;
         private static java.util.Map<String, FieldType> map;
@@ -151,21 +167,33 @@ public class QueryableFieldDescription {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
-    FieldType fieldType;
+    private final FieldType fieldType;
+
+    public FieldType getFieldType() {
+        return fieldType;
+    }
 
     /**
      * The name of the field to use when constructing the query. Field names are present for all types except {@code OBJECT}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
-    String fieldName;
+    private final String fieldName;
+
+    public String getFieldName() {
+        return fieldName;
+    }
 
     /**
      * Indicates that this field is actually an array of the specified field type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isArray")
-    Boolean isArray;
+    private final Boolean isArray;
+
+    public Boolean getIsArray() {
+        return isArray;
+    }
 
     /**
      * If the field type is {@code OBJECT}, then this property will provide all the individual properties of the object that can
@@ -173,8 +201,62 @@ public class QueryableFieldDescription {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectProperties")
-    java.util.List<QueryableFieldDescription> objectProperties;
+    private final java.util.List<QueryableFieldDescription> objectProperties;
+
+    public java.util.List<QueryableFieldDescription> getObjectProperties() {
+        return objectProperties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("QueryableFieldDescription(");
+        sb.append("fieldType=").append(String.valueOf(this.fieldType));
+        sb.append(", fieldName=").append(String.valueOf(this.fieldName));
+        sb.append(", isArray=").append(String.valueOf(this.isArray));
+        sb.append(", objectProperties=").append(String.valueOf(this.objectProperties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QueryableFieldDescription)) {
+            return false;
+        }
+
+        QueryableFieldDescription other = (QueryableFieldDescription) o;
+        return java.util.Objects.equals(this.fieldType, other.fieldType)
+                && java.util.Objects.equals(this.fieldName, other.fieldName)
+                && java.util.Objects.equals(this.isArray, other.isArray)
+                && java.util.Objects.equals(this.objectProperties, other.objectProperties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fieldType == null ? 43 : this.fieldType.hashCode());
+        result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
+        result = (result * PRIME) + (this.isArray == null ? 43 : this.isArray.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectProperties == null ? 43 : this.objectProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

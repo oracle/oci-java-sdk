@@ -26,9 +26,12 @@ import com.oracle.bmc.bastion.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.RequiredArgsConstructor
 public class BastionPaginators {
     private final Bastion client;
+
+    public BastionPaginators(Bastion client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listBastions operation. This iterable

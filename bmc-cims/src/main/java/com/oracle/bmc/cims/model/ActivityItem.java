@@ -15,20 +15,15 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ActivityItem.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ActivityItem extends Item {
+public final class ActivityItem extends Item {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("itemKey")
         private String itemKey;
@@ -166,6 +161,10 @@ public class ActivityItem extends Item {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ActivityItem(
             String itemKey,
@@ -190,23 +189,35 @@ public class ActivityItem extends Item {
      * Comments added with the activity on the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comments")
-    String comments;
+    private final String comments;
+
+    public String getComments() {
+        return comments;
+    }
 
     /**
      * The time when the activity was created, in milliseconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    Integer timeCreated;
+    private final Integer timeCreated;
+
+    public Integer getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time when the activity was updated, in milliseconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    Integer timeUpdated;
+    private final Integer timeUpdated;
+
+    public Integer getTimeUpdated() {
+        return timeUpdated;
+    }
+
     /**
      * The type of activity occuring on the support ticket.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ActivityType {
         Notes("NOTES"),
         ProblemDescription("PROBLEM_DESCRIPTION"),
@@ -218,6 +229,9 @@ public class ActivityItem extends Item {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ActivityType.class);
 
         private final String value;
         private static java.util.Map<String, ActivityType> map;
@@ -255,11 +269,15 @@ public class ActivityItem extends Item {
      * The type of activity occuring on the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityType")
-    ActivityType activityType;
+    private final ActivityType activityType;
+
+    public ActivityType getActivityType() {
+        return activityType;
+    }
+
     /**
      * The person who updates the activity on the support ticket.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ActivityAuthor {
         Customer("CUSTOMER"),
         Oracle("ORACLE"),
@@ -269,6 +287,9 @@ public class ActivityItem extends Item {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ActivityAuthor.class);
 
         private final String value;
         private static java.util.Map<String, ActivityAuthor> map;
@@ -306,8 +327,67 @@ public class ActivityItem extends Item {
      * The person who updates the activity on the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityAuthor")
-    ActivityAuthor activityAuthor;
+    private final ActivityAuthor activityAuthor;
+
+    public ActivityAuthor getActivityAuthor() {
+        return activityAuthor;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ActivityItem(");
+        sb.append("super=").append(super.toString());
+        sb.append(", comments=").append(String.valueOf(this.comments));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", activityType=").append(String.valueOf(this.activityType));
+        sb.append(", activityAuthor=").append(String.valueOf(this.activityAuthor));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ActivityItem)) {
+            return false;
+        }
+
+        ActivityItem other = (ActivityItem) o;
+        return java.util.Objects.equals(this.comments, other.comments)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.activityType, other.activityType)
+                && java.util.Objects.equals(this.activityAuthor, other.activityAuthor)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.comments == null ? 43 : this.comments.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.activityType == null ? 43 : this.activityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.activityAuthor == null ? 43 : this.activityAuthor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -18,12 +18,6 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -46,12 +40,43 @@ package com.oracle.bmc.database.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateDataGuardAssociationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "databaseSoftwareImageId",
+        "databaseAdminPassword",
+        "protectionMode",
+        "transportType",
+        "isActiveDataGuardEnabled",
+        "peerDbUniqueName",
+        "peerSidPrefix"
+    })
+    protected CreateDataGuardAssociationDetails(
+            String databaseSoftwareImageId,
+            String databaseAdminPassword,
+            ProtectionMode protectionMode,
+            TransportType transportType,
+            Boolean isActiveDataGuardEnabled,
+            String peerDbUniqueName,
+            String peerSidPrefix) {
+        super();
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.databaseAdminPassword = databaseAdminPassword;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
+        this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+        this.peerDbUniqueName = peerDbUniqueName;
+        this.peerSidPrefix = peerSidPrefix;
+    }
 
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
-    String databaseSoftwareImageId;
+    private final String databaseSoftwareImageId;
+
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
+    }
 
     /**
      * A strong password for the {@code SYS}, {@code SYSTEM}, and {@code PDB Admin} users to apply during standby creation.
@@ -70,7 +95,12 @@ public class CreateDataGuardAssociationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
-    String databaseAdminPassword;
+    private final String databaseAdminPassword;
+
+    public String getDatabaseAdminPassword() {
+        return databaseAdminPassword;
+    }
+
     /**
      * The protection mode to set up between the primary and standby databases. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
@@ -121,7 +151,12 @@ public class CreateDataGuardAssociationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
-    ProtectionMode protectionMode;
+    private final ProtectionMode protectionMode;
+
+    public ProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
     /**
      * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
      * <p>
@@ -184,25 +219,111 @@ public class CreateDataGuardAssociationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
-    TransportType transportType;
+    private final TransportType transportType;
+
+    public TransportType getTransportType() {
+        return transportType;
+    }
 
     /**
      * True if active Data Guard is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
-    Boolean isActiveDataGuardEnabled;
+    private final Boolean isActiveDataGuardEnabled;
+
+    public Boolean getIsActiveDataGuardEnabled() {
+        return isActiveDataGuardEnabled;
+    }
 
     /**
      * Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
-    String peerDbUniqueName;
+    private final String peerDbUniqueName;
+
+    public String getPeerDbUniqueName() {
+        return peerDbUniqueName;
+    }
 
     /**
      * Specifies a prefix for the {@code Oracle SID} of the database to be created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerSidPrefix")
-    String peerSidPrefix;
+    private final String peerSidPrefix;
+
+    public String getPeerSidPrefix() {
+        return peerSidPrefix;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDataGuardAssociationDetails(");
+        sb.append("databaseSoftwareImageId=").append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", databaseAdminPassword=").append(String.valueOf(this.databaseAdminPassword));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", transportType=").append(String.valueOf(this.transportType));
+        sb.append(", isActiveDataGuardEnabled=")
+                .append(String.valueOf(this.isActiveDataGuardEnabled));
+        sb.append(", peerDbUniqueName=").append(String.valueOf(this.peerDbUniqueName));
+        sb.append(", peerSidPrefix=").append(String.valueOf(this.peerSidPrefix));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDataGuardAssociationDetails)) {
+            return false;
+        }
+
+        CreateDataGuardAssociationDetails other = (CreateDataGuardAssociationDetails) o;
+        return java.util.Objects.equals(this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(this.databaseAdminPassword, other.databaseAdminPassword)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.transportType, other.transportType)
+                && java.util.Objects.equals(
+                        this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
+                && java.util.Objects.equals(this.peerDbUniqueName, other.peerDbUniqueName)
+                && java.util.Objects.equals(this.peerSidPrefix, other.peerSidPrefix);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseAdminPassword == null
+                                ? 43
+                                : this.databaseAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportType == null ? 43 : this.transportType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isActiveDataGuardEnabled == null
+                                ? 43
+                                : this.isActiveDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerDbUniqueName == null ? 43 : this.peerDbUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerSidPrefix == null ? 43 : this.peerSidPrefix.hashCode());
+        return result;
+    }
 }

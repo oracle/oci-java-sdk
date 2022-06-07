@@ -9,14 +9,6 @@ import com.oracle.bmc.oda.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaInstanceAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOdaInstanceAttachmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetOdaInstanceAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,20 +17,33 @@ public class GetOdaInstanceAttachmentRequest
      */
     private String odaInstanceId;
 
+    public String getOdaInstanceId() {
+        return odaInstanceId;
+    }
     /**
      * Unique Digital Assistant instance attachment identifier.
      */
     private String attachmentId;
 
+    public String getAttachmentId() {
+        return attachmentId;
+    }
     /**
      * Whether to send attachment owner info during get/list call.
      */
     private Boolean includeOwnerMetadata;
 
+    public Boolean getIncludeOwnerMetadata() {
+        return includeOwnerMetadata;
+    }
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -46,6 +51,50 @@ public class GetOdaInstanceAttachmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String odaInstanceId = null;
+
+        /**
+         * Unique Digital Assistant instance identifier.
+         * @return this builder instance
+         */
+        public Builder odaInstanceId(String odaInstanceId) {
+            this.odaInstanceId = odaInstanceId;
+            return this;
+        }
+
+        private String attachmentId = null;
+
+        /**
+         * Unique Digital Assistant instance attachment identifier.
+         * @return this builder instance
+         */
+        public Builder attachmentId(String attachmentId) {
+            this.attachmentId = attachmentId;
+            return this;
+        }
+
+        private Boolean includeOwnerMetadata = null;
+
+        /**
+         * Whether to send attachment owner info during get/list call.
+         * @return this builder instance
+         */
+        public Builder includeOwnerMetadata(Boolean includeOwnerMetadata) {
+            this.includeOwnerMetadata = includeOwnerMetadata;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -100,5 +149,85 @@ public class GetOdaInstanceAttachmentRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetOdaInstanceAttachmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetOdaInstanceAttachmentRequest
+         */
+        public GetOdaInstanceAttachmentRequest buildWithoutInvocationCallback() {
+            GetOdaInstanceAttachmentRequest request = new GetOdaInstanceAttachmentRequest();
+            request.odaInstanceId = odaInstanceId;
+            request.attachmentId = attachmentId;
+            request.includeOwnerMetadata = includeOwnerMetadata;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetOdaInstanceAttachmentRequest(odaInstanceId, attachmentId, includeOwnerMetadata, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .odaInstanceId(odaInstanceId)
+                .attachmentId(attachmentId)
+                .includeOwnerMetadata(includeOwnerMetadata)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",attachmentId=").append(String.valueOf(this.attachmentId));
+        sb.append(",includeOwnerMetadata=").append(String.valueOf(this.includeOwnerMetadata));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetOdaInstanceAttachmentRequest)) {
+            return false;
+        }
+
+        GetOdaInstanceAttachmentRequest other = (GetOdaInstanceAttachmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.attachmentId, other.attachmentId)
+                && java.util.Objects.equals(this.includeOwnerMetadata, other.includeOwnerMetadata)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result = (result * PRIME) + (this.attachmentId == null ? 43 : this.attachmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeOwnerMetadata == null
+                                ? 43
+                                : this.includeOwnerMetadata.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

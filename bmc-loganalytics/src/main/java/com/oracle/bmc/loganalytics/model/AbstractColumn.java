@@ -16,12 +16,6 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -53,89 +47,241 @@ package com.oracle.bmc.loganalytics.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AbstractColumn {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "subSystem",
+        "values",
+        "isListOfValues",
+        "isMultiValued",
+        "isCaseSensitive",
+        "isGroupable",
+        "isEvaluable",
+        "valueType",
+        "originalDisplayName",
+        "internalName"
+    })
+    protected AbstractColumn(
+            String displayName,
+            SubSystemName subSystem,
+            java.util.List<FieldValue> values,
+            Boolean isListOfValues,
+            Boolean isMultiValued,
+            Boolean isCaseSensitive,
+            Boolean isGroupable,
+            Boolean isEvaluable,
+            ValueType valueType,
+            String originalDisplayName,
+            String internalName) {
+        super();
+        this.displayName = displayName;
+        this.subSystem = subSystem;
+        this.values = values;
+        this.isListOfValues = isListOfValues;
+        this.isMultiValued = isMultiValued;
+        this.isCaseSensitive = isCaseSensitive;
+        this.isGroupable = isGroupable;
+        this.isEvaluable = isEvaluable;
+        this.valueType = valueType;
+        this.originalDisplayName = originalDisplayName;
+        this.internalName = internalName;
+    }
 
     /**
      * Column display name - will be alias if column is renamed by queryStrng.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Subsystem column belongs to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
-    SubSystemName subSystem;
+    private final SubSystemName subSystem;
+
+    public SubSystemName getSubSystem() {
+        return subSystem;
+    }
 
     /**
      * If the column is a 'List of Values' column, this array contains the field values that are applicable to query results or all if no filters applied.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
-    java.util.List<FieldValue> values;
+    private final java.util.List<FieldValue> values;
+
+    public java.util.List<FieldValue> getValues() {
+        return values;
+    }
 
     /**
      * Identifies if all values in this column come from a pre-defined list of values.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isListOfValues")
-    Boolean isListOfValues;
+    private final Boolean isListOfValues;
+
+    public Boolean getIsListOfValues() {
+        return isListOfValues;
+    }
 
     /**
      * Identifies if this column allows multiple values to exist in a single row.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
-    Boolean isMultiValued;
+    private final Boolean isMultiValued;
+
+    public Boolean getIsMultiValued() {
+        return isMultiValued;
+    }
 
     /**
      * A flag indicating whether or not the field is a case sensitive field.  Only applies to string fields.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
-    Boolean isCaseSensitive;
+    private final Boolean isCaseSensitive;
+
+    public Boolean getIsCaseSensitive() {
+        return isCaseSensitive;
+    }
 
     /**
      * Identifies if this column can be used as a grouping field in any grouping command.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGroupable")
-    Boolean isGroupable;
+    private final Boolean isGroupable;
+
+    public Boolean getIsGroupable() {
+        return isGroupable;
+    }
 
     /**
      * Identifies if this column can be used as an expression parameter in any command that accepts querylanguage expressions.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEvaluable")
-    Boolean isEvaluable;
+    private final Boolean isEvaluable;
+
+    public Boolean getIsEvaluable() {
+        return isEvaluable;
+    }
 
     /**
      * Field denoting column data type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
-    ValueType valueType;
+    private final ValueType valueType;
+
+    public ValueType getValueType() {
+        return valueType;
+    }
 
     /**
      * Same as displayName unless column renamed in which case this will hold the original display name for the column.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalDisplayName")
-    String originalDisplayName;
+    private final String originalDisplayName;
+
+    public String getOriginalDisplayName() {
+        return originalDisplayName;
+    }
 
     /**
      * Internal identifier for the column.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
-    String internalName;
+    private final String internalName;
+
+    public String getInternalName() {
+        return internalName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractColumn(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", subSystem=").append(String.valueOf(this.subSystem));
+        sb.append(", values=").append(String.valueOf(this.values));
+        sb.append(", isListOfValues=").append(String.valueOf(this.isListOfValues));
+        sb.append(", isMultiValued=").append(String.valueOf(this.isMultiValued));
+        sb.append(", isCaseSensitive=").append(String.valueOf(this.isCaseSensitive));
+        sb.append(", isGroupable=").append(String.valueOf(this.isGroupable));
+        sb.append(", isEvaluable=").append(String.valueOf(this.isEvaluable));
+        sb.append(", valueType=").append(String.valueOf(this.valueType));
+        sb.append(", originalDisplayName=").append(String.valueOf(this.originalDisplayName));
+        sb.append(", internalName=").append(String.valueOf(this.internalName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractColumn)) {
+            return false;
+        }
+
+        AbstractColumn other = (AbstractColumn) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.subSystem, other.subSystem)
+                && java.util.Objects.equals(this.values, other.values)
+                && java.util.Objects.equals(this.isListOfValues, other.isListOfValues)
+                && java.util.Objects.equals(this.isMultiValued, other.isMultiValued)
+                && java.util.Objects.equals(this.isCaseSensitive, other.isCaseSensitive)
+                && java.util.Objects.equals(this.isGroupable, other.isGroupable)
+                && java.util.Objects.equals(this.isEvaluable, other.isEvaluable)
+                && java.util.Objects.equals(this.valueType, other.valueType)
+                && java.util.Objects.equals(this.originalDisplayName, other.originalDisplayName)
+                && java.util.Objects.equals(this.internalName, other.internalName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.subSystem == null ? 43 : this.subSystem.hashCode());
+        result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isListOfValues == null ? 43 : this.isListOfValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultiValued == null ? 43 : this.isMultiValued.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCaseSensitive == null ? 43 : this.isCaseSensitive.hashCode());
+        result = (result * PRIME) + (this.isGroupable == null ? 43 : this.isGroupable.hashCode());
+        result = (result * PRIME) + (this.isEvaluable == null ? 43 : this.isEvaluable.hashCode());
+        result = (result * PRIME) + (this.valueType == null ? 43 : this.valueType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalDisplayName == null
+                                ? 43
+                                : this.originalDisplayName.hashCode());
+        result = (result * PRIME) + (this.internalName == null ? 43 : this.internalName.hashCode());
+        return result;
+    }
 
     /**
      * Column classification when column requires special designation.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Column("COLUMN"),
         ChartColumn("CHART_COLUMN"),
@@ -149,6 +295,8 @@ public class AbstractColumn {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;

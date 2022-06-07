@@ -8,7 +8,6 @@ package com.oracle.bmc.ospgateway.model;
  * Payment method
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.extern.slf4j.Slf4j
 public enum PaymentMethod {
     CreditCard("CREDIT_CARD"),
     Paypal("PAYPAL"),
@@ -18,6 +17,9 @@ public enum PaymentMethod {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PaymentMethod.class);
 
     private final String value;
     private static java.util.Map<String, PaymentMethod> map;

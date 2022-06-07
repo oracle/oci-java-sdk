@@ -9,14 +9,6 @@ import com.oracle.bmc.apmsynthetics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorResultExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMonitorResultRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,35 +17,53 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String apmDomainId;
 
+    public String getApmDomainId() {
+        return apmDomainId;
+    }
     /**
      * The OCID of the monitor.
      */
     private String monitorId;
 
+    public String getMonitorId() {
+        return monitorId;
+    }
     /**
      * The vantagePoint name.
      *
      */
     private String vantagePoint;
 
+    public String getVantagePoint() {
+        return vantagePoint;
+    }
     /**
      * The result type: har, screenshot, log, or network.
      *
      */
     private String resultType;
 
+    public String getResultType() {
+        return resultType;
+    }
     /**
      * The result content type: zip or raw.
      *
      */
     private String resultContentType;
 
+    public String getResultContentType() {
+        return resultContentType;
+    }
     /**
      * The time the object was posted.
      *
      */
     private String executionTime;
 
+    public String getExecutionTime() {
+        return executionTime;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -61,12 +71,100 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetMonitorResultRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String apmDomainId = null;
+
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         * @return this builder instance
+         */
+        public Builder apmDomainId(String apmDomainId) {
+            this.apmDomainId = apmDomainId;
+            return this;
+        }
+
+        private String monitorId = null;
+
+        /**
+         * The OCID of the monitor.
+         * @return this builder instance
+         */
+        public Builder monitorId(String monitorId) {
+            this.monitorId = monitorId;
+            return this;
+        }
+
+        private String vantagePoint = null;
+
+        /**
+         * The vantagePoint name.
+         *
+         * @return this builder instance
+         */
+        public Builder vantagePoint(String vantagePoint) {
+            this.vantagePoint = vantagePoint;
+            return this;
+        }
+
+        private String resultType = null;
+
+        /**
+         * The result type: har, screenshot, log, or network.
+         *
+         * @return this builder instance
+         */
+        public Builder resultType(String resultType) {
+            this.resultType = resultType;
+            return this;
+        }
+
+        private String resultContentType = null;
+
+        /**
+         * The result content type: zip or raw.
+         *
+         * @return this builder instance
+         */
+        public Builder resultContentType(String resultContentType) {
+            this.resultContentType = resultContentType;
+            return this;
+        }
+
+        private String executionTime = null;
+
+        /**
+         * The time the object was posted.
+         *
+         * @return this builder instance
+         */
+        public Builder executionTime(String executionTime) {
+            this.executionTime = executionTime;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -124,5 +222,98 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetMonitorResultRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetMonitorResultRequest
+         */
+        public GetMonitorResultRequest buildWithoutInvocationCallback() {
+            GetMonitorResultRequest request = new GetMonitorResultRequest();
+            request.apmDomainId = apmDomainId;
+            request.monitorId = monitorId;
+            request.vantagePoint = vantagePoint;
+            request.resultType = resultType;
+            request.resultContentType = resultContentType;
+            request.executionTime = executionTime;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetMonitorResultRequest(apmDomainId, monitorId, vantagePoint, resultType, resultContentType, executionTime, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .apmDomainId(apmDomainId)
+                .monitorId(monitorId)
+                .vantagePoint(vantagePoint)
+                .resultType(resultType)
+                .resultContentType(resultContentType)
+                .executionTime(executionTime)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
+        sb.append(",monitorId=").append(String.valueOf(this.monitorId));
+        sb.append(",vantagePoint=").append(String.valueOf(this.vantagePoint));
+        sb.append(",resultType=").append(String.valueOf(this.resultType));
+        sb.append(",resultContentType=").append(String.valueOf(this.resultContentType));
+        sb.append(",executionTime=").append(String.valueOf(this.executionTime));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetMonitorResultRequest)) {
+            return false;
+        }
+
+        GetMonitorResultRequest other = (GetMonitorResultRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
+                && java.util.Objects.equals(this.monitorId, other.monitorId)
+                && java.util.Objects.equals(this.vantagePoint, other.vantagePoint)
+                && java.util.Objects.equals(this.resultType, other.resultType)
+                && java.util.Objects.equals(this.resultContentType, other.resultContentType)
+                && java.util.Objects.equals(this.executionTime, other.executionTime)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
+        result = (result * PRIME) + (this.monitorId == null ? 43 : this.monitorId.hashCode());
+        result = (result * PRIME) + (this.vantagePoint == null ? 43 : this.vantagePoint.hashCode());
+        result = (result * PRIME) + (this.resultType == null ? 43 : this.resultType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resultContentType == null ? 43 : this.resultContentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionTime == null ? 43 : this.executionTime.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

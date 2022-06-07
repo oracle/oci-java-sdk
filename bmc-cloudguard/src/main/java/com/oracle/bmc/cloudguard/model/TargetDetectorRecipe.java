@@ -15,16 +15,58 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TargetDetectorRecipe.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TargetDetectorRecipe {
+public final class TargetDetectorRecipe {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "compartmentId",
+        "detectorRecipeId",
+        "owner",
+        "detector",
+        "detectorRules",
+        "effectiveDetectorRules",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "sourceDataRetention"
+    })
+    public TargetDetectorRecipe(
+            String id,
+            String displayName,
+            String description,
+            String compartmentId,
+            String detectorRecipeId,
+            OwnerType owner,
+            DetectorEnum detector,
+            java.util.List<TargetDetectorRecipeDetectorRule> detectorRules,
+            java.util.List<TargetDetectorRecipeDetectorRule> effectiveDetectorRules,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleState lifecycleState,
+            Integer sourceDataRetention) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.detectorRecipeId = detectorRecipeId;
+        this.owner = owner;
+        this.detector = detector;
+        this.detectorRules = detectorRules;
+        this.effectiveDetectorRules = effectiveDetectorRules;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.sourceDataRetention = sourceDataRetention;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -197,84 +239,232 @@ public class TargetDetectorRecipe {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Ocid for detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Display name of detector recipe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Detector recipe description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * compartmentId of detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Unique identifier for Detector Recipe of which this is an extension
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
-    String detectorRecipeId;
+    private final String detectorRecipeId;
+
+    public String getDetectorRecipeId() {
+        return detectorRecipeId;
+    }
 
     /**
      * Owner of detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
-    OwnerType owner;
+    private final OwnerType owner;
+
+    public OwnerType getOwner() {
+        return owner;
+    }
 
     /**
      * Type of detector
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
-    DetectorEnum detector;
+    private final DetectorEnum detector;
+
+    public DetectorEnum getDetector() {
+        return detector;
+    }
 
     /**
      * List of detector rules for the detector type for recipe - user input
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
-    java.util.List<TargetDetectorRecipeDetectorRule> detectorRules;
+    private final java.util.List<TargetDetectorRecipeDetectorRule> detectorRules;
+
+    public java.util.List<TargetDetectorRecipeDetectorRule> getDetectorRules() {
+        return detectorRules;
+    }
 
     /**
      * List of effective detector rules for the detector type for recipe after applying defaults
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveDetectorRules")
-    java.util.List<TargetDetectorRecipeDetectorRule> effectiveDetectorRules;
+    private final java.util.List<TargetDetectorRecipeDetectorRule> effectiveDetectorRules;
+
+    public java.util.List<TargetDetectorRecipeDetectorRule> getEffectiveDetectorRules() {
+        return effectiveDetectorRules;
+    }
 
     /**
      * The date and time the target detector recipe was created. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the target detector recipe was updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The number of days for which source data is retained
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
-    Integer sourceDataRetention;
+    private final Integer sourceDataRetention;
+
+    public Integer getSourceDataRetention() {
+        return sourceDataRetention;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TargetDetectorRecipe(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", detectorRecipeId=").append(String.valueOf(this.detectorRecipeId));
+        sb.append(", owner=").append(String.valueOf(this.owner));
+        sb.append(", detector=").append(String.valueOf(this.detector));
+        sb.append(", detectorRules=").append(String.valueOf(this.detectorRules));
+        sb.append(", effectiveDetectorRules=").append(String.valueOf(this.effectiveDetectorRules));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", sourceDataRetention=").append(String.valueOf(this.sourceDataRetention));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TargetDetectorRecipe)) {
+            return false;
+        }
+
+        TargetDetectorRecipe other = (TargetDetectorRecipe) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.detectorRecipeId, other.detectorRecipeId)
+                && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.detector, other.detector)
+                && java.util.Objects.equals(this.detectorRules, other.detectorRules)
+                && java.util.Objects.equals(
+                        this.effectiveDetectorRules, other.effectiveDetectorRules)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sourceDataRetention, other.sourceDataRetention)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRecipeId == null ? 43 : this.detectorRecipeId.hashCode());
+        result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result = (result * PRIME) + (this.detector == null ? 43 : this.detector.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRules == null ? 43 : this.detectorRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.effectiveDetectorRules == null
+                                ? 43
+                                : this.effectiveDetectorRules.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDataRetention == null
+                                ? 43
+                                : this.sourceDataRetention.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

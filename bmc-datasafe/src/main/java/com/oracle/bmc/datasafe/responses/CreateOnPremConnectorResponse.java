@@ -7,10 +7,6 @@ package com.oracle.bmc.datasafe.responses;
 import com.oracle.bmc.datasafe.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
@@ -18,11 +14,19 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
      *
      */
     private String opcWorkRequestId;
+
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -30,16 +34,28 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The full URI of the on-premises connector.
      *
      */
     private String location;
 
+    public String getLocation() {
+        return location;
+    }
+
     /**
      * The returned OnPremConnector instance.
      */
     private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
+
+    public com.oracle.bmc.datasafe.model.OnPremConnector getOnPremConnector() {
+        return onPremConnector;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -72,6 +88,42 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String location;
+
+        public Builder location(String location) {
+            this.location = location;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
+
+        public Builder onPremConnector(
+                com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector) {
+            this.onPremConnector = onPremConnector;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -96,5 +148,57 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
                     location,
                     onPremConnector);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",location=").append(String.valueOf(location));
+        sb.append(",onPremConnector=").append(String.valueOf(onPremConnector));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOnPremConnectorResponse)) {
+            return false;
+        }
+
+        CreateOnPremConnectorResponse other = (CreateOnPremConnectorResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.onPremConnector, other.onPremConnector);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onPremConnector == null ? 43 : this.onPremConnector.hashCode());
+        return result;
     }
 }

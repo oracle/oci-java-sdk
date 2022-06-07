@@ -8,7 +8,6 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * Possible lifecycle states for an operator action. Operator action lifecycles are controlled by Oracle.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.extern.slf4j.Slf4j
 public enum OperatorActionLifecycleStates {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
@@ -18,6 +17,9 @@ public enum OperatorActionLifecycleStates {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OperatorActionLifecycleStates.class);
 
     private final String value;
     private static java.util.Map<String, OperatorActionLifecycleStates> map;

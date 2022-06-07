@@ -11,11 +11,13 @@ import com.oracle.bmc.osubusage.responses.*;
 import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.extern.slf4j.Slf4j
 public class ListComputedUsagesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ListComputedUsagesConverter.class);
 
     public static com.oracle.bmc.osubusage.requests.ListComputedUsagesRequest interceptRequest(
             com.oracle.bmc.osubusage.requests.ListComputedUsagesRequest request) {

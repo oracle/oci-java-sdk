@@ -15,16 +15,21 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceStatisticsAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceStatisticsAggregation {
+public final class ResourceStatisticsAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"databaseDetails", "currentStatistics"})
+    public ResourceStatisticsAggregation(
+            DatabaseDetails databaseDetails, ResourceStatistics currentStatistics) {
+        super();
+        this.databaseDetails = databaseDetails;
+        this.currentStatistics = currentStatistics;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("databaseDetails")
         private DatabaseDetails databaseDetails;
@@ -72,12 +77,70 @@ public class ResourceStatisticsAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDetails")
-    DatabaseDetails databaseDetails;
+    private final DatabaseDetails databaseDetails;
+
+    public DatabaseDetails getDatabaseDetails() {
+        return databaseDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("currentStatistics")
-    ResourceStatistics currentStatistics;
+    private final ResourceStatistics currentStatistics;
+
+    public ResourceStatistics getCurrentStatistics() {
+        return currentStatistics;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceStatisticsAggregation(");
+        sb.append("databaseDetails=").append(String.valueOf(this.databaseDetails));
+        sb.append(", currentStatistics=").append(String.valueOf(this.currentStatistics));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceStatisticsAggregation)) {
+            return false;
+        }
+
+        ResourceStatisticsAggregation other = (ResourceStatisticsAggregation) o;
+        return java.util.Objects.equals(this.databaseDetails, other.databaseDetails)
+                && java.util.Objects.equals(this.currentStatistics, other.currentStatistics)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.databaseDetails == null ? 43 : this.databaseDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentStatistics == null ? 43 : this.currentStatistics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

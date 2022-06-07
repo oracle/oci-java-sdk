@@ -15,16 +15,61 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SensitiveTypeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SensitiveTypeSummary {
+public final class SensitiveTypeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "lifecycleState",
+        "shortName",
+        "source",
+        "timeCreated",
+        "timeUpdated",
+        "description",
+        "entityType",
+        "parentCategoryId",
+        "defaultMaskingFormatId",
+        "freeformTags",
+        "definedTags"
+    })
+    public SensitiveTypeSummary(
+            String id,
+            String displayName,
+            String compartmentId,
+            DiscoveryLifecycleState lifecycleState,
+            String shortName,
+            SensitiveTypeSource source,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String description,
+            SensitiveTypeEntity entityType,
+            String parentCategoryId,
+            String defaultMaskingFormatId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+        this.shortName = shortName;
+        this.source = source;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.description = description;
+        this.entityType = entityType;
+        this.parentCategoryId = parentCategoryId;
+        this.defaultMaskingFormatId = defaultMaskingFormatId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -207,59 +252,99 @@ public class SensitiveTypeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the sensitive type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The display name of the sensitive type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the compartment that contains the sensitive type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The current state of the sensitive type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    DiscoveryLifecycleState lifecycleState;
+    private final DiscoveryLifecycleState lifecycleState;
+
+    public DiscoveryLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The short name of the sensitive type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortName")
-    String shortName;
+    private final String shortName;
+
+    public String getShortName() {
+        return shortName;
+    }
 
     /**
      * Specifies whether the sensitive type is user-defined or predefined.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    SensitiveTypeSource source;
+    private final SensitiveTypeSource source;
+
+    public SensitiveTypeSource getSource() {
+        return source;
+    }
 
     /**
      * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The description of the sensitive type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for
@@ -267,19 +352,31 @@ public class SensitiveTypeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    SensitiveTypeEntity entityType;
+    private final SensitiveTypeEntity entityType;
+
+    public SensitiveTypeEntity getEntityType() {
+        return entityType;
+    }
 
     /**
      * The OCID of the parent sensitive category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentCategoryId")
-    String parentCategoryId;
+    private final String parentCategoryId;
+
+    public String getParentCategoryId() {
+        return parentCategoryId;
+    }
 
     /**
      * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMaskingFormatId")
-    String defaultMaskingFormatId;
+    private final String defaultMaskingFormatId;
+
+    public String getDefaultMaskingFormatId() {
+        return defaultMaskingFormatId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -288,7 +385,11 @@ public class SensitiveTypeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -297,8 +398,101 @@ public class SensitiveTypeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SensitiveTypeSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", shortName=").append(String.valueOf(this.shortName));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", parentCategoryId=").append(String.valueOf(this.parentCategoryId));
+        sb.append(", defaultMaskingFormatId=").append(String.valueOf(this.defaultMaskingFormatId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SensitiveTypeSummary)) {
+            return false;
+        }
+
+        SensitiveTypeSummary other = (SensitiveTypeSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.shortName, other.shortName)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.parentCategoryId, other.parentCategoryId)
+                && java.util.Objects.equals(
+                        this.defaultMaskingFormatId, other.defaultMaskingFormatId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.shortName == null ? 43 : this.shortName.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentCategoryId == null ? 43 : this.parentCategoryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultMaskingFormatId == null
+                                ? 43
+                                : this.defaultMaskingFormatId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

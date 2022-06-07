@@ -16,14 +16,71 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Trace.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Trace {
+public final class Trace {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "rootSpanOperationName",
+        "timeEarliestSpanStarted",
+        "timeLatestSpanEnded",
+        "spanCount",
+        "errorSpanCount",
+        "rootSpanServiceName",
+        "timeRootSpanStarted",
+        "timeRootSpanEnded",
+        "rootSpanDurationInMs",
+        "traceDurationInMs",
+        "isFault",
+        "traceStatus",
+        "traceErrorType",
+        "traceErrorCode",
+        "serviceSummaries",
+        "spanSummary",
+        "spans"
+    })
+    public Trace(
+            String key,
+            String rootSpanOperationName,
+            java.util.Date timeEarliestSpanStarted,
+            java.util.Date timeLatestSpanEnded,
+            Integer spanCount,
+            Integer errorSpanCount,
+            String rootSpanServiceName,
+            java.util.Date timeRootSpanStarted,
+            java.util.Date timeRootSpanEnded,
+            Integer rootSpanDurationInMs,
+            Integer traceDurationInMs,
+            Boolean isFault,
+            String traceStatus,
+            String traceErrorType,
+            String traceErrorCode,
+            java.util.List<TraceServiceSummary> serviceSummaries,
+            TraceSpanSummary spanSummary,
+            java.util.List<Span> spans) {
+        super();
+        this.key = key;
+        this.rootSpanOperationName = rootSpanOperationName;
+        this.timeEarliestSpanStarted = timeEarliestSpanStarted;
+        this.timeLatestSpanEnded = timeLatestSpanEnded;
+        this.spanCount = spanCount;
+        this.errorSpanCount = errorSpanCount;
+        this.rootSpanServiceName = rootSpanServiceName;
+        this.timeRootSpanStarted = timeRootSpanStarted;
+        this.timeRootSpanEnded = timeRootSpanEnded;
+        this.rootSpanDurationInMs = rootSpanDurationInMs;
+        this.traceDurationInMs = traceDurationInMs;
+        this.isFault = isFault;
+        this.traceStatus = traceStatus;
+        this.traceErrorType = traceErrorType;
+        this.traceErrorCode = traceErrorCode;
+        this.serviceSummaries = serviceSummaries;
+        this.spanSummary = spanSummary;
+        this.spans = spans;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -249,6 +306,10 @@ public class Trace {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
      * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
@@ -256,7 +317,11 @@ public class Trace {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Root span name associated with the trace. This is the flow start operation name.
@@ -264,21 +329,33 @@ public class Trace {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootSpanOperationName")
-    String rootSpanOperationName;
+    private final String rootSpanOperationName;
+
+    public String getRootSpanOperationName() {
+        return rootSpanOperationName;
+    }
 
     /**
      * Start time of the earliest span in the span collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestSpanStarted")
-    java.util.Date timeEarliestSpanStarted;
+    private final java.util.Date timeEarliestSpanStarted;
+
+    public java.util.Date getTimeEarliestSpanStarted() {
+        return timeEarliestSpanStarted;
+    }
 
     /**
      * End time of the span that most recently ended in the span collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestSpanEnded")
-    java.util.Date timeLatestSpanEnded;
+    private final java.util.Date timeLatestSpanEnded;
+
+    public java.util.Date getTimeLatestSpanEnded() {
+        return timeLatestSpanEnded;
+    }
 
     /**
      * The number of spans that have been processed by the system for the trace.  Note that there
@@ -287,7 +364,11 @@ public class Trace {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("spanCount")
-    Integer spanCount;
+    private final Integer spanCount;
+
+    public Integer getSpanCount() {
+        return spanCount;
+    }
 
     /**
      * The number of spans with errors that have been processed by the system for the trace.
@@ -295,49 +376,77 @@ public class Trace {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorSpanCount")
-    Integer errorSpanCount;
+    private final Integer errorSpanCount;
+
+    public Integer getErrorSpanCount() {
+        return errorSpanCount;
+    }
 
     /**
      * Service associated with the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootSpanServiceName")
-    String rootSpanServiceName;
+    private final String rootSpanServiceName;
+
+    public String getRootSpanServiceName() {
+        return rootSpanServiceName;
+    }
 
     /**
      * Start time of the root span for the span collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRootSpanStarted")
-    java.util.Date timeRootSpanStarted;
+    private final java.util.Date timeRootSpanStarted;
+
+    public java.util.Date getTimeRootSpanStarted() {
+        return timeRootSpanStarted;
+    }
 
     /**
      * End time of the root span for the span collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRootSpanEnded")
-    java.util.Date timeRootSpanEnded;
+    private final java.util.Date timeRootSpanEnded;
+
+    public java.util.Date getTimeRootSpanEnded() {
+        return timeRootSpanEnded;
+    }
 
     /**
      * Time taken for the root span operation to complete in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootSpanDurationInMs")
-    Integer rootSpanDurationInMs;
+    private final Integer rootSpanDurationInMs;
+
+    public Integer getRootSpanDurationInMs() {
+        return rootSpanDurationInMs;
+    }
 
     /**
      * Time between the start of the earliest span and the end of the most recent span in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceDurationInMs")
-    Integer traceDurationInMs;
+    private final Integer traceDurationInMs;
+
+    public Integer getTraceDurationInMs() {
+        return traceDurationInMs;
+    }
 
     /**
      * Boolean flag that indicates whether the trace has an error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFault")
-    Boolean isFault;
+    private final Boolean isFault;
+
+    public Boolean getIsFault() {
+        return isFault;
+    }
 
     /**
      * The status of the trace.
@@ -349,39 +458,191 @@ public class Trace {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceStatus")
-    String traceStatus;
+    private final String traceStatus;
+
+    public String getTraceStatus() {
+        return traceStatus;
+    }
 
     /**
      * Error type of the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceErrorType")
-    String traceErrorType;
+    private final String traceErrorType;
+
+    public String getTraceErrorType() {
+        return traceErrorType;
+    }
 
     /**
      * Error code of the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceErrorCode")
-    String traceErrorCode;
+    private final String traceErrorCode;
+
+    public String getTraceErrorCode() {
+        return traceErrorCode;
+    }
 
     /**
      * A summary of the spans by service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceSummaries")
-    java.util.List<TraceServiceSummary> serviceSummaries;
+    private final java.util.List<TraceServiceSummary> serviceSummaries;
+
+    public java.util.List<TraceServiceSummary> getServiceSummaries() {
+        return serviceSummaries;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("spanSummary")
-    TraceSpanSummary spanSummary;
+    private final TraceSpanSummary spanSummary;
+
+    public TraceSpanSummary getSpanSummary() {
+        return spanSummary;
+    }
 
     /**
      * An array of spans in the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("spans")
-    java.util.List<Span> spans;
+    private final java.util.List<Span> spans;
+
+    public java.util.List<Span> getSpans() {
+        return spans;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Trace(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", rootSpanOperationName=").append(String.valueOf(this.rootSpanOperationName));
+        sb.append(", timeEarliestSpanStarted=")
+                .append(String.valueOf(this.timeEarliestSpanStarted));
+        sb.append(", timeLatestSpanEnded=").append(String.valueOf(this.timeLatestSpanEnded));
+        sb.append(", spanCount=").append(String.valueOf(this.spanCount));
+        sb.append(", errorSpanCount=").append(String.valueOf(this.errorSpanCount));
+        sb.append(", rootSpanServiceName=").append(String.valueOf(this.rootSpanServiceName));
+        sb.append(", timeRootSpanStarted=").append(String.valueOf(this.timeRootSpanStarted));
+        sb.append(", timeRootSpanEnded=").append(String.valueOf(this.timeRootSpanEnded));
+        sb.append(", rootSpanDurationInMs=").append(String.valueOf(this.rootSpanDurationInMs));
+        sb.append(", traceDurationInMs=").append(String.valueOf(this.traceDurationInMs));
+        sb.append(", isFault=").append(String.valueOf(this.isFault));
+        sb.append(", traceStatus=").append(String.valueOf(this.traceStatus));
+        sb.append(", traceErrorType=").append(String.valueOf(this.traceErrorType));
+        sb.append(", traceErrorCode=").append(String.valueOf(this.traceErrorCode));
+        sb.append(", serviceSummaries=").append(String.valueOf(this.serviceSummaries));
+        sb.append(", spanSummary=").append(String.valueOf(this.spanSummary));
+        sb.append(", spans=").append(String.valueOf(this.spans));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Trace)) {
+            return false;
+        }
+
+        Trace other = (Trace) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.rootSpanOperationName, other.rootSpanOperationName)
+                && java.util.Objects.equals(
+                        this.timeEarliestSpanStarted, other.timeEarliestSpanStarted)
+                && java.util.Objects.equals(this.timeLatestSpanEnded, other.timeLatestSpanEnded)
+                && java.util.Objects.equals(this.spanCount, other.spanCount)
+                && java.util.Objects.equals(this.errorSpanCount, other.errorSpanCount)
+                && java.util.Objects.equals(this.rootSpanServiceName, other.rootSpanServiceName)
+                && java.util.Objects.equals(this.timeRootSpanStarted, other.timeRootSpanStarted)
+                && java.util.Objects.equals(this.timeRootSpanEnded, other.timeRootSpanEnded)
+                && java.util.Objects.equals(this.rootSpanDurationInMs, other.rootSpanDurationInMs)
+                && java.util.Objects.equals(this.traceDurationInMs, other.traceDurationInMs)
+                && java.util.Objects.equals(this.isFault, other.isFault)
+                && java.util.Objects.equals(this.traceStatus, other.traceStatus)
+                && java.util.Objects.equals(this.traceErrorType, other.traceErrorType)
+                && java.util.Objects.equals(this.traceErrorCode, other.traceErrorCode)
+                && java.util.Objects.equals(this.serviceSummaries, other.serviceSummaries)
+                && java.util.Objects.equals(this.spanSummary, other.spanSummary)
+                && java.util.Objects.equals(this.spans, other.spans)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rootSpanOperationName == null
+                                ? 43
+                                : this.rootSpanOperationName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeEarliestSpanStarted == null
+                                ? 43
+                                : this.timeEarliestSpanStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLatestSpanEnded == null
+                                ? 43
+                                : this.timeLatestSpanEnded.hashCode());
+        result = (result * PRIME) + (this.spanCount == null ? 43 : this.spanCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.errorSpanCount == null ? 43 : this.errorSpanCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rootSpanServiceName == null
+                                ? 43
+                                : this.rootSpanServiceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRootSpanStarted == null
+                                ? 43
+                                : this.timeRootSpanStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRootSpanEnded == null ? 43 : this.timeRootSpanEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rootSpanDurationInMs == null
+                                ? 43
+                                : this.rootSpanDurationInMs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.traceDurationInMs == null ? 43 : this.traceDurationInMs.hashCode());
+        result = (result * PRIME) + (this.isFault == null ? 43 : this.isFault.hashCode());
+        result = (result * PRIME) + (this.traceStatus == null ? 43 : this.traceStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.traceErrorType == null ? 43 : this.traceErrorType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.traceErrorCode == null ? 43 : this.traceErrorCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceSummaries == null ? 43 : this.serviceSummaries.hashCode());
+        result = (result * PRIME) + (this.spanSummary == null ? 43 : this.spanSummary.hashCode());
+        result = (result * PRIME) + (this.spans == null ? 43 : this.spans.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

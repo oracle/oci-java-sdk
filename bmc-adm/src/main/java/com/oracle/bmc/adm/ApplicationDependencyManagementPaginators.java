@@ -26,9 +26,12 @@ import com.oracle.bmc.adm.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-@lombok.RequiredArgsConstructor
 public class ApplicationDependencyManagementPaginators {
     private final ApplicationDependencyManagement client;
+
+    public ApplicationDependencyManagementPaginators(ApplicationDependencyManagement client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listApplicationDependencyVulnerabilities operation. This iterable

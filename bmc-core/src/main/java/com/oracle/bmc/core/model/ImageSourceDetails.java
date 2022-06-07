@@ -15,12 +15,6 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,12 +33,36 @@ package com.oracle.bmc.core.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ImageSourceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "operatingSystem",
+        "operatingSystemVersion",
+        "sourceImageType"
+    })
+    protected ImageSourceDetails(
+            String operatingSystem,
+            String operatingSystemVersion,
+            SourceImageType sourceImageType) {
+        super();
+        this.operatingSystem = operatingSystem;
+        this.operatingSystemVersion = operatingSystemVersion;
+        this.sourceImageType = sourceImageType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    String operatingSystem;
+    private final String operatingSystem;
+
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
-    String operatingSystemVersion;
+    private final String operatingSystemVersion;
+
+    public String getOperatingSystemVersion() {
+        return operatingSystemVersion;
+    }
+
     /**
      * The format of the image to be imported. Only monolithic
      * images are supported. This attribute is not used for exported Oracle images with the OCI image format.
@@ -88,5 +106,54 @@ public class ImageSourceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceImageType")
-    SourceImageType sourceImageType;
+    private final SourceImageType sourceImageType;
+
+    public SourceImageType getSourceImageType() {
+        return sourceImageType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImageSourceDetails(");
+        sb.append("operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", operatingSystemVersion=").append(String.valueOf(this.operatingSystemVersion));
+        sb.append(", sourceImageType=").append(String.valueOf(this.sourceImageType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImageSourceDetails)) {
+            return false;
+        }
+
+        ImageSourceDetails other = (ImageSourceDetails) o;
+        return java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(
+                        this.operatingSystemVersion, other.operatingSystemVersion)
+                && java.util.Objects.equals(this.sourceImageType, other.sourceImageType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystemVersion == null
+                                ? 43
+                                : this.operatingSystemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceImageType == null ? 43 : this.sourceImageType.hashCode());
+        return result;
+    }
 }

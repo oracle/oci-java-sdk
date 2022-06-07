@@ -18,16 +18,31 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LocalClonePluggableDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LocalClonePluggableDatabaseDetails {
+public final class LocalClonePluggableDatabaseDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "clonedPdbName",
+        "pdbAdminPassword",
+        "targetTdeWalletPassword",
+        "shouldPdbAdminAccountBeLocked"
+    })
+    public LocalClonePluggableDatabaseDetails(
+            String clonedPdbName,
+            String pdbAdminPassword,
+            String targetTdeWalletPassword,
+            Boolean shouldPdbAdminAccountBeLocked) {
+        super();
+        this.clonedPdbName = clonedPdbName;
+        this.pdbAdminPassword = pdbAdminPassword;
+        this.targetTdeWalletPassword = targetTdeWalletPassword;
+        this.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("clonedPdbName")
         private String clonedPdbName;
@@ -99,23 +114,39 @@ public class LocalClonePluggableDatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clonedPdbName")
-    String clonedPdbName;
+    private final String clonedPdbName;
+
+    public String getClonedPdbName() {
+        return clonedPdbName;
+    }
 
     /**
      * A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
-    String pdbAdminPassword;
+    private final String pdbAdminPassword;
+
+    public String getPdbAdminPassword() {
+        return pdbAdminPassword;
+    }
 
     /**
      * The existing TDE wallet password of the target CDB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetTdeWalletPassword")
-    String targetTdeWalletPassword;
+    private final String targetTdeWalletPassword;
+
+    public String getTargetTdeWalletPassword() {
+        return targetTdeWalletPassword;
+    }
 
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
@@ -123,8 +154,76 @@ public class LocalClonePluggableDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldPdbAdminAccountBeLocked")
-    Boolean shouldPdbAdminAccountBeLocked;
+    private final Boolean shouldPdbAdminAccountBeLocked;
+
+    public Boolean getShouldPdbAdminAccountBeLocked() {
+        return shouldPdbAdminAccountBeLocked;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LocalClonePluggableDatabaseDetails(");
+        sb.append("clonedPdbName=").append(String.valueOf(this.clonedPdbName));
+        sb.append(", pdbAdminPassword=").append(String.valueOf(this.pdbAdminPassword));
+        sb.append(", targetTdeWalletPassword=")
+                .append(String.valueOf(this.targetTdeWalletPassword));
+        sb.append(", shouldPdbAdminAccountBeLocked=")
+                .append(String.valueOf(this.shouldPdbAdminAccountBeLocked));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LocalClonePluggableDatabaseDetails)) {
+            return false;
+        }
+
+        LocalClonePluggableDatabaseDetails other = (LocalClonePluggableDatabaseDetails) o;
+        return java.util.Objects.equals(this.clonedPdbName, other.clonedPdbName)
+                && java.util.Objects.equals(this.pdbAdminPassword, other.pdbAdminPassword)
+                && java.util.Objects.equals(
+                        this.targetTdeWalletPassword, other.targetTdeWalletPassword)
+                && java.util.Objects.equals(
+                        this.shouldPdbAdminAccountBeLocked, other.shouldPdbAdminAccountBeLocked)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.clonedPdbName == null ? 43 : this.clonedPdbName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pdbAdminPassword == null ? 43 : this.pdbAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetTdeWalletPassword == null
+                                ? 43
+                                : this.targetTdeWalletPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldPdbAdminAccountBeLocked == null
+                                ? 43
+                                : this.shouldPdbAdminAccountBeLocked.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

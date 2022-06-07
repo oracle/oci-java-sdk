@@ -15,16 +15,34 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WaasPolicyCustomProtectionRuleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WaasPolicyCustomProtectionRuleSummary {
+public final class WaasPolicyCustomProtectionRuleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "action",
+        "modSecurityRuleIds",
+        "exclusions"
+    })
+    public WaasPolicyCustomProtectionRuleSummary(
+            String id,
+            String displayName,
+            Action action,
+            java.util.List<String> modSecurityRuleIds,
+            java.util.List<ProtectionRuleExclusion> exclusions) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.action = action;
+        this.modSecurityRuleIds = modSecurityRuleIds;
+        this.exclusions = exclusions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -103,22 +121,34 @@ public class WaasPolicyCustomProtectionRuleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The user-friendly name of the custom protection rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The action to take when the custom protection rule is triggered.
      * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Detect("DETECT"),
         Block("BLOCK"),
@@ -128,6 +158,8 @@ public class WaasPolicyCustomProtectionRuleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -166,17 +198,84 @@ public class WaasPolicyCustomProtectionRuleSummary {
      * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modSecurityRuleIds")
-    java.util.List<String> modSecurityRuleIds;
+    private final java.util.List<String> modSecurityRuleIds;
+
+    public java.util.List<String> getModSecurityRuleIds() {
+        return modSecurityRuleIds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
-    java.util.List<ProtectionRuleExclusion> exclusions;
+    private final java.util.List<ProtectionRuleExclusion> exclusions;
+
+    public java.util.List<ProtectionRuleExclusion> getExclusions() {
+        return exclusions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WaasPolicyCustomProtectionRuleSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", modSecurityRuleIds=").append(String.valueOf(this.modSecurityRuleIds));
+        sb.append(", exclusions=").append(String.valueOf(this.exclusions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WaasPolicyCustomProtectionRuleSummary)) {
+            return false;
+        }
+
+        WaasPolicyCustomProtectionRuleSummary other = (WaasPolicyCustomProtectionRuleSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.modSecurityRuleIds, other.modSecurityRuleIds)
+                && java.util.Objects.equals(this.exclusions, other.exclusions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modSecurityRuleIds == null
+                                ? 43
+                                : this.modSecurityRuleIds.hashCode());
+        result = (result * PRIME) + (this.exclusions == null ? 43 : this.exclusions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

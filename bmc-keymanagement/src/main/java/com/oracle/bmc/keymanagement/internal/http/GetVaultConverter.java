@@ -11,11 +11,13 @@ import com.oracle.bmc.keymanagement.responses.*;
 import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.extern.slf4j.Slf4j
 public class GetVaultConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(GetVaultConverter.class);
 
     public static com.oracle.bmc.keymanagement.requests.GetVaultRequest interceptRequest(
             com.oracle.bmc.keymanagement.requests.GetVaultRequest request) {

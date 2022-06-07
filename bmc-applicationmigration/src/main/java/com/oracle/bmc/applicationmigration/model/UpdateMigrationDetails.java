@@ -20,16 +20,43 @@ package com.oracle.bmc.applicationmigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateMigrationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateMigrationDetails {
+public final class UpdateMigrationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "discoveryDetails",
+        "isSelectiveMigration",
+        "serviceConfig",
+        "applicationConfig",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateMigrationDetails(
+            String displayName,
+            String description,
+            DiscoveryDetails discoveryDetails,
+            Boolean isSelectiveMigration,
+            java.util.Map<String, ConfigurationField> serviceConfig,
+            java.util.Map<String, ConfigurationField> applicationConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.discoveryDetails = discoveryDetails;
+        this.isSelectiveMigration = isSelectiveMigration;
+        this.serviceConfig = serviceConfig;
+        this.applicationConfig = applicationConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -147,27 +174,47 @@ public class UpdateMigrationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * User-friendly name of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryDetails")
-    DiscoveryDetails discoveryDetails;
+    private final DiscoveryDetails discoveryDetails;
+
+    public DiscoveryDetails getDiscoveryDetails() {
+        return discoveryDetails;
+    }
 
     /**
      * If set to {@code true}, Application Migration migrates the application resources selectively depending on the source.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
-    Boolean isSelectiveMigration;
+    private final Boolean isSelectiveMigration;
+
+    public Boolean getIsSelectiveMigration() {
+        return isSelectiveMigration;
+    }
 
     /**
      * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
@@ -176,7 +223,11 @@ public class UpdateMigrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
-    java.util.Map<String, ConfigurationField> serviceConfig;
+    private final java.util.Map<String, ConfigurationField> serviceConfig;
+
+    public java.util.Map<String, ConfigurationField> getServiceConfig() {
+        return serviceConfig;
+    }
 
     /**
      * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
@@ -185,7 +236,11 @@ public class UpdateMigrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationConfig")
-    java.util.Map<String, ConfigurationField> applicationConfig;
+    private final java.util.Map<String, ConfigurationField> applicationConfig;
+
+    public java.util.Map<String, ConfigurationField> getApplicationConfig() {
+        return applicationConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -193,7 +248,11 @@ public class UpdateMigrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -201,8 +260,82 @@ public class UpdateMigrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateMigrationDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", discoveryDetails=").append(String.valueOf(this.discoveryDetails));
+        sb.append(", isSelectiveMigration=").append(String.valueOf(this.isSelectiveMigration));
+        sb.append(", serviceConfig=").append(String.valueOf(this.serviceConfig));
+        sb.append(", applicationConfig=").append(String.valueOf(this.applicationConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateMigrationDetails)) {
+            return false;
+        }
+
+        UpdateMigrationDetails other = (UpdateMigrationDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.discoveryDetails, other.discoveryDetails)
+                && java.util.Objects.equals(this.isSelectiveMigration, other.isSelectiveMigration)
+                && java.util.Objects.equals(this.serviceConfig, other.serviceConfig)
+                && java.util.Objects.equals(this.applicationConfig, other.applicationConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryDetails == null ? 43 : this.discoveryDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSelectiveMigration == null
+                                ? 43
+                                : this.isSelectiveMigration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceConfig == null ? 43 : this.serviceConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationConfig == null ? 43 : this.applicationConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

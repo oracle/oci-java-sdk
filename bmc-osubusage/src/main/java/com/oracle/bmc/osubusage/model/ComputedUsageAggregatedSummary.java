@@ -16,16 +16,49 @@ package com.oracle.bmc.osubusage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ComputedUsageAggregatedSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ComputedUsageAggregatedSummary {
+public final class ComputedUsageAggregatedSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "subscriptionId",
+        "parentSubscribedServiceId",
+        "parentProduct",
+        "timeStart",
+        "timeEnd",
+        "planNumber",
+        "currencyCode",
+        "rateCardId",
+        "pricingModel",
+        "aggregatedComputedUsages"
+    })
+    public ComputedUsageAggregatedSummary(
+            String subscriptionId,
+            String parentSubscribedServiceId,
+            Product parentProduct,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            String planNumber,
+            String currencyCode,
+            String rateCardId,
+            PricingModel pricingModel,
+            java.util.List<ComputedUsageAggregation> aggregatedComputedUsages) {
+        super();
+        this.subscriptionId = subscriptionId;
+        this.parentSubscribedServiceId = parentSubscribedServiceId;
+        this.parentProduct = parentProduct;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.planNumber = planNumber;
+        this.currencyCode = currencyCode;
+        this.rateCardId = rateCardId;
+        this.pricingModel = pricingModel;
+        this.aggregatedComputedUsages = aggregatedComputedUsages;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
@@ -164,62 +197,98 @@ public class ComputedUsageAggregatedSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
-    String subscriptionId;
+    private final String subscriptionId;
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
 
     /**
      * Subscribed service line parent id
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
-    String parentSubscribedServiceId;
+    private final String parentSubscribedServiceId;
+
+    public String getParentSubscribedServiceId() {
+        return parentSubscribedServiceId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentProduct")
-    Product parentProduct;
+    private final Product parentProduct;
+
+    public Product getParentProduct() {
+        return parentProduct;
+    }
 
     /**
      * Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * Subscribed service asociated subscription plan number.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
-    String planNumber;
+    private final String planNumber;
+
+    public String getPlanNumber() {
+        return planNumber;
+    }
 
     /**
      * Currency code
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
-    String currencyCode;
+    private final String currencyCode;
+
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
 
     /**
      * Inernal SPM Ratecard Id at line level
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
-    String rateCardId;
+    private final String rateCardId;
+
+    public String getRateCardId() {
+        return rateCardId;
+    }
+
     /**
      * Subscribed services pricing model
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PricingModel {
         PayAsYouGo("PAY_AS_YOU_GO"),
         Monthly("MONTHLY"),
@@ -232,6 +301,9 @@ public class ComputedUsageAggregatedSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PricingModel.class);
 
         private final String value;
         private static java.util.Map<String, PricingModel> map;
@@ -270,15 +342,105 @@ public class ComputedUsageAggregatedSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
-    PricingModel pricingModel;
+    private final PricingModel pricingModel;
+
+    public PricingModel getPricingModel() {
+        return pricingModel;
+    }
 
     /**
      * Aggregation of computed usages for the subscribed service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedComputedUsages")
-    java.util.List<ComputedUsageAggregation> aggregatedComputedUsages;
+    private final java.util.List<ComputedUsageAggregation> aggregatedComputedUsages;
+
+    public java.util.List<ComputedUsageAggregation> getAggregatedComputedUsages() {
+        return aggregatedComputedUsages;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputedUsageAggregatedSummary(");
+        sb.append("subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", parentSubscribedServiceId=")
+                .append(String.valueOf(this.parentSubscribedServiceId));
+        sb.append(", parentProduct=").append(String.valueOf(this.parentProduct));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", planNumber=").append(String.valueOf(this.planNumber));
+        sb.append(", currencyCode=").append(String.valueOf(this.currencyCode));
+        sb.append(", rateCardId=").append(String.valueOf(this.rateCardId));
+        sb.append(", pricingModel=").append(String.valueOf(this.pricingModel));
+        sb.append(", aggregatedComputedUsages=")
+                .append(String.valueOf(this.aggregatedComputedUsages));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputedUsageAggregatedSummary)) {
+            return false;
+        }
+
+        ComputedUsageAggregatedSummary other = (ComputedUsageAggregatedSummary) o;
+        return java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.parentSubscribedServiceId, other.parentSubscribedServiceId)
+                && java.util.Objects.equals(this.parentProduct, other.parentProduct)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.planNumber, other.planNumber)
+                && java.util.Objects.equals(this.currencyCode, other.currencyCode)
+                && java.util.Objects.equals(this.rateCardId, other.rateCardId)
+                && java.util.Objects.equals(this.pricingModel, other.pricingModel)
+                && java.util.Objects.equals(
+                        this.aggregatedComputedUsages, other.aggregatedComputedUsages)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentSubscribedServiceId == null
+                                ? 43
+                                : this.parentSubscribedServiceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentProduct == null ? 43 : this.parentProduct.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.planNumber == null ? 43 : this.planNumber.hashCode());
+        result = (result * PRIME) + (this.currencyCode == null ? 43 : this.currencyCode.hashCode());
+        result = (result * PRIME) + (this.rateCardId == null ? 43 : this.rateCardId.hashCode());
+        result = (result * PRIME) + (this.pricingModel == null ? 43 : this.pricingModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aggregatedComputedUsages == null
+                                ? 43
+                                : this.aggregatedComputedUsages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -14,7 +14,6 @@ package com.oracle.bmc.osmanagement.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.extern.slf4j.Slf4j
 public enum ContentAvailability {
     NotAvailable("NOT_AVAILABLE"),
     AvailableOnInstance("AVAILABLE_ON_INSTANCE"),
@@ -27,6 +26,9 @@ public enum ContentAvailability {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ContentAvailability.class);
 
     private final String value;
     private static java.util.Map<String, ContentAvailability> map;

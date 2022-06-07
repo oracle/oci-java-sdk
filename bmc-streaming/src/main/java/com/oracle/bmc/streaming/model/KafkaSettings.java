@@ -15,14 +15,29 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KafkaSettings.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class KafkaSettings {
+public final class KafkaSettings {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bootstrapServers",
+        "autoCreateTopicsEnable",
+        "logRetentionHours",
+        "numPartitions"
+    })
+    public KafkaSettings(
+            String bootstrapServers,
+            Boolean autoCreateTopicsEnable,
+            Integer logRetentionHours,
+            Integer numPartitions) {
+        super();
+        this.bootstrapServers = bootstrapServers;
+        this.autoCreateTopicsEnable = autoCreateTopicsEnable;
+        this.logRetentionHours = logRetentionHours;
+        this.numPartitions = numPartitions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
         private String bootstrapServers;
@@ -94,30 +109,109 @@ public class KafkaSettings {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Bootstrap servers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
-    String bootstrapServers;
+    private final String bootstrapServers;
+
+    public String getBootstrapServers() {
+        return bootstrapServers;
+    }
 
     /**
      * Enable auto creation of topic on the server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoCreateTopicsEnable")
-    Boolean autoCreateTopicsEnable;
+    private final Boolean autoCreateTopicsEnable;
+
+    public Boolean getAutoCreateTopicsEnable() {
+        return autoCreateTopicsEnable;
+    }
 
     /**
      * The number of hours to keep a log file before deleting it (in hours).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logRetentionHours")
-    Integer logRetentionHours;
+    private final Integer logRetentionHours;
+
+    public Integer getLogRetentionHours() {
+        return logRetentionHours;
+    }
 
     /**
      * The default number of log partitions per topic.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numPartitions")
-    Integer numPartitions;
+    private final Integer numPartitions;
+
+    public Integer getNumPartitions() {
+        return numPartitions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("KafkaSettings(");
+        sb.append("bootstrapServers=").append(String.valueOf(this.bootstrapServers));
+        sb.append(", autoCreateTopicsEnable=").append(String.valueOf(this.autoCreateTopicsEnable));
+        sb.append(", logRetentionHours=").append(String.valueOf(this.logRetentionHours));
+        sb.append(", numPartitions=").append(String.valueOf(this.numPartitions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof KafkaSettings)) {
+            return false;
+        }
+
+        KafkaSettings other = (KafkaSettings) o;
+        return java.util.Objects.equals(this.bootstrapServers, other.bootstrapServers)
+                && java.util.Objects.equals(
+                        this.autoCreateTopicsEnable, other.autoCreateTopicsEnable)
+                && java.util.Objects.equals(this.logRetentionHours, other.logRetentionHours)
+                && java.util.Objects.equals(this.numPartitions, other.numPartitions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.bootstrapServers == null ? 43 : this.bootstrapServers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoCreateTopicsEnable == null
+                                ? 43
+                                : this.autoCreateTopicsEnable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logRetentionHours == null ? 43 : this.logRetentionHours.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numPartitions == null ? 43 : this.numPartitions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

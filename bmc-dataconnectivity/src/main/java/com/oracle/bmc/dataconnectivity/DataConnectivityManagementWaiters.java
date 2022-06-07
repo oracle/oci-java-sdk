@@ -6,6 +6,7 @@ package com.oracle.bmc.dataconnectivity;
 
 import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,16 @@ import com.oracle.bmc.dataconnectivity.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.RequiredArgsConstructor
 public class DataConnectivityManagementWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final DataConnectivityManagement client;
+
+    public DataConnectivityManagementWaiters(
+            java.util.concurrent.ExecutorService executorService,
+            DataConnectivityManagement client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

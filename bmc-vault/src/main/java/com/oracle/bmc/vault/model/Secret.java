@@ -15,14 +15,65 @@ package com.oracle.bmc.vault.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Secret.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Secret {
+public final class Secret {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "currentVersionNumber",
+        "definedTags",
+        "description",
+        "freeformTags",
+        "id",
+        "keyId",
+        "lifecycleDetails",
+        "lifecycleState",
+        "metadata",
+        "secretName",
+        "secretRules",
+        "timeCreated",
+        "timeOfCurrentVersionExpiry",
+        "timeOfDeletion",
+        "vaultId"
+    })
+    public Secret(
+            String compartmentId,
+            Long currentVersionNumber,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            String keyId,
+            String lifecycleDetails,
+            LifecycleState lifecycleState,
+            java.util.Map<String, Object> metadata,
+            String secretName,
+            java.util.List<SecretRule> secretRules,
+            java.util.Date timeCreated,
+            java.util.Date timeOfCurrentVersionExpiry,
+            java.util.Date timeOfDeletion,
+            String vaultId) {
+        super();
+        this.compartmentId = compartmentId;
+        this.currentVersionNumber = currentVersionNumber;
+        this.definedTags = definedTags;
+        this.description = description;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.keyId = keyId;
+        this.lifecycleDetails = lifecycleDetails;
+        this.lifecycleState = lifecycleState;
+        this.metadata = metadata;
+        this.secretName = secretName;
+        this.secretRules = secretRules;
+        this.timeCreated = timeCreated;
+        this.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
+        this.timeOfDeletion = timeOfDeletion;
+        this.vaultId = vaultId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -227,17 +278,29 @@ public class Secret {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment where you want to create the secret.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The version number of the secret version that's currently in use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentVersionNumber")
-    Long currentVersionNumber;
+    private final Long currentVersionNumber;
+
+    public Long getCurrentVersionNumber() {
+        return currentVersionNumber;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -246,13 +309,21 @@ public class Secret {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A brief description of the secret. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -261,30 +332,46 @@ public class Secret {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The OCID of the secret.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * Additional information about the current lifecycle state of the secret.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * The current lifecycle state of the secret.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -301,6 +388,9 @@ public class Secret {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -338,7 +428,11 @@ public class Secret {
      * The current lifecycle state of the secret.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional metadata that you can use to provide context about how to use the secret or during rotation or
@@ -347,19 +441,31 @@ public class Secret {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    java.util.Map<String, Object> metadata;
+    private final java.util.Map<String, Object> metadata;
+
+    public java.util.Map<String, Object> getMetadata() {
+        return metadata;
+    }
 
     /**
      * The user-friendly name of the secret. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretName")
-    String secretName;
+    private final String secretName;
+
+    public String getSecretName() {
+        return secretName;
+    }
 
     /**
      * A list of rules that control how the secret is used and managed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretRules")
-    java.util.List<SecretRule> secretRules;
+    private final java.util.List<SecretRule> secretRules;
+
+    public java.util.List<SecretRule> getSecretRules() {
+        return secretRules;
+    }
 
     /**
      * A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -367,7 +473,11 @@ public class Secret {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -375,7 +485,11 @@ public class Secret {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfCurrentVersionExpiry")
-    java.util.Date timeOfCurrentVersionExpiry;
+    private final java.util.Date timeOfCurrentVersionExpiry;
+
+    public java.util.Date getTimeOfCurrentVersionExpiry() {
+        return timeOfCurrentVersionExpiry;
+    }
 
     /**
      * An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -383,14 +497,124 @@ public class Secret {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
 
     /**
      * The OCID of the vault where the secret exists.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Secret(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", currentVersionNumber=").append(String.valueOf(this.currentVersionNumber));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", secretName=").append(String.valueOf(this.secretName));
+        sb.append(", secretRules=").append(String.valueOf(this.secretRules));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeOfCurrentVersionExpiry=")
+                .append(String.valueOf(this.timeOfCurrentVersionExpiry));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Secret)) {
+            return false;
+        }
+
+        Secret other = (Secret) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.currentVersionNumber, other.currentVersionNumber)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.secretName, other.secretName)
+                && java.util.Objects.equals(this.secretRules, other.secretRules)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(
+                        this.timeOfCurrentVersionExpiry, other.timeOfCurrentVersionExpiry)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentVersionNumber == null
+                                ? 43
+                                : this.currentVersionNumber.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.secretName == null ? 43 : this.secretName.hashCode());
+        result = (result * PRIME) + (this.secretRules == null ? 43 : this.secretRules.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfCurrentVersionExpiry == null
+                                ? 43
+                                : this.timeOfCurrentVersionExpiry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

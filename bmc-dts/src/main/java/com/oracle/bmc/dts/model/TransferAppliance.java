@@ -15,16 +15,64 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TransferAppliance.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TransferAppliance {
+public final class TransferAppliance {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "label",
+        "lifecycleState",
+        "transferJobId",
+        "serialNumber",
+        "creationTime",
+        "customerReceivedTime",
+        "customerReturnedTime",
+        "nextBillingTime",
+        "deliverySecurityTieId",
+        "returnSecurityTieId",
+        "applianceDeliveryTrackingNumber",
+        "applianceReturnDeliveryTrackingNumber",
+        "applianceDeliveryVendor",
+        "customerShippingAddress",
+        "uploadStatusLogUri"
+    })
+    public TransferAppliance(
+            String label,
+            LifecycleState lifecycleState,
+            String transferJobId,
+            String serialNumber,
+            java.util.Date creationTime,
+            java.util.Date customerReceivedTime,
+            java.util.Date customerReturnedTime,
+            java.util.Date nextBillingTime,
+            String deliverySecurityTieId,
+            String returnSecurityTieId,
+            String applianceDeliveryTrackingNumber,
+            String applianceReturnDeliveryTrackingNumber,
+            String applianceDeliveryVendor,
+            ShippingAddress customerShippingAddress,
+            String uploadStatusLogUri) {
+        super();
+        this.label = label;
+        this.lifecycleState = lifecycleState;
+        this.transferJobId = transferJobId;
+        this.serialNumber = serialNumber;
+        this.creationTime = creationTime;
+        this.customerReceivedTime = customerReceivedTime;
+        this.customerReturnedTime = customerReturnedTime;
+        this.nextBillingTime = nextBillingTime;
+        this.deliverySecurityTieId = deliverySecurityTieId;
+        this.returnSecurityTieId = returnSecurityTieId;
+        this.applianceDeliveryTrackingNumber = applianceDeliveryTrackingNumber;
+        this.applianceReturnDeliveryTrackingNumber = applianceReturnDeliveryTrackingNumber;
+        this.applianceDeliveryVendor = applianceDeliveryVendor;
+        this.customerShippingAddress = customerShippingAddress;
+        this.uploadStatusLogUri = uploadStatusLogUri;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
@@ -219,14 +267,22 @@ public class TransferAppliance {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique alpha-numeric identifier for a transfer appliance auto generated during create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
-    String label;
+    private final String label;
+
+    public String getLabel() {
+        return label;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Requested("REQUESTED"),
         OraclePreparing("ORACLE_PREPARING"),
@@ -254,6 +310,9 @@ public class TransferAppliance {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -289,47 +348,235 @@ public class TransferAppliance {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("transferJobId")
-    String transferJobId;
+    private final String transferJobId;
+
+    public String getTransferJobId() {
+        return transferJobId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
-    String serialNumber;
+    private final String serialNumber;
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
-    java.util.Date creationTime;
+    private final java.util.Date creationTime;
+
+    public java.util.Date getCreationTime() {
+        return creationTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customerReceivedTime")
-    java.util.Date customerReceivedTime;
+    private final java.util.Date customerReceivedTime;
+
+    public java.util.Date getCustomerReceivedTime() {
+        return customerReceivedTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customerReturnedTime")
-    java.util.Date customerReturnedTime;
+    private final java.util.Date customerReturnedTime;
+
+    public java.util.Date getCustomerReturnedTime() {
+        return customerReturnedTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("nextBillingTime")
-    java.util.Date nextBillingTime;
+    private final java.util.Date nextBillingTime;
+
+    public java.util.Date getNextBillingTime() {
+        return nextBillingTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deliverySecurityTieId")
-    String deliverySecurityTieId;
+    private final String deliverySecurityTieId;
+
+    public String getDeliverySecurityTieId() {
+        return deliverySecurityTieId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("returnSecurityTieId")
-    String returnSecurityTieId;
+    private final String returnSecurityTieId;
+
+    public String getReturnSecurityTieId() {
+        return returnSecurityTieId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("applianceDeliveryTrackingNumber")
-    String applianceDeliveryTrackingNumber;
+    private final String applianceDeliveryTrackingNumber;
+
+    public String getApplianceDeliveryTrackingNumber() {
+        return applianceDeliveryTrackingNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("applianceReturnDeliveryTrackingNumber")
-    String applianceReturnDeliveryTrackingNumber;
+    private final String applianceReturnDeliveryTrackingNumber;
+
+    public String getApplianceReturnDeliveryTrackingNumber() {
+        return applianceReturnDeliveryTrackingNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("applianceDeliveryVendor")
-    String applianceDeliveryVendor;
+    private final String applianceDeliveryVendor;
+
+    public String getApplianceDeliveryVendor() {
+        return applianceDeliveryVendor;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customerShippingAddress")
-    ShippingAddress customerShippingAddress;
+    private final ShippingAddress customerShippingAddress;
+
+    public ShippingAddress getCustomerShippingAddress() {
+        return customerShippingAddress;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("uploadStatusLogUri")
-    String uploadStatusLogUri;
+    private final String uploadStatusLogUri;
+
+    public String getUploadStatusLogUri() {
+        return uploadStatusLogUri;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TransferAppliance(");
+        sb.append("label=").append(String.valueOf(this.label));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", transferJobId=").append(String.valueOf(this.transferJobId));
+        sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
+        sb.append(", creationTime=").append(String.valueOf(this.creationTime));
+        sb.append(", customerReceivedTime=").append(String.valueOf(this.customerReceivedTime));
+        sb.append(", customerReturnedTime=").append(String.valueOf(this.customerReturnedTime));
+        sb.append(", nextBillingTime=").append(String.valueOf(this.nextBillingTime));
+        sb.append(", deliverySecurityTieId=").append(String.valueOf(this.deliverySecurityTieId));
+        sb.append(", returnSecurityTieId=").append(String.valueOf(this.returnSecurityTieId));
+        sb.append(", applianceDeliveryTrackingNumber=")
+                .append(String.valueOf(this.applianceDeliveryTrackingNumber));
+        sb.append(", applianceReturnDeliveryTrackingNumber=")
+                .append(String.valueOf(this.applianceReturnDeliveryTrackingNumber));
+        sb.append(", applianceDeliveryVendor=")
+                .append(String.valueOf(this.applianceDeliveryVendor));
+        sb.append(", customerShippingAddress=")
+                .append(String.valueOf(this.customerShippingAddress));
+        sb.append(", uploadStatusLogUri=").append(String.valueOf(this.uploadStatusLogUri));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TransferAppliance)) {
+            return false;
+        }
+
+        TransferAppliance other = (TransferAppliance) o;
+        return java.util.Objects.equals(this.label, other.label)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.transferJobId, other.transferJobId)
+                && java.util.Objects.equals(this.serialNumber, other.serialNumber)
+                && java.util.Objects.equals(this.creationTime, other.creationTime)
+                && java.util.Objects.equals(this.customerReceivedTime, other.customerReceivedTime)
+                && java.util.Objects.equals(this.customerReturnedTime, other.customerReturnedTime)
+                && java.util.Objects.equals(this.nextBillingTime, other.nextBillingTime)
+                && java.util.Objects.equals(this.deliverySecurityTieId, other.deliverySecurityTieId)
+                && java.util.Objects.equals(this.returnSecurityTieId, other.returnSecurityTieId)
+                && java.util.Objects.equals(
+                        this.applianceDeliveryTrackingNumber, other.applianceDeliveryTrackingNumber)
+                && java.util.Objects.equals(
+                        this.applianceReturnDeliveryTrackingNumber,
+                        other.applianceReturnDeliveryTrackingNumber)
+                && java.util.Objects.equals(
+                        this.applianceDeliveryVendor, other.applianceDeliveryVendor)
+                && java.util.Objects.equals(
+                        this.customerShippingAddress, other.customerShippingAddress)
+                && java.util.Objects.equals(this.uploadStatusLogUri, other.uploadStatusLogUri)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.label == null ? 43 : this.label.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transferJobId == null ? 43 : this.transferJobId.hashCode());
+        result = (result * PRIME) + (this.serialNumber == null ? 43 : this.serialNumber.hashCode());
+        result = (result * PRIME) + (this.creationTime == null ? 43 : this.creationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerReceivedTime == null
+                                ? 43
+                                : this.customerReceivedTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerReturnedTime == null
+                                ? 43
+                                : this.customerReturnedTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextBillingTime == null ? 43 : this.nextBillingTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deliverySecurityTieId == null
+                                ? 43
+                                : this.deliverySecurityTieId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.returnSecurityTieId == null
+                                ? 43
+                                : this.returnSecurityTieId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applianceDeliveryTrackingNumber == null
+                                ? 43
+                                : this.applianceDeliveryTrackingNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applianceReturnDeliveryTrackingNumber == null
+                                ? 43
+                                : this.applianceReturnDeliveryTrackingNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applianceDeliveryVendor == null
+                                ? 43
+                                : this.applianceDeliveryVendor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerShippingAddress == null
+                                ? 43
+                                : this.customerShippingAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uploadStatusLogUri == null
+                                ? 43
+                                : this.uploadStatusLogUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

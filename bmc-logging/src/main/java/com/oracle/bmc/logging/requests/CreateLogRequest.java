@@ -9,14 +9,6 @@ import com.oracle.bmc.logging.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateLogRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateLogRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.logging.model.CreateLogDetails> {
 
@@ -25,11 +17,17 @@ public class CreateLogRequest
      */
     private String logGroupId;
 
+    public String getLogGroupId() {
+        return logGroupId;
+    }
     /**
      * Log object configuration details.
      */
     private com.oracle.bmc.logging.model.CreateLogDetails createLogDetails;
 
+    public com.oracle.bmc.logging.model.CreateLogDetails getCreateLogDetails() {
+        return createLogDetails;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case
      * of a timeout or server error, without risk of executing that same action
@@ -41,12 +39,19 @@ public class CreateLogRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +69,59 @@ public class CreateLogRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String logGroupId = null;
+
+        /**
+         * OCID of a log group to work with.
+         * @return this builder instance
+         */
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            return this;
+        }
+
+        private com.oracle.bmc.logging.model.CreateLogDetails createLogDetails = null;
+
+        /**
+         * Log object configuration details.
+         * @return this builder instance
+         */
+        public Builder createLogDetails(
+                com.oracle.bmc.logging.model.CreateLogDetails createLogDetails) {
+            this.createLogDetails = createLogDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error, without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated
+         * before then due to conflicting operations (e.g., if a resource has been
+         * deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -129,5 +187,83 @@ public class CreateLogRequest
             createLogDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateLogRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateLogRequest
+         */
+        public CreateLogRequest buildWithoutInvocationCallback() {
+            CreateLogRequest request = new CreateLogRequest();
+            request.logGroupId = logGroupId;
+            request.createLogDetails = createLogDetails;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new CreateLogRequest(logGroupId, createLogDetails, opcRetryToken, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .logGroupId(logGroupId)
+                .createLogDetails(createLogDetails)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(",createLogDetails=").append(String.valueOf(this.createLogDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateLogRequest)) {
+            return false;
+        }
+
+        CreateLogRequest other = (CreateLogRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.createLogDetails, other.createLogDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createLogDetails == null ? 43 : this.createLogDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

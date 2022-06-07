@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDataAssetFromObjectStorage.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetails {
+public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -223,6 +218,10 @@ public class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateDataAssetFromObjectStorage(
             String key,
@@ -262,29 +261,104 @@ public class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetails {
      * The Oracle Object storage Region ie. us-ashburn-1
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
-    String ociRegion;
+    private final String ociRegion;
+
+    public String getOciRegion() {
+        return ociRegion;
+    }
 
     /**
      * The Oracle Object storage URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
 
     /**
      * The OCI tenancy OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    String tenancyId;
+    private final String tenancyId;
+
+    public String getTenancyId() {
+        return tenancyId;
+    }
 
     /**
      * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-    UpdateConnectionFromObjectStorage defaultConnection;
+    private final UpdateConnectionFromObjectStorage defaultConnection;
+
+    public UpdateConnectionFromObjectStorage getDefaultConnection() {
+        return defaultConnection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDataAssetFromObjectStorage(");
+        sb.append("super=").append(super.toString());
+        sb.append(", ociRegion=").append(String.valueOf(this.ociRegion));
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDataAssetFromObjectStorage)) {
+            return false;
+        }
+
+        UpdateDataAssetFromObjectStorage other = (UpdateDataAssetFromObjectStorage) o;
+        return java.util.Objects.equals(this.ociRegion, other.ociRegion)
+                && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.ociRegion == null ? 43 : this.ociRegion.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

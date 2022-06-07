@@ -15,16 +15,46 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectPrivilegeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectPrivilegeSummary {
+public final class ObjectPrivilegeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "schemaType",
+        "owner",
+        "grantor",
+        "hierarchy",
+        "object",
+        "grantOption",
+        "common",
+        "inherited"
+    })
+    public ObjectPrivilegeSummary(
+            String name,
+            String schemaType,
+            String owner,
+            String grantor,
+            Hierarchy hierarchy,
+            String object,
+            GrantOption grantOption,
+            Common common,
+            Inherited inherited) {
+        super();
+        this.name = name;
+        this.schemaType = schemaType;
+        this.owner = owner;
+        this.grantor = grantor;
+        this.hierarchy = hierarchy;
+        this.object = object;
+        this.grantOption = grantOption;
+        this.common = common;
+        this.inherited = inherited;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -151,33 +181,53 @@ public class ObjectPrivilegeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the privilege on the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The type of object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaType")
-    String schemaType;
+    private final String schemaType;
+
+    public String getSchemaType() {
+        return schemaType;
+    }
 
     /**
      * The owner of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
-    String owner;
+    private final String owner;
+
+    public String getOwner() {
+        return owner;
+    }
 
     /**
      * The name of the user who granted the object privilege.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantor")
-    String grantor;
+    private final String grantor;
+
+    public String getGrantor() {
+        return grantor;
+    }
+
     /**
      * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Hierarchy {
         Yes("YES"),
         No("NO"),
@@ -187,6 +237,9 @@ public class ObjectPrivilegeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Hierarchy.class);
 
         private final String value;
         private static java.util.Map<String, Hierarchy> map;
@@ -224,17 +277,25 @@ public class ObjectPrivilegeSummary {
      * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hierarchy")
-    Hierarchy hierarchy;
+    private final Hierarchy hierarchy;
+
+    public Hierarchy getHierarchy() {
+        return hierarchy;
+    }
 
     /**
      * The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("object")
-    String object;
+    private final String object;
+
+    public String getObject() {
+        return object;
+    }
+
     /**
      * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum GrantOption {
         Yes("YES"),
         No("NO"),
@@ -244,6 +305,9 @@ public class ObjectPrivilegeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(GrantOption.class);
 
         private final String value;
         private static java.util.Map<String, GrantOption> map;
@@ -281,14 +345,18 @@ public class ObjectPrivilegeSummary {
      * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
-    GrantOption grantOption;
+    private final GrantOption grantOption;
+
+    public GrantOption getGrantOption() {
+        return grantOption;
+    }
+
     /**
      * Indicates how the object privilege was granted. Possible values:
      * YES if the role is granted commonly (CONTAINER=ALL is used)
      * NO if the role is granted locally (CONTAINER=ALL is not used)
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Common {
         Yes("YES"),
         No("NO"),
@@ -298,6 +366,8 @@ public class ObjectPrivilegeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Common.class);
 
         private final String value;
         private static java.util.Map<String, Common> map;
@@ -338,11 +408,15 @@ public class ObjectPrivilegeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("common")
-    Common common;
+    private final Common common;
+
+    public Common getCommon() {
+        return common;
+    }
+
     /**
      * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Inherited {
         Yes("YES"),
         No("NO"),
@@ -352,6 +426,9 @@ public class ObjectPrivilegeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Inherited.class);
 
         private final String value;
         private static java.util.Map<String, Inherited> map;
@@ -389,8 +466,75 @@ public class ObjectPrivilegeSummary {
      * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
-    Inherited inherited;
+    private final Inherited inherited;
+
+    public Inherited getInherited() {
+        return inherited;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectPrivilegeSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", schemaType=").append(String.valueOf(this.schemaType));
+        sb.append(", owner=").append(String.valueOf(this.owner));
+        sb.append(", grantor=").append(String.valueOf(this.grantor));
+        sb.append(", hierarchy=").append(String.valueOf(this.hierarchy));
+        sb.append(", object=").append(String.valueOf(this.object));
+        sb.append(", grantOption=").append(String.valueOf(this.grantOption));
+        sb.append(", common=").append(String.valueOf(this.common));
+        sb.append(", inherited=").append(String.valueOf(this.inherited));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectPrivilegeSummary)) {
+            return false;
+        }
+
+        ObjectPrivilegeSummary other = (ObjectPrivilegeSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.schemaType, other.schemaType)
+                && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.grantor, other.grantor)
+                && java.util.Objects.equals(this.hierarchy, other.hierarchy)
+                && java.util.Objects.equals(this.object, other.object)
+                && java.util.Objects.equals(this.grantOption, other.grantOption)
+                && java.util.Objects.equals(this.common, other.common)
+                && java.util.Objects.equals(this.inherited, other.inherited)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.schemaType == null ? 43 : this.schemaType.hashCode());
+        result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result = (result * PRIME) + (this.grantor == null ? 43 : this.grantor.hashCode());
+        result = (result * PRIME) + (this.hierarchy == null ? 43 : this.hierarchy.hashCode());
+        result = (result * PRIME) + (this.object == null ? 43 : this.object.hashCode());
+        result = (result * PRIME) + (this.grantOption == null ? 43 : this.grantOption.hashCode());
+        result = (result * PRIME) + (this.common == null ? 43 : this.common.hashCode());
+        result = (result * PRIME) + (this.inherited == null ? 43 : this.inherited.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

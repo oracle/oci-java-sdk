@@ -9,14 +9,6 @@ import com.oracle.bmc.email.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSuppressionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSuppressionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,16 +16,25 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The request ID for tracing from the system
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The email address of the suppression.
      */
     private String emailAddress;
 
+    public String getEmailAddress() {
+        return emailAddress;
+    }
     /**
      * Search for suppressions that were created within a specific date range,
      * using this parameter to specify the earliest creation date for the
@@ -47,6 +48,9 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
+        return timeCreatedGreaterThanOrEqualTo;
+    }
     /**
      * Search for suppressions that were created within a specific date range,
      * using this parameter to specify the latest creation date for the returned
@@ -60,6 +64,9 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.Date timeCreatedLessThan;
 
+    public java.util.Date getTimeCreatedLessThan() {
+        return timeCreatedLessThan;
+    }
     /**
      * For list pagination. The value of the opc-next-page response header from the previous "List" call.
      * For important details about how pagination works,
@@ -68,6 +75,9 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
@@ -76,6 +86,9 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The field to sort by. The {@code TIMECREATED} value returns the list in in
      * descending order by default. The {@code EMAILADDRESS} value returns the list in
@@ -124,11 +137,19 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either ascending or descending order.
      *
      */
     private com.oracle.bmc.email.model.SortOrder sortOrder;
+
+    public com.oracle.bmc.email.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -136,6 +157,133 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID for the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The request ID for tracing from the system
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String emailAddress = null;
+
+        /**
+         * The email address of the suppression.
+         * @return this builder instance
+         */
+        public Builder emailAddress(String emailAddress) {
+            this.emailAddress = emailAddress;
+            return this;
+        }
+
+        private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
+
+        /**
+         * Search for suppressions that were created within a specific date range,
+         * using this parameter to specify the earliest creation date for the
+         * returned list (inclusive). Specifying this parameter without the
+         * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
+         * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+         * Z offset, as defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @return this builder instance
+         */
+        public Builder timeCreatedGreaterThanOrEqualTo(
+                java.util.Date timeCreatedGreaterThanOrEqualTo) {
+            this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeCreatedLessThan = null;
+
+        /**
+         * Search for suppressions that were created within a specific date range,
+         * using this parameter to specify the latest creation date for the returned
+         * list (exclusive). Specifying this parameter without the corresponding
+         * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
+         * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @return this builder instance
+         */
+        public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
+            this.timeCreatedLessThan = timeCreatedLessThan;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. The {@code TIMECREATED} value returns the list in in
+         * descending order by default. The {@code EMAILADDRESS} value returns the list in
+         * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+         * direction of the returned list of items.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.email.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending or descending order.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.email.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -195,5 +343,116 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListSuppressionsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListSuppressionsRequest
+         */
+        public ListSuppressionsRequest buildWithoutInvocationCallback() {
+            ListSuppressionsRequest request = new ListSuppressionsRequest();
+            request.compartmentId = compartmentId;
+            request.opcRequestId = opcRequestId;
+            request.emailAddress = emailAddress;
+            request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            request.timeCreatedLessThan = timeCreatedLessThan;
+            request.page = page;
+            request.limit = limit;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            return request;
+            // new ListSuppressionsRequest(compartmentId, opcRequestId, emailAddress, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, page, limit, sortBy, sortOrder);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .opcRequestId(opcRequestId)
+                .emailAddress(emailAddress)
+                .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
+                .timeCreatedLessThan(timeCreatedLessThan)
+                .page(page)
+                .limit(limit)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",emailAddress=").append(String.valueOf(this.emailAddress));
+        sb.append(",timeCreatedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
+        sb.append(",timeCreatedLessThan=").append(String.valueOf(this.timeCreatedLessThan));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListSuppressionsRequest)) {
+            return false;
+        }
+
+        ListSuppressionsRequest other = (ListSuppressionsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.emailAddress, other.emailAddress)
+                && java.util.Objects.equals(
+                        this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeCreatedLessThan, other.timeCreatedLessThan)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeCreatedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedLessThan == null
+                                ? 43
+                                : this.timeCreatedLessThan.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        return result;
     }
 }

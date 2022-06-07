@@ -16,16 +16,21 @@ package com.oracle.bmc.ocvp.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HcxLicenseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HcxLicenseSummary {
+public final class HcxLicenseSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"activationKey", "status", "systemName"})
+    public HcxLicenseSummary(String activationKey, HcxLicenseStatus status, String systemName) {
+        super();
+        this.activationKey = activationKey;
+        this.status = status;
+        this.systemName = systemName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("activationKey")
         private String activationKey;
@@ -83,24 +88,87 @@ public class HcxLicenseSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * HCX on-premise license key value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activationKey")
-    String activationKey;
+    private final String activationKey;
+
+    public String getActivationKey() {
+        return activationKey;
+    }
 
     /**
      * status of HCX on-premise license.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    HcxLicenseStatus status;
+    private final HcxLicenseStatus status;
+
+    public HcxLicenseStatus getStatus() {
+        return status;
+    }
 
     /**
      * Name of the system that consumed the HCX on-premise license
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemName")
-    String systemName;
+    private final String systemName;
+
+    public String getSystemName() {
+        return systemName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HcxLicenseSummary(");
+        sb.append("activationKey=").append(String.valueOf(this.activationKey));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", systemName=").append(String.valueOf(this.systemName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HcxLicenseSummary)) {
+            return false;
+        }
+
+        HcxLicenseSummary other = (HcxLicenseSummary) o;
+        return java.util.Objects.equals(this.activationKey, other.activationKey)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.systemName, other.systemName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.activationKey == null ? 43 : this.activationKey.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.systemName == null ? 43 : this.systemName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.resourcemanager.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListConfigurationSourceProvidersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConfigurationSourceProvidersRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListConfigurationSourceProvidersRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -27,18 +19,27 @@ public class ListConfigurationSourceProvidersRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * A filter to return only configuration source providers that match the provided [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private String configurationSourceProviderId;
 
+    public String getConfigurationSourceProviderId() {
+        return configurationSourceProviderId;
+    }
     /**
      * A filter to return only resources that match the given display name exactly.
      * Use this filter to list a resource by name.
@@ -48,6 +49,9 @@ public class ListConfigurationSourceProvidersRequest
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The field to use when sorting returned resources.
      * By default, {@code TIMECREATED} is ordered descending.
@@ -94,6 +98,10 @@ public class ListConfigurationSourceProvidersRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -136,6 +144,10 @@ public class ListConfigurationSourceProvidersRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The number of items returned in a paginated {@code List} call. For information about pagination, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -143,6 +155,9 @@ public class ListConfigurationSourceProvidersRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
      * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -150,11 +165,18 @@ public class ListConfigurationSourceProvidersRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * A filter to return only configuration source providers of the specified type (GitHub or GitLab).
      *
      */
     private String configSourceProviderType;
+
+    public String getConfigSourceProviderType() {
+        return configSourceProviderType;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -162,6 +184,122 @@ public class ListConfigurationSourceProvidersRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String configurationSourceProviderId = null;
+
+        /**
+         * A filter to return only configuration source providers that match the provided [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder configurationSourceProviderId(String configurationSourceProviderId) {
+            this.configurationSourceProviderId = configurationSourceProviderId;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         * Use this filter to list a resource by name.
+         * Requires {@code sortBy} set to {@code DISPLAYNAME}.
+         * Alternatively, when you know the resource OCID, use the related Get operation.
+         *
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to use when sorting returned resources.
+         * By default, {@code TIMECREATED} is ordered descending.
+         * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String configSourceProviderType = null;
+
+        /**
+         * A filter to return only configuration source providers of the specified type (GitHub or GitLab).
+         *
+         * @return this builder instance
+         */
+        public Builder configSourceProviderType(String configSourceProviderType) {
+            this.configSourceProviderType = configSourceProviderType;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -221,5 +359,119 @@ public class ListConfigurationSourceProvidersRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListConfigurationSourceProvidersRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListConfigurationSourceProvidersRequest
+         */
+        public ListConfigurationSourceProvidersRequest buildWithoutInvocationCallback() {
+            ListConfigurationSourceProvidersRequest request =
+                    new ListConfigurationSourceProvidersRequest();
+            request.opcRequestId = opcRequestId;
+            request.compartmentId = compartmentId;
+            request.configurationSourceProviderId = configurationSourceProviderId;
+            request.displayName = displayName;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.limit = limit;
+            request.page = page;
+            request.configSourceProviderType = configSourceProviderType;
+            return request;
+            // new ListConfigurationSourceProvidersRequest(opcRequestId, compartmentId, configurationSourceProviderId, displayName, sortBy, sortOrder, limit, page, configSourceProviderType);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .opcRequestId(opcRequestId)
+                .compartmentId(compartmentId)
+                .configurationSourceProviderId(configurationSourceProviderId)
+                .displayName(displayName)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .limit(limit)
+                .page(page)
+                .configSourceProviderType(configSourceProviderType);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",configurationSourceProviderId=")
+                .append(String.valueOf(this.configurationSourceProviderId));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",configSourceProviderType=")
+                .append(String.valueOf(this.configSourceProviderType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListConfigurationSourceProvidersRequest)) {
+            return false;
+        }
+
+        ListConfigurationSourceProvidersRequest other = (ListConfigurationSourceProvidersRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.configurationSourceProviderId, other.configurationSourceProviderId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(
+                        this.configSourceProviderType, other.configSourceProviderType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationSourceProviderId == null
+                                ? 43
+                                : this.configurationSourceProviderId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configSourceProviderType == null
+                                ? 43
+                                : this.configSourceProviderType.hashCode());
+        return result;
     }
 }

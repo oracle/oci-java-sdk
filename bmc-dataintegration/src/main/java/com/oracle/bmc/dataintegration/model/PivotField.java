@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PivotField.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PivotField extends TypedObject {
+public final class PivotField extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -177,6 +172,10 @@ public class PivotField extends TypedObject {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public PivotField(
             String key,
@@ -198,20 +197,88 @@ public class PivotField extends TypedObject {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("expr")
-    Expression expr;
+    private final Expression expr;
+
+    public Expression getExpr() {
+        return expr;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("useType")
-    ConfiguredType useType;
+    private final ConfiguredType useType;
+
+    public ConfiguredType getUseType() {
+        return useType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    BaseType type;
+    private final BaseType type;
+
+    public BaseType getType() {
+        return type;
+    }
 
     /**
      * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnNamePattern")
-    String columnNamePattern;
+    private final String columnNamePattern;
+
+    public String getColumnNamePattern() {
+        return columnNamePattern;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PivotField(");
+        sb.append("super=").append(super.toString());
+        sb.append(", expr=").append(String.valueOf(this.expr));
+        sb.append(", useType=").append(String.valueOf(this.useType));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", columnNamePattern=").append(String.valueOf(this.columnNamePattern));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PivotField)) {
+            return false;
+        }
+
+        PivotField other = (PivotField) o;
+        return java.util.Objects.equals(this.expr, other.expr)
+                && java.util.Objects.equals(this.useType, other.useType)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.columnNamePattern, other.columnNamePattern)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.expr == null ? 43 : this.expr.hashCode());
+        result = (result * PRIME) + (this.useType == null ? 43 : this.useType.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.columnNamePattern == null ? 43 : this.columnNamePattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

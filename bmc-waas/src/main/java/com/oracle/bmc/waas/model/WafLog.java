@@ -15,14 +15,101 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WafLog.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WafLog {
+public final class WafLog {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "action",
+        "captchaAction",
+        "captchaExpected",
+        "captchaReceived",
+        "captchaFailCount",
+        "clientAddress",
+        "countryName",
+        "userAgent",
+        "domain",
+        "protectionRuleDetections",
+        "httpMethod",
+        "requestUrl",
+        "httpHeaders",
+        "referrer",
+        "responseCode",
+        "responseSize",
+        "incidentKey",
+        "fingerprint",
+        "device",
+        "countryCode",
+        "requestHeaders",
+        "threatFeedKey",
+        "accessRuleKey",
+        "addressRateLimitingKey",
+        "timestamp",
+        "logType",
+        "originAddress",
+        "originResponseTime"
+    })
+    public WafLog(
+            String action,
+            String captchaAction,
+            String captchaExpected,
+            String captchaReceived,
+            String captchaFailCount,
+            String clientAddress,
+            String countryName,
+            String userAgent,
+            String domain,
+            java.util.Map<String, String> protectionRuleDetections,
+            String httpMethod,
+            String requestUrl,
+            java.util.Map<String, String> httpHeaders,
+            String referrer,
+            Integer responseCode,
+            Integer responseSize,
+            String incidentKey,
+            String fingerprint,
+            String device,
+            String countryCode,
+            java.util.Map<String, String> requestHeaders,
+            String threatFeedKey,
+            String accessRuleKey,
+            String addressRateLimitingKey,
+            java.util.Date timestamp,
+            String logType,
+            String originAddress,
+            String originResponseTime) {
+        super();
+        this.action = action;
+        this.captchaAction = captchaAction;
+        this.captchaExpected = captchaExpected;
+        this.captchaReceived = captchaReceived;
+        this.captchaFailCount = captchaFailCount;
+        this.clientAddress = clientAddress;
+        this.countryName = countryName;
+        this.userAgent = userAgent;
+        this.domain = domain;
+        this.protectionRuleDetections = protectionRuleDetections;
+        this.httpMethod = httpMethod;
+        this.requestUrl = requestUrl;
+        this.httpHeaders = httpHeaders;
+        this.referrer = referrer;
+        this.responseCode = responseCode;
+        this.responseSize = responseSize;
+        this.incidentKey = incidentKey;
+        this.fingerprint = fingerprint;
+        this.device = device;
+        this.countryCode = countryCode;
+        this.requestHeaders = requestHeaders;
+        this.threatFeedKey = threatFeedKey;
+        this.accessRuleKey = accessRuleKey;
+        this.addressRateLimitingKey = addressRateLimitingKey;
+        this.timestamp = timestamp;
+        this.logType = logType;
+        this.originAddress = originAddress;
+        this.originResponseTime = originResponseTime;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private String action;
@@ -359,11 +446,19 @@ public class WafLog {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The action taken on the request, either {@code ALLOW}, {@code DETECT}, or {@code BLOCK}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    String action;
+    private final String action;
+
+    public String getAction() {
+        return action;
+    }
 
     /**
      * The CAPTCHA action taken on the request, {@code ALLOW} or {@code BLOCK}. For more information about
@@ -371,50 +466,82 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaAction")
-    String captchaAction;
+    private final String captchaAction;
+
+    public String getCaptchaAction() {
+        return captchaAction;
+    }
 
     /**
      * The CAPTCHA challenge answer that was expected.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaExpected")
-    String captchaExpected;
+    private final String captchaExpected;
+
+    public String getCaptchaExpected() {
+        return captchaExpected;
+    }
 
     /**
      * The CAPTCHA challenge answer that was received.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaReceived")
-    String captchaReceived;
+    private final String captchaReceived;
+
+    public String getCaptchaReceived() {
+        return captchaReceived;
+    }
 
     /**
      * The number of times the CAPTCHA challenge was failed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaFailCount")
-    String captchaFailCount;
+    private final String captchaFailCount;
+
+    public String getCaptchaFailCount() {
+        return captchaFailCount;
+    }
 
     /**
      * The IPv4 address of the requesting client.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientAddress")
-    String clientAddress;
+    private final String clientAddress;
+
+    public String getClientAddress() {
+        return clientAddress;
+    }
 
     /**
      * The name of the country where the request originated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryName")
-    String countryName;
+    private final String countryName;
+
+    public String getCountryName() {
+        return countryName;
+    }
 
     /**
      * The value of the request's {@code User-Agent} header field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAgent")
-    String userAgent;
+    private final String userAgent;
+
+    public String getUserAgent() {
+        return userAgent;
+    }
 
     /**
      * The {@code Host} header data of the request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
+    private final String domain;
+
+    public String getDomain() {
+        return domain;
+    }
 
     /**
      * A map of protection rule keys to detection message details. Detections are
@@ -423,43 +550,71 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionRuleDetections")
-    java.util.Map<String, String> protectionRuleDetections;
+    private final java.util.Map<String, String> protectionRuleDetections;
+
+    public java.util.Map<String, String> getProtectionRuleDetections() {
+        return protectionRuleDetections;
+    }
 
     /**
      * The HTTP method of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpMethod")
-    String httpMethod;
+    private final String httpMethod;
+
+    public String getHttpMethod() {
+        return httpMethod;
+    }
 
     /**
      * The path and query string of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestUrl")
-    String requestUrl;
+    private final String requestUrl;
+
+    public String getRequestUrl() {
+        return requestUrl;
+    }
 
     /**
      * The map of the request's header names to their respective values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpHeaders")
-    java.util.Map<String, String> httpHeaders;
+    private final java.util.Map<String, String> httpHeaders;
+
+    public java.util.Map<String, String> getHttpHeaders() {
+        return httpHeaders;
+    }
 
     /**
      * The {@code Referrer} header value of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referrer")
-    String referrer;
+    private final String referrer;
+
+    public String getReferrer() {
+        return referrer;
+    }
 
     /**
      * The status code of the response.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
-    Integer responseCode;
+    private final Integer responseCode;
+
+    public Integer getResponseCode() {
+        return responseCode;
+    }
 
     /**
      * The size in bytes of the response.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseSize")
-    Integer responseSize;
+    private final Integer responseSize;
+
+    public Integer getResponseSize() {
+        return responseSize;
+    }
 
     /**
      * The incident key of a request. An incident key is generated for
@@ -468,7 +623,11 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("incidentKey")
-    String incidentKey;
+    private final String incidentKey;
+
+    public String getIncidentKey() {
+        return incidentKey;
+    }
 
     /**
      * The hashed signature of the device's fingerprint. For more information,
@@ -476,13 +635,21 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
-    String fingerprint;
+    private final String fingerprint;
+
+    public String getFingerprint() {
+        return fingerprint;
+    }
 
     /**
      * The type of device that the request was made from.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("device")
-    String device;
+    private final String device;
+
+    public String getDevice() {
+        return device;
+    }
 
     /**
      * ISO 3166-1 alpha-2 code of the country from which the request originated.
@@ -490,7 +657,11 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
-    String countryCode;
+    private final String countryCode;
+
+    public String getCountryCode() {
+        return countryCode;
+    }
 
     /**
      * A map of header names to values of the request sent to the origin, including any headers
@@ -498,7 +669,11 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
-    java.util.Map<String, String> requestHeaders;
+    private final java.util.Map<String, String> requestHeaders;
+
+    public java.util.Map<String, String> getRequestHeaders() {
+        return requestHeaders;
+    }
 
     /**
      * The {@code ThreatFeed} key that matched the request. For more information about
@@ -506,7 +681,11 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threatFeedKey")
-    String threatFeedKey;
+    private final String threatFeedKey;
+
+    public String getThreatFeedKey() {
+        return threatFeedKey;
+    }
 
     /**
      * The {@code AccessRule} key that matched the request. For more information about
@@ -514,7 +693,11 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessRuleKey")
-    String accessRuleKey;
+    private final String accessRuleKey;
+
+    public String getAccessRuleKey() {
+        return accessRuleKey;
+    }
 
     /**
      * The {@code AddressRateLimiting} key that matched the request. For more information
@@ -522,35 +705,208 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addressRateLimitingKey")
-    String addressRateLimitingKey;
+    private final String addressRateLimitingKey;
+
+    public String getAddressRateLimitingKey() {
+        return addressRateLimitingKey;
+    }
 
     /**
      * The date and time the Web Application Firewall processed the request and logged it.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * The type of log of the request. For more about log types, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logType")
-    String logType;
+    private final String logType;
+
+    public String getLogType() {
+        return logType;
+    }
 
     /**
      * The address of the origin server where the request was sent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originAddress")
-    String originAddress;
+    private final String originAddress;
+
+    public String getOriginAddress() {
+        return originAddress;
+    }
 
     /**
      * The amount of time it took the origin server to respond to the request, in seconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originResponseTime")
-    String originResponseTime;
+    private final String originResponseTime;
+
+    public String getOriginResponseTime() {
+        return originResponseTime;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WafLog(");
+        sb.append("action=").append(String.valueOf(this.action));
+        sb.append(", captchaAction=").append(String.valueOf(this.captchaAction));
+        sb.append(", captchaExpected=").append(String.valueOf(this.captchaExpected));
+        sb.append(", captchaReceived=").append(String.valueOf(this.captchaReceived));
+        sb.append(", captchaFailCount=").append(String.valueOf(this.captchaFailCount));
+        sb.append(", clientAddress=").append(String.valueOf(this.clientAddress));
+        sb.append(", countryName=").append(String.valueOf(this.countryName));
+        sb.append(", userAgent=").append(String.valueOf(this.userAgent));
+        sb.append(", domain=").append(String.valueOf(this.domain));
+        sb.append(", protectionRuleDetections=")
+                .append(String.valueOf(this.protectionRuleDetections));
+        sb.append(", httpMethod=").append(String.valueOf(this.httpMethod));
+        sb.append(", requestUrl=").append(String.valueOf(this.requestUrl));
+        sb.append(", httpHeaders=").append(String.valueOf(this.httpHeaders));
+        sb.append(", referrer=").append(String.valueOf(this.referrer));
+        sb.append(", responseCode=").append(String.valueOf(this.responseCode));
+        sb.append(", responseSize=").append(String.valueOf(this.responseSize));
+        sb.append(", incidentKey=").append(String.valueOf(this.incidentKey));
+        sb.append(", fingerprint=").append(String.valueOf(this.fingerprint));
+        sb.append(", device=").append(String.valueOf(this.device));
+        sb.append(", countryCode=").append(String.valueOf(this.countryCode));
+        sb.append(", requestHeaders=").append(String.valueOf(this.requestHeaders));
+        sb.append(", threatFeedKey=").append(String.valueOf(this.threatFeedKey));
+        sb.append(", accessRuleKey=").append(String.valueOf(this.accessRuleKey));
+        sb.append(", addressRateLimitingKey=").append(String.valueOf(this.addressRateLimitingKey));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", logType=").append(String.valueOf(this.logType));
+        sb.append(", originAddress=").append(String.valueOf(this.originAddress));
+        sb.append(", originResponseTime=").append(String.valueOf(this.originResponseTime));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WafLog)) {
+            return false;
+        }
+
+        WafLog other = (WafLog) o;
+        return java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.captchaAction, other.captchaAction)
+                && java.util.Objects.equals(this.captchaExpected, other.captchaExpected)
+                && java.util.Objects.equals(this.captchaReceived, other.captchaReceived)
+                && java.util.Objects.equals(this.captchaFailCount, other.captchaFailCount)
+                && java.util.Objects.equals(this.clientAddress, other.clientAddress)
+                && java.util.Objects.equals(this.countryName, other.countryName)
+                && java.util.Objects.equals(this.userAgent, other.userAgent)
+                && java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(
+                        this.protectionRuleDetections, other.protectionRuleDetections)
+                && java.util.Objects.equals(this.httpMethod, other.httpMethod)
+                && java.util.Objects.equals(this.requestUrl, other.requestUrl)
+                && java.util.Objects.equals(this.httpHeaders, other.httpHeaders)
+                && java.util.Objects.equals(this.referrer, other.referrer)
+                && java.util.Objects.equals(this.responseCode, other.responseCode)
+                && java.util.Objects.equals(this.responseSize, other.responseSize)
+                && java.util.Objects.equals(this.incidentKey, other.incidentKey)
+                && java.util.Objects.equals(this.fingerprint, other.fingerprint)
+                && java.util.Objects.equals(this.device, other.device)
+                && java.util.Objects.equals(this.countryCode, other.countryCode)
+                && java.util.Objects.equals(this.requestHeaders, other.requestHeaders)
+                && java.util.Objects.equals(this.threatFeedKey, other.threatFeedKey)
+                && java.util.Objects.equals(this.accessRuleKey, other.accessRuleKey)
+                && java.util.Objects.equals(
+                        this.addressRateLimitingKey, other.addressRateLimitingKey)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.logType, other.logType)
+                && java.util.Objects.equals(this.originAddress, other.originAddress)
+                && java.util.Objects.equals(this.originResponseTime, other.originResponseTime)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.captchaAction == null ? 43 : this.captchaAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.captchaExpected == null ? 43 : this.captchaExpected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.captchaReceived == null ? 43 : this.captchaReceived.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.captchaFailCount == null ? 43 : this.captchaFailCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientAddress == null ? 43 : this.clientAddress.hashCode());
+        result = (result * PRIME) + (this.countryName == null ? 43 : this.countryName.hashCode());
+        result = (result * PRIME) + (this.userAgent == null ? 43 : this.userAgent.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionRuleDetections == null
+                                ? 43
+                                : this.protectionRuleDetections.hashCode());
+        result = (result * PRIME) + (this.httpMethod == null ? 43 : this.httpMethod.hashCode());
+        result = (result * PRIME) + (this.requestUrl == null ? 43 : this.requestUrl.hashCode());
+        result = (result * PRIME) + (this.httpHeaders == null ? 43 : this.httpHeaders.hashCode());
+        result = (result * PRIME) + (this.referrer == null ? 43 : this.referrer.hashCode());
+        result = (result * PRIME) + (this.responseCode == null ? 43 : this.responseCode.hashCode());
+        result = (result * PRIME) + (this.responseSize == null ? 43 : this.responseSize.hashCode());
+        result = (result * PRIME) + (this.incidentKey == null ? 43 : this.incidentKey.hashCode());
+        result = (result * PRIME) + (this.fingerprint == null ? 43 : this.fingerprint.hashCode());
+        result = (result * PRIME) + (this.device == null ? 43 : this.device.hashCode());
+        result = (result * PRIME) + (this.countryCode == null ? 43 : this.countryCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestHeaders == null ? 43 : this.requestHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.threatFeedKey == null ? 43 : this.threatFeedKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accessRuleKey == null ? 43 : this.accessRuleKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addressRateLimitingKey == null
+                                ? 43
+                                : this.addressRateLimitingKey.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.logType == null ? 43 : this.logType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originAddress == null ? 43 : this.originAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originResponseTime == null
+                                ? 43
+                                : this.originResponseTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

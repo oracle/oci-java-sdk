@@ -17,16 +17,23 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProjectedDataItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProjectedDataItem {
+public final class ProjectedDataItem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"endTimestamp", "usage", "highValue", "lowValue"})
+    public ProjectedDataItem(
+            java.util.Date endTimestamp, Double usage, Double highValue, Double lowValue) {
+        super();
+        this.endTimestamp = endTimestamp;
+        this.usage = usage;
+        this.highValue = highValue;
+        this.lowValue = lowValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
         private java.util.Date endTimestamp;
@@ -94,31 +101,99 @@ public class ProjectedDataItem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The timestamp in which the current sampling period ends in RFC 3339 format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
-    java.util.Date endTimestamp;
+    private final java.util.Date endTimestamp;
+
+    public java.util.Date getEndTimestamp() {
+        return endTimestamp;
+    }
 
     /**
      * Total amount used of the resource metric type (CPU, STORAGE).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
-    Double usage;
+    private final Double usage;
+
+    public Double getUsage() {
+        return usage;
+    }
 
     /**
      * Upper uncertainty bound of the current usage value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("highValue")
-    Double highValue;
+    private final Double highValue;
+
+    public Double getHighValue() {
+        return highValue;
+    }
 
     /**
      * Lower uncertainty bound of the current usage value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lowValue")
-    Double lowValue;
+    private final Double lowValue;
+
+    public Double getLowValue() {
+        return lowValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProjectedDataItem(");
+        sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
+        sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append(", highValue=").append(String.valueOf(this.highValue));
+        sb.append(", lowValue=").append(String.valueOf(this.lowValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProjectedDataItem)) {
+            return false;
+        }
+
+        ProjectedDataItem other = (ProjectedDataItem) o;
+        return java.util.Objects.equals(this.endTimestamp, other.endTimestamp)
+                && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.highValue, other.highValue)
+                && java.util.Objects.equals(this.lowValue, other.lowValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.endTimestamp == null ? 43 : this.endTimestamp.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result = (result * PRIME) + (this.highValue == null ? 43 : this.highValue.hashCode());
+        result = (result * PRIME) + (this.lowValue == null ? 43 : this.lowValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

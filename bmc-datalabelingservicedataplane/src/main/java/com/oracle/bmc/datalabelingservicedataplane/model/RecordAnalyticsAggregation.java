@@ -15,16 +15,34 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RecordAnalyticsAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RecordAnalyticsAggregation {
+public final class RecordAnalyticsAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "count",
+        "dimensions",
+        "datasetId",
+        "compartmentId",
+        "lifecycleState"
+    })
+    public RecordAnalyticsAggregation(
+            java.math.BigDecimal count,
+            RecordAggregationDimensions dimensions,
+            String datasetId,
+            String compartmentId,
+            Record.LifecycleState lifecycleState) {
+        super();
+        this.count = count;
+        this.dimensions = dimensions;
+        this.datasetId = datasetId;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private java.math.BigDecimal count;
@@ -103,33 +121,112 @@ public class RecordAnalyticsAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * the count of the matching results
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    java.math.BigDecimal count;
+    private final java.math.BigDecimal count;
+
+    public java.math.BigDecimal getCount() {
+        return count;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    RecordAggregationDimensions dimensions;
+    private final RecordAggregationDimensions dimensions;
+
+    public RecordAggregationDimensions getDimensions() {
+        return dimensions;
+    }
 
     /**
      * ocid of the dataset the annotation belongs to
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
-    String datasetId;
+    private final String datasetId;
+
+    public String getDatasetId() {
+        return datasetId;
+    }
 
     /**
      * ocid of the compartment the records
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Describes the lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    Record.LifecycleState lifecycleState;
+    private final Record.LifecycleState lifecycleState;
+
+    public Record.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RecordAnalyticsAggregation(");
+        sb.append("count=").append(String.valueOf(this.count));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append(", datasetId=").append(String.valueOf(this.datasetId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RecordAnalyticsAggregation)) {
+            return false;
+        }
+
+        RecordAnalyticsAggregation other = (RecordAnalyticsAggregation) o;
+        return java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.datasetId, other.datasetId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result = (result * PRIME) + (this.datasetId == null ? 43 : this.datasetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

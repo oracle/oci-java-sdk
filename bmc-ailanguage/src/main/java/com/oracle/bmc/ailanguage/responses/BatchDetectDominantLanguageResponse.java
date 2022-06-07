@@ -7,10 +7,6 @@ package com.oracle.bmc.ailanguage.responses;
 import com.oracle.bmc.ailanguage.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class BatchDetectDominantLanguageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,11 +15,20 @@ public class BatchDetectDominantLanguageResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned BatchDetectDominantLanguageResult instance.
      */
     private com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult
             batchDetectDominantLanguageResult;
+
+    public com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult
+            getBatchDetectDominantLanguageResult() {
+        return batchDetectDominantLanguageResult;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -48,6 +53,23 @@ public class BatchDetectDominantLanguageResponse extends com.oracle.bmc.response
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult
+                batchDetectDominantLanguageResult;
+
+        public Builder batchDetectDominantLanguageResult(
+                com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult
+                        batchDetectDominantLanguageResult) {
+            this.batchDetectDominantLanguageResult = batchDetectDominantLanguageResult;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -64,5 +86,51 @@ public class BatchDetectDominantLanguageResponse extends com.oracle.bmc.response
             return new BatchDetectDominantLanguageResponse(
                     __httpStatusCode__, opcRequestId, batchDetectDominantLanguageResult);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",batchDetectDominantLanguageResult=")
+                .append(String.valueOf(batchDetectDominantLanguageResult));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BatchDetectDominantLanguageResponse)) {
+            return false;
+        }
+
+        BatchDetectDominantLanguageResponse other = (BatchDetectDominantLanguageResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.batchDetectDominantLanguageResult,
+                        other.batchDetectDominantLanguageResult);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.batchDetectDominantLanguageResult == null
+                                ? 43
+                                : this.batchDetectDominantLanguageResult.hashCode());
+        return result;
     }
 }

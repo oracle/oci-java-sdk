@@ -10,7 +10,6 @@ package com.oracle.bmc.mysql.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.extern.slf4j.Slf4j
 public enum AnalyticsClusterMemoryEstimateStatus {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
@@ -24,6 +23,9 @@ public enum AnalyticsClusterMemoryEstimateStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AnalyticsClusterMemoryEstimateStatus.class);
 
     private final String value;
     private static java.util.Map<String, AnalyticsClusterMemoryEstimateStatus> map;

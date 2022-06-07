@@ -15,16 +15,37 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateCertificateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateCertificateDetails {
+public final class UpdateCertificateDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "currentVersionNumber",
+        "certificateConfig",
+        "freeformTags",
+        "definedTags",
+        "certificateRules"
+    })
+    public UpdateCertificateDetails(
+            String description,
+            Long currentVersionNumber,
+            UpdateCertificateConfigDetails certificateConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<CertificateRule> certificateRules) {
+        super();
+        this.description = description;
+        this.currentVersionNumber = currentVersionNumber;
+        this.certificateConfig = certificateConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.certificateRules = certificateRules;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -119,20 +140,36 @@ public class UpdateCertificateDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A brief description of the certificate. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Makes this version the current version. This property cannot be updated in combination with any other properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentVersionNumber")
-    Long currentVersionNumber;
+    private final Long currentVersionNumber;
+
+    public Long getCurrentVersionNumber() {
+        return currentVersionNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("certificateConfig")
-    UpdateCertificateConfigDetails certificateConfig;
+    private final UpdateCertificateConfigDetails certificateConfig;
+
+    public UpdateCertificateConfigDetails getCertificateConfig() {
+        return certificateConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -141,7 +178,11 @@ public class UpdateCertificateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -150,14 +191,84 @@ public class UpdateCertificateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * An optional list of rules that control how the certificate is used and managed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateRules")
-    java.util.List<CertificateRule> certificateRules;
+    private final java.util.List<CertificateRule> certificateRules;
+
+    public java.util.List<CertificateRule> getCertificateRules() {
+        return certificateRules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateCertificateDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", currentVersionNumber=").append(String.valueOf(this.currentVersionNumber));
+        sb.append(", certificateConfig=").append(String.valueOf(this.certificateConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", certificateRules=").append(String.valueOf(this.certificateRules));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateCertificateDetails)) {
+            return false;
+        }
+
+        UpdateCertificateDetails other = (UpdateCertificateDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.currentVersionNumber, other.currentVersionNumber)
+                && java.util.Objects.equals(this.certificateConfig, other.certificateConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.certificateRules, other.certificateRules)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentVersionNumber == null
+                                ? 43
+                                : this.currentVersionNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateConfig == null ? 43 : this.certificateConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateRules == null ? 43 : this.certificateRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

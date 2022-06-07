@@ -9,14 +9,6 @@ import com.oracle.bmc.devops.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPathsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPathsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String repositoryId;
 
+    public String getRepositoryId() {
+        return repositoryId;
+    }
     /**
      * The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag.
      * You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
@@ -31,36 +26,57 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ref;
 
+    public String getRef() {
+        return ref;
+    }
     /**
      * Flag to determine if files must be retrived recursively. Flag is False by default.
      */
     private Boolean pathsInSubtree;
 
+    public Boolean getPathsInSubtree() {
+        return pathsInSubtree;
+    }
     /**
      * The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
      */
     private String folderPath;
 
+    public String getFolderPath() {
+        return folderPath;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * A filter to return only resources that match the entire display name given.
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The sort order to use. Use either ascending or descending.
      */
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.devops.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order is ascending. If no value is specified name is default.
      *
@@ -104,10 +120,18 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -115,6 +139,119 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String repositoryId = null;
+
+        /**
+         * Unique repository identifier.
+         * @return this builder instance
+         */
+        public Builder repositoryId(String repositoryId) {
+            this.repositoryId = repositoryId;
+            return this;
+        }
+
+        private String ref = null;
+
+        /**
+         * The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag.
+         * You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
+         *
+         * @return this builder instance
+         */
+        public Builder ref(String ref) {
+            this.ref = ref;
+            return this;
+        }
+
+        private Boolean pathsInSubtree = null;
+
+        /**
+         * Flag to determine if files must be retrived recursively. Flag is False by default.
+         * @return this builder instance
+         */
+        public Builder pathsInSubtree(Boolean pathsInSubtree) {
+            this.pathsInSubtree = pathsInSubtree;
+            return this;
+        }
+
+        private String folderPath = null;
+
+        /**
+         * The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
+         * @return this builder instance
+         */
+        public Builder folderPath(String folderPath) {
+            this.folderPath = folderPath;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return only resources that match the entire display name given.
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private com.oracle.bmc.devops.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use. Use either ascending or descending.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.devops.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order is ascending. If no value is specified name is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -175,5 +312,111 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListPathsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListPathsRequest
+         */
+        public ListPathsRequest buildWithoutInvocationCallback() {
+            ListPathsRequest request = new ListPathsRequest();
+            request.repositoryId = repositoryId;
+            request.ref = ref;
+            request.pathsInSubtree = pathsInSubtree;
+            request.folderPath = folderPath;
+            request.limit = limit;
+            request.page = page;
+            request.displayName = displayName;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListPathsRequest(repositoryId, ref, pathsInSubtree, folderPath, limit, page, displayName, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .repositoryId(repositoryId)
+                .ref(ref)
+                .pathsInSubtree(pathsInSubtree)
+                .folderPath(folderPath)
+                .limit(limit)
+                .page(page)
+                .displayName(displayName)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",repositoryId=").append(String.valueOf(this.repositoryId));
+        sb.append(",ref=").append(String.valueOf(this.ref));
+        sb.append(",pathsInSubtree=").append(String.valueOf(this.pathsInSubtree));
+        sb.append(",folderPath=").append(String.valueOf(this.folderPath));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListPathsRequest)) {
+            return false;
+        }
+
+        ListPathsRequest other = (ListPathsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.repositoryId, other.repositoryId)
+                && java.util.Objects.equals(this.ref, other.ref)
+                && java.util.Objects.equals(this.pathsInSubtree, other.pathsInSubtree)
+                && java.util.Objects.equals(this.folderPath, other.folderPath)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
+        result = (result * PRIME) + (this.ref == null ? 43 : this.ref.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pathsInSubtree == null ? 43 : this.pathsInSubtree.hashCode());
+        result = (result * PRIME) + (this.folderPath == null ? 43 : this.folderPath.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonthlyRuleFrequencyDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
+public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("frequency")
         private Frequency frequency;
@@ -109,6 +104,10 @@ public class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public MonthlyRuleFrequencyDetails(
             Frequency frequency,
@@ -126,7 +125,6 @@ public class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
     /**
      * This holds the week of the month in which the schedule should be triggered.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum WeekOfMonth {
         First("FIRST"),
         Second("SECOND"),
@@ -140,6 +138,9 @@ public class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(WeekOfMonth.class);
 
         private final String value;
         private static java.util.Map<String, WeekOfMonth> map;
@@ -177,20 +178,32 @@ public class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
      * This holds the week of the month in which the schedule should be triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weekOfMonth")
-    WeekOfMonth weekOfMonth;
+    private final WeekOfMonth weekOfMonth;
+
+    public WeekOfMonth getWeekOfMonth() {
+        return weekOfMonth;
+    }
 
     /**
      * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
-    Integer interval;
+    private final Integer interval;
+
+    public Integer getInterval() {
+        return interval;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("time")
-    Time time;
+    private final Time time;
+
+    public Time getTime() {
+        return time;
+    }
+
     /**
      * This holds the day of the week on which the schedule should be triggered.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DayOfWeek {
         Sunday("SUNDAY"),
         Monday("MONDAY"),
@@ -205,6 +218,9 @@ public class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DayOfWeek.class);
 
         private final String value;
         private static java.util.Map<String, DayOfWeek> map;
@@ -242,8 +258,62 @@ public class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
      * This holds the day of the week on which the schedule should be triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
-    DayOfWeek dayOfWeek;
+    private final DayOfWeek dayOfWeek;
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonthlyRuleFrequencyDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", weekOfMonth=").append(String.valueOf(this.weekOfMonth));
+        sb.append(", interval=").append(String.valueOf(this.interval));
+        sb.append(", time=").append(String.valueOf(this.time));
+        sb.append(", dayOfWeek=").append(String.valueOf(this.dayOfWeek));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonthlyRuleFrequencyDetails)) {
+            return false;
+        }
+
+        MonthlyRuleFrequencyDetails other = (MonthlyRuleFrequencyDetails) o;
+        return java.util.Objects.equals(this.weekOfMonth, other.weekOfMonth)
+                && java.util.Objects.equals(this.interval, other.interval)
+                && java.util.Objects.equals(this.time, other.time)
+                && java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.weekOfMonth == null ? 43 : this.weekOfMonth.hashCode());
+        result = (result * PRIME) + (this.interval == null ? 43 : this.interval.hashCode());
+        result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
+        result = (result * PRIME) + (this.dayOfWeek == null ? 43 : this.dayOfWeek.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

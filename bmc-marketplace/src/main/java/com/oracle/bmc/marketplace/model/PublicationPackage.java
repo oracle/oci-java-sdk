@@ -15,12 +15,6 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,30 +33,70 @@ package com.oracle.bmc.marketplace.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class PublicationPackage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "listingId",
+        "version",
+        "resourceId",
+        "timeCreated",
+        "operatingSystem"
+    })
+    protected PublicationPackage(
+            String description,
+            String listingId,
+            String version,
+            String resourceId,
+            java.util.Date timeCreated,
+            OperatingSystem operatingSystem) {
+        super();
+        this.description = description;
+        this.listingId = listingId;
+        this.version = version;
+        this.resourceId = resourceId;
+        this.timeCreated = timeCreated;
+        this.operatingSystem = operatingSystem;
+    }
 
     /**
      * A description of the package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The ID of the listing that the specified package belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * The package version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The unique identifier for the package resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -72,8 +106,63 @@ public class PublicationPackage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    OperatingSystem operatingSystem;
+    private final OperatingSystem operatingSystem;
+
+    public OperatingSystem getOperatingSystem() {
+        return operatingSystem;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PublicationPackage(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", listingId=").append(String.valueOf(this.listingId));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PublicationPackage)) {
+            return false;
+        }
+
+        PublicationPackage other = (PublicationPackage) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        return result;
+    }
 }

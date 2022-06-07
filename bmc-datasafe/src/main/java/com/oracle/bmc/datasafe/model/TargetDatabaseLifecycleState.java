@@ -17,7 +17,6 @@ package com.oracle.bmc.datasafe.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public enum TargetDatabaseLifecycleState {
     Creating("CREATING"),
     Updating("UPDATING"),
@@ -33,6 +32,9 @@ public enum TargetDatabaseLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(TargetDatabaseLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, TargetDatabaseLifecycleState> map;

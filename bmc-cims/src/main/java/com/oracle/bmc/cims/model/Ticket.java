@@ -15,14 +15,44 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Ticket.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Ticket {
+public final class Ticket {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "ticketNumber",
+        "severity",
+        "resourceList",
+        "title",
+        "description",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleDetails"
+    })
+    public Ticket(
+            String ticketNumber,
+            Severity severity,
+            java.util.List<Resource> resourceList,
+            String title,
+            String description,
+            Integer timeCreated,
+            Integer timeUpdated,
+            LifecycleState lifecycleState,
+            LifecycleDetails lifecycleDetails) {
+        super();
+        this.ticketNumber = ticketNumber;
+        this.severity = severity;
+        this.resourceList = resourceList;
+        this.title = title;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
         private String ticketNumber;
@@ -149,15 +179,23 @@ public class Ticket {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier for the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
-    String ticketNumber;
+    private final String ticketNumber;
+
+    public String getTicketNumber() {
+        return ticketNumber;
+    }
+
     /**
      * The severity assigned to the ticket.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Severity {
         Highest("HIGHEST"),
         High("HIGH"),
@@ -168,6 +206,9 @@ public class Ticket {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Severity.class);
 
         private final String value;
         private static java.util.Map<String, Severity> map;
@@ -205,50 +246,149 @@ public class Ticket {
      * The severity assigned to the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
 
     /**
      * The list of resources associated with the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
-    java.util.List<Resource> resourceList;
+    private final java.util.List<Resource> resourceList;
+
+    public java.util.List<Resource> getResourceList() {
+        return resourceList;
+    }
 
     /**
      * The title of the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
-    String title;
+    private final String title;
+
+    public String getTitle() {
+        return title;
+    }
 
     /**
      * The description of the issue addressed in the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The time when the ticket was created, in milliseconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    Integer timeCreated;
+    private final Integer timeCreated;
+
+    public Integer getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time when the ticket was updated, in milliseconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    Integer timeUpdated;
+    private final Integer timeUpdated;
+
+    public Integer getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current {@code lifecycleState}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    LifecycleDetails lifecycleDetails;
+    private final LifecycleDetails lifecycleDetails;
+
+    public LifecycleDetails getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Ticket(");
+        sb.append("ticketNumber=").append(String.valueOf(this.ticketNumber));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", resourceList=").append(String.valueOf(this.resourceList));
+        sb.append(", title=").append(String.valueOf(this.title));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Ticket)) {
+            return false;
+        }
+
+        Ticket other = (Ticket) o;
+        return java.util.Objects.equals(this.ticketNumber, other.ticketNumber)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.resourceList, other.resourceList)
+                && java.util.Objects.equals(this.title, other.title)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ticketNumber == null ? 43 : this.ticketNumber.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.resourceList == null ? 43 : this.resourceList.hashCode());
+        result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

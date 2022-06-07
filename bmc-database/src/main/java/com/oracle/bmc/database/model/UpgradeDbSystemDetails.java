@@ -16,16 +16,31 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpgradeDbSystemDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpgradeDbSystemDetails {
+public final class UpgradeDbSystemDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "action",
+        "snapshotRetentionPeriodInDays",
+        "newGiVersion",
+        "isSnapshotRetentionDaysForceUpdated"
+    })
+    public UpgradeDbSystemDetails(
+            Action action,
+            Integer snapshotRetentionPeriodInDays,
+            String newGiVersion,
+            Boolean isSnapshotRetentionDaysForceUpdated) {
+        super();
+        this.action = action;
+        this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
+        this.newGiVersion = newGiVersion;
+        this.isSnapshotRetentionDaysForceUpdated = isSnapshotRetentionDaysForceUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
@@ -99,6 +114,10 @@ public class UpgradeDbSystemDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The operating system upgrade action.
      **/
@@ -140,26 +159,103 @@ public class UpgradeDbSystemDetails {
      * The operating system upgrade action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotRetentionPeriodInDays")
-    Integer snapshotRetentionPeriodInDays;
+    private final Integer snapshotRetentionPeriodInDays;
+
+    public Integer getSnapshotRetentionPeriodInDays() {
+        return snapshotRetentionPeriodInDays;
+    }
 
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newGiVersion")
-    String newGiVersion;
+    private final String newGiVersion;
+
+    public String getNewGiVersion() {
+        return newGiVersion;
+    }
 
     /**
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotRetentionDaysForceUpdated")
-    Boolean isSnapshotRetentionDaysForceUpdated;
+    private final Boolean isSnapshotRetentionDaysForceUpdated;
+
+    public Boolean getIsSnapshotRetentionDaysForceUpdated() {
+        return isSnapshotRetentionDaysForceUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpgradeDbSystemDetails(");
+        sb.append("action=").append(String.valueOf(this.action));
+        sb.append(", snapshotRetentionPeriodInDays=")
+                .append(String.valueOf(this.snapshotRetentionPeriodInDays));
+        sb.append(", newGiVersion=").append(String.valueOf(this.newGiVersion));
+        sb.append(", isSnapshotRetentionDaysForceUpdated=")
+                .append(String.valueOf(this.isSnapshotRetentionDaysForceUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpgradeDbSystemDetails)) {
+            return false;
+        }
+
+        UpgradeDbSystemDetails other = (UpgradeDbSystemDetails) o;
+        return java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(
+                        this.snapshotRetentionPeriodInDays, other.snapshotRetentionPeriodInDays)
+                && java.util.Objects.equals(this.newGiVersion, other.newGiVersion)
+                && java.util.Objects.equals(
+                        this.isSnapshotRetentionDaysForceUpdated,
+                        other.isSnapshotRetentionDaysForceUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.snapshotRetentionPeriodInDays == null
+                                ? 43
+                                : this.snapshotRetentionPeriodInDays.hashCode());
+        result = (result * PRIME) + (this.newGiVersion == null ? 43 : this.newGiVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSnapshotRetentionDaysForceUpdated == null
+                                ? 43
+                                : this.isSnapshotRetentionDaysForceUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

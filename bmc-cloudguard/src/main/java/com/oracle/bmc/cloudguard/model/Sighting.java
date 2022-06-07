@@ -15,14 +15,74 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Sighting.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Sighting {
+public final class Sighting {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "description",
+        "problemId",
+        "compartmentId",
+        "actorPrincipalId",
+        "actorPrincipalName",
+        "actorPrincipalType",
+        "classificationStatus",
+        "sightingType",
+        "sightingTypeDisplayName",
+        "tacticName",
+        "techniqueName",
+        "sightingScore",
+        "severity",
+        "confidence",
+        "timeFirstDetected",
+        "timeLastDetected",
+        "regions",
+        "additionalDetails"
+    })
+    public Sighting(
+            String id,
+            String description,
+            String problemId,
+            String compartmentId,
+            String actorPrincipalId,
+            String actorPrincipalName,
+            String actorPrincipalType,
+            ClassificationStatus classificationStatus,
+            String sightingType,
+            String sightingTypeDisplayName,
+            String tacticName,
+            String techniqueName,
+            Integer sightingScore,
+            Severity severity,
+            Confidence confidence,
+            java.util.Date timeFirstDetected,
+            java.util.Date timeLastDetected,
+            java.util.List<String> regions,
+            java.util.Map<String, String> additionalDetails) {
+        super();
+        this.id = id;
+        this.description = description;
+        this.problemId = problemId;
+        this.compartmentId = compartmentId;
+        this.actorPrincipalId = actorPrincipalId;
+        this.actorPrincipalName = actorPrincipalName;
+        this.actorPrincipalType = actorPrincipalType;
+        this.classificationStatus = classificationStatus;
+        this.sightingType = sightingType;
+        this.sightingTypeDisplayName = sightingTypeDisplayName;
+        this.tacticName = tacticName;
+        this.techniqueName = techniqueName;
+        this.sightingScore = sightingScore;
+        this.severity = severity;
+        this.confidence = confidence;
+        this.timeFirstDetected = timeFirstDetected;
+        this.timeLastDetected = timeLastDetected;
+        this.regions = regions;
+        this.additionalDetails = additionalDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -259,120 +319,325 @@ public class Sighting {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier for sighting event
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Description of the sighting event
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Problem Id to which the Sighting is associated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
-    String problemId;
+    private final String problemId;
+
+    public String getProblemId() {
+        return problemId;
+    }
 
     /**
      * Compartment Id where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Unique identifier for principal actor
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalId")
-    String actorPrincipalId;
+    private final String actorPrincipalId;
+
+    public String getActorPrincipalId() {
+        return actorPrincipalId;
+    }
 
     /**
      * Name of the principal actor
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
-    String actorPrincipalName;
+    private final String actorPrincipalName;
+
+    public String getActorPrincipalName() {
+        return actorPrincipalName;
+    }
 
     /**
      * Type of the principal actor
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
-    String actorPrincipalType;
+    private final String actorPrincipalType;
+
+    public String getActorPrincipalType() {
+        return actorPrincipalType;
+    }
 
     /**
      * ClassificationStatus of the sighting event
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
-    ClassificationStatus classificationStatus;
+    private final ClassificationStatus classificationStatus;
+
+    public ClassificationStatus getClassificationStatus() {
+        return classificationStatus;
+    }
 
     /**
      * Identifier for the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
-    String sightingType;
+    private final String sightingType;
+
+    public String getSightingType() {
+        return sightingType;
+    }
 
     /**
      * Display name of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
-    String sightingTypeDisplayName;
+    private final String sightingTypeDisplayName;
+
+    public String getSightingTypeDisplayName() {
+        return sightingTypeDisplayName;
+    }
 
     /**
      * Name of the Mitre att&ck tactic
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
-    String tacticName;
+    private final String tacticName;
+
+    public String getTacticName() {
+        return tacticName;
+    }
 
     /**
      * Name of the Mitre att&ck technique
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
-    String techniqueName;
+    private final String techniqueName;
+
+    public String getTechniqueName() {
+        return techniqueName;
+    }
 
     /**
      * Score for the sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingScore")
-    Integer sightingScore;
+    private final Integer sightingScore;
+
+    public Integer getSightingScore() {
+        return sightingScore;
+    }
 
     /**
      * Severity of the sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
 
     /**
      * Confidence of the sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
-    Confidence confidence;
+    private final Confidence confidence;
+
+    public Confidence getConfidence() {
+        return confidence;
+    }
 
     /**
      * The date and time the sighting was first detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
-    java.util.Date timeFirstDetected;
+    private final java.util.Date timeFirstDetected;
+
+    public java.util.Date getTimeFirstDetected() {
+        return timeFirstDetected;
+    }
 
     /**
      * The date and time the sighting was last detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
-    java.util.Date timeLastDetected;
+    private final java.util.Date timeLastDetected;
+
+    public java.util.Date getTimeLastDetected() {
+        return timeLastDetected;
+    }
 
     /**
      * regions involved in the sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
-    java.util.List<String> regions;
+    private final java.util.List<String> regions;
+
+    public java.util.List<String> getRegions() {
+        return regions;
+    }
 
     /**
      * The additional details of the Sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
-    java.util.Map<String, String> additionalDetails;
+    private final java.util.Map<String, String> additionalDetails;
+
+    public java.util.Map<String, String> getAdditionalDetails() {
+        return additionalDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Sighting(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", problemId=").append(String.valueOf(this.problemId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", actorPrincipalId=").append(String.valueOf(this.actorPrincipalId));
+        sb.append(", actorPrincipalName=").append(String.valueOf(this.actorPrincipalName));
+        sb.append(", actorPrincipalType=").append(String.valueOf(this.actorPrincipalType));
+        sb.append(", classificationStatus=").append(String.valueOf(this.classificationStatus));
+        sb.append(", sightingType=").append(String.valueOf(this.sightingType));
+        sb.append(", sightingTypeDisplayName=")
+                .append(String.valueOf(this.sightingTypeDisplayName));
+        sb.append(", tacticName=").append(String.valueOf(this.tacticName));
+        sb.append(", techniqueName=").append(String.valueOf(this.techniqueName));
+        sb.append(", sightingScore=").append(String.valueOf(this.sightingScore));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", confidence=").append(String.valueOf(this.confidence));
+        sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
+        sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", regions=").append(String.valueOf(this.regions));
+        sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Sighting)) {
+            return false;
+        }
+
+        Sighting other = (Sighting) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.problemId, other.problemId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.actorPrincipalId, other.actorPrincipalId)
+                && java.util.Objects.equals(this.actorPrincipalName, other.actorPrincipalName)
+                && java.util.Objects.equals(this.actorPrincipalType, other.actorPrincipalType)
+                && java.util.Objects.equals(this.classificationStatus, other.classificationStatus)
+                && java.util.Objects.equals(this.sightingType, other.sightingType)
+                && java.util.Objects.equals(
+                        this.sightingTypeDisplayName, other.sightingTypeDisplayName)
+                && java.util.Objects.equals(this.tacticName, other.tacticName)
+                && java.util.Objects.equals(this.techniqueName, other.techniqueName)
+                && java.util.Objects.equals(this.sightingScore, other.sightingScore)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.confidence, other.confidence)
+                && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
+                && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.regions, other.regions)
+                && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.problemId == null ? 43 : this.problemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actorPrincipalId == null ? 43 : this.actorPrincipalId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actorPrincipalName == null
+                                ? 43
+                                : this.actorPrincipalName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actorPrincipalType == null
+                                ? 43
+                                : this.actorPrincipalType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classificationStatus == null
+                                ? 43
+                                : this.classificationStatus.hashCode());
+        result = (result * PRIME) + (this.sightingType == null ? 43 : this.sightingType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sightingTypeDisplayName == null
+                                ? 43
+                                : this.sightingTypeDisplayName.hashCode());
+        result = (result * PRIME) + (this.tacticName == null ? 43 : this.tacticName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.techniqueName == null ? 43 : this.techniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sightingScore == null ? 43 : this.sightingScore.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.confidence == null ? 43 : this.confidence.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstDetected == null ? 43 : this.timeFirstDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

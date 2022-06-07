@@ -21,16 +21,40 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SecurityAssessmentStatistics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SecurityAssessmentStatistics {
+public final class SecurityAssessmentStatistics {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "targetsCount",
+        "highRisk",
+        "mediumRisk",
+        "lowRisk",
+        "advisory",
+        "evaluate",
+        "pass"
+    })
+    public SecurityAssessmentStatistics(
+            Integer targetsCount,
+            SectionStatistics highRisk,
+            SectionStatistics mediumRisk,
+            SectionStatistics lowRisk,
+            SectionStatistics advisory,
+            SectionStatistics evaluate,
+            SectionStatistics pass) {
+        super();
+        this.targetsCount = targetsCount;
+        this.highRisk = highRisk;
+        this.mediumRisk = mediumRisk;
+        this.lowRisk = lowRisk;
+        this.advisory = advisory;
+        this.evaluate = evaluate;
+        this.pass = pass;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
         private Integer targetsCount;
@@ -129,30 +153,119 @@ public class SecurityAssessmentStatistics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The total number of targets in this security assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
-    Integer targetsCount;
+    private final Integer targetsCount;
+
+    public Integer getTargetsCount() {
+        return targetsCount;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("highRisk")
-    SectionStatistics highRisk;
+    private final SectionStatistics highRisk;
+
+    public SectionStatistics getHighRisk() {
+        return highRisk;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("mediumRisk")
-    SectionStatistics mediumRisk;
+    private final SectionStatistics mediumRisk;
+
+    public SectionStatistics getMediumRisk() {
+        return mediumRisk;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("lowRisk")
-    SectionStatistics lowRisk;
+    private final SectionStatistics lowRisk;
+
+    public SectionStatistics getLowRisk() {
+        return lowRisk;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("advisory")
-    SectionStatistics advisory;
+    private final SectionStatistics advisory;
+
+    public SectionStatistics getAdvisory() {
+        return advisory;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("evaluate")
-    SectionStatistics evaluate;
+    private final SectionStatistics evaluate;
+
+    public SectionStatistics getEvaluate() {
+        return evaluate;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("pass")
-    SectionStatistics pass;
+    private final SectionStatistics pass;
+
+    public SectionStatistics getPass() {
+        return pass;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecurityAssessmentStatistics(");
+        sb.append("targetsCount=").append(String.valueOf(this.targetsCount));
+        sb.append(", highRisk=").append(String.valueOf(this.highRisk));
+        sb.append(", mediumRisk=").append(String.valueOf(this.mediumRisk));
+        sb.append(", lowRisk=").append(String.valueOf(this.lowRisk));
+        sb.append(", advisory=").append(String.valueOf(this.advisory));
+        sb.append(", evaluate=").append(String.valueOf(this.evaluate));
+        sb.append(", pass=").append(String.valueOf(this.pass));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecurityAssessmentStatistics)) {
+            return false;
+        }
+
+        SecurityAssessmentStatistics other = (SecurityAssessmentStatistics) o;
+        return java.util.Objects.equals(this.targetsCount, other.targetsCount)
+                && java.util.Objects.equals(this.highRisk, other.highRisk)
+                && java.util.Objects.equals(this.mediumRisk, other.mediumRisk)
+                && java.util.Objects.equals(this.lowRisk, other.lowRisk)
+                && java.util.Objects.equals(this.advisory, other.advisory)
+                && java.util.Objects.equals(this.evaluate, other.evaluate)
+                && java.util.Objects.equals(this.pass, other.pass)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.targetsCount == null ? 43 : this.targetsCount.hashCode());
+        result = (result * PRIME) + (this.highRisk == null ? 43 : this.highRisk.hashCode());
+        result = (result * PRIME) + (this.mediumRisk == null ? 43 : this.mediumRisk.hashCode());
+        result = (result * PRIME) + (this.lowRisk == null ? 43 : this.lowRisk.hashCode());
+        result = (result * PRIME) + (this.advisory == null ? 43 : this.advisory.hashCode());
+        result = (result * PRIME) + (this.evaluate == null ? 43 : this.evaluate.hashCode());
+        result = (result * PRIME) + (this.pass == null ? 43 : this.pass.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

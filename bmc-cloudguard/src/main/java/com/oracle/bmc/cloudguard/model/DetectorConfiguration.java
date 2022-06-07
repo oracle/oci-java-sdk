@@ -15,16 +15,28 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DetectorConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DetectorConfiguration {
+public final class DetectorConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({"configKey", "name", "value", "dataType", "values"})
+    public DetectorConfiguration(
+            String configKey,
+            String name,
+            String value,
+            String dataType,
+            java.util.List<ConfigValue> values) {
+        super();
+        this.configKey = configKey;
+        this.name = name;
+        this.value = value;
+        this.dataType = dataType;
+        this.values = values;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
@@ -102,36 +114,111 @@ public class DetectorConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique name of the configuration
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
-    String configKey;
+    private final String configKey;
+
+    public String getConfigKey() {
+        return configKey;
+    }
 
     /**
      * configuration name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * configuration value
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * configuration data type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    String dataType;
+    private final String dataType;
+
+    public String getDataType() {
+        return dataType;
+    }
 
     /**
      * List of configuration values
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
-    java.util.List<ConfigValue> values;
+    private final java.util.List<ConfigValue> values;
+
+    public java.util.List<ConfigValue> getValues() {
+        return values;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DetectorConfiguration(");
+        sb.append("configKey=").append(String.valueOf(this.configKey));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", values=").append(String.valueOf(this.values));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetectorConfiguration)) {
+            return false;
+        }
+
+        DetectorConfiguration other = (DetectorConfiguration) o;
+        return java.util.Objects.equals(this.configKey, other.configKey)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.values, other.values)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.configKey == null ? 43 : this.configKey.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,22 +16,17 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PdbConversionToNewDatabaseDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "target"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetBase {
+public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
         private String cdbName;
@@ -125,6 +120,10 @@ public class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetBase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public PdbConversionToNewDatabaseDetails(
             String cdbName,
@@ -146,31 +145,51 @@ public class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetBase {
      * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
-    String cdbName;
+    private final String cdbName;
+
+    public String getCdbName() {
+        return cdbName;
+    }
 
     /**
      * A strong password for SYS, SYSTEM, and the plugbable database ADMIN user of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdbAdminPassword")
-    String cdbAdminPassword;
+    private final String cdbAdminPassword;
+
+    public String getCdbAdminPassword() {
+        return cdbAdminPassword;
+    }
 
     /**
      * A strong password for plugbable database ADMIN user of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
-    String pdbAdminPassword;
+    private final String pdbAdminPassword;
+
+    public String getPdbAdminPassword() {
+        return pdbAdminPassword;
+    }
 
     /**
      * The password to open the TDE wallet of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdbTdeWalletPassword")
-    String cdbTdeWalletPassword;
+    private final String cdbTdeWalletPassword;
+
+    public String getCdbTdeWalletPassword() {
+        return cdbTdeWalletPassword;
+    }
 
     /**
      * The existing TDE wallet password of the non-container database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonCdbTdeWalletPassword")
-    String nonCdbTdeWalletPassword;
+    private final String nonCdbTdeWalletPassword;
+
+    public String getNonCdbTdeWalletPassword() {
+        return nonCdbTdeWalletPassword;
+    }
 
     /**
      * Additional container database parameters.
@@ -178,8 +197,86 @@ public class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalCdbParams")
-    String additionalCdbParams;
+    private final String additionalCdbParams;
+
+    public String getAdditionalCdbParams() {
+        return additionalCdbParams;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PdbConversionToNewDatabaseDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", cdbName=").append(String.valueOf(this.cdbName));
+        sb.append(", cdbAdminPassword=").append(String.valueOf(this.cdbAdminPassword));
+        sb.append(", pdbAdminPassword=").append(String.valueOf(this.pdbAdminPassword));
+        sb.append(", cdbTdeWalletPassword=").append(String.valueOf(this.cdbTdeWalletPassword));
+        sb.append(", nonCdbTdeWalletPassword=")
+                .append(String.valueOf(this.nonCdbTdeWalletPassword));
+        sb.append(", additionalCdbParams=").append(String.valueOf(this.additionalCdbParams));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PdbConversionToNewDatabaseDetails)) {
+            return false;
+        }
+
+        PdbConversionToNewDatabaseDetails other = (PdbConversionToNewDatabaseDetails) o;
+        return java.util.Objects.equals(this.cdbName, other.cdbName)
+                && java.util.Objects.equals(this.cdbAdminPassword, other.cdbAdminPassword)
+                && java.util.Objects.equals(this.pdbAdminPassword, other.pdbAdminPassword)
+                && java.util.Objects.equals(this.cdbTdeWalletPassword, other.cdbTdeWalletPassword)
+                && java.util.Objects.equals(
+                        this.nonCdbTdeWalletPassword, other.nonCdbTdeWalletPassword)
+                && java.util.Objects.equals(this.additionalCdbParams, other.additionalCdbParams)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.cdbName == null ? 43 : this.cdbName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cdbAdminPassword == null ? 43 : this.cdbAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pdbAdminPassword == null ? 43 : this.pdbAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cdbTdeWalletPassword == null
+                                ? 43
+                                : this.cdbTdeWalletPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nonCdbTdeWalletPassword == null
+                                ? 43
+                                : this.nonCdbTdeWalletPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalCdbParams == null
+                                ? 43
+                                : this.additionalCdbParams.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

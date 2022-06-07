@@ -9,14 +9,6 @@ import com.oracle.bmc.loadbalancer.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteRoutingPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteRoutingPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteRoutingPolicyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class DeleteRoutingPolicyRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String loadBalancerId;
 
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
     /**
      * The name of the routing policy to delete.
      * <p>
@@ -32,6 +27,9 @@ public class DeleteRoutingPolicyRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String routingPolicyName;
 
+    public String getRoutingPolicyName() {
+        return routingPolicyName;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -39,12 +37,54 @@ public class DeleteRoutingPolicyRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteRoutingPolicyRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String loadBalancerId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the routing policy to delete.
+         * @return this builder instance
+         */
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        private String routingPolicyName = null;
+
+        /**
+         * The name of the routing policy to delete.
+         * <p>
+         * Example: {@code example_routing_policy}
+         *
+         * @return this builder instance
+         */
+        public Builder routingPolicyName(String routingPolicyName) {
+            this.routingPolicyName = routingPolicyName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -98,5 +138,78 @@ public class DeleteRoutingPolicyRequest extends com.oracle.bmc.requests.BmcReque
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteRoutingPolicyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteRoutingPolicyRequest
+         */
+        public DeleteRoutingPolicyRequest buildWithoutInvocationCallback() {
+            DeleteRoutingPolicyRequest request = new DeleteRoutingPolicyRequest();
+            request.loadBalancerId = loadBalancerId;
+            request.routingPolicyName = routingPolicyName;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new DeleteRoutingPolicyRequest(loadBalancerId, routingPolicyName, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .loadBalancerId(loadBalancerId)
+                .routingPolicyName(routingPolicyName)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(",routingPolicyName=").append(String.valueOf(this.routingPolicyName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteRoutingPolicyRequest)) {
+            return false;
+        }
+
+        DeleteRoutingPolicyRequest other = (DeleteRoutingPolicyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.routingPolicyName, other.routingPolicyName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routingPolicyName == null ? 43 : this.routingPolicyName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

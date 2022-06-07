@@ -26,9 +26,12 @@ import com.oracle.bmc.resourcemanager.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.RequiredArgsConstructor
 public class ResourceManagerPaginators {
     private final ResourceManager client;
+
+    public ResourceManagerPaginators(ResourceManager client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the getJobLogs operation. This iterable
@@ -373,6 +376,122 @@ public class ResourceManagerPaginators {
                     public java.util.List<com.oracle.bmc.resourcemanager.model.JobSummary> apply(
                             ListJobsResponse response) {
                         return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPrivateEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPrivateEndpointsResponse> listPrivateEndpointsResponseIterator(
+            final ListPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPrivateEndpointsRequest.Builder, ListPrivateEndpointsRequest,
+                ListPrivateEndpointsResponse>(
+                new com.google.common.base.Supplier<ListPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListPrivateEndpointsRequest.Builder get() {
+                        return ListPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPrivateEndpointsRequest.Builder>,
+                        ListPrivateEndpointsRequest>() {
+                    @Override
+                    public ListPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>() {
+                    @Override
+                    public ListPrivateEndpointsResponse apply(ListPrivateEndpointsRequest request) {
+                        return client.listPrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.resourcemanager.model.PrivateEndpointSummary} objects
+     * contained in responses from the listPrivateEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.resourcemanager.model.PrivateEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.resourcemanager.model.PrivateEndpointSummary>
+            listPrivateEndpointsRecordIterator(final ListPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPrivateEndpointsRequest.Builder, ListPrivateEndpointsRequest,
+                ListPrivateEndpointsResponse,
+                com.oracle.bmc.resourcemanager.model.PrivateEndpointSummary>(
+                new com.google.common.base.Supplier<ListPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListPrivateEndpointsRequest.Builder get() {
+                        return ListPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPrivateEndpointsRequest.Builder>,
+                        ListPrivateEndpointsRequest>() {
+                    @Override
+                    public ListPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>() {
+                    @Override
+                    public ListPrivateEndpointsResponse apply(ListPrivateEndpointsRequest request) {
+                        return client.listPrivateEndpoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPrivateEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.resourcemanager.model.PrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.resourcemanager.model.PrivateEndpointSummary>
+                            apply(ListPrivateEndpointsResponse response) {
+                        return response.getPrivateEndpointCollection().getItems();
                     }
                 });
     }

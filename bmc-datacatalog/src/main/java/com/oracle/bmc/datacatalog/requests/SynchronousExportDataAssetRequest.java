@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SynchronousExportDataAssetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SynchronousExportDataAssetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SynchronousExportDataAssetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.ExportDataAssetDetails> {
@@ -26,28 +18,45 @@ public class SynchronousExportDataAssetRequest
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * Unique data asset key.
      */
     private String dataAssetKey;
 
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
     /**
      * The details of what needs to be exported.
      */
     private com.oracle.bmc.datacatalog.model.ExportDataAssetDetails
             synchronousExportDataAssetDetails;
 
+    public com.oracle.bmc.datacatalog.model.ExportDataAssetDetails
+            getSynchronousExportDataAssetDetails() {
+        return synchronousExportDataAssetDetails;
+    }
     /**
      * Type of export.
      */
     private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
             exportType;
 
+    public java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
+            getExportType() {
+        return exportType;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -57,6 +66,10 @@ public class SynchronousExportDataAssetRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -75,6 +88,42 @@ public class SynchronousExportDataAssetRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
+
+        private String dataAssetKey = null;
+
+        /**
+         * Unique data asset key.
+         * @return this builder instance
+         */
+        public Builder dataAssetKey(String dataAssetKey) {
+            this.dataAssetKey = dataAssetKey;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.ExportDataAssetDetails
+                synchronousExportDataAssetDetails = null;
+
+        /**
+         * The details of what needs to be exported.
+         * @return this builder instance
+         */
+        public Builder synchronousExportDataAssetDetails(
+                com.oracle.bmc.datacatalog.model.ExportDataAssetDetails
+                        synchronousExportDataAssetDetails) {
+            this.synchronousExportDataAssetDetails = synchronousExportDataAssetDetails;
+            return this;
+        }
 
         private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
                 exportType = null;
@@ -96,6 +145,33 @@ public class SynchronousExportDataAssetRequest
          */
         public Builder exportType(DataAssetImportExportTypeFilter singularValue) {
             return this.exportType(java.util.Arrays.asList(singularValue));
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
         }
 
         /**
@@ -164,5 +240,98 @@ public class SynchronousExportDataAssetRequest
             synchronousExportDataAssetDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of SynchronousExportDataAssetRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of SynchronousExportDataAssetRequest
+         */
+        public SynchronousExportDataAssetRequest buildWithoutInvocationCallback() {
+            SynchronousExportDataAssetRequest request = new SynchronousExportDataAssetRequest();
+            request.catalogId = catalogId;
+            request.dataAssetKey = dataAssetKey;
+            request.synchronousExportDataAssetDetails = synchronousExportDataAssetDetails;
+            request.exportType = exportType;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new SynchronousExportDataAssetRequest(catalogId, dataAssetKey, synchronousExportDataAssetDetails, exportType, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .dataAssetKey(dataAssetKey)
+                .synchronousExportDataAssetDetails(synchronousExportDataAssetDetails)
+                .exportType(exportType)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(",synchronousExportDataAssetDetails=")
+                .append(String.valueOf(this.synchronousExportDataAssetDetails));
+        sb.append(",exportType=").append(String.valueOf(this.exportType));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SynchronousExportDataAssetRequest)) {
+            return false;
+        }
+
+        SynchronousExportDataAssetRequest other = (SynchronousExportDataAssetRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(
+                        this.synchronousExportDataAssetDetails,
+                        other.synchronousExportDataAssetDetails)
+                && java.util.Objects.equals(this.exportType, other.exportType)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.synchronousExportDataAssetDetails == null
+                                ? 43
+                                : this.synchronousExportDataAssetDetails.hashCode());
+        result = (result * PRIME) + (this.exportType == null ? 43 : this.exportType.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

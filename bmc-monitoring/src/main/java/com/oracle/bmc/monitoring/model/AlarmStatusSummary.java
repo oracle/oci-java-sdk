@@ -25,16 +25,37 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AlarmStatusSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AlarmStatusSummary {
+public final class AlarmStatusSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "severity",
+        "timestampTriggered",
+        "status",
+        "suppression"
+    })
+    public AlarmStatusSummary(
+            String id,
+            String displayName,
+            Severity severity,
+            java.util.Date timestampTriggered,
+            Status status,
+            Suppression suppression) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.severity = severity;
+        this.timestampTriggered = timestampTriggered;
+        this.status = status;
+        this.suppression = suppression;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -123,12 +144,20 @@ public class AlarmStatusSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The configured name of the alarm.
@@ -137,14 +166,18 @@ public class AlarmStatusSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The configured severity of the alarm.
      * <p>
      * Example: {@code CRITICAL}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Severity {
         Critical("CRITICAL"),
         Error("ERROR"),
@@ -156,6 +189,9 @@ public class AlarmStatusSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Severity.class);
 
         private final String value;
         private static java.util.Map<String, Severity> map;
@@ -196,7 +232,11 @@ public class AlarmStatusSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
 
     /**
      * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
@@ -206,14 +246,18 @@ public class AlarmStatusSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
-    java.util.Date timestampTriggered;
+    private final java.util.Date timestampTriggered;
+
+    public java.util.Date getTimestampTriggered() {
+        return timestampTriggered;
+    }
+
     /**
      * The status of this alarm.
      * <p>
      * Example: {@code FIRING}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Firing("FIRING"),
         Ok("OK"),
@@ -224,6 +268,8 @@ public class AlarmStatusSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -264,15 +310,81 @@ public class AlarmStatusSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The configuration details for suppressing an alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppression")
-    Suppression suppression;
+    private final Suppression suppression;
+
+    public Suppression getSuppression() {
+        return suppression;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AlarmStatusSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", timestampTriggered=").append(String.valueOf(this.timestampTriggered));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", suppression=").append(String.valueOf(this.suppression));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AlarmStatusSummary)) {
+            return false;
+        }
+
+        AlarmStatusSummary other = (AlarmStatusSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.timestampTriggered, other.timestampTriggered)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.suppression, other.suppression)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timestampTriggered == null
+                                ? 43
+                                : this.timestampTriggered.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.suppression == null ? 43 : this.suppression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -17,16 +17,37 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceConfigurationLaunchOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceConfigurationLaunchOptions {
+public final class InstanceConfigurationLaunchOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bootVolumeType",
+        "firmware",
+        "networkType",
+        "remoteDataVolumeType",
+        "isPvEncryptionInTransitEnabled",
+        "isConsistentVolumeNamingEnabled"
+    })
+    public InstanceConfigurationLaunchOptions(
+            BootVolumeType bootVolumeType,
+            Firmware firmware,
+            NetworkType networkType,
+            RemoteDataVolumeType remoteDataVolumeType,
+            Boolean isPvEncryptionInTransitEnabled,
+            Boolean isConsistentVolumeNamingEnabled) {
+        super();
+        this.bootVolumeType = bootVolumeType;
+        this.firmware = firmware;
+        this.networkType = networkType;
+        this.remoteDataVolumeType = remoteDataVolumeType;
+        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+        this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
         private BootVolumeType bootVolumeType;
@@ -121,6 +142,10 @@ public class InstanceConfigurationLaunchOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Emulation type for the boot volume.
      * * {@code ISCSI} - ISCSI attached block storage device.
@@ -132,7 +157,6 @@ public class InstanceConfigurationLaunchOptions {
      * storage volumes on platform images.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BootVolumeType {
         Iscsi("ISCSI"),
         Scsi("SCSI"),
@@ -145,6 +169,9 @@ public class InstanceConfigurationLaunchOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BootVolumeType.class);
 
         private final String value;
         private static java.util.Map<String, BootVolumeType> map;
@@ -190,7 +217,12 @@ public class InstanceConfigurationLaunchOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
-    BootVolumeType bootVolumeType;
+    private final BootVolumeType bootVolumeType;
+
+    public BootVolumeType getBootVolumeType() {
+        return bootVolumeType;
+    }
+
     /**
      * Firmware used to boot VM. Select the option that matches your operating system.
      * * {@code BIOS} - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating
@@ -199,7 +231,6 @@ public class InstanceConfigurationLaunchOptions {
      * default for platform images.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Firmware {
         Bios("BIOS"),
         Uefi64("UEFI_64"),
@@ -209,6 +240,9 @@ public class InstanceConfigurationLaunchOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Firmware.class);
 
         private final String value;
         private static java.util.Map<String, Firmware> map;
@@ -251,7 +285,12 @@ public class InstanceConfigurationLaunchOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("firmware")
-    Firmware firmware;
+    private final Firmware firmware;
+
+    public Firmware getFirmware() {
+        return firmware;
+    }
+
     /**
      * Emulation type for the physical network interface card (NIC).
      * * {@code E1000} - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -260,7 +299,6 @@ public class InstanceConfigurationLaunchOptions {
      * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum NetworkType {
         E1000("E1000"),
         Vfio("VFIO"),
@@ -271,6 +309,9 @@ public class InstanceConfigurationLaunchOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NetworkType.class);
 
         private final String value;
         private static java.util.Map<String, NetworkType> map;
@@ -313,7 +354,12 @@ public class InstanceConfigurationLaunchOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")
-    NetworkType networkType;
+    private final NetworkType networkType;
+
+    public NetworkType getNetworkType() {
+        return networkType;
+    }
+
     /**
      * Emulation type for volume.
      * * {@code ISCSI} - ISCSI attached block storage device.
@@ -325,7 +371,6 @@ public class InstanceConfigurationLaunchOptions {
      * storage volumes on platform images.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RemoteDataVolumeType {
         Iscsi("ISCSI"),
         Scsi("SCSI"),
@@ -338,6 +383,9 @@ public class InstanceConfigurationLaunchOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RemoteDataVolumeType.class);
 
         private final String value;
         private static java.util.Map<String, RemoteDataVolumeType> map;
@@ -383,7 +431,11 @@ public class InstanceConfigurationLaunchOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteDataVolumeType")
-    RemoteDataVolumeType remoteDataVolumeType;
+    private final RemoteDataVolumeType remoteDataVolumeType;
+
+    public RemoteDataVolumeType getRemoteDataVolumeType() {
+        return remoteDataVolumeType;
+    }
 
     /**
      * Deprecated. Instead use {@code isPvEncryptionInTransitEnabled} in
@@ -391,14 +443,94 @@ public class InstanceConfigurationLaunchOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
-    Boolean isPvEncryptionInTransitEnabled;
+    private final Boolean isPvEncryptionInTransitEnabled;
+
+    public Boolean getIsPvEncryptionInTransitEnabled() {
+        return isPvEncryptionInTransitEnabled;
+    }
 
     /**
      * Whether to enable consistent volume naming feature. Defaults to false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConsistentVolumeNamingEnabled")
-    Boolean isConsistentVolumeNamingEnabled;
+    private final Boolean isConsistentVolumeNamingEnabled;
+
+    public Boolean getIsConsistentVolumeNamingEnabled() {
+        return isConsistentVolumeNamingEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceConfigurationLaunchOptions(");
+        sb.append("bootVolumeType=").append(String.valueOf(this.bootVolumeType));
+        sb.append(", firmware=").append(String.valueOf(this.firmware));
+        sb.append(", networkType=").append(String.valueOf(this.networkType));
+        sb.append(", remoteDataVolumeType=").append(String.valueOf(this.remoteDataVolumeType));
+        sb.append(", isPvEncryptionInTransitEnabled=")
+                .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append(", isConsistentVolumeNamingEnabled=")
+                .append(String.valueOf(this.isConsistentVolumeNamingEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceConfigurationLaunchOptions)) {
+            return false;
+        }
+
+        InstanceConfigurationLaunchOptions other = (InstanceConfigurationLaunchOptions) o;
+        return java.util.Objects.equals(this.bootVolumeType, other.bootVolumeType)
+                && java.util.Objects.equals(this.firmware, other.firmware)
+                && java.util.Objects.equals(this.networkType, other.networkType)
+                && java.util.Objects.equals(this.remoteDataVolumeType, other.remoteDataVolumeType)
+                && java.util.Objects.equals(
+                        this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(
+                        this.isConsistentVolumeNamingEnabled, other.isConsistentVolumeNamingEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.bootVolumeType == null ? 43 : this.bootVolumeType.hashCode());
+        result = (result * PRIME) + (this.firmware == null ? 43 : this.firmware.hashCode());
+        result = (result * PRIME) + (this.networkType == null ? 43 : this.networkType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteDataVolumeType == null
+                                ? 43
+                                : this.remoteDataVolumeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPvEncryptionInTransitEnabled == null
+                                ? 43
+                                : this.isPvEncryptionInTransitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isConsistentVolumeNamingEnabled == null
+                                ? 43
+                                : this.isConsistentVolumeNamingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

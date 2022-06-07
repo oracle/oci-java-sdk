@@ -9,9 +9,9 @@ import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.extern.slf4j.Slf4j
 public class StreamClient implements Stream {
     /**
      * Service instance for Stream.
@@ -25,9 +25,14 @@ public class StreamClient implements Stream {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
-    private final com.oracle.bmc.http.internal.RestClient client;
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(StreamAsyncClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    private final com.oracle.bmc.http.internal.RestClient client;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;

@@ -8,7 +8,6 @@ package com.oracle.bmc.applicationmigration.model;
  * Possible source environment types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.extern.slf4j.Slf4j
 public enum SourceTypes {
     Ocic("OCIC"),
     InternalCompute("INTERNAL_COMPUTE"),
@@ -21,6 +20,9 @@ public enum SourceTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(SourceTypes.class);
 
     private final String value;
     private static java.util.Map<String, SourceTypes> map;

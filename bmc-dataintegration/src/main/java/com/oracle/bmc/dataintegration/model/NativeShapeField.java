@@ -15,14 +15,38 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NativeShapeField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NativeShapeField {
+public final class NativeShapeField {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "modelType",
+        "type",
+        "configValues",
+        "position",
+        "defaultValueString",
+        "isMandatory"
+    })
+    public NativeShapeField(
+            String name,
+            String modelType,
+            Object type,
+            ConfigValues configValues,
+            Integer position,
+            String defaultValueString,
+            Boolean isMandatory) {
+        super();
+        this.name = name;
+        this.modelType = modelType;
+        this.type = type;
+        this.configValues = configValues;
+        this.position = position;
+        this.defaultValueString = defaultValueString;
+        this.isMandatory = isMandatory;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -127,45 +151,138 @@ public class NativeShapeField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The model type reference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     /**
      * The type reference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Object type;
+    private final Object type;
+
+    public Object getType() {
+        return type;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configValues")
-    ConfigValues configValues;
+    private final ConfigValues configValues;
+
+    public ConfigValues getConfigValues() {
+        return configValues;
+    }
 
     /**
      * The position of the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
-    Integer position;
+    private final Integer position;
+
+    public Integer getPosition() {
+        return position;
+    }
 
     /**
      * The default value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValueString")
-    String defaultValueString;
+    private final String defaultValueString;
+
+    public String getDefaultValueString() {
+        return defaultValueString;
+    }
 
     /**
      * Specifies whether the field is mandatory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
-    Boolean isMandatory;
+    private final Boolean isMandatory;
+
+    public Boolean getIsMandatory() {
+        return isMandatory;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NativeShapeField(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", configValues=").append(String.valueOf(this.configValues));
+        sb.append(", position=").append(String.valueOf(this.position));
+        sb.append(", defaultValueString=").append(String.valueOf(this.defaultValueString));
+        sb.append(", isMandatory=").append(String.valueOf(this.isMandatory));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NativeShapeField)) {
+            return false;
+        }
+
+        NativeShapeField other = (NativeShapeField) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.configValues, other.configValues)
+                && java.util.Objects.equals(this.position, other.position)
+                && java.util.Objects.equals(this.defaultValueString, other.defaultValueString)
+                && java.util.Objects.equals(this.isMandatory, other.isMandatory)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
+        result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultValueString == null
+                                ? 43
+                                : this.defaultValueString.hashCode());
+        result = (result * PRIME) + (this.isMandatory == null ? 43 : this.isMandatory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

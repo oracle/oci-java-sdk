@@ -16,14 +16,35 @@ package com.oracle.bmc.dataflow.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RunLogSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RunLogSummary {
+public final class RunLogSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "runId",
+        "sizeInBytes",
+        "source",
+        "timeCreated",
+        "type"
+    })
+    public RunLogSummary(
+            String name,
+            String runId,
+            Long sizeInBytes,
+            Source source,
+            java.util.Date timeCreated,
+            Type type) {
+        super();
+        this.name = name;
+        this.runId = runId;
+        this.sizeInBytes = sizeInBytes;
+        this.source = source;
+        this.timeCreated = timeCreated;
+        this.type = type;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -111,32 +132,48 @@ public class RunLogSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the log.
      * Example: spark_driver_stderr_20190917T114000Z.log.gz
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The runId associated with the log.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("runId")
-    String runId;
+    private final String runId;
+
+    public String getRunId() {
+        return runId;
+    }
 
     /**
      * The size of the object in bytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-    Long sizeInBytes;
+    private final Long sizeInBytes;
+
+    public Long getSizeInBytes() {
+        return sizeInBytes;
+    }
+
     /**
      * The source of the log such as driver and executor.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Source {
         Application("APPLICATION"),
         Driver("DRIVER"),
@@ -147,6 +184,8 @@ public class RunLogSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Source.class);
 
         private final String value;
         private static java.util.Map<String, Source> map;
@@ -185,19 +224,27 @@ public class RunLogSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    Source source;
+    private final Source source;
+
+    public Source getSource() {
+        return source;
+    }
 
     /**
      * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The type of log such as stdout and stderr.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Stderr("STDERR"),
         Stdout("STDOUT"),
@@ -207,6 +254,8 @@ public class RunLogSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -244,8 +293,66 @@ public class RunLogSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RunLogSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", runId=").append(String.valueOf(this.runId));
+        sb.append(", sizeInBytes=").append(String.valueOf(this.sizeInBytes));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RunLogSummary)) {
+            return false;
+        }
+
+        RunLogSummary other = (RunLogSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.runId, other.runId)
+                && java.util.Objects.equals(this.sizeInBytes, other.sizeInBytes)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.runId == null ? 43 : this.runId.hashCode());
+        result = (result * PRIME) + (this.sizeInBytes == null ? 43 : this.sizeInBytes.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

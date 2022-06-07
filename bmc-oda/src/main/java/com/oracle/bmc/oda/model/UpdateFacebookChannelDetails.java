@@ -15,22 +15,17 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateFacebookChannelDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateFacebookChannelDetails extends UpdateChannelDetails {
+public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -138,6 +133,10 @@ public class UpdateFacebookChannelDetails extends UpdateChannelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateFacebookChannelDetails(
             String description,
@@ -157,20 +156,81 @@ public class UpdateFacebookChannelDetails extends UpdateChannelDetails {
      * The app secret for your Facebook app.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("appSecret")
-    String appSecret;
+    private final String appSecret;
+
+    public String getAppSecret() {
+        return appSecret;
+    }
 
     /**
      * The page access token that you generated for your Facebook page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageAccessToken")
-    String pageAccessToken;
+    private final String pageAccessToken;
+
+    public String getPageAccessToken() {
+        return pageAccessToken;
+    }
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
-    String botId;
+    private final String botId;
+
+    public String getBotId() {
+        return botId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateFacebookChannelDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", appSecret=").append(String.valueOf(this.appSecret));
+        sb.append(", pageAccessToken=").append(String.valueOf(this.pageAccessToken));
+        sb.append(", botId=").append(String.valueOf(this.botId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateFacebookChannelDetails)) {
+            return false;
+        }
+
+        UpdateFacebookChannelDetails other = (UpdateFacebookChannelDetails) o;
+        return java.util.Objects.equals(this.appSecret, other.appSecret)
+                && java.util.Objects.equals(this.pageAccessToken, other.pageAccessToken)
+                && java.util.Objects.equals(this.botId, other.botId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.appSecret == null ? 43 : this.appSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pageAccessToken == null ? 43 : this.pageAccessToken.hashCode());
+        result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

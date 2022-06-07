@@ -15,16 +15,34 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PhaseOneConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PhaseOneConfigDetails {
+public final class PhaseOneConfigDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isCustomPhaseOneConfig",
+        "authenticationAlgorithm",
+        "encryptionAlgorithm",
+        "diffieHelmanGroup",
+        "lifetimeInSeconds"
+    })
+    public PhaseOneConfigDetails(
+            Boolean isCustomPhaseOneConfig,
+            AuthenticationAlgorithm authenticationAlgorithm,
+            EncryptionAlgorithm encryptionAlgorithm,
+            DiffieHelmanGroup diffieHelmanGroup,
+            Integer lifetimeInSeconds) {
+        super();
+        this.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
+        this.authenticationAlgorithm = authenticationAlgorithm;
+        this.encryptionAlgorithm = encryptionAlgorithm;
+        this.diffieHelmanGroup = diffieHelmanGroup;
+        this.lifetimeInSeconds = lifetimeInSeconds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseOneConfig")
         private Boolean isCustomPhaseOneConfig;
@@ -107,11 +125,20 @@ public class PhaseOneConfigDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates whether custom configuration is enabled for phase one options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseOneConfig")
-    Boolean isCustomPhaseOneConfig;
+    private final Boolean isCustomPhaseOneConfig;
+
+    public Boolean getIsCustomPhaseOneConfig() {
+        return isCustomPhaseOneConfig;
+    }
+
     /**
      * The custom authentication algorithm proposed during phase one tunnel negotiation.
      *
@@ -154,7 +181,12 @@ public class PhaseOneConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
-    AuthenticationAlgorithm authenticationAlgorithm;
+    private final AuthenticationAlgorithm authenticationAlgorithm;
+
+    public AuthenticationAlgorithm getAuthenticationAlgorithm() {
+        return authenticationAlgorithm;
+    }
+
     /**
      * The custom encryption algorithm proposed during phase one tunnel negotiation.
      *
@@ -197,7 +229,12 @@ public class PhaseOneConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
-    EncryptionAlgorithm encryptionAlgorithm;
+    private final EncryptionAlgorithm encryptionAlgorithm;
+
+    public EncryptionAlgorithm getEncryptionAlgorithm() {
+        return encryptionAlgorithm;
+    }
+
     /**
      * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
      *
@@ -243,15 +280,92 @@ public class PhaseOneConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diffieHelmanGroup")
-    DiffieHelmanGroup diffieHelmanGroup;
+    private final DiffieHelmanGroup diffieHelmanGroup;
+
+    public DiffieHelmanGroup getDiffieHelmanGroup() {
+        return diffieHelmanGroup;
+    }
 
     /**
      * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
-    Integer lifetimeInSeconds;
+    private final Integer lifetimeInSeconds;
+
+    public Integer getLifetimeInSeconds() {
+        return lifetimeInSeconds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PhaseOneConfigDetails(");
+        sb.append("isCustomPhaseOneConfig=").append(String.valueOf(this.isCustomPhaseOneConfig));
+        sb.append(", authenticationAlgorithm=")
+                .append(String.valueOf(this.authenticationAlgorithm));
+        sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
+        sb.append(", diffieHelmanGroup=").append(String.valueOf(this.diffieHelmanGroup));
+        sb.append(", lifetimeInSeconds=").append(String.valueOf(this.lifetimeInSeconds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PhaseOneConfigDetails)) {
+            return false;
+        }
+
+        PhaseOneConfigDetails other = (PhaseOneConfigDetails) o;
+        return java.util.Objects.equals(this.isCustomPhaseOneConfig, other.isCustomPhaseOneConfig)
+                && java.util.Objects.equals(
+                        this.authenticationAlgorithm, other.authenticationAlgorithm)
+                && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
+                && java.util.Objects.equals(this.diffieHelmanGroup, other.diffieHelmanGroup)
+                && java.util.Objects.equals(this.lifetimeInSeconds, other.lifetimeInSeconds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isCustomPhaseOneConfig == null
+                                ? 43
+                                : this.isCustomPhaseOneConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationAlgorithm == null
+                                ? 43
+                                : this.authenticationAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionAlgorithm == null
+                                ? 43
+                                : this.encryptionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diffieHelmanGroup == null ? 43 : this.diffieHelmanGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifetimeInSeconds == null ? 43 : this.lifetimeInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

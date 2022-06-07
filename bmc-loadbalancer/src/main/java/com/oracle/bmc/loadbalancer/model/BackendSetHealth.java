@@ -19,14 +19,32 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackendSetHealth.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackendSetHealth {
+public final class BackendSetHealth {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "status",
+        "warningStateBackendNames",
+        "criticalStateBackendNames",
+        "unknownStateBackendNames",
+        "totalBackendCount"
+    })
+    public BackendSetHealth(
+            Status status,
+            java.util.List<String> warningStateBackendNames,
+            java.util.List<String> criticalStateBackendNames,
+            java.util.List<String> unknownStateBackendNames,
+            Integer totalBackendCount) {
+        super();
+        this.status = status;
+        this.warningStateBackendNames = warningStateBackendNames;
+        this.criticalStateBackendNames = criticalStateBackendNames;
+        this.unknownStateBackendNames = unknownStateBackendNames;
+        this.totalBackendCount = totalBackendCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
@@ -109,6 +127,10 @@ public class BackendSetHealth {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Overall health status of the backend set.
      * <p>
@@ -123,7 +145,6 @@ public class BackendSetHealth {
      * unable to retrieve metrics, or the backend set does not have a listener attached.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Ok("OK"),
         Warning("WARNING"),
@@ -135,6 +156,8 @@ public class BackendSetHealth {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -183,7 +206,11 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * A list of backend servers that are currently in the {@code WARNING} health state. The list identifies each backend server by
@@ -193,7 +220,11 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendNames")
-    java.util.List<String> warningStateBackendNames;
+    private final java.util.List<String> warningStateBackendNames;
+
+    public java.util.List<String> getWarningStateBackendNames() {
+        return warningStateBackendNames;
+    }
 
     /**
      * A list of backend servers that are currently in the {@code CRITICAL} health state. The list identifies each backend server by
@@ -203,7 +234,11 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendNames")
-    java.util.List<String> criticalStateBackendNames;
+    private final java.util.List<String> criticalStateBackendNames;
+
+    public java.util.List<String> getCriticalStateBackendNames() {
+        return criticalStateBackendNames;
+    }
 
     /**
      * A list of backend servers that are currently in the {@code UNKNOWN} health state. The list identifies each backend server by
@@ -213,7 +248,11 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendNames")
-    java.util.List<String> unknownStateBackendNames;
+    private final java.util.List<String> unknownStateBackendNames;
+
+    public java.util.List<String> getUnknownStateBackendNames() {
+        return unknownStateBackendNames;
+    }
 
     /**
      * The total number of backend servers in this backend set.
@@ -222,8 +261,83 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalBackendCount")
-    Integer totalBackendCount;
+    private final Integer totalBackendCount;
+
+    public Integer getTotalBackendCount() {
+        return totalBackendCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackendSetHealth(");
+        sb.append("status=").append(String.valueOf(this.status));
+        sb.append(", warningStateBackendNames=")
+                .append(String.valueOf(this.warningStateBackendNames));
+        sb.append(", criticalStateBackendNames=")
+                .append(String.valueOf(this.criticalStateBackendNames));
+        sb.append(", unknownStateBackendNames=")
+                .append(String.valueOf(this.unknownStateBackendNames));
+        sb.append(", totalBackendCount=").append(String.valueOf(this.totalBackendCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackendSetHealth)) {
+            return false;
+        }
+
+        BackendSetHealth other = (BackendSetHealth) o;
+        return java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(
+                        this.warningStateBackendNames, other.warningStateBackendNames)
+                && java.util.Objects.equals(
+                        this.criticalStateBackendNames, other.criticalStateBackendNames)
+                && java.util.Objects.equals(
+                        this.unknownStateBackendNames, other.unknownStateBackendNames)
+                && java.util.Objects.equals(this.totalBackendCount, other.totalBackendCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.warningStateBackendNames == null
+                                ? 43
+                                : this.warningStateBackendNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.criticalStateBackendNames == null
+                                ? 43
+                                : this.criticalStateBackendNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unknownStateBackendNames == null
+                                ? 43
+                                : this.unknownStateBackendNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalBackendCount == null ? 43 : this.totalBackendCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

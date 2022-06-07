@@ -15,16 +15,22 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PrivateEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PrivateEndpointDetails {
+public final class PrivateEndpointDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"subnetId", "privateEndpointIp", "nsgIds"})
+    public PrivateEndpointDetails(
+            String subnetId, String privateEndpointIp, java.util.List<String> nsgIds) {
+        super();
+        this.subnetId = subnetId;
+        this.privateEndpointIp = privateEndpointIp;
+        this.nsgIds = nsgIds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
@@ -82,6 +88,10 @@ public class PrivateEndpointDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * If specified, the stream pool will be private and only accessible from inside that subnet.
      * Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet.
@@ -89,7 +99,11 @@ public class PrivateEndpointDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The optional private IP you want to be associated with your private stream pool.
@@ -101,7 +115,11 @@ public class PrivateEndpointDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
-    String privateEndpointIp;
+    private final String privateEndpointIp;
+
+    public String getPrivateEndpointIp() {
+        return privateEndpointIp;
+    }
 
     /**
      * The optional list of network security groups to be used with the private endpoint of the stream pool.
@@ -109,8 +127,59 @@ public class PrivateEndpointDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PrivateEndpointDetails(");
+        sb.append("subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PrivateEndpointDetails)) {
+            return false;
+        }
+
+        PrivateEndpointDetails other = (PrivateEndpointDetails) o;
+        return java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

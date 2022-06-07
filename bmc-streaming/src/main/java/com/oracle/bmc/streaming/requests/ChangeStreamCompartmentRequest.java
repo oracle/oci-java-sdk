@@ -9,14 +9,6 @@ import com.oracle.bmc.streaming.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeStreamCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeStreamCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails> {
@@ -27,23 +19,37 @@ public class ChangeStreamCompartmentRequest
      */
     private String streamId;
 
+    public String getStreamId() {
+        return streamId;
+    }
     /**
      * The stream will be moved into the compartment specified within this entity.
      */
     private com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails
             changeStreamCompartmentDetails;
 
+    public com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails
+            getChangeStreamCompartmentDetails() {
+        return changeStreamCompartmentDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -62,6 +68,56 @@ public class ChangeStreamCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String streamId = null;
+
+        /**
+         * The OCID of the stream.
+         *
+         * @return this builder instance
+         */
+        public Builder streamId(String streamId) {
+            this.streamId = streamId;
+            return this;
+        }
+
+        private com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails
+                changeStreamCompartmentDetails = null;
+
+        /**
+         * The stream will be moved into the compartment specified within this entity.
+         * @return this builder instance
+         */
+        public Builder changeStreamCompartmentDetails(
+                com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails
+                        changeStreamCompartmentDetails) {
+            this.changeStreamCompartmentDetails = changeStreamCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -127,5 +183,85 @@ public class ChangeStreamCompartmentRequest
             changeStreamCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeStreamCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeStreamCompartmentRequest
+         */
+        public ChangeStreamCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeStreamCompartmentRequest request = new ChangeStreamCompartmentRequest();
+            request.streamId = streamId;
+            request.changeStreamCompartmentDetails = changeStreamCompartmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ChangeStreamCompartmentRequest(streamId, changeStreamCompartmentDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .streamId(streamId)
+                .changeStreamCompartmentDetails(changeStreamCompartmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",streamId=").append(String.valueOf(this.streamId));
+        sb.append(",changeStreamCompartmentDetails=")
+                .append(String.valueOf(this.changeStreamCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeStreamCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeStreamCompartmentRequest other = (ChangeStreamCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.streamId, other.streamId)
+                && java.util.Objects.equals(
+                        this.changeStreamCompartmentDetails, other.changeStreamCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeStreamCompartmentDetails == null
+                                ? 43
+                                : this.changeStreamCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

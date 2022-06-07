@@ -16,16 +16,22 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningTaskPlanStats.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningTaskPlanStats {
+public final class SqlTuningTaskPlanStats {
+    @Deprecated
+    @java.beans.ConstructorProperties({"planType", "planStats", "planStatus"})
+    public SqlTuningTaskPlanStats(
+            String planType, java.util.Map<String, Double> planStats, PlanStatus planStatus) {
+        super();
+        this.planType = planType;
+        this.planStats = planStats;
+        this.planStatus = planStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("planType")
         private String planType;
@@ -83,11 +89,19 @@ public class SqlTuningTaskPlanStats {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of the original or modified plan with profile, index, and so on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planType")
-    String planType;
+    private final String planType;
+
+    public String getPlanType() {
+        return planType;
+    }
 
     /**
      * A map contains the statistics for the SQL execution using the plan.
@@ -95,12 +109,16 @@ public class SqlTuningTaskPlanStats {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planStats")
-    java.util.Map<String, Double> planStats;
+    private final java.util.Map<String, Double> planStats;
+
+    public java.util.Map<String, Double> getPlanStats() {
+        return planStats;
+    }
+
     /**
      * The status of the execution using the plan.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PlanStatus {
         Complete("COMPLETE"),
         Partial("PARTIAL"),
@@ -110,6 +128,9 @@ public class SqlTuningTaskPlanStats {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlanStatus.class);
 
         private final String value;
         private static java.util.Map<String, PlanStatus> map;
@@ -148,8 +169,57 @@ public class SqlTuningTaskPlanStats {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planStatus")
-    PlanStatus planStatus;
+    private final PlanStatus planStatus;
+
+    public PlanStatus getPlanStatus() {
+        return planStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningTaskPlanStats(");
+        sb.append("planType=").append(String.valueOf(this.planType));
+        sb.append(", planStats=").append(String.valueOf(this.planStats));
+        sb.append(", planStatus=").append(String.valueOf(this.planStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningTaskPlanStats)) {
+            return false;
+        }
+
+        SqlTuningTaskPlanStats other = (SqlTuningTaskPlanStats) o;
+        return java.util.Objects.equals(this.planType, other.planType)
+                && java.util.Objects.equals(this.planStats, other.planStats)
+                && java.util.Objects.equals(this.planStatus, other.planStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.planType == null ? 43 : this.planType.hashCode());
+        result = (result * PRIME) + (this.planStats == null ? 43 : this.planStats.hashCode());
+        result = (result * PRIME) + (this.planStatus == null ? 43 : this.planStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

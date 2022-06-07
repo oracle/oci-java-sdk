@@ -15,14 +15,95 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ManagedInstance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagedInstance {
+public final class ManagedInstance {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "id",
+        "description",
+        "lastCheckin",
+        "lastBoot",
+        "updatesAvailable",
+        "osName",
+        "osVersion",
+        "osKernelVersion",
+        "compartmentId",
+        "status",
+        "parentSoftwareSource",
+        "childSoftwareSources",
+        "managedInstanceGroups",
+        "osFamily",
+        "isRebootRequired",
+        "notificationTopicId",
+        "kspliceEffectiveKernelVersion",
+        "isDataCollectionAuthorized",
+        "autonomous",
+        "securityUpdatesAvailable",
+        "bugUpdatesAvailable",
+        "enhancementUpdatesAvailable",
+        "otherUpdatesAvailable",
+        "scheduledJobCount",
+        "workRequestCount"
+    })
+    public ManagedInstance(
+            String displayName,
+            String id,
+            String description,
+            String lastCheckin,
+            String lastBoot,
+            Integer updatesAvailable,
+            String osName,
+            String osVersion,
+            String osKernelVersion,
+            String compartmentId,
+            Status status,
+            SoftwareSourceId parentSoftwareSource,
+            java.util.List<SoftwareSourceId> childSoftwareSources,
+            java.util.List<Id> managedInstanceGroups,
+            OsFamilies osFamily,
+            Boolean isRebootRequired,
+            String notificationTopicId,
+            String kspliceEffectiveKernelVersion,
+            Boolean isDataCollectionAuthorized,
+            AutonomousSettings autonomous,
+            Integer securityUpdatesAvailable,
+            Integer bugUpdatesAvailable,
+            Integer enhancementUpdatesAvailable,
+            Integer otherUpdatesAvailable,
+            Integer scheduledJobCount,
+            Integer workRequestCount) {
+        super();
+        this.displayName = displayName;
+        this.id = id;
+        this.description = description;
+        this.lastCheckin = lastCheckin;
+        this.lastBoot = lastBoot;
+        this.updatesAvailable = updatesAvailable;
+        this.osName = osName;
+        this.osVersion = osVersion;
+        this.osKernelVersion = osKernelVersion;
+        this.compartmentId = compartmentId;
+        this.status = status;
+        this.parentSoftwareSource = parentSoftwareSource;
+        this.childSoftwareSources = childSoftwareSources;
+        this.managedInstanceGroups = managedInstanceGroups;
+        this.osFamily = osFamily;
+        this.isRebootRequired = isRebootRequired;
+        this.notificationTopicId = notificationTopicId;
+        this.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
+        this.isDataCollectionAuthorized = isDataCollectionAuthorized;
+        this.autonomous = autonomous;
+        this.securityUpdatesAvailable = securityUpdatesAvailable;
+        this.bugUpdatesAvailable = bugUpdatesAvailable;
+        this.enhancementUpdatesAvailable = enhancementUpdatesAvailable;
+        this.otherUpdatesAvailable = otherUpdatesAvailable;
+        this.scheduledJobCount = scheduledJobCount;
+        this.workRequestCount = workRequestCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -336,69 +417,113 @@ public class ManagedInstance {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Managed Instance identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * OCID for the managed instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Information specified by the user about the managed instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Time at which the instance last checked in
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastCheckin")
-    String lastCheckin;
+    private final String lastCheckin;
+
+    public String getLastCheckin() {
+        return lastCheckin;
+    }
 
     /**
      * Time at which the instance last booted
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastBoot")
-    String lastBoot;
+    private final String lastBoot;
+
+    public String getLastBoot() {
+        return lastBoot;
+    }
 
     /**
      * Number of updates available to be installed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
-    Integer updatesAvailable;
+    private final Integer updatesAvailable;
+
+    public Integer getUpdatesAvailable() {
+        return updatesAvailable;
+    }
 
     /**
      * Operating System Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osName")
-    String osName;
+    private final String osName;
+
+    public String getOsName() {
+        return osName;
+    }
 
     /**
      * Operating System Version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
-    String osVersion;
+    private final String osVersion;
+
+    public String getOsVersion() {
+        return osVersion;
+    }
 
     /**
      * Operating System Kernel Version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
-    String osKernelVersion;
+    private final String osKernelVersion;
+
+    public String getOsKernelVersion() {
+        return osKernelVersion;
+    }
 
     /**
      * OCID for the Compartment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * status of the managed instance.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Normal("NORMAL"),
         Unreachable("UNREACHABLE"),
@@ -410,6 +535,8 @@ public class ManagedInstance {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -447,19 +574,31 @@ public class ManagedInstance {
      * status of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * the parent (base) Software Source attached to the Managed Instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentSoftwareSource")
-    SoftwareSourceId parentSoftwareSource;
+    private final SoftwareSourceId parentSoftwareSource;
+
+    public SoftwareSourceId getParentSoftwareSource() {
+        return parentSoftwareSource;
+    }
 
     /**
      * list of child Software Sources attached to the Managed Instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("childSoftwareSources")
-    java.util.List<SoftwareSourceId> childSoftwareSources;
+    private final java.util.List<SoftwareSourceId> childSoftwareSources;
+
+    public java.util.List<SoftwareSourceId> getChildSoftwareSources() {
+        return childSoftwareSources;
+    }
 
     /**
      * The ids of the managed instance groups of which this instance is a
@@ -467,80 +606,306 @@ public class ManagedInstance {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroups")
-    java.util.List<Id> managedInstanceGroups;
+    private final java.util.List<Id> managedInstanceGroups;
+
+    public java.util.List<Id> getManagedInstanceGroups() {
+        return managedInstanceGroups;
+    }
 
     /**
      * The Operating System type of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
-    OsFamilies osFamily;
+    private final OsFamilies osFamily;
+
+    public OsFamilies getOsFamily() {
+        return osFamily;
+    }
 
     /**
      * Indicates whether a reboot is required to complete installation of updates.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
-    Boolean isRebootRequired;
+    private final Boolean isRebootRequired;
+
+    public Boolean getIsRebootRequired() {
+        return isRebootRequired;
+    }
 
     /**
      * OCID of the ONS topic used to send notification to users
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
-    String notificationTopicId;
+    private final String notificationTopicId;
+
+    public String getNotificationTopicId() {
+        return notificationTopicId;
+    }
 
     /**
      * The ksplice effective kernel version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
-    String kspliceEffectiveKernelVersion;
+    private final String kspliceEffectiveKernelVersion;
+
+    public String getKspliceEffectiveKernelVersion() {
+        return kspliceEffectiveKernelVersion;
+    }
 
     /**
      * True if user allow data collection for this instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
-    Boolean isDataCollectionAuthorized;
+    private final Boolean isDataCollectionAuthorized;
+
+    public Boolean getIsDataCollectionAuthorized() {
+        return isDataCollectionAuthorized;
+    }
 
     /**
      * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomous")
-    AutonomousSettings autonomous;
+    private final AutonomousSettings autonomous;
+
+    public AutonomousSettings getAutonomous() {
+        return autonomous;
+    }
 
     /**
      * Number of security type updates available to be installed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityUpdatesAvailable")
-    Integer securityUpdatesAvailable;
+    private final Integer securityUpdatesAvailable;
+
+    public Integer getSecurityUpdatesAvailable() {
+        return securityUpdatesAvailable;
+    }
 
     /**
      * Number of bug fix type updates available to be installed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bugUpdatesAvailable")
-    Integer bugUpdatesAvailable;
+    private final Integer bugUpdatesAvailable;
+
+    public Integer getBugUpdatesAvailable() {
+        return bugUpdatesAvailable;
+    }
 
     /**
      * Number of enhancement type updates available to be installed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enhancementUpdatesAvailable")
-    Integer enhancementUpdatesAvailable;
+    private final Integer enhancementUpdatesAvailable;
+
+    public Integer getEnhancementUpdatesAvailable() {
+        return enhancementUpdatesAvailable;
+    }
 
     /**
      * Number of non-classified updates available to be installed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherUpdatesAvailable")
-    Integer otherUpdatesAvailable;
+    private final Integer otherUpdatesAvailable;
+
+    public Integer getOtherUpdatesAvailable() {
+        return otherUpdatesAvailable;
+    }
 
     /**
      * Number of scheduled jobs associated with this instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobCount")
-    Integer scheduledJobCount;
+    private final Integer scheduledJobCount;
+
+    public Integer getScheduledJobCount() {
+        return scheduledJobCount;
+    }
 
     /**
      * Number of work requests associated with this instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestCount")
-    Integer workRequestCount;
+    private final Integer workRequestCount;
+
+    public Integer getWorkRequestCount() {
+        return workRequestCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagedInstance(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", lastCheckin=").append(String.valueOf(this.lastCheckin));
+        sb.append(", lastBoot=").append(String.valueOf(this.lastBoot));
+        sb.append(", updatesAvailable=").append(String.valueOf(this.updatesAvailable));
+        sb.append(", osName=").append(String.valueOf(this.osName));
+        sb.append(", osVersion=").append(String.valueOf(this.osVersion));
+        sb.append(", osKernelVersion=").append(String.valueOf(this.osKernelVersion));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", parentSoftwareSource=").append(String.valueOf(this.parentSoftwareSource));
+        sb.append(", childSoftwareSources=").append(String.valueOf(this.childSoftwareSources));
+        sb.append(", managedInstanceGroups=").append(String.valueOf(this.managedInstanceGroups));
+        sb.append(", osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(", isRebootRequired=").append(String.valueOf(this.isRebootRequired));
+        sb.append(", notificationTopicId=").append(String.valueOf(this.notificationTopicId));
+        sb.append(", kspliceEffectiveKernelVersion=")
+                .append(String.valueOf(this.kspliceEffectiveKernelVersion));
+        sb.append(", isDataCollectionAuthorized=")
+                .append(String.valueOf(this.isDataCollectionAuthorized));
+        sb.append(", autonomous=").append(String.valueOf(this.autonomous));
+        sb.append(", securityUpdatesAvailable=")
+                .append(String.valueOf(this.securityUpdatesAvailable));
+        sb.append(", bugUpdatesAvailable=").append(String.valueOf(this.bugUpdatesAvailable));
+        sb.append(", enhancementUpdatesAvailable=")
+                .append(String.valueOf(this.enhancementUpdatesAvailable));
+        sb.append(", otherUpdatesAvailable=").append(String.valueOf(this.otherUpdatesAvailable));
+        sb.append(", scheduledJobCount=").append(String.valueOf(this.scheduledJobCount));
+        sb.append(", workRequestCount=").append(String.valueOf(this.workRequestCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagedInstance)) {
+            return false;
+        }
+
+        ManagedInstance other = (ManagedInstance) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.lastCheckin, other.lastCheckin)
+                && java.util.Objects.equals(this.lastBoot, other.lastBoot)
+                && java.util.Objects.equals(this.updatesAvailable, other.updatesAvailable)
+                && java.util.Objects.equals(this.osName, other.osName)
+                && java.util.Objects.equals(this.osVersion, other.osVersion)
+                && java.util.Objects.equals(this.osKernelVersion, other.osKernelVersion)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.parentSoftwareSource, other.parentSoftwareSource)
+                && java.util.Objects.equals(this.childSoftwareSources, other.childSoftwareSources)
+                && java.util.Objects.equals(this.managedInstanceGroups, other.managedInstanceGroups)
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.isRebootRequired, other.isRebootRequired)
+                && java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
+                && java.util.Objects.equals(
+                        this.kspliceEffectiveKernelVersion, other.kspliceEffectiveKernelVersion)
+                && java.util.Objects.equals(
+                        this.isDataCollectionAuthorized, other.isDataCollectionAuthorized)
+                && java.util.Objects.equals(this.autonomous, other.autonomous)
+                && java.util.Objects.equals(
+                        this.securityUpdatesAvailable, other.securityUpdatesAvailable)
+                && java.util.Objects.equals(this.bugUpdatesAvailable, other.bugUpdatesAvailable)
+                && java.util.Objects.equals(
+                        this.enhancementUpdatesAvailable, other.enhancementUpdatesAvailable)
+                && java.util.Objects.equals(this.otherUpdatesAvailable, other.otherUpdatesAvailable)
+                && java.util.Objects.equals(this.scheduledJobCount, other.scheduledJobCount)
+                && java.util.Objects.equals(this.workRequestCount, other.workRequestCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.lastCheckin == null ? 43 : this.lastCheckin.hashCode());
+        result = (result * PRIME) + (this.lastBoot == null ? 43 : this.lastBoot.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updatesAvailable == null ? 43 : this.updatesAvailable.hashCode());
+        result = (result * PRIME) + (this.osName == null ? 43 : this.osName.hashCode());
+        result = (result * PRIME) + (this.osVersion == null ? 43 : this.osVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.osKernelVersion == null ? 43 : this.osKernelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentSoftwareSource == null
+                                ? 43
+                                : this.parentSoftwareSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.childSoftwareSources == null
+                                ? 43
+                                : this.childSoftwareSources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceGroups == null
+                                ? 43
+                                : this.managedInstanceGroups.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRebootRequired == null ? 43 : this.isRebootRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationTopicId == null
+                                ? 43
+                                : this.notificationTopicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kspliceEffectiveKernelVersion == null
+                                ? 43
+                                : this.kspliceEffectiveKernelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataCollectionAuthorized == null
+                                ? 43
+                                : this.isDataCollectionAuthorized.hashCode());
+        result = (result * PRIME) + (this.autonomous == null ? 43 : this.autonomous.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityUpdatesAvailable == null
+                                ? 43
+                                : this.securityUpdatesAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bugUpdatesAvailable == null
+                                ? 43
+                                : this.bugUpdatesAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enhancementUpdatesAvailable == null
+                                ? 43
+                                : this.enhancementUpdatesAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.otherUpdatesAvailable == null
+                                ? 43
+                                : this.otherUpdatesAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledJobCount == null ? 43 : this.scheduledJobCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestCount == null ? 43 : this.workRequestCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

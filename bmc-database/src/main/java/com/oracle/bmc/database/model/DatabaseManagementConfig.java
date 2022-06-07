@@ -15,16 +15,28 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseManagementConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseManagementConfig {
+public final class DatabaseManagementConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "databaseManagementStatus",
+        "databaseManagementConnectionId",
+        "licenseModel"
+    })
+    public DatabaseManagementConfig(
+            DatabaseManagementStatus databaseManagementStatus,
+            String databaseManagementConnectionId,
+            LicenseModel licenseModel) {
+        super();
+        this.databaseManagementStatus = databaseManagementStatus;
+        this.databaseManagementConnectionId = databaseManagementConnectionId;
+        this.licenseModel = licenseModel;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
         private DatabaseManagementStatus databaseManagementStatus;
@@ -83,10 +95,13 @@ public class DatabaseManagementConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The status of the Database Management service.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DatabaseManagementStatus {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -100,6 +115,9 @@ public class DatabaseManagementConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseManagementStatus.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseManagementStatus> map;
@@ -137,7 +155,11 @@ public class DatabaseManagementConfig {
      * The status of the Database Management service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
-    DatabaseManagementStatus databaseManagementStatus;
+    private final DatabaseManagementStatus databaseManagementStatus;
+
+    public DatabaseManagementStatus getDatabaseManagementStatus() {
+        return databaseManagementStatus;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
@@ -145,12 +167,16 @@ public class DatabaseManagementConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConnectionId")
-    String databaseManagementConnectionId;
+    private final String databaseManagementConnectionId;
+
+    public String getDatabaseManagementConnectionId() {
+        return databaseManagementConnectionId;
+    }
+
     /**
      * The Oracle license model that applies to the external database.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
@@ -160,6 +186,9 @@ public class DatabaseManagementConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LicenseModel.class);
 
         private final String value;
         private static java.util.Map<String, LicenseModel> map;
@@ -198,8 +227,69 @@ public class DatabaseManagementConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseManagementConfig(");
+        sb.append("databaseManagementStatus=")
+                .append(String.valueOf(this.databaseManagementStatus));
+        sb.append(", databaseManagementConnectionId=")
+                .append(String.valueOf(this.databaseManagementConnectionId));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseManagementConfig)) {
+            return false;
+        }
+
+        DatabaseManagementConfig other = (DatabaseManagementConfig) o;
+        return java.util.Objects.equals(
+                        this.databaseManagementStatus, other.databaseManagementStatus)
+                && java.util.Objects.equals(
+                        this.databaseManagementConnectionId, other.databaseManagementConnectionId)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.databaseManagementStatus == null
+                                ? 43
+                                : this.databaseManagementStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagementConnectionId == null
+                                ? 43
+                                : this.databaseManagementConnectionId.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

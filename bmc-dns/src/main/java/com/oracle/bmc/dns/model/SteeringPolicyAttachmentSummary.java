@@ -15,16 +15,49 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SteeringPolicyAttachmentSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SteeringPolicyAttachmentSummary {
+public final class SteeringPolicyAttachmentSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "steeringPolicyId",
+        "zoneId",
+        "domainName",
+        "displayName",
+        "rtypes",
+        "compartmentId",
+        "self",
+        "id",
+        "timeCreated",
+        "lifecycleState"
+    })
+    public SteeringPolicyAttachmentSummary(
+            String steeringPolicyId,
+            String zoneId,
+            String domainName,
+            String displayName,
+            java.util.List<String> rtypes,
+            String compartmentId,
+            String self,
+            String id,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState) {
+        super();
+        this.steeringPolicyId = steeringPolicyId;
+        this.zoneId = zoneId;
+        this.domainName = domainName;
+        this.displayName = displayName;
+        this.rtypes = rtypes;
+        this.compartmentId = compartmentId;
+        this.self = self;
+        this.id = id;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("steeringPolicyId")
         private String steeringPolicyId;
@@ -162,23 +195,39 @@ public class SteeringPolicyAttachmentSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the attached steering policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("steeringPolicyId")
-    String steeringPolicyId;
+    private final String steeringPolicyId;
+
+    public String getSteeringPolicyId() {
+        return steeringPolicyId;
+    }
 
     /**
      * The OCID of the attached zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
-    String zoneId;
+    private final String zoneId;
+
+    public String getZoneId() {
+        return zoneId;
+    }
 
     /**
      * The attached domain within the attached zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
-    String domainName;
+    private final String domainName;
+
+    public String getDomainName() {
+        return domainName;
+    }
 
     /**
      * A user-friendly name for the steering policy attachment.
@@ -187,7 +236,11 @@ public class SteeringPolicyAttachmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The record types covered by the attachment at the domain. The set of record types is
@@ -196,25 +249,41 @@ public class SteeringPolicyAttachmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rtypes")
-    java.util.List<String> rtypes;
+    private final java.util.List<String> rtypes;
+
+    public java.util.List<String> getRtypes() {
+        return rtypes;
+    }
 
     /**
      * The OCID of the compartment containing the steering policy attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The canonical absolute URL of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("self")
-    String self;
+    private final String self;
+
+    public String getSelf() {
+        return self;
+    }
 
     /**
      * The OCID of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
@@ -223,11 +292,15 @@ public class SteeringPolicyAttachmentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The current state of the resource.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -238,6 +311,9 @@ public class SteeringPolicyAttachmentSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -275,8 +351,84 @@ public class SteeringPolicyAttachmentSummary {
      * The current state of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SteeringPolicyAttachmentSummary(");
+        sb.append("steeringPolicyId=").append(String.valueOf(this.steeringPolicyId));
+        sb.append(", zoneId=").append(String.valueOf(this.zoneId));
+        sb.append(", domainName=").append(String.valueOf(this.domainName));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", rtypes=").append(String.valueOf(this.rtypes));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", self=").append(String.valueOf(this.self));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SteeringPolicyAttachmentSummary)) {
+            return false;
+        }
+
+        SteeringPolicyAttachmentSummary other = (SteeringPolicyAttachmentSummary) o;
+        return java.util.Objects.equals(this.steeringPolicyId, other.steeringPolicyId)
+                && java.util.Objects.equals(this.zoneId, other.zoneId)
+                && java.util.Objects.equals(this.domainName, other.domainName)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.rtypes, other.rtypes)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.self, other.self)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.steeringPolicyId == null ? 43 : this.steeringPolicyId.hashCode());
+        result = (result * PRIME) + (this.zoneId == null ? 43 : this.zoneId.hashCode());
+        result = (result * PRIME) + (this.domainName == null ? 43 : this.domainName.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.rtypes == null ? 43 : this.rtypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.self == null ? 43 : this.self.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

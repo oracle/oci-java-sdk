@@ -8,7 +8,6 @@ package com.oracle.bmc.applicationmigration.model;
  * Migration process state
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.extern.slf4j.Slf4j
 public enum MigrationStates {
     DiscoveringApplication("DISCOVERING_APPLICATION"),
     DiscoveryFailed("DISCOVERY_FAILED"),
@@ -23,6 +22,9 @@ public enum MigrationStates {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MigrationStates.class);
 
     private final String value;
     private static java.util.Map<String, MigrationStates> map;

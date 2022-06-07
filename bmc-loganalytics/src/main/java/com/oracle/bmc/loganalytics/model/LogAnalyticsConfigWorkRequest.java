@@ -15,16 +15,46 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsConfigWorkRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsConfigWorkRequest {
+public final class LogAnalyticsConfigWorkRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "operationType",
+        "payload",
+        "percentComplete",
+        "timeStarted",
+        "timeAccepted",
+        "timeFinished",
+        "lifecycleState"
+    })
+    public LogAnalyticsConfigWorkRequest(
+            String id,
+            String compartmentId,
+            OperationType operationType,
+            java.util.List<LogAnalyticsConfigWorkRequestPayload> payload,
+            Long percentComplete,
+            java.util.Date timeStarted,
+            java.util.Date timeAccepted,
+            java.util.Date timeFinished,
+            LifecycleState lifecycleState) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.operationType = operationType;
+        this.payload = payload;
+        this.percentComplete = percentComplete;
+        this.timeStarted = timeStarted;
+        this.timeAccepted = timeAccepted;
+        this.timeFinished = timeFinished;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -151,24 +181,36 @@ public class LogAnalyticsConfigWorkRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The workrequest unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The compartment unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * The operation type.  There are two classes of operations, association operations and
      * lookup operations.  Associations may be created or deleted, and lookup operations include
      * append, update and delete.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OperationType {
         CreateAssociations("CREATE_ASSOCIATIONS"),
         DeleteAssociations("DELETE_ASSOCIATIONS"),
@@ -181,6 +223,9 @@ public class LogAnalyticsConfigWorkRequest {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OperationType.class);
 
         private final String value;
         private static java.util.Map<String, OperationType> map;
@@ -221,43 +266,67 @@ public class LogAnalyticsConfigWorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
-    OperationType operationType;
+    private final OperationType operationType;
+
+    public OperationType getOperationType() {
+        return operationType;
+    }
 
     /**
      * The list of config work request responses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
-    java.util.List<LogAnalyticsConfigWorkRequestPayload> payload;
+    private final java.util.List<LogAnalyticsConfigWorkRequestPayload> payload;
+
+    public java.util.List<LogAnalyticsConfigWorkRequestPayload> getPayload() {
+        return payload;
+    }
 
     /**
      * The completion percentage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
-    Long percentComplete;
+    private final Long percentComplete;
+
+    public Long getPercentComplete() {
+        return percentComplete;
+    }
 
     /**
      * The time at which the work request was started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The time at which the work request was accepted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
-    java.util.Date timeAccepted;
+    private final java.util.Date timeAccepted;
+
+    public java.util.Date getTimeAccepted() {
+        return timeAccepted;
+    }
 
     /**
      * The time at which the work request was finished.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
     /**
      * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
      * or FAILED
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -269,6 +338,9 @@ public class LogAnalyticsConfigWorkRequest {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -308,8 +380,83 @@ public class LogAnalyticsConfigWorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsConfigWorkRequest(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", operationType=").append(String.valueOf(this.operationType));
+        sb.append(", payload=").append(String.valueOf(this.payload));
+        sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsConfigWorkRequest)) {
+            return false;
+        }
+
+        LogAnalyticsConfigWorkRequest other = (LogAnalyticsConfigWorkRequest) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.payload, other.payload)
+                && java.util.Objects.equals(this.percentComplete, other.percentComplete)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.payload == null ? 43 : this.payload.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

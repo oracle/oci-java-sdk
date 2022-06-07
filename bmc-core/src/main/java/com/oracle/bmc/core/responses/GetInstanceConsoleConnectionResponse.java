@@ -7,10 +7,6 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned InstanceConsoleConnection instance.
      */
     private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
+
+    public com.oracle.bmc.core.model.InstanceConsoleConnection getInstanceConsoleConnection() {
+        return instanceConsoleConnection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -46,6 +50,21 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
+
+        public Builder instanceConsoleConnection(
+                com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection) {
+            this.instanceConsoleConnection = instanceConsoleConnection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,5 +81,49 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
             return new GetInstanceConsoleConnectionResponse(
                     __httpStatusCode__, opcRequestId, instanceConsoleConnection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",instanceConsoleConnection=").append(String.valueOf(instanceConsoleConnection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetInstanceConsoleConnectionResponse)) {
+            return false;
+        }
+
+        GetInstanceConsoleConnectionResponse other = (GetInstanceConsoleConnectionResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.instanceConsoleConnection, other.instanceConsoleConnection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceConsoleConnection == null
+                                ? 43
+                                : this.instanceConsoleConnection.hashCode());
+        return result;
     }
 }

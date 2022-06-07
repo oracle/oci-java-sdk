@@ -15,14 +15,32 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Order.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Order {
+public final class Order {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "orderNumber",
+        "dataCenterRegion",
+        "adminEmail",
+        "orderState",
+        "subscriptions"
+    })
+    public Order(
+            String orderNumber,
+            String dataCenterRegion,
+            String adminEmail,
+            String orderState,
+            java.util.List<SubscriptionInfo> subscriptions) {
+        super();
+        this.orderNumber = orderNumber;
+        this.dataCenterRegion = dataCenterRegion;
+        this.adminEmail = adminEmail;
+        this.orderState = orderState;
+        this.subscriptions = subscriptions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
         private String orderNumber;
@@ -100,36 +118,115 @@ public class Order {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Immutable and unique order number holding customer subscription information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
-    String orderNumber;
+    private final String orderNumber;
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
 
     /**
      * Order's data center region.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenterRegion")
-    String dataCenterRegion;
+    private final String dataCenterRegion;
+
+    public String getDataCenterRegion() {
+        return dataCenterRegion;
+    }
 
     /**
      * Administrator email owning the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
-    String adminEmail;
+    private final String adminEmail;
+
+    public String getAdminEmail() {
+        return adminEmail;
+    }
 
     /**
      * State of the order.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderState")
-    String orderState;
+    private final String orderState;
+
+    public String getOrderState() {
+        return orderState;
+    }
 
     /**
      * Array of subscriptions associated with the order.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptions")
-    java.util.List<SubscriptionInfo> subscriptions;
+    private final java.util.List<SubscriptionInfo> subscriptions;
+
+    public java.util.List<SubscriptionInfo> getSubscriptions() {
+        return subscriptions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Order(");
+        sb.append("orderNumber=").append(String.valueOf(this.orderNumber));
+        sb.append(", dataCenterRegion=").append(String.valueOf(this.dataCenterRegion));
+        sb.append(", adminEmail=").append(String.valueOf(this.adminEmail));
+        sb.append(", orderState=").append(String.valueOf(this.orderState));
+        sb.append(", subscriptions=").append(String.valueOf(this.subscriptions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Order)) {
+            return false;
+        }
+
+        Order other = (Order) o;
+        return java.util.Objects.equals(this.orderNumber, other.orderNumber)
+                && java.util.Objects.equals(this.dataCenterRegion, other.dataCenterRegion)
+                && java.util.Objects.equals(this.adminEmail, other.adminEmail)
+                && java.util.Objects.equals(this.orderState, other.orderState)
+                && java.util.Objects.equals(this.subscriptions, other.subscriptions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.orderNumber == null ? 43 : this.orderNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataCenterRegion == null ? 43 : this.dataCenterRegion.hashCode());
+        result = (result * PRIME) + (this.adminEmail == null ? 43 : this.adminEmail.hashCode());
+        result = (result * PRIME) + (this.orderState == null ? 43 : this.orderState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptions == null ? 43 : this.subscriptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

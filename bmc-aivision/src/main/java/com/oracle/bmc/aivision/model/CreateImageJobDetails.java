@@ -15,16 +15,37 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateImageJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateImageJobDetails {
+public final class CreateImageJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "inputLocation",
+        "features",
+        "outputLocation",
+        "compartmentId",
+        "displayName",
+        "isZipOutputEnabled"
+    })
+    public CreateImageJobDetails(
+            InputLocation inputLocation,
+            java.util.List<ImageFeature> features,
+            OutputLocation outputLocation,
+            String compartmentId,
+            String displayName,
+            Boolean isZipOutputEnabled) {
+        super();
+        this.inputLocation = inputLocation;
+        this.features = features;
+        this.outputLocation = outputLocation;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.isZipOutputEnabled = isZipOutputEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
         private InputLocation inputLocation;
@@ -118,36 +139,128 @@ public class CreateImageJobDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
-    InputLocation inputLocation;
+    private final InputLocation inputLocation;
+
+    public InputLocation getInputLocation() {
+        return inputLocation;
+    }
 
     /**
      * The list of requested image analysis types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
-    java.util.List<ImageFeature> features;
+    private final java.util.List<ImageFeature> features;
+
+    public java.util.List<ImageFeature> getFeatures() {
+        return features;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("outputLocation")
-    OutputLocation outputLocation;
+    private final OutputLocation outputLocation;
+
+    public OutputLocation getOutputLocation() {
+        return outputLocation;
+    }
 
     /**
      * The compartment identifier from the requester.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The image job display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Whether or not to generate a ZIP file containing the results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
-    Boolean isZipOutputEnabled;
+    private final Boolean isZipOutputEnabled;
+
+    public Boolean getIsZipOutputEnabled() {
+        return isZipOutputEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateImageJobDetails(");
+        sb.append("inputLocation=").append(String.valueOf(this.inputLocation));
+        sb.append(", features=").append(String.valueOf(this.features));
+        sb.append(", outputLocation=").append(String.valueOf(this.outputLocation));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isZipOutputEnabled=").append(String.valueOf(this.isZipOutputEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateImageJobDetails)) {
+            return false;
+        }
+
+        CreateImageJobDetails other = (CreateImageJobDetails) o;
+        return java.util.Objects.equals(this.inputLocation, other.inputLocation)
+                && java.util.Objects.equals(this.features, other.features)
+                && java.util.Objects.equals(this.outputLocation, other.outputLocation)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isZipOutputEnabled, other.isZipOutputEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.inputLocation == null ? 43 : this.inputLocation.hashCode());
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputLocation == null ? 43 : this.outputLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isZipOutputEnabled == null
+                                ? 43
+                                : this.isZipOutputEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }
